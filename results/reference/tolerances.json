@@ -1,0 +1,11 @@
+{
+  "case1": {
+    "relative_tolerance": 0.001,
+    "rationale": "A PySD RK2 run reproduces case1 to within 0.002 percent (measured 2026-08-24). 0.1 percent leaves roughly fifty times that margin, which absorbs platform differences without hiding a regression."
+  },
+  "case2": {
+    "relative_tolerance": 0.05,
+    "rationale": "Measured worst-case deviation 3.34 percent, reached in the 1940s, while most years are below 0.7 percent. The residual is accumulated phase error between Vensim's RK2 and PySD's midpoint RK2, amplified by an oscillating trajectory. A tighter bound would fail on numerics rather than on regressions."
+  },
+  "absolute_floor": 1e-06
+}
