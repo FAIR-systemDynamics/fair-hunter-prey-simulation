@@ -1,0 +1,24 @@
+# Model sources
+
+The editable model goes here, one file per tool:
+
+- `{{ model_slug }}.mdl` — Vensim
+- `{{ model_slug }}.stmx` — Stella
+
+This directory holds **structure only**: stocks, flows, equations, causal
+links. Parameter values, lookup tables and scenario overrides belong in
+`models/config/`, so that a scenario change is a one-line diff instead of a rewrite
+of the model file.
+
+Exports generated from these sources (`.vpmx`, PySD `.py`) go in
+`../export/`, never here.
+{% if third_party_model %}
+## Licensing
+
+The model in this directory is derived from:
+
+> {{ third_party_attribution }}
+
+It is therefore licensed **{{ third_party_license }}**, not under the project's
+code license. See `../../LICENSE`.
+{%- endif %}

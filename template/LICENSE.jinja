@@ -1,0 +1,57 @@
+Licensing overview for {{ project_name }}
+{{ '=' * (23 + project_name | length) }}
+{% if third_party_model %}
+This repository is multi-licensed. There is no single license that covers all
+of it, because the model is derived from a third-party work whose license
+carries over.
+
+Machine-readable licensing information is in REUSE.toml, following the REUSE
+specification (https://reuse.software/). Full license texts are in LICENSES/.
+Verify with `reuse lint`.
+
+  Code                                          {{ code_license }}
+  runners/, scripts/, tests/, .github/,
+  repository metadata
+
+  Documentation                                 CC BY 4.0
+  README.md, CHANGELOG.md, docs/
+
+  Model and derivatives                         {{ third_party_license }}
+  models/, models/config/
+
+Why the third bucket exists
+---------------------------
+
+The model in this repository is derived from:
+
+  {{ third_party_attribution }}
+
+That work is licensed {{ third_party_license }}. Its terms carry over to the model
+files and to anything derived from them.
+{%- else %}
+Two licenses, split by what the files are:
+
+Machine-readable licensing information is in REUSE.toml, following the REUSE
+specification (https://reuse.software/). Full license texts are in LICENSES/.
+Verify with `reuse lint`.
+
+  Code                                          {{ code_license }}
+  runners/, scripts/, tests/, .github/,
+  repository metadata
+
+  Documentation, model and configuration        CC BY 4.0
+  README.md, docs/, models/, models/config/
+
+The model is your own work, so nothing restricts its reuse beyond attribution.
+If you later incorporate someone else's model, revisit this file -- their
+license will carry over to your model files.
+{%- endif %}
+
+Copyright
+---------
+
+Copyright (c) {{ copyright_year }} {% for a in authors %}{{ a['given-names'] }} {{ a['family-names'] }}{{ ", " if not loop.last }}{% endfor %},
+except where noted otherwise (see REUSE.toml).
+
+scripts/csv_to_cin.py originates from the nfdi4sd template and remains
+copyright of its authors (MIT); see its file header.

@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 Raphael Ginster
+# SPDX-FileCopyrightText: 2026 Matthias Papesch
+# SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+# SPDX-License-Identifier: MIT
+#
+# Licensing is only machine-checkable if a machine actually checks it.
+name: REUSE compliance
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reuse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: fsfe/reuse-action@v5

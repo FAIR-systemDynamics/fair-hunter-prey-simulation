@@ -1,0 +1,25 @@
+# Simulation output — reproduced, not stored
+*.vdf
+*.vdfx
+
+# Vensim / Stella working files
+*.bak
+!*.mdl
+!*.stmx
+
+# User-specific files
+*.mdls
+
+# Vensim backup files
+*.2mdl
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,102 @@
+# REUSE configuration -- https://reuse.software/
+#
+{% if third_party_model -%}
+# This repository is multi-licensed:
+#
+#   {{ code_license }}{{ ' ' * (18 - code_license | length) }}the code we wrote
+#   CC-BY-4.0         the documentation we wrote
+#   {{ third_party_license }}{{ ' ' * (18 - third_party_license | length) }}the model and everything derived from it
+#
+# The third bucket is inherited, not chosen -- see LICENSE.
+{%- else -%}
+# Two licenses:
+#
+#   {{ code_license }}{{ ' ' * (18 - code_license | length) }}the code
+#   CC-BY-4.0         the documentation
+{%- endif %}
+#
+# Check with:  reuse lint
+
+version = 1
+SPDX-PackageName = "{{ project_slug }}"
+
+[[annotations]]
+path = [
+    "runners/**",
+    "scripts/**",
+    "tests/**",
+    "Snakefile",
+    ".github/**",
+    "CITATION.cff",
+    "codemeta.json",
+    "LICENSE",
+    "REUSE.toml",
+    ".gitignore",
+    ".gitattributes",
+    ".copier-answers.yml",
+    "**/.gitkeep",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+{%- for author in authors %}
+    "{{ copyright_year }} {{ author['given-names'] }} {{ author['family-names'] }}",
+{%- endfor %}
+]
+SPDX-License-Identifier = "{{ code_license }}"
+
+[[annotations]]
+path = [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+{%- for author in authors %}
+    "{{ copyright_year }} {{ author['given-names'] }} {{ author['family-names'] }}",
+{%- endfor %}
+]
+SPDX-License-Identifier = "CC-BY-4.0"
+{% if third_party_model %}
+# The model and everything derived from it. Listed last on purpose: later
+# annotations win, so these paths are not caught by the blocks above.
+[[annotations]]
+path = [
+    "models/**",
+    "models/config/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "{{ third_party_attribution }} (original work)",
+{%- for author in authors %}
+    "{{ copyright_year }} {{ author['given-names'] }} {{ author['family-names'] }} (this re-implementation)",
+{%- endfor %}
+]
+SPDX-License-Identifier = "{{ third_party_license if third_party_license != 'other' else 'TODO-FILL-IN' }}"
+{%- else %}
+[[annotations]]
+path = [
+    "models/**",
+    "models/config/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+{%- for author in authors %}
+    "{{ copyright_year }} {{ author['given-names'] }} {{ author['family-names'] }}",
+{%- endfor %}
+]
+SPDX-License-Identifier = "CC-BY-4.0"
+{%- endif %}
+
+# csv_to_cin.py comes from the nfdi4sd template and keeps its own authorship.
+# This is why LICENSES/MIT.txt ships even when the code license is not MIT.
+# "override" stops the block above from adding your names to it.
+[[annotations]]
+path = "scripts/csv_to_cin.py"
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2026 Raphael Ginster",
+    "2026 Matthias Papesch",
+    "2026 Vasiliy Seibert",
+]
+SPDX-License-Identifier = "MIT"

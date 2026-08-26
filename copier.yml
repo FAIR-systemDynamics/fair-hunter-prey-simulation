@@ -1,0 +1,129 @@
+# Copier template for system dynamics model repositories.
+# Usage:  copier copy gh:<org>/nfdi4sd my-new-model
+#
+# The template lives in template/. This repository itself is the worked
+# example and the template generates the same structure without the example
+# model, its parameters, or its licensing.
+
+_subdirectory: template
+_templates_suffix: .jinja
+
+_message_after_copy: |
+  Created {{ project_slug }}/
+
+  Next steps:
+    1. Put your model in models/{{ model_slug }}.mdl
+    2. Put its parameters in models/config/parameters/
+    3. git init && git add . && git commit -m "chore: project skeleton"
+  {% if third_party_model and third_party_license == "other" %}
+  ! You chose a third-party license that is not bundled. Add its full text to
+    LICENSES/ yourself, or `reuse lint` will fail.
+  {%- endif %}
+
+  Check your licensing setup:  pipx run reuse lint
+
+# ---------------------------------------------------------------------------
+# Project identity
+# ---------------------------------------------------------------------------
+project_name:
+  type: str
+  help: Human-readable project name (appears as the title in CITATION.cff).
+  placeholder: Kaibab Ecosystem Model
+
+project_slug:
+  type: str
+  help: Directory and repository name. Lowercase, digits and dashes.
+  default: "{{ project_name | lower | replace(' ', '-') | replace('_', '-') }}"
+  validator: >-
+    {% if not (project_slug | regex_search('^[a-z][a-z0-9-]*$')) %}
+    project_slug must start with a lowercase letter and contain only
+    lowercase letters, digits and dashes.
+    {% endif %}
+
+project_description:
+  type: str
+  help: One or two sentences. Becomes the abstract in CITATION.cff.
+  placeholder: A system dynamics model of ...
+
+authors:
+  type: yaml
+  multiline: true
+  help: |
+    Authors as a YAML list. ORCID and affiliation are optional but strongly
+    recommended.
+  default: |
+    - family-names: LASTNAME
+      given-names: FIRSTNAME
+      orcid: ""
+      affiliation: ""
+  validator: >-
+    {% if authors is string or authors is not iterable or (authors | length) == 0 %}
+    authors must be a non-empty YAML list of mappings.
+    {% endif %}
+
+copyright_year:
+  type: str
+  default: "{{ '%Y' | strftime }}"
+  help: Year used in the SPDX copyright statements.
+
+# ---------------------------------------------------------------------------
+# The model
+# ---------------------------------------------------------------------------
+model_slug:
+  type: str
+  help: Base filename for the model, without extension.
+  default: "{{ project_slug | replace('-', '_') }}"
+
+tools:
+  type: str
+  multiselect: true
+  help: Which simulation tools will this project support?
+  choices:
+    Vensim: vensim
+    Stella: stella
+    PySD: pysd
+  default: [vensim, pysd]
+
+# ---------------------------------------------------------------------------
+# Licensing
+# ---------------------------------------------------------------------------
+code_license:
+  type: str
+  help: License for the code you write (runners, scripts, tests).
+  choices:
+    MIT -- short and permissive: MIT
+    Apache-2.0 -- permissive, with an explicit patent grant: Apache-2.0
+  default: MIT
+
+third_party_model:
+  type: bool
+  help: |
+    Is your model derived from someone else's published model, textbook or
+    dataset? If yes, its license carries over to your model files and they
+    need a separate licensing bucket.
+  default: false
+
+third_party_license:
+  type: str
+  when: "{{ third_party_model }}"
+  help: License of the source your model is derived from.
+  choices:
+    CC BY-NC-SA 4.0: CC-BY-NC-SA-4.0
+    CC BY-SA 4.0: CC-BY-SA-4.0
+    CC BY 4.0: CC-BY-4.0
+    something else (add the text to LICENSES/ yourself): other
+  default: CC-BY-NC-SA-4.0
+
+third_party_attribution:
+  type: str
+  when: "{{ third_party_model }}"
+  help: Full citation of the source. Appears in LICENSE and REUSE.toml.
+  placeholder: "Doe, J. (2024). Title. Publisher. https://example.org/"
+
+# ---------------------------------------------------------------------------
+# Tooling
+# ---------------------------------------------------------------------------
+include_ci:
+  type: bool
+  help: Add a GitHub Actions workflow that runs `reuse lint` on every push?
+  default: true

@@ -1,0 +1,118 @@
+# Versioning a system dynamics model
+
+A checklist, not a narrative. For the worked example this is derived from, see
+the nfdi4sd repository.
+
+## Why this needs its own document
+
+A model file is text, but its diff is not reviewable by default. In the nfdi4sd
+example model, adding parameters to a structure-only Vensim model produced a
+diff of roughly 655 lines -- about 250 of which were the sketch section, i.e.
+the coordinates of boxes on the diagram canvas. Nothing about that third of the
+diff carries meaning.
+
+That is one reason for the layout: once parameters live in `models/config/`,
+a scenario is a change to the inputs and the model file is not touched at all.
+
+## Configure Vensim before the first commit
+
+**Model → Settings → File Format.** Without these, Vensim writes changes into
+the model file that nobody made. The model has to be saved in text (`.mdl`)
+format for any of this to matter -- a binary model has nothing to diff.
+
+| Setting | Value | What it prevents |
+|---|---|---|
+| Equation order | Alphabetical by group | Vensim otherwise reorders equations arbitrarily, so the diff shows reshuffling instead of content |
+| Equation format | Verbose | Expanded equations, so a change is actually visible in the diff |
+| Model settings | Store user specific settings in a separate file | Keeps personal settings out of the shared model file |
+| Override sketch zoom | Autofit to screen | Stops zoom level and viewport from being written into the model |
+| Disable sketch recenter on edit | ticked | Vensim otherwise recentres the view while editing and records that |
+
+Source: <https://vensim.com/documentation/svn_git.html>
+
+The third row matters most. Without it, model files accumulate session state --
+which runs happen to be loaded in the window, where the view was scrolled to --
+and everyone who opens the model produces a diff without touching it. With it,
+that state moves to a separate file, which belongs in `.gitignore`.
+
+The last two rows attack the layout noise described above directly: much of it
+comes from scrolling and zooming, not from modelling.
+
+## Suggested commit sequence
+
+Each step is a reviewable unit. Tag them so people can `git checkout` any stage.
+
+| Commit | Content | Tag |
+|---|---|---|
+| 1 | Skeleton: directories, README, CITATION.cff, LICENSE, **.gitignore** | `v0.1-scaffold` |
+| 2 | Model structure, no parameters | `v0.2-structure` |
+| 3 | Parameterised model, simulation settings pinned | `v0.3-parameterized` |
+| 4 | Parameters moved to `models/config/` **plus the runner that reads them** | `v0.4-config-external` |
+| 5 | A scenario -- one small file | `v0.5-scenario` |
+
+Notes on the steps that are easy to get wrong:
+
+**Commit 1 -- `.gitignore` belongs here, not later.** Modelling tools write
+session state into model files (loaded run names, window positions). Without
+`.gitignore` and `.gitattributes` from the start, people commit diffs they did
+not cause. `.gitattributes` in particular must be in the first commit:
+introduced later, `* text=auto` rewrites every file at once.
+
+**Commit 2 is deliberately not runnable.** Structure without parameters computes
+nothing. This breaks the usual rule that every commit is a working state. That
+is the right trade-off here -- the history documents model development, not a
+green main branch -- but say so in the README so it is not mistaken for sloppiness.
+
+**Commit 4 needs a consumer.** Moving parameters into a CSV changes nothing
+unless something reads it. Ship `scripts/csv_to_cin.py` (or the equivalent for
+your tool) in the same commit.
+
+**Commit 5 is the payoff.** A scenario is a different set of inputs to the same
+structure, and the commit should show exactly that. The check is not how small
+the diff is -- editing one value inside the model file is small too -- but which
+file it touches: `git diff <previous> <this> -- <your model file>` must come
+back empty. Then every scenario provably runs the same structure, and any
+difference in the results comes from the inputs.
+
+Resist putting it on a branch just to cover branching. A branch isolates work
+from a stable state, allows parallel work, or holds something back for review;
+adding one small file does none of those, and the merge commit is noise around
+the one thing the commit is meant to show.
+
+Branch when a scenario is exploratory and may be discarded, when two people work
+in parallel, or when a scenario needs model changes as well. The discardable
+case is the useful one to demonstrate:
+
+```bash
+git switch -c scenario/probe
+# try something: change a parameter, run it, look at the plot
+git switch main && git branch -D scenario/probe   # gone; the history never knew
+```
+
+An experiment does not have to survive in the history to have been worth
+running.
+
+## Which results belong in the repository
+
+**Working output → the binary part stays out.** The modelling tool's own run
+files are git-ignored: not diffable, rewritten on every save, unreadable without
+a licence for the tool that wrote them. The text and image output in `results/`
+is kept -- it costs little and saves a reader from re-running the model to see
+what came out. That convenience is not a substitute for reproducibility: if
+something in `results/` cannot be re-created from `models/` + `models/config/` +
+`runners/`, the repository is missing something -- that is the bug, not the
+missing file.
+
+**Reference results → committed**, in a `reference/` directory. A small,
+curated set at coarse resolution, updated deliberately. It is what lets someone
+without a licence for your modelling tool check your numbers at all, and it is
+the input your regression tests compare against. Wire CI to regenerate and
+compare, so a stale reference fails the build instead of rotting quietly.
+
+**Results behind a publication → an archived deposit with a DOI.** Not because
+a commit hash is a poor identifier -- it is the basis of Software Heritage's
+SWHID, an intrinsic identifier standardised as ISO/IEC 18670. What it lacks is
+resolution and preservation: it names the exact tree but resolves only while
+someone still serves the repository. A DOI supplies resolution and an archival
+commitment, and says nothing about content integrity. Use both: tag the release,
+archive it, cite the version DOI, record the commit.

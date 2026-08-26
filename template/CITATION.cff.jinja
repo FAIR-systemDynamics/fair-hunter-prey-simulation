@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file.{% if third_party_model %} Please also cite the original model source listed under `references`.{% endif %}"
+title: "{{ project_name }}"
+abstract: >-
+  {{ project_description | wordwrap(72) | indent(2) }}
+type: software
+authors:
+{%- for author in authors %}
+  - family-names: {{ author['family-names'] }}
+    given-names: {{ author['given-names'] }}
+{%- if author.orcid %}
+    orcid: "{{ author.orcid }}"
+{%- endif %}
+{%- if author.affiliation %}
+    affiliation: "{{ author.affiliation }}"
+{%- endif %}
+{%- if author.email %}
+    email: "{{ author.email }}"
+{%- endif %}
+{%- endfor %}
+# TODO: uncomment and fill in at release time.
+# version: "0.1.0"
+# date-released: "YYYY-MM-DD"
+# repository-code: ""
+# url: ""
+license:
+  - {{ code_license }}  # code
+  - CC-BY-4.0  # documentation
+{%- if third_party_model and third_party_license != "other" %}
+  - {{ third_party_license }}  # model and derivatives (inherited)
+{%- endif %}
+keywords:
+  - system dynamics
+  - simulation model
+  - reproducibility
+  - FAIR4RS
+  - research software
+# TODO: add the Zenodo DOIs once minted.
+# identifiers:
+#   - type: doi
+#     value: ""
+#     description: "Concept DOI for all versions (Zenodo)."
+{%- if third_party_model %}
+references:
+  - type: generic
+    title: "TODO: title of the source work"
+    notes: "{{ third_party_attribution }}"
+{%- endif %}

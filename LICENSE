@@ -1,0 +1,59 @@
+Licensing overview for nfdi4sd
+==============================
+
+This repository is multi-licensed. There is no single license that covers all
+of it, because the example model is derived from a third-party work whose
+license carries over.
+
+Machine-readable licensing information is in REUSE.toml, following the REUSE
+specification (https://reuse.software/). Full license texts are in LICENSES/.
+Verify with `reuse lint`.
+
+  Code                                          MIT
+  runners/, scripts/, tests/, Snakefile,
+  .github/, repository metadata
+
+  Documentation                                 CC BY 4.0
+  README.md, CHANGELOG.md, docs/*.md
+
+  Kaibab example model and derivatives          CC BY-NC-SA 4.0
+  models/, config/, docs/kaibab_example.md,
+  docs/kaibab_ecosystem_report/,
+  docs/kaibab_variable_description.xlsx
+
+Why the three licenses exists
+-----------------------------
+
+The Kaibab ecosystem model in this repository is a re-implementation of the
+model published as Exhibit 4.11 of:
+
+  Deaton, M., & MacDonald, R. (2025). System Dynamics Learning Guide,
+  Chapter 4, Section 4.11. James Madison University Libraries.
+  https://pressbooks.lib.jmu.edu/sdlearningguide/
+
+That work is licensed CC BY-NC-SA 4.0, and the model files reproduce parts of
+its text (variable descriptions). ShareAlike therefore requires that the model
+files and anything derived from them carry the same license, and NonCommercial
+restricts their use.
+
+What this means for you
+-----------------------
+
+  - You may use the structure, the workflow and the code of this repository
+    for any purpose, including commercially, under the MIT license.
+  - You may reuse the documentation with attribution under CC BY 4.0.
+  - You may NOT use the Kaibab model files commercially, and any adaptation of
+    them must be shared under CC BY-NC-SA 4.0.
+
+If you want an unencumbered version, replace the example model with one that is
+not derived from a NonCommercial source. The repository structure and workflow
+do not depend on the Kaibab model.
+
+Note: GitHub's automatic license detection will not report a single license for
+this repository, and that is intentional.
+
+Copyright
+---------
+
+Copyright (c) 2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert, except 
+where noted otherwise (see REUSE.toml).

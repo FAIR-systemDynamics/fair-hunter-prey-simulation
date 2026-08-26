@@ -1,0 +1,119 @@
+# REUSE configuration — https://reuse.software/
+#
+# This repository is deliberately multi-licensed. Three buckets:
+#
+#   MIT               the code we wrote (runners, scripts, tests, workflow)
+#   CC-BY-4.0         the documentation we wrote
+#   CC-BY-NC-SA-4.0   the Kaibab example model and everything derived from it
+#
+# The third bucket is inherited, not chosen: the example model is a
+# re-implementation of Exhibit 4.11 of the "System Dynamics Learning Guide"
+# (Deaton & MacDonald 2025, James Madison University Libraries),
+# https://pressbooks.lib.jmu.edu/sdlearningguide/
+# which is published under CC BY-NC-SA 4.0. ShareAlike carries that license
+# over to the model files. See docs/kaibab_example.md.
+#
+# Check with:  reuse lint
+# Full texts:  LICENSES/
+
+version = 1
+SPDX-PackageName = "nfdi4sd"
+# TODO: fill in once the repository is published.
+# SPDX-PackageDownloadLocation = "https://github.com/.../nfdi4sd"
+
+# --------------------------------------------------------------------------
+# 1. Code — MIT
+# --------------------------------------------------------------------------
+[[annotations]]
+path = [
+    "runners/**",
+    "scripts/**",
+    "tests/**",
+    "Snakefile",
+    ".github/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "2026 Raphael Ginster",
+    "2026 Matthias Papesch",
+    "2026 Vasiliy Seibert",
+]
+SPDX-License-Identifier = "MIT"
+
+# --------------------------------------------------------------------------
+# 2. Repository metadata and trivial config — MIT
+# --------------------------------------------------------------------------
+[[annotations]]
+path = [
+    "CITATION.cff",
+    "codemeta.json",
+    "LICENSE",
+    "REUSE.toml",
+    ".gitignore",
+    ".gitattributes",
+    "**/.gitkeep",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "2026 Raphael Ginster",
+    "2026 Matthias Papesch",
+    "2026 Vasiliy Seibert",
+]
+SPDX-License-Identifier = "MIT"
+
+# --------------------------------------------------------------------------
+# 3. Our own documentation — CC-BY-4.0
+# --------------------------------------------------------------------------
+[[annotations]]
+path = [
+    "README.md",
+    "CHANGELOG.md",
+    "docs/*.md",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "2026 Raphael Ginster",
+    "2026 Matthias Papesch",
+    "2026 Vasiliy Seibert",
+]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# --------------------------------------------------------------------------
+# 4. The Kaibab example and everything derived from it — CC-BY-NC-SA-4.0
+#    Listed AFTER the documentation block on purpose: later annotations win,
+#    so docs/kaibab_example.md is caught here and not by "docs/*.md" above.
+# --------------------------------------------------------------------------
+[[annotations]]
+path = [
+    "models/**",
+    "models/config/**",
+    "results/**",
+    "docs/kaibab_example.md",
+    "docs/kaibab_ecosystem_report/**",
+    "docs/kaibab_variable_description.xlsx",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "Copyright (c) 2025 Mike Deaton and Rod MacDonald, James Madison University Libraries (original model, System Dynamics Learning Guide, Exhibit 4.11, https://pressbooks.lib.jmu.edu/sdlearningguide/)",
+    "2026 Raphael Ginster (this re-implementation)",
+    "2026 Matthias Papesch (this re-implementation)",
+    "2026 Vasiliy Seibert (this re-implementation)",
+]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# --------------------------------------------------------------------------
+# 5. The Copier template itself -- MIT
+# --------------------------------------------------------------------------
+[[annotations]]
+path = [
+    "copier.yml",
+    "template/**",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "2026 Raphael Ginster",
+    "2026 Matthias Papesch",
+    "2026 Vasiliy Seibert",
+]
+SPDX-License-Identifier = "MIT"
+

@@ -1,0 +1,67 @@
+# {{ project_name }}
+
+> {{ project_description }}
+
+## Status
+
+Skeleton generated from the [nfdi4sd](https://github.com/) template. Nothing is
+implemented yet.
+
+## Repository layout
+
+```
+{{ project_slug }}/
+├── models/
+│   ├── src/        editable source models -- the structure
+│   └── export/     tool exports generated from src/
+├── models/config/
+│   ├── parameters/ parameter values
+│   ├── lookups/    table functions
+│   ├── scenarios/  scenario-specific overrides
+│   └── timeseries/ reference data
+├── runners/{% for t in tools %}
+│   └── {{ t }}/{{ ' ' * (10 - t | length) }}how to run the model with {{ t }}{% endfor %}
+├── scripts/        helpers (CSV -> .cin, comparison, plotting)
+├── tests/
+├── results/        run output; binary tool files stay out
+└── docs/
+```
+
+The rule the layout encodes: **`models/` holds structure, `models/config/` holds
+numbers, `results/` holds nothing worth keeping.** Anything in `results/` must
+be re-creatable from `models/` + `models/config/` + `runners/`. If it is not,
+something is missing from the repository.
+
+## Simulation settings
+
+Pin these explicitly in every runner instead of relying on tool defaults --
+a run with a different DT or integrator is a different run.
+
+| Setting | Value |
+|---------|-------|
+| Time unit | TODO |
+| Initial time | TODO |
+| Final time | TODO |
+| Time step (DT) | TODO |
+| Integration method | TODO |
+
+## Working with git
+
+See [`docs/git_workflow.md`](docs/git_workflow.md) for how to version a system
+dynamics model without producing unreviewable diffs.
+
+## Citing
+
+Citation metadata is in [`CITATION.cff`](CITATION.cff).
+
+## License
+
+{% if third_party_model -%}
+Multi-licensed: **{{ code_license }}** for code, **CC BY 4.0** for documentation,
+**{{ third_party_license }}** for the model and anything derived from it.
+{%- else -%}
+**{{ code_license }}** for code, **CC BY 4.0** for documentation, model and
+configuration.
+{%- endif %}
+Managed with [REUSE](https://reuse.software/) -- see [`LICENSE`](LICENSE) and
+[`REUSE.toml`](REUSE.toml). Verify with `reuse lint`.

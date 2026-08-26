@@ -1,0 +1,23 @@
+# Zeilenenden im Repo auf LF normalisieren.
+# Eure .mdl sind bereits reines LF (geprüft: 0 von 506 Zeilen mit CRLF).
+# Wichtig, sobald jemand unter Windows aus Vensim committet — sonst
+# erzeugt der erste Windows-Commit einen Diff über die ganze Datei.
+* text=auto
+
+# # Modellquellen: Text, mit eigenem Diff-Treiber
+*.mdl    text
+*.stmx   text
+*.cin    text
+*.csv    text
+
+# # Kein Auto-Merge für Modellquellen
+# *.mdl    -merge
+# *.stmx   -merge
+
+# Binär: nie diffen, nie mergen, keine EOL-Konvertierung
+*.vpmx   binary
+*.vdfx   binary
+*.vdf    binary
+*.xlsx   binary
+*.png    binary
+*.jpg    binary

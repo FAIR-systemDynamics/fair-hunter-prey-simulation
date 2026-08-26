@@ -1,0 +1,24 @@
+# Normalise line endings in the repository. Important as soon as anyone commits
+# from Windows -- otherwise the first Windows commit rewrites whole files.
+* text=auto
+
+# Model sources are text
+*.mdl    text
+*.stmx   text
+*.cin    text
+*.csv    text
+
+# No auto-merge for model sources: a line-wise merge of a model file can
+# interleave two branches' layout sections and produce a structurally broken
+# model that still looks plausible. Resolve conflicts by re-doing the edit in
+# the modelling tool, not by hand-editing the file.
+*.mdl    -merge
+*.stmx   -merge
+
+# Binary: never diff, never merge, never convert line endings
+*.vpmx   binary
+*.vdfx   binary
+*.vdf    binary
+*.xlsx   binary
+*.png    binary
+*.jpg    binary
