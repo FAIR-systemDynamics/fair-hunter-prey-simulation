@@ -100,11 +100,11 @@
   <a href="#loops">Feedback loops</a>
   <a href="#influence">Influence ranking</a>
   <a href="#links">Causal links</a>
+  <a href="#chk-undocumented">Undocumented variables (1)</a>
   <a href="#chk-dimensionless">Dimensionless variables (12)</a>
-  <a href="#chk-unused">Unused variables (1)</a>
+  <a href="#chk-unused">Unused variables (3)</a>
+  <a href="#chk-orphan">Isolated variables (3)</a>
   <a href="#chk-test_input">Equations with test input functions (1)</a>
-  <a href="#chk-embedded_data">Equations with embedded numbers (1)</a>
-  <a href="#chk-time_as_variable">Equations using Time (1)</a>
   <a href="#chk-nonmonotonic_lookup">Non-monotonic lookups (1)</a>
   <a href="#chk-nonzero_end_slope">Lookups with non-zero end slopes (4)</a>
   <a href="#chk-supplementary">Supplementary variables (1)</a>
@@ -115,17 +115,17 @@
 
 <h2 id="overview">Model overview</h2>
 <div class="tiles">
-  <div class="tile"><div class="n">42</div><div class="l">Variables</div></div>
+  <div class="tile"><div class="n">43</div><div class="l">Variables</div></div>
   <div class="tile"><div class="n">3</div><div class="l">Stocks</div></div>
   <div class="tile"><div class="n">6</div><div class="l">Flows</div></div>
-  <div class="tile"><div class="n">15</div><div class="l">Auxiliaries</div></div>
-  <div class="tile"><div class="n">14</div><div class="l">Constants</div></div>
+  <div class="tile"><div class="n">14</div><div class="l">Auxiliaries</div></div>
+  <div class="tile"><div class="n">15</div><div class="l">Constants</div></div>
   <div class="tile"><div class="n">4</div><div class="l">Lookups</div></div>
   <div class="tile"><div class="n">3</div><div class="l">State variables</div></div>
-  <div class="tile"><div class="n">54</div><div class="l">Causal links</div></div>
+  <div class="tile"><div class="n">53</div><div class="l">Causal links</div></div>
   <div class="tile"><div class="n">11</div><div class="l">Feedback loops</div></div>
-  <div class="tile"><div class="n">18</div><div class="l">Exogenous</div></div>
-  <div class="tile"><div class="n">24</div><div class="l">Endogenous</div></div>
+  <div class="tile"><div class="n">20</div><div class="l">Exogenous</div></div>
+  <div class="tile"><div class="n">23</div><div class="l">Endogenous</div></div>
   <div class="tile"><div class="n">1</div><div class="l">Views</div></div>
   <div class="tile"><div class="n">0</div><div class="l">Groups</div></div>
   <div class="tile"><div class="n">0</div><div class="l">Macros</div></div>
@@ -154,7 +154,7 @@
 <h2 id="views">Views</h2>
 <div class="scroll"><table>
   <tr><th>View</th><th class="num">Variables drawn</th><th class="num">Arrows</th></tr>
-  <tr><td>View 1</td><td class="num">43</td><td class="num">61</td></tr>
+  <tr><td>View 1</td><td class="num">44</td><td class="num">59</td></tr>
 </table></div>
 
 <h3>Variable usage across views</h3>
@@ -254,6 +254,10 @@
     <td class="num">1</td>
 <td class="cell">■</td>  </tr>
   <tr>
+    <td><a href="#v-initial_forage_biomass">Initial Forage Biomass</a></td>
+    <td class="num">1</td>
+<td class="cell">■</td>  </tr>
+  <tr>
     <td><a href="#v-initial_predator_population">Initial Predator Population</a></td>
     <td class="num">1</td>
 <td class="cell">■</td>  </tr>
@@ -344,11 +348,11 @@
 </p>
   <h3 id="view-1">1. View 1</h3>
   <p class="sub">
-    37 variables,
+    38 variables,
     6 flows.
       Layout, flows and links all read from the sketch.
   </p>
-  <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" class="cld" viewBox="-546 24 1809 1021" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Stock and flow diagram of view View 1"><defs><marker id="ah0" viewBox="0 0 10 7" refX="9.4" refY="3.5" markerUnits="userSpaceOnUse" markerWidth="9.0" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,3.5 L0,7 z" fill="#000000"/></marker><marker id="ah1" viewBox="0 0 10 7" refX="9.4" refY="3.5" markerUnits="userSpaceOnUse" markerWidth="15.0" markerHeight="11.0" orient="auto-start-reverse"><path d="M0,0 L10,3.5 L0,7 z" fill="#000001"/></marker></defs><rect x="-546" y="24" width="1809" height="1021" fill="#ffffff"/><path d="M406.7,189.3 Q388.5,280.0 300.3,170.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="312.7" y="174.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M167.0,243.2 Q235.6,258.8 293.9,171.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="293.6" y="184.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M23.7,160.0 Q2.3,193.9 75.7,228.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="62.7" y="230.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M-18.5,330.1 Q-35.3,283.4 53.2,271.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="43.2" y="279.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M186.0,405.0 Q110.6,435.9 28.8,379.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="41.8" y="379.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M907.3,874.6 Q850.9,831.3 819.0,850.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="824.7" y="839.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M635.8,755.3 Q711.4,765.0 745.3,830.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="734.1" y="824.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M763.5,882.0 Q777.7,926.4 713.1,953.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="720.5" y="942.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M623.1,992.2 Q572.2,1019.3 536.5,989.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="549.4" y="990.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M368.9,902.7 Q371.1,937.2 416.9,943.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="405.1" y="948.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M482.2,941.0 Q442.6,907.8 584.6,827.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="578.4" y="839.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M565.4,763.1 Q540.3,747.8 586.0,821.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="574.3" y="815.7" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M546.0,737.6 Q331.7,827.8 30.7,526.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="43.4" y="529.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M218.0,590.8 Q172.3,599.4 45.3,526.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="58.3" y="525.7" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M208.0,512.5 Q160.0,530.7 56.0,510.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="68.1" y="505.3" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M56.0,492.3 Q92.6,506.5 206.8,422.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="202.1" y="434.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M303.9,480.3 Q310.5,453.2 435.1,433.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="425.3" y="441.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M331.8,580.9 Q351.1,617.8 461.9,447.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="461.8" y="460.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M418.6,189.8 Q395.9,338.5 281.7,373.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="290.1" y="363.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M430.8,190.0 Q432.2,286.0 472.9,398.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="462.6" y="390.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M483.9,448.0 Q502.7,523.0 490.7,582.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="486.0" y="569.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M546.3,717.4 Q480.8,715.3 492.1,632.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="497.6" y="643.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M519.4,583.1 Q518.3,558.6 604.0,567.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M694.0,576.3 Q732.6,560.8 740.8,630.2" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="732.6" y="620.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M763.3,679.6 Q791.4,699.5 761.8,733.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="763.8" y="720.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M813.0,611.9 Q795.8,604.6 775.3,631.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="776.5" y="618.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M597.6,439.0 Q581.9,413.7 614.5,381.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="611.6" y="394.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M444.5,189.5 Q534.6,354.9 586.3,336.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="578.2" y="347.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M735.2,366.7 Q734.4,359.2 676.0,359.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="687.0" y="352.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M649.8,381.4 Q658.8,413.1 732.6,448.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M826.1,495.2 Q825.5,519.9 975.0,509.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="964.5" y="516.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M667.4,333.4 Q667.2,350.9 682.1,288.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M657.6,238.1 Q670.9,239.4 544.6,167.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="557.6" y="166.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M596.1,115.7 Q570.3,105.4 543.4,161.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="541.8" y="148.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M949.4,398.1 Q848.9,269.6 544.8,166.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="557.4" y="163.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M472.7,186.2 Q1909.7,663.0 763.8,735.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="774.4" y="728.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M920.2,275.0 Q900.1,321.7 975.5,353.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1032.0,413.0 Q1080.9,436.1 982.3,358.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1122.3,358.6 Q1163.4,346.8 983.0,355.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1072.3,587.0 Q1050.9,594.4 982.0,512.2" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="994.5" y="516.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M422.0,116.9 Q416.5,128.5 422.0,140.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="410.9" y="133.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M613.1,636.0 Q601.8,627.3 631.2,593.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1083.2,425.3 Q1054.4,408.1 1032.0,416.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1039.7" y="406.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M963.0,446.5 Q924.4,465.9 976.2,505.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="963.2" y="504.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M753.3,527.8 Q733.7,535.8 759.2,496.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M607.4,283.3 Q630.9,300.7 638.8,287.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M-221.0,221.3 Q-147.6,226.3 -163.9,222.2" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M-159.1,260.3 Q-134.8,266.5 -123.3,230.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M-181.0,175.0 Q-162.2,171.2 -150.6,182.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="-200.0" y="874.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#4a525c" paint-order="stroke" stroke="#ffffff" stroke-width="3">BOTG</text><path d="M198.0,158.5 A7.6,7.6 0 0 1 209.3,163.2 A5.9,5.9 0 0 1 209.3,172.8 A7.6,7.6 0 0 1 198.0,177.5 A7.6,7.6 0 0 1 186.7,172.8 A5.9,5.9 0 0 1 186.7,163.2 A7.6,7.6 0 0 1 198.0,158.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M623.0,155.5 A7.6,7.6 0 0 1 634.3,160.2 A5.9,5.9 0 0 1 634.3,169.8 A7.6,7.6 0 0 1 623.0,174.5 A7.6,7.6 0 0 1 611.7,169.8 A5.9,5.9 0 0 1 611.7,160.2 A7.6,7.6 0 0 1 623.0,155.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M979.0,572.5 A7.6,7.6 0 0 1 990.3,577.2 A5.9,5.9 0 0 1 990.3,586.8 A7.6,7.6 0 0 1 979.0,591.5 A7.6,7.6 0 0 1 967.7,586.8 A5.9,5.9 0 0 1 967.7,577.2 A7.6,7.6 0 0 1 979.0,572.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M1122.0,281.5 A7.6,7.6 0 0 1 1133.3,286.2 A5.9,5.9 0 0 1 1133.3,295.8 A7.6,7.6 0 0 1 1122.0,300.5 A7.6,7.6 0 0 1 1110.7,295.8 A5.9,5.9 0 0 1 1110.7,286.2 A7.6,7.6 0 0 1 1122.0,281.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M588.0,887.5 A7.6,7.6 0 0 1 599.3,892.2 A5.9,5.9 0 0 1 599.3,901.8 A7.6,7.6 0 0 1 588.0,906.5 A7.6,7.6 0 0 1 576.7,901.8 A5.9,5.9 0 0 1 576.7,892.2 A7.6,7.6 0 0 1 588.0,887.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M859.0,727.5 A7.6,7.6 0 0 1 870.3,732.2 A5.9,5.9 0 0 1 870.3,741.8 A7.6,7.6 0 0 1 859.0,746.5 A7.6,7.6 0 0 1 847.7,741.8 A5.9,5.9 0 0 1 847.7,732.2 A7.6,7.6 0 0 1 859.0,727.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M211.0,168.0 L373.0,168.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M211.0,168.0 L373.0,168.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M386.0,168.0 L373.0,173.0 L373.0,163.0 z" fill="#000000"/><path d="M290.5,177.5 L303.5,177.5 L290.5,158.5 L303.5,158.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="297.0" y="188.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer Net Growth</text><text x="297.0" y="200.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Rate</text><path d="M470.0,165.0 L597.0,165.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M470.0,165.0 L597.0,165.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M610.0,165.0 L597.0,170.0 L597.0,160.0 z" fill="#000000"/><path d="M534.5,174.5 L547.5,174.5 L534.5,155.5 L547.5,155.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="541.0" y="185.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer Predation</text><path d="M979.0,572.5 L979.0,457.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M979.0,572.5 L979.0,457.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M979.0,444.0 L984.0,457.0 L974.0,457.0 z" fill="#000000"/><path d="M988.5,515.5 L988.5,502.5 L969.5,515.5 L969.5,502.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="979.0" y="529.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Net Predator Growth</text><text x="979.0" y="541.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Rate</text><path d="M979.0,400.0 L979.0,356.0 L1122.0,356.0 L1122.0,313.5" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M979.0,400.0 L979.0,356.0 L1122.0,356.0 L1122.0,313.5" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M1122.0,300.5 L1127.0,313.5 L1117.0,313.5 z" fill="#000000"/><path d="M972.5,365.5 L985.5,365.5 L972.5,346.5 L985.5,346.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="979.0" y="376.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Predators Hunted</text><path d="M588.0,887.5 L588.0,774.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M588.0,887.5 L588.0,774.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M588.0,761.0 L593.0,774.0 L583.0,774.0 z" fill="#000000"/><path d="M597.5,831.5 L597.5,818.5 L578.5,831.5 L578.5,818.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="588.0" y="845.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Net Annual Forage</text><text x="588.0" y="857.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Growth</text><path d="M633.0,737.0 L833.0,737.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M633.0,737.0 L833.0,737.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M846.0,737.0 L833.0,742.0 L833.0,732.0 z" fill="#000000"/><path d="M753.5,746.5 L766.5,746.5 L753.5,727.5 L766.5,727.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="760.0" y="757.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Forage Consumed per</text><text x="760.0" y="769.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer</text><text x="874.0" y="602.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">&lt;Desired Consumption</text><text x="874.0" y="614.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">per Deer&gt;</text><rect x="386.0" y="143.0" width="84.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="428.0" y="159.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text><text x="428.0" y="171.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><rect x="929.0" y="400.0" width="100.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="979.0" y="416.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator</text><text x="979.0" y="428.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><rect x="549.0" y="717.0" width="84.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="591.0" y="739.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Biomass</text><text x="479.0" y="960.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Biomass</text><text x="479.0" y="972.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Growth Fraction</text><text x="357.0" y="865.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline</text><text x="357.0" y="878.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Biomass Growth</text><text x="357.0" y="890.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fraction</text><text x="679.0" y="971.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Adequacy</text><text x="679.0" y="983.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">for Forage</text><text x="767.0" y="837.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of Forage</text><text x="767.0" y="850.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Forage</text><text x="767.0" y="862.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying</text><text x="767.0" y="874.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Capacity</text><text x="950.0" y="892.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Forage</text><text x="950.0" y="904.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="22.0" y="129.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline Fractional</text><text x="22.0" y="141.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Growth Rate</text><text x="110.0" y="246.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Fractional</text><text x="110.0" y="258.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Net Growth Rate</text><text x="-25.0" y="343.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Adequacy</text><text x="-25.0" y="356.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Support the</text><text x="-25.0" y="368.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Population</text><text x="246.0" y="385.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of the Deer</text><text x="246.0" y="398.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population to</text><text x="246.0" y="410.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="-2.0" y="497.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Deer</text><text x="-2.0" y="509.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="270.0" y="498.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Carrying</text><text x="270.0" y="510.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Capacity in Years</text><text x="275.0" y="588.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Desired</text><text x="275.0" y="601.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Consumption per</text><text x="275.0" y="613.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text><text x="480.0" y="417.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Required</text><text x="480.0" y="429.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Biomass</text><text x="489.0" y="594.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of Actual</text><text x="489.0" y="607.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Required</text><text x="489.0" y="619.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Biomass</text><text x="649.0" y="549.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of</text><text x="649.0" y="562.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage</text><text x="649.0" y="574.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Availability</text><text x="649.0" y="586.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">on Consumption</text><text x="749.0" y="649.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Consumption</text><text x="749.0" y="661.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">per Deer</text><text x="1123.0" y="597.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline</text><text x="1123.0" y="610.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fractional</text><text x="1123.0" y="622.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Growth</text><text x="1128.0" y="430.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Initial</text><text x="1128.0" y="443.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator</text><text x="1128.0" y="455.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><text x="1171.0" y="368.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fraction</text><text x="1171.0" y="381.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predators</text><text x="1171.0" y="393.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Killed per Year</text><text x="918.0" y="244.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Program Start</text><text x="918.0" y="256.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Year</text><text x="428.0" y="86.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Initial Deer</text><text x="428.0" y="98.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><text x="631.0" y="357.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density</text><text x="601.0" y="458.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Normal Deer</text><text x="601.0" y="470.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density per Acre</text><text x="772.0" y="459.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of Deer</text><text x="772.0" y="472.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density on Predator</text><text x="772.0" y="484.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Births</text><text x="787.0" y="373.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Area in</text><text x="787.0" y="386.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Thousands of</text><text x="787.0" y="398.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Acres</text><text x="689.0" y="250.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of Deer</text><text x="689.0" y="263.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density on Predator</text><text x="689.0" y="275.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Hunting Efficiency</text><text x="653.0" y="96.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline Annual</text><text x="653.0" y="108.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kills per Predator</text><text x="615.0" y="649.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="615.0" y="662.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Availability</text><text x="615.0" y="674.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">on Consumption</text><text x="807.0" y="539.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="807.0" y="552.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density on</text><text x="807.0" y="564.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Births</text><text x="558.0" y="240.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="558.0" y="253.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density on</text><text x="558.0" y="265.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Hunting</text><text x="558.0" y="277.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Efficiency</text><text x="-109.0" y="200.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#fb0207" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Historical Deer</text><text x="-109.0" y="212.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#fb0207" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">BOT</text><text x="-221.0" y="267.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Historical</text><text x="-221.0" y="279.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer BOT</text><text x="-245.0" y="220.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">&lt;Time&gt;</text><text x="-244.0" y="169.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Auxilliary Time to</text><text x="-244.0" y="181.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text></svg></div>
+  <div class="diagram"><svg xmlns="http://www.w3.org/2000/svg" class="cld" viewBox="-149 -27 1809 1021" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Stock and flow diagram of view View 1"><defs><marker id="ah0" viewBox="0 0 10 7" refX="9.4" refY="3.5" markerUnits="userSpaceOnUse" markerWidth="9.0" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,3.5 L0,7 z" fill="#000000"/></marker><marker id="ah1" viewBox="0 0 10 7" refX="9.4" refY="3.5" markerUnits="userSpaceOnUse" markerWidth="15.0" markerHeight="11.0" orient="auto-start-reverse"><path d="M0,0 L10,3.5 L0,7 z" fill="#000001"/></marker></defs><rect x="-149" y="-27" width="1809" height="1021" fill="#ffffff"/><path d="M803.7,138.3 Q785.5,229.0 697.3,119.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="709.7" y="123.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M564.0,192.2 Q632.6,207.8 690.9,120.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="690.6" y="133.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M420.7,109.0 Q399.3,142.9 472.7,177.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="459.7" y="179.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M378.5,279.1 Q361.7,232.4 450.2,220.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="440.2" y="228.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M583.0,354.0 Q507.6,384.9 425.8,328.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="438.8" y="328.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M1304.3,823.6 Q1247.9,780.3 1216.0,799.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1221.7" y="788.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M1032.8,704.3 Q1108.4,714.0 1142.3,779.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1131.1" y="773.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1160.5,831.0 Q1174.7,875.4 1110.1,902.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1117.5" y="891.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M1020.1,941.2 Q969.2,968.3 933.5,938.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="946.4" y="939.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M765.9,851.7 Q768.1,886.2 813.9,892.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="802.1" y="897.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M879.2,890.0 Q839.6,856.8 981.6,776.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="975.4" y="788.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M962.4,712.1 Q937.3,696.8 983.0,770.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="971.3" y="764.7" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M943.0,686.6 Q728.7,776.8 427.7,475.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="440.4" y="478.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M615.0,539.8 Q569.3,548.4 442.3,475.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="455.3" y="474.7" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M605.0,461.5 Q557.0,479.7 453.0,459.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="465.1" y="454.3" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M453.0,441.3 Q489.6,455.5 603.8,371.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="599.1" y="383.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M700.9,429.3 Q707.5,402.2 832.1,382.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="822.3" y="390.9" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M728.8,529.9 Q748.1,566.8 858.9,396.4" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="858.8" y="409.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M815.6,138.8 Q792.9,287.5 678.7,322.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="687.1" y="312.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M827.8,139.0 Q829.2,235.0 869.9,347.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="859.6" y="339.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M880.9,397.0 Q899.7,472.0 887.7,531.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="883.0" y="518.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M943.3,666.4 Q877.8,664.3 889.1,581.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="894.6" y="592.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M916.4,532.1 Q915.3,507.6 1001.0,516.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1091.0,525.3 Q1129.6,509.8 1137.8,579.2" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1129.6" y="569.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1160.3,628.6 Q1188.4,648.5 1158.8,682.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1160.8" y="669.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1210.0,560.9 Q1192.8,553.6 1172.3,580.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1173.5" y="567.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M994.6,388.0 Q978.9,362.7 1011.5,330.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1008.6" y="343.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M841.5,138.5 Q931.6,303.9 983.3,285.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="975.2" y="296.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1132.2,315.7 Q1131.4,308.2 1073.0,308.0" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1084.0" y="301.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">-</text><path d="M1046.8,330.4 Q1055.8,362.1 1129.6,397.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1223.1,444.2 Q1222.5,468.9 1372.0,458.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1361.5" y="465.8" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1064.4,282.4 Q1064.2,299.9 1079.1,237.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1054.6,187.1 Q1067.9,188.4 941.6,116.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="954.6" y="115.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M993.1,64.7 Q967.3,54.4 940.4,110.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="938.8" y="97.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1346.4,347.1 Q1245.9,218.6 941.8,115.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="954.4" y="112.5" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M869.7,135.2 Q2306.7,612.0 1160.8,684.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1171.4" y="677.0" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1317.2,224.0 Q1297.1,270.7 1372.5,302.6" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1429.0,362.0 Q1477.9,385.1 1379.3,307.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1519.3,307.6 Q1560.4,295.8 1380.0,304.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1469.3,536.0 Q1447.9,543.4 1379.0,461.2" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1391.5" y="465.1" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M819.0,65.9 Q813.5,77.5 819.0,89.1" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="807.9" y="82.2" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1010.1,585.0 Q998.8,576.3 1028.2,542.5" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1480.2,374.3 Q1451.4,357.1 1429.0,365.9" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1436.7" y="355.4" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1360.0,395.5 Q1321.4,414.9 1373.2,454.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="1360.2" y="453.6" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><path d="M1150.3,476.8 Q1130.7,484.8 1156.2,445.7" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M1004.4,232.3 Q1027.9,249.7 1035.8,236.3" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><path d="M925.0,731.2 Q926.1,737.8 956.8,711.8" fill="none" stroke="#000000" stroke-width="1" marker-end="url(#ah0)"/><text x="952.9" y="724.3" font-size="12" font-weight="700" text-anchor="middle" dominant-baseline="middle" fill="#000000">+</text><text x="197.0" y="823.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#4a525c" paint-order="stroke" stroke="#ffffff" stroke-width="3">BOTG</text><path d="M595.0,107.5 A7.6,7.6 0 0 1 606.3,112.2 A5.9,5.9 0 0 1 606.3,121.8 A7.6,7.6 0 0 1 595.0,126.5 A7.6,7.6 0 0 1 583.7,121.8 A5.9,5.9 0 0 1 583.7,112.2 A7.6,7.6 0 0 1 595.0,107.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M1020.0,104.5 A7.6,7.6 0 0 1 1031.3,109.2 A5.9,5.9 0 0 1 1031.3,118.8 A7.6,7.6 0 0 1 1020.0,123.5 A7.6,7.6 0 0 1 1008.7,118.8 A5.9,5.9 0 0 1 1008.7,109.2 A7.6,7.6 0 0 1 1020.0,104.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M1376.0,521.5 A7.6,7.6 0 0 1 1387.3,526.2 A5.9,5.9 0 0 1 1387.3,535.8 A7.6,7.6 0 0 1 1376.0,540.5 A7.6,7.6 0 0 1 1364.7,535.8 A5.9,5.9 0 0 1 1364.7,526.2 A7.6,7.6 0 0 1 1376.0,521.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M1519.0,230.5 A7.6,7.6 0 0 1 1530.3,235.2 A5.9,5.9 0 0 1 1530.3,244.8 A7.6,7.6 0 0 1 1519.0,249.5 A7.6,7.6 0 0 1 1507.7,244.8 A5.9,5.9 0 0 1 1507.7,235.2 A7.6,7.6 0 0 1 1519.0,230.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M985.0,836.5 A7.6,7.6 0 0 1 996.3,841.2 A5.9,5.9 0 0 1 996.3,850.8 A7.6,7.6 0 0 1 985.0,855.5 A7.6,7.6 0 0 1 973.7,850.8 A5.9,5.9 0 0 1 973.7,841.2 A7.6,7.6 0 0 1 985.0,836.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M1256.0,676.5 A7.6,7.6 0 0 1 1267.3,681.2 A5.9,5.9 0 0 1 1267.3,690.8 A7.6,7.6 0 0 1 1256.0,695.5 A7.6,7.6 0 0 1 1244.7,690.8 A5.9,5.9 0 0 1 1244.7,681.2 A7.6,7.6 0 0 1 1256.0,676.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.1"/><path d="M608.0,117.0 L770.0,117.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M608.0,117.0 L770.0,117.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M783.0,117.0 L770.0,122.0 L770.0,112.0 z" fill="#000000"/><path d="M687.5,126.5 L700.5,126.5 L687.5,107.5 L700.5,107.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="694.0" y="137.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer Net Growth</text><text x="694.0" y="149.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Rate</text><path d="M867.0,114.0 L994.0,114.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M867.0,114.0 L994.0,114.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M1007.0,114.0 L994.0,119.0 L994.0,109.0 z" fill="#000000"/><path d="M931.5,123.5 L944.5,123.5 L931.5,104.5 L944.5,104.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="938.0" y="134.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer Predation</text><path d="M1376.0,521.5 L1376.0,406.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M1376.0,521.5 L1376.0,406.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M1376.0,393.0 L1381.0,406.0 L1371.0,406.0 z" fill="#000000"/><path d="M1385.5,464.5 L1385.5,451.5 L1366.5,464.5 L1366.5,451.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="1376.0" y="478.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Net Predator Growth</text><text x="1376.0" y="490.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Rate</text><path d="M1376.0,349.0 L1376.0,305.0 L1519.0,305.0 L1519.0,262.5" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M1376.0,349.0 L1376.0,305.0 L1519.0,305.0 L1519.0,262.5" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M1519.0,249.5 L1524.0,262.5 L1514.0,262.5 z" fill="#000000"/><path d="M1369.5,314.5 L1382.5,314.5 L1369.5,295.5 L1382.5,295.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="1376.0" y="325.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Predators Hunted</text><path d="M985.0,836.5 L985.0,723.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M985.0,836.5 L985.0,723.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M985.0,710.0 L990.0,723.0 L980.0,723.0 z" fill="#000000"/><path d="M994.5,780.5 L994.5,767.5 L975.5,780.5 L975.5,767.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="985.0" y="794.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Net Annual Forage</text><text x="985.0" y="806.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Growth</text><path d="M1030.0,686.0 L1230.0,686.0" fill="none" stroke="#000000" stroke-width="7" stroke-linejoin="round"/><path d="M1030.0,686.0 L1230.0,686.0" fill="none" stroke="#ffffff" stroke-width="3.4" stroke-linejoin="round"/><path d="M1243.0,686.0 L1230.0,691.0 L1230.0,681.0 z" fill="#000000"/><path d="M1150.5,695.5 L1163.5,695.5 L1150.5,676.5 L1163.5,676.5 z" fill="#ffffff" stroke="#000000" stroke-width="1.3"/><text x="1157.0" y="706.0" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Forage Consumed per</text><text x="1157.0" y="718.1" font-size="10.5" text-anchor="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3">Deer</text><text x="1271.0" y="551.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">&lt;Desired Consumption</text><text x="1271.0" y="563.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">per Deer&gt;</text><rect x="783.0" y="92.0" width="84.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="825.0" y="108.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text><text x="825.0" y="120.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><rect x="1326.0" y="349.0" width="100.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="1376.0" y="365.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator</text><text x="1376.0" y="377.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><rect x="946.0" y="666.0" width="84.0" height="44.0" fill="#ffffff" stroke="#000000" stroke-width="1.4"/><text x="988.0" y="688.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Biomass</text><text x="876.0" y="909.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Biomass</text><text x="876.0" y="921.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Growth Fraction</text><text x="754.0" y="814.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline</text><text x="754.0" y="827.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Biomass Growth</text><text x="754.0" y="839.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fraction</text><text x="1076.0" y="920.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Adequacy</text><text x="1076.0" y="932.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">for Forage</text><text x="1164.0" y="786.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of Forage</text><text x="1164.0" y="799.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Forage</text><text x="1164.0" y="811.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying</text><text x="1164.0" y="823.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Capacity</text><text x="1347.0" y="841.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Forage</text><text x="1347.0" y="853.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="419.0" y="78.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline Fractional</text><text x="419.0" y="90.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Growth Rate</text><text x="507.0" y="195.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Fractional</text><text x="507.0" y="207.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Net Growth Rate</text><text x="372.0" y="292.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Adequacy</text><text x="372.0" y="305.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Support the</text><text x="372.0" y="317.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Population</text><text x="643.0" y="334.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of the Deer</text><text x="643.0" y="347.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population to</text><text x="643.0" y="359.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="395.0" y="446.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Deer</text><text x="395.0" y="458.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Carrying Capacity</text><text x="667.0" y="447.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Carrying</text><text x="667.0" y="459.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Capacity in Years</text><text x="672.0" y="537.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Desired</text><text x="672.0" y="550.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Consumption per</text><text x="672.0" y="562.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text><text x="877.0" y="366.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Required</text><text x="877.0" y="378.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Biomass</text><text x="886.0" y="543.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Ratio of Actual</text><text x="886.0" y="556.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">to Required</text><text x="886.0" y="568.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Biomass</text><text x="1046.0" y="498.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of</text><text x="1046.0" y="511.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage</text><text x="1046.0" y="523.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Availability</text><text x="1046.0" y="535.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">on Consumption</text><text x="1146.0" y="598.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Actual Consumption</text><text x="1146.0" y="610.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">per Deer</text><text x="1520.0" y="546.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline</text><text x="1520.0" y="559.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fractional</text><text x="1520.0" y="571.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Growth</text><text x="1525.0" y="379.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Initial</text><text x="1525.0" y="392.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator</text><text x="1525.0" y="404.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><text x="1568.0" y="317.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Fraction</text><text x="1568.0" y="330.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predators</text><text x="1568.0" y="342.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Killed per Year</text><text x="1315.0" y="193.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Program Start</text><text x="1315.0" y="205.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Year</text><text x="825.0" y="35.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Initial Deer</text><text x="825.0" y="47.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Population</text><text x="1028.0" y="306.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density</text><text x="998.0" y="407.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Normal Deer</text><text x="998.0" y="419.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density per Acre</text><text x="1169.0" y="408.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of Deer</text><text x="1169.0" y="421.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density on Predator</text><text x="1169.0" y="433.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Births</text><text x="1184.0" y="322.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kaibab Area in</text><text x="1184.0" y="335.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Thousands of</text><text x="1184.0" y="347.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Acres</text><text x="1086.0" y="199.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Effect of Deer</text><text x="1086.0" y="212.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Density on Predator</text><text x="1086.0" y="224.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Hunting Efficiency</text><text x="1050.0" y="45.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Baseline Annual</text><text x="1050.0" y="57.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Kills per Predator</text><text x="1012.0" y="598.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="1012.0" y="611.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Forage Availability</text><text x="1012.0" y="623.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">on Consumption</text><text x="1204.0" y="488.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="1204.0" y="501.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density on</text><text x="1204.0" y="513.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Births</text><text x="955.0" y="189.9" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Effect of</text><text x="955.0" y="202.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer Density on</text><text x="955.0" y="214.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Predator Hunting</text><text x="955.0" y="226.1" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Efficiency</text><text x="288.0" y="149.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#fb0207" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Historical Deer</text><text x="288.0" y="161.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#fb0207" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">BOT</text><text x="176.0" y="216.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Lookup Historical</text><text x="176.0" y="228.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer BOT</text><text x="152.0" y="169.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#9aa3ad" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">&lt;Time&gt;</text><text x="153.0" y="118.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Auxilliary Time to</text><text x="153.0" y="130.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Deer</text><text x="866.0" y="736.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Initial Forage</text><text x="866.0" y="748.0" font-size="10.5" text-anchor="middle" dominant-baseline="middle" fill="#000000" paint-order="stroke" stroke="#ffffff" stroke-width="3.2">Biomass</text></svg></div>
 
 
 
@@ -366,8 +370,10 @@
     <td>Drawn on a diagram but never formulated. Vensim stores these as A FUNCTION OF(...), which records the inputs and their polarity but no formula.</td>
   </tr>
   <tr>
-    <td>Undocumented variables</td>
-    <td class="num">0</td>
+    <td><a href="#chk-undocumented">Undocumented variables</a>
+</td>
+    <td class="num">        <span class="warn">1</span>
+</td>
     <td>Variables with no comment, or with a placeholder comment. The single strongest predictor of a model no one else can reuse.</td>
   </tr>
   <tr>
@@ -384,13 +390,15 @@
   <tr>
     <td><a href="#chk-unused">Unused variables</a>
 </td>
-    <td class="num">        <span class="warn">1</span>
+    <td class="num">        <span class="warn">3</span>
 </td>
     <td>Nothing in the model reads these. Either outputs of interest or leftovers from an earlier version.</td>
   </tr>
   <tr>
-    <td>Isolated variables</td>
-    <td class="num">0</td>
+    <td><a href="#chk-orphan">Isolated variables</a>
+</td>
+    <td class="num">        <span class="warn">3</span>
+</td>
     <td>Neither inputs nor outputs: disconnected from the causal structure entirely.</td>
   </tr>
   <tr>
@@ -421,10 +429,8 @@
     <td>Each of these carries hidden state beyond the explicit stocks.</td>
   </tr>
   <tr>
-    <td><a href="#chk-embedded_data">Equations with embedded numbers</a>
-</td>
-    <td class="num">        <span class="warn">1</span>
-</td>
+    <td>Equations with embedded numbers</td>
+    <td class="num">0</td>
     <td>Numeric literals other than 0 and 1 written directly into an equation rather than named as a constant.</td>
   </tr>
   <tr>
@@ -433,10 +439,8 @@
     <td>A lookup table written into the equation instead of defined as its own variable, which keeps it out of the variable list.</td>
   </tr>
   <tr>
-    <td><a href="#chk-time_as_variable">Equations using Time</a>
-</td>
-    <td class="num">        <span class="warn">1</span>
-</td>
+    <td>Equations using Time</td>
+    <td class="num">0</td>
     <td>Referring to simulation time directly usually encodes a scenario into the structure.</td>
   </tr>
   <tr>
@@ -505,8 +509,8 @@
 <p class="sub">
   Each equation is evaluated dimensionally from the declared units of its
   inputs and compared with what the variable itself declares.
-  42 of 42 variables declare
-  units. 18 are constants, whose declared units are
+  43 of 43 variables declare
+  units. 20 are constants, whose declared units are
   definitional and so are not cross-checked.
   Unit names are matched case-insensitively and de-pluralised, so
   <code>Vehicles</code>, <code>vehicles</code> and <code>Vehicle</code> are one
@@ -522,6 +526,125 @@
 </p>
 
 <h2 id="dynamics">Behaviour and loop dominance</h2>
+<div class="note">
+  <strong>Inputs supplied to the run.</strong>
+  5 files
+  contributed 15 values,
+  applied in the order given, so a later file overrides an earlier one. The
+  behaviour below describes the model as run with these, not the numbers
+  written into the <code>.mdl</code>.
+  <table>
+    <tr><th>File</th><th>Contributed</th></tr>
+    <tr>
+      <td><code>basic_parameters.cin</code></td>
+      <td>
+        11 values
+      </td>
+    </tr>
+    <tr>
+      <td><code>effect_deer_density_on_predator_births.cin</code></td>
+      <td>
+        1 value
+      </td>
+    </tr>
+    <tr>
+      <td><code>effect_deer_density_on_predator_hunting_efficiency.cin</code></td>
+      <td>
+        1 value
+      </td>
+    </tr>
+    <tr>
+      <td><code>effect_forage_availability_on_consumption.cin</code></td>
+      <td>
+        1 value
+      </td>
+    </tr>
+    <tr>
+      <td><code>historical_deer_botg.csv</code></td>
+      <td>
+        1 value
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr><th>Variable</th><th>Value</th><th>From</th></tr>
+    <tr>
+      <td>Baseline Annual Kills per Predator</td>
+      <td><code>40</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Baseline Biomass Growth Fraction</td>
+      <td><code>0.1</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Baseline Fractional Deer Growth Rate</td>
+      <td><code>1</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Baseline Fractional Predator Growth</td>
+      <td><code>0.5</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Deer Carrying Capacity in Years</td>
+      <td><code>2</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Desired Consumption per Deer</td>
+      <td><code>0.75</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Fraction Predators Killed per Year</td>
+      <td><code>0</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Historical Deer BOT</td>
+      <td><code>time series, 21 points</code></td>
+      <td><code>historical_deer_botg.csv</code></td>
+    </tr>
+    <tr>
+      <td>Kaibab Area in Thousands of Acres</td>
+      <td><code>800</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Kaibab Forage Carrying Capacity</td>
+      <td><code>350000</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Lookup Effect of Deer Density on Predator Births</td>
+      <td><code>lookup with 11 points</code></td>
+      <td><code>effect_deer_density_on_predator_births.cin</code></td>
+    </tr>
+    <tr>
+      <td>Lookup Effect of Deer Density on Predator Hunting Efficiency</td>
+      <td><code>lookup with 11 points</code></td>
+      <td><code>effect_deer_density_on_predator_hunting_efficiency.cin</code></td>
+    </tr>
+    <tr>
+      <td>Lookup Effect of Forage Availability on Consumption</td>
+      <td><code>lookup with 11 points</code></td>
+      <td><code>effect_forage_availability_on_consumption.cin</code></td>
+    </tr>
+    <tr>
+      <td>Normal Deer Density per Acre</td>
+      <td><code>5</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+    <tr>
+      <td>Program Start Year</td>
+      <td><code>1907</code></td>
+      <td><code>basic_parameters.cin</code></td>
+    </tr>
+  </table>
+</div>
 <p class="sub">
   The model was linearised at 60 points
   along its own run, integrated with runge-kutta 2, midpoint rule.
@@ -632,43 +755,43 @@
     <td class="num">5</td>
     <td class="num">4</td>
     <td class="unk">Undetermined</td>
-    <td>Deer Population → Deer Density → Effect of Deer Density on Predator Hunting Efficiency → Deer Predation → Deer Population</td>
+    <td>Deer Predation → Deer Population → Deer Density → Effect of Deer Density on Predator Hunting Efficiency → Deer Predation</td>
   </tr>
   <tr>
     <td class="num">6</td>
     <td class="num">5</td>
     <td class="neg">Balancing</td>
-    <td>Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate</td>
+    <td>Actual Biomass Growth Fraction → Net Annual Forage Growth → Forage Biomass → Ratio of Forage to Forage Carrying Capacity → Kaibab Adequacy for Forage → Actual Biomass Growth Fraction</td>
   </tr>
   <tr>
     <td class="num">7</td>
     <td class="num">5</td>
     <td class="unk">Undetermined</td>
-    <td>Forage Consumed per Deer → Forage Biomass → Ratio of Actual to Required Biomass → Effect of Forage Availability on Consumption → Actual Consumption per Deer → Forage Consumed per Deer</td>
+    <td>Actual Consumption per Deer → Forage Consumed per Deer → Forage Biomass → Ratio of Actual to Required Biomass → Effect of Forage Availability on Consumption → Actual Consumption per Deer</td>
   </tr>
   <tr>
     <td class="num">8</td>
     <td class="num">5</td>
     <td class="neg">Balancing</td>
-    <td>Net Annual Forage Growth → Forage Biomass → Ratio of Forage to Forage Carrying Capacity → Kaibab Adequacy for Forage → Actual Biomass Growth Fraction → Net Annual Forage Growth</td>
+    <td>Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population</td>
   </tr>
   <tr>
     <td class="num">9</td>
     <td class="num">6</td>
     <td class="unk">Undetermined</td>
-    <td>Deer Population → Deer Density → Effect of Deer Density on Predator Births → Net Predator Growth Rate → Predator Population → Deer Predation → Deer Population</td>
+    <td>Predator Population → Deer Predation → Deer Population → Deer Density → Effect of Deer Density on Predator Births → Net Predator Growth Rate → Predator Population</td>
   </tr>
   <tr>
     <td class="num">10</td>
     <td class="num">8</td>
     <td class="neg">Balancing</td>
-    <td>Forage Consumed per Deer → Forage Biomass → Kaibab Deer Carrying Capacity → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Forage Consumed per Deer</td>
+    <td>Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Forage Consumed per Deer → Forage Biomass → Kaibab Deer Carrying Capacity → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population</td>
   </tr>
   <tr>
     <td class="num">11</td>
     <td class="num">12</td>
     <td class="unk">Undetermined</td>
-    <td>Forage Consumed per Deer → Forage Biomass → Kaibab Deer Carrying Capacity → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Required Forage Biomass → Ratio of Actual to Required Biomass → Effect of Forage Availability on Consumption → Actual Consumption per Deer → Forage Consumed per Deer</td>
+    <td>Actual Consumption per Deer → Forage Consumed per Deer → Forage Biomass → Kaibab Deer Carrying Capacity → Ratio of the Deer Population to Carrying Capacity → Kaibab Adequacy to Support the Deer Population → Actual Fractional Net Growth Rate → Deer Net Growth Rate → Deer Population → Required Forage Biomass → Ratio of Actual to Required Biomass → Effect of Forage Availability on Consumption → Actual Consumption per Deer</td>
   </tr>
 </table></div>
 
@@ -687,13 +810,13 @@
     <td><a href="#v-deer_population">Deer Population</a></td>
     <td>Stock</td>
     <td class="num">5</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-forage_biomass">Forage Biomass</a></td>
     <td>Stock</td>
     <td class="num">4</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-desired_consumption_per_deer">Desired Consumption per Deer</a></td>
@@ -705,7 +828,7 @@
     <td><a href="#v-predator_population">Predator Population</a></td>
     <td>Stock</td>
     <td class="num">3</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-deer_carrying_capacity_in_years">Deer Carrying Capacity in Years</a></td>
@@ -717,25 +840,25 @@
     <td><a href="#v-deer_density">Deer Density</a></td>
     <td>Auxiliary</td>
     <td class="num">2</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-actual_biomass_growth_fraction">Actual Biomass Growth Fraction</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-actual_consumption_per_deer">Actual Consumption per Deer</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-actual_fractional_net_growth_rate">Actual Fractional Net Growth Rate</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-baseline_annual_kills_per_predator">Baseline Annual Kills per Predator</a></td>
@@ -765,37 +888,37 @@
     <td><a href="#v-deer_net_growth_rate">Deer Net Growth Rate</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-deer_predation">Deer Predation</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-effect_of_deer_density_on_predator_births">Effect of Deer Density on Predator Births</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-effect_of_deer_density_on_predator_hunting_efficiency">Effect of Deer Density on Predator Hunting Efficiency</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-effect_of_forage_availability_on_consumption">Effect of Forage Availability on Consumption</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-forage_consumed_per_deer">Forage Consumed per Deer</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-fraction_predators_killed_per_year">Fraction Predators Killed per Year</a></td>
@@ -810,6 +933,12 @@
     <td class="num">0</td><td class="num">0</td>
   </tr>
   <tr>
+    <td><a href="#v-initial_forage_biomass">Initial Forage Biomass</a></td>
+    <td>Constant</td>
+    <td class="num">1</td><td class="num">23</td>
+    <td class="num">0</td><td class="num">0</td>
+  </tr>
+  <tr>
     <td><a href="#v-initial_predator_population">Initial Predator Population</a></td>
     <td>Constant</td>
     <td class="num">1</td><td class="num">23</td>
@@ -819,13 +948,13 @@
     <td><a href="#v-kaibab_adequacy_for_forage">Kaibab Adequacy for Forage</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">1</td><td class="num">39</td>
+    <td class="num">1</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-kaibab_adequacy_to_support_the_deer_population">Kaibab Adequacy to Support the Deer Population</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">1</td><td class="num">39</td>
+    <td class="num">1</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-kaibab_area_in_thousands_of_acres">Kaibab Area in Thousands of Acres</a></td>
@@ -837,7 +966,7 @@
     <td><a href="#v-kaibab_deer_carrying_capacity">Kaibab Deer Carrying Capacity</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-kaibab_forage_carrying_capacity">Kaibab Forage Carrying Capacity</a></td>
@@ -867,13 +996,13 @@
     <td><a href="#v-net_annual_forage_growth">Net Annual Forage Growth</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-net_predator_growth_rate">Net Predator Growth Rate</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-normal_deer_density_per_acre">Normal Deer Density per Acre</a></td>
@@ -885,7 +1014,7 @@
     <td><a href="#v-predators_hunted">Predators Hunted</a></td>
     <td>Flow</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-program_start_year">Program Start Year</a></td>
@@ -897,39 +1026,33 @@
     <td><a href="#v-ratio_of_actual_to_required_biomass">Ratio of Actual to Required Biomass</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-ratio_of_forage_to_forage_carrying_capacity">Ratio of Forage to Forage Carrying Capacity</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-ratio_of_the_deer_population_to_carrying_capacity">Ratio of the Deer Population to Carrying Capacity</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">2</td><td class="num">39</td>
+    <td class="num">2</td><td class="num">40</td>
   </tr>
   <tr>
     <td><a href="#v-required_forage_biomass">Required Forage Biomass</a></td>
     <td>Auxiliary</td>
     <td class="num">1</td><td class="num">23</td>
-    <td class="num">3</td><td class="num">39</td>
-  </tr>
-  <tr>
-    <td><a href="#v-auxilliary_time_to_deer">Auxilliary Time to Deer</a></td>
-    <td>Constant</td>
-    <td class="num">1</td><td class="num">1</td>
-    <td class="num">0</td><td class="num">0</td>
+    <td class="num">3</td><td class="num">40</td>
   </tr>
 </table></div>
 
 <h2 id="links">Causal links</h2>
 <p class="sub">
-  54 links.
-  31 positive, 12 negative,
-  11 indeterminate. Polarity is the sign of the partial
+  53 links.
+  32 positive, 12 negative,
+  9 indeterminate. Polarity is the sign of the partial
   derivative read off the equation, assuming model quantities are
   non-negative. Links whose sign genuinely depends on run-time values are
   reported as indeterminate rather than guessed.
@@ -952,11 +1075,6 @@
     <td class="pos">+</td>
   </tr>
   <tr>
-    <td><a href="#v-auxilliary_time_to_deer">Auxilliary Time to Deer</a></td>
-    <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
-    <td class="unk">?</td>
-  </tr>
-  <tr>
     <td><a href="#v-baseline_annual_kills_per_predator">Baseline Annual Kills per Predator</a></td>
     <td><a href="#v-deer_predation">Deer Predation</a></td>
     <td class="pos">+</td>
@@ -1097,6 +1215,11 @@
     <td class="pos">+</td>
   </tr>
   <tr>
+    <td><a href="#v-initial_forage_biomass">Initial Forage Biomass</a></td>
+    <td><a href="#v-forage_biomass">Forage Biomass</a></td>
+    <td class="pos">+</td>
+  </tr>
+  <tr>
     <td><a href="#v-initial_predator_population">Initial Predator Population</a></td>
     <td><a href="#v-predator_population">Predator Population</a></td>
     <td class="pos">+</td>
@@ -1139,11 +1262,6 @@
   <tr>
     <td><a href="#v-lookup_effect_of_forage_availability_on_consumption">Lookup Effect of Forage Availability on Consumption</a></td>
     <td><a href="#v-effect_of_forage_availability_on_consumption">Effect of Forage Availability on Consumption</a></td>
-    <td class="unk">?</td>
-  </tr>
-  <tr>
-    <td><a href="#v-lookup_historical_deer_bot">Lookup Historical Deer BOT</a></td>
-    <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
     <td class="unk">?</td>
   </tr>
   <tr>
@@ -1209,6 +1327,18 @@
 </table></div>
 
 
+<h2 id="chk-undocumented">Undocumented variables
+  <span class="pill">1</span></h2>
+<p class="sub">Variables with no comment, or with a placeholder comment. The single strongest predictor of a model no one else can reuse.</p>
+<div class="scroll"><table>
+  <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
+  <tr>
+    <td><a href="#v-initial_forage_biomass">Initial Forage Biomass</a></td>
+    <td>Constant</td>
+    <td>Metric Tons</td>
+    <td>View 1</td>
+  </tr>
+</table></div>
 <h2 id="chk-dimensionless">Dimensionless variables
   <span class="pill">12</span></h2>
 <p class="sub">Declared Dmnl. Legitimate for ratios and multipliers; worth a look when a physical quantity ends up here.</p>
@@ -1288,13 +1418,49 @@
   </tr>
 </table></div>
 <h2 id="chk-unused">Unused variables
-  <span class="pill">1</span></h2>
+  <span class="pill">3</span></h2>
 <p class="sub">Nothing in the model reads these. Either outputs of interest or leftovers from an earlier version.</p>
 <div class="scroll"><table>
   <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
   <tr>
+    <td><a href="#v-auxilliary_time_to_deer">Auxilliary Time to Deer</a></td>
+    <td>Constant</td>
+    <td>Deer/Year</td>
+    <td>View 1</td>
+  </tr>
+  <tr>
     <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
-    <td>Auxiliary</td>
+    <td>Data</td>
+    <td>Deer</td>
+    <td>View 1</td>
+  </tr>
+  <tr>
+    <td><a href="#v-lookup_historical_deer_bot">Lookup Historical Deer BOT</a></td>
+    <td>Lookup</td>
+    <td>Deer</td>
+    <td>View 1</td>
+  </tr>
+</table></div>
+<h2 id="chk-orphan">Isolated variables
+  <span class="pill">3</span></h2>
+<p class="sub">Neither inputs nor outputs: disconnected from the causal structure entirely.</p>
+<div class="scroll"><table>
+  <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
+  <tr>
+    <td><a href="#v-auxilliary_time_to_deer">Auxilliary Time to Deer</a></td>
+    <td>Constant</td>
+    <td>Deer/Year</td>
+    <td>View 1</td>
+  </tr>
+  <tr>
+    <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
+    <td>Data</td>
+    <td>Deer</td>
+    <td>View 1</td>
+  </tr>
+  <tr>
+    <td><a href="#v-lookup_historical_deer_bot">Lookup Historical Deer BOT</a></td>
+    <td>Lookup</td>
     <td>Deer</td>
     <td>View 1</td>
   </tr>
@@ -1308,30 +1474,6 @@
     <td><a href="#v-predators_hunted">Predators Hunted</a></td>
     <td>Flow</td>
     <td>Predators/Year</td>
-    <td>View 1</td>
-  </tr>
-</table></div>
-<h2 id="chk-embedded_data">Equations with embedded numbers
-  <span class="pill">1</span></h2>
-<p class="sub">Numeric literals other than 0 and 1 written directly into an equation rather than named as a constant.</p>
-<div class="scroll"><table>
-  <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
-  <tr>
-    <td><a href="#v-forage_biomass">Forage Biomass</a></td>
-    <td>Stock</td>
-    <td>Metric Tons</td>
-    <td>View 1</td>
-  </tr>
-</table></div>
-<h2 id="chk-time_as_variable">Equations using Time
-  <span class="pill">1</span></h2>
-<p class="sub">Referring to simulation time directly usually encodes a scenario into the structure.</p>
-<div class="scroll"><table>
-  <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
-  <tr>
-    <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
-    <td>Auxiliary</td>
-    <td>Deer</td>
     <td>View 1</td>
   </tr>
 </table></div>
@@ -1384,7 +1526,7 @@
   <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
   <tr>
     <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
-    <td>Auxiliary</td>
+    <td>Data</td>
     <td>Deer</td>
     <td>View 1</td>
   </tr>
@@ -1462,7 +1604,7 @@
   <tr><th>Variable</th><th>Type</th><th>Units</th><th>Views</th></tr>
   <tr>
     <td><a href="#v-historical_deer_bot">Historical Deer BOT</a></td>
-    <td>Auxiliary</td>
+    <td>Data</td>
     <td>Deer</td>
     <td>View 1</td>
   </tr>
@@ -1574,9 +1716,7 @@
 <p class="meta">Nothing. This is an exogenous input.</p>    </div>
     <div>
       <strong style="font-size:.86rem">Used by</strong>
-      <ul class="lst">        <li><a href="#v-historical_deer_bot">Historical Deer BOT</a></li>
-</ul>
-    </div>
+<p class="meta">Nothing reads this variable.</p>    </div>
   </div>
 </div>
 <div class="var" id="v-baseline_annual_kills_per_predator">
@@ -1586,7 +1726,13 @@
 <span class="pill">Deer / (Predators * Year)</span>    <span class="pill">range 20.0 …
       60.0</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Baseline Annual Kills per Predator = 40</code>  <p>The average number of deer killed per predator in a given year.
+<code class="eq">Baseline Annual Kills per Predator = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>40</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>The average number of deer killed per predator in a given year.
 </p>
 
 
@@ -1608,7 +1754,13 @@
 <span class="pill">1/Year</span>    <span class="pill">range 0.05 …
       0.25</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Baseline Biomass Growth Fraction = 0.1</code>  <p>Fractional net regrowth rate of forage when the forest is far below its own carrying capacity.
+<code class="eq">Baseline Biomass Growth Fraction = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>0.1</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Fractional net regrowth rate of forage when the forest is far below its own carrying capacity.
 </p>
 
 
@@ -1630,7 +1782,13 @@
 <span class="pill">1/Year</span>    <span class="pill">range 0.5 …
       1.5</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Baseline Fractional Deer Growth Rate = 1</code>  <p>Fractional net growth rate of the deer herd when forage is abundant.
+<code class="eq">Baseline Fractional Deer Growth Rate = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>1</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Fractional net growth rate of the deer herd when forage is abundant.
 </p>
 
 
@@ -1652,7 +1810,13 @@
 <span class="pill">1/Year</span>    <span class="pill">range 0.5 …
       1.5</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Baseline Fractional Predator Growth = 0.5</code>  <p>Fraction by which the predator population grows each year when deer are abundant.
+<code class="eq">Baseline Fractional Predator Growth = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>0.5</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Fraction by which the predator population grows each year when deer are abundant.
 </p>
 
 
@@ -1674,7 +1838,13 @@
 <span class="pill">Year</span>    <span class="pill">range 1.0 …
       7.0</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Deer Carrying Capacity in Years = 2</code>  <p>Number of years of forage needed to sustain the deer population.
+<code class="eq">Deer Carrying Capacity in Years = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>2</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Number of years of forage needed to sustain the deer population.
 </p>
 
 
@@ -1820,7 +1990,13 @@
 <span class="pill">Metric Tons / (Deer * Year)</span>    <span class="pill">range 0.4 …
       0.8</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Desired Consumption per Deer = 0.75</code>  <p>The amount of forage consumed by a single deer in a year, when abundant forage is available.
+<code class="eq">Desired Consumption per Deer = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>0.75</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>The amount of forage consumed by a single deer in a year, when abundant forage is available.
 </p>
 
 
@@ -1927,7 +2103,7 @@
 <span class="pill">Metric Tons</span><span class="pill">View 1</span>    <span class="pill">in 5 loops</span>
   </div>
 
-<code class="eq">Forage Biomass = INTEG( Net Annual Forage Growth - Forage Consumed per Deer , 317000)</code>  <p>Forage available for deer to eat
+<code class="eq">Forage Biomass = INTEG( Net Annual Forage Growth - Forage Consumed per Deer , Initial Forage Biomass )</code>  <p>Forage available for deer to eat
 </p>
 
   <img class="thumb" src="data:image/png;base64,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" alt="Baseline behaviour of Forage Biomass">
@@ -1937,6 +2113,8 @@
       <strong style="font-size:.86rem">Depends on</strong>
       <ul class="lst">        <li><a href="#v-forage_consumed_per_deer">Forage Consumed per Deer</a>
             <span class="neg">-</span></li>
+        <li><a href="#v-initial_forage_biomass">Initial Forage Biomass</a>
+            <span class="pos">+</span></li>
         <li><a href="#v-net_annual_forage_growth">Net Annual Forage Growth</a>
             <span class="pos">+</span></li>
 </ul>
@@ -1986,7 +2164,13 @@
 <span class="pill">1/Year</span>    <span class="pill">range 0.0 …
       0.5</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Fraction Predators Killed per Year = 0</code>  <p>Fraction of predators killed each year.
+<code class="eq">Fraction Predators Killed per Year = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>0</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Fraction of predators killed each year.
 </p>
 
 
@@ -2004,10 +2188,16 @@
 <div class="var" id="v-historical_deer_bot">
   <h4>Historical Deer BOT</h4>
   <div class="meta">
-    <span class="pill">Auxiliary</span>
+    <span class="pill">Data</span>
 <span class="pill">Deer</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Historical Deer BOT = Lookup Historical Deer BOT ( Time * Auxilliary Time to Deer )</code>  <p>A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record.
+<code class="eq">Historical Deer BOT = 0</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>time series, 21 points</code>
+    from <code>historical_deer_botg.csv</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record.
 </p>
 
   <img class="thumb" src="data:image/png;base64,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" alt="Baseline behaviour of Historical Deer BOT">
@@ -2015,14 +2205,7 @@
   <div class="cols">
     <div>
       <strong style="font-size:.86rem">Depends on</strong>
-      <ul class="lst">        <li><a href="#v-auxilliary_time_to_deer">Auxilliary Time to Deer</a>
-            <span class="unk">?</span></li>
-        <li><a href="#v-lookup_historical_deer_bot">Lookup Historical Deer BOT</a>
-            <span class="unk">?</span></li>
-        <li><a href="#v-time">Time</a>
-            <span class="unk">?</span></li>
-</ul>
-    </div>
+<p class="meta">Nothing. This is an exogenous input.</p>    </div>
     <div>
       <strong style="font-size:.86rem">Used by</strong>
 <p class="meta">Nothing reads this variable.</p>    </div>
@@ -2034,7 +2217,7 @@
     <span class="pill">Constant</span>
 <span class="pill">Deer</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Initial Deer Population = 4000</code>  <p>Exogenous variable used to set (and change) the initial size of the Deer Population.
+<code class="eq">Initial Deer Population = GET XLS CONSTANTS('config/parameters/initial_stock_parameters.xlsx' , 'Kaibab Variables', 'C7')</code>  <p>Exogenous variable used to set (and change) the initial size of the Deer Population.
 </p>
 
 
@@ -2049,6 +2232,27 @@
     </div>
   </div>
 </div>
+<div class="var" id="v-initial_forage_biomass">
+  <h4>Initial Forage Biomass</h4>
+  <div class="meta">
+    <span class="pill">Constant</span>
+<span class="pill">Metric Tons</span><span class="pill">View 1</span>  </div>
+
+<code class="eq">Initial Forage Biomass = GET XLS CONSTANTS('config/parameters/initial_stock_parameters.xlsx' , 'Kaibab Variables', 'C9')</code>  <p>
+<em class="unk">No documentation.</em></p>
+
+
+  <div class="cols">
+    <div>
+      <strong style="font-size:.86rem">Depends on</strong>
+<p class="meta">Nothing. This is an exogenous input.</p>    </div>
+    <div>
+      <strong style="font-size:.86rem">Used by</strong>
+      <ul class="lst">        <li><a href="#v-forage_biomass">Forage Biomass</a></li>
+</ul>
+    </div>
+  </div>
+</div>
 <div class="var" id="v-initial_predator_population">
   <h4>Initial Predator Population</h4>
   <div class="meta">
@@ -2056,7 +2260,7 @@
 <span class="pill">Predators</span>    <span class="pill">range 20.0 …
       130.0</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Initial Predator Population = 100</code>  <p>Used to set the initial size of the Predator Population. Notice that this is different from the original predator-prey model you built.
+<code class="eq">Initial Predator Population = GET XLS CONSTANTS('config/parameters/initial_stock_parameters.xlsx' , 'Kaibab Variables', 'C11')</code>  <p>Used to set the initial size of the Predator Population. Notice that this is different from the original predator-prey model you built.
 </p>
 
 
@@ -2129,7 +2333,13 @@
     <span class="pill">Constant</span>
 <span class="pill">Thousands of Acres</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Kaibab Area in Thousands of Acres = 800</code>  <p>Land area of the Kaibab Plateau. This is approximately 800,000 acres. We are measuring this in thousands of acres, which is why we use 800 when setting the value.
+<code class="eq">Kaibab Area in Thousands of Acres = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>800</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Land area of the Kaibab Plateau. This is approximately 800,000 acres. We are measuring this in thousands of acres, which is why we use 800 when setting the value.
 </p>
 
 
@@ -2181,7 +2391,13 @@
 <span class="pill">Metric Tons</span>    <span class="pill">range 200000.0 …
       600000.0</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Kaibab Forage Carrying Capacity = 350000</code>  <p>Amount of forage biomass that the Kaibab can support on an ongoing basis.
+<code class="eq">Kaibab Forage Carrying Capacity = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>350000</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Amount of forage biomass that the Kaibab can support on an ongoing basis.
 </p>
 
 
@@ -2202,7 +2418,14 @@
     <span class="pill">Lookup</span>
 <span class="pill">dmnl</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Lookup Effect of Deer Density on Predator Births = ( [(0,-1)-(2,1)],(0,-1),(0.2,-0.95),(0.4,-0.9),(0.6,-0.8),(0.8,-0.5),(1,0), (1.2,0.5),(1.4,0.8),(1.6,0.9),(1.8,0.95),(2,1) )</code>  <p>Lookup for: Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more.
+<code class="eq">Lookup Effect of Deer Density on Predator Births = ( [(0,0)-(10,10)],(0,0),(1,0) )</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>lookup with 11 points</code>
+    from <code>effect_deer_density_on_predator_births.cin</code>.
+    The equation above is the placeholder the <code>.mdl</code> declares
+    (2 points).
+    The table plotted below is the one the run used.
+  </p>
+  <p>Lookup for: Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more.
 </p>
 
   <img class="thumb" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOcAAAClCAYAAACnZOpHAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjExLjEsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvctoD+AAAAAlwSFlzAAAQ6wAAEOsBUJTofAAAGetJREFUeJztnQlYlOXax/8w7IuCoICsiqIoctzFNemUHpeOWx3zWN+x9LTY6VNTS8vyVF/1lVqWe2amlZ38VNzKMrMuLUhISERxQWWRRRRlkx3e77qfcUYGhm2Eed+ZuX/XNdf7vDMPcM/D/OfZn7+VJEkSGIZRHNZyB8AwjH5YnAyjUFicDKNQZBVnVVUVrl69Kq4MwyhInDk5OfD39xfXxsjPz4cpwfFy+bbGZ8IkmrWmVrNyvFy+rfGZsGnxTwCIj4/H0aNHRXrBggVQqVR68yUmJiI2NhaRkZEIDg425E8xjMViUM15+/Zt0RR96623UFlZqTdPTEwMJk6cKK6jR4/G5cuX7zVWhjFJbhSWITG1QFzbXJwjR47EypUr4eHh0WCeDRs2YO3atdiyZQsWL16Mzz77zJA/xTAmzf8dv4Ih8w/gybUnEbHgAPZGp7Vts7Y5XLx4EQMHDhTpAQMGYN26ddrXCgsLxSM7O7ut/jzDGJ3c/FIkZxQgOSMfyen5SEq7hUvZRdrXq6slLNoSixFhXvBs5yCfOGtqamBlZSXS1tbW4l7D+++/j9dff117f/PmTTg4NBxsQUEBTAmO1zzK92ZRBa7mlcLPwxEdXO20z1dW1SA1twQXsotwMasYF7KKkZJdjJvF+rt4GmidbFW1hMQLmQgPaq/zmqenp/HE2aVLFyQlJcHHx0dcg4KCtK+98MILmDNnjqg5Bw8ejA4dOugNrjZNva40OF7TLt+90WmiliMxqaytMHGQP1QqK1EzpmQVorL6bmVTF6qTuni5oqu3C46eykbNndXrVFXR7wgP8W27mjMlJQV79+4VczerV6/G/fffL0T2+++/ixqS0k888QTmzp2L6dOnY9u2bTh06JD259u1ayceDKMUKqtqcOVakWiOnky5gc9/vCRqOqK6RsK+E+l6f87V0RY9/dsj1N8NoXQNcEOIb3s42dvUF7nKCitnD26WMA0WZ3l5uRitnTVrFm7cuCFGbwm6apqvY8eOxcaNGxEdHY09e/YgLCzMkD/FMC2GRkXTcosR2MlFrxBuFZer+4bp+er+YUY+LmYWoqKq4dqQ8HZ3RN+uHYQA1WJ0g5+nk7b7po/JwwJFH1M0ZZtZY2qwknPLGC3doxVCGRkZ8PPzazAffQGYUjOR45WvfPfWqqlsVFZYPK0POns43RmkUQ/W5NwqbfT3O9mrUFpera05Cfpdv33wUIvE1dyYG6LN+pwMI0eNueiTWFTd6eSRQN/Zmdjoz/h3dBY1IDVNe1FtGOAGf09n7P8tXUfkLWmOthYsTsYsRHngRLroJ2qEWRdHOxV6+Kn7hKF3rnTfzunuKKy+5mhjzeO2hsXJmCRlFdU48kcWon5Nxc+nc8SgjT5opHXny5Gir6iybtmaGxKkHKLUwOJkTAZJkhB34Qa+OnoeRxKvo6hUd16xV4Abuvu2wzexGTrN0QHdTGe8ojYsTkbxpF4rwp7oNERFpyHjunpmQEMnNwdMGRqIKcMC0dPfTTz36oy+sjZHWwsWJ6PIaRB3Zzv8mpwrBBmfkqeTx8HWGuMG+mPK8EAM79WpXnNV7uZoa8HiZBRDVHQqFn0Sp7f/aGUFDAvthKnDgzAw0AGBft4wd1icjGIWjb+wORZ1Z927eLngb6O6YPLQQPh0cNLOGVoCLE5GEfzPV3/UEyaxcs5gDOhumgM69wqLk5GdTd+ew/4TGTrPWd1ZJB7o5QJLxSTOEGLMi9orRmkzsmYVj0c7ezH9QahkWpWjJLjmZIyOZqH4kYQsLNn6u0h3bO+A3a/cDycHG7OYBmkNWJyMLMRduI7n1seIkVnadrVt4SgEdFI3YS1dlBq4WcsYnXMZ+Zi9+heUV1bDzsYan8wfIVb3MLqwOBmjQit8/rHqOApLKmFtZYW1c4diSI+O/F/QA4uTMRp5hWX4x6pjuJav3k/59qwBGNPfl/8DDcDiZIxCcWklnvjgOC7nqE+jW/xwHzx6X1cu/UZgcTJtDvUtn1kbjcQrt8T9Ew92x9wJPbnkm4DFybQpNTUSFm6OxS9nron7SREBYtdIY+fuMGpYnEybLjZ4/csEHIxVr/4ZFeaNFXMGwdqahdkcWJxMm7H2QDK2/Zgi0n/q2gEb/jUUdjb6Ta+Y+rA4mTbhy58uYdWeJJEO9nHF1gUj4exgy6XdAlicTKtzKO4qXt0eL9I+HRyxfdEodHC155I21vI9Ojw6KyurwfNm8/LydIyKevfuzYMAFkB0ci7mbfoNNZKE9s522L5wFHw9nOUOy3LESYdBk+dmaWkpOnfuLIx0XV1ddfJs3boVH374Idq3b6813LWz038MIWMex4v8lJiN5Z/Hi5PTHexU+HTBCHT31TXsYdq4WUv+KM8++ywyMzMREREhvFD08c477wgTI3qwMM0XOmU9Yv4BLP4kDiXl1aDB2A3/Gmayp96ZtDjJsGjKlCkiTdeTJ082aNWWnp6us3+PIG9Oqn3Zn9NMTlmnk9FrnftDc5h9gtxljctim7VFRUXaZixd6b4u5AtB7tdvv/02OnbsiCNHjmi9Itif03z8LslOnc6IrQ1tA9PnQWmp/qfNibnV/Dm9vLxEzUeiIxMiuq8LOZDRgyDb+e3btwtfToL9OZWHoUZRHYt0G18t9aA0FE8TMrYyNGaDmrXjx48XztS//PILVqxYIe41I7Sak9FSU1NFX/P48eOIi4uDt/fdowzJm5NGeclYlzFttv5wUeeejxdpPQyqOZ955hnRl3zppZcwefJkTJgwQTx/4MABVFdXY/bs2XjrrbcQExMjRmvp9RkzZrRi2IwSSEq7haiYNJGeHBGAxx/oxseLyC1OGxsbvPfee/We1zRjic2bN99bZIzieXdnojjOkqZNlk7/E7zcHeUOyazgFUKMQRxLysHxOztN/jk2hIXZBrA4mRZTXVODd76+c5ylqz2eGs97M9sCFifTYvbGpAv7dmLepF7i9Dym9WFxMi2irKIKq3YnaX1MZowO5hJsI1icTIv47EgKsm6WiPRLj4TD1oY/Qm0FlyzTbG4Vl2PdgWSR7t/NA2MH8Ml5bQmLk2nRyQYaq/eXp/+JtwC2MSxOplmk5xZj+xH1kSNUYw60UFs+Y8LiZJrFit2nUVldA5W1FV58uA+XmhFgcTJNcuryTRy44585Y3RXBPu041IzAixOplFoL+7bX58SaSd7G8yb1JtLzEiwOJlG+elUNk6cvy7ST4/vIXw0GePA4mQapKq6Rus6TaKcMzaES8uIsDiZBtn9SyouZhWK9IIpvfncWSPD4mT0UlJehfejzmgPhf7byC5cUkaGxcno5dPvL2h9NJf8LRw2Kv6oGBsucUbviXobvz0n0oNDPPFA385cSjLA4mTqsWbfWRSXVYk0nXDAdn3ywOJkdLiSU4Qvf74k0hMG+aFfsAeXkEywOBkdVuw6Lc6htVFZCWt4Rj5YnIyW+JQ8fPv7VZF+LDIYQV66/jeMcWFxMtpleu/sVC/Tc3GwwfN/7cUlIzMsTkbwQ0IW4i6oDwR/dkJPeLThae1M82BxMmKZ3v/eWabn5eaIJ8fwMj2TFWdFRYU49T0sLAzLli2r5yLW3DyMMtgXm43LOWozqoVTe8PR3mBPZUZuca5bt07Y+H311VeIjo7Gvn37DMrDKOOEg3WH1FMnIb7tMG1EkNwhMfcizu+//x5LlixBnz59MG/ePHFvSB5GftPb0S99i8IS9YKD0X18oLLmno5SMOg/cf36da1DGNnO5+bmtigPm+cqx/S2luctPv3hgnieUQYGdS7IOYzMQMmfk65ubm4tysPmufKjz/SW7tvS9La1KGDz3IYZMmQIduzYgddee030KQcPHtyiPGyeKz+uNyVZTG9bC082z9UP9SF37doFFxcXXL58GY899ph4ftOmTVi/fn2jeQg2z5Wfzd9d0Lln01szadaSS3ViYiKKiorg6np3idfMmTO1UyYN5WHkJ+7CdRyOzxTpmaO74s9h7iZTY1oS9zShVVd0VEs2lYdRwml66gUH7ZxsxeL2qrIiFqYC4XFzC+O73zORcClPpJ+bGAo3F3u5Q2IagMVpQVRW1eDdXepa09fDCf94oLvcITGNwOK0IL76+RJSrxWL9MKpYXCwU8kdEtMILE4LgdzBPtx3VqRD/d0weWig3CExTcDitBA+/vYc8orKRfrl6eGwtqaZTUbJsDgtgGu3SrH5e/W85sgwL4wM85Y7JKYZsDgtgA+iklBWUQ0rK2DJI+Fyh8M0ExanmXMhswA7j6eK9JRhgegd6C53SEwzYXGaOe/uTESNJMHOxlqM0DKmA4vTjIlJzsWPp7JF+okx3eHr4Sx3SEwLYHGaKTU1d0/Tc3O2w9wJoXKHxLQQFqeZcjA2A4lXbon0v/4aivbOdnKHxLQQFqcZUl5ZjRW7T4u0n6czHr+/m9whMQbA4jRDvjh6CRnXb4s07Tqxt+VleqYIi9PMKLhdgTX71cv0+gS546HB/nKHxBgIi9PM2PDNOeTfrtDa9/EyPdOFxWlGZObdxqeH1cv0IsN9MCy0k9whMfcAi9OMeH/PGVRU1cDaykpYxTOmDYvTTDibno890epleg+PCEIPP2Ufb8k0DYvTTCAjIjpbjTZQL5jSW+5wmFaAxWkGHE/KwbGkHJGePSYEPh2c5A6JaQVYnGaxTE99LlAHV3s8M6Gn3CExrQSL08TZ91u66G8S8yb1gqujrdwhMXKfWxsVFYVff/0VEyZMQGRkZL3XDx8+jJ07d2rvN27cCBsb9n1sTWgD9co7y/SCvFwwY3TXVv39jAnWnAcOHBAeKF5eXnjyySeRkJBQLw+d9k5ERESIhxVtw2dalQ3fJCMzr0SkX3y4D+xseJmeOWFQVbZt2zasWbMGo0ePFi5iZFjUr1+/evno9doeKUzr8eVPKdrT9KzuLHZnzAuDas709HSEhqr3B/bs2RNpaWl683399dfCUezo0aM6z7M/571xLb8Ey7bHa+/JnWbxljj21rSEmvPQoUPYvXt3veffeOMNYYRra2uLyspK8VxVVRXs7OrvFRw7dqzw5Lx16xbmzJmDLVu2aPum7M95b14nS7efFnOareWtaWp+lwUmFm9zYtZnaahXnL6+vqKfWBdHR0dx7dGjB2JiYvDII48gOjoaISEh9fKS3Tw9NB+ouLg4rTjZn9NwPtx3BkdP32h1b01T87v0NLF4DYlZrzjDw8PFoyHmzp2LSZMmiWbriRMnxKitZoS2uroa48aNE7Xj2bNnRc157Ngx/Pzzzzr+nPRgWsYXR1PwQdQZkfZyc0ReUZmoMdlb0zwxaEBo4MCBQnDx8fH46KOPRFOX8PHx0fpzUp+UBEj28xs2bECnTrxD4l74Ni4Dr36u7mf6dHDE7lf+DDtba6TlFiOwkwtb+JkhBk88BgcHi0dtNM1YgmpPpnWIPnsN8zedEP1MOqzr80X3obOHeokeG96aL7xCSOEkpd7CPz/6VWwFc7K3wdYXRqJbZ+4SWAIsTgWTeq0Is94/httlVbBVWWP9c0PRL9hD7rAYI8HiVCi5+aV4fOUx3CgsFx4nK+cMwuhwH7nDYowIi1Ohh3T916pj2hP0Xp3RF5PYT9PiYHEqjLKKKtHHPJehnrSeO7EnnhxTfx6ZMX9YnAqiqroG/73xBGLPXxf300d1wYsP81lAlgqLUyHQ/PAr207icHymuH+wX2e8PWuA3GExMsLiVAgrdyfh62NXRHpwiCfWPBshTtFjLBfe/awA6KzZdQeTRbqnf3tsnjcCDnb8r7F0uOaUmX0xaXhjxx9a06HtC0exIxgjYHHKyM+J2Vj4SaxIe7ja4/NFo9DJzVG7PpmxbLjtJAM3CsvwQ0IWXv8iXuwqcXawwWcLR6KLt6t4nY90YVicMrA3Og2LPolFVY26dlRZW2Hzfw9Hn6AO/IlkdOCa04gkXLqBFzafwB1daglh6wRGDyzONia/uBwHYjMQFZ2G+JS8eq9X10hiTyZv/WLqwuJsAyqravD9yUxERafi6Klssd1LH5rjRWizNMPUhcXZStAI6x+Xb4oakqZHCkrUB6Bp6N65HaYMC4SjnQpvfX2KjxdhmoTFeY/QzpG9MWlClJdzinReo+mRv0YEYOrwQIQFumtHYR+KCODjRZgmYXG2cAqE+odkGBR77jr2RKfhxJ1F6hrsbKxxX29PzIgMwcgwb9ja1J9Kpv4l9zGZpmBxNtOTZPN35/HB3jPC1UsftB526vAgjBvoh8rSQpM8upFRFizOOv3G3PwyJGfk33kUIDk9H5eyC+tNfxD+HZ3wyIguoi/p3/HuoM6NUqP87xgzx8bSmqSaYyTJWyQlq1AI8FwtMd4sKm/271z9VAQGdOcakmkbLEKc239MwetfJog5RRqT8XZ3xPUC9YHMDUHbtbp4u6CnvxsCOzpj06Hz4ud1pkC8eAqEUZg4U1JS8Mcf6p0UU6dOhbW1/vXzOTk5SEpKwoABA+Du7g5jzC9SE1TTHKXa8ExaPm4W360NaU159k3ddicZzoYGuCHUr7366u+GEN92cLS/Wzwhvu2xaEssT4Ewyhbn+fPn8Z///AffffcdJk6cCAeH+v4cZ86cwZgxY4QL2ZUrV4Snire3t0HN0cTUAoTb6Z5qTs1P0RRNz8dZcS0QzdTKav0T/nV5dFQX/LlfZyFEXw+nJhebTx4WiBFhXjwFwhgNK+ke9id169ZN1Iz6xPn0009jxIgRePzxx/Hmm28KV+ulS5fq5Ll69Sr8/f2RkZEBPz8//YvENbWVtRXu6+MtmpZ0+NW1/MZHXVwcbESTNMjLGXui07WjrJom6W8fPNRm0xk3btwwqdFajleZZdxmfU6qOZctW6Y10f344491/DnpkZ2d3WiNSXsdNf08utJSOH0EdHTWNkfpJIFe/m5i47K1tbo2HNHLm5ukjMlh01Cz9fTp0/Wep2Zqc93BysvLYW9vL9Lk30n3Gprjz0lNWY0wa9PV2wl9g9wQ0tkF3XzUD6oldSnDzZtl2rsRIc74dtlwXM0rhZ+HIzq42olvsrbC1PwjOV4T8udMTk4Wfcq6DBkypNnipGbqxYsXhbsYXcnzU0Nz/Dmpj2mjUm9G1garssLOlx8wqDlKvz6kC4yGKTVrCY637WmVZu3kyZPFoyGysrLEAM/t27cRFRWF/v37C0PdCxcuiIl8Sk+fPh0LFizAU089hffeew/btm1rkT8nCXDl7MHa5igJk+552RtjKRjU58zMzBQ16/Dhw4U9PTlekyCpOUzmuZR+9NFHUVJSIox1SZxDhw5t8d/RjJAKO/V7cG1mGIsbrb1Xmhqt1cCjiW0Ll68yy5hP32MYhSLr8r2qqipxbWxKRTOaW1Z2d/RV6XC8XL6GfCZokQ6tB1CEOK9fV++FpBFbhrF0Mup072Ttc9I3Cc2nduzYUecbozaa6ZbY2Fj4+CjfPJbj5fI19DOhqJqTFh4MGjSoWXnpTTU2aKQ0OF4u33v9TCh+QIjmQ5cvX97sxQ9yw/Fy+bbaZ0JSCJWVldKSJUukv/zlL9IXX3xhcB5jsmrVKmnMmDHiqo99+/ZJQ4YM0T7y8vIkuUhKStLGcfLkyQbz7dixQ5Tviy++KFVUVEhykZ+fr42XylEfVJ61y7ehfMZi//790vjx46VZs2ZJqampevOcPn1amjZtmjRjxowG82hQTM25cuVKsU/0+eefxxtvvIGEhASD8hiLXbt2idVR8+fPF1e6r0tubq7YmbN69WrxcHVVe6HIQWBgoIjBzc1NbDrQR2JiIl577TVRvmlpaXj33XchF87OziLesLAwUY76qKioEFv9NOVryEKX1oJ2Z23ZsgXPPfecmM+cPXt2vTw1NTWYNm0axo0bJ7pztFCnUSSFQN98V65cEen169dL//73vw3KYyxmzpwp/fDDDyJ9+PBh6bHHHquXZ/PmzdKaNWskJUFx//TTT3pfe/PNN7XxpqenSwMHDpTkZvny5aIc9ZGdnS2NHTtWUgJlZWXadG5urtSvX796eRISEnTiDQ8PF+9B8TUnnZoQEBCg/ZbXN/fZnDzGgv42xdBULJs2bcKDDz4oljDSN6eSqf2eaOCioRpLSZw6dQqRkZGYO3curl27Jlscmh1YBO24WrhwYaPlS1CaPtOKP0OImjG0FtfFxUUsqKerIXmMhSYGoqFYJk2aJJpl1IykJiLtvqHdOEql9nuiLX60ZlrJeHh4iC5FZWUl9u/fLzb47927V9aYSJg0Kjtz5sxGy5do6jOsmJqzb9++OHjwoEh/88034t6QPMaiObHQ/G1ERITYB0v9DOrHKZna74mucpZvc7C1tRXlO3LkSNHHk7t86XAB+lJ75ZVX9L7eq1cvsZuruLhYLMCh8RNNS1AvkkJITEyUvL29pZCQEGnQoEFSSUmJeH7dunXaUbiG8shBVlaWFBwcLPXo0UNc6Z6gWClmYunSpaKfHBoaKgUEBEgpKSmyxasZ2fT09BTx0GgscerUKW26tLRUioiIkLp37y55eXmJPpKcREZGSr6+vlLXrl2lv//979r3oUkfPHhQvKf+/ftL7u7uso7gR0dHSyqVSjtyXLtvWTu9bNky8Rmm/0NT4xGyrhCqCzVZ09PT0b17d6hUKu2SJlqsQLVQQ3nkgkYLL126hODgYHHaA0HfiLTyiXbb0CbzvLw8Mb9F8dI3vVxQ0+/kyZPae2pih4SEoKioSPSFKE1Qv5j25VL81I2Qk7i4OLEFkXByckJ4eLh4H3QYAKWprKn8qb9H/wM558Kp63L27FntPf2v6dRJgspdk9Z8pun1pg68U5Q4GYZRYJ+TYRhdWJwMo1BYnAyjUFicDKNQWJwMA2Xy/3JiXc9JieqWAAAAAElFTkSuQmCC" alt="Lookup table for Lookup Effect of Deer Density on Predator Births">
@@ -2224,7 +2447,14 @@
     <span class="pill">Lookup</span>
 <span class="pill">dmnl</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Lookup Effect of Deer Density on Predator Hunting Efficiency = ( [(0,0)-(2,2)],(0,0),(0.2,0.05),(0.4,0.15),(0.6,0.35),(0.8,0.7),(1,1),(1.2,1.2) ,(1.4,1.3),(1.6,1.4),(1.8,1.45),(2,1.5) )</code>  <p>Lookup for: Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends.
+<code class="eq">Lookup Effect of Deer Density on Predator Hunting Efficiency = ( [(0,0)-(10,10)],(0,0),(1,0) )</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>lookup with 11 points</code>
+    from <code>effect_deer_density_on_predator_hunting_efficiency.cin</code>.
+    The equation above is the placeholder the <code>.mdl</code> declares
+    (2 points).
+    The table plotted below is the one the run used.
+  </p>
+  <p>Lookup for: Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends.
 </p>
 
   <img class="thumb" src="data:image/png;base64,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" alt="Lookup table for Lookup Effect of Deer Density on Predator Hunting Efficiency">
@@ -2246,7 +2476,14 @@
     <span class="pill">Lookup</span>
 <span class="pill">dmnl</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Lookup Effect of Forage Availability on Consumption = ( [(0,0)-(1,1)],(0,0),(0.1,0.59),(0.2,0.84),(0.3,0.93),(0.4,0.97),(0.5,0.99) ,(0.6,0.9957),(0.7,0.9983),(0.8,0.9994),(0.9,0.9998),(1,1) )</code>  <p>Vensim Lookup for: This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult.
+<code class="eq">Lookup Effect of Forage Availability on Consumption = ( [(0,0)-(1,1)],(0,0),(1,0) )</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>lookup with 11 points</code>
+    from <code>effect_forage_availability_on_consumption.cin</code>.
+    The equation above is the placeholder the <code>.mdl</code> declares
+    (2 points).
+    The table plotted below is the one the run used.
+  </p>
+  <p>Vensim Lookup for: This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult.
 </p>
 
   <img class="thumb" src="data:image/png;base64,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" alt="Lookup table for Lookup Effect of Forage Availability on Consumption">
@@ -2279,9 +2516,7 @@
 <p class="meta">Nothing. This is an exogenous input.</p>    </div>
     <div>
       <strong style="font-size:.86rem">Used by</strong>
-      <ul class="lst">        <li><a href="#v-historical_deer_bot">Historical Deer BOT</a></li>
-</ul>
-    </div>
+<p class="meta">Nothing reads this variable.</p>    </div>
   </div>
 </div>
 <div class="var" id="v-net_annual_forage_growth">
@@ -2348,7 +2583,13 @@
     <span class="pill">Constant</span>
 <span class="pill">Deer/Thousands of Acres</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Normal Deer Density per Acre = 5</code>  <p>Number of deer per 1000 acres on the Kaibab
+<code class="eq">Normal Deer Density per Acre = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>5</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>Number of deer per 1000 acres on the Kaibab
 </p>
 
 
@@ -2431,7 +2672,13 @@
 <span class="pill">Year</span>    <span class="pill">range 1905.0 …
       1920.0</span><span class="pill">View 1</span>  </div>
 
-<code class="eq">Program Start Year = 1907</code>  <p>The year the predator hunting policy is implemented. From that year on, a fraction of the remaining predators will be hunted and killed each year.
+<code class="eq">Program Start Year = :NA:</code>  <p class="sub">
+    <strong>Supplied at run time:</strong> <code>1907</code>
+    from <code>basic_parameters.cin</code>.
+    The equation above is what the <code>.mdl</code> declares. This value is
+    what the run used.
+  </p>
+  <p>The year the predator hunting policy is implemented. From that year on, a fraction of the remaining predators will be hunted and killed each year.
 </p>
 
 

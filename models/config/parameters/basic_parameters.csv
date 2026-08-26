@@ -1,0 +1,12 @@
+variable_name,value
+Baseline Fractional Deer Growth Rate,1.0
+Baseline Biomass Growth Fraction,0.10
+Kaibab Forage Carrying Capacity,350000
+Desired Consumption per Deer,0.75
+Deer Carrying Capacity in Years,2
+Baseline Fractional Predator Growth,0.5
+Kaibab Area in Thousands of Acres,800
+Normal Deer Density per Acre,5
+Baseline Annual Kills per Predator,40
+Fraction Predators Killed per Year,0
+Program Start Year,1907

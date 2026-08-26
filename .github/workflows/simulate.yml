@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2026 Raphael Ginster
+# SPDX-FileCopyrightText: 2026 Matthias Papesch
+# SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+# SPDX-License-Identifier: MIT
+#
+# Run the model with PySD on a machine that has no Vensim licence, then check
+# the numbers against the committed Vensim runs. That is the claim this
+# repository makes -- that its results can be verified without the commercial
+# tool -- so it is the claim CI has to keep honest.
+name: Simulate and verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  simulate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install pysd pandas matplotlib openpyxl pytest
+
+      - name: Run the model under PySD and compare against the Vensim runs
+        run: ./scripts/compare_tools.sh
+
+      - name: Run the test suite
+        run: pytest tests/ -q
+
+      - name: Upload runs and figures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pysd-results
+          path: |
+            results/runs/*_pysd.csv
+            results/figures/results_pysd.*
