@@ -1,165 +1,326 @@
 {UTF-8}
-Actual Biomass Growth Fraction  = A FUNCTION OF( Baseline Biomass Growth Fraction,Kaibab Adequacy for Forage\
-		)
-	~	
-	~		|
+Actual Biomass Growth Fraction  = 
+        Baseline Biomass Growth Fraction 
+             * Kaibab Adequacy for Forage 
+	~	1/Year
+	~	Regrowth fraction after scaling for how close forage is to the forest's \
+		carrying capacity.
+	|
 
-Actual Consumption per Deer  = A FUNCTION OF( Desired Consumption per Deer,Effect of Forage Availability on Consumption\
-		)
-	~	
-	~		|
+Actual Consumption per Deer  = 
+        Desired Consumption per Deer 
+             * Effect of Forage Availability on Consumption 
+	~	Metric Tons / (Deer * Year)
+	~	Forage actually eaten per deer per year, reduced below the desired amount \
+		when forage is scarce.
+	|
 
-Actual Fractional Net Growth Rate  = A FUNCTION OF( Baseline Fractional Deer Growth Rate\
-		,Kaibab Adequacy to Support the Deer Population)
-	~	
-	~		|
+Actual Fractional Net Growth Rate  = 
+        Baseline Fractional Deer Growth Rate 
+             * Kaibab Adequacy to Support the Deer Population 
+	~	1/Year
+	~	Fractional net growth rate after scaling for how adequate the Kaibab is to \
+		support further growth.
+	|
 
-Baseline Annual Kills per Predator  = A FUNCTION OF( )
-	~	
-	~		|
+Auxilliary Time to Deer  = 1
+	~	Deer/Year
+	~	Auxilliary parameter to convert Year into Deer for the time series lookup.
+	|
 
-Baseline Biomass Growth Fraction  = A FUNCTION OF( )
-	~	
-	~		|
+Baseline Annual Kills per Predator  = 40
+	~	Deer / (Predators * Year) [20,60,0.1]
+	~	The average number of deer killed per predator in a given year.
+	|
 
-Baseline Fractional Deer Growth Rate  = A FUNCTION OF( )
-	~	
-	~		|
+Baseline Biomass Growth Fraction  = 0.1
+	~	1/Year [0.05,0.25,0.01]
+	~	Fractional net regrowth rate of forage when the forest is far below its \
+		own carrying capacity.
+	|
 
-Baseline Fractional Predator Growth  = A FUNCTION OF( )
-	~	
-	~		|
+Baseline Fractional Deer Growth Rate  = 1
+	~	1/Year [0.5,1.5,0.01]
+	~	Fractional net growth rate of the deer herd when forage is abundant.
+	|
 
-Deer Carrying Capacity in Years  = A FUNCTION OF( )
-	~	
-	~		|
+Baseline Fractional Predator Growth  = 0.5
+	~	1/Year [0.5,1.5,0.01]
+	~	Fraction by which the predator population grows each year when deer are \
+		abundant.
+	|
 
-Deer Density  = A FUNCTION OF( Deer Population,Kaibab Area in Thousands of Acres,Normal Deer Density per Acre\
-		)
-	~	
-	~		|
+Deer Carrying Capacity in Years  = 2
+	~	Year [1,7,0.1]
+	~	Number of years of forage needed to sustain the deer population.
+	|
 
-Deer Net Growth Rate  = A FUNCTION OF( Actual Fractional Net Growth Rate,Deer Population\
-		)
-	~	
-	~		|
+Deer Density  = 
+        Deer Population 
+             / Kaibab Area in Thousands of Acres 
+             / Normal Deer Density per Acre 
+	~	dmnl
+	~	The ratio of deer to area, all of which is divided by a normal. Results in \
+		a scale where one is normal, anything above 1 indicates too many deer, and \
+		anything below 1 indicates too few deer compared to what is normal deer \
+		per acres.
+	|
 
-Deer Population  = A FUNCTION OF( Deer Net Growth Rate,-Deer Predation)
-	~	
-	~		|
+Deer Net Growth Rate  = 
+        Deer Population 
+             * Actual Fractional Net Growth Rate 
+	~	Deer/Year
+	~	Biflow. Net deer added or removed per year through births and natural \
+		deaths, before predation.
+	|
 
-Deer Predation  = A FUNCTION OF( Baseline Annual Kills per Predator,Effect of Deer Density on Predator Hunting Efficiency\
-		,Predator Population)
-	~	
-	~		|
+Deer Population  = 
+        INTEG( Deer Net Growth Rate 
+                  - Deer Predation , 
+             Initial Deer Population ) 
+	~	Deer
+	~	The number/stock of mule deer on the Kaibab Plateau. Increased by Deer Net \
+		Growth, decreased by Deer Predation.
+	|
 
-Desired Consumption per Deer  = A FUNCTION OF( )
-	~	
-	~		|
+Deer Predation  = 
+        Baseline Annual Kills per Predator 
+             * Predator Population 
+             * Effect of Deer Density on Predator Hunting Efficiency 
+	~	Deer/Year
+	~	Outflow from the Deer Population. Number of deer killed by predators each \
+		year.
+	|
 
-Effect of Deer Density on Predator Births  = A FUNCTION OF( Deer Density)
-	~	
-	~		|
+Desired Consumption per Deer  = 0.75
+	~	Metric Tons / (Deer * Year) [0.4,0.8,0.01]
+	~	The amount of forage consumed by a single deer in a year, when abundant \
+		forage is available.
+	|
 
-Effect of Deer Density on Predator Hunting Efficiency  = A FUNCTION OF( Deer Density)
-	~	
-	~		|
+Effect of Deer Density on Predator Births  = 
+        Lookup Effect of Deer Density on Predator Births ( Deer Density ) 
+	~	dmnl
+	~	Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at \
+		density 1 (births equal deaths), 1.5 at density 2 or more.
+	|
 
-Effect of Forage Availability on Consumption  = A FUNCTION OF( Ratio of Actual to Required Biomass\
-		)
-	~	
-	~		|
+Effect of Deer Density on Predator Hunting Efficiency  = 
+        Lookup Effect of Deer Density on Predator Hunting Efficiency ( Deer Density ) 
+	~	dmnl
+	~	Multiplier on Deer Predation. 0 when no deer are present, 1 at normal \
+		density, rising to 1.5 when deer are abundant; the slope flattens at both \
+		ends.
+	|
 
-Forage Biomass  = A FUNCTION OF( -Forage Consumed per Deer,Net Annual Forage Growth)
-	~	
-	~		|
+Effect of Forage Availability on Consumption  = 
+        Lookup Effect of Forage Availability on Consumption ( Ratio of Actual to Required Biomass\
+		 ) 
+	~	dmnl
+	~	This nonlinear or graphical function captures how Actual Consumption per \
+		Deer will change given the Ratio of Actual to Required Biomass. Deer will \
+		continue to eat a normal amount of forage until only about 30 percent of \
+		what is needed is available. Deer will then start to eat less as foraging \
+		becomes more difficult.
+	|
 
-Forage Consumed per Deer  = A FUNCTION OF( Actual Consumption per Deer,Deer Population\
-		)
-	~	
-	~		|
+Forage Biomass  = 
+        INTEG( Net Annual Forage Growth 
+                  - Forage Consumed per Deer , 
+             317000) 
+	~	Metric Tons
+	~	Forage available for deer to eat
+	|
 
-Fraction Predators Killed per Year  = A FUNCTION OF( )
-	~	
-	~		|
+Forage Consumed per Deer  = 
+        Deer Population 
+             * Actual Consumption per Deer 
+	~	Metric Tons/Year
+	~	Total forage eaten by the whole herd each year. Despite the name this is a \
+		total, not a per-head rate.
+	|
 
-Initial Deer Population  = A FUNCTION OF( )
-	~	
-	~		|
+Fraction Predators Killed per Year  = 0
+	~	1/Year [0,0.5,0.01]
+	~	Fraction of predators killed each year.
+	|
 
-Initial Predator Population  = A FUNCTION OF( )
-	~	
-	~		|
+Historical Deer BOT  = 
+        Lookup Historical Deer BOT ( Time 
+                  * Auxilliary Time to Deer ) 
+	~	Deer
+	~	A reference mode showing the actual deer population estimates from 1900 \
+		through 1950. This is defined by the graphical function shown in the \
+		source. You can display this BOTG with the Deer Population to help tune \
+		the model parameters to match the historical record.
+	~	:SUPPLEMENTARY 
+	|
 
-Kaibab Adequacy for Forage  = A FUNCTION OF( Ratio of Forage to Forage Carrying Capacity\
-		)
-	~	
-	~		|
+Initial Deer Population  = 4000
+	~	Deer
+	~	Exogenous variable used to set (and change) the initial size of the Deer \
+		Population.
+	|
 
-Kaibab Adequacy to Support the Deer Population  = A FUNCTION OF( Ratio of the Deer Population to Carrying Capacity\
-		)
-	~	
-	~		|
+Initial Predator Population  = 100
+	~	Predators [20,130,1]
+	~	Used to set the initial size of the Predator Population. Notice that this \
+		is different from the original predator-prey model you built.
+	|
 
-Kaibab Area in Thousands of Acres  = A FUNCTION OF( )
-	~	
-	~		|
+Kaibab Adequacy for Forage  = 
+        1
+             - Ratio of Forage to Forage Carrying Capacity 
+	~	dmnl
+	~	Approaches 1 when forage is far below its carrying capacity and 0 as it \
+		reaches it.
+	|
 
-Kaibab Deer Carrying Capacity  = A FUNCTION OF( Deer Carrying Capacity in Years,Desired Consumption per Deer\
-		,Forage Biomass)
-	~	
-	~		|
+Kaibab Adequacy to Support the Deer Population  = 
+        1
+             - Ratio of the Deer Population to Carrying Capacity 
+	~	dmnl
+	~	Approaches 1 when the herd is far below carrying capacity and 0 as it \
+		reaches carrying capacity.
+	|
 
-Kaibab Forage Carrying Capacity  = A FUNCTION OF( )
-	~	
-	~		|
+Kaibab Area in Thousands of Acres  = 800
+	~	Thousands of Acres
+	~	Land area of the Kaibab Plateau. This is approximately 800,000 acres. We \
+		are measuring this in thousands of acres, which is why we use 800 when \
+		setting the value.
+	|
 
-Net Annual Forage Growth  = A FUNCTION OF( Actual Biomass Growth Fraction,Forage Biomass\
-		)
-	~	
-	~		|
+Kaibab Deer Carrying Capacity  = 
+        Forage Biomass 
+             / ( Desired Consumption per Deer 
+                  * Deer Carrying Capacity in Years ) 
+	~	Deer
+	~	Number of deer the current forage stock can sustain for the required \
+		number of years. Endogenous: it erodes as forage is consumed.
+	|
 
-Net Predator Growth Rate  = A FUNCTION OF( Baseline Fractional Predator Growth,Effect of Deer Density on Predator Births\
-		)
-	~	
-	~		|
+Kaibab Forage Carrying Capacity  = 350000
+	~	Metric Tons [200000,600000,1000]
+	~	Amount of forage biomass that the Kaibab can support on an ongoing basis.
+	|
 
-Normal Deer Density per Acre  = A FUNCTION OF( )
-	~	
-	~		|
+Lookup Effect of Deer Density on Predator Births  ( 
+            [(0,-1)-(2,1)],(0,-1),(0.2,-0.95),(0.4,-0.9),(0.6,-0.8),(0.8,-0.5),(1,0),\
+		(1.2,0.5),(1.4,0.8),(1.6,0.9),(1.8,0.95),(2,1) )
+	~	dmnl
+	~	Lookup for: Multiplier on the Net Predator Growth Rate. -1.0 at deer \
+		density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more.
+	|
 
-Predator Population  = A FUNCTION OF( Net Predator Growth Rate,-Predators Hunted)
-	~	
-	~		|
+Lookup Effect of Deer Density on Predator Hunting Efficiency  ( 
+            [(0,0)-(2,2)],(0,0),(0.2,0.05),(0.4,0.15),(0.6,0.35),(0.8,0.7),(1,1),(1.2,1.2)\
+		,(1.4,1.3),(1.6,1.4),(1.8,1.45),(2,1.5) )
+	~	dmnl
+	~	Lookup for: Multiplier on Deer Predation. 0 when no deer are present, 1 at \
+		normal density, rising to 1.5 when deer are abundant; the slope flattens \
+		at both ends.
+	|
 
-Predators Hunted  = A FUNCTION OF( Fraction Predators Killed per Year,Predator Population\
-		,Program Start Year)
-	~	
-	~		|
+Lookup Effect of Forage Availability on Consumption  ( 
+            [(0,0)-(1,1)],(0,0),(0.1,0.59),(0.2,0.84),(0.3,0.93),(0.4,0.97),(0.5,0.99)\
+		,(0.6,0.9957),(0.7,0.9983),(0.8,0.9994),(0.9,0.9998),(1,1) )
+	~	dmnl
+	~	Vensim Lookup for: This nonlinear or graphical function captures how \
+		Actual Consumption per Deer will change given the Ratio of Actual to \
+		Required Biomass. Deer will continue to eat a normal amount of forage \
+		until only about 30 percent of what is needed is available. Deer will then \
+		start to eat less as foraging becomes more difficult.
+	|
 
-Program Start Year  = A FUNCTION OF( )
-	~	
-	~		|
+Lookup Historical Deer BOT  ( 
+            [(1900,0)-(1950,90000)],(1900,4000),(1902.5,4000),(1905,4000),(1907.5,5000)\
+		,(1910,9000),(1912.5,15000),(1915,25000),(1917.5,35000),(1920,65000),(1922.5,90000)\
+		,(1925,60000),(1927.5,37000),(1930,25000),(1932.5,20000),(1935,18000),(1937.5,12000)\
+		,(1940,10000),(1942.5,7000),(1945,5000),(1947.5,3000),(1950,2000) )
+	~	Deer
+	~	Lookup for: A reference mode showing the actual deer population estimates \
+		from 1900 through 1950. This is defined by the graphical function shown in \
+		the source. You can display this BOTG with the Deer Population to help \
+		tune the model parameters to match the historical record.
+	|
 
-Ratio of Actual to Required Biomass  = A FUNCTION OF( Forage Biomass,Required Forage Biomass\
-		)
-	~	
-	~		|
+Net Annual Forage Growth  = 
+        Forage Biomass 
+             * Actual Biomass Growth Fraction 
+	~	Metric Tons / Year
+	~	Net change in the forage biomass on the Kaibab via natural growth and \
+		decay, apart from consumption by animals.
+	|
 
-Ratio of Forage to Forage Carrying Capacity  = A FUNCTION OF( Forage Biomass,Kaibab Forage Carrying Capacity\
-		)
-	~	
-	~		|
+Net Predator Growth Rate  = 
+        Predator Population 
+             * Baseline Fractional Predator Growth 
+             * Effect of Deer Density on Predator Births 
+	~	Predators / Year
+	~	Biflow. Net predators added or removed per year. Negative when deer \
+		density falls below normal, i.e., predators starve.
+	|
 
-Ratio of the Deer Population to Carrying Capacity  = A FUNCTION OF( Deer Population,Kaibab Deer Carrying Capacity\
-		)
-	~	
-	~		|
+Normal Deer Density per Acre  = 5
+	~	Deer/Thousands of Acres
+	~	Number of deer per 1000 acres on the Kaibab
+	|
 
-Required Forage Biomass  = A FUNCTION OF( Deer Carrying Capacity in Years,Deer Population\
-		,Desired Consumption per Deer)
-	~	
-	~		|
+Predator Population  = 
+        INTEG( Net Predator Growth Rate 
+                  - Predators Hunted , 
+             Initial Predator Population ) 
+	~	Predators
+	~	Number of predators on the Kaibab Plateau
+	|
+
+Predators Hunted  = 
+        STEP ( Predator Population 
+                  * Fraction Predators Killed per Year , 
+             Program Start Year ) 
+	~	Predators/Year
+	~	Number of predators removed each year through hunting.
+	|
+
+Program Start Year  = 1907
+	~	Year [1905,1920,1]
+	~	The year the predator hunting policy is implemented. From that year on, a \
+		fraction of the remaining predators will be hunted and killed each year.
+	|
+
+Ratio of Actual to Required Biomass  = 
+        ZIDZ ( Forage Biomass , 
+             Required Forage Biomass ) 
+	~	dmnl
+	~	Measures how much forage is available, relative to what is needed to \
+		sustain the current deer population. Values below 1 indicate a shortage of \
+		forage biomass.
+	|
+
+Ratio of Forage to Forage Carrying Capacity  = 
+        Forage Biomass 
+             / Kaibab Forage Carrying Capacity 
+	~	dmnl
+	~	How close the forage stock is to the maximum the Kaibab forest can carry.
+	|
+
+Ratio of the Deer Population to Carrying Capacity  = 
+        ZIDZ ( Deer Population , 
+             Kaibab Deer Carrying Capacity ) 
+	~	dmnl
+	~	How close the herd is to what the forage can support.
+	|
+
+Required Forage Biomass  = 
+        Deer Population 
+             * Desired Consumption per Deer 
+             * Deer Carrying Capacity in Years 
+	~	Metric Tons
+	~	Forage biomass needed to sustain the existing deer population for the \
+		number of years indicated by the value of the Deer Carrying Capacity in \
+		Years.
+	|
 
 ********************************************************
 	.Control
@@ -183,7 +344,7 @@ SAVEPER  =
 	~	The frequency with which output is stored.
 	|
 
-TIME STEP  = 1
+TIME STEP  = 0.05
 	~	Year [0,?]
 	~	The time step for the simulation.
 	|
@@ -192,111 +353,138 @@ TIME STEP  = 1
 V300  Do not put anything below this section - it will be ignored
 *View 1
 $-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,5,2
-10,1,Deer Population,1163,250,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,2,48,933,253,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,3,5,2,68,0,0,22,0,192,0,-1--1--1,,1|(984,253)|
-1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(1079,253)|
-11,5,0,1032,253,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,6,Deer Net Growth Rate,1032,283,56,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,7,48,1358,250,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(1237,250)|
-1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(1315,250)|
-11,10,0,1276,250,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,11,Deer Predation,1276,280,42,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,12,Predator Population,1714,507,50,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,13,48,1714,667,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,14,16,13,100,0,0,22,0,192,0,-1--1--1,,1|(1714,629)|
-1,15,16,12,4,0,0,22,0,192,0,-1--1--1,,1|(1714,558)|
-11,16,0,1714,594,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
-10,17,Net Predator Growth Rate,1774,594,52,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,18,48,1857,376,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,19,21,12,100,0,0,22,0,192,0,-1--1--1,,1|(1714,467)|
-1,20,21,18,4,0,0,22,0,192,0,-1--1--1,,3|(1714,376)|(1714,376)|(1780,376)|
-11,21,0,1714,441,6,8,33,3,0,0,4,0,0,0,0,0,0,0,0,0
-10,22,Predators Hunted,1764,441,44,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,23,Forage Biomass,1326,824,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,24,48,1323,982,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,25,27,24,68,0,0,22,0,192,0,-1--1--1,,1|(1323,945)|
-1,26,27,23,4,0,0,22,0,192,0,-1--1--1,,1|(1323,875)|
-11,27,0,1323,910,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
-10,28,Net Annual Forage Growth,1378,910,47,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-12,29,48,1594,822,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,30,32,23,100,0,0,22,0,192,0,-1--1--1,,1|(1428,822)|
-1,31,32,29,4,0,0,22,0,192,0,-1--1--1,,1|(1542,822)|
-11,32,0,1495,822,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
-10,33,Forage Consumed per Deer,1495,852,55,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,34,Actual Biomass Growth Fraction,1214,1051,60,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,35,Baseline Biomass Growth Fraction,1092,963,45,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,36,Kaibab Adequacy for Forage,1414,1062,53,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,37,Ratio of Forage to Forage Carrying Capacity,1502,941,49,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,38,Kaibab Forage Carrying Capacity,1685,983,60,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,39,Baseline Fractional Deer Growth Rate,757,220,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,40,Actual Fractional Net Growth Rate,845,337,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,41,Kaibab Adequacy to Support the Deer Population,710,441,51,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,42,Ratio of the Deer Population to Carrying Capacity,981,483,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,43,Kaibab Deer Carrying Capacity,733,588,55,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,44,Deer Carrying Capacity in Years,1005,589,59,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,45,Desired Consumption per Deer,1010,686,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,46,Required Forage Biomass,1215,508,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,47,Ratio of Actual to Required Biomass,1224,692,46,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,48,Effect of Forage Availability on Consumption,1384,653,42,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,49,Actual Consumption per Deer,1484,740,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,50,Desired Consumption per Deer,1609,693,58,16,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
-10,51,Baseline Fractional Predator Growth,1858,695,48,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,52,Initial Predator Population,1863,528,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,53,Fraction Predators Killed per Year,1906,466,46,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,54,Program Start Year,1653,335,48,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,55,Initial Deer Population,1163,177,58,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,56,Deer Density,1366,442,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,57,Normal Deer Density per Acre,1336,549,53,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,58,Effect of Deer Density on Predator Births,1507,557,56,22,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,||BU|0-0-0,0,0,0,0,0,0
-10,59,Kaibab Area in Thousands of Acres,1522,471,49,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-10,60,Effect of Deer Density on Predator Hunting Efficiency,1424,348,56,23,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,||BU|0-0-0,0,0,0,0,0,0
-10,61,Baseline Annual Kills per Predator,1388,187,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
-1,62,1,6,1,0,0,0,0,192,0,-1--1--1,,1|(1106,315)|
-1,63,40,6,1,0,0,0,0,192,0,-1--1--1,,1|(968,318)|
-1,64,39,40,1,0,0,0,0,192,0,-1--1--1,,1|(761,279)|
-1,65,41,40,1,0,0,0,0,192,0,-1--1--1,,1|(726,377)|
-1,66,42,41,1,0,0,0,0,192,0,-1--1--1,,1|(844,499)|
-1,67,38,37,1,0,0,0,0,192,0,-1--1--1,,1|(1592,932)|
-1,68,23,37,1,0,0,0,0,192,0,-1--1--1,,1|(1436,864)|
-1,69,37,36,1,0,0,0,0,192,0,-1--1--1,,1|(1493,1007)|
-1,70,36,34,1,0,0,0,0,192,0,-1--1--1,,1|(1311,1090)|
-1,71,35,34,1,0,0,0,0,192,0,-1--1--1,,1|(1117,1015)|
-1,72,34,27,1,0,0,0,0,192,0,-1--1--1,,1|(1223,981)|
-1,73,23,27,1,0,0,0,0,192,0,-1--1--1,,1|(1293,855)|
-1,74,23,43,1,0,0,0,0,192,0,-1--1--1,,1|(1045,815)|
-1,75,45,43,1,0,0,0,0,192,0,-1--1--1,,1|(887,664)|
-1,76,44,43,1,0,0,0,0,192,0,-1--1--1,,1|(881,606)|
-1,77,43,42,1,0,0,0,0,192,0,-1--1--1,,1|(847,567)|
-1,78,44,46,1,0,0,0,0,192,0,-1--1--1,,1|(1075,540)|
-1,79,45,46,1,0,0,0,0,192,0,-1--1--1,,1|(1109,651)|
-1,80,1,42,1,0,0,0,0,192,0,-1--1--1,,1|(1108,395)|
-1,81,1,46,1,0,0,0,0,192,0,-1--1--1,,1|(1177,375)|
-1,82,46,47,1,0,0,0,0,192,0,-1--1--1,,1|(1230,604)|
-1,83,23,47,1,0,0,0,0,192,0,-1--1--1,,1|(1235,780)|
-1,84,47,48,1,0,0,0,0,192,0,-1--1--1,,1|(1275,652)|
-1,85,48,49,1,0,0,0,0,192,0,-1--1--1,,1|(1460,667)|
-1,86,49,32,1,0,0,0,0,192,0,-1--1--1,,1|(1512,788)|
-1,87,50,49,1,0,0,0,0,192,0,-1--1--1,,1|(1530,698)|
-1,88,57,56,1,0,0,0,0,192,0,-1--1--1,,1|(1329,497)|
-1,89,1,56,1,0,0,0,0,192,0,-1--1--1,,1|(1260,394)|
-1,90,59,56,1,0,0,0,0,192,0,-1--1--1,,1|(1455,446)|
-1,91,56,58,1,0,0,0,0,192,0,-1--1--1,,1|(1410,499)|
-1,92,58,16,1,0,0,0,0,192,0,-1--1--1,,1|(1598,596)|
-1,93,56,60,1,0,0,0,0,192,0,-1--1--1,,1|(1406,416)|
-1,94,60,11,1,0,0,0,0,192,0,-1--1--1,,1|(1371,306)|
-1,95,61,10,1,0,0,0,0,192,0,-1--1--1,,1|(1305,207)|
-1,96,12,10,1,0,0,0,0,192,0,-1--1--1,,1|(1533,361)|
-1,97,1,33,5,0,0,0,0,192,0,-1--1--1,,6|(1409,132)|(1885,149)|(1990,381)|(1999,647)|(1928,798)|(1693,848)|
-1,98,54,21,1,0,0,0,0,192,0,-1--1--1,,1|(1659,403)|
-1,99,12,22,1,0,0,0,0,192,0,-1--1--1,,1|(1779,496)|
-1,100,53,22,1,0,0,0,0,192,0,-1--1--1,,1|(1843,437)|
-1,101,51,16,1,0,0,0,0,192,0,-1--1--1,,1|(1774,657)|
+10,1,Deer Population,428,165,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,198,168,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,68,0,0,22,0,192,0,-1--1--1,,1|(249,168)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(344,168)|
+11,5,0,297,168,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Deer Net Growth Rate,297,198,56,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,623,165,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(502,165)|
+1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(580,165)|
+11,10,0,541,165,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,Deer Predation,541,195,42,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Predator Population,979,422,50,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,13,48,979,582,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,16,13,68,0,0,22,0,192,0,-1--1--1,,1|(979,544)|
+1,15,16,12,4,0,0,22,0,192,0,-1--1--1,,1|(979,473)|
+11,16,0,979,509,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,17,Net Predator Growth Rate,1039,509,52,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,18,48,1122,291,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,21,12,100,0,0,22,0,192,0,-1--1--1,,1|(979,382)|
+1,20,21,18,4,0,0,22,0,192,0,-1--1--1,,3|(979,291)|(979,291)|(1045,291)|
+11,21,0,979,356,6,8,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,22,Predators Hunted,1029,356,44,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,23,Forage Biomass,591,739,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,24,48,588,897,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,25,27,24,68,0,0,22,0,192,0,-1--1--1,,1|(588,860)|
+1,26,27,23,4,0,0,22,0,192,0,-1--1--1,,1|(588,790)|
+11,27,0,588,825,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,28,Net Annual Forage Growth,643,825,47,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,29,48,859,737,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,30,32,23,100,0,0,22,0,192,0,-1--1--1,,1|(693,737)|
+1,31,32,29,4,0,0,22,0,192,0,-1--1--1,,1|(807,737)|
+11,32,0,760,737,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,33,Forage Consumed per Deer,760,767,55,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,34,Actual Biomass Growth Fraction,479,966,60,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,35,Baseline Biomass Growth Fraction,357,878,45,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,36,Kaibab Adequacy for Forage,679,977,53,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,37,Ratio of Forage to Forage Carrying Capacity,767,856,49,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,38,Kaibab Forage Carrying Capacity,950,898,60,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,39,Baseline Fractional Deer Growth Rate,22,135,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,40,Actual Fractional Net Growth Rate,110,252,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,41,Kaibab Adequacy to Support the Deer Population,-25,356,51,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,42,Ratio of the Deer Population to Carrying Capacity,246,398,57,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,43,Kaibab Deer Carrying Capacity,-2,503,55,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,44,Deer Carrying Capacity in Years,270,504,59,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,45,Desired Consumption per Deer,275,601,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,46,Required Forage Biomass,480,423,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,47,Ratio of Actual to Required Biomass,489,607,46,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,48,Effect of Forage Availability on Consumption,649,568,42,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,49,Actual Consumption per Deer,749,655,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,50,Desired Consumption per Deer,874,608,58,16,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,51,Baseline Fractional Predator Growth,1123,610,48,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,52,Initial Predator Population,1128,443,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,53,Fraction Predators Killed per Year,1171,381,46,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,54,Program Start Year,918,250,48,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,Initial Deer Population,428,92,58,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,Deer Density,631,357,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,57,Normal Deer Density per Acre,601,464,53,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,58,Effect of Deer Density on Predator Births,772,472,56,22,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,||BU|0-0-0,0,0,0,0,0,0
+10,59,Kaibab Area in Thousands of Acres,787,386,49,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,60,Effect of Deer Density on Predator Hunting Efficiency,689,263,56,23,8,3,0,16,-1,0,0,0,0-0-0,0-0-0,||BU|0-0-0,0,0,0,0,0,0
+10,61,Baseline Annual Kills per Predator,653,102,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,62,1,6,1,0,0,0,0,192,0,-1--1--1,,1|(371,230)|
+1,63,40,6,1,0,0,0,0,192,0,-1--1--1,,1|(233,233)|
+1,64,39,40,1,0,0,0,0,192,0,-1--1--1,,1|(26,194)|
+1,65,41,40,1,0,0,0,0,192,0,-1--1--1,,1|(-9,292)|
+1,66,42,41,1,0,0,0,0,192,0,-1--1--1,,1|(109,414)|
+1,67,38,37,1,0,0,0,0,192,0,-1--1--1,,1|(857,847)|
+1,68,23,37,1,0,0,0,0,192,0,-1--1--1,,1|(701,779)|
+1,69,37,36,1,0,0,0,0,192,0,-1--1--1,,1|(758,922)|
+1,70,36,34,1,0,0,0,0,192,0,-1--1--1,,1|(576,1005)|
+1,71,35,34,1,0,0,0,0,192,0,-1--1--1,,1|(382,930)|
+1,72,34,27,1,0,0,0,0,192,0,-1--1--1,,1|(488,896)|
+1,73,23,27,1,0,0,0,0,192,0,-1--1--1,,1|(558,770)|
+1,74,23,43,1,0,0,0,0,192,0,-1--1--1,,1|(310,730)|
+1,75,45,43,1,0,0,0,0,192,0,-1--1--1,,1|(152,579)|
+1,76,44,43,1,0,0,0,0,192,0,-1--1--1,,1|(146,521)|
+1,77,43,42,1,0,0,0,0,192,0,-1--1--1,,1|(112,482)|
+1,78,44,46,1,0,0,0,0,192,0,-1--1--1,,1|(340,455)|
+1,79,45,46,1,0,0,0,0,192,0,-1--1--1,,1|(374,566)|
+1,80,1,42,1,0,0,0,0,192,0,-1--1--1,,1|(373,310)|
+1,81,1,46,1,0,0,0,0,192,0,-1--1--1,,1|(442,290)|
+1,82,46,47,1,0,0,0,0,192,0,-1--1--1,,1|(495,519)|
+1,83,23,47,1,0,0,0,0,192,0,-1--1--1,,1|(500,695)|
+1,84,47,48,1,0,0,0,0,192,0,-1--1--1,,1|(540,567)|
+1,85,48,49,1,0,0,0,0,192,0,-1--1--1,,1|(725,582)|
+1,86,49,32,1,0,0,0,0,192,0,-1--1--1,,1|(777,703)|
+1,87,50,49,1,0,0,0,0,192,0,-1--1--1,,1|(795,613)|
+1,88,57,56,1,0,0,0,0,192,0,-1--1--1,,1|(594,412)|
+1,89,1,56,1,0,0,0,0,192,0,-1--1--1,,1|(525,309)|
+1,90,59,56,1,0,0,0,0,192,0,-1--1--1,,1|(720,361)|
+1,91,56,58,1,0,0,0,0,192,0,-1--1--1,,1|(675,414)|
+1,92,58,16,1,0,0,0,0,192,0,-1--1--1,,1|(863,511)|
+1,93,56,60,1,0,0,0,0,192,0,-1--1--1,,1|(671,331)|
+1,94,60,11,1,0,0,0,0,192,0,-1--1--1,,1|(636,221)|
+1,95,61,10,1,0,0,0,0,192,0,-1--1--1,,1|(570,122)|
+1,96,12,10,1,0,0,0,0,192,0,-1--1--1,,1|(798,276)|
+1,97,1,33,5,0,0,0,0,192,0,-1--1--1,,6|(674,47)|(1150,64)|(1255,296)|(1264,562)|(1193,713)|(958,763)|
+1,98,54,21,1,0,0,0,0,192,0,-1--1--1,,1|(924,318)|
+1,99,12,22,1,0,0,0,0,192,0,-1--1--1,,1|(1044,411)|
+1,100,53,22,1,0,0,0,0,192,0,-1--1--1,,1|(1108,352)|
+1,101,51,16,1,0,0,0,0,192,0,-1--1--1,,1|(1039,572)|
+1,102,55,1,0,0,0,0,0,192,1,-1--1--1,,1|(0,0)|
+10,103,Lookup Effect of Forage Availability on Consumption,615,662,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,104,103,48,1,0,0,0,0,192,0,-1--1--1,,1|(612,621)|
+1,105,52,12,0,0,0,0,0,192,1,-1--1--1,,1|(0,0)|
+1,106,12,16,1,0,0,0,0,64,0,-1--1--1,,1|(947,471)|
+10,107,Lookup Effect of Deer Density on Predator Births,807,552,56,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,108,107,58,1,0,0,0,0,192,0,-1--1--1,,1|(745,524)|
+10,109,Lookup Effect of Deer Density on Predator Hunting Efficiency,558,259,56,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,110,109,60,1,0,0,0,0,192,0,-1--1--1,,1|(627,293)|
+10,111,Historical Deer BOT,-109,206,52,22,8,3,0,19,-1,0,0,0,251-2-7,0-0-0,||B|251-2-7,0,0,0,0,0,0
+10,112,Lookup Historical Deer BOT,-221,273,59,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,113,Time,-245,220,21,9,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,114,113,111,1,0,0,0,0,192,0,-1--1--1,,1|(-170,224)|
+1,115,112,111,1,0,0,0,0,192,0,-1--1--1,,1|(-138,256)|
+10,116,Auxilliary Time to Deer,-244,175,60,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,117,116,111,1,0,0,0,0,192,0,-1--1--1,,1|(-164,175)|
+12,118,0,-200,874,300,200,0,15,0,0,1,0,0,0,0,0,0,0,0,0
+BOTG
 ///---\\\
+:GRAPH BOTG
+:TITLE BOTG
+:SCALE
+:VAR Deer Population
+:DATASET 
+:LINE-WIDTH 1
+:VAR Historical Deer BOT
+:DATASET 
+:LINE-STYLE DASHDOTDOT
+:LINE-WIDTH 1
 :L<%^E!@
-23:0
-15:0,0,0,0,0,0
+15:0,0,0,4,0,0
 27:0,
 34:0,
 42:0
@@ -316,7 +504,7 @@ $-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,5,2
 90:0
 87:0
 75:
-43:
+43:/Users/rginster/Documents/development/nfdi4sd-dgsd/model/case1.csv
 103:8,8,8,3,8
 105:0,0,0,0,0,0,0,0,0,0
 104:Times New Roman|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
