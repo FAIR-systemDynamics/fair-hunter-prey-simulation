@@ -3,16 +3,16 @@
 	<header>
 		<smile version="1.0" namespace="std, isee"/>
 		<name>kaibab_ecosystem_model</name>
-		<uuid>2ae51ede-af4c-4766-a91c-f696cf827c3e</uuid>
+		<uuid>74668987-cf61-4577-aa4a-c65e963429c1</uuid>
 		<vendor>isee systems, inc.</vendor>
 		<product version="4.4" isee:build_number="4016" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
-		<status verified="true" mixed="false" trusted="true" tampered="false" uses="false" analyzed="false" log_truncated="false" timestamp="1788112124" algorithm="ed25519" keyurl="https://iseesystems.com/keys/stella01.txt" want_var_info="true" want_var_status="false" want_log="false" sampling="1" signature="PN9lOtS0US3VWFe5B3vd1WZvUe6UskdkuQXU2ApeK/1JCLsje275FHLkVU7IzZxnt3mZAK7T+ra2OqWqimTsBw=="/>
+		<status verified="true" mixed="false" trusted="true" tampered="false" uses="false" analyzed="false" log_truncated="false" timestamp="1788112387" algorithm="ed25519" keyurl="https://iseesystems.com/keys/stella01.txt" want_var_info="true" want_var_status="false" want_log="false" sampling="1" signature="Rx07mzMXOyCChSnbh3mxN2EnG7h7zmBL9Z2bEeW37sBRPcSw1SWwiln3pdT9mKiNLk/q4y0Zw00eeMfPHYy0Ag=="/>
 	</ai_information>
-	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="Inf" isee:restore_on_start="false" method="RK4" time_units="Months" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
+	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.015" isee:restore_on_start="false" method="RK4" time_units="Years" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
 		<start>1900</start>
-		<stop>1900</stop>
+		<stop>2000</stop>
 		<dt reciprocal="true">10</dt>
 	</sim_specs>
 	<isee:prefs saved_runs="5" keep="false" version_control_friendly="true" show_module_prefix="true" live_update_on_drag="true" show_restore_buttons="false" layer="model" isee:design="Deluxe Prev-Next Blue Green Pastel" isee:design_custom="false" interface_scale_ui="true" interface_max_page_width="10000" interface_max_page_height="10000" interface_min_page_width="0" interface_min_page_height="0" rifp="true">
@@ -29,9 +29,143 @@
 	</isee:time_formats>
 	<isee:number_format_extenders/>
 	<default_format/>
-	<model_units/>
+	<model_units>
+		<unit name="Dimensionless">
+			<eqn>1</eqn>
+			<alias>dmnl</alias>
+			<alias>unitless</alias>
+			<alias>fraction</alias>
+		</unit>
+		<unit name="Years">
+			<eqn/>
+			<alias>yr</alias>
+			<alias>year</alias>
+		</unit>
+	</model_units>
 	<model>
-		<variables/>
+		<variables>
+			<aux name="Initial\nDeer Population">
+				<doc>This is an exogenous variable that can be used to set (and change) the initial size of the Deer Population.</doc>
+				<eqn>4000</eqn>
+				<format precision="100" scale_by="1" delimit_000s="true"/>
+				<range min="2000" max="8000"/>
+				<units>Deer</units>
+			</aux>
+			<aux name="Baseline Fractional Deer Growth Rate">
+				<doc>This variable stands for the fractional net growth rate of the Population whenever there are abundant resources on which to live.</doc>
+				<eqn>1.0</eqn>
+				<format precision="0.01" scale_by="1"/>
+				<range min="0.1" max="1.5"/>
+				<units>1/Year</units>
+			</aux>
+			<aux name="Actual Fractional Net Growth Rate">
+				<doc>This represents the actual Fractional Net Growth Rate of the Population, after accounting for the Adequacy of the Ecosystem to Support Growth of the population. It is calculated by multiplying the Baseline Fractional Net Growth rate times the Adequacy of the Ecosystem to Support Continued Growth. This, in effect, scales down the Baseline Fractional Growth Rate, according to how close the Population is to the Carrying Capacity.</doc>
+				<eqn>Baseline_Fractional_Deer_Growth_Rate*Kaibab_Adequacy_to_Support_the_Deer_Population</eqn>
+				<units>1/Year</units>
+			</aux>
+			<aux name="Kaibab Adequacy to Support the Deer Population">
+				<doc>This variable is calculated as 1 – (Ratio of Population to Carrying Capacity). When the Population is well below the Carrying Capacity (and the Ratio of Population to Carrying Capacity is hence close to zero), the Adequacy of the Ecosystem to Support Continued Growth value will be close to 1. As the Population approaches the Carrying Capacity (and the Ratio of Population to Carrying Capacity hence approaches 1), thus the Adequacy of  the Ecosystem to Support Continued Growth will approach zero. Higher Adequacy of the Ecosystem to Support Continued Growth values imply that the Population can grow at a more rapid pace. It has units that are dimensionless or a fraction.</doc>
+				<eqn>1-Ratio_of_the_Deer_Population_to_Carrying_Capacity</eqn>
+				<format precision="1000" scale_by="1"/>
+				<range min="4000" max="60000"/>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Ratio of the Deer Population\nto Carrying Capacity">
+				<doc>This is calculated as the ratio of the Population to the Carrying capacity. This Ratio is less than 1 when the current Population size is less than the Carrying Capacity. In this case, the Population still has “room to grow” in the ecosystem.  However, as the Population nears the Carrying Capacity, the Ratio of Population to Carrying Capacity will get close to 1. As this happens, the Fractional Net Growth Rate should slow, moving toward a value of zero.</doc>
+				<eqn>Deer_Population//Kaibab_Deer_Carrying_Capacity</eqn>
+				<units>dmnl</units>
+			</aux>
+			<stock name="Deer\nPopulation">
+				<eqn>Initial_Deer_Population</eqn>
+				<inflow>Deer_Net_Growth_Rate</inflow>
+				<outflow>Deer_Predation</outflow>
+				<units>Deer</units>
+			</stock>
+			<flow name="Deer\nNet Growth Rate">
+				<doc>With population data, we seldom know the Fractional Birth Rate and Fractional Death Rate, but we can often use historical data to calculate the Fractional Net Growth Rate. In addition, it turns out that the Fractional Net Growth Rate is the difference between the Fractional Birth Rate and the Fractional Death Rate.</doc>
+				<eqn>Actual_Fractional_Net_Growth_Rate*Deer_Population</eqn>
+				<units>Deer/Years</units>
+			</flow>
+			<aux name="Kaibab Deer Carrying Capacity">
+				<doc>This is the population size that the ecosystem can sustain for the long term.</doc>
+				<eqn>40000</eqn>
+				<format precision="1000" scale_by="1" delimit_000s="true"/>
+				<range min="4000" max="60000"/>
+				<units>Deer</units>
+			</aux>
+			<aux name="Baseline Annual Kills Per Predator">
+				<doc>The number of deer that would be killed per predator each year, assuming that there was a natural balance between the predator and deer populations. </doc>
+				<eqn>40</eqn>
+				<format precision="1" scale_by="1"/>
+				<range min="20" max="60"/>
+				<units>Deer/(Predators*Year)</units>
+			</aux>
+			<stock name="Predator\nPopulation">
+				<doc>The stock of predators in the ecosystem.</doc>
+				<eqn>Initial_Predator_Population</eqn>
+				<inflow>Net_Predator_Growth_Rate</inflow>
+				<units>Predators</units>
+			</stock>
+			<aux name="Effect of Deer Density on Predator Efficiency">
+				<doc>This is a dimensionless value used as a multiplier to increase or decrease the Deer Predation, according to the Deer Density level. This value varies between 0 and 1.5. Its value is 0 when there are no deer present (i.e. when deer density = 0 deer per 1000 acres) and it is 1.5 when there is an abundance of deer (i.e. when the deer density reaches 10 deer per 1000 acres or more). Hence, if there are no deer present, the Deer predation will fall to zero. If there is an overabundance of deer, the Deer Predation will be 1.5 times as great as it would be in equilibrium.  This variable was formatted in the diagram to use a boldface, underline font to highlight that its value is not set by an equation, but by a graphical function showing how the Effect is calculated based on the Deer Density.</doc>
+				<eqn>Deer_Density</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="0" max="2"/>
+					<ypts>0,0.05,0.15,0.35,0.7,1,1.2,1.3,1.4,1.45,1.5</ypts>
+				</gf>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Deer Density">
+				<doc>A measure of how many deer there are in a given area on the Kaibab Plateau. This is measured as the number of deer per 1000 acres</doc>
+				<eqn>(Deer_Population//Kaibab_Area_in_Thousands_of_Acres)/Normal_Deer_Density_per_Acre</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Kaibab Area in Thousands of Acres">
+				<doc>The size of the Kaibab Plateau; units are thousands of acres. Since the Kaibab plateau covers 800,000 acres</doc>
+				<eqn>800</eqn>
+				<units>K acres</units>
+			</aux>
+			<aux name="Normal\nDeer Density\nper Acre">
+				<doc>The number of deer per acre under ideal conditions. </doc>
+				<eqn>5</eqn>
+				<units>Deer/K acres</units>
+			</aux>
+			<aux name="Initial\nPredator Population">
+				<eqn>90</eqn>
+				<format precision="1" scale_by="1"/>
+				<range min="20" max="130"/>
+				<units>Predators</units>
+			</aux>
+			<flow name="Net Predator Growth Rate">
+				<doc>The net number of predators added to (or removed from) the Predator Population each year through the natural birth and death processes. This value is calculated as the product of the Predator Population, the Baseline Fractional Predator Growth Rate, and the Effect of Deer Density on Predator Births.</doc>
+				<eqn>Predator_Population*Baseline_Fractional_Predator_Growth_Rate*Effect_of_Deer_Density_on_Predator_Births</eqn>
+				<format scale_by="1" delimit_000s="true"/>
+				<units>Predators/Years</units>
+			</flow>
+			<aux name="Baseline Fractional Predator Growth Rate">
+				<doc>This represents the fraction by which the Predator Population will grow each year, assuming there are an abundance of deer available for food. </doc>
+				<eqn>0.7</eqn>
+				<format precision="0.01" scale_by="1"/>
+				<range min="0.2" max="1.5"/>
+				<units>1/Year</units>
+			</aux>
+			<aux name="Effect of Deer Density on Predator Births">
+				<doc>This is a dimensionless value used to represent how the Deer Density on the Kaibab Plateau affects the growth rates of the predator herd. This variable is used as a multiplier to increase or decrease the Net Predator Growth Rate, according to the Deer Density value (with greater density implying more food for predators, and hence a greater reproductive rate). This Effect  of Deer Density on Predator Births variable is also determined by a graphical relationship with Deer Density. When the Deer density is 0, the Effect is -1.0, meaning that the Predator population will experience negative growth (from a lack of food). When the Deer density is 1, the effect is 0, meaning that the Predator Population will experience flat growth (neither growing nor shrinking). When the Deer Density is more than 2 , the Effect of Deer Density on Predator Births is 1.5, meaning that the Predator Population will grow at 1.5 times the Baseline Fractional Net Growth Rate (because there are abundant deer available for food).	</doc>
+				<eqn>Deer_Density</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="-1.5" max="1.5"/>
+					<ypts>-1,-0.95,-0.9,-0.8,-0.5,0,0.5,0.8,0.9,0.95,1</ypts>
+				</gf>
+				<units>dmnl</units>
+			</aux>
+			<flow name="Deer\nPredation">
+				<eqn>Baseline_Annual_Kills_Per_Predator*Predator_Population*Effect_of_Deer_Density_on_Predator_Efficiency</eqn>
+				<non_negative/>
+				<units>Deer/Years</units>
+			</flow>
+		</variables>
 		<views>
 			<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 				<text_box color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt"/>
@@ -80,7 +214,7 @@
 				<isee:iframe color="black" background="white" text_align="left" vertical_text_align="top" font_size="12pt" border_width="thin" border_style="solid"/>
 				<isee:financial_table color="black" background="#E0E0E0" text_align="right" font_size="12pt" hide_border="false" auto_fit="true" first_column_width="250" other_column_width="100" header_font_style="normal" header_font_weight="bold" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="14pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 			</style>
-			<view isee:show_pages="false" background="white" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
+			<view isee:show_pages="false" background="white" isee:page_cols="2" isee:page_rows="2" isee:popup_graphs_are_comparative="true" isee:enable_non_negative_highlights="false" type="stock_flow">
 				<style color="black" background="white" font_style="normal" font_weight="normal" text_decoration="none" text_align="center" vertical_text_align="center" font_color="black" font_family="Arial" font_size="10pt" padding="2" border_color="black" border_width="thin" border_style="none">
 					<stock color="blue" background="white" font_color="blue" font_size="9pt" label_side="top">
 						<shape type="rectangle" width="45" height="35"/>
@@ -119,8 +253,129 @@
 					</graph>
 					<table color="black" background="#E0E0E0" text_align="right" font_size="12pt" orientation="vertical" wrap_text="false" isee:auto_fit="true" isee:use_alternate_row_colors="false" isee:unlimited_table_length="false" blank_column_width="80" column_width="160" interval="1" report_balances="beginning" report_flows="instantaneous" header_font_style="normal" header_font_weight="normal" header_text_decoration="none" header_text_align="center" header_vertical_text_align="center" header_font_color="black" header_font_family="Arial" header_font_size="12pt" header_text_padding="2" header_text_border_color="black" header_text_border_width="thin" header_text_border_style="none"/>
 				</style>
+				<aux label_side="bottom" x="262.861" y="259.701" name="Initial\nDeer Population"/>
+				<aux label_side="top" x="55.7852" y="125.393" name="Baseline Fractional Deer Growth Rate"/>
+				<aux label_side="left" label_angle="225" x="126.17" y="172.729" name="Actual Fractional Net Growth Rate"/>
+				<aux label_side="top" x="166.836" y="112.264" name="Kaibab Adequacy to Support the Deer Population"/>
+				<aux label_side="bottom" x="248.133" y="130.264" name="Ratio of the Deer Population\nto Carrying Capacity"/>
+				<stock label_side="center" x="258.465" y="226.344" name="Deer\nPopulation"/>
+				<flow label_side="bottom" x="181.395" y="226.344" name="Deer\nNet Growth Rate">
+					<pts>
+						<pt x="114.824" y="226.344"/>
+						<pt x="235.965" y="226.344"/>
+					</pts>
+				</flow>
+				<connector uid="2" angle="77.6526">
+					<from>Deer_Population</from>
+					<to>Ratio_of_the_Deer_Population_to_Carrying_Capacity</to>
+				</connector>
+				<connector uid="3" angle="129.342">
+					<from>Ratio_of_the_Deer_Population_to_Carrying_Capacity</from>
+					<to>Kaibab_Adequacy_to_Support_the_Deer_Population</to>
+				</connector>
+				<connector uid="4" angle="204.25">
+					<from>Kaibab_Adequacy_to_Support_the_Deer_Population</from>
+					<to>Actual_Fractional_Net_Growth_Rate</to>
+				</connector>
+				<connector uid="5" angle="292.778">
+					<from>Actual_Fractional_Net_Growth_Rate</from>
+					<to>Deer_Net_Growth_Rate</to>
+				</connector>
+				<connector uid="6" angle="309.64">
+					<from>Baseline_Fractional_Deer_Growth_Rate</from>
+					<to>Actual_Fractional_Net_Growth_Rate</to>
+				</connector>
+				<connector uid="7" angle="117.006">
+					<from>Deer_Population</from>
+					<to>Deer_Net_Growth_Rate</to>
+				</connector>
+				<aux label_side="top" x="310.26" y="84.5684" name="Kaibab Deer Carrying Capacity"/>
+				<connector uid="8" angle="256.808">
+					<from>Kaibab_Deer_Carrying_Capacity</from>
+					<to>Ratio_of_the_Deer_Population_to_Carrying_Capacity</to>
+				</connector>
+				<aux label_side="top" x="368.869" y="187.424" name="Baseline Annual Kills Per Predator"/>
+				<connector uid="9" angle="194.94">
+					<from>Baseline_Annual_Kills_Per_Predator</from>
+					<to>Deer_Predation</to>
+				</connector>
+				<stock label_side="center" x="471.213" y="228.225" name="Predator\nPopulation"/>
+				<connector uid="10" angle="219.973">
+					<from>Predator_Population</from>
+					<to>Deer_Predation</to>
+				</connector>
+				<aux label_side="right" x="724.119" y="217.053" name="Effect of Deer Density on Predator Efficiency"/>
+				<connector uid="11" angle="244.151">
+					<from>Effect_of_Deer_Density_on_Predator_Efficiency</from>
+					<to>Deer_Predation</to>
+				</connector>
+				<aux x="430.67" y="125.393" name="Deer Density"/>
+				<aux label_side="right" x="508.934" y="76.666" name="Kaibab Area in Thousands of Acres"/>
+				<connector uid="12" angle="186.179">
+					<from>Kaibab_Area_in_Thousands_of_Acres</from>
+					<to>Deer_Density</to>
+				</connector>
+				<connector uid="13" angle="69.2606">
+					<from>Deer_Population</from>
+					<to>Deer_Density</to>
+				</connector>
+				<aux label_side="right" label_angle="45" x="471.213" y="58.666" name="Normal\nDeer Density\nper Acre"/>
+				<connector uid="15" angle="225.323">
+					<from>Normal_Deer_Density_per_Acre</from>
+					<to>Deer_Density</to>
+				</connector>
+				<connector uid="16" angle="29.3448">
+					<from>Deer_Density</from>
+					<to>Effect_of_Deer_Density_on_Predator_Efficiency</to>
+				</connector>
+				<aux label_side="bottom" x="474.826" y="262.984" name="Initial\nPredator Population"/>
+				<flow x="553.534" y="226.717" name="Net Predator Growth Rate">
+					<pts>
+						<pt x="625.355" y="226.717"/>
+						<pt x="493.713" y="226.717"/>
+					</pts>
+				</flow>
+				<connector uid="17" angle="51.8628">
+					<from>Predator_Population</from>
+					<to>Net_Predator_Growth_Rate</to>
+				</connector>
+				<aux label_side="bottom" x="660.057" y="177.223" name="Baseline Fractional Predator Growth Rate"/>
+				<connector uid="18" angle="188.54">
+					<from>Baseline_Fractional_Predator_Growth_Rate</from>
+					<to>Net_Predator_Growth_Rate</to>
+				</connector>
+				<aux label_side="right" x="530.469" y="164.324" name="Effect of Deer Density on Predator Births"/>
+				<connector uid="20" angle="13.7619">
+					<from>Deer_Density</from>
+					<to>Effect_of_Deer_Density_on_Predator_Births</to>
+				</connector>
+				<connector uid="21" angle="325.247">
+					<from>Effect_of_Deer_Density_on_Predator_Births</from>
+					<to>Net_Predator_Growth_Rate</to>
+				</connector>
+				<stacked_container uid="22" x="158.936" y="427.344" width="509.279" height="327.975">
+					<graph width="509.279" height="327.975" type="time_series" show_grid="false" isee:tick_type="none" include_units_in_legend="false" plot_numbers="false" isee:label_pie_slices="false" isee:show_pie_borders="true" num_x_grid_lines="0" num_y_grid_lines="0" num_x_labels="5" num_y_labels="3" isee:fill_intensity="0.1" isee:allow_zero_axis="true" left_axis_multi_scale="false" left_axis_auto_scale="true" left_include_units="true" right_axis_multi_scale="false" right_axis_auto_scale="true" right_include_units="true">
+						<plot color="blue" isee:keep_zero_visible="false" pen_width="1" index="0" show_y_axis="true">
+							<entity name="Deer_Population"/>
+							<scale min="0" max="6000"/>
+						</plot>
+						<plot color="red" pen_style="dot_dashed" isee:keep_zero_visible="false" pen_width="1" index="0" right_axis="true" show_y_axis="true">
+							<entity name="Predator_Population"/>
+							<scale min="0" max="200"/>
+						</plot>
+					</graph>
+				</stacked_container>
+				<flow x="320.061" y="226.143" name="Deer\nPredation">
+					<pts>
+						<pt x="280.965" y="226.143"/>
+						<pt x="383.157" y="226.143"/>
+					</pts>
+				</flow>
 			</view>
 		</views>
 	</model>
+	<isee:controls>
+		<isee:control priority="interactive" name="Initial_Predator_Population" value="50"/>
+	</isee:controls>
 </xmile>
 
