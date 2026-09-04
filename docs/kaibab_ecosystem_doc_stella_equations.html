@@ -1,0 +1,550 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html><head><meta name="qrichtext" content="1" /><meta charset="utf-8" /><style type="text/css">
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: "\2610"; }
+li.checked::marker { content: "\2612"; }
+</style></head><body style=" font-family:'.AppleSystemUIFont'; font-size:18pt; font-weight:400; font-style:normal;">
+<h1>kaibab_ecosystem_model.stmx</h1>
+<table border="1" style=" border-color:#d3d3d3; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="0" cellpadding="4">
+<tr>
+<td width="21" bgcolor="#d3d3d3"></td>
+<td bgcolor="#d3d3d3"></td>
+<td bgcolor="#d3d3d3">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Equation</span></p></td>
+<td bgcolor="#d3d3d3">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Properties</span></p></td>
+<td bgcolor="#d3d3d3">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Units</span></p></td>
+<td bgcolor="#d3d3d3">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Documentation</span></p></td></tr>
+<tr>
+<td bgcolor="#d3d3d3"></td>
+<td colspan="5" bgcolor="#d3d3d3" style=" vertical-align:top;">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Top-Level Model:</span></p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkklEQVQokZ3OPw4BYRCH4WdlQ6Gw5UavUOyqSXAKt1AonIW4gXO4gjOIUq8ZzfpTiOznbWYymXd+w59kRI1honfJiCNOieIyx41sl+bFpJOY9CJBjJooE8UoscKMKCBvGbfBAhV6z2v7lqlbYt70h7avTnFGlxilvFqj/znIURDrFvK9qWMMMqJC+UP4xjVx/80DwawbouUSjtoAAAAASUVORK5CYII=" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Population(t)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Population(t - dt) + (Deer_Net_Growth_Rate - Deer_Predation) * dt</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">INIT Deer_Population = Initial_Deer_Population</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The deer population on the Kaibab Plateau</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkklEQVQokZ3OPw4BYRCH4WdlQ6Gw5UavUOyqSXAKt1AonIW4gXO4gjOIUq8ZzfpTiOznbWYymXd+w59kRI1honfJiCNOieIyx41sl+bFpJOY9CJBjJooE8UoscKMKCBvGbfBAhV6z2v7lqlbYt70h7avTnFGlxilvFqj/znIURDrFvK9qWMMMqJC+UP4xjVx/80DwawbouUSjtoAAAAASUVORK5CYII=" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Biomass(t)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Biomass(t - dt) + (Net_Annual_Forage_Growth - Forage_Consumed_by_Deer) * dt</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">INIT Forage_Biomass = 317000</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage available for deer to eat</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAkklEQVQokZ3OPw4BYRCH4WdlQ6Gw5UavUOyqSXAKt1AonIW4gXO4gjOIUq8ZzfpTiOznbWYymXd+w59kRI1honfJiCNOieIyx41sl+bFpJOY9CJBjJooE8UoscKMKCBvGbfBAhV6z2v7lqlbYt70h7avTnFGlxilvFqj/znIURDrFvK9qWMMMqJC+UP4xjVx/80DwawbouUSjtoAAAAASUVORK5CYII=" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predator_Population(t)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predator_Population(t - dt) + (Net_Predator_Growth_Rate - Predators_Hunted) * dt</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">INIT Predator_Population = Initial_Predator_Population</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predators</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of predators on the Kaibab Plateau</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA80lEQVQokb3RLUuDcRQF8N9/imMow2ETbFpkWtQgGHxZsfkJzIYlg0mToE2DzSAIggjDavATaLAYDUYxKWhQQa5hD/LwuBl34JZz7uGeey+9RvpLxQyGCuQb6S5P9BdM02jivmCcIg5Iv3yp0PCKChbxgEcsoYyXf6LGGJ6xjtlMv8EZRkhPHSZGEy304QvjWX2giiNiLWeMQeIUuxjFMSZIDdIK6rjEAGrEVtsjmsQ7EcQJsUdM5pLUif1sDcQOsZyIEraxgW9c4ROb2Y6H2u+p4TY72EX+MKvENVEmFohWVvPEMHFOzOmMqHYREJXuWi/wA3SdR3ieVdvOAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Net_Growth_Rate</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Fractional_Net_Growth_Rate*Deer_Population</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">With population data, we seldom know the Fractional Birth Rate and Fractional Death Rate, but we can often use historical data to calculate the Fractional Net Growth Rate. In addition, it turns out that the Fractional Net Growth Rate is the difference between the Fractional Birth Rate and the Fractional Death Rate.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVQokb3Ovy6DYRwF4OdtayoJg6ExGBBsFoNEYpKUxdTZZHQRlt5AN3ERgsUoMVRiErF0l4pKJwkJfgbv8Gmqg4iznX85h/9G+k5jHjNDYheDSqVQqqKJ9kBmiZgiHRfF0kCojHdc4xCv+PjKRXnU1UVsoo4HjOMIHbSwR+rmq7GCdfQKqyW84A0TaGT/gGiRbitYwxye8kKdtJUfNLCRr9+QzokmcVbCGJ7Rz0tXhe+d7PfQzVof1URsYxWP2ZjOZhu7uEMNs7jHKenScMQOsU/UMl8gTojlHwqjEJO/KP0hPgHQxzqGKSXBcQAAAABJRU5ErkJggg==" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Predation</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Annual_Kills_Per_Predator*Predator_Population*Effect_of_Deer_Density_on_Predator_Efficiency</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The number of animals killed by predators per year.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVQokb3Ovy6DYRwF4OdtayoJg6ExGBBsFoNEYpKUxdTZZHQRlt5AN3ERgsUoMVRiErF0l4pKJwkJfgbv8Gmqg4iznX85h/9G+k5jHjNDYheDSqVQqqKJ9kBmiZgiHRfF0kCojHdc4xCv+PjKRXnU1UVsoo4HjOMIHbSwR+rmq7GCdfQKqyW84A0TaGT/gGiRbitYwxye8kKdtJUfNLCRr9+QzokmcVbCGJ7Rz0tXhe+d7PfQzVof1URsYxWP2ZjOZhu7uEMNs7jHKenScMQOsU/UMl8gTojlHwqjEJO/KP0hPgHQxzqGKSXBcQAAAABJRU5ErkJggg==" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Consumed_by_Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Consumption_per_Deer*Deer_Population</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Change in the forage biomass on the Kaibab via consumption by animals.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVQokb3Ovy6DYRwF4OdtayoJg6ExGBBsFoNEYpKUxdTZZHQRlt5AN3ERgsUoMVRiErF0l4pKJwkJfgbv8Gmqg4iznX85h/9G+k5jHjNDYheDSqVQqqKJ9kBmiZgiHRfF0kCojHdc4xCv+PjKRXnU1UVsoo4HjOMIHbSwR+rmq7GCdfQKqyW84A0TaGT/gGiRbitYwxye8kKdtJUfNLCRr9+QzokmcVbCGJ7Rz0tXhe+d7PfQzVof1URsYxWP2ZjOZhu7uEMNs7jHKenScMQOsU/UMl8gTojlHwqjEJO/KP0hPgHQxzqGKSXBcQAAAABJRU5ErkJggg==" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Net_Annual_Forage_Growth</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Biomass_Growth_Fraction* Forage_Biomass</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Net change in the forage biomass on the Kaibab via natural growth and decay, apart from consumption by animals.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA80lEQVQokb3RLUuDcRQF8N9/imMow2ETbFpkWtQgGHxZsfkJzIYlg0mToE2DzSAIggjDavATaLAYDUYxKWhQQa5hD/LwuBl34JZz7uGeey+9RvpLxQyGCuQb6S5P9BdM02jivmCcIg5Iv3yp0PCKChbxgEcsoYyXf6LGGJ6xjtlMv8EZRkhPHSZGEy304QvjWX2giiNiLWeMQeIUuxjFMSZIDdIK6rjEAGrEVtsjmsQ7EcQJsUdM5pLUif1sDcQOsZyIEraxgW9c4ROb2Y6H2u+p4TY72EX+MKvENVEmFohWVvPEMHFOzOmMqHYREJXuWi/wA3SdR3ieVdvOAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Net_Predator_Growth_Rate</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predator_Population*Baseline_Fractional_Predator_Growth_Rate*Effect_of_Deer_Density_on_Predator_Births</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predators/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The net number of predators added to (or removed from) the Predator Population each year through the natural birth and death processes. This value is calculated as the product of the Predator Population, the Baseline Fractional Predator Growth Rate, and the Effect of Deer Density on Predator Births.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVQokb3Ovy6DYRwF4OdtayoJg6ExGBBsFoNEYpKUxdTZZHQRlt5AN3ERgsUoMVRiErF0l4pKJwkJfgbv8Gmqg4iznX85h/9G+k5jHjNDYheDSqVQqqKJ9kBmiZgiHRfF0kCojHdc4xCv+PjKRXnU1UVsoo4HjOMIHbSwR+rmq7GCdfQKqyW84A0TaGT/gGiRbitYwxye8kKdtJUfNLCRr9+QzokmcVbCGJ7Rz0tXhe+d7PfQzVof1URsYxWP2ZjOZhu7uEMNs7jHKenScMQOsU/UMl8gTojlHwqjEJO/KP0hPgHQxzqGKSXBcQAAAABJRU5ErkJggg==" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predators_Hunted</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">STEP(Predator_Population*Fraction_Predators_Killed_per_Year, Program_Start_Year)</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predators/Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of predators removed each year through hunting.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Biomass_Growth_Fraction</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Biomass_Growth_Fraction*Kaibab_Adequacy_fo_Forage</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This represents the actual Fractional Net Growth Rate of the Biomass, after accounting for the Carrying Capacity of the Ecosystem</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Consumption_per_Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Desired_Consumption_per_Deer*Effect_of_Forage_Availability_on_Consumption</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton/deer/year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The actual amount of forage biomass consumed per deer.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Actual_Fractional_Net_Growth_Rate</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Fractional_Deer_Growth_Rate*Kaibab_Adequacy_to_Support_the_Deer_Population</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This represents the actual Fractional Net Growth Rate of the Population, after accounting for the Adequacy of the Ecosystem to Support Growth of the population. It is calculated by multiplying the Baseline Fractional Net Growth rate times the Adequacy of the Ecosystem to Support Continued Growth. This, in effect, scales down the Baseline Fractional Growth Rate, according to how close the Population is to the Carrying Capacity.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Annual_Kills_Per_Predator</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">40</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer/(Predators*Year)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The number of deer that would be killed per predator each year, assuming that there was a natural balance between the predator and deer populations. </p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Biomass_Growth_Fraction</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.10</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This variable stands for the fractional net growth rate of the Biomass whenever there are no restrictions of the carrying capacity.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Fractional_Deer_Growth_Rate</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1.0</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This variable stands for the fractional net growth rate of the Population whenever there are abundant resources on which to live.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Baseline_Fractional_Predator_Growth_Rate</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.5</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This represents the fraction by which the Predator Population will grow each year, assuming there are an abundance of deer available for food. </p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Carrying_Capacity_in_Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">2</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Years</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Number of years of forage needed to sustain the deer population.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Density</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">(Deer_Population//Kaibab_Area_in_Thousands_of_Acres)/Normal_Deer_Density_per_Acre</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The ratio of deer to area all of which is divided by a normal. Results in a scale where one is normal and anything above 1 indicates that you have too many deer and anything below one indicates that you have to few deer compared to what is normal deer per acres.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Desired_Consumption_per_Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.75</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton/deer/year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The amount of forage consumed by a single deer in a year, when abundant forage is available.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Effect_of_Deer_Density_on_Predator_Births</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GRAPH(Deer_Density) Points: (0.000, -1.000), (0.200, -0.950), (0.400, -0.900), (0.600, -0.800), (0.800, -0.500), (1.000, 0.000), (1.200, 0.500), (1.400, 0.800), (1.600, 0.900), (1.800, 0.950), (2.000, 1.000)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABdklEQVQ4ja2VsarCMBiFf+tFapeC4FClY5e2bu520lXRWeiL2Lj6GEKXi2Sou9U36FDUwc3o5GA3FTQuXrlXr01aPdNPOJzkfIQkU6tRy4I3NZsBOA6llE4mE/qjFDNC9Bb0phCiXymKHA4HURQB4HK5hGF4Op3CUEwctNlslstlEASDwWC322WzWU3TBKGfjBEhRJblXC5XrVaHw2FKRoSQcrns+/7xeEzPKIoiwzD2+/0rg8AZ1Ol0XNeNMdyCfN+/Lz3P4/E4n89LkhTj4WKkKMp2u40xIETZ1WzbrtfriqLE2xiwV6sVxjiKIuZ+DEbdbvfOOJ5jHCPP8xqNBscNY92jZrO5Xq+Zpf5Ue1ahUBiNRqVSKVnQQ+disbhYLFqtFoPLrznjOBQhOJ/P8/k8CAJCCMZYVVWMMedZAKDfB9D1b03TAKBSqaiq2m63Pc/jAfwI2zCMXg+bpsm//78SdF03TZOfxcv5U292xrI+8B1Np3AFJrKOwJ3H/AoAAAAASUVORK5CYII=" width="24" height="24" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is a dimensionless value used to represent how the Deer Density on the Kaibab Plateau affects the growth rates of the predator herd. This variable is used as a multiplier to increase or decrease the Net Predator Growth Rate, according to the Deer Density value (with greater density implying more food for predators, and hence a greater reproductive rate). This Effect of Deer Density on Predator Births variable is also determined by a graphical relationship with Deer Density. When the Deer density is 0, the Effect is -1.0, meaning that the Predator population will experience negative growth (from a lack of food). When the Deer density is 1, the effect is 0, meaning that the Predator Population will experience flat growth (neither growing nor shrinking). When the Deer Density is more than 2 , the Effect of Deer Density on Predator Births is 1.5, meaning that the Predator Population will grow at 1.5 times the Baseline Fractional Net Growth Rate (because there are abundant deer available for food). </p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Effect_of_Deer_Density_on_Predator_Efficiency</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GRAPH(Deer_Density) Points: (0.000, 0.000), (0.200, 0.050), (0.400, 0.150), (0.600, 0.350), (0.800, 0.700), (1.000, 1.000), (1.200, 1.200), (1.400, 1.300), (1.600, 1.400), (1.800, 1.450), (2.000, 1.500)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABgUlEQVQ4ja2TsauCQBzHz8ercIhwKYKGBkd3J0loEfwTGhRsClwKoqHyKvwLGsLJf6G3FDRUQpvEI8K55qClIWiQe4Ov8FXoqe87/bg7vvD53B1RqSCeBwljWQBoGkIILZdLdE+MGUL0W5QwEKKPpFT3/HfRarV6LEWaEUKLxeJ4PMZ0dDqdGo0Gx3EAAIIgymXzMyqCbduO4xiGkUqldF1Pp9Msyw4GIEKRbdsQwt1uVygUdF0XBMG/i+vofD6LolgqlabT6Xa7zWQyz2cwHXU6ndFolOgdWZYlSRJJkt1uN+BYiCPHcWRZNk2TD/uQIY5EUZzNZl5LiMcAR71ebzgc4hgMcrTf7w3DKBaLwUTPaK+53W7ZbLZer0cremXu9/vj8TjCv3vraD6fC4KAY+fh6P31y7K82Wwwof6g+aOqarvdpmk6TpHHOZlMarXa9XptNpv+daxZ05Druq1WK5/PV6tVCCG+Gr8jIpf7vly+KIpSFOVwODAME4nIy3oNfgBkgVgcPIpsSQAAAABJRU5ErkJggg==" width="24" height="24" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is a dimensionless value used as a multiplier to increase or decrease the Deer Predation, according to the Deer Density level. This value varies between 0 and 1.5. Its value is 0 when there are no deer present (i.e. when deer density = 0 deer per 1000 acres) and it is 1.5 when there is an abundance of deer (i.e. when the deer density reaches 10 deer per 1000 acres or more). Hence, if there are no deer present, the Deer predation will fall to zero. If there is an overabundance of deer, the Deer Predation will be 1.5 times as great as it would be in equilibrium. This variable was formatted in the diagram to use a boldface, underline font to highlight that its value is not set by an equation, but by a graphical function showing how the Effect is calculated based on the Deer Density.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Effect_of_Forage_Availability_on_Consumption</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GRAPH(Ratio_of_Actual_to_Required_Biomass) Points: (0.000, 0.000), (0.100, 0.590), (0.200, 0.840), (0.300, 0.930), (0.400, 0.970), (0.500, 0.990), (0.600, 0.9957), (0.700, 0.9983), (0.800, 0.9994), (0.900, 0.9998), (1.000, 1.000)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAACXBIWXMAAAsTAAALEwEAmpwYAAABR0lEQVQ4jWO0t//v4MBAITh4kIGhvv7/////9+3b9x8GyGA3NPyHGkQhaGj4z0Spr2CA2gbt378fLkQmezSMCLOpFUYsuJz669evAwcOCAoKnjx58unTp/z8/CdPnjQzM7t48aKkpOTfv3+fP3+uo6Nz7NgxExOTY8dcsRi0efPmjIyMN2/eMDMzKysrs7Ozi4uLKygovHv37vPnzz9+/Pj16xcDAwOyixBeg+Sda9euKSkpiYmJzZgxA6KCzLwmJSXV2dlJaRjl5ORUVVVlZ2cTHeMoAGpQSEgIMzPzlClTyDOFAZKOzpw5s3///pUrV0KEyEtHjPX1/9nY2r5+/dra2kq2cxobGZgYGBhWrVoVFhZGtikQwPT27dvv37/r6+tTatDVq1fDw8OpkNfExKZdvnyZjLSDlo4YubhOlZWZUuivAwcYABBUaZ4+8Ae4AAAAAElFTkSuQmCC" width="24" height="24" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is need is available. Deer will then start to eat less as foraging becomes more difficult.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Fraction_Predators_Killed_per_Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Fraction of predators killed each year.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Historical_Deer_Behavior_Over_Time</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">GRAPH(TIME) Points: (1900.00, 4000.0), (1902.50, 4000.0), (1905.00, 4000.0), (1907.50, 5000.0), (1910.00, 9000.0), (1912.50, 15000.0), (1915.00, 25000.0), (1917.50, 35000.0), (1920.00, 65000.0), (1922.50, 90000.0), (1925.00, 60000.0), (1927.50, 37000.0), (1930.00, 25000.0), (1932.50, 20000.0), (1935.00, 18000.0), (1937.50, 12000.0), (1940.00, 10000.0), (1942.50, 7000.0), (1945.00, 5000.0), (1947.50, 3000.0), (1950.00, 2000.0)</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAIAAABvFaqvAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVUlEQVQ4je2VsQ1AIQgF8S8mm8lkoJM9m68tiVBy1YWChGtovYOZgqxFNAYAqCoODy6Cf1EQEXzRqw7Zi8zsjh69GvlejXyvRr5XI9+zGjXmhHc0J22VcC3nZImqiwAAAABJRU5ErkJggg==" width="24" height="24" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown here. You can display this BOTG with the Deer Population to help us tune the model parameters to match the historical record.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Initial_Deer_Population</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">4000</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is an exogenous variable that can be used to set (and change) the initial size of the Deer Population.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Initial_Predator_Population</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">100</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Predators</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Used to set the initial size of the Predator Population. Notice that this is different from the original predator-prey model you built.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kaibab_Adequacy_fo_Forage</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1-Ratio_of_Forage_to_Forage_Carrying_Capacity</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This variable is calculated as 1 – (Ratio of Forage to Forage Carrying Capacity). When the Biomass is well below the Carrying Capacity, the Adequacy of the Ecosystem to Support Continued Growth value will be close to 1. As the Biomass approaches the Carrying Capacity, thus the Adequacy of the Ecosystem to Support Continued Growth will approach zero. Higher Adequacy of the Ecosystem to Support Continued Growth values imply that the Biomass can grow at a more rapid pace.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kaibab_Adequacy_to_Support_the_Deer_Population</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1-Ratio_of_the_Deer_Population_to_Carrying_Capacity</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This variable is calculated as 1 – (Ratio of Population to Carrying Capacity). When the Population is well below the Carrying Capacity (and the Ratio of Population to Carrying Capacity is hence close to zero), the Adequacy of the Ecosystem to Support Continued Growth value will be close to 1. As the Population approaches the Carrying Capacity (and the Ratio of Population to Carrying Capacity hence approaches 1), thus the Adequacy of the Ecosystem to Support Continued Growth will approach zero. Higher Adequacy of the Ecosystem to Support Continued Growth values imply that the Population can grow at a more rapid pace. It has units that are dimensionless or a fraction.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kaibab_Area_in_Thousands_of_Acres</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">800</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">K acres</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Land area of the Kaibab Plateau. This is approximately 800,000 acres. We are measuring this in thousands of acres so that is why we use 800 when setting the value.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kaibab_Deer_Carrying_Capacity</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Biomass/( Desired_Consumption_per_Deer*Deer_Carrying_Capacity_in_Years )</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is the population size that the ecosystem can sustain for the long term.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Kaibab_Forage_Carrying_Capacity</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">350000</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Amount of forage biomass that the Kaibab can support on an ongoing basis.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Normal_Deer_Density_per_Acre</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">5</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer/K acres</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The number of deer per acre under ideal conditions. </p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Program_Start_Year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1907</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">year</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">The year the predator hunting policy is implemented. From that year on, a fraction of the remaining predators will be hunted and killed each year.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ratio_of_Actual_to_Required_Biomass</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Biomass//Required_Forage_Biomass</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Measures how much forage is available, relative to what is need to sustain the current deer population. Values below 1 indicate a shortage of forge biomass.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ratio_of_Forage_to_Forage_Carrying_Capacity</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage_Biomass/Kaibab_Forage_Carrying_Capacity</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is calculated as the ratio of the Forage Biomass to the Carrying capacity. This Ratio is less than 1 when the current Forage Biomass is less than the Carrying Capacity. In this case, the Forage Biomass still has “room to grow” in the ecosystem. However, as the Forage Biomass nears the Carrying Capacity, the Ratio of Forage Biomass to Carrying Capacity will get close to 1. As this happens, the Fractional Net Growth Rate should slow, moving toward a value of zero.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Ratio_of_the_Deer_Population_to_Carrying_Capacity</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Deer_Population//Kaibab_Deer_Carrying_Capacity</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">dmnl</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">This is calculated as the ratio of the Population to the Carrying capacity. This Ratio is less than 1 when the current Population size is less than the Carrying Capacity. In this case, the Population still has “room to grow” in the ecosystem. However, as the Population nears the Carrying Capacity, the Ratio of Population to Carrying Capacity will get close to 1. As this happens, the Fractional Net Growth Rate should slow, moving toward a value of zero.</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAuklEQVQokZ3RMWoCURDG8d9qwNoz6DZh8RyKVxJsxUNYJRBImXTxBB7ARnOTwFjsW1k2eeyaD6Z4w/zffDPDP1X8TsUEK8xT4opPip921agDLXDAFKcUU7wQVaZ5LIhd3lzs/4BjQrzmoXvdGzFuW13h2A/6wroNzvE9ALygbIMPqwGvmA2oL1PXRvFUD96neCe6t4+qXnkW2hPPzatDR4WNenuNpRJLbCnOGZB0p3UCpA8+KKJ/lAG6AcmKLd57BW0yAAAAAElFTkSuQmCC" width="14" height="14" /></p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Required_Forage_Biomass</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">(Deer_Population*Desired_Consumption_per_Deer) *Deer_Carrying_Capacity_in_Years</p></td>
+<td></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">metric ton</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Forage biomass needed to sustain the existing deer population for the number of years indicated by the value of the Deer Carrying Capacity in Years.</p></td></tr></table>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><br /><br /></p>
+<table border="1" style=" border-color:#d3d3d3; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;" cellspacing="0" cellpadding="4">
+<tr>
+<td colspan="2" bgcolor="#d3d3d3">
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" background-color:#d3d3d3;">Run Specs</span></p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Start Time</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1900</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Stop Time</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1950</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">DT</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1/20</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Fractional DT</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">True</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Save Interval</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0.05</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Sim Duration</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1.5</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Time Units</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Years</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Pause Interval</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">0</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Integration Method</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">RK2</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Track flow quantities</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">True</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Keep all variable results</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">True</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Run By</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Run</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Calculate loop dominance information</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">True</p></td></tr>
+<tr>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Exhaustive Search Threshold</p></td>
+<td>
+<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">1000</p></td></tr></table></body></html>
