@@ -8,7 +8,7 @@
 		<product version="4.4" isee:build_number="4016" isee:saved_by_v1="true" lang="en">Stella Architect</product>
 	</header>
 	<ai_information>
-		<status verified="true" mixed="false" trusted="true" tampered="false" uses="false" analyzed="false" log_truncated="false" timestamp="1788536892" algorithm="ed25519" keyurl="https://iseesystems.com/keys/stella01.txt" want_var_info="true" want_var_status="false" want_log="false" sampling="1" signature="LiMKMvf/wFivU/07WUpao4AYXsrEvc3N/99ifA5CiJiIxmozkKjeT0XFabgh/rl0BkOSA+ADkKkTzlRegz4QBA=="/>
+		<status verified="true" mixed="false" trusted="true" tampered="false" uses="false" analyzed="false" log_truncated="false" timestamp="1788764033" algorithm="ed25519" keyurl="https://iseesystems.com/keys/stella01.txt" want_var_info="true" want_var_status="false" want_log="false" sampling="1" signature="PMfxMbdC4YeqqtGvU6YTF32zqn+MBmSciZ2nQeAc//QhlFvAZa4Bx7d74pMEwb+04MEKyhbVqDeYOZ1YvxUCAw=="/>
 	</ai_information>
 	<sim_specs isee:sim_duration="1.5" isee:run_prefix="Run" isee:simulation_delay="0.03" isee:restore_on_start="false" method="RK2" time_units="Years" isee:instantaneous_flows="false" isee:ignore_module_errors="false" isee:strict_units="true" isee:loop_scores="true" isee:loop_exhaustive_allowed="1000">
 		<start>1900</start>
@@ -31,12 +31,14 @@
 	<isee:number_format_extenders/>
 	<default_format/>
 	<data>
-		<export frequency="on_demand" orientation="horizontal" resource="/Users/mp/Projects/nfdi4sd-test/results/stella-data-scenario2.csv" interval="DT" precomputed="false" isee:format="numbers">
+		<export frequency="on_demand" orientation="horizontal" resource="/Users/mp/Projects/nfdi4sd-test/results/kaibab_ecosystem_results_stella_scenario1.csv" interval="DT" precomputed="false" isee:format="numbers">
 			<isee:tag>Output</isee:tag>
 		</export>
-		<export frequency="on_demand" resource="r../config/parameters/stella-parameters-scenario2.csv" isee:format="numbers">
-			<parameter_values/>
+		<export frequency="on_demand" orientation="horizontal" resource="/Users/mp/Projects/nfdi4sd-test/results/kaibab_ecosystem_results_stella_scenario2.csv" interval="one_value" precomputed="false" isee:format="numbers">
+			<isee:tag>Output</isee:tag>
 		</export>
+		<import frequency="on_demand" isee:overwrite="false" resource="r../config/parameters/kaibab_ecosystem_parameters_stella_scenario1.csv"/>
+		<import frequency="on_demand" isee:overwrite="false" resource="r../config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv"/>
 	</data>
 	<isee:sensi_specs_list active_index="0">
 		<isee:sensi_specs name="Sensitivity" method="sobol_sequence" runs="0"/>
@@ -513,7 +515,7 @@ A reference mode showing the actual deer population estimates from 1900 through 
 						<pt x="670.915" y="251.671"/>
 						<pt x="653.606" y="175.771"/>
 						<pt x="588.226" y="133.078"/>
-						<pt x="532.542" y="154.76"/>
+						<pt x="532.526" y="154.729"/>
 					</pts>
 					<from>Predator_Population</from>
 					<to>Deer_Predation</to>
@@ -743,6 +745,12 @@ A reference mode showing the actual deer population estimates from 1900 through 
 			</view>
 		</views>
 	</model>
+	<isee:controls>
+		<isee:control priority="interactive" name="Baseline_Annual_Kills_Per_Predator" value="20"/>
+		<isee:control priority="interactive" name="Deer_Carrying_Capacity_in_Years" value="4"/>
+		<isee:control priority="interactive" name="Desired_Consumption_per_Deer" value="0.5"/>
+		<isee:control priority="interactive" name="Fraction_Predators_Killed_per_Year" value="0.2"/>
+	</isee:controls>
 	<isee:user_controlled>
 		<ent name="Baseline Annual Kills Per Predator" preserve="true" lock="false"/>
 		<ent name="Baseline Biomass Growth Fraction" preserve="true" lock="false"/>
