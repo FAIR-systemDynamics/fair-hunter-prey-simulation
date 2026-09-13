@@ -63,7 +63,7 @@ These settings are part of the model definition.
 
 All equations used in the model have been [documented and exported with Stella](kaibab_ecosystem_doc_stella_equations.txt).
 
-![Figure. Model and equations for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_scenario1.jpg)
+![Figure. Model and equations for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_documentation.jpg)
 
 
 ## Default parameters
@@ -102,13 +102,13 @@ The example provides configurations for two scenarios. The initial scenario is i
 
 The [simulation results](../results/kaibab_ecosystem_results_stella_scenario1.csv) are exported into a `.csv` file in the `../results/` folder.
 
-![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figs/kaibab_ecosystem_fig_stella_scenario1.pdf)
+![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figures/kaibab_ecosystem_figs_stella_scenario1.pdf)
 
 In the second scenario, an intervention -- hunting predators -- is introduced and disturbs the equilibrium.
 
-[Figure. Model, parameter values, and simulation results of the second scenario for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_scenario2.jpg)
+![Figure. Model, parameter values, and simulation results of the second scenario for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_scenario2.jpg)
 
 The [simulation results](../results/kaibab_ecosystem_results_stella_scenario2.csv) are exported into a `.csv` file in the `../results/` folder.
 
-![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figs/kaibab_ecosystem_fig_stella_scenario2.pdf)
+![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figures/kaibab_ecosystem_figs_stella_scenario2.pdf)
 
