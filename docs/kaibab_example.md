@@ -45,7 +45,9 @@ model source in `models/config/lookups/` so they can be varied without editing t
 Predator removal is a policy switch: `Predators Hunted` is zero until `Program Start Year`, then
 removes `Fraction Predators Killed per Year` of the predator stock annually.
 
-The model structure is shown in ![Image of the example kaibab ecosystem model.](kaibab_ecosystem_model_stella.pdf)
+The model structure is shown in [Image (pdf) of the example kaibab ecosystem model.](kaibab_ecosystem_model_stella.pdf) and below:
+
+![Figure. Imagei (svg) of the example kaibab ecosystem model.](kaibab_ecosystem_model_stella.svg)
 
 ## Simulation settings
 
@@ -63,7 +65,7 @@ These settings are part of the model definition.
 
 All equations used in the model have been [documented and exported with Stella](kaibab_ecosystem_doc_stella_equations.txt).
 
-![Figure. Model and equations for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_documentation.jpg)
+![Figure. Model and equations for the example Kaibab Ecosystem Model. ](screenshot_stella_documentation.jpg)
 
 
 ## Default parameters
