@@ -45,6 +45,8 @@ model source in `models/config/lookups/` so they can be varied without editing t
 Predator removal is a policy switch: `Predators Hunted` is zero until `Program Start Year`, then
 removes `Fraction Predators Killed per Year` of the predator stock annually.
 
+The model structure is shown in ![Image of the example kaibab ecosystem model.](kaibab_ecosystem_model_stella.pdf)
+
 ## Simulation settings
 
 | Setting | Value |
@@ -57,9 +59,16 @@ removes `Fraction Predators Killed per Year` of the predator stock annually.
 
 These settings are part of the model definition.
 
+## Model Equations
+
+All equations used in the model have been [documented and exported with Stella](kaibab_ecosystem_doc_stella_equations.txt).
+
+![Figure. Model and equations for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_scenario1.jpg)
+
+
 ## Default parameters
 
-Baseline values as given in Exhibit 4.11. They can be found in `models/config/parameters/basic_parameters.csv` and in `models/config/parameters/initial_stock_parameters.xlsx`.
+Baseline values as given in Exhibit 4.11. They can be found in `models/config/parameters/basic_parameters.csv` and in `models/config/parameters/initial_stock_parameters.xlsx`.  (For now, configurations for Stella are given in `kaibab_ecosystem_parameters_stella_scenario1.csv` and `kaibab_ecosystem_parameters_stella_scenario1.csv`.)
 
 | Parameter | Value | Unit |
 |-----------|-------|------|
@@ -84,4 +93,22 @@ With `Fraction Predators Killed per Year = 0` the predator-removal policy is ina
 
 `models/config/timeseries/historical_deer_botg.csv` holds the historical deer behaviour-over-time graph
 (estimated deer population 1900–1950) that the simulated `Deer Population` is compared against.
+
+## Simulation Results
+
+The example provides configurations for two scenarios. The initial scenario is in equilibrium without intervention.
+
+![Figure. Model, parameter values, and simulation results of the initial scenario for the example Kaibab Ecosystem Model.](kaibab_ecosystem_screenshot_stella_scenario1.jpg)
+
+The [simulation results](../results/kaibab_ecosystem_results_stella_scenario1.csv) are exported into a `.csv` file in the `../results/` folder.
+
+![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figs/kaibab_ecosystem_fig_stella_scenario1.pdf)
+
+In the second scenario, an intervention -- hunting predators -- is introduced and disturbs the equilibrium.
+
+[Figure. Model, parameter values, and simulation results of the second scenario for the example Kaibab Ecosystem Model. ](kaibab_ecosystem_screenshot_stella_scenario2.jpg)
+
+The [simulation results](../results/kaibab_ecosystem_results_stella_scenario2.csv) are exported into a `.csv` file in the `../results/` folder.
+
+![Figure. Graphs for the simulation results for the initial scenario for the example Kaibab Ecosystem Model.](../results/figs/kaibab_ecosystem_fig_stella_scenario2.pdf)
 
