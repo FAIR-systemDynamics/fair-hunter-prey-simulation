@@ -1,18 +1,18 @@
 Baseline Annual Kills Per Predator;40
-Baseline Biomass Growth Fraction;0,1
+Baseline Biomass Growth Fraction;0.1
 Baseline Fractional Deer Growth Rate;1
-Baseline Fractional Predator Growth Rate;0,5
+Baseline Fractional Predator Growth Rate;0.5
 Deer Carrying Capacity in Years;2
-Desired Consumption per Deer;0,75
-="Effect of Deer Density on Predator Births:x";0;0,2;0,4;0,6;0,8;1;1,2;1,4;1,6;1,8;2
-="Effect of Deer Density on Predator Births:y";-1;-0,95;-0,9;-0,8;-0,5;0;0,5;0,8;0,9;0,95;1
-="Effect of Deer Density on Predator Efficiency:x";0;0,2;0,4;0,6;0,8;1;1,2;1,4;1,6;1,8;2
-="Effect of Deer Density on Predator Efficiency:y";0;0,05;0,15;0,35;0,7;1;1,2;1,3;1,4;1,45;1,5
-="Effect of Forage Availability on Consumption:x";0;0,1;0,2;0,3;0,4;0,5;0,6;0,7;0,8;0,9;1
-="Effect of Forage Availability on Consumption:y";0;0,59;0,84;0,93;0,97;0,99;0,9957;0,9983;0,9994;0,9998;1
+Desired Consumption per Deer;0.75
+="Effect of Deer Density on Predator Births:x";0;0.2;0.4;0.6;0.8;1;1.2;1.4;1.6;1.8;2
+="Effect of Deer Density on Predator Births:y";-1;-0.95;-0.9;-0.8;-0.5;0;0.5;0.8;0.9;0.95;1
+="Effect of Deer Density on Predator Efficiency:x";0;0.2;0.4;0.6;0.8;1;1.2;1.4;1.6;1.8;2
+="Effect of Deer Density on Predator Efficiency:y";0;0.05;0.15;0.35;0.7;1;1.2;1.3;1.4;1.45;1.5
+="Effect of Forage Availability on Consumption:x";0;0.1;0.2;0.3;0.4;0.5;0.6;0.7;0.8;0.9;1
+="Effect of Forage Availability on Consumption:y";0;0.59;0.84;0.93;0.97;0.99;0.9957;0.9983;0.9994;0.9998;1
 Forage Biomass;317000
 Fraction Predators Killed per Year;0
-="Historical Deer Behavior Over Time:x";1900;1902,5;1905;1907,5;1910;1912,5;1915;1917,5;1920;1922,5;1925;1927,5;1930;1932,5;1935;1937,5;1940;1942,5;1945;1947,5;1950
+="Historical Deer Behavior Over Time:x";1900;1902.5;1905;1907.5;1910;1912.5;1915;1917.5;1920;1922.5;1925;1927.5;1930;1932.5;1935;1937.5;1940;1942.5;1945;1947.5;1950
 ="Historical Deer Behavior Over Time:y";4000;4000;4000;5000;9000;15000;25000;35000;65000;90000;60000;37000;25000;20000;18000;12000;10000;7000;5000;3000;2000
 Initial Deer Population;4000
 Initial Predator Population;100
