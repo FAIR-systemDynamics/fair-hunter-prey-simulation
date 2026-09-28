@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xmile version="1.0" xmlns="http://docs.oasis-open.org/xmile/ns/XMILE/v1.0" xmlns:isee="http://iseesystems.com/XMILE">
+	<header>
+		<smile version="1.0" namespace="std, isee"/>
+		<name>stella_minimal</name>
+		<vendor>isee systems, inc.</vendor>
+		<product version="4.4" lang="en">Stella Architect</product>
+	</header>
+	<sim_specs method="RK2" time_units="Years">
+		<start>0</start>
+		<stop>4</stop>
+		<dt reciprocal="true">2</dt>
+	</sim_specs>
+	<isee:prefs>
+		<isee:tag_styles>
+			<isee:tag_style tag="Parameter" color="#CCCCCC" fill_color="#CCCCCC"/>
+		</isee:tag_styles>
+	</isee:prefs>
+	<model_units>
+		<unit name="Tonnes">
+			<eqn/>
+			<alias>metric ton</alias>
+		</unit>
+	</model_units>
+	<model>
+		<variables>
+			<stock name="Biomass">
+				<doc>Standing biomass.</doc>
+				<eqn>100</eqn>
+				<inflow>Growth</inflow>
+				<outflow>Harvest</outflow>
+				<units>metric ton</units>
+			</stock>
+			<flow name="Growth">
+				<eqn>Growth_Fraction*Biomass</eqn>
+				<units>Tonnes/Years</units>
+			</flow>
+			<flow name="Harvest">
+				<eqn>STEP(Harvest_Size, Harvest_Start)</eqn>
+				<non_negative/>
+				<units>Tonnes/Years</units>
+			</flow>
+			<aux name="Growth\nFraction">
+				<doc>${Parameter}
+Growth per year as a function of how full the land is.</doc>
+				<eqn>Crowding</eqn>
+				<gf>
+					<xscale min="0" max="2"/>
+					<yscale min="0" max="1"/>
+					<ypts>0.1,0.05,0</ypts>
+				</gf>
+				<units>1/Years</units>
+			</aux>
+			<aux name="Crowding">
+				<eqn>Biomass//Capacity</eqn>
+				<units>dmnl</units>
+			</aux>
+			<aux name="Capacity">
+				<doc>${Parameter}
+Biomass the land carries.</doc>
+				<eqn>1000</eqn>
+				<units>Tonnes</units>
+			</aux>
+			<aux name="Harvest Size">
+				<eqn>1</eqn>
+				<units>Tonnes/Years</units>
+			</aux>
+			<aux name="Harvest Start">
+				<eqn>1</eqn>
+				<units>Years</units>
+			</aux>
+			<group name="Land">
+				<entity name="Biomass"/>
+				<entity name="Capacity"/>
+			</group>
+		</variables>
+		<views>
+			<view type="stock_flow">
+				<style>
+					<stock label_side="top"><shape type="rectangle" width="45" height="35"/></stock>
+					<aux label_side="bottom"><shape type="circle" radius="18"/></aux>
+					<flow label_side="bottom"/>
+				</style>
+				<stock x="300" y="200" name="Biomass"/>
+				<flow x="200" y="200" name="Growth">
+					<pts>
+						<pt x="120" y="200"/>
+						<pt x="277.5" y="200"/>
+					</pts>
+				</flow>
+				<flow x="400" y="200" name="Harvest">
+					<pts>
+						<pt x="322.5" y="200"/>
+						<pt x="480" y="200"/>
+					</pts>
+				</flow>
+				<aux x="200" y="300" label_side="left" name="Growth\nFraction"/>
+				<aux x="300" y="300" name="Crowding"/>
+				<aux x="400" y="300" name="Capacity"/>
+				<aux x="400" y="100" name="Harvest Size"/>
+				<aux x="480" y="100" name="Harvest Start"/>
+				<alias uid="9" x="250" y="380">
+					<of>Biomass</of>
+				</alias>
+				<connector uid="1" angle="270">
+					<from>Biomass</from>
+					<to>Crowding</to>
+				</connector>
+				<connector uid="2" angle="180" polarity="-">
+					<from>Capacity</from>
+					<to>Crowding</to>
+				</connector>
+				<connector uid="3" angle="180">
+					<from>Crowding</from>
+					<to>Growth_Fraction</to>
+				</connector>
+				<connector uid="4" angle="90">
+					<from>Growth_Fraction</from>
+					<to>Growth</to>
+				</connector>
+				<connector uid="5" angle="90">
+					<from>
+						<alias uid="9"/>
+					</from>
+					<to>Growth</to>
+				</connector>
+				<connector uid="6" angle="270">
+					<from>Harvest_Size</from>
+					<to>Harvest</to>
+				</connector>
+				<connector uid="7" angle="225">
+					<from>Harvest_Start</from>
+					<to>Harvest</to>
+				</connector>
+				<stacked_container uid="8" x="600" y="50" width="400" height="200">
+					<graph width="400" height="200" type="time_series">
+						<plot index="0"><entity name="Biomass"/></plot>
+					</graph>
+				</stacked_container>
+				<group x="100" y="60" width="450" height="360" name="Land"/>
+			</view>
+		</views>
+	</model>
+</xmile>

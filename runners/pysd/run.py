@@ -3,7 +3,7 @@
 # SPDX-FileCopyrightText: 2026 Matthias Papesch
 # SPDX-FileCopyrightText: 2026 Vasiliy Seibert
 # SPDX-License-Identifier: MIT
-"""Run a Vensim model with PySD, with or without externalised data.
+"""Run a Vensim or Stella model with PySD, with or without externalised data.
 
 One script for both stages of the model. A model that carries its own numbers
 needs no arguments beyond itself::
@@ -49,6 +49,25 @@ reading the same source:
 * an equation with no right-hand side (a ``:SUPPLEMENTARY`` data variable) --
   given ``= 0``, then overridden by whatever time series you pass in;
 * Vensim's indirect file reference ``'?book.xlsx'`` the ``?`` is dropped.
+
+Stella models
+-------------
+A ``.stmx`` runs the same way, and is run as Stella runs it::
+
+    python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \
+        -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \
+        --layout stella -o results/runs/stella_scenario2_pysd.csv
+
+* the integration method is the one the file declares, and Stella's RK2 is
+  Heun's method, not the midpoint rule Vensim uses;
+* ``STEP`` is evaluated once per time step and held through its stages;
+* Stella's parameter file (``Name;Value`` with decimal commas, graphical
+  functions as ``="Name:x"`` and ``="Name:y"`` rows) is read as it is, and a
+  value given for a stock sets its initial value, as Stella's import does;
+* equations Stella writes and PySD rejects (``a // b``, nested ``IF``,
+  ``MOD``, ``{comments}``) are rewritten in the copy.
+
+See :mod:`xmile_support` for the measurements behind each of these.
 """
 
 from __future__ import annotations
@@ -66,6 +85,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 from cin_loader import CinError, read_cin  # noqa: E402
 from vensim_csv import NotATimeSeries, read_dataset  # noqa: E402
 from rk_integrator import TABLEAUX, attach  # noqa: E402
+import stella_csv  # noqa: E402
+import xmile_support  # noqa: E402
 
 DATA_SUFFIXES = {".cin", ".csv", ".xlsx", ".xls"}
 TIME_COLUMN_NAMES = {"time", "year", "t"}
@@ -117,6 +138,9 @@ def load_csv(path: Path) -> dict:
     """
     import pandas as pd
 
+    if stella_csv.is_stella_table(path):
+        return _load_stella_table(path)
+
     try:
         series, _ = read_dataset(path)
         return series
@@ -147,6 +171,23 @@ def load_csv(path: Path) -> dict:
     if not values:
         raise RunError(f"{path}: no usable rows")
     return values
+
+
+def _load_stella_table(path: Path) -> dict:
+    """A Stella parameter file, or a Stella export as time series."""
+    import pandas as pd
+
+    try:
+        return stella_csv.read_parameters(path)
+    except stella_csv.NotAStellaTable as parameters_error:
+        try:
+            times, series, _ = stella_csv.read_results(path)
+        except (stella_csv.NotAStellaTable, ValueError):
+            raise RunError(str(parameters_error)) from None
+        return {
+            name: pd.Series(values, index=times[: len(values)])
+            for name, values in series.items()
+        }
 
 
 def collect(files: list[Path]) -> tuple[dict, list[Path], list[str]]:
@@ -195,12 +236,54 @@ def find_stub_lookups(text: str) -> list[str]:
     return stubs
 
 
-def prepare(model: Path, workbooks: list[Path], workdir: Path) -> tuple[Path, list[str], list[str]]:
+def prepare_xmile(model: Path, workdir: Path, tables: dict | None = None,
+                  ) -> tuple[Path, list[str], list[str]]:
+    """Copy a Stella model into workdir, rewrite what PySD rejects, translate.
+
+    ``tables`` are graphical functions supplied by an input, as
+    ``{name: (xs, ys)}``; they are written into the copy.
+    """
+    import pysd
+
+    text, notes = xmile_support.prepare_text(model, tables)
+    suffix = (model.suffix.lower()
+              if model.suffix.lower() in xmile_support.PYSD_SUFFIXES else ".xmile")
+    copy = workdir / (model.stem + suffix)
+    copy.write_text(text, encoding="utf-8")
+    patches = [f"rewrote {note}" for note in notes]
+    try:
+        pysd.read_xmile(str(copy))
+    except Exception as error:
+        raise RunError(
+            f"PySD could not translate {model.name}: {type(error).__name__}: "
+            f"{str(error)[:300]}"
+        ) from None
+    return copy.with_suffix(".py"), patches, []
+
+
+def split_tables(params: dict, graphical: set) -> tuple[dict, dict]:
+    """Take the tables given for Stella graphical functions out of ``params``.
+
+    They are written into the model copy instead, see :func:`prepare_xmile`.
+    """
+    rest, tables = {}, {}
+    for name, value in params.items():
+        if xmile_support.canonical(name) in graphical and hasattr(value, "index"):
+            tables[name] = (list(value.index), list(value.values))
+        else:
+            rest[name] = value
+    return rest, tables
+
+
+def prepare(model: Path, workbooks: list[Path], workdir: Path,
+            tables: dict | None = None) -> tuple[Path, list[str], list[str]]:
     """Copy the model into workdir, adapt it for PySD, translate it."""
     import pysd
 
     if not model.exists():
         raise RunError(f"model not found: {model}")
+    if xmile_support.is_xmile(model):
+        return prepare_xmile(model, workdir, tables)
 
     text = model.read_text()
     patches: list[str] = []
@@ -310,11 +393,45 @@ def match_to_model(model, params: dict) -> tuple[dict, list[str]]:
     return matched, sorted(unknown)
 
 
-def write_output(result, model, target: Path, layout: str) -> None:
-    """Write the run, either tidy or in the transposed Vensim export layout."""
+def split_initial_values(params: dict, stocks: set) -> tuple[dict, dict]:
+    """Take the values given for stocks out of ``params``.
+
+    Stella's import sets a stock's *initial* value.  Handed to PySD as a
+    parameter, the same number would replace the stock by a constant and the
+    stock would never move.  They go to ``initial_condition`` instead.
+    """
+    rest, initial = {}, {}
+    for name, value in params.items():
+        target = initial if xmile_support.canonical(name) in stocks else rest
+        target[name] = value
+    return rest, initial
+
+
+def held_components(model, names) -> list[str]:
+    """PySD's Python names for the given model names."""
+    wanted = {xmile_support.canonical(n) for n in names}
+    namespace = getattr(model, "_namespace", {})
+    return [py for real, py in namespace.items()
+            if xmile_support.canonical(real) in wanted]
+
+
+def write_output(result, model, target: Path, layout: str,
+                 decimal_comma: bool = False) -> None:
+    """Write the run tidy, in the Vensim export layout, or in Stella's."""
     target.parent.mkdir(parents=True, exist_ok=True)
     if layout == "tidy":
         result.to_csv(target, index_label="time")
+        return
+    if layout == "stella":
+        unit = "Time"
+        try:
+            doc = model.doc
+            row = doc[doc["Py Name"] == "final_time"]
+            if not row.empty and str(row.iloc[0]["Units"]).strip():
+                unit = str(row.iloc[0]["Units"]).strip()
+        except Exception:
+            pass
+        stella_csv.write_results(result, target, unit, decimal_comma)
         return
 
     units = {}
@@ -332,12 +449,14 @@ def write_output(result, model, target: Path, layout: str) -> None:
 
 def parse_args(argv=None):
     parser = argparse.ArgumentParser(
-        description="Run a Vensim model with PySD, with or without externalised data.",
+        description="Run a Vensim or Stella model with PySD, with or without "
+                    "externalised data.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="Inputs are applied in the order given: a scenario listed after "
                "the base parameters overrides them.",
     )
-    parser.add_argument("model", type=Path, help="the .mdl file to run")
+    parser.add_argument("model", type=Path,
+                        help="the .mdl or .stmx file to run")
     parser.add_argument(
         "-d", "--data", action="append", default=[], metavar="PATH",
         help=".cin, .csv or .xlsx file, or a directory of them: repeatable",
@@ -345,9 +464,10 @@ def parse_args(argv=None):
     parser.add_argument("-o", "--output", type=Path,
                         help="where to write the run (default: stdout)")
     parser.add_argument(
-        "--method", default="rk2-midpoint", choices=sorted(TABLEAUX) + ["rk2"],
-        help="integration method (default: rk2-midpoint, which is what Vensim's "
-             "RK2 turned out to be)",
+        "--method", default=None, choices=sorted(TABLEAUX) + ["rk2"],
+        help="integration method (default: for a .stmx the one the file "
+             "declares, Stella's RK2 being rk2-heun; for a .mdl rk2-midpoint, "
+             "which is what Vensim's RK2 turned out to be)",
     )
     parser.add_argument("--time-step", type=float,
                         help="DT (default: the model's own setting)")
@@ -357,10 +477,16 @@ def parse_args(argv=None):
     parser.add_argument("--final-time", type=float)
     parser.add_argument("--columns", nargs="+", metavar="NAME",
                         help="variables to return (default: all)")
-    parser.add_argument("--layout", default="tidy", choices=("tidy", "vensim"),
+    parser.add_argument("--layout", default="tidy",
+                        choices=("tidy", "vensim", "stella"),
                         help="tidy: time in the first column. vensim: one row "
                              "per variable with a units column, matching a "
-                             "Vensim 'Export Dataset' (default: tidy)")
+                             "Vensim 'Export Dataset'. stella: one row per "
+                             "variable, time unit first, matching Stella's "
+                             "horizontal export (default: tidy)")
+    parser.add_argument("--decimal-comma", action="store_true",
+                        help="with --layout stella, write ';' and decimal "
+                             "commas as a German Stella does")
     return parser.parse_args(argv)
 
 
@@ -380,7 +506,14 @@ def main(argv=None) -> int:
         try:
             files = expand(args.data)
             params, workbooks, log = collect(files)
-            compiled, patches, stubs = prepare(args.model, workbooks, workdir)
+            facts = (xmile_support.ModelFacts(args.model)
+                     if xmile_support.is_xmile(args.model)
+                     and args.model.exists() else None)
+            tables = {}
+            if facts is not None:
+                params, tables = split_tables(params, facts.graphical)
+            compiled, patches, stubs = prepare(args.model, workbooks, workdir,
+                                               tables)
         except RunError as error:
             print(f"error: {error}", file=sys.stderr)
             return 1
@@ -402,9 +535,29 @@ def main(argv=None) -> int:
                 file=sys.stderr,
             )
 
-        model = attach(pysd.load(str(compiled)), args.method)
+        method = args.method
+        if method is None:
+            declared = facts.integration_method() if facts else None
+            method = declared or "rk2-midpoint"
+            if facts is not None:
+                source = (f"declared {facts.method!r} in the model file"
+                          if declared else "the model declares none")
+                print(f"method {method} ({source})", file=sys.stderr)
+
+        model = pysd.load(str(compiled))
+        hold = held_components(model, facts.step_variables) if facts else []
+        model = attach(model, method, hold=hold)
+        if hold and method != "euler":
+            print("hold  STEP once per time step, as Stella does: "
+                  + ", ".join(hold), file=sys.stderr)
 
         params, unknown = match_to_model(model, params)
+        initial = {}
+        if facts is not None:
+            params, initial = split_initial_values(params, facts.stocks)
+            for name in initial:
+                print(f"init  {name}: initial value, as Stella's import sets it",
+                      file=sys.stderr)
         if unknown:
             print(
                 "note: not in this model, so not applied:\n  "
@@ -421,6 +574,10 @@ def main(argv=None) -> int:
             "final_time": args.final_time,
         }
         settings = {k: v for k, v in settings.items() if v is not None}
+        if initial:
+            start = (args.initial_time if args.initial_time is not None
+                     else model.components.initial_time())
+            settings["initial_condition"] = (start, initial)
 
         try:
             result = model.run(params=params or None,
@@ -431,9 +588,10 @@ def main(argv=None) -> int:
             return 1
 
         if args.output:
-            write_output(result, model, args.output, args.layout)
+            write_output(result, model, args.output, args.layout,
+                         args.decimal_comma)
             print(f"wrote {args.output}  ({len(result)} time points, "
-                  f"{len(result.columns)} variables, method {args.method})",
+                  f"{len(result.columns)} variables, method {method})",
                   file=sys.stderr)
         else:
             result.to_csv(sys.stdout, index_label="time")
