@@ -29,6 +29,19 @@ formulation, and neither states which one in the user interface. If
 comparing runs across tools, verify which variant each tool implements before
 concluding that a discrepancy is a modelling error.
 :func:`compare_methods` is there for exactly that check.
+
+Measured on the Kaibab model: Vensim's RK2 is the midpoint rule, Stella's is
+Heun's method. Against Stella's own export Heun agrees to 5e-12 and the
+midpoint rule to no better than 3e-6.
+
+Values held for a whole step
+----------------------------
+Stella evaluates ``STEP`` once at the start of each DT and keeps that value
+through every stage of the step. A plain Runge-Kutta re-evaluates it at each
+stage, so it sees the step switch on at the last stage of the step before, and
+it follows each stage's trial state. ``attach(..., hold=[...])`` names the
+components to treat Stella's way. In the predator-removal scenario that is
+the difference between 22% off Stella's final deer population and 5e-12.
 """
 
 from __future__ import annotations
@@ -92,6 +105,10 @@ def _make_step(tableau):
         dt = self.time.time_step()
         t0 = self.time()
         y0 = self.state
+        held = getattr(self, "_held", None)
+        if held is not None:
+            held["values"].clear()
+            held["active"] = True
 
         stages = []
         for stage, (c_i, a_row) in enumerate(zip(c, a_rows)):
@@ -114,6 +131,9 @@ def _make_step(tableau):
             term = (dt * weight) * k
             increment = term if increment is None else increment + term
 
+        if held is not None:
+            held["active"] = False
+            held["values"].clear()
         self.state = y0 if increment is None else y0 + increment
         self.time.update(t0 + dt)
         self.clean_caches()
@@ -121,7 +141,43 @@ def _make_step(tableau):
     return _integrate_step
 
 
-def attach(model, method: str = "rk4"):
+def _hold(model, names) -> list[str]:
+    """Make each named component keep its first value within a step.
+
+    PySD's generated components call each other through the module's globals,
+    so replacing the module attribute is what every caller sees. Outside a
+    step, which is where outputs are recorded, a component is computed as
+    usual. Returns the names that were found.
+    """
+    module = object.__getattribute__(model.components, "_components")
+    held = {"active": False, "values": {}}
+    found = []
+    for name in names:
+        original = getattr(module, name, None)
+        if original is None or not callable(original):
+            continue
+        original = getattr(original, "_rk_original", original)
+
+        def wrapper(_original=original, _name=name):
+            if not held["active"]:
+                return _original()
+            if _name not in held["values"]:
+                held["values"][_name] = _original()
+            return held["values"][_name]
+
+        # Deliberately without the component's metadata: carrying it over
+        # lets PySD re-wrap the component when the run starts, and the
+        # wrapper is then bypassed.
+        wrapper.__name__ = original.__name__
+        wrapper.__doc__ = original.__doc__
+        wrapper._rk_original = original
+        setattr(module, name, wrapper)
+        found.append(name)
+    model._held = held
+    return found
+
+
+def attach(model, method: str = "rk4", hold=()):
     """Give ``model`` a Runge-Kutta integrator. Returns the model.
 
     Parameters
@@ -131,8 +187,13 @@ def attach(model, method: str = "rk4"):
         :func:`pysd.load`.
     method
         ``euler``, ``rk2-midpoint`` (alias ``rk2``), ``rk2-heun`` or ``rk4``.
+    hold
+        PySD component names (``predators_hunted``) whose value is computed
+        once at the start of each step and kept for its later stages, as
+        Stella does with ``STEP``.  Changes nothing under Euler.
     """
     key = _resolve(method)
+    model.__dict__.pop("_held", None)
 
     elements = getattr(model, "_dynamicstateful_elements", None)
     if not elements:
@@ -154,6 +215,8 @@ def attach(model, method: str = "rk4"):
             stacklevel=2,
         )
 
+    if hold:
+        _hold(model, hold)
     model._integrate_step = MethodType(_make_step(TABLEAUX[key]), model)
     model._integration_method = key
     return model

@@ -62,7 +62,8 @@ nfdi4sd/
 │           └── historical_deer_botg.csv   # behavior over time graph
 │
 ├── runners/
-│   ├── pysd/                              # run.py, rk_integrator.py, cin_loader.py
+│   ├── pysd/                              # run.py, rk_integrator.py, cin_loader.py,
+│   │                                      #   xmile_support.py (Stella models)
 │   ├── stella/                            
 │   └── vensim/                            
 │
@@ -196,6 +197,20 @@ The runner dispatches each `-d` by what it is: `.cin` files give constants and
 lookups, a `.csv` gives constants or a time series depending on its shape, an
 `.xlsx` is placed where the model's own `GET XLS CONSTANTS` can find it, and a
 directory expands to everything supported inside it.
+
+The runner is tool-independent: a Stella model (`.stmx`) runs the same way,
+from the parameter file Stella imports, and reproduces Stella's own export
+(see [`docs/pysd_integration.md`](docs/pysd_integration.md#the-stella-model)).
+The Stella model and its files live on the `stella` branch:
+
+```bash
+python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \
+    -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \
+    -d models/config/lookups/kaibab_ecosystem_lookups_stella.csv \
+    -d models/config/timeseries/kaibab_ecosystem_historic_BOT_stella.csv \
+    --layout stella \
+    -o results/runs/stella_scenario2_pysd.csv
+```
 
 *Planned — Snakemake workflow:*
 
