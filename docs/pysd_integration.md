@@ -60,12 +60,19 @@ runs it:
 ```bash
 python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \
     -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \
-    --layout stella --decimal-comma -o results/runs/stella_scenario2_pysd.csv
+    -d models/config/lookups/kaibab_ecosystem_lookups_stella.csv \
+    -d models/config/timeseries/kaibab_ecosystem_historic_BOT_stella.csv \
+    --layout stella -o results/runs/stella_scenario2_pysd.csv
 ```
 
-Run this way, the result reproduces Stella's own export,
-`results/kaibab_ecosystem_results_stella_scenario{1,2}.csv`. The largest
-relative deviation over the 1001 time points of each run:
+These are the files Stella imports: the parameters, the graphical functions
+and the reference mode, each as Stella writes them. Run this way, the result
+reproduces Stella's own export,
+`results/kaibab_ecosystem_results_stella_scenario{1,2}.csv`. Scenario 1 is
+exported as the full run, scenario 2 as final values only, and both are
+compared in whatever form they were exported. The largest relative deviation
+over the 1001 time points of each run, measured when both were exported as
+full runs:
 
 | | Deer Population | Forage Biomass | Predator Population |
 |---|---|---|---|
@@ -109,8 +116,13 @@ Stella's safe division `a // b`, which PySD's grammar rejects, becomes
 `SAFEDIV(a, b)`, and forms such as `ELSE IF`, `MOD` in capitals and `{notes}`
 inside an equation are put into the form PySD reads. Stella's parameter and
 export tables use `;` and decimal commas on a German system. Both are read as
-they are, and `--layout stella --decimal-comma` writes a run in the same form,
-so it can be compared with Stella's export cell by cell.
+they are, as are the `,` and `.` Stella writes elsewhere, and `--layout
+stella` writes a run in the same form, with `--decimal-comma` for the German
+one, so it can be compared with Stella's export cell by cell. None of
+Stella's tables has a header row, which is how they are told apart from the
+`variable,value` tables of the Vensim side. A headerless file is also why
+they need their own reader: `pandas.read_csv` would take the first
+parameter for the header and drop it without a word.
 
 Only the features this model uses were checked against Stella. PySD's XMILE
 reader has no support for modules, conveyors, queues or ovens. `PULSE` and

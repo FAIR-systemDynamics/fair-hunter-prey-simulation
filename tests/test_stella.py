@@ -193,6 +193,46 @@ class TestStellaTables:
         times, series, unit = stella_csv.read_results(target)
         assert (times, series["Stock"], unit) == ([1900.0, 1900.05], [1.5, 2.25], "Years")
 
+    def test_comma_layout_without_header(self, tmp_path):
+        """What Stella writes outside a German locale."""
+        path = tmp_path / "p.csv"
+        path.write_text("Baseline Annual Kills Per Predator,40\nX,0.1\n",
+                        encoding="utf-8")
+        assert stella_csv.is_stella_table(path)
+        assert stella_csv.read_parameters(path) == {
+            "Baseline Annual Kills Per Predator": 40, "X": 0.1,
+        }
+
+    def test_tables_in_a_file_of_their_own(self, tmp_path):
+        path = tmp_path / "lookups.csv"
+        path.write_text('="T:x",1900,1902.5,\n="T:y",4000,5000\n',
+                        encoding="utf-8")
+        assert stella_csv.is_stella_table(path)
+        table = stella_csv.read_parameters(path)["T"]
+        assert list(table.index) == [1900, 1902.5]
+
+    def test_a_table_with_a_header_is_not_stellas(self, tmp_path):
+        """The Vensim-side parameter file must keep its own reader, or its
+        header row would be read as the first parameter."""
+        path = tmp_path / "basic.csv"
+        path.write_text("variable_name,value\nA,1\n", encoding="utf-8")
+        assert not stella_csv.is_stella_table(path)
+
+    def test_the_first_parameter_is_not_taken_for_a_header(self, tmp_path):
+        """pandas would read the first row of a headerless file as its
+        header, and the first parameter would be lost without a word."""
+        path = tmp_path / "p.csv"
+        path.write_text("First,1\nSecond,2\n", encoding="utf-8")
+        assert run.load_csv(path) == {"First": 1, "Second": 2}
+
+    def test_final_values_export(self, tmp_path):
+        path = tmp_path / "r.csv"
+        path.write_text("Deer Population,25221.6664287\nForage Biomass,179115.46\n",
+                        encoding="utf-8")
+        times, series, unit = stella_csv.read_results(path)
+        assert (times, unit) == ([], "")
+        assert series["Deer Population"] == [25221.6664287]
+
     def test_a_table_without_its_x_row_is_refused(self, tmp_path):
         path = tmp_path / "p.csv"
         path.write_text('="Table:y";1;2\nA;1\n', encoding="utf-8")
@@ -203,20 +243,37 @@ class TestStellaTables:
 # ---------------------------------------------------------------------------
 # The Kaibab model against Stella's own export
 
+LOOKUPS = ROOT / "models" / "config" / "lookups" / "kaibab_ecosystem_lookups_stella.csv"
+REFERENCE_MODE = (ROOT / "models" / "config" / "timeseries"
+                  / "kaibab_ecosystem_historic_BOT_stella.csv")
+
+
+def _kaibab_inputs(scenario: int) -> list[str]:
+    """Every file Stella imported for the scenario, in the order it did.
+
+    Graphical functions and the reference mode may sit in the parameter file
+    or in files of their own; whichever are present are passed.
+    """
+    files = [PARAMETERS / f"kaibab_ecosystem_parameters_stella_scenario{scenario}.csv"]
+    files += [f for f in (LOOKUPS, REFERENCE_MODE) if f.exists()]
+    return [arg for f in files for arg in ("-d", str(f))]
+
+
 @needs_kaibab
 @pytest.mark.parametrize("scenario", [1, 2])
 def test_reproduces_stella(tmp_path, scenario):
-    parameters = PARAMETERS / f"kaibab_ecosystem_parameters_stella_scenario{scenario}.csv"
-    times, ours = _run(tmp_path, KAIBAB, "-d", str(parameters))
+    times, ours = _run(tmp_path, KAIBAB, *_kaibab_inputs(scenario))
     ref_times, reference, _ = stella_csv.read_results(
         RESULTS / f"kaibab_ecosystem_results_stella_scenario{scenario}.csv"
     )
-    assert times == pytest.approx(ref_times)
     for name in STOCKS:
-        worst = max(
-            abs(a - b) / max(abs(a), 1e-12)
-            for a, b in zip(reference[name], ours[name], strict=True)
-        )
+        if ref_times:
+            assert times == pytest.approx(ref_times)
+            pairs = zip(reference[name], ours[name], strict=True)
+        else:
+            # Exported with interval "one value": the final value only.
+            pairs = [(reference[name][0], ours[name][-1])]
+        worst = max(abs(a - b) / max(abs(a), 1e-12) for a, b in pairs)
         assert worst < TOLERANCE, name
 
 
@@ -246,4 +303,3 @@ def test_the_committed_parameter_file_reads():
         PARAMETERS / "kaibab_ecosystem_parameters_stella_scenario2.csv"
     )
     assert values["Fraction Predators Killed per Year"] == 0.2
-    assert len(values["Historical Deer Behavior Over Time"]) == 21

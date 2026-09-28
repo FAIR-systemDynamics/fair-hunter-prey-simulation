@@ -206,7 +206,9 @@ The Stella model and its files live on the `stella` branch:
 ```bash
 python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \
     -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \
-    --layout stella --decimal-comma \
+    -d models/config/lookups/kaibab_ecosystem_lookups_stella.csv \
+    -d models/config/timeseries/kaibab_ecosystem_historic_BOT_stella.csv \
+    --layout stella \
     -o results/runs/stella_scenario2_pysd.csv
 ```
 

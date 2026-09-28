@@ -4,9 +4,11 @@
 # SPDX-License-Identifier: MIT
 """Read and write the tables Stella imports and exports.
 
-Stella writes its tables in the locale it runs under. On a German system that
-is a semicolon between cells and a decimal comma, which a plain CSV reader
-takes for text. Both are detected per file rather than assumed.
+Stella writes its tables in the locale it runs under: on a German system a
+semicolon between cells and a decimal comma, otherwise a comma and a decimal
+point. Both are detected per file rather than assumed. None of Stella's
+tables has a header row, which is what tells them apart from the ``variable,
+value`` tables the Vensim side uses.
 
 **Parameters** (what *File > Import Data* reads), one variable per row::
 
@@ -19,11 +21,19 @@ A graphical function takes two rows, its ``:x`` and its ``:y`` points. The
 ``="…"`` is how Stella keeps a spreadsheet from reading the name as a
 formula.
 
+Graphical functions may also sit in a file of their own, one ``:x``/``:y``
+pair per table, and a reference mode likewise.
+
 **Results** (what *File > Export Data* writes, horizontal orientation), the
 first row holding time with the time unit as its label::
 
-    Years;1900;1900,05;1900,1;…
-    Deer Population;4000;3996,26540712;…
+    Years,1900,1900.05,1900.1,…
+    Deer Population,4000,3996.26540712,…
+
+Exported with interval *one value*, a run is one row per variable holding its
+final value, and there is no time row at all::
+
+    Deer Population,25221.6664287
 """
 
 from __future__ import annotations
@@ -76,12 +86,31 @@ def _name(cell: str) -> str:
 
 
 def is_stella_table(path) -> bool:
-    """Semicolon-separated, or carrying a ``:x``/``:y`` graphical function."""
+    """True for a table in one of Stella's layouts.
+
+    Stella writes no header row, so its first row already carries a number
+    in the second cell, or opens a graphical function with ``="``.  A table
+    with a header, ``variable,value`` or ``time,...``, is not Stella's.
+    """
     try:
         head = Path(path).read_text(encoding="utf-8-sig")[:20000]
     except (OSError, UnicodeDecodeError):
         return False
-    return ";" in head.splitlines()[0] if head.strip() else False
+    lines = [line for line in head.splitlines() if line.strip()]
+    if not lines:
+        return False
+    first = lines[0]
+    if first.lstrip().startswith('="'):
+        return True
+    separator, decimal_comma = _dialect(head)
+    cells = [c.strip() for c in first.split(separator)]
+    if len(cells) < 2:
+        return False
+    try:
+        _number(cells[1], decimal_comma)
+    except ValueError:
+        return False
+    return True
 
 
 def read_parameters(path) -> dict:
@@ -130,10 +159,19 @@ def read_parameters(path) -> dict:
 
 
 def read_results(path) -> tuple[list[float], dict[str, list[float]], str]:
-    """``(times, {variable: values}, time unit)`` from a Stella export."""
+    """``(times, {variable: values}, time unit)`` from a Stella export.
+
+    An export of final values only has no time row.  Then ``times`` is empty,
+    the unit is ``""``, and each variable holds its one final value.
+    """
     rows, decimal_comma = _rows(path)
     if not rows:
         raise NotAStellaTable(f"{path}: empty")
+    if all(len([c for c in row[1:] if c]) == 1 for row in rows):
+        return [], {
+            _name(row[0]): [_number(next(c for c in row[1:] if c), decimal_comma)]
+            for row in rows
+        }, ""
     header = rows[0]
     try:
         times = [_number(cell, decimal_comma) for cell in header[1:] if cell]

@@ -54,16 +54,19 @@ Stella models
 -------------
 A ``.stmx`` runs the same way, and is run as Stella runs it::
 
-    python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \
-        -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \
+    python runners/pysd/run.py models/kaibab_ecosystem_model.stmx \\
+        -d models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv \\
+        -d models/config/lookups/kaibab_ecosystem_lookups_stella.csv \\
+        -d models/config/timeseries/kaibab_ecosystem_historic_BOT_stella.csv \\
         --layout stella -o results/runs/stella_scenario2_pysd.csv
 
 * the integration method is the one the file declares, and Stella's RK2 is
   Heun's method, not the midpoint rule Vensim uses;
 * ``STEP`` is evaluated once per time step and held through its stages;
-* Stella's parameter file (``Name;Value`` with decimal commas, graphical
-  functions as ``="Name:x"`` and ``="Name:y"`` rows) is read as it is, and a
-  value given for a stock sets its initial value, as Stella's import does;
+* Stella's tables are read as Stella writes them: no header row, ``,`` and
+  ``.`` or, from a German Stella, ``;`` and decimal commas, graphical
+  functions as ``="Name:x"`` and ``="Name:y"`` rows. A value given for a
+  stock sets its initial value, as Stella's import does;
 * equations Stella writes and PySD rejects (``a // b``, nested ``IF``,
   ``MOD``, ``{comments}``) are rewritten in the copy.
 
@@ -184,6 +187,11 @@ def _load_stella_table(path: Path) -> dict:
             times, series, _ = stella_csv.read_results(path)
         except (stella_csv.NotAStellaTable, ValueError):
             raise RunError(str(parameters_error)) from None
+        if not times:
+            raise RunError(
+                f"{path}: an export of final values only, which is a result "
+                f"to compare with, not an input to a run"
+            )
         return {
             name: pd.Series(values, index=times[: len(values)])
             for name, values in series.items()
