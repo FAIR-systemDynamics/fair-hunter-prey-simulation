@@ -6,7 +6,7 @@ The model combines concise literature interpretations with all 47 Vensim declara
 
 ## Diagram interactions
 
-The two tabs are **Semantic Model** (formerly Overview) and **Workflows**. Workflows is a scrolling document: a linked table of contents followed by both examples in order. Section links are bookmarkable, and “Explore diagram” opens a full pan-and-zoom view with a return link to the same section. Inline diagrams scroll horizontally on smaller screens.
+The three tabs are **Semantic Model** (formerly Overview), **Workflows** and **NFDI4Ing Use Cases**. Workflows is a scrolling document: a linked table of contents followed by both examples in order. Section links are bookmarkable, and “Explore diagram” opens a full pan-and-zoom view with a return link to the same section. Inline diagrams scroll horizontally on smaller screens.
 
 Hover or keyboard-focus a node for its definition. Click scientific quantities, formulas and groups to explore their connections; file and variable nodes link directly to the pinned GitHub revision. Use search to explore a node’s connections. In the full canvas, drag the background to pan and use the wheel or +/− buttons to zoom. Neighborhood views show up to 28 neighbors and disclose omitted connections. The RDF exports retain all relationships.
 
@@ -33,6 +33,10 @@ The notebook verifies the reader and input hashes, inventories variables and uni
 Open the notebook through its repository link on the Workflows page, or open `docs/semantic/notebooks/inspect_results.ipynb` in a Python Jupyter environment with pandas and matplotlib. Start within the repository; the notebook locates the repository root. Saved tables and the inline figure are already included. The example is tied to the reviewed revision and checks inputs before execution. It writes its exported tables, report and SVG only under `docs/semantic/data/`.
 
 The final notebook section shows an optional upstream PySD command for creating a new result. It uses the repository runner with the baseline parameters, lookup tables, reference time series and scenario overrides. That command was not executed for this inspection. The runner writes tidy CSV by default; the same reader can load it, but tidy exports lack unit metadata, which must be supplied from the model documentation.
+
+### NFDI4Ing service use cases
+
+The `#nfdi4ing` tab pairs each service with the repository workflows that use it. Its first entry is **NFDI4Ing Jupyter Hub**, linked to the Python inspection workflow. `nfdi4ing-services.json` stores the service names, URLs and workflow slugs. Add future services or workflows there and rebuild the model; titles and workflow destinations come from the existing workflow catalog. The saved notebook carries the same three navigation tabs.
 
 ### Notebook sections and source links
 

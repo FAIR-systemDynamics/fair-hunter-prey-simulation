@@ -786,7 +786,7 @@
           "data/python-inspection-summary.csv": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
           "data/python-inspection.json": "585ae09974cc6ec93d9add7de4a6c5b5a72808ddf55d7e35d4ebae6c7172d777",
           "data/python-inspection.svg": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
-          "notebooks/inspect_results.html": "1f4b99e5267c24b7d80a0a4ebe1d49c66bc38e6c9c75d9cbcfa36c4c1364164f"
+          "notebooks/inspect_results.html": "6ce8bec9af70976ef2df22c55460fcaf8784546f6a76e2000d60fddd97feb333"
         },
         "simulationExecuted": false,
         "codeCellsExecuted": 5,
@@ -19517,5 +19517,16 @@
         "unit": "Predators"
       }
     }
-  }
+  },
+  "services": [
+    {
+      "id": "jupyter",
+      "name": "NFDI4Ing Jupyter Hub",
+      "serviceName": "NFDI4Ing Jupyter Service",
+      "url": "https://jupyter.nfdi4ing.de/",
+      "workflowSlugs": [
+        "python-inspection"
+      ]
+    }
+  ]
 }

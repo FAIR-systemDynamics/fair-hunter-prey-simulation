@@ -122,7 +122,7 @@ SPDX-License-Identifier = "MIT"
 path = [
     "docs/semantic/index.html", "docs/semantic/app.js", "docs/semantic/*.css",
     "docs/semantic/tools/**", "docs/semantic/tests/**",
-    "docs/semantic/requirements*.txt", "docs/semantic/jupyter.json", "docs/semantic/*validation.json",
+    "docs/semantic/requirements*.txt", "docs/semantic/jupyter.json", "docs/semantic/nfdi4ing-services.json", "docs/semantic/*validation.json",
     "premium-ui.json", "premium-audit.json",
 ]
 precedence = "aggregate"

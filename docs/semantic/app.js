@@ -15,7 +15,7 @@ let key = 'overview', section = 'overview', context = '', documentView = false;
 let scale = 1, x = 0, y = 0, w = 100, h = 100, drag = null, tipTimer;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sourceFor = e => e.navigation === 'explore' ? null : (e.launchUrl || e.previewUrl) ? {url: e.launchUrl || e.previewUrl, target: e.launchUrl ? '_self' : '_blank'} : e.sources?.[0];
-const entityLink = (id, owner = context) => '#' + section + '/' + encodeURIComponent(id)
+const entityLink = (id, owner = context) => '#' + (section === 'workflows' ? 'workflows' : 'overview') + '/' + encodeURIComponent(id)
   + (section === 'workflows' && owner ? '?from=' + encodeURIComponent(owner) : '');
 const legendMarkup = graph => (graph.legend || []).map(item =>
   `<span style="--swatch:${esc(item.fill)}">${esc(item.label)}</span>`).join('');
@@ -117,12 +117,33 @@ function buildCatalog() {
   });
 }
 
+function buildUseCases() {
+  $('use-cases-page').innerHTML = `<div class="workflow-intro"><p class="eyebrow">Services in practice</p>
+    <h1 id="use-cases-title" tabindex="-1">NFDI4Ing Use Cases</h1>
+    <p>Explore NFDI4Ing services through the workflows that use them.</p></div>
+    <div class="service-list">${(m.services || []).map(service => `
+      <section class="service-entry" aria-labelledby="service-${esc(service.id)}">
+        <div class="service-heading"><p class="eyebrow">Service</p>
+          <h2 id="service-${esc(service.id)}">${esc(service.name)}</h2>
+          <a href="${esc(service.url)}" target="_blank" rel="noopener noreferrer">Visit service ↗</a></div>
+        <div class="service-use-cases">${service.workflowSlugs.map(slug => {
+          const workflow = workflows.get(slug);
+          return `<article class="service-use-case"><p class="eyebrow">Use case</p>
+            <p class="use-case-statement">Use the ${esc(service.serviceName)} to <a href="#workflow-${esc(slug)}">${esc(workflow.title)}</a></p>
+            <div class="workflow-actions"><a class="diagram-link" href="#workflow-${esc(slug)}">View workflow →</a></div>
+          </article>`;
+        }).join('')}</div>
+      </section>`).join('') || '<p>No service use cases are listed yet.</p>'}</div>`;
+}
+
 function render() {
   const [rawPath, query = ''] = location.hash.slice(1).split('?');
   let route; try { route = decodeURIComponent(rawPath); } catch { route = 'overview'; }
   const anchor = route.startsWith('workflow-') ? route.slice('workflow-'.length) : '';
-  documentView = route === 'workflows' || workflows.has(anchor);
-  section = documentView || route.startsWith('workflows/') ? 'workflows' : 'overview';
+  const useCasesView = route === 'nfdi4ing';
+  const workflowView = route === 'workflows' || workflows.has(anchor);
+  documentView = useCasesView || workflowView;
+  section = useCasesView ? 'nfdi4ing' : workflowView || route.startsWith('workflows/') ? 'workflows' : 'overview';
   context = workflows.has(anchor) ? anchor : new URLSearchParams(query).get('from') || '';
   if (!workflows.has(context)) context = '';
   key = route.replace(/^(overview|workflows)\//, '') || 'overview';
@@ -130,13 +151,20 @@ function render() {
   const workflow = m.workflows.find(w => w.graphKey === key);
   if (workflow) context = workflow.slug;
   document.documentElement.classList.toggle('document-view', documentView);
-  document.body.dataset.view = documentView ? 'workflows' : 'diagram';
-  $('workflow-page').hidden = !documentView; canvas.hidden = documentView;
+  document.body.dataset.view = documentView ? section : 'diagram';
+  $('workflow-page').hidden = !workflowView;
+  $('use-cases-page').hidden = !useCasesView; canvas.hidden = documentView;
   document.querySelectorAll('.map-caption,.legend,.zoom').forEach(el => el.hidden = documentView);
   document.querySelectorAll('header nav a').forEach(a => {
     if (a.hash === '#' + section) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
   });
   $('results').hidden = true; hide();
+  if (useCasesView) {
+    document.title = 'NFDI4Ing Use Cases — Kaibab semantic map';
+    window.scrollTo(0, 0); $('use-cases-title').focus({preventScroll: true});
+    $('status').textContent = 'Showing NFDI4Ing Use Cases';
+    return;
+  }
   if (documentView) {
     document.title = (anchor ? workflows.get(anchor).title : 'Workflows') + ' — Kaibab semantic map';
     const heading = anchor ? $('heading-' + anchor) : $('workflows-title');
@@ -203,5 +231,5 @@ function end() { drag = null; canvas.classList.remove('dragging'); }
 canvas.addEventListener('pointerup', end); canvas.addEventListener('pointercancel', end);
 document.addEventListener('scroll', e => { if (e.target !== tip) hide(); }, true);
 addEventListener('hashchange', render); addEventListener('resize', fit);
-buildCatalog(); render();
+buildCatalog(); buildUseCases(); render();
 })();

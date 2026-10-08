@@ -30,7 +30,7 @@ const savedSections = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/p
     await page.goto('http://127.0.0.1:8765/');
     await drawing.locator('svg .node').first().waitFor();
     assert.equal(await drawing.locator('.node').count(), 20);
-    assert.deepEqual(await nav.locator('a').allTextContents(), ['Semantic Model','Workflows']);
+    assert.deepEqual(await nav.locator('a').allTextContents(), ['Semantic Model','Workflows','NFDI4Ing Use Cases']);
     const model = drawing.locator('a[data-entity="file/models/kaibab_ecosystem_model.mdl"]');
     assert((await model.getAttribute('href')).includes('/blob/f156dcf37597c0587958f463985986f0ea91accf/'));
     await model.hover(); assert((await page.locator('#tip').innerText()).includes('GitHub source'));
@@ -43,6 +43,22 @@ const savedSections = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/p
     await page.waitForFunction(() => document.getElementById('map-title').textContent === 'Semantic Model');
     await screenshot('semantic-model');
     checks.push('Semantic Model retains 20 entities, source links, keyboard descriptions and equation exploration');
+
+    await nav.getByRole('link', {name:'NFDI4Ing Use Cases', exact:true}).click();
+    assert.equal(await page.title(), 'NFDI4Ing Use Cases — Kaibab semantic map');
+    assert(await page.locator('#use-cases-page').isVisible());
+    assert(await page.locator('#canvas').isHidden());
+    assert.equal(await page.locator('.service-entry').count(), 1);
+    assert.equal(await page.locator('.use-case-statement').innerText(), 'Use the NFDI4Ing Jupyter Service to ' + secondTitle);
+    await page.locator('#use-cases-page').getByRole('link', {name:'View workflow →', exact:true}).click();
+    await page.waitForURL('**/#workflow-python-inspection');
+    assert.equal(await nav.locator('[aria-current]').innerText(), 'Workflows');
+    await page.goBack();
+    await page.waitForURL('**/#nfdi4ing');
+    await page.reload();
+    assert.equal(await nav.locator('[aria-current]').innerText(), 'NFDI4Ing Use Cases');
+    assert(await page.locator('#use-cases-page').isVisible());
+    checks.push('Service catalog opens its existing workflow and survives Back and refresh');
 
     await catalog();
     assert.equal(await page.locator('.workflow-section').count(), 2);

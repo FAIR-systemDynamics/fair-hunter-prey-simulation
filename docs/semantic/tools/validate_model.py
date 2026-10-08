@@ -11,11 +11,13 @@ from pathlib import Path
 from decimal import Decimal
 
 import openpyxl
+import nbformat
 from pyshacl import validate
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, XSD
 from rdflib.compare import isomorphic
 from workflow_sources import ARTIFACT_REVISION
 from jupyter_service import notebook_url
+from notebook_view import VIEW_PATH, render_notebook
 
 ROOT=Path(__file__).resolve().parents[3]
 HERE=ROOT/'docs/semantic'
@@ -101,9 +103,16 @@ for path,digest in inspection['manifest']['sources'].items():
     assert hashlib.sha256(source(path)).hexdigest()==digest
 for path,digest in inspection['manifest']['outputs'].items():
     assert hashlib.sha256((HERE/path).read_bytes()).hexdigest()==digest
-    assert hashlib.sha256(source('docs/semantic/'+path, ARTIFACT_REVISION)).hexdigest()==digest
+    # The saved HTML is a current UI rendering, including shared navigation.
+    # Scientific artifacts retain their commit pins; validate the view against
+    # that immutable notebook with the current renderer below.
+    if path != VIEW_PATH:
+        assert hashlib.sha256(source('docs/semantic/'+path, ARTIFACT_REVISION)).hexdigest()==digest
 checks.append('Notebook, exported tables and plot match recorded hashes; inputs and reader match the pinned revision')
 notebook=json.loads((HERE/'notebooks/inspect_results.ipynb').read_text())
+check('Saved notebook view reproduces the pinned notebook with current shared navigation',
+      (HERE/VIEW_PATH).read_text()==render_notebook(
+          nbformat.read(HERE/'notebooks/inspect_results.ipynb', as_version=4),inspection['sections']))
 cells=[c for c in notebook['cells'] if c['cell_type']=='code']
 check('All five notebook code cells executed successfully with a saved inline figure',
       len(cells)==5 and [c['execution_count'] for c in cells]==list(range(1,6))
@@ -149,6 +158,11 @@ check('Workflow links open verified Jupyter destinations, saved views or reposit
       and not any(e.get('localUrl') or e.get('localDownload') for e in entities.values()))
 check('Notebook launch URL agrees with the verified deployment configuration',
       entities['notebook/inspect-results'].get('launchUrl')==notebook_url())
+check('NFDI4Ing service catalog matches its configuration and references existing workflows',
+      data['services']==json.loads((HERE/'nfdi4ing-services.json').read_text())
+      and len({s['id'] for s in data['services']})==len(data['services'])
+      and all(s['workflowSlugs'] and set(s['workflowSlugs']) <= {w['slug'] for w in data['workflows']}
+              for s in data['services']))
 inspection_report=inspection['report']
 check('Python inspection preserves the 1001-point states and separate 21-point reference',
       inspection_report['tableShape']==[2002,3] and inspection_report['historicalInterpolated'] is False
