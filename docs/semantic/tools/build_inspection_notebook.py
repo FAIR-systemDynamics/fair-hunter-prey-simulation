@@ -16,6 +16,7 @@ import nbformat as nb
 from nbclient import NotebookClient
 from jupyter_client import KernelManager
 from jupyter_client.kernelspec import KernelSpecManager
+from notebook_sections import write_section_notebooks
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = ROOT / 'docs/semantic'
@@ -245,6 +246,7 @@ for index, cell in enumerate(notebook.cells):
 (HERE / 'notebooks/inspect_results.py').write_text('\n'.join(python_lines).rstrip() + '\n')
 outputs = ['notebooks/inspect_results.ipynb', 'notebooks/inspect_results.py', 'data/python-state-trajectories.csv',
            'data/python-inspection-summary.csv', 'data/python-inspection.json', 'data/python-inspection.svg']
+outputs += write_section_notebooks(notebook, sections, HERE)
 manifest = dict(revision=REV, sources=hashes,
                 outputs={p: hashlib.sha256((HERE/p).read_bytes()).hexdigest() for p in outputs},
                 simulationExecuted=False, codeCellsExecuted=sum(c.cell_type=='code' for c in cells),
