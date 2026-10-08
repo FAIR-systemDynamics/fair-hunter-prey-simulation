@@ -1,6 +1,6 @@
 # Kaibab semantic atlas — review draft
 
-Open `index.html` in a browser. It is a static, offline-capable explorer: no account, external scripts, remote fonts, or build server are required for the saved views. The GitHub repository is public. Notebook and figure source artifacts are available on the `codex/semantic-workflow-sources` repository branch. The notebook is available in an authenticated NFDI4Ing JupyterLab workspace; the explorer itself has not been deployed as a website.
+Open `index.html` in a browser. It is a static, offline-capable explorer: no account, external scripts, remote fonts, or build server are required for the saved views. The GitHub repository is public. Notebook and figure source artifacts are available on the `codex/semantic-workflow-sources` repository branch. The notebook is available in an authenticated NFDI4Ing JupyterLab workspace; the explorer is published on [GitHub Pages](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/).
 
 The model combines concise literature interpretations with all 47 Vensim declarations and 50 main-branch files from commit `f156dcf37597c0587958f463985986f0ea91accf`. The revised Overview also includes the Stella declaration at commit `194a8b92e963920e95393accc7d5699348864d85`. This is a focused addition; a complete mapping of all Stella declarations is still pending. The diagram shows documented runs, not new simulations. Search can open review-note entities for known ambiguities and evidence gaps.
 
@@ -120,3 +120,13 @@ These are draft identifiers, not already registered or resolving. The fragment r
 ## Attribution
 
 Deaton, Mike & MacDonald, Rod (2025), *System Dynamics Learning Guide*, James Madison University Libraries, Chapter 4 (current online §4.12, Figure 4.19). <https://pressbooks.lib.jmu.edu/sdlearningguide/>. CC BY-NC-SA 4.0. Model comments and definitions are derived from the repository's credited Kaibab reimplementation. The semantic datasets and generated browser data retain CC BY-NC-SA 4.0 for this review draft; viewer and tooling code are MIT. The ontology follows Metadata4Ing 1.4.0: <https://w3id.org/nfdi4ing/metadata4ing/>.
+
+## GitHub Pages publication
+
+The site is served from `https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/`.
+`.github/workflows/pages.yml` deploys the committed `docs/semantic` directory at
+the site root when that directory changes on `codex/semantic-workflow-sources`.
+The publishing workflow uses GitHub Pages with a `github-pages` environment.
+Rebuild and validate generated artifacts before pushing; publishing does not
+execute notebooks or simulations. To change the publishing branch later, update
+both the workflow branch filter and its deployment condition.

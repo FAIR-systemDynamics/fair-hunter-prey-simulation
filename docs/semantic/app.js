@@ -9,6 +9,7 @@ if (!m || !graphs) {
 }
 const entities = new Map(m.entities.map(e => [e.id, e]));
 const workflows = new Map(m.workflows.map(workflow => [workflow.slug, workflow]));
+const siteTitle = m.meta.repository.replace('https://github.com/', '');
 const names = {overview: 'Semantic Model', ...Object.fromEntries(m.workflows.map(w => [w.graphKey, w.title]))};
 const canvas = $('canvas'), drawing = $('drawing'), tip = $('tip');
 let key = 'overview', section = 'overview', context = '', documentView = false;
@@ -124,6 +125,7 @@ function buildUseCases() {
     <div class="service-list">${(m.services || []).map(service => `
       <section class="service-entry" aria-labelledby="service-${esc(service.id)}">
         <div class="service-heading"><p class="eyebrow">Service</p>
+          ${service.logos?.length ? `<div class="service-logos">${service.logos.map(logo => `<img src="${esc(logo.src)}" alt="${esc(logo.alt)}" width="${logo.width}" height="${logo.height}">`).join('')}</div>` : ''}
           <h2 id="service-${esc(service.id)}">${esc(service.name)}</h2>
           <a href="${esc(service.url)}" target="_blank" rel="noopener noreferrer">Visit service ↗</a></div>
         <div class="service-use-cases">${service.workflowSlugs.map(slug => {
@@ -160,13 +162,13 @@ function render() {
   });
   $('results').hidden = true; hide();
   if (useCasesView) {
-    document.title = 'NFDI4Ing Use Cases — Kaibab semantic map';
+    document.title = 'NFDI4Ing Use Cases — ' + siteTitle;
     window.scrollTo(0, 0); $('use-cases-title').focus({preventScroll: true});
     $('status').textContent = 'Showing NFDI4Ing Use Cases';
     return;
   }
   if (documentView) {
-    document.title = (anchor ? workflows.get(anchor).title : 'Workflows') + ' — Kaibab semantic map';
+    document.title = (anchor ? workflows.get(anchor).title : 'Workflows') + ' — ' + siteTitle;
     const heading = anchor ? $('heading-' + anchor) : $('workflows-title');
     const target = anchor ? $('workflow-' + anchor) : $('workflow-page');
     target.scrollIntoView({block: 'start'}); heading.focus({preventScroll: true});
@@ -184,7 +186,7 @@ function render() {
   $('map-description').hidden = !workflow; $('map-description').textContent = workflow?.summary || '';
   $('back-to-workflows').hidden = section !== 'workflows';
   $('back-to-workflows').href = context ? '#workflow-' + context : '#workflows';
-  document.title = title + ' — Kaibab semantic map'; fit();
+  document.title = title + ' — ' + siteTitle; fit();
   $('status').textContent = `Showing ${title}, ${graph.count} entities`;
 }
 

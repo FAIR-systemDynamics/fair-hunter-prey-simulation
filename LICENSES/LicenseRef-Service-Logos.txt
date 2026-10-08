@@ -1,0 +1,10 @@
+Third-party service logos
+
+The NFDI4Ing and Jupyter logos are reproduced solely to identify their respective
+services. Rights in these logos remain with their respective owners. They are
+not licensed under this repository's MIT or Creative Commons licenses.
+
+This repository grants no additional rights to these logos or trademarks.
+For use beyond identifying the services, consult the respective owners.
+
+Sources: https://jupyter.nfdi4ing.de/ and https://jupyter.org/

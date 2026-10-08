@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+# SPDX-License-Identifier: MIT
+name: Publish semantic site
+
+on:
+  push:
+    branches: [codex/semantic-workflow-sources]
+    paths:
+      - docs/semantic/**
+      - .github/workflows/pages.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/codex/semantic-workflow-sources'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/configure-pages@v5
+      - name: Upload the prebuilt semantic site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: docs/semantic
+      - name: Publish GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

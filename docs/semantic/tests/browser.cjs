@@ -45,7 +45,7 @@ const savedSections = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/p
     checks.push('Semantic Model retains 20 entities, source links, keyboard descriptions and equation exploration');
 
     await nav.getByRole('link', {name:'NFDI4Ing Use Cases', exact:true}).click();
-    assert.equal(await page.title(), 'NFDI4Ing Use Cases — Kaibab semantic map');
+    assert.equal(await page.title(), 'NFDI4Ing Use Cases — FAIR-systemDynamics/fair-hunter-prey-simulation');
     assert(await page.locator('#use-cases-page').isVisible());
     assert(await page.locator('#canvas').isHidden());
     assert.equal(await page.locator('.service-entry').count(), 1);

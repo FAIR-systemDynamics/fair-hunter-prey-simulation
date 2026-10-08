@@ -57,13 +57,13 @@ def render_notebook(notebook, sections):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Inspect Kaibab results with Python — Notebook</title>
+<title>Inspect Kaibab results with Python — FAIR-systemDynamics/fair-hunter-prey-simulation</title>
 <link rel="stylesheet" href="../tokens.css">
 <link rel="stylesheet" href="../style.css">
 </head>
 <body data-view="notebook">
 <header>
-<a class="brand" href="../index.html#overview">Kaibab <span>semantic map</span></a>
+<a class="brand" href="../index.html#overview">FAIR-systemDynamics/<wbr>fair-hunter-prey-simulation</a>
 <nav aria-label="Main navigation"><a href="../index.html#overview">Semantic Model</a><a href="../index.html#workflows">Workflows</a><a href="../index.html#nfdi4ing">NFDI4Ing Use Cases</a></nav>
 </header>
 <main id="notebook-page">

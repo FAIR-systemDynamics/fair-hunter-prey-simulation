@@ -130,10 +130,22 @@ SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/JUPYTER.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
+path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/JUPYTER.md", "docs/semantic/assets/README.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["docs/semantic/assets/nfdi4ing-logo.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "NFDI4Ing"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
+
+[[annotations]]
+path = ["docs/semantic/assets/jupyter-logo.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Project Jupyter"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
 
 # Semantic datasets retain attribution for model-derived descriptions.
 [[annotations]]
