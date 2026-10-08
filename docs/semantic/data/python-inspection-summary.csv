@@ -1,0 +1,7 @@
+case,variable,unit,points,minimum,maximum,peak_year,final_value
+case1,Deer Population,Deer,1001,3950.9,4031.75,1904.35,4000.06
+case1,Predator Population,Predators,1001,97.2217,100.0,1900.0,98.1057
+case1,Forage Biomass,Metric Tons,1001,316866.0,317034.0,1902.25,316866.0
+case2,Deer Population,Deer,1001,762.344,81841.3,1937.7,22754.1
+case2,Predator Population,Predators,1001,84.9631,1829.14,1941.7,191.416
+case2,Forage Biomass,Metric Tons,1001,128309.0,321197.0,1908.5,178466.0

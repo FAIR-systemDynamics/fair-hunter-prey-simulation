@@ -1,0 +1,137 @@
+{
+  "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+  "simulationExecuted": false,
+  "inventory": [
+    {
+      "case": "case1",
+      "variable": "Deer Population",
+      "unit": "Deer",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case1",
+      "variable": "Forage Biomass",
+      "unit": "Metric Tons",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case1",
+      "variable": "Predator Population",
+      "unit": "Predators",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case1",
+      "variable": "Historical Deer BOT",
+      "unit": "Deer",
+      "points": 21,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case2",
+      "variable": "Deer Population",
+      "unit": "Deer",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case2",
+      "variable": "Forage Biomass",
+      "unit": "Metric Tons",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case2",
+      "variable": "Predator Population",
+      "unit": "Predators",
+      "points": 1001,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    },
+    {
+      "case": "case2",
+      "variable": "Historical Deer BOT",
+      "unit": "Deer",
+      "points": 21,
+      "first_year": 1900.0,
+      "last_year": 1950.0
+    }
+  ],
+  "summary": [
+    {
+      "case": "case1",
+      "variable": "Deer Population",
+      "unit": "Deer",
+      "points": 1001,
+      "minimum": 3950.9,
+      "maximum": 4031.75,
+      "peak_year": 1904.35,
+      "final_value": 4000.06
+    },
+    {
+      "case": "case1",
+      "variable": "Predator Population",
+      "unit": "Predators",
+      "points": 1001,
+      "minimum": 97.2217,
+      "maximum": 100.0,
+      "peak_year": 1900.0,
+      "final_value": 98.1057
+    },
+    {
+      "case": "case1",
+      "variable": "Forage Biomass",
+      "unit": "Metric Tons",
+      "points": 1001,
+      "minimum": 316866.0,
+      "maximum": 317034.0,
+      "peak_year": 1902.25,
+      "final_value": 316866.0
+    },
+    {
+      "case": "case2",
+      "variable": "Deer Population",
+      "unit": "Deer",
+      "points": 1001,
+      "minimum": 762.344,
+      "maximum": 81841.3,
+      "peak_year": 1937.7,
+      "final_value": 22754.1
+    },
+    {
+      "case": "case2",
+      "variable": "Predator Population",
+      "unit": "Predators",
+      "points": 1001,
+      "minimum": 84.9631,
+      "maximum": 1829.14,
+      "peak_year": 1941.7,
+      "final_value": 191.416
+    },
+    {
+      "case": "case2",
+      "variable": "Forage Biomass",
+      "unit": "Metric Tons",
+      "points": 1001,
+      "minimum": 128309.0,
+      "maximum": 321197.0,
+      "peak_year": 1908.5,
+      "final_value": 178466.0
+    }
+  ],
+  "tableShape": [
+    2002,
+    3
+  ],
+  "historicalInterpolated": false
+}

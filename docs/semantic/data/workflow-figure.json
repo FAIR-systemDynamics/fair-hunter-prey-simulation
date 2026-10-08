@@ -1,0 +1,17 @@
+{
+  "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+  "sources": {
+    "results/runs/case2_external.csv": "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63",
+    "scripts/plot_results.py": "f11d3f8d57a3e98641124a82beaa211cc0fb55138958d143d58fc338a7ceb18f",
+    "scripts/vensim_csv.py": "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3"
+  },
+  "output": "case2-workflow.svg",
+  "sha256": "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9",
+  "columns": [
+    "Deer Population",
+    "Predator Population",
+    "Forage Biomass"
+  ],
+  "simulationExecuted": false,
+  "command": "python scripts/plot_results.py results/runs/case2_external.csv --columns \"Deer Population\" \"Predator Population\" \"Forage Biomass\" --format svg --name case2-workflow --outdir docs/semantic/data"
+}

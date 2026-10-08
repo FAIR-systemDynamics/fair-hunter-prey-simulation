@@ -137,7 +137,7 @@ SPDX-License-Identifier = "CC-BY-4.0"
 
 # Semantic datasets retain attribution for model-derived descriptions.
 [[annotations]]
-path = ["docs/semantic/model.ttl", "docs/semantic/model.jsonld", "docs/semantic/controlled-vocabulary.ttl", "docs/semantic/data/**"]
+path = ["docs/semantic/model.ttl", "docs/semantic/model.jsonld", "docs/semantic/controlled-vocabulary.ttl", "docs/semantic/data/**", "docs/semantic/notebooks/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = [
     "2025 Mike Deaton and Rod MacDonald, James Madison University Libraries (original model, System Dynamics Learning Guide)",
