@@ -46,11 +46,14 @@ reference has its own 21-point time axis. We preserve those separate axes.
 
 ## Contents
 
-1. [Locate and check the source artifacts](#1.-Locate-and-check-the-source-artifacts) — code cell 1.
-2. [Read the data without losing units or time axes](#2.-Read-the-data-without-losing-units-or-time-axes) — code cell 2.
-3. [Build a table for the three simulated states](#3.-Build-a-table-for-the-three-simulated-states) — code cell 3.
-4. [Inspect peaks and final values](#4.-Inspect-peaks-and-final-values) — code cell 4.
-5. [Compare trajectories on their own axes](#5.-Compare-trajectories-on-their-own-axes) — code cell 5.
+1. Locate and check the source artifacts — code cell 1.
+2. Read the data without losing units or time axes — code cell 2.
+3. Build a table for the three simulated states — code cell 3.
+4. Inspect peaks and final values — code cell 4.
+5. Compare trajectories on their own axes — code cell 5.
+
+The companion [Python source](inspect_results.py) contains the same numbered
+cells, with stable GitHub line links used by the semantic model.
 ''')
 markdown('## 1. Locate and check the source artifacts')
 code('''%matplotlib inline
@@ -217,19 +220,30 @@ nb.write(notebook, destination)
 # fallback when a repository viewer cannot jump into a rendered notebook.
 sections = []
 source_lines = destination.read_text().splitlines()
+python_lines = ['# Generated from inspect_results.ipynb; edit the notebook builder to regenerate.',
+                '# Cell numbers below match the executed notebook.', '']
 execution = 0
 for index, cell in enumerate(notebook.cells):
-    if cell.cell_type != 'code':
+    if cell.cell_type == 'markdown':
+        python_lines += ['# %% [markdown]', *['# ' + line if line else '#' for line in cell.source.splitlines()], '']
         continue
     execution += 1
     heading_cell = notebook.cells[index - 1]
     heading = heading_cell.source.splitlines()[0].removeprefix('## ')
     line = next(i for i, text in enumerate(source_lines, 1)
                 if f'"id": "{heading_cell.id}"' in text)
+    python_start = len(python_lines) + 1
+    python_lines += [f'# %% Cell {execution}: {heading.split(". ", 1)[1]}']
+    python_lines += [line if not line.startswith('%') else '# Jupyter: ' + line
+                     for line in cell.source.splitlines()]
+    python_end = len(python_lines)
+    python_lines.append('')
     sections.append(dict(number=execution, heading=heading, cellId=cell.id,
                          markdownCellId=heading_cell.id, cellIndex=index,
-                         anchor=heading.replace(' ', '-'), sourceLine=line))
-outputs = ['notebooks/inspect_results.ipynb', 'data/python-state-trajectories.csv',
+                         anchor=heading.replace(' ', '-'), sourceLine=line,
+                         pythonStartLine=python_start, pythonEndLine=python_end))
+(HERE / 'notebooks/inspect_results.py').write_text('\n'.join(python_lines).rstrip() + '\n')
+outputs = ['notebooks/inspect_results.ipynb', 'notebooks/inspect_results.py', 'data/python-state-trajectories.csv',
            'data/python-inspection-summary.csv', 'data/python-inspection.json', 'data/python-inspection.svg']
 manifest = dict(revision=REV, sources=hashes,
                 outputs={p: hashlib.sha256((HERE/p).read_bytes()).hexdigest() for p in outputs},
