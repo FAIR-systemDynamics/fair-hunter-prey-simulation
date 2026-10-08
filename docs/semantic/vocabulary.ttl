@@ -1,5 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix m4i: <http://w3id.org/nfdi4ing/metadata4ing#> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -78,6 +79,9 @@ sd:Stock a owl:Class ;
     rdfs:label "Stock" ;
     rdfs:comment "An accumulated state in a system dynamics model." ;
     rdfs:subClassOf m4i:NumericalVariable .
+
+sd:artifactSequence a owl:ObjectProperty ;
+    rdfs:comment "Ordered presentation of entities in a workflow example. Sequence order alone does not assert derivation or execution provenance." .
 
 sd:canExecuteTask a owl:ObjectProperty ;
     rdfs:comment "Software is documented as supporting this computational task; no execution is asserted." .
@@ -185,6 +189,10 @@ sd:inputFile a owl:ObjectProperty ;
     rdfs:label "inputFile" ;
     rdfs:comment "An external data file supplying values read or loaded for a model file." .
 
+sd:inputTo a owl:ObjectProperty ;
+    rdfs:comment "An artifact supplied as input to a processing step; inverse of obo:RO_0002233. This is a local workflow display predicate." ;
+    owl:inverseOf obo:RO_0002233 .
+
 sd:involvesVariable a owl:ObjectProperty ;
     rdfs:label "involvesVariable" ;
     rdfs:comment "A variable involved in an interpreted model mechanism; does not assert a fixed causal sign." .
@@ -247,6 +255,10 @@ sd:sourceLine a owl:DatatypeProperty ;
 sd:sourceUnit a owl:DatatypeProperty ;
     rdfs:label "sourceUnit" ;
     rdfs:comment "Original model unit string; preserves domain-specific counting units." .
+
+sd:specifiesOutput a owl:ObjectProperty ;
+    rdfs:label "specifies output" ;
+    rdfs:comment "An executable source section specifies writing an artifact. This is a source-code relationship; observed generation is recorded separately with prov:generated on the executed activity." .
 
 sd:timeAxis a owl:DatatypeProperty ;
     rdfs:label "timeAxis" ;

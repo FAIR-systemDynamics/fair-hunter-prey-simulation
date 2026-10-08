@@ -352,6 +352,10 @@ for key,label,definition,targets,sources in issues:
     for target in targets:edge(issue,SD.concerns,target,'concerns');entities[target].setdefault('notes',[]).append(definition)
 from overview_model import extend
 overview = extend(globals())
+from workflow_model import extend as extend_workflow
+workflow = extend_workflow(globals())
+from inspection_model import extend as extend_inspection
+workflows = [workflow, extend_inspection(globals())]
 for key,e in entities.items():lit(key,SD.evidenceStatus,e.get('status','Extracted'))
 lit('repository',SD.reviewNote,'Repository is private at inspection. Source links may require GitHub access. Proposed entity namespace is not deployed.')
 for e in edges:
@@ -379,7 +383,7 @@ schema_graph.serialize(OUT/'vocabulary.ttl',format='turtle')
 for filename in ['model.ttl', 'controlled-vocabulary.ttl', 'vocabulary.ttl']:
     path = OUT / filename
     path.write_text(path.read_text().rstrip() + '\n')
-model=dict(meta=dict(title='Kaibab semantic atlas',revision=REV,repository=REPO,namespace=BASE,ontology='MathModDB + m4i 1.4.0',version='0.2.0-review',scope=overview['scope'],triples=len(g),variableCount=len(variables),fileCount=sum(e['kind']=='File' for e in entities.values())),overview=overview,entities=list(entities.values()),edges=edges,series=series)
+model=dict(meta=dict(title='Kaibab semantic atlas',revision=REV,repository=REPO,namespace=BASE,ontology='MathModDB + m4i 1.4.0',version='0.2.0-review',scope=overview['scope'],triples=len(g),variableCount=len(variables),fileCount=sum(e['kind']=='File' for e in entities.values())),overview=overview,workflow=workflow,workflows=workflows,entities=list(entities.values()),edges=edges,series=series)
 (OUT/'data/model.json').write_text(json.dumps(model,indent=2))
 (OUT/'data/model.js').write_text('window.KAIBAB = '+json.dumps(model,separators=(',',':'))+';\n')
 print(json.dumps(dict(entities=len(entities),variables=len(variables),files=sum(e['kind']=='File' for e in entities.values()),relationships=len(edges),triples=len(g)),indent=2))

@@ -1,5 +1,11 @@
 # Running the model with PySD
 
+For inspecting existing results without running a simulation, see the
+[Python / Jupyter inspection notebook](semantic/notebooks/inspect_results.ipynb).
+It uses `scripts/vensim_csv.py` to retain each variable's time axis and units,
+then compares the committed cases with pandas and matplotlib. This is a new
+worked example; its saved outputs are from existing CSV results.
+
 PySD 3.14 reads `kaibab_ecosystem_model.mdl` without modification.
 Translation picks up the three stocks and the simulation settings from the
 model file (1900–1950, DT = 0.05), so no settings have to be repeated in the
@@ -128,4 +134,3 @@ Only the features this model uses were checked against Stella. PySD's XMILE
 reader has no support for modules, conveyors, queues or ovens. `PULSE` and
 `RAMP` are not held like `STEP`, because no Stella export was available to
 check them against.
-

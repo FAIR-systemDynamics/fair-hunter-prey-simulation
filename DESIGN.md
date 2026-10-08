@@ -17,6 +17,9 @@ colors:
   code-tint: "#edf2f9"
   warning-tint: "#fcf2e7"
   scrollbar: "#93a5ae"
+  scrollbar-track: "#f3f6f7"
+  scrollbar-hover: "#738c99"
+  scrollbar-active: "#546872"
 typography:
   display:
     fontFamily: "Arial, Helvetica, sans-serif"
@@ -49,7 +52,11 @@ Local Arial/Helvetica sans serif, with 16px graph labels and 10px ontology capti
 
 ## Layout
 
-A full-window pan-and-zoom canvas below a compact header. Four diagrams: Overview, Ecosystem, Files & runs, Scenarios. A small search opens an entity's direct relationships. Bottom legend and zoom buttons float over the canvas; no permanent detail sidebar. On mobile the header wraps into two rows. Fit reserves space for the legend and header. Dense neighborhoods explicitly state if connections are omitted; complete RDF remains downloadable.
+A compact header has exactly two navigation tabs: Semantic Model (the former Overview, retaining its #overview route) and Workflows. These are native navigation links because the views are bookmarkable. Semantic Model and entity neighborhoods use a full-window pan-and-zoom canvas. Bottom legend and zoom buttons float over that canvas; no permanent detail sidebar. Workflows is a naturally scrolling document: a linked table of contents followed by all examples in order. Each example has a heading, evidence note, artifact links, inline diagram and local legend. A small search opens an entity's direct relationships. On mobile the header wraps into two rows. Dense neighborhoods explicitly state if connections are omitted; complete RDF remains available through its repository source link.
+
+Workflows starts with Case 2, followed by Python / Jupyter inspection. Both examples have descriptive action-sentence titles and five numbered columns. The first runs from model declaration to figure. The second runs from saved CSVs to Python inspection, repository code, notebook cells and outputs. Only the CSV reader and notebook follow the inspection activity directly; notebook cells and their tables and SVG follow the code. Each of the five cell nodes opens exact lines in the notebook’s matching Python source representation. Numbers denote reading order; arrows retain actual RDF relationship directions. The diagrams distinguish reconstructed simulation provenance from locally executed plotting and inspection. Jupyter support is presented honestly: the reader and PySD runner existed; the executed notebook is new.
+
+Contents links use #workflow-<slug>, scroll the selected heading below the sticky header, and focus it. Both workflows remain in the document. Each inline diagram keeps a readable minimum width and scrolls horizontally on narrow screens; wheel and arrow keys retain normal document/region scrolling. Explore diagram opens the shared canvas, with a Back to workflows link returning to the same section. The viewport constraints of the canvas never apply to the workflow document.
 
 ## Elevation & Depth
 
@@ -57,17 +64,21 @@ Flat diagram with thin borders; only hover descriptions and search suggestions c
 
 ## Shapes
 
-Rounded rectangular ontology nodes, small rounded controls, arrowheads with readable relation labels. The Overview uses an editorial layout in tools/overview_layout.py: mathematics above, implementation and simulation below. Its arrows and nodes come from the same semantic dataset as the RDF. Other views and entity neighborhoods use deterministic Graphviz routing.
+Rounded rectangular ontology nodes, small rounded controls, arrowheads with readable relation labels. Semantic Model uses an editorial layout in tools/overview_layout.py: mathematics above, implementation and simulation below. Workflows shares the sequence renderer in tools/workflow_layout.py; tools/inspection_layout.py supplies the Python layout. Both diagrams' arrows and nodes come from the same semantic dataset as the RDF. Entity neighborhoods use deterministic Graphviz routing.
 
 ## Components
 
 | Capability | Canonical owner | Source of truth | Allowed variants | Verification |
 |---|---|---|---|---|
-| Scrollbar | docs/semantic/style.css | DESIGN.md Colors | Search results only | Narrow viewport check |
+| Scrollbar | docs/semantic/style.css | DESIGN.md Colors → build_tokens.py → tokens.css | Global baseline, inline diagrams use stable gutter | Document and diagram scroll checks |
+| View navigation | docs/semantic/app.js and index.html | DESIGN.md Layout | Semantic Model / Workflows / entity neighborhood | Browser navigation and refresh |
+| Graph rendering | docs/semantic/tools/build_graphs.py | data/model.json and RDF | Overview / workflow / neighborhood | RDF edge integrity and browser rendering |
 
-app.js owns graph navigation, search, pan, zoom and the shared hover/focus description. build_graphs.py owns all node and arrow layouts. index.html owns header and legend. Anchors navigate; native buttons zoom or fit. File nodes and implementation variables open their sources in a new tab. Scientific quantities, formulas and collection nodes open their neighborhoods, even when their evidence includes source URLs. Literature and software nodes link to their sources. Each view generates its colour legend from its actual entity types. Search opens a local neighborhood without navigating to GitHub. Other nodes open their local neighborhood. No external rendering dependencies or network fonts.
+app.js owns graph navigation, the workflow contents and sections, search, pan, zoom and the shared hover/focus description. Its bindGraph helper supplies identical node behavior on the canvas and inline diagrams, with unique SVG IDs for each instance. build_graphs.py owns all node and arrow layouts. index.html owns the two-tab header and canvas chrome. Anchors navigate; native buttons zoom or fit. File nodes and implementation variables open their sources in a new tab. Scientific quantities, formulas and collection nodes open their neighborhoods, even when their evidence includes source URLs. Literature and software nodes link to their sources. Each view generates its colour legend from its actual entity types. Search opens a local neighborhood without navigating to GitHub. Notebook, table and figure artifacts open commit-pinned sources in GitHub; no artifact download controls are offered. No external rendering dependencies or network fonts.
 
-Escape dismisses descriptions and search. Hover descriptions also appear on keyboard focus. Search supports keyboard traversal, Enter and an explicit clear button. The input is a transient local entity finder; committed entity selection, rather than the draft query, is stored in the URL. Arrow keys provide a non-drag pan alternative. Empty search results explain the state. A failed dataset load shows an explanation and the RDF download remains available. No remote mutations, publishing or simulation execution are offered.
+Escape dismisses descriptions and search. Hover descriptions also appear on keyboard focus. Search supports keyboard traversal, Enter and an explicit clear button. The input is a transient local entity finder; committed entity selection, rather than the draft query, is stored in the URL. Arrow keys provide a non-drag pan alternative. Empty search results explain the state. A failed dataset load shows an explanation and the RDF source link remains available. No remote mutations, publishing or simulation execution are offered.
+
+Entity links preserve their parent view in #overview/<entity> or #workflows/<entity>, including on refresh and browser Back. Workflow links carry ?from=<slug> within the fragment to preserve the section; full diagrams use #workflows/diagram/<slug>. Legacy entity URLs still open their neighborhood. Removed curated-view URLs fall back to Semantic Model. Each route sets a descriptive document title and keeps its owning navigation link selected. Generated artifacts and original inputs retain separate commit-pinned GitHub sources. The RDF header link points to the current workflow branch. The browser does not run simulations, notebooks or plotting commands.
 
 ## Do's and Don'ts
 

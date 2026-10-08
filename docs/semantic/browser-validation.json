@@ -1,14 +1,13 @@
 {
   "passed": true,
-  "version": "0.2.0-review",
-  "date": "2026-10-08",
-  "scope": "Restoration checks and visible preview verification",
   "checks": [
-    "Previous overview renders 20 entities with its original relationships",
-    "Four original navigation tabs restored",
-    "Vensim and Stella source links preserve their pinned revisions",
-    "All local dependencies referenced by index.html exist",
-    "Newer review extensions removed from the active build; preserved in backup"
+    "Semantic Model retains 20 entities, source links, keyboard descriptions and equation exploration",
+    "Workflows has a linked contents list and two sequential examples with unique SVG IDs",
+    "Contents links, refresh, full diagram, entity exploration and return link preserve workflow context",
+    "Descriptive titles, five numbered stages, source-only links and exact cell links are present in both workflow views",
+    "Search preserves workflow context, supports keyboard selection, no-results feedback and explicit clear",
+    "Mobile workflows scroll as a document, diagrams scroll horizontally by keyboard, and Semantic Model restores its canvas",
+    "Both workflows open offline; missing-data failure keeps the RDF source link and recovery message"
   ],
-  "screenshot": "/tmp/kaibab-atlas-review/overview-restored-2026-10-08.jpg"
+  "errors": []
 }
