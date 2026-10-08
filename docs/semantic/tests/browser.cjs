@@ -3,6 +3,8 @@ const {chromium} = require('playwright');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const hubUrl = JSON.parse(fs.readFileSync(path.join(__dirname, '../jupyter.json'), 'utf8')).notebookUrl;
+const savedSections = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/python-inspection-manifest.json'), 'utf8')).sections;
 
 (async () => {
   const browser = await chromium.launch({headless:true, channel:'chrome'});
@@ -90,16 +92,22 @@ const path = require('node:path');
       assert.equal(stageLabels.filter(text=>/^[1-5] · /.test(text)).length, 5);
       for (const anchor of await section.locator('.workflow-actions a:not(.diagram-link)').all()) {
         const href = await anchor.getAttribute('href');
-        assert(href.startsWith('https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/') || href === 'notebooks/inspect_results.html');
-        assert.equal(await anchor.getAttribute('target'), '_blank');
+        assert(href.startsWith('https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/') || href === 'notebooks/inspect_results.html' || href === hubUrl);
+        assert.equal(await anchor.getAttribute('target'), href === hubUrl ? '_self' : '_blank');
       }
     }
     const notebook = second.getByRole('link', {name:'View notebook in repository'});
     assert((await notebook.getAttribute('href')).endsWith('/docs/semantic/notebooks/inspect_results.ipynb'));
     assert.equal(await second.locator('a[data-entity^="notebook-section/"]').count(), 5);
-    for (const anchor of await second.locator('a[data-entity^="notebook-section/"]').all()) {
-      assert(/^notebooks\/inspect_results\.html#[1-5]\.-/.test(await anchor.getAttribute('href')));
-      assert((await anchor.getAttribute('aria-label')).includes('read this section in the notebook'));
+    for (const [index, anchor] of (await second.locator('a[data-entity^="notebook-section/"]').all()).entries()) {
+      const href = await anchor.getAttribute('href');
+      if (hubUrl) {
+        assert.equal(href, hubUrl + '?#' + savedSections[index].previewUrl.split('#')[1]);
+        assert.equal(await anchor.getAttribute('target'), '_self');
+      } else {
+        assert.equal(href, savedSections[index].previewUrl);
+      }
+      assert((await anchor.getAttribute('aria-label')).includes(hubUrl ? 'open this section in NFDI4Ing JupyterLab' : 'read this section in the notebook'));
     }
     const flow = await second.locator('.edge[data-source="processing/inspect-results-python"]').evaluateAll(nodes=>nodes.map(n=>n.dataset.target));
     assert.deepEqual(flow.sort(), ['file/scripts/vensim_csv.py','notebook/inspect-results'].sort());
@@ -109,11 +117,14 @@ const path = require('node:path');
     }
     checks.push('Descriptive titles, five numbered stages, repository sources and links into one notebook are present in both workflow views');
 
-    const sectionLinks = await second.locator('a[data-entity^="notebook-section/"]').evaluateAll(nodes=>nodes.map(a=>a.getAttribute('href')));
+    // Authenticated Hub navigation is checked separately in the live service.
+    // Keep the account-free saved notebook checks independent of that session.
+    const sectionLinks = savedSections.map(section => section.previewUrl);
     const opened = page.waitForEvent('popup');
-    await second.locator('a[data-entity="notebook-section/inspect-results/cell-4"]').click();
+    await second.getByRole('link', {name:'Read saved notebook ↗',exact:true}).click();
     const notebookPage = await opened;
     await notebookPage.waitForLoadState('load');
+    await notebookPage.goto(new URL(sectionLinks[3], page.url()).href);
     assert.equal(await notebookPage.locator('.code_cell').count(), 5);
     assert.equal(await notebookPage.locator('table').count(), 3);
     assert.equal(await notebookPage.locator('.output_png img').count(), 1);
@@ -151,7 +162,7 @@ const path = require('node:path');
     await notebookPage.waitForURL('**/index.html#workflow-python-inspection');
     assert(await notebookPage.locator('#workflow-python-inspection').isVisible());
     await notebookPage.close();
-    checks.push('All five links land on headings in one complete notebook; saved tables/figure, reload, keyboard contents, mobile and return navigation work');
+    checks.push('All five saved-view links land on headings; saved tables/figure, reload, keyboard contents, mobile and return navigation work');
 
     await page.locator('#search').fill('Inspect data with Python');
     await page.locator('#search').press('ArrowDown');

@@ -15,6 +15,7 @@ from pyshacl import validate
 from rdflib import Graph, Namespace, URIRef, Literal, RDF, RDFS, XSD
 from rdflib.compare import isomorphic
 from workflow_sources import ARTIFACT_REVISION
+from jupyter_service import notebook_url
 
 ROOT=Path(__file__).resolve().parents[3]
 HERE=ROOT/'docs/semantic'
@@ -122,8 +123,13 @@ for section in inspection['sections']:
     expected=[line if not line.startswith('%') else '# Jupyter: '+line
               for line in ''.join(cell['source']).splitlines()]
     assert actual==expected, section['id']
-    assert section['url']=='notebooks/inspect_results.html#'+section['anchor']
-    assert entities[section['id']]['previewUrl']==section['url']
+    saved_url='notebooks/inspect_results.html#'+section['anchor']
+    launch_url=notebook_url(section)
+    assert section['url']==(launch_url or saved_url)
+    assert entities[section['id']]['previewUrl']==saved_url
+    assert entities[section['id']].get('launchUrl')==launch_url
+    if launch_url:
+        assert (URIRef(entities[section['id']]['uri']),SCHEMA.url,URIRef(launch_url)) in g
     assert notebook_view.find(id=section['anchor'])
     rendered=notebook_view.find(id='cell-id='+cell['id'])
     assert rendered.select_one('.input_area').get_text().strip()==''.join(cell['source']).strip()
@@ -138,9 +144,11 @@ checks.append('One notebook view preserves all five cells, saved tables and figu
 check('Inspection flows from the activity to code before notebook sections and outputs',
       {e['target'] for e in inspection['edges'] if e['source']=='processing/inspect-results-python'}
       == {'file/scripts/vensim_csv.py','notebook/inspect-results'})
-check('Workflow links open notebook views or repository sources without downloads',
-      all(('/blob/' in action['url'] or action['url']=='notebooks/inspect_results.html') and not action.get('download') for w in data['workflows'] for action in w['actions'])
+check('Workflow links open verified Jupyter destinations, saved views or repository sources without downloads',
+      all(('/blob/' in action['url'] or action['url'] in {'notebooks/inspect_results.html', notebook_url()}) and not action.get('download') for w in data['workflows'] for action in w['actions'])
       and not any(e.get('localUrl') or e.get('localDownload') for e in entities.values()))
+check('Notebook launch URL agrees with the verified deployment configuration',
+      entities['notebook/inspect-results'].get('launchUrl')==notebook_url())
 inspection_report=inspection['report']
 check('Python inspection preserves the 1001-point states and separate 21-point reference',
       inspection_report['tableShape']==[2002,3] and inspection_report['historicalInterpolated'] is False

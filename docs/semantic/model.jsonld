@@ -1143,7 +1143,10 @@
       "sd:evidenceStatus": "Generated locally",
       "sd:path": "docs/semantic/notebooks/inspect_results.ipynb",
       "sd:revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
-      "sd:sha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a"
+      "sd:sha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb"
+      }
     },
     {
       "@id": "kaibab:binding/variable-historical-deer-bot-results-runs-case2-external-csv-row-label-historical-deer-bot-preceding-time-row-defines-axis",
@@ -2250,6 +2253,9 @@
       "sd:selector": "Notebook code cell 4; id=cell-09; heading=4. Inspect peaks and final values",
       "sd:specifiesOutput": {
         "@id": "kaibab:dataset/python-inspection-summary"
+      },
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values"
       }
     },
     {
@@ -3952,7 +3958,10 @@
       ],
       "rdfs:label": "Read units and time axes",
       "sd:evidenceStatus": "Executed locally",
-      "sd:selector": "Notebook code cell 2; id=cell-05; heading=2. Read the data without losing units or time axes"
+      "sd:selector": "Notebook code cell 2; id=cell-05; heading=2. Read the data without losing units or time axes",
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes"
+      }
     },
     {
       "@id": "kaibab:value/case2/program-start-year",
@@ -4312,7 +4321,10 @@
       ],
       "rdfs:label": "Verify source files",
       "sd:evidenceStatus": "Executed locally",
-      "sd:selector": "Notebook code cell 1; id=cell-03; heading=1. Locate and check the source artifacts"
+      "sd:selector": "Notebook code cell 1; id=cell-03; heading=1. Locate and check the source artifacts",
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts"
+      }
     },
     {
       "@id": "kaibab:assertion/dd25cfd4417f8e35bf",
@@ -8228,7 +8240,7 @@
       },
       "rdfs:label": "FAIR hunter–prey repository",
       "sd:evidenceStatus": "Extracted",
-      "sd:reviewNote": "Repository is private at inspection. Source links may require GitHub access. Proposed entity namespace is not deployed.",
+      "sd:reviewNote": "Repository made public on 2026-10-08. The inspection notebook is available through authenticated NFDI4Ing JupyterLab workspaces. Proposed entity namespace is not deployed.",
       "sd:revision": "f156dcf37597c0587958f463985986f0ea91accf"
     },
     {
@@ -11184,6 +11196,9 @@
       "sd:selector": "Notebook code cell 5; id=cell-11; heading=5. Compare trajectories on their own axes",
       "sd:specifiesOutput": {
         "@id": "kaibab:visualization/python-inspection"
+      },
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes"
       }
     },
     {
@@ -11271,6 +11286,9 @@
       "sd:selector": "Notebook code cell 3; id=cell-07; heading=3. Build a table for the three simulated states",
       "sd:specifiesOutput": {
         "@id": "kaibab:dataset/python-state-trajectories"
+      },
+      "schema:url": {
+        "@id": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states"
       }
     },
     {

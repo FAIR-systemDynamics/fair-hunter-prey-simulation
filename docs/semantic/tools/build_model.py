@@ -357,7 +357,7 @@ workflow = extend_workflow(globals())
 from inspection_model import extend as extend_inspection
 workflows = [workflow, extend_inspection(globals())]
 for key,e in entities.items():lit(key,SD.evidenceStatus,e.get('status','Extracted'))
-lit('repository',SD.reviewNote,'Repository is private at inspection. Source links may require GitHub access. Proposed entity namespace is not deployed.')
+lit('repository',SD.reviewNote,'Repository made public on 2026-10-08. The inspection notebook is available through authenticated NFDI4Ing JupyterLab workspaces. Proposed entity namespace is not deployed.')
 for e in edges:
     if e['status']=='Interpreted':
         statement=uri('assertion/'+hashlib.sha256((e['source']+e['predicate']+e['target']).encode()).hexdigest()[:18])

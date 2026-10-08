@@ -122,7 +122,7 @@ SPDX-License-Identifier = "MIT"
 path = [
     "docs/semantic/index.html", "docs/semantic/app.js", "docs/semantic/*.css",
     "docs/semantic/tools/**", "docs/semantic/tests/**",
-    "docs/semantic/requirements.txt", "docs/semantic/*validation.json",
+    "docs/semantic/requirements*.txt", "docs/semantic/jupyter.json", "docs/semantic/*validation.json",
     "premium-ui.json", "premium-audit.json",
 ]
 precedence = "aggregate"
@@ -130,7 +130,7 @@ SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
+path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/JUPYTER.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "CC-BY-4.0"

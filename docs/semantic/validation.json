@@ -1,7 +1,7 @@
 {
   "conforms": true,
   "revision": "f156dcf37597c0587958f463985986f0ea91accf",
-  "triples": 4980,
+  "triples": 4986,
   "checks": [
     "Turtle and JSON-LD describe isomorphic RDF graphs",
     "SHACL application profile conforms",
@@ -23,7 +23,8 @@
     "All five notebook code cells executed successfully with a saved inline figure",
     "One notebook view preserves all five cells, saved tables and figure; section links resolve to headings",
     "Inspection flows from the activity to code before notebook sections and outputs",
-    "Workflow links open notebook views or repository sources without downloads",
+    "Workflow links open verified Jupyter destinations, saved views or repository sources without downloads",
+    "Notebook launch URL agrees with the verified deployment configuration",
     "Python inspection preserves the 1001-point states and separate 21-point reference",
     "Notebook statistics independently match the committed CSV values, units and time axes",
     "Python inspection makes no claim of a new simulation",

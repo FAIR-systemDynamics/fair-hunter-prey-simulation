@@ -14,7 +14,7 @@ const canvas = $('canvas'), drawing = $('drawing'), tip = $('tip');
 let key = 'overview', section = 'overview', context = '', documentView = false;
 let scale = 1, x = 0, y = 0, w = 100, h = 100, drag = null, tipTimer;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const sourceFor = e => e.navigation === 'explore' ? null : e.previewUrl ? {url: e.previewUrl} : e.sources?.[0];
+const sourceFor = e => e.navigation === 'explore' ? null : (e.launchUrl || e.previewUrl) ? {url: e.launchUrl || e.previewUrl, target: e.launchUrl ? '_self' : '_blank'} : e.sources?.[0];
 const entityLink = (id, owner = context) => '#' + section + '/' + encodeURIComponent(id)
   + (section === 'workflows' && owner ? '?from=' + encodeURIComponent(owner) : '');
 const legendMarkup = graph => (graph.legend || []).map(item =>
@@ -53,7 +53,7 @@ function show(e, node, event) {
     <p>${esc(e.definition)}</p>${e.details ? `<ul>${e.details.map(d => `<li>${esc(d)}</li>`).join('')}</ul>` : ''}
     ${e.unit ? `<p>Unit: ${esc(e.unit)}</p>` : ''}${e.equation ? `<p><code>${esc(e.equation)}</code></p>` : ''}
     ${e.bindings?.length ? `<p><code>${esc(e.bindings[0].selector)}</code></p>` : ''}
-    <div class="hint">Click to ${esc(hint)}${source ? ' ↗' : ''}</div>`;
+    <div class="hint">Click to ${esc(hint)}${source ? (source.target === '_self' ? ' →' : ' ↗') : ''}</div>`;
   tip.hidden = false;
   const r = node.getBoundingClientRect(), tx = event?.clientX ?? r.right, ty = event?.clientY ?? r.top;
   tip.style.left = Math.max(12, Math.min(innerWidth - tip.offsetWidth - 12, tx + 16)) + 'px';
@@ -73,7 +73,7 @@ function bindGraph(container, graph, label, owner = '', prefix = 'canvas') {
     if (!e) return;
     const source = sourceFor(e), anchor = document.createElementNS('http://www.w3.org/2000/svg', 'a');
     anchor.setAttribute('href', source?.url || (owner ? '#workflows/' + encodeURIComponent(e.id) + '?from=' + owner : entityLink(e.id)));
-    if (source) { anchor.setAttribute('target', '_blank'); anchor.setAttribute('rel', 'noopener noreferrer'); }
+    if (source) { anchor.setAttribute('target', source.target || '_blank'); anchor.setAttribute('rel', 'noopener noreferrer'); }
     anchor.setAttribute('aria-label', e.label + ' — ' + (source ? e.sourceAction || 'open source' : 'explore connections'));
     anchor.setAttribute('tabindex', '0'); anchor.setAttribute('data-entity', e.id);
     node.parentNode.insertBefore(anchor, node); anchor.appendChild(node);
@@ -81,7 +81,7 @@ function bindGraph(container, graph, label, owner = '', prefix = 'canvas') {
     anchor.addEventListener('mouseenter', ev => show(e, node, ev));
     anchor.addEventListener('mouseleave', () => { tipTimer = setTimeout(hide, 180); });
     anchor.addEventListener('focus', () => show(e, node)); anchor.addEventListener('blur', hide);
-    if (source) { const text = node.querySelector('text'); if (text) text.textContent += ' ↗'; }
+    if (source) { const text = node.querySelector('text'); if (text) text.textContent += source.target === '_self' ? ' →' : ' ↗'; }
   });
   // Repeated entities and Graphviz markers need unique IDs in one document.
   const ids = new Map([...svg.querySelectorAll('[id]')].map(el => [el.id, prefix + '-' + el.id]));
@@ -106,7 +106,7 @@ function buildCatalog() {
         <h2 id="heading-${esc(workflow.slug)}" tabindex="-1">${esc(workflow.title)}</h2></div><a class="back-contents" href="#workflows">↑ Contents</a></div>
         <p class="workflow-summary">${esc(workflow.summary)}</p><p class="workflow-evidence">${esc(workflow.caveat)}</p>
         <div class="workflow-actions"><a class="diagram-link" href="#workflows/${workflow.graphKey}">Explore diagram</a>
-        ${(workflow.actions || []).map(action => `<a href="${esc(action.url)}" target="_blank" rel="noopener noreferrer">${esc(action.label)} ↗</a>`).join('')}</div>
+        ${(workflow.actions || []).map(action => `<a href="${esc(action.url)}" target="${action.sameTab ? '_self' : '_blank'}" rel="noopener noreferrer">${esc(action.label)} ${action.sameTab ? '→' : '↗'}</a>`).join('')}</div>
         <div class="inline-diagram" tabindex="0" role="region" aria-label="${esc(workflow.title)} diagram; scroll horizontally if needed"><div class="semantic-graph" data-workflow="${esc(workflow.slug)}"></div></div>
         <div class="inline-legend" aria-label="Entity colours">${legendMarkup(graphs[workflow.graphKey])}</div>
         ${workflow.note ? `<div class="workflow-notes"><p>${esc(workflow.note)}</p><p>${esc(workflow.pythonSupport.text)} <a href="${esc(workflow.pythonSupport.source)}" target="_blank" rel="noopener noreferrer">View Python runner ↗</a></p></div>` : ''}

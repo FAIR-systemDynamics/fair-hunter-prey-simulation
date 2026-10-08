@@ -1,6 +1,6 @@
 # Kaibab semantic atlas — review draft
 
-Open `index.html` in a browser. It is a static, offline-capable explorer: no account, external scripts, remote fonts, or build server are required. The source links need access to the private GitHub repository. Notebook and figure source artifacts are available on the `codex/semantic-workflow-sources` repository branch. The explorer has not been deployed as a website.
+Open `index.html` in a browser. It is a static, offline-capable explorer: no account, external scripts, remote fonts, or build server are required for the saved views. The GitHub repository is public. Notebook and figure source artifacts are available on the `codex/semantic-workflow-sources` repository branch. The notebook is available in an authenticated NFDI4Ing JupyterLab workspace; the explorer itself has not been deployed as a website.
 
 The model combines concise literature interpretations with all 47 Vensim declarations and 50 main-branch files from commit `f156dcf37597c0587958f463985986f0ea91accf`. The revised Overview also includes the Stella declaration at commit `194a8b92e963920e95393accc7d5699348864d85`. This is a focused addition; a complete mapping of all Stella declarations is still pending. The diagram shows documented runs, not new simulations. Search can open review-note entities for known ambiguities and evidence gaps.
 
@@ -46,15 +46,15 @@ Both workflows use five numbered stages and descriptive action-sentence titles. 
 | 4 | Inspect peaks and final values | Summary CSV and inspection report |
 | 5 | Compare trajectories | Three-panel SVG and inline notebook figure |
 
-Each cell node links to its heading in [one complete rendered notebook](notebooks/inspect_results.html). The view contains all five executed cells, saved tables and the inline figure, with a linked contents list and a return link to the workflow. The sole executable notebook is `notebooks/inspect_results.ipynb`; sections are parts of that artifact, not separate notebooks.
+Each cell node links to its heading in the executable notebook on NFDI4Ing JupyterLab. [One complete rendered notebook](notebooks/inspect_results.html) remains available through **Read saved notebook**. That view contains all five executed cells, saved tables and the inline figure, with a linked contents list and a return link to the workflow. The sole executable notebook is `notebooks/inspect_results.ipynb`; sections are parts of that artifact, not separate notebooks.
 
 `tools/notebook_view.py` renders the saved notebook with nbconvert without executing it. The HTML uses the atlas stylesheet, works locally and offline, and needs no Jupyter account. The reader’s Git source link follows the workflow branch; explicit repository actions retain commit-pinned sources. The optional `notebooks/inspect_results.py` source view remains available. Validation compares rendered code, table contents and image bytes against the canonical notebook.
 
-NFDI4Ing is a potential interactive execution environment, but no upload or authenticated launch has been tested. The read-only view does not claim to execute cells or provide a working service launch link.
+[NFDI4Ing setup](JUPYTER.md) explains cloning the public notebook branch into the persistent `work` folder. `jupyter.json` holds the verified shareable notebook URL and source notebook checksum. The notebook was executed on NFDI4Ing on 2026-10-08 using Python 3.13.11, pandas 2.3.3 and Matplotlib 3.10.8. Each visitor needs the repository at the same path in their own Hub workspace. The service currently lacks nbgitpuller, so cloning is a one-time setup step.
 
 The notebook and its sections are `prov:Plan` / `schema:CreativeWork` entities connected with `dcterms:hasPart`. The local `sd:specifiesOutput` relation describes what a code section writes; `prov:generated` records the observed generation on the executed activity separately. This keeps the diagram readable without attributing an execution event to a source file.
 
-Notebook reading links open the rendered view; source links and the other artifact actions open repository sources. No download controls are offered. Generated-artifact links use `ARTIFACT_REVISION` in `tools/workflow_sources.py`; original model/input links retain their earlier reviewed revisions.
+Notebook links open the verified Jupyter destination when configured, otherwise the rendered view; source links and the other artifact actions open repository sources. No download controls are offered in the explorer. Generated-artifact links use `ARTIFACT_REVISION` in `tools/workflow_sources.py`; original model/input links retain their earlier reviewed revisions.
 
 ## Overview proposal
 

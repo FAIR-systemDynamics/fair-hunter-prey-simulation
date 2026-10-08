@@ -7,7 +7,7 @@
     "ontology": "MathModDB + m4i 1.4.0",
     "version": "0.2.0-review",
     "scope": "Scientific overview proposal; selected Stella declaration and workflow evidence added. Full Vensim inventory retained; full Stella symbol mapping is future work.",
-    "triples": 4980,
+    "triples": 4986,
     "variableCount": 47,
     "fileCount": 51
   },
@@ -585,7 +585,7 @@
         {
           "id": "notebook-section/inspect-results/cell-1",
           "label": "Verify source files",
-          "url": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts",
           "number": 1,
           "heading": "1. Locate and check the source artifacts",
           "cellId": "cell-03",
@@ -600,7 +600,7 @@
         {
           "id": "notebook-section/inspect-results/cell-2",
           "label": "Read units and time axes",
-          "url": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes",
           "number": 2,
           "heading": "2. Read the data without losing units or time axes",
           "cellId": "cell-05",
@@ -615,7 +615,7 @@
         {
           "id": "notebook-section/inspect-results/cell-3",
           "label": "Build the pandas table",
-          "url": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states",
           "number": 3,
           "heading": "3. Build a table for the three simulated states",
           "cellId": "cell-07",
@@ -630,7 +630,7 @@
         {
           "id": "notebook-section/inspect-results/cell-4",
           "label": "Inspect peaks and final values",
-          "url": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values",
           "number": 4,
           "heading": "4. Inspect peaks and final values",
           "cellId": "cell-09",
@@ -645,7 +645,7 @@
         {
           "id": "notebook-section/inspect-results/cell-5",
           "label": "Compare trajectories",
-          "url": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes",
           "number": 5,
           "heading": "5. Compare trajectories on their own axes",
           "cellId": "cell-11",
@@ -995,8 +995,17 @@
       "caveat": "The notebook has been executed against saved results. This workflow does not run a new simulation.",
       "actions": [
         {
-          "label": "Read notebook",
+          "label": "Open in NFDI4Ing JupyterLab",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb",
+          "sameTab": true
+        },
+        {
+          "label": "Read saved notebook",
           "url": "notebooks/inspect_results.html"
+        },
+        {
+          "label": "Jupyter setup",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/codex/semantic-workflow-sources/docs/semantic/JUPYTER.md"
         },
         {
           "label": "View notebook in repository",
@@ -1011,7 +1020,7 @@
           "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg"
         }
       ],
-      "note": "Each cell opens its section in the same complete notebook, including saved tables and the figure. The 21 historical observations stay separate from the 1,001 simulated samples.",
+      "note": "Each cell opens its section in NFDI4Ing JupyterLab. Sign in and clone the notebook branch into your work folder first. The 21 historical observations stay separate from the 1,001 simulated samples.",
       "pythonSupport": {
         "text": "The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.",
         "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/pysd/run.py#L598"
@@ -9040,7 +9049,8 @@
       "repositoryPath": "docs/semantic/notebooks/inspect_results.ipynb",
       "sha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
       "previewUrl": "notebooks/inspect_results.html",
-      "sourceAction": "read notebook",
+      "sourceAction": "open notebook in NFDI4Ing JupyterLab",
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb",
       "displayType": "Jupyter notebook \u00b7 executed"
     },
     {
@@ -9179,7 +9189,7 @@
       "status": "Executed locally",
       "displayType": "Notebook cell 1 \u00b7 section of notebook",
       "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts",
-      "sourceAction": "read this section in the notebook",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
       "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 1,
@@ -9195,8 +9205,9 @@
       },
       "details": [
         "1. Locate and check the source artifacts",
-        "Opens this section in the complete notebook, with its saved output."
-      ]
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts"
     },
     {
       "id": "notebook-section/inspect-results/cell-2",
@@ -9221,7 +9232,7 @@
       "status": "Executed locally",
       "displayType": "Notebook cell 2 \u00b7 section of notebook",
       "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes",
-      "sourceAction": "read this section in the notebook",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
       "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 2,
@@ -9237,8 +9248,9 @@
       },
       "details": [
         "2. Read the data without losing units or time axes",
-        "Opens this section in the complete notebook, with its saved output."
-      ]
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes"
     },
     {
       "id": "notebook-section/inspect-results/cell-3",
@@ -9263,7 +9275,7 @@
       "status": "Executed locally",
       "displayType": "Notebook cell 3 \u00b7 section of notebook",
       "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states",
-      "sourceAction": "read this section in the notebook",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
       "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 3,
@@ -9279,8 +9291,9 @@
       },
       "details": [
         "3. Build a table for the three simulated states",
-        "Opens this section in the complete notebook, with its saved output."
-      ]
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states"
     },
     {
       "id": "notebook-section/inspect-results/cell-4",
@@ -9305,7 +9318,7 @@
       "status": "Executed locally",
       "displayType": "Notebook cell 4 \u00b7 section of notebook",
       "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values",
-      "sourceAction": "read this section in the notebook",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
       "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 4,
@@ -9321,8 +9334,9 @@
       },
       "details": [
         "4. Inspect peaks and final values",
-        "Opens this section in the complete notebook, with its saved output."
-      ]
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values"
     },
     {
       "id": "notebook-section/inspect-results/cell-5",
@@ -9347,7 +9361,7 @@
       "status": "Executed locally",
       "displayType": "Notebook cell 5 \u00b7 section of notebook",
       "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes",
-      "sourceAction": "read this section in the notebook",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
       "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 5,
@@ -9363,8 +9377,9 @@
       },
       "details": [
         "5. Compare trajectories on their own axes",
-        "Opens this section in the complete notebook, with its saved output."
-      ]
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes"
     },
     {
       "id": "workflow/python-inspection",

@@ -2,7 +2,8 @@
 import hashlib
 import json
 from rdflib import RDF, RDFS, OWL, Literal, URIRef
-from workflow_sources import ARTIFACT_REVISION, artifact_source
+from workflow_sources import ARTIFACT_REVISION, REPO, artifact_source
+from jupyter_service import notebook_url
 
 TITLE = 'Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories.'
 
@@ -12,6 +13,7 @@ def extend(c):
     g, SD, PROV, DCT, M4I, OBO, SCHEMA = (c[k] for k in ('g', 'SD', 'PROV', 'DCT', 'M4I', 'OBO', 'SCHEMA'))
     manifest = json.loads((c['OUT']/'data/python-inspection-manifest.json').read_text())
     report = json.loads((c['OUT']/'data/python-inspection.json').read_text())
+    launch_url = notebook_url()
     assert manifest['revision'] == c['REV']
     for path, digest in manifest['sources'].items():
         assert hashlib.sha256(c['read'](path, True)).hexdigest() == digest
@@ -45,6 +47,9 @@ def extend(c):
              'notebooks/inspect_results.ipynb', [PROV.Plan, SCHEMA.CreativeWork])
     c['entities'][notebook].update(previewUrl='notebooks/inspect_results.html',
                                    sourceAction='read notebook')
+    if launch_url:
+        c['entities'][notebook].update(launchUrl=launch_url, sourceAction='open notebook in NFDI4Ing JupyterLab')
+        g.add((uri(notebook), SCHEMA.url, URIRef(launch_url)))
     artifact(script, 'inspect_results.py', 'Script',
              'Readable Python source generated from the notebook, retaining its headings and five code cells. The only code difference is that the Jupyter inline-plot magic is a comment. Section links target exact source lines in this representation.',
              'notebooks/inspect_results.py', [PROV.Plan, SCHEMA.SoftwareSourceCode])
@@ -104,7 +109,13 @@ def extend(c):
         rel(key, DCT.isPartOf, notebook, 'section of notebook', False)
         rel(script, DCT.hasPart, key, 'source for notebook cell', False)
         rel(activity, PROV.used, key, 'executes cell', False)
-        sections.append(dict(id=key, label=label, url=info['previewUrl'], **info))
+        section_url = notebook_url(info)
+        if section_url:
+            c['entities'][key].update(
+                launchUrl=section_url, sourceAction='open this section in NFDI4Ing JupyterLab',
+                details=[info['heading'], 'Sign in to NFDI4Ing and clone the notebook branch into your work folder once.'])
+            g.add((uri(key), SCHEMA.url, URIRef(section_url)))
+        sections.append(dict(id=key, label=label, url=section_url or info['previewUrl'], **info))
     rel(sections[1]['id'], DCT.references, reader, 'calls CSV reader', False)
     for index, output, label in [(2, table, 'specifies table'), (3, summary, 'specifies summary'), (4, figure, 'specifies figure')]:
         rel(sections[index]['id'], SD.specifiesOutput, output, label)
@@ -132,10 +143,14 @@ def extend(c):
                 edges=selected_edges, manifest=manifest, report=report,
                 summary='Follow Case 1 and Case 2 CSVs through the repository reader, five notebook cells, and their tables and comparison figure.',
                 caveat='The notebook has been executed against saved results. This workflow does not run a new simulation.',
-                actions=[dict(label='Read notebook', url='notebooks/inspect_results.html'),
+                actions=([dict(label='Open in NFDI4Ing JupyterLab', url=launch_url, sameTab=True)] if launch_url else []) +
+                        [dict(label='Read saved notebook', url='notebooks/inspect_results.html'),
+                         dict(label='Jupyter setup', url=f'{REPO}/blob/codex/semantic-workflow-sources/docs/semantic/JUPYTER.md'),
                          dict(label='View notebook in repository', url=artifact_source('notebooks/inspect_results.ipynb')['url']),
                          dict(label='View Python source', url=artifact_source('notebooks/inspect_results.py')['url']),
                          dict(label='View comparison figure', url=artifact_source('data/python-inspection.svg')['url'])],
-                note='Each cell opens its section in the same complete notebook, including saved tables and the figure. The 21 historical observations stay separate from the 1,001 simulated samples.',
+                note=('Each cell opens its section in NFDI4Ing JupyterLab. Sign in and clone the notebook branch into your work folder first. '
+                      if launch_url else 'Each cell opens its section in the same complete notebook, including saved tables and the figure. ') +
+                     'The 21 historical observations stay separate from the 1,001 simulated samples.',
                 pythonSupport=dict(text='The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.',
                                    source=c['source']('runners/pysd/run.py', 598)))
