@@ -87,14 +87,16 @@ def extend(c):
     sections = []
     for info, label, definition in zip(manifest['sections'], labels, definitions):
         key = f'notebook-section/inspect-results/cell-{info["number"]}'
-        source = artifact_source('notebooks/inspect_results.py',
-                                 f'L{info["pythonStartLine"]}-L{info["pythonEndLine"]}',
-                                 label=f'Notebook cell {info["number"]} · Python source')
+        source = artifact_source(info['previewPath'],
+                                 label=f'Notebook cell {info["number"]} · rendered notebook')
+        code_source = artifact_source('notebooks/inspect_results.py',
+                                      f'L{info["pythonStartLine"]}-L{info["pythonEndLine"]}')
         add(key, label, 'Notebook section', definition, [PROV.Plan, SCHEMA.CreativeWork],
-            [source, artifact_source('notebooks/inspect_results.ipynb')],
-            status='Executed locally', displayType=f'Notebook cell {info["number"]} · source',
+            [source, artifact_source('notebooks/inspect_results.ipynb'), code_source],
+            status='Executed locally', displayType=f'Notebook cell {info["number"]} · rendered preview',
+            sourceAction='open rendered notebook',
             revision=ARTIFACT_REVISION, notebookCell=info,
-            details=[info['heading'], f'Notebook cell ID: {info["cellId"]}. Opens the matching Python source lines.'])
+            details=[info['heading'], 'Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook.'])
         lit(key, SD.selector, f'Notebook code cell {info["number"]}; id={info["cellId"]}; heading={info["heading"]}')
         rel(notebook, DCT.hasPart, key, f'cell {info["number"]}')
         rel(key, DCT.isPartOf, notebook, 'section of notebook', False)
@@ -131,6 +133,6 @@ def extend(c):
                 actions=[dict(label='View notebook in repository', url=artifact_source('notebooks/inspect_results.ipynb')['url']),
                          dict(label='View Python source', url=artifact_source('notebooks/inspect_results.py')['url']),
                          dict(label='View comparison figure', url=artifact_source('data/python-inspection.svg')['url'])],
-                note='Each notebook cell links to its matching Python source lines. Cells 3–5 specify the saved tables and SVG; the full semantic model records their generation by the executed inspection. The 21 historical observations stay separate from the 1,001 simulated samples.',
+                note='Each cell opens a rendered notebook excerpt with its saved output and a link to the complete notebook. The 21 historical observations stay separate from the 1,001 simulated samples.',
                 pythonSupport=dict(text='The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.',
                                    source=c['source']('runners/pysd/run.py', 598)))

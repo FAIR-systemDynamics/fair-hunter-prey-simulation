@@ -43,7 +43,7 @@ LABELS = {
 }
 NOTES = [
     (20, 'Start with committed results.', '1,001 samples per simulated state;', '21 historical observations on their own axis.'),
-    (670, 'Open the code in the repository.', 'The reader and notebook are executable artifacts.', 'Each cell links to its matching Python source.'),
+    (670, 'Open the notebook in the repository.', 'Each cell opens a rendered notebook excerpt', 'with its saved table or figure, when present.'),
     (1110, 'Follow the cells into their outputs.', 'Cells 3–5 specify the tables and comparison figure.', 'Actual generation is also recorded in the RDF.'),
 ]
 

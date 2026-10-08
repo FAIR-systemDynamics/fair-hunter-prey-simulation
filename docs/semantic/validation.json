@@ -1,7 +1,7 @@
 {
   "conforms": true,
   "revision": "f156dcf37597c0587958f463985986f0ea91accf",
-  "triples": 4980,
+  "triples": 4985,
   "checks": [
     "Turtle and JSON-LD describe isomorphic RDF graphs",
     "SHACL application profile conforms",
@@ -21,7 +21,7 @@
     "Both workflow sequences and every displayed arrow are present in RDF",
     "Notebook, exported tables and plot match recorded hashes; inputs and reader match the pinned revision",
     "All five notebook code cells executed successfully with a saved inline figure",
-    "All five notebook sections link to matching executed cells and exact Python source lines",
+    "All five notebook links open notebook excerpts preserving the exact executed cells and outputs",
     "Inspection flows from the activity to code before notebook sections and outputs",
     "Workflow artifact links use repository sources without local downloads",
     "Python inspection preserves the 1001-point states and separate 21-point reference",

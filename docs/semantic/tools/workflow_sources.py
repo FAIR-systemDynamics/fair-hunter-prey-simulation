@@ -3,7 +3,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-ARTIFACT_REVISION = '23e58532d8014dbcc2299cd496896846605af968'
+ARTIFACT_REVISION = '1ec7e23683357133050e01525c15db90eba01d43'
 REPO = 'https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation'
 
 

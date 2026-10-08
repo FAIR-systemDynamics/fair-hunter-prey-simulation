@@ -118,8 +118,13 @@ for section in inspection['sections']:
     expected=[line if not line.startswith('%') else '# Jupyter: '+line
               for line in ''.join(cell['source']).splitlines()]
     assert actual==expected, section['id']
-    assert section['url'].endswith(f'#L{section["pythonStartLine"]}-L{section["pythonEndLine"]}')
-checks.append('All five notebook sections link to matching executed cells and exact Python source lines')
+    assert section['url'].endswith('/docs/semantic/'+section['previewPath'])
+    excerpt=json.loads((HERE/section['previewPath']).read_text())
+    assert excerpt['cells'][0]==heading
+    assert excerpt['cells'][-1]==cell
+    assert len([c for c in excerpt['cells'] if c['cell_type']=='code'])==1
+    assert '../inspect_results.ipynb' in ''.join(excerpt['cells'][1]['source'])
+checks.append('All five notebook links open notebook excerpts preserving the exact executed cells and outputs')
 check('Inspection flows from the activity to code before notebook sections and outputs',
       {e['target'] for e in inspection['edges'] if e['source']=='processing/inspect-results-python'}
       == {'file/scripts/vensim_csv.py','notebook/inspect-results'})

@@ -48,7 +48,7 @@ tip.addEventListener('mouseleave', hide);
 function show(e, node, event) {
   clearTimeout(tipTimer);
   const source = sourceFor(e);
-  const hint = source ? 'open ' + (source.url.includes('github.com') ? 'GitHub source' : 'source') : 'explore connections';
+  const hint = source ? e.sourceAction || 'open ' + (source.url.includes('github.com') ? 'GitHub source' : 'source') : 'explore connections';
   tip.innerHTML = `<strong>${esc(e.label)}</strong><small>${esc(e.types.join(' · '))} · ${esc(e.status || 'Extracted')}</small>
     <p>${esc(e.definition)}</p>${e.details ? `<ul>${e.details.map(d => `<li>${esc(d)}</li>`).join('')}</ul>` : ''}
     ${e.unit ? `<p>Unit: ${esc(e.unit)}</p>` : ''}${e.equation ? `<p><code>${esc(e.equation)}</code></p>` : ''}
@@ -74,7 +74,7 @@ function bindGraph(container, graph, label, owner = '', prefix = 'canvas') {
     const source = sourceFor(e), anchor = document.createElementNS('http://www.w3.org/2000/svg', 'a');
     anchor.setAttribute('href', source?.url || (owner ? '#workflows/' + encodeURIComponent(e.id) + '?from=' + owner : entityLink(e.id)));
     if (source) { anchor.setAttribute('target', '_blank'); anchor.setAttribute('rel', 'noopener noreferrer'); }
-    anchor.setAttribute('aria-label', e.label + ' — ' + (source ? 'open source' : 'explore connections'));
+    anchor.setAttribute('aria-label', e.label + ' — ' + (source ? e.sourceAction || 'open source' : 'explore connections'));
     anchor.setAttribute('tabindex', '0'); anchor.setAttribute('data-entity', e.id);
     node.parentNode.insertBefore(anchor, node); anchor.appendChild(node);
     node.setAttribute('tabindex', '-1');

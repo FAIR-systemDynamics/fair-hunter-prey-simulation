@@ -97,7 +97,8 @@ const path = require('node:path');
     assert((await notebook.getAttribute('href')).endsWith('/docs/semantic/notebooks/inspect_results.ipynb'));
     assert.equal(await second.locator('a[data-entity^="notebook-section/"]').count(), 5);
     for (const anchor of await second.locator('a[data-entity^="notebook-section/"]').all()) {
-      assert(/inspect_results\.py#L\d+-L\d+$/.test(await anchor.getAttribute('href')));
+      assert(/\/notebooks\/sections\/cell-[1-5]\.ipynb$/.test(await anchor.getAttribute('href')));
+      assert((await anchor.getAttribute('aria-label')).includes('open rendered notebook'));
     }
     const flow = await second.locator('.edge[data-source="processing/inspect-results-python"]').evaluateAll(nodes=>nodes.map(n=>n.dataset.target));
     assert.deepEqual(flow.sort(), ['file/scripts/vensim_csv.py','notebook/inspect-results'].sort());
@@ -105,7 +106,7 @@ const path = require('node:path');
     for (const rect of await second.locator('a[data-entity^="notebook-section/"] rect').all()) {
       assert(await rect.evaluate(el=>+el.getAttribute('x')) > codeRight);
     }
-    checks.push('Descriptive titles, five numbered stages, source-only links and exact cell links are present in both workflow views');
+    checks.push('Descriptive titles, five numbered stages, repository links and rendered notebook cell links are present in both workflow views');
 
     await page.locator('#search').fill('Inspect data with Python');
     await page.locator('#search').press('ArrowDown');
