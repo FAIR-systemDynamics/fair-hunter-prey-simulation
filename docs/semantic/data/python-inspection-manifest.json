@@ -12,11 +12,7 @@
     "data/python-inspection-summary.csv": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
     "data/python-inspection.json": "585ae09974cc6ec93d9add7de4a6c5b5a72808ddf55d7e35d4ebae6c7172d777",
     "data/python-inspection.svg": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
-    "notebooks/sections/cell-1.ipynb": "3f8eb6e63caba7dc6844c63da1962b9f2f18c3205a9f1b4522b5cae602da6119",
-    "notebooks/sections/cell-2.ipynb": "91816a879b545bd8e3bb79faa23e1e366ec007aac1bd56d1dcb57a29221185fc",
-    "notebooks/sections/cell-3.ipynb": "3cf8bdc42f5ebb5a8805211715e7cff09515da6274d381a9e2c40876881e9167",
-    "notebooks/sections/cell-4.ipynb": "846643d166d329b8fc33625ace9e2a3d57493fd0861e596330f776c712d0c077",
-    "notebooks/sections/cell-5.ipynb": "3fc8dd452e3f57f341ccad635c8d41786962af785d61e6738627d95d5512f1cb"
+    "notebooks/inspect_results.html": "1f4b99e5267c24b7d80a0a4ebe1d49c66bc38e6c9c75d9cbcfa36c4c1364164f"
   },
   "simulationExecuted": false,
   "codeCellsExecuted": 5,
@@ -32,7 +28,7 @@
       "sourceLine": 36,
       "pythonStartLine": 33,
       "pythonEndLine": 59,
-      "previewPath": "notebooks/sections/cell-1.ipynb"
+      "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
     },
     {
       "number": 2,
@@ -44,7 +40,7 @@
       "sourceLine": 101,
       "pythonStartLine": 64,
       "pythonEndLine": 76,
-      "previewPath": "notebooks/sections/cell-2.ipynb"
+      "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
     },
     {
       "number": 3,
@@ -56,7 +52,7 @@
       "sourceLine": 259,
       "pythonStartLine": 84,
       "pythonEndLine": 95,
-      "previewPath": "notebooks/sections/cell-3.ipynb"
+      "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
     },
     {
       "number": 4,
@@ -68,7 +64,7 @@
       "sourceLine": 381,
       "pythonStartLine": 103,
       "pythonEndLine": 117,
-      "previewPath": "notebooks/sections/cell-4.ipynb"
+      "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
     },
     {
       "number": 5,
@@ -80,7 +76,7 @@
       "sourceLine": 546,
       "pythonStartLine": 122,
       "pythonEndLine": 143,
-      "previewPath": "notebooks/sections/cell-5.ipynb"
+      "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
     }
   ]
 }
