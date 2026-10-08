@@ -46,13 +46,15 @@ Both workflows use five numbered stages and descriptive action-sentence titles. 
 | 4 | Inspect peaks and final values | Summary CSV and inspection report |
 | 5 | Compare trajectories | Three-panel SVG and inline notebook figure |
 
-Each cell node opens its own `.ipynb` excerpt under `notebooks/sections/`, rendered by GitHub with the original heading, executed code cell and saved output. Every excerpt links back to the complete notebook, which remains the place to execute all cells in order. The excerpts are generated from the executed notebook without re-running or changing its cells.
+Each cell node links to its heading in [one complete rendered notebook](notebooks/inspect_results.html). The view contains all five executed cells, saved tables and the inline figure, with a linked contents list and a return link to the workflow. The sole executable notebook is `notebooks/inspect_results.ipynb`; sections are parts of that artifact, not separate notebooks.
 
-GitHub's notebook preview does not reliably jump to a heading inside a larger notebook. The separate excerpts provide direct section access while retaining the notebook presentation, including tables and figures. The optional `notebooks/inspect_results.py` source view remains separately available. The validator checks the source view and every rendered excerpt against the full executed notebook.
+`tools/notebook_view.py` renders the saved notebook with nbconvert without executing it. The HTML uses the atlas stylesheet, works locally and offline, and needs no Jupyter account. The reader’s Git source link follows the workflow branch; explicit repository actions retain commit-pinned sources. The optional `notebooks/inspect_results.py` source view remains available. Validation compares rendered code, table contents and image bytes against the canonical notebook.
+
+NFDI4Ing is a potential interactive execution environment, but no upload or authenticated launch has been tested. The read-only view does not claim to execute cells or provide a working service launch link.
 
 The notebook and its sections are `prov:Plan` / `schema:CreativeWork` entities connected with `dcterms:hasPart`. The local `sd:specifiesOutput` relation describes what a code section writes; `prov:generated` records the observed generation on the executed activity separately. This keeps the diagram readable without attributing an execution event to a source file.
 
-All workflow actions and artifact nodes open repository sources rather than downloads. Generated-artifact links use `ARTIFACT_REVISION` in `tools/workflow_sources.py`; original model/input links retain their earlier reviewed revisions.
+Notebook reading links open the rendered view; source links and the other artifact actions open repository sources. No download controls are offered. Generated-artifact links use `ARTIFACT_REVISION` in `tools/workflow_sources.py`; original model/input links retain their earlier reviewed revisions.
 
 ## Overview proposal
 
@@ -80,7 +82,7 @@ The overview uses MathModDB’s verified mathematical-model class (`Q68663`), fo
 | `data/model.json` / `data/model.js` | Browser projection generated alongside RDF |
 | `data/case2-workflow.svg` / `data/workflow-figure.json` | Generated figure and its input, software and output hashes |
 | `notebooks/inspect_results.ipynb` / `inspect_results.py` | Executed notebook and matching Python source with linkable cell boundaries |
-| `notebooks/sections/*.ipynb` | Rendered cell excerpts preserving the executed notebook outputs |
+| `notebooks/inspect_results.html` | One complete read-only notebook view with links to its headings |
 | `data/python-*` | Inspected state table, descriptive summary, comparison figure, report and source/output hashes |
 | `validation.json` | Results of the local graph and source-integrity checks |
 
@@ -96,6 +98,8 @@ python docs/semantic/tools/validate_model.py
 ```
 
 Before rebuilding the semantic model, generate its workflow figure once with `python docs/semantic/tools/build_workflow_figure.py` (requires the plotting dependencies in `requirements.txt`). The model builder checks the saved figure manifest against the pinned inputs and actual SVG. Regenerate the figure whenever its source revision or plotting selection changes. The semantic builder itself does not execute plotting or simulation.
+
+Regenerate just the reading view with `python docs/semantic/tools/notebook_view.py`; this preserves all saved cells and outputs and updates the manifest without running a kernel.
 
 Generate and execute the Python inspection example with `python docs/semantic/tools/build_inspection_notebook.py`. This runs five cells in a temporary Python kernel against a temporary copy of the pinned reader and CSVs, then saves the executed notebook and outputs. It does not alter the user's Jupyter configuration or execute a simulation. Commit regenerated artifacts, then update `ARTIFACT_REVISION` in `tools/workflow_sources.py` before rebuilding the semantic model and diagrams. The builder verifies that linked repository bytes match local artifacts. The validator checks notebook execution, source/output hashes, both RDF sequences, and independently recomputes statistics from the committed CSVs.
 

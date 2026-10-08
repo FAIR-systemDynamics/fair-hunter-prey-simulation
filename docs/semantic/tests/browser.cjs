@@ -89,7 +89,8 @@ const path = require('node:path');
       const stageLabels = await section.locator('svg > text').allTextContents();
       assert.equal(stageLabels.filter(text=>/^[1-5] · /.test(text)).length, 5);
       for (const anchor of await section.locator('.workflow-actions a:not(.diagram-link)').all()) {
-        assert((await anchor.getAttribute('href')).startsWith('https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/'));
+        const href = await anchor.getAttribute('href');
+        assert(href.startsWith('https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/') || href === 'notebooks/inspect_results.html');
         assert.equal(await anchor.getAttribute('target'), '_blank');
       }
     }
@@ -97,8 +98,8 @@ const path = require('node:path');
     assert((await notebook.getAttribute('href')).endsWith('/docs/semantic/notebooks/inspect_results.ipynb'));
     assert.equal(await second.locator('a[data-entity^="notebook-section/"]').count(), 5);
     for (const anchor of await second.locator('a[data-entity^="notebook-section/"]').all()) {
-      assert(/\/notebooks\/sections\/cell-[1-5]\.ipynb$/.test(await anchor.getAttribute('href')));
-      assert((await anchor.getAttribute('aria-label')).includes('open rendered notebook'));
+      assert(/^notebooks\/inspect_results\.html#[1-5]\.-/.test(await anchor.getAttribute('href')));
+      assert((await anchor.getAttribute('aria-label')).includes('read this section in the notebook'));
     }
     const flow = await second.locator('.edge[data-source="processing/inspect-results-python"]').evaluateAll(nodes=>nodes.map(n=>n.dataset.target));
     assert.deepEqual(flow.sort(), ['file/scripts/vensim_csv.py','notebook/inspect-results'].sort());
@@ -106,7 +107,51 @@ const path = require('node:path');
     for (const rect of await second.locator('a[data-entity^="notebook-section/"] rect').all()) {
       assert(await rect.evaluate(el=>+el.getAttribute('x')) > codeRight);
     }
-    checks.push('Descriptive titles, five numbered stages, repository links and rendered notebook cell links are present in both workflow views');
+    checks.push('Descriptive titles, five numbered stages, repository sources and links into one notebook are present in both workflow views');
+
+    const sectionLinks = await second.locator('a[data-entity^="notebook-section/"]').evaluateAll(nodes=>nodes.map(a=>a.getAttribute('href')));
+    const opened = page.waitForEvent('popup');
+    await second.locator('a[data-entity="notebook-section/inspect-results/cell-4"]').click();
+    const notebookPage = await opened;
+    await notebookPage.waitForLoadState('load');
+    assert.equal(await notebookPage.locator('.code_cell').count(), 5);
+    assert.equal(await notebookPage.locator('table').count(), 3);
+    assert.equal(await notebookPage.locator('.output_png img').count(), 1);
+    assert(await notebookPage.locator('.output_png img').evaluate(img=>img.complete && img.naturalWidth > 0));
+    assert.equal(await notebookPage.locator('script,[download]').count(), 0);
+    assert((await notebookPage.getByRole('link', {name:'Notebook source in Git'}).getAttribute('href')).endsWith('/docs/semantic/notebooks/inspect_results.ipynb'));
+    async function checkSectionLanding() {
+      assert(await notebookPage.evaluate(() => {
+        const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        const top = target.getBoundingClientRect().top;
+        return top >= document.querySelector('header').getBoundingClientRect().bottom && top < innerHeight / 2;
+      }));
+    }
+    await checkSectionLanding();
+    await notebookPage.screenshot({path:`${output}/notebook-section-four.png`});
+    for (const href of sectionLinks) {
+      await notebookPage.goto(new URL(href, page.url()).href);
+      await checkSectionLanding();
+    }
+    await notebookPage.reload(); await checkSectionLanding();
+    await notebookPage.getByRole('link', {name:'Contents', exact:true}).click();
+    await notebookPage.locator('ol a').nth(3).focus();
+    await notebookPage.keyboard.press('Enter'); await checkSectionLanding();
+    await notebookPage.setViewportSize({width:390, height:844});
+    // Start a fresh narrow-screen visit instead of restoring a desktop scroll
+    // position from browser history after changing the viewport.
+    await notebookPage.goto('about:blank');
+    await notebookPage.goto(new URL(sectionLinks[3], page.url()).href);
+    await checkSectionLanding();
+    await notebookPage.reload(); await checkSectionLanding();
+    assert(await notebookPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+    assert(await notebookPage.locator('.input_area').first().evaluate(el=>el.scrollWidth > el.clientWidth));
+    await notebookPage.screenshot({path:`${output}/notebook-section-four-mobile.png`});
+    await notebookPage.getByRole('link', {name:'Back to workflow'}).click();
+    await notebookPage.waitForURL('**/index.html#workflow-python-inspection');
+    assert(await notebookPage.locator('#workflow-python-inspection').isVisible());
+    await notebookPage.close();
+    checks.push('All five links land on headings in one complete notebook; saved tables/figure, reload, keyboard contents, mobile and return navigation work');
 
     await page.locator('#search').fill('Inspect data with Python');
     await page.locator('#search').press('ArrowDown');
@@ -146,6 +191,10 @@ const path = require('node:path');
     await local.goto('file://' + path.resolve('docs/semantic/index.html') + '#workflow-python-inspection');
     assert.equal(await local.locator('.workflow-section').count(), 2);
     assert(await local.locator('#workflow-page').isVisible());
+    await local.goto('file://' + path.resolve('docs/semantic/notebooks/inspect_results.html') + '#4.-Inspect-peaks-and-final-values');
+    assert.equal(await local.locator('.code_cell').count(), 5);
+    assert.equal(await local.locator('table').count(), 3);
+    assert(await local.locator('.output_png img').evaluate(img=>img.complete && img.naturalWidth > 0));
     await offline.close();
     const broken = await browser.newPage();
     await broken.route('**/data/model.js', route => route.abort());

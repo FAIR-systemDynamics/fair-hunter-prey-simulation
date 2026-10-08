@@ -43,6 +43,8 @@ def extend(c):
     artifact(notebook, 'inspect_results.ipynb', 'Notebook',
              'Executed Jupyter notebook with five numbered sections: verify source files, read data, build a pandas table, inspect descriptive statistics, and compare trajectories. Its saved outputs are included in the repository. No simulation is run.',
              'notebooks/inspect_results.ipynb', [PROV.Plan, SCHEMA.CreativeWork])
+    c['entities'][notebook].update(previewUrl='notebooks/inspect_results.html',
+                                   sourceAction='read notebook')
     artifact(script, 'inspect_results.py', 'Script',
              'Readable Python source generated from the notebook, retaining its headings and five code cells. The only code difference is that the Jupyter inline-plot magic is a comment. Section links target exact source lines in this representation.',
              'notebooks/inspect_results.py', [PROV.Plan, SCHEMA.SoftwareSourceCode])
@@ -87,22 +89,22 @@ def extend(c):
     sections = []
     for info, label, definition in zip(manifest['sections'], labels, definitions):
         key = f'notebook-section/inspect-results/cell-{info["number"]}'
-        source = artifact_source(info['previewPath'],
-                                 label=f'Notebook cell {info["number"]} · rendered notebook')
+        source = artifact_source('notebooks/inspect_results.ipynb',
+                                 label='Complete notebook source')
         code_source = artifact_source('notebooks/inspect_results.py',
                                       f'L{info["pythonStartLine"]}-L{info["pythonEndLine"]}')
         add(key, label, 'Notebook section', definition, [PROV.Plan, SCHEMA.CreativeWork],
-            [source, artifact_source('notebooks/inspect_results.ipynb'), code_source],
-            status='Executed locally', displayType=f'Notebook cell {info["number"]} · rendered preview',
-            sourceAction='open rendered notebook',
+            [source, code_source],
+            status='Executed locally', displayType=f'Notebook cell {info["number"]} · section of notebook',
+            previewUrl=info['previewUrl'], sourceAction='read this section in the notebook',
             revision=ARTIFACT_REVISION, notebookCell=info,
-            details=[info['heading'], 'Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook.'])
+            details=[info['heading'], 'Opens this section in the complete notebook, with its saved output.'])
         lit(key, SD.selector, f'Notebook code cell {info["number"]}; id={info["cellId"]}; heading={info["heading"]}')
         rel(notebook, DCT.hasPart, key, f'cell {info["number"]}')
         rel(key, DCT.isPartOf, notebook, 'section of notebook', False)
         rel(script, DCT.hasPart, key, 'source for notebook cell', False)
         rel(activity, PROV.used, key, 'executes cell', False)
-        sections.append(dict(id=key, label=label, url=source['url'], **info))
+        sections.append(dict(id=key, label=label, url=info['previewUrl'], **info))
     rel(sections[1]['id'], DCT.references, reader, 'calls CSV reader', False)
     for index, output, label in [(2, table, 'specifies table'), (3, summary, 'specifies summary'), (4, figure, 'specifies figure')]:
         rel(sections[index]['id'], SD.specifiesOutput, output, label)
@@ -130,9 +132,10 @@ def extend(c):
                 edges=selected_edges, manifest=manifest, report=report,
                 summary='Follow Case 1 and Case 2 CSVs through the repository reader, five notebook cells, and their tables and comparison figure.',
                 caveat='The notebook has been executed against saved results. This workflow does not run a new simulation.',
-                actions=[dict(label='View notebook in repository', url=artifact_source('notebooks/inspect_results.ipynb')['url']),
+                actions=[dict(label='Read notebook', url='notebooks/inspect_results.html'),
+                         dict(label='View notebook in repository', url=artifact_source('notebooks/inspect_results.ipynb')['url']),
                          dict(label='View Python source', url=artifact_source('notebooks/inspect_results.py')['url']),
                          dict(label='View comparison figure', url=artifact_source('data/python-inspection.svg')['url'])],
-                note='Each cell opens a rendered notebook excerpt with its saved output and a link to the complete notebook. The 21 historical observations stay separate from the 1,001 simulated samples.',
+                note='Each cell opens its section in the same complete notebook, including saved tables and the figure. The 21 historical observations stay separate from the 1,001 simulated samples.',
                 pythonSupport=dict(text='The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.',
                                    source=c['source']('runners/pysd/run.py', 598)))

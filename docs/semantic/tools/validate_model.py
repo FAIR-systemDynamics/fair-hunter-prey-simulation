@@ -6,6 +6,7 @@ import io
 import json
 import re
 import subprocess
+from bs4 import BeautifulSoup
 from pathlib import Path
 from decimal import Decimal
 
@@ -108,6 +109,9 @@ check('All five notebook code cells executed successfully with a saved inline fi
       and not any(o['output_type']=='error' for c in cells for o in c['outputs'])
       and any('image/png' in o.get('data',{}) for c in cells for o in c['outputs']))
 python_lines=(HERE/'notebooks/inspect_results.py').read_text().splitlines()
+notebook_view=BeautifulSoup((HERE/'notebooks/inspect_results.html').read_text(),'html.parser')
+assert len(notebook_view.select('.code_cell'))==5
+assert list((HERE/'notebooks').rglob('*.ipynb'))==[HERE/'notebooks/inspect_results.ipynb']
 for section in inspection['sections']:
     cell=notebook['cells'][section['cellIndex']]
     assert cell['id']==section['cellId'] and cell['execution_count']==section['number']
@@ -118,18 +122,24 @@ for section in inspection['sections']:
     expected=[line if not line.startswith('%') else '# Jupyter: '+line
               for line in ''.join(cell['source']).splitlines()]
     assert actual==expected, section['id']
-    assert section['url'].endswith('/docs/semantic/'+section['previewPath'])
-    excerpt=json.loads((HERE/section['previewPath']).read_text())
-    assert excerpt['cells'][0]==heading
-    assert excerpt['cells'][-1]==cell
-    assert len([c for c in excerpt['cells'] if c['cell_type']=='code'])==1
-    assert '../inspect_results.ipynb' in ''.join(excerpt['cells'][1]['source'])
-checks.append('All five notebook links open notebook excerpts preserving the exact executed cells and outputs')
+    assert section['url']=='notebooks/inspect_results.html#'+section['anchor']
+    assert entities[section['id']]['previewUrl']==section['url']
+    assert notebook_view.find(id=section['anchor'])
+    rendered=notebook_view.find(id='cell-id='+cell['id'])
+    assert rendered.select_one('.input_area').get_text().strip()==''.join(cell['source']).strip()
+    for output in cell['outputs']:
+        content=output.get('data',{})
+        if 'text/html' in content:
+            expected_table=BeautifulSoup(''.join(content['text/html']),'html.parser').find('table')
+            assert rendered.find('table').get_text()==expected_table.get_text()
+        if 'image/png' in content:
+            assert rendered.find('img')['src']=='data:image/png;base64,'+''.join(content['image/png'])
+checks.append('One notebook view preserves all five cells, saved tables and figure; section links resolve to headings')
 check('Inspection flows from the activity to code before notebook sections and outputs',
       {e['target'] for e in inspection['edges'] if e['source']=='processing/inspect-results-python'}
       == {'file/scripts/vensim_csv.py','notebook/inspect-results'})
-check('Workflow artifact links use repository sources without local downloads',
-      all('/blob/' in action['url'] and not action.get('download') for w in data['workflows'] for action in w['actions'])
+check('Workflow links open notebook views or repository sources without downloads',
+      all(('/blob/' in action['url'] or action['url']=='notebooks/inspect_results.html') and not action.get('download') for w in data['workflows'] for action in w['actions'])
       and not any(e.get('localUrl') or e.get('localDownload') for e in entities.values()))
 inspection_report=inspection['report']
 check('Python inspection preserves the 1001-point states and separate 21-point reference',

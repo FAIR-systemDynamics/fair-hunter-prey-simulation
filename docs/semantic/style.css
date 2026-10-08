@@ -67,3 +67,47 @@ body[data-view="workflows"] footer span:first-child{visibility:hidden}
 
 .map-caption{max-width:min(900px,calc(100% - 52px))}
 @media(max-width:480px){.map-caption{max-width:calc(100% - 20px)}}
+
+/* One continuous notebook; nbconvert supplies cells and saved outputs.
+   Reuse the atlas tokens, navigation and global scrollbar baseline. */
+body[data-view="notebook"]{height:auto;overflow:visible}
+body[data-view="notebook"] header{position:sticky;top:0}
+body[data-view="notebook"] .brand{text-decoration:none}
+#notebook-page{max-width:1100px;margin:0 auto;padding:30px 36px 64px;line-height:1.65}
+.notebook-actions{display:flex;gap:16px 28px;flex-wrap:wrap;font-size:14px}
+.notebook-actions a,#notebook-page .rendered_html a{color:var(--color-primary);text-underline-offset:3px}
+.notebook-actions a:hover,#notebook-page .rendered_html a:hover{color:var(--color-ink)}
+.notebook-actions a:active,#notebook-page .rendered_html a:active{color:var(--color-science)}
+.notebook-status{color:var(--color-muted);font-size:13px;margin:22px 0}
+#notebook-page h1{font-family:var(--font-display);font-size:30px;line-height:1.25;margin:12px 0 20px}
+#notebook-page h2{font-size:21px;line-height:1.4;margin:36px 0 16px}
+#notebook-page h1,#notebook-page h2{scroll-margin-top:96px}
+#notebook-page :target{outline:2px solid var(--color-primary);outline-offset:6px;border-radius:2px}
+#notebook-page .anchor-link{margin-left:10px;font-size:16px;text-decoration:none}
+#notebook-page .text_cell .prompt{display:none}
+#notebook-page .input,#notebook-page .output_area{display:flex;align-items:flex-start;gap:12px}
+#notebook-page .inner_cell{min-width:0;flex:1}
+#notebook-page .prompt{flex:0 0 58px;font:12px/1.6 var(--font-mono);text-align:right;padding-top:14px;color:var(--color-muted)}
+#notebook-page .code_cell{margin:18px 0 32px}
+#notebook-page .input_area{border:1px solid var(--color-border);border-radius:6px;background:var(--color-code-tint);padding:14px;overflow:auto}
+#notebook-page pre{margin:0;font:12px/1.7 var(--font-mono);tab-size:4}
+#notebook-page .output_subarea{min-width:0;flex:1;overflow:auto;padding:16px 0 4px}
+#notebook-page .output_subarea pre{white-space:pre-wrap;overflow-wrap:anywhere}
+#notebook-page .output_png img{display:block;max-width:100%;height:auto}
+#notebook-page table{border-collapse:collapse;width:100%;font-size:12px;border:0;font-variant-numeric:tabular-nums}
+#notebook-page th,#notebook-page td{padding:8px 10px;border:0;border-bottom:1px solid var(--color-border);white-space:nowrap;text-align:right}
+#notebook-page thead th{color:var(--color-ink);background:var(--color-scrollbar-track)}
+#notebook-page tbody tr:nth-child(even){background:var(--color-scrollbar-track)}
+#notebook-page .rendered_html pre{padding:16px;background:var(--color-code-tint);border-radius:6px;overflow:auto}
+#notebook-page .rendered_html p code{font:13px var(--font-mono);overflow-wrap:anywhere}
+#notebook-page .highlight .k,#notebook-page .highlight .kn,#notebook-page .highlight .ow{color:var(--color-primary);font-weight:600}
+#notebook-page .highlight .s1,#notebook-page .highlight .s2,#notebook-page .highlight .sa{color:var(--color-science)}
+#notebook-page .highlight .c1{color:var(--color-muted)}
+@media(max-width:850px){#notebook-page h1,#notebook-page h2{scroll-margin-top:140px}}
+@media(max-width:600px){
+  #notebook-page{padding:24px 16px 48px}
+  #notebook-page h1{font-size:27px}
+  #notebook-page .input,#notebook-page .output_area{display:block}
+  #notebook-page .prompt{text-align:left;padding:0 0 6px}
+  #notebook-page .output_prompt:empty{display:none}
+}

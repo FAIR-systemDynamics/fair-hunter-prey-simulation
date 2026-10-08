@@ -14,7 +14,7 @@ const canvas = $('canvas'), drawing = $('drawing'), tip = $('tip');
 let key = 'overview', section = 'overview', context = '', documentView = false;
 let scale = 1, x = 0, y = 0, w = 100, h = 100, drag = null, tipTimer;
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const sourceFor = e => e.navigation === 'explore' ? null : e.sources?.[0];
+const sourceFor = e => e.navigation === 'explore' ? null : e.previewUrl ? {url: e.previewUrl} : e.sources?.[0];
 const entityLink = (id, owner = context) => '#' + section + '/' + encodeURIComponent(id)
   + (section === 'workflows' && owner ? '?from=' + encodeURIComponent(owner) : '');
 const legendMarkup = graph => (graph.legend || []).map(item =>

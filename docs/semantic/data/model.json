@@ -7,7 +7,7 @@
     "ontology": "MathModDB + m4i 1.4.0",
     "version": "0.2.0-review",
     "scope": "Scientific overview proposal; selected Stella declaration and workflow evidence added. Full Vensim inventory retained; full Stella symbol mapping is future work.",
-    "triples": 4985,
+    "triples": 4980,
     "variableCount": 47,
     "fileCount": 51
   },
@@ -376,7 +376,7 @@
     "actions": [
       {
         "label": "View figure in repository",
-        "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/case2-workflow.svg"
+        "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg"
       }
     ]
   },
@@ -550,7 +550,7 @@
       "actions": [
         {
           "label": "View figure in repository",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/case2-workflow.svg"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg"
         }
       ]
     },
@@ -585,7 +585,7 @@
         {
           "id": "notebook-section/inspect-results/cell-1",
           "label": "Verify source files",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-1.ipynb",
+          "url": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts",
           "number": 1,
           "heading": "1. Locate and check the source artifacts",
           "cellId": "cell-03",
@@ -595,12 +595,12 @@
           "sourceLine": 36,
           "pythonStartLine": 33,
           "pythonEndLine": 59,
-          "previewPath": "notebooks/sections/cell-1.ipynb"
+          "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
         },
         {
           "id": "notebook-section/inspect-results/cell-2",
           "label": "Read units and time axes",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-2.ipynb",
+          "url": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes",
           "number": 2,
           "heading": "2. Read the data without losing units or time axes",
           "cellId": "cell-05",
@@ -610,12 +610,12 @@
           "sourceLine": 101,
           "pythonStartLine": 64,
           "pythonEndLine": 76,
-          "previewPath": "notebooks/sections/cell-2.ipynb"
+          "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
         },
         {
           "id": "notebook-section/inspect-results/cell-3",
           "label": "Build the pandas table",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-3.ipynb",
+          "url": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states",
           "number": 3,
           "heading": "3. Build a table for the three simulated states",
           "cellId": "cell-07",
@@ -625,12 +625,12 @@
           "sourceLine": 259,
           "pythonStartLine": 84,
           "pythonEndLine": 95,
-          "previewPath": "notebooks/sections/cell-3.ipynb"
+          "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
         },
         {
           "id": "notebook-section/inspect-results/cell-4",
           "label": "Inspect peaks and final values",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-4.ipynb",
+          "url": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values",
           "number": 4,
           "heading": "4. Inspect peaks and final values",
           "cellId": "cell-09",
@@ -640,12 +640,12 @@
           "sourceLine": 381,
           "pythonStartLine": 103,
           "pythonEndLine": 117,
-          "previewPath": "notebooks/sections/cell-4.ipynb"
+          "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
         },
         {
           "id": "notebook-section/inspect-results/cell-5",
           "label": "Compare trajectories",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-5.ipynb",
+          "url": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes",
           "number": 5,
           "heading": "5. Compare trajectories on their own axes",
           "cellId": "cell-11",
@@ -655,10 +655,10 @@
           "sourceLine": 546,
           "pythonStartLine": 122,
           "pythonEndLine": 143,
-          "previewPath": "notebooks/sections/cell-5.ipynb"
+          "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
         }
       ],
-      "artifactRevision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "artifactRevision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "entities": [
         "file/results/runs/case1_external.csv",
         "processing/inspect-results-python",
@@ -786,11 +786,7 @@
           "data/python-inspection-summary.csv": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
           "data/python-inspection.json": "585ae09974cc6ec93d9add7de4a6c5b5a72808ddf55d7e35d4ebae6c7172d777",
           "data/python-inspection.svg": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
-          "notebooks/sections/cell-1.ipynb": "3f8eb6e63caba7dc6844c63da1962b9f2f18c3205a9f1b4522b5cae602da6119",
-          "notebooks/sections/cell-2.ipynb": "91816a879b545bd8e3bb79faa23e1e366ec007aac1bd56d1dcb57a29221185fc",
-          "notebooks/sections/cell-3.ipynb": "3cf8bdc42f5ebb5a8805211715e7cff09515da6274d381a9e2c40876881e9167",
-          "notebooks/sections/cell-4.ipynb": "846643d166d329b8fc33625ace9e2a3d57493fd0861e596330f776c712d0c077",
-          "notebooks/sections/cell-5.ipynb": "3fc8dd452e3f57f341ccad635c8d41786962af785d61e6738627d95d5512f1cb"
+          "notebooks/inspect_results.html": "1f4b99e5267c24b7d80a0a4ebe1d49c66bc38e6c9c75d9cbcfa36c4c1364164f"
         },
         "simulationExecuted": false,
         "codeCellsExecuted": 5,
@@ -806,7 +802,7 @@
             "sourceLine": 36,
             "pythonStartLine": 33,
             "pythonEndLine": 59,
-            "previewPath": "notebooks/sections/cell-1.ipynb"
+            "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
           },
           {
             "number": 2,
@@ -818,7 +814,7 @@
             "sourceLine": 101,
             "pythonStartLine": 64,
             "pythonEndLine": 76,
-            "previewPath": "notebooks/sections/cell-2.ipynb"
+            "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
           },
           {
             "number": 3,
@@ -830,7 +826,7 @@
             "sourceLine": 259,
             "pythonStartLine": 84,
             "pythonEndLine": 95,
-            "previewPath": "notebooks/sections/cell-3.ipynb"
+            "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
           },
           {
             "number": 4,
@@ -842,7 +838,7 @@
             "sourceLine": 381,
             "pythonStartLine": 103,
             "pythonEndLine": 117,
-            "previewPath": "notebooks/sections/cell-4.ipynb"
+            "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
           },
           {
             "number": 5,
@@ -854,7 +850,7 @@
             "sourceLine": 546,
             "pythonStartLine": 122,
             "pythonEndLine": 143,
-            "previewPath": "notebooks/sections/cell-5.ipynb"
+            "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
           }
         ]
       },
@@ -999,19 +995,23 @@
       "caveat": "The notebook has been executed against saved results. This workflow does not run a new simulation.",
       "actions": [
         {
+          "label": "Read notebook",
+          "url": "notebooks/inspect_results.html"
+        },
+        {
           "label": "View notebook in repository",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb"
         },
         {
           "label": "View Python source",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py"
         },
         {
           "label": "View comparison figure",
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/python-inspection.svg"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg"
         }
       ],
-      "note": "Each cell opens a rendered notebook excerpt with its saved output and a link to the complete notebook. The 21 historical observations stay separate from the 1,001 simulated samples.",
+      "note": "Each cell opens its section in the same complete notebook, including saved tables and the figure. The 21 historical observations stay separate from the 1,001 simulated samples.",
       "pythonSupport": {
         "text": "The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.",
         "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/pysd/run.py#L598"
@@ -8984,7 +8984,7 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/case2-workflow.svg",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg",
           "label": "docs/semantic/data/case2-workflow.svg"
         },
         {
@@ -8997,7 +8997,7 @@
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "sha256": "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9",
       "displayType": "SVG figure \u00b7 repository source"
     },
@@ -9031,14 +9031,16 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
           "label": "docs/semantic/notebooks/inspect_results.ipynb"
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "repositoryPath": "docs/semantic/notebooks/inspect_results.ipynb",
       "sha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+      "previewUrl": "notebooks/inspect_results.html",
+      "sourceAction": "read notebook",
       "displayType": "Jupyter notebook \u00b7 executed"
     },
     {
@@ -9053,12 +9055,12 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "repositoryPath": "docs/semantic/notebooks/inspect_results.py",
       "sha256": "3cb7df13e9c23485195064de689722fd2e9dc72aa6f8af6b8c33fe4e811dfd83",
       "displayType": "Python source \u00b7 notebook cells"
@@ -9074,12 +9076,12 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/python-state-trajectories.csv",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-state-trajectories.csv",
           "label": "docs/semantic/data/python-state-trajectories.csv"
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "repositoryPath": "docs/semantic/data/python-state-trajectories.csv",
       "sha256": "603db3cab20f12b563234e4f46c45a521e9a9bb62e50553dfc531db9d38fa9ca",
       "displayType": "pandas table \u00b7 CSV"
@@ -9095,12 +9097,12 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/python-inspection-summary.csv",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection-summary.csv",
           "label": "docs/semantic/data/python-inspection-summary.csv"
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "repositoryPath": "docs/semantic/data/python-inspection-summary.csv",
       "sha256": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
       "displayType": "Descriptive statistics \u00b7 CSV"
@@ -9116,12 +9118,12 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/data/python-inspection.svg",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg",
           "label": "docs/semantic/data/python-inspection.svg"
         }
       ],
       "status": "Generated locally",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "repositoryPath": "docs/semantic/data/python-inspection.svg",
       "sha256": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
       "displayType": "Comparison figure \u00b7 SVG"
@@ -9166,22 +9168,19 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-1.ipynb",
-          "label": "Notebook cell 1 \u00b7 rendered notebook"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
         },
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
-          "label": "docs/semantic/notebooks/inspect_results.ipynb"
-        },
-        {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py#L33-L59",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L33-L59",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Executed locally",
-      "displayType": "Notebook cell 1 \u00b7 rendered preview",
-      "sourceAction": "open rendered notebook",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "displayType": "Notebook cell 1 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts",
+      "sourceAction": "read this section in the notebook",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 1,
         "heading": "1. Locate and check the source artifacts",
@@ -9192,11 +9191,11 @@
         "sourceLine": 36,
         "pythonStartLine": 33,
         "pythonEndLine": 59,
-        "previewPath": "notebooks/sections/cell-1.ipynb"
+        "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
       },
       "details": [
         "1. Locate and check the source artifacts",
-        "Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook."
+        "Opens this section in the complete notebook, with its saved output."
       ]
     },
     {
@@ -9211,22 +9210,19 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-2.ipynb",
-          "label": "Notebook cell 2 \u00b7 rendered notebook"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
         },
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
-          "label": "docs/semantic/notebooks/inspect_results.ipynb"
-        },
-        {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py#L64-L76",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L64-L76",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Executed locally",
-      "displayType": "Notebook cell 2 \u00b7 rendered preview",
-      "sourceAction": "open rendered notebook",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "displayType": "Notebook cell 2 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes",
+      "sourceAction": "read this section in the notebook",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 2,
         "heading": "2. Read the data without losing units or time axes",
@@ -9237,11 +9233,11 @@
         "sourceLine": 101,
         "pythonStartLine": 64,
         "pythonEndLine": 76,
-        "previewPath": "notebooks/sections/cell-2.ipynb"
+        "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
       },
       "details": [
         "2. Read the data without losing units or time axes",
-        "Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook."
+        "Opens this section in the complete notebook, with its saved output."
       ]
     },
     {
@@ -9256,22 +9252,19 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-3.ipynb",
-          "label": "Notebook cell 3 \u00b7 rendered notebook"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
         },
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
-          "label": "docs/semantic/notebooks/inspect_results.ipynb"
-        },
-        {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py#L84-L95",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L84-L95",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Executed locally",
-      "displayType": "Notebook cell 3 \u00b7 rendered preview",
-      "sourceAction": "open rendered notebook",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "displayType": "Notebook cell 3 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states",
+      "sourceAction": "read this section in the notebook",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 3,
         "heading": "3. Build a table for the three simulated states",
@@ -9282,11 +9275,11 @@
         "sourceLine": 259,
         "pythonStartLine": 84,
         "pythonEndLine": 95,
-        "previewPath": "notebooks/sections/cell-3.ipynb"
+        "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
       },
       "details": [
         "3. Build a table for the three simulated states",
-        "Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook."
+        "Opens this section in the complete notebook, with its saved output."
       ]
     },
     {
@@ -9301,22 +9294,19 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-4.ipynb",
-          "label": "Notebook cell 4 \u00b7 rendered notebook"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
         },
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
-          "label": "docs/semantic/notebooks/inspect_results.ipynb"
-        },
-        {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py#L103-L117",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L103-L117",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Executed locally",
-      "displayType": "Notebook cell 4 \u00b7 rendered preview",
-      "sourceAction": "open rendered notebook",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "displayType": "Notebook cell 4 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values",
+      "sourceAction": "read this section in the notebook",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 4,
         "heading": "4. Inspect peaks and final values",
@@ -9327,11 +9317,11 @@
         "sourceLine": 381,
         "pythonStartLine": 103,
         "pythonEndLine": 117,
-        "previewPath": "notebooks/sections/cell-4.ipynb"
+        "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
       },
       "details": [
         "4. Inspect peaks and final values",
-        "Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook."
+        "Opens this section in the complete notebook, with its saved output."
       ]
     },
     {
@@ -9346,22 +9336,19 @@
       ],
       "sources": [
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/sections/cell-5.ipynb",
-          "label": "Notebook cell 5 \u00b7 rendered notebook"
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
         },
         {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.ipynb",
-          "label": "docs/semantic/notebooks/inspect_results.ipynb"
-        },
-        {
-          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/1ec7e23683357133050e01525c15db90eba01d43/docs/semantic/notebooks/inspect_results.py#L122-L143",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L122-L143",
           "label": "docs/semantic/notebooks/inspect_results.py"
         }
       ],
       "status": "Executed locally",
-      "displayType": "Notebook cell 5 \u00b7 rendered preview",
-      "sourceAction": "open rendered notebook",
-      "revision": "1ec7e23683357133050e01525c15db90eba01d43",
+      "displayType": "Notebook cell 5 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes",
+      "sourceAction": "read this section in the notebook",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
       "notebookCell": {
         "number": 5,
         "heading": "5. Compare trajectories on their own axes",
@@ -9372,11 +9359,11 @@
         "sourceLine": 546,
         "pythonStartLine": 122,
         "pythonEndLine": 143,
-        "previewPath": "notebooks/sections/cell-5.ipynb"
+        "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
       },
       "details": [
         "5. Compare trajectories on their own axes",
-        "Opens the notebook section with its saved output. The excerpt links back to the complete executable notebook."
+        "Opens this section in the complete notebook, with its saved output."
       ]
     },
     {

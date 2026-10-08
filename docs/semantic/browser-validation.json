@@ -4,7 +4,8 @@
     "Semantic Model retains 20 entities, source links, keyboard descriptions and equation exploration",
     "Workflows has a linked contents list and two sequential examples with unique SVG IDs",
     "Contents links, refresh, full diagram, entity exploration and return link preserve workflow context",
-    "Descriptive titles, five numbered stages, repository links and rendered notebook cell links are present in both workflow views",
+    "Descriptive titles, five numbered stages, repository sources and links into one notebook are present in both workflow views",
+    "All five links land on headings in one complete notebook; saved tables/figure, reload, keyboard contents, mobile and return navigation work",
     "Search preserves workflow context, supports keyboard selection, no-results feedback and explicit clear",
     "Mobile workflows scroll as a document, diagrams scroll horizontally by keyboard, and Semantic Model restores its canvas",
     "Both workflows open offline; missing-data failure keeps the RDF source link and recovery message"
