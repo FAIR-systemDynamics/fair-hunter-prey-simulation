@@ -1,0 +1,544 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix kaibab: <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sd: <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/capacity> a skos:Concept ;
+    rdfs:label "Resource-limited carrying capacity" ;
+    dcterms:description "Available forage constrains the deer population that can be sustained." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Available forage constrains the deer population that can be sustained." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Resource-limited carrying capacity" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/consumption> a skos:Concept ;
+    rdfs:label "Herd forage consumption" ;
+    dcterms:description "Total consumption combines herd size and intake per animal." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Total consumption combines herd size and intake per animal." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Herd forage consumption" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/deer> a skos:Concept ;
+    rdfs:label "Mule deer population" ;
+    dcterms:description "Mule deer form the prey population in the Kaibab example." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Mule deer form the prey population in the Kaibab example." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Mule deer population" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/feedback> a skos:Concept ;
+    rdfs:label "Feedback and interdependence" ;
+    dcterms:description "Changes in populations and resources affect subsequent rates of change." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Changes in populations and resources affect subsequent rates of change." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Feedback and interdependence" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/forage> a skos:Concept ;
+    rdfs:label "Available forage" ;
+    dcterms:description "Forage is a renewable resource consumed by deer." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Forage is a renewable resource consumed by deer." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Available forage" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/initial-state> a skos:Concept ;
+    rdfs:label "Initial state" ;
+    dcterms:description "Stocks require initial quantities to start a simulation." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Stocks require initial quantities to start a simulation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Initial state" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/overshoot> a skos:Concept ;
+    rdfs:label "Overshoot and collapse" ;
+    dcterms:description "Resource depletion can follow population growth beyond sustainable levels." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Resource depletion can follow population growth beyond sustainable levels." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Overshoot and collapse" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/policy> a skos:Concept ;
+    rdfs:label "Predator-removal policy" ;
+    dcterms:description "Hunting removes predators after a chosen start year." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Hunting removes predators after a chosen start year." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Predator-removal policy" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/predation> a skos:Concept ;
+    rdfs:label "Predation" ;
+    dcterms:description "Deer losses depend on predators and a response to deer density." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Deer losses depend on predators and a response to deer density." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Predation" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/predators> a skos:Concept ;
+    rdfs:label "Predator population" ;
+    dcterms:description "Predators remove deer through predation; prey availability affects predator growth." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Predators remove deer through predation; prey availability affects predator growth." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Predator population" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/reference-mode> a skos:Concept ;
+    rdfs:label "Historical reference mode" ;
+    dcterms:description "A historical population trajectory is used to compare model behavior." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "A historical population trajectory is used to compare model behavior." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Historical reference mode" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/regrowth> a skos:Concept ;
+    rdfs:label "Forage regeneration" ;
+    dcterms:description "Forage regrowth replenishes biomass, with growth limited by capacity." ;
+    dcterms:source <https://pressbooks.lib.jmu.edu/sdlearningguide/chapter/chapter-4-introduction-to-system-dynamics-modeling/> ;
+    skos:definition "Forage regrowth replenishes biomass, with growth limited by capacity." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Forage regeneration" ;
+    sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/actual-biomass-growth-fraction> a skos:Concept ;
+    rdfs:label "Actual Biomass Growth Fraction" ;
+    dcterms:description "Regrowth fraction after scaling for how close forage is to the forest's carrying capacity." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L2> ;
+    skos:definition "Regrowth fraction after scaling for how close forage is to the forest's carrying capacity." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Actual Biomass Growth Fraction" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/actual-consumption-per-deer> a skos:Concept ;
+    rdfs:label "Actual Consumption per Deer" ;
+    dcterms:description "Forage actually eaten per deer per year, reduced below the desired amount when forage is scarce." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L10> ;
+    skos:definition "Forage actually eaten per deer per year, reduced below the desired amount when forage is scarce." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Actual Consumption per Deer" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/actual-fractional-net-growth-rate> a skos:Concept ;
+    rdfs:label "Actual Fractional Net Growth Rate" ;
+    dcterms:description "Fractional net growth rate after scaling for how adequate the Kaibab is to support further growth." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L18> ;
+    skos:definition "Fractional net growth rate after scaling for how adequate the Kaibab is to support further growth." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Actual Fractional Net Growth Rate" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/auxilliary-time-to-deer> a skos:Concept ;
+    rdfs:label "Auxilliary Time to Deer" ;
+    dcterms:description "Auxilliary parameter to convert Year into Deer for the time series lookup." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L26> ;
+    skos:definition "Auxilliary parameter to convert Year into Deer for the time series lookup." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Auxilliary Time to Deer" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/baseline-annual-kills-per-predator> a skos:Concept ;
+    rdfs:label "Baseline Annual Kills per Predator" ;
+    dcterms:description "The average number of deer killed per predator in a given year." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L31> ;
+    skos:definition "The average number of deer killed per predator in a given year." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Baseline Annual Kills per Predator" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/baseline-biomass-growth-fraction> a skos:Concept ;
+    rdfs:label "Baseline Biomass Growth Fraction" ;
+    dcterms:description "Fractional net regrowth rate of forage when the forest is far below its own carrying capacity." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L36> ;
+    skos:definition "Fractional net regrowth rate of forage when the forest is far below its own carrying capacity." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Baseline Biomass Growth Fraction" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/baseline-fractional-deer-growth-rate> a skos:Concept ;
+    rdfs:label "Baseline Fractional Deer Growth Rate" ;
+    dcterms:description "Fractional net growth rate of the deer herd when forage is abundant." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L42> ;
+    skos:definition "Fractional net growth rate of the deer herd when forage is abundant." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Baseline Fractional Deer Growth Rate" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/baseline-fractional-predator-growth> a skos:Concept ;
+    rdfs:label "Baseline Fractional Predator Growth" ;
+    dcterms:description "Fraction by which the predator population grows each year when deer are abundant." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L47> ;
+    skos:definition "Fraction by which the predator population grows each year when deer are abundant." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Baseline Fractional Predator Growth" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-carrying-capacity-in-years> a skos:Concept ;
+    rdfs:label "Deer Carrying Capacity in Years" ;
+    dcterms:description "Number of years of forage needed to sustain the deer population." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L53> ;
+    skos:definition "Number of years of forage needed to sustain the deer population." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Deer Carrying Capacity in Years" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-density> a skos:Concept ;
+    rdfs:label "Normalized deer density" ;
+    dcterms:description "The ratio of deer to area, all of which is divided by a normal. Results in a scale where one is normal, anything above 1 indicates too many deer, and anything below 1 indicates too few deer compared to what is normal deer per acres." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L58> ;
+    skos:altLabel "Deer Density" ;
+    skos:definition "The ratio of deer to area, all of which is divided by a normal. Results in a scale where one is normal, anything above 1 indicates too many deer, and anything below 1 indicates too few deer compared to what is normal deer per acres." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Normalized deer density" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-net-growth-rate> a skos:Concept ;
+    rdfs:label "Deer Net Growth Rate" ;
+    dcterms:description "Biflow. Net deer added or removed per year through births and natural deaths, before predation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L69> ;
+    skos:definition "Biflow. Net deer added or removed per year through births and natural deaths, before predation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Deer Net Growth Rate" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-population> a skos:Concept ;
+    rdfs:label "Deer Population" ;
+    dcterms:description "The number/stock of mule deer on the Kaibab Plateau. Increased by Deer Net Growth, decreased by Deer Predation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L77> ;
+    skos:definition "The number/stock of mule deer on the Kaibab Plateau. Increased by Deer Net Growth, decreased by Deer Predation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Deer Population" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-predation> a skos:Concept ;
+    rdfs:label "Deer Predation" ;
+    dcterms:description "Outflow from the Deer Population. Number of deer killed by predators each year." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L86> ;
+    skos:definition "Outflow from the Deer Population. Number of deer killed by predators each year." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Deer Predation" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/desired-consumption-per-deer> a skos:Concept ;
+    rdfs:label "Desired Consumption per Deer" ;
+    dcterms:description "The amount of forage consumed by a single deer in a year, when abundant forage is available." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L95> ;
+    skos:definition "The amount of forage consumed by a single deer in a year, when abundant forage is available." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Desired Consumption per Deer" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/effect-of-deer-density-on-predator-births> a skos:Concept ;
+    rdfs:label "Effect of Deer Density on Predator Births" ;
+    dcterms:description "Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L101> ;
+    skos:definition "Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Effect of Deer Density on Predator Births" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/effect-of-deer-density-on-predator-hunting-efficiency> a skos:Concept ;
+    rdfs:label "Effect of Deer Density on Predator Hunting Efficiency" ;
+    dcterms:description "Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L108> ;
+    skos:definition "Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Effect of Deer Density on Predator Hunting Efficiency" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/effect-of-forage-availability-on-consumption> a skos:Concept ;
+    rdfs:label "Effect of Forage Availability on Consumption" ;
+    dcterms:description "This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L116> ;
+    skos:definition "This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Effect of Forage Availability on Consumption" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/final-time> a skos:Concept ;
+    rdfs:label "FINAL TIME" ;
+    dcterms:description "The final time for the simulation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L339> ;
+    skos:definition "The final time for the simulation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "FINAL TIME" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/forage-biomass> a skos:Concept ;
+    rdfs:label "Forage Biomass" ;
+    dcterms:description "Forage available for deer to eat" ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L127> ;
+    skos:definition "Forage available for deer to eat" ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Forage Biomass" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/forage-consumed-per-deer> a skos:Concept ;
+    rdfs:label "Total herd forage consumption rate" ;
+    dcterms:description "Total forage eaten by the whole herd each year. Despite the name this is a total, not a per-head rate." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L135> ;
+    skos:altLabel "Forage Consumed per Deer" ;
+    skos:definition "Total forage eaten by the whole herd each year. Despite the name this is a total, not a per-head rate." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Total herd forage consumption rate" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/fraction-predators-killed-per-year> a skos:Concept ;
+    rdfs:label "Fraction Predators Killed per Year" ;
+    dcterms:description "Fraction of predators killed each year." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L143> ;
+    skos:definition "Fraction of predators killed each year." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Fraction Predators Killed per Year" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/historical-deer-bot> a skos:Concept ;
+    rdfs:label "Historical Deer BOT" ;
+    dcterms:description "A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L148> ;
+    skos:definition "A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Historical Deer BOT" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/initial-deer-population> a skos:Concept ;
+    rdfs:label "Initial Deer Population" ;
+    dcterms:description "Exogenous variable used to set (and change) the initial size of the Deer Population." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L157> ;
+    skos:definition "Exogenous variable used to set (and change) the initial size of the Deer Population." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Initial Deer Population" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/initial-forage-biomass> a skos:Concept ;
+    rdfs:label "Initial Forage Biomass" ;
+    dcterms:description "Initial forage quantity, read from the configured workbook." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L166> ;
+    skos:definition "Initial forage quantity, read from the configured workbook." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Initial Forage Biomass" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/initial-predator-population> a skos:Concept ;
+    rdfs:label "Initial Predator Population" ;
+    dcterms:description "Used to set the initial size of the Predator Population. Notice that this is different from the original predator-prey model you built." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L173> ;
+    skos:definition "Used to set the initial size of the Predator Population. Notice that this is different from the original predator-prey model you built." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Initial Predator Population" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/initial-time> a skos:Concept ;
+    rdfs:label "INITIAL TIME" ;
+    dcterms:description "The initial time for the simulation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L344> ;
+    skos:definition "The initial time for the simulation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "INITIAL TIME" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/kaibab-adequacy-for-forage> a skos:Concept ;
+    rdfs:label "Kaibab Adequacy for Forage" ;
+    dcterms:description "Approaches 1 when forage is far below its carrying capacity and 0 as it reaches it." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L182> ;
+    skos:definition "Approaches 1 when forage is far below its carrying capacity and 0 as it reaches it." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Kaibab Adequacy for Forage" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/kaibab-adequacy-to-support-the-deer-population> a skos:Concept ;
+    rdfs:label "Kaibab Adequacy to Support the Deer Population" ;
+    dcterms:description "Approaches 1 when the herd is far below carrying capacity and 0 as it reaches carrying capacity." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L190> ;
+    skos:definition "Approaches 1 when the herd is far below carrying capacity and 0 as it reaches carrying capacity." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Kaibab Adequacy to Support the Deer Population" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/kaibab-area-in-thousands-of-acres> a skos:Concept ;
+    rdfs:label "Kaibab Area in Thousands of Acres" ;
+    dcterms:description "Land area of the Kaibab Plateau. This is approximately 800,000 acres. We are measuring this in thousands of acres, which is why we use 800 when setting the value." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L198> ;
+    skos:definition "Land area of the Kaibab Plateau. This is approximately 800,000 acres. We are measuring this in thousands of acres, which is why we use 800 when setting the value." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Kaibab Area in Thousands of Acres" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/kaibab-deer-carrying-capacity> a skos:Concept ;
+    rdfs:label "Kaibab Deer Carrying Capacity" ;
+    dcterms:description "Number of deer the current forage stock can sustain for the required number of years. Endogenous: it erodes as forage is consumed." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L205> ;
+    skos:definition "Number of deer the current forage stock can sustain for the required number of years. Endogenous: it erodes as forage is consumed." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Kaibab Deer Carrying Capacity" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/kaibab-forage-carrying-capacity> a skos:Concept ;
+    rdfs:label "Kaibab Forage Carrying Capacity" ;
+    dcterms:description "Amount of forage biomass that the Kaibab can support on an ongoing basis." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L214> ;
+    skos:definition "Amount of forage biomass that the Kaibab can support on an ongoing basis." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Kaibab Forage Carrying Capacity" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/lookup-effect-of-deer-density-on-predator-births> a skos:Concept ;
+    rdfs:label "Lookup Effect of Deer Density on Predator Births" ;
+    dcterms:description "Lookup for: Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L219> ;
+    skos:definition "Lookup for: Multiplier on the Net Predator Growth Rate. -1.0 at deer density 0, 0 at density 1 (births equal deaths), 1.5 at density 2 or more." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Lookup Effect of Deer Density on Predator Births" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/lookup-effect-of-deer-density-on-predator-hunting-efficiency> a skos:Concept ;
+    rdfs:label "Lookup Effect of Deer Density on Predator Hunting Efficiency" ;
+    dcterms:description "Lookup for: Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L226> ;
+    skos:definition "Lookup for: Multiplier on Deer Predation. 0 when no deer are present, 1 at normal density, rising to 1.5 when deer are abundant; the slope flattens at both ends." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Lookup Effect of Deer Density on Predator Hunting Efficiency" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/lookup-effect-of-forage-availability-on-consumption> a skos:Concept ;
+    rdfs:label "Lookup Effect of Forage Availability on Consumption" ;
+    dcterms:description "Vensim Lookup for: This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L234> ;
+    skos:definition "Vensim Lookup for: This nonlinear or graphical function captures how Actual Consumption per Deer will change given the Ratio of Actual to Required Biomass. Deer will continue to eat a normal amount of forage until only about 30 percent of what is needed is available. Deer will then start to eat less as foraging becomes more difficult." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Lookup Effect of Forage Availability on Consumption" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/lookup-historical-deer-bot> a skos:Concept ;
+    rdfs:label "Lookup Historical Deer BOT" ;
+    dcterms:description "Lookup for: A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L244> ;
+    skos:definition "Lookup for: A reference mode showing the actual deer population estimates from 1900 through 1950. This is defined by the graphical function shown in the source. You can display this BOTG with the Deer Population to help tune the model parameters to match the historical record." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Lookup Historical Deer BOT" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/net-annual-forage-growth> a skos:Concept ;
+    rdfs:label "Net Annual Forage Growth" ;
+    dcterms:description "Net change in the forage biomass on the Kaibab via natural growth and decay, apart from consumption by animals." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L256> ;
+    skos:definition "Net change in the forage biomass on the Kaibab via natural growth and decay, apart from consumption by animals." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Net Annual Forage Growth" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/net-predator-growth-rate> a skos:Concept ;
+    rdfs:label "Net Predator Growth Rate" ;
+    dcterms:description "Biflow. Net predators added or removed per year. Negative when deer density falls below normal, i.e., predators starve." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L264> ;
+    skos:definition "Biflow. Net predators added or removed per year. Negative when deer density falls below normal, i.e., predators starve." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Net Predator Growth Rate" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/normal-deer-density-per-acre> a skos:Concept ;
+    rdfs:label "Reference deer density per thousand acres" ;
+    dcterms:description "Number of deer per 1000 acres on the Kaibab" ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L273> ;
+    skos:altLabel "Normal Deer Density per Acre" ;
+    skos:definition "Number of deer per 1000 acres on the Kaibab" ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Reference deer density per thousand acres" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/predator-population> a skos:Concept ;
+    rdfs:label "Predator Population" ;
+    dcterms:description "Number of predators on the Kaibab Plateau" ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L278> ;
+    skos:definition "Number of predators on the Kaibab Plateau" ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Predator Population" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/predators-hunted> a skos:Concept ;
+    rdfs:label "Predators Hunted" ;
+    dcterms:description "Number of predators removed each year through hunting." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L286> ;
+    skos:definition "Number of predators removed each year through hunting." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Predators Hunted" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/program-start-year> a skos:Concept ;
+    rdfs:label "Program Start Year" ;
+    dcterms:description "The year the predator hunting policy is implemented. From that year on, a fraction of the remaining predators will be hunted and killed each year." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L294> ;
+    skos:definition "The year the predator hunting policy is implemented. From that year on, a fraction of the remaining predators will be hunted and killed each year." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Program Start Year" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/ratio-of-actual-to-required-biomass> a skos:Concept ;
+    rdfs:label "Ratio of Actual to Required Biomass" ;
+    dcterms:description "Measures how much forage is available, relative to what is needed to sustain the current deer population. Values below 1 indicate a shortage of forage biomass." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L300> ;
+    skos:definition "Measures how much forage is available, relative to what is needed to sustain the current deer population. Values below 1 indicate a shortage of forage biomass." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Ratio of Actual to Required Biomass" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/ratio-of-forage-to-forage-carrying-capacity> a skos:Concept ;
+    rdfs:label "Ratio of Forage to Forage Carrying Capacity" ;
+    dcterms:description "How close the forage stock is to the maximum the Kaibab forest can carry." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L309> ;
+    skos:definition "How close the forage stock is to the maximum the Kaibab forest can carry." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Ratio of Forage to Forage Carrying Capacity" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/ratio-of-the-deer-population-to-carrying-capacity> a skos:Concept ;
+    rdfs:label "Ratio of the Deer Population to Carrying Capacity" ;
+    dcterms:description "How close the herd is to what the forage can support." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L316> ;
+    skos:definition "How close the herd is to what the forage can support." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Ratio of the Deer Population to Carrying Capacity" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/required-forage-biomass> a skos:Concept ;
+    rdfs:label "Required Forage Biomass" ;
+    dcterms:description "Forage biomass needed to sustain the existing deer population for the number of years indicated by the value of the Deer Carrying Capacity in Years." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L323> ;
+    skos:definition "Forage biomass needed to sustain the existing deer population for the number of years indicated by the value of the Deer Carrying Capacity in Years." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "Required Forage Biomass" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/saveper> a skos:Concept ;
+    rdfs:label "SAVEPER" ;
+    dcterms:description "The frequency with which output is stored." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L349> ;
+    skos:definition "The frequency with which output is stored." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "SAVEPER" ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/time-step> a skos:Concept ;
+    rdfs:label "TIME STEP" ;
+    dcterms:description "The time step for the simulation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/kaibab_ecosystem_model.mdl#L355> ;
+    skos:definition "The time step for the simulation." ;
+    skos:inScheme kaibab:vocabulary ;
+    skos:prefLabel "TIME STEP" ;
+    sd:evidenceStatus "Interpreted" .
+
+kaibab:vocabulary a skos:ConceptScheme ;
+    rdfs:label "Kaibab controlled vocabulary" ;
+    dcterms:description "Draft concepts for this model. Scientific definitions and implementation entities remain distinct." ;
+    sd:evidenceStatus "Extracted" .

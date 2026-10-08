@@ -1,0 +1,49 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sd: <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#> .
+@prefix m4i: <http://w3id.org/nfdi4ing/metadata4ing#> .
+@prefix pims: <http://www.molmod.info/semantics/pims-ii.ttl#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sd:VariableShape a sh:NodeShape ;
+  sh:targetClass m4i:NumericalVariable ;
+  sh:property [sh:path rdfs:label; sh:minCount 1; sh:maxCount 1] ;
+  sh:property [sh:path m4i:hasVariableDescription; sh:minCount 1; sh:datatype xsd:string] ;
+  sh:property [sh:path sd:declaredIn; sh:minCount 1; sh:class schema:MediaObject] ;
+  sh:property [sh:path m4i:hasUnit; sh:minCount 1; sh:maxCount 1; sh:nodeKind sh:IRI] ;
+  sh:property [sh:path sd:hasBinding; sh:minCount 1; sh:class sd:FileBinding] ;
+  sh:property [sh:path sd:denotesConcept; sh:minCount 1; sh:class skos:Concept] .
+
+sd:FileShape a sh:NodeShape ; sh:targetClass schema:MediaObject ;
+  sh:property [sh:path sd:path; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:string] ;
+  sh:property [sh:path sd:revision; sh:minCount 1; sh:pattern "^[0-9a-f]{40}$"] ;
+  sh:property [sh:path sd:sha256; sh:minCount 1; sh:pattern "^[0-9a-f]{64}$"] ;
+  sh:property [sh:path schema:contentUrl; sh:minCount 1; sh:nodeKind sh:IRI] .
+
+sd:BindingShape a sh:NodeShape ; sh:targetClass sd:FileBinding ;
+  sh:property [sh:path sd:inFile; sh:minCount 1; sh:maxCount 1; sh:class schema:MediaObject] ;
+  sh:property [sh:path sd:selector; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:string] .
+
+sd:ConceptShape a sh:NodeShape ; sh:targetClass skos:Concept ;
+  sh:property [sh:path skos:prefLabel; sh:minCount 1; sh:maxCount 1] ;
+  sh:property [sh:path skos:definition; sh:minCount 1] ;
+  sh:property [sh:path dct:source; sh:minCount 1; sh:nodeKind sh:IRI] ;
+  sh:property [sh:path skos:inScheme; sh:minCount 1; sh:class skos:ConceptScheme] .
+
+sd:AssignmentShape a sh:NodeShape ; sh:targetClass pims:Assignment ;
+  sh:property [sh:path m4i:hasVariable; sh:minCount 1; sh:maxCount 1; sh:class m4i:NumericalVariable] ;
+  sh:property [sh:path m4i:hasAssignedValue; sh:minCount 1; sh:maxCount 1; sh:class pims:Value] ;
+  sh:property [sh:path dct:source; sh:minCount 1; sh:nodeKind sh:IRI] .
+
+sd:ValueShape a sh:NodeShape ; sh:targetClass pims:Value ;
+  sh:property [sh:path rdf:value; sh:minCount 1; sh:maxCount 1; sh:datatype xsd:decimal] .
+
+sd:RunShape a sh:NodeShape ; sh:targetClass sd:DocumentedRun ;
+  sh:property [sh:path m4i:usesConfiguration; sh:minCount 1; sh:class m4i:Configuration] ;
+  sh:property [sh:path m4i:hasEmployedTool; sh:minCount 1; sh:class m4i:Tool] ;
+  sh:property [sh:path m4i:realizesMethod; sh:minCount 1; sh:class m4i:Method] ;
+  sh:property [sh:path sd:evidenceStatus; sh:hasValue "Documented"] .

@@ -1,0 +1,27 @@
+{
+  "conforms": true,
+  "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+  "triples": 4730,
+  "checks": [
+    "Turtle and JSON-LD describe isomorphic RDF graphs",
+    "SHACL application profile conforms",
+    "Every browser relation exists in RDF and resolves to a defined entity",
+    "All 51 file hashes and commit-pinned source links match Git content",
+    "Overview separates the mathematical model, both native files, task and setup",
+    "Overview does not mistake an individual case for the simulation task",
+    "Kaibab is typed with the actual MathModDB mathematical-model entity",
+    "All 47 declaration line anchors point at the correct symbols",
+    "Exactly 47 declarations and three stocks extracted",
+    "Initial-condition values and worksheet/cell selectors match the workbook",
+    "Case 2 resolves exactly the four documented overrides",
+    "Lookup endpoint discrepancy retained explicitly",
+    "Assignments separate variable identities from scenario-specific values",
+    "Every numerical declaration maps to a controlled vocabulary concept",
+    "Negative test: a binding without its target file fails validation",
+    "Negative test: multiple values on one assignment fail validation",
+    "Every m4i class and property used exists in the published ontology"
+  ],
+  "ontologyTermCheck": "18 m4i terms verified against the supplied ontology; source versionIRI: http://w3id.org/nfdi4ing/metadata4ing/1.4.0",
+  "scope": "Structural validation and source-integrity checks, not full OWL consistency or scientific validation. No simulation executed.",
+  "shaclReport": "Validation Report\nConforms: True\n"
+}

@@ -117,3 +117,31 @@ SPDX-FileCopyrightText = [
 ]
 SPDX-License-Identifier = "MIT"
 
+# Semantic atlas viewer and reproducible build/validation tools.
+[[annotations]]
+path = [
+    "docs/semantic/index.html", "docs/semantic/app.js", "docs/semantic/*.css",
+    "docs/semantic/tools/**", "docs/semantic/tests/**",
+    "docs/semantic/requirements.txt", "docs/semantic/*validation.json",
+    "premium-ui.json", "premium-audit.json",
+]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Semantic datasets retain attribution for model-derived descriptions.
+[[annotations]]
+path = ["docs/semantic/model.ttl", "docs/semantic/model.jsonld", "docs/semantic/controlled-vocabulary.ttl", "docs/semantic/data/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = [
+    "2025 Mike Deaton and Rod MacDonald, James Madison University Libraries (original model, System Dynamics Learning Guide)",
+    "2026 Raphael Ginster, Matthias Papesch, and Vasiliy Seibert (repository reimplementation)",
+    "2026 Vasiliy Seibert (semantic representation)",
+]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"

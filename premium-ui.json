@@ -1,0 +1,14 @@
+{
+  "profile": "product-admin",
+  "sourceRoots": [
+    "docs/semantic"
+  ],
+  "locale": "en",
+  "canonicalMap": "DESIGN.md",
+  "requiredCapabilities": [
+    "Scrollbar"
+  ],
+  "ownership": {
+    "Scrollbar": "docs/semantic/style.css"
+  }
+}

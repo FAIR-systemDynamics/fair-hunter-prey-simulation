@@ -1,0 +1,261 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix m4i: <http://w3id.org/nfdi4ing/metadata4ing#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix sd: <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary> a owl:Ontology ;
+    dcterms:conformsTo <http://w3id.org/nfdi4ing/metadata4ing/1.4.0> ;
+    rdfs:comment "Draft application extension aligned to m4i 1.4.0. The proposed GitHub Pages namespace is not yet published." ;
+    owl:versionInfo "0.2.0-review" .
+
+sd:Auxiliary a owl:Class ;
+    rdfs:label "Auxiliary" ;
+    rdfs:comment "A numerical variable calculated from other quantities." ;
+    rdfs:subClassOf m4i:NumericalVariable .
+
+sd:Control a owl:Class ;
+    rdfs:label "Control" ;
+    rdfs:comment "A numerical control of simulation time or output sampling." ;
+    rdfs:subClassOf m4i:NumericalVariable .
+
+sd:DocumentedRun a owl:Class ;
+    rdfs:label "DocumentedRun" ;
+    rdfs:comment "A processing step reconstructed from repository documentation and committed artifacts; not a newly executed or independently verified run." ;
+    rdfs:subClassOf m4i:ProcessingStep .
+
+sd:FileBinding a owl:Class ;
+    rdfs:label "FileBinding" ;
+    rdfs:comment "A versioned selector connecting a variable to a location in a file." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+sd:Flow a owl:Class ;
+    rdfs:label "Flow" ;
+    rdfs:comment "A rate contributing to the change of a stock." ;
+    rdfs:subClassOf m4i:NumericalVariable .
+
+sd:InitialCondition a owl:Class ;
+    rdfs:label "InitialCondition" ;
+    rdfs:comment "A parameter supplying the starting value of a stock." ;
+    rdfs:subClassOf sd:Parameter .
+
+sd:LookupFunction a owl:Class ;
+    rdfs:label "LookupFunction" ;
+    rdfs:comment "A tabulated function; its table is not a scalar parameter." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+sd:MathematicalModel a owl:Class ;
+    rdfs:label "MathematicalModel" ;
+    rdfs:comment "The mathematical specification, distinct from its file representation." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+sd:Mechanism a owl:Class ;
+    rdfs:label "Mechanism" ;
+    rdfs:comment "A model-specific interpretation of interacting equations, not an independently established empirical claim." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+sd:OutputSpecification a owl:Class ;
+    rdfs:comment "Specification of requested output quantities, not an observed dataset." ;
+    rdfs:subClassOf prov:Plan .
+
+sd:ReferenceSeries a owl:Class ;
+    rdfs:label "ReferenceSeries" ;
+    rdfs:comment "A reference-mode series used for comparison." ;
+    rdfs:subClassOf m4i:NumericalVariable .
+
+sd:ReviewIssue a owl:Class ;
+    rdfs:label "ReviewIssue" ;
+    rdfs:comment "An explicit ambiguity or mismatch requiring review." ;
+    rdfs:subClassOf schema:CreativeWork .
+
+sd:SimulationSetup a owl:Class ;
+    rdfs:comment "Plan combining a scenario, initial conditions and numerical settings." ;
+    rdfs:subClassOf prov:Plan .
+
+sd:Stock a owl:Class ;
+    rdfs:label "Stock" ;
+    rdfs:comment "An accumulated state in a system dynamics model." ;
+    rdfs:subClassOf m4i:NumericalVariable .
+
+sd:canExecuteTask a owl:ObjectProperty ;
+    rdfs:comment "Software is documented as supporting this computational task; no execution is asserted." .
+
+sd:concerns a owl:ObjectProperty ;
+    rdfs:label "concerns" ;
+    rdfs:comment "Entity discussed by a review issue." .
+
+sd:declarationOf a owl:ObjectProperty ;
+    rdfs:comment "An implementation-specific declaration represents a scientific quantity. Does not assert identity." .
+
+sd:declaredIn a owl:ObjectProperty ;
+    rdfs:label "declaredIn" ;
+    rdfs:comment "File in which a variable or model is declared." .
+
+sd:denotesConcept a owl:ObjectProperty ;
+    rdfs:label "denotesConcept" ;
+    rdfs:comment "Connects an implementation entity to a controlled concept; does not assert identity." .
+
+sd:dependsOn a owl:ObjectProperty ;
+    rdfs:label "dependsOn" ;
+    rdfs:comment "Syntactic equation dependency; not necessarily a positive causal effect." .
+
+sd:documentedOutput a owl:ObjectProperty ;
+    rdfs:label "documentedOutput" ;
+    rdfs:comment "Output associated with a documented run, based on repository evidence." .
+
+sd:equation a owl:DatatypeProperty ;
+    rdfs:label "equation" ;
+    rdfs:comment "Equation text as implemented in the source model." .
+
+sd:evidenceStatus a owl:DatatypeProperty ;
+    rdfs:label "evidenceStatus" ;
+    rdfs:comment "Origin of an assertion: Extracted, Literature, Interpreted, or Documented." .
+
+sd:explainsConcept a owl:ObjectProperty ;
+    rdfs:label "explainsConcept" ;
+    rdfs:comment "A model mechanism elaborates a scientific concept." .
+
+sd:governs a owl:ObjectProperty ;
+    rdfs:comment "A governing equation determines the derivative of a state quantity." .
+
+sd:hasAssignment a owl:ObjectProperty ;
+    rdfs:label "hasAssignment" ;
+    rdfs:comment "A parameter assignment included in a configuration." .
+
+sd:hasBinding a owl:ObjectProperty ;
+    rdfs:label "hasBinding" ;
+    rdfs:comment "A concrete file selector associated with a variable." .
+
+sd:hasFunctionDefinitions a owl:ObjectProperty ;
+    rdfs:comment "Tabulated functions used to specify the equations." .
+
+sd:hasGoverningEquations a owl:ObjectProperty ;
+    rdfs:comment "Connects a mathematical model to a collection of its governing formulas." .
+
+sd:hasInitialConditions a owl:ObjectProperty ;
+    rdfs:comment "Initial conditions required by a setup plan." .
+
+sd:hasLookup a owl:ObjectProperty ;
+    rdfs:label "hasLookup" ;
+    rdfs:comment "Table function determining a mechanism." .
+
+sd:hasNumericalSettings a owl:ObjectProperty ;
+    rdfs:comment "Numerical controls and methods required by a setup plan." .
+
+sd:hasParameterGroup a owl:ObjectProperty ;
+    rdfs:comment "Collection of configurable scientific and policy quantities." .
+
+sd:hasScientificQuantity a owl:ObjectProperty ;
+    rdfs:comment "Quantity described by a mathematical model; not a file declaration." .
+
+sd:hasSimulationSetup a owl:ObjectProperty ;
+    rdfs:comment "Task is specified by a simulation setup plan." .
+
+sd:hasVariable a owl:ObjectProperty ;
+    rdfs:label "hasVariable" ;
+    rdfs:comment "Variable or lookup belonging to a mathematical model; distinct from m4i:hasVariable on assignments." .
+
+sd:illustrates a owl:ObjectProperty ;
+    rdfs:label "illustrates" ;
+    rdfs:comment "Model-specific interpretation of a scientific concept." .
+
+sd:inFile a owl:ObjectProperty ;
+    rdfs:label "inFile" ;
+    rdfs:comment "File targeted by a binding." .
+
+sd:inferredFrom a owl:DatatypeProperty ;
+    rdfs:label "inferredFrom" ;
+    rdfs:comment "Description of the evidence used to reconstruct a relationship." .
+
+sd:inflowTo a owl:ObjectProperty ;
+    rdfs:label "inflowTo" ;
+    rdfs:comment "Stock to whose derivative this rate is added." .
+
+sd:informs a owl:ObjectProperty ;
+    rdfs:label "informs" ;
+    rdfs:comment "A source informs a scientific concept or interpretation." .
+
+sd:initializes a owl:ObjectProperty ;
+    rdfs:label "initializes" ;
+    rdfs:comment "Stock whose initial condition is supplied by this parameter." .
+
+sd:inputFile a owl:ObjectProperty ;
+    rdfs:label "inputFile" ;
+    rdfs:comment "An external data file supplying values read or loaded for a model file." .
+
+sd:involvesVariable a owl:ObjectProperty ;
+    rdfs:label "involvesVariable" ;
+    rdfs:comment "A variable involved in an interpreted model mechanism; does not assert a fixed causal sign." .
+
+sd:lookupPoints a owl:DatatypeProperty ;
+    rdfs:label "lookupPoints" ;
+    rdfs:comment "JSON array of pairs copied from an external lookup table." .
+
+sd:nativeFormatFor a owl:ObjectProperty ;
+    rdfs:comment "A model file is in the native format used by this software." .
+
+sd:offersMethod a owl:ObjectProperty ;
+    rdfs:comment "Alternative numerical method, selected according to implementation." .
+
+sd:offersScenario a owl:ObjectProperty ;
+    rdfs:comment "Alternative scenario configuration available for a setup." .
+
+sd:outflowFrom a owl:ObjectProperty ;
+    rdfs:label "outflowFrom" ;
+    rdfs:comment "Stock from whose derivative this rate is subtracted." .
+
+sd:overrides a owl:ObjectProperty ;
+    rdfs:label "overrides" ;
+    rdfs:comment "A scenario assignment supersedes a baseline assignment." .
+
+sd:path a owl:DatatypeProperty ;
+    rdfs:label "path" ;
+    rdfs:comment "Repository-relative file path." .
+
+sd:representsModel a owl:ObjectProperty ;
+    rdfs:label "representsModel" ;
+    rdfs:comment "Connects an implementation file to its mathematical specification." .
+
+sd:requestsOutput a owl:ObjectProperty ;
+    rdfs:comment "A computational task requests these output quantities; no dataset generation is asserted." .
+
+sd:reviewNote a owl:DatatypeProperty ;
+    rdfs:label "reviewNote" ;
+    rdfs:comment "A qualification or interpretation needing review." .
+
+sd:revision a owl:DatatypeProperty ;
+    rdfs:label "revision" ;
+    rdfs:comment "Git commit identifying inspected source content." .
+
+sd:selector a owl:DatatypeProperty ;
+    rdfs:label "selector" ;
+    rdfs:comment "Human-readable selector, such as a model symbol, CSV key, or spreadsheet cell." .
+
+sd:sha256 a owl:DatatypeProperty ;
+    rdfs:label "sha256" ;
+    rdfs:comment "SHA-256 digest of the inspected bytes." .
+
+sd:solvesModel a owl:ObjectProperty ;
+    rdfs:comment "A computational task asks for a numerical solution of this model." .
+
+sd:sourceLine a owl:DatatypeProperty ;
+    rdfs:label "sourceLine" ;
+    rdfs:comment "One-based source line of a declaration or value." .
+
+sd:sourceUnit a owl:DatatypeProperty ;
+    rdfs:label "sourceUnit" ;
+    rdfs:comment "Original model unit string; preserves domain-specific counting units." .
+
+sd:timeAxis a owl:DatatypeProperty ;
+    rdfs:label "timeAxis" ;
+    rdfs:comment "Role of a simulation time axis; not a wall-clock execution timestamp." .
+
+sd:usesQuantity a owl:ObjectProperty ;
+    rdfs:comment "A formula involves a scientific quantity." .
+
+sd:Parameter a owl:Class ;
+    rdfs:label "Parameter" ;
+    rdfs:comment "A configurable model quantity." ;
+    rdfs:subClassOf m4i:NumericalVariable .

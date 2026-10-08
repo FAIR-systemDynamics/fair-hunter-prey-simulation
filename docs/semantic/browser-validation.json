@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "version": "0.2.0-review",
+  "date": "2026-10-08",
+  "scope": "Restoration checks and visible preview verification",
+  "checks": [
+    "Previous overview renders 20 entities with its original relationships",
+    "Four original navigation tabs restored",
+    "Vensim and Stella source links preserve their pinned revisions",
+    "All local dependencies referenced by index.html exist",
+    "Newer review extensions removed from the active build; preserved in backup"
+  ],
+  "screenshot": "/tmp/kaibab-atlas-review/overview-restored-2026-10-08.jpg"
+}
