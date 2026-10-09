@@ -23,6 +23,7 @@
 #nav-panel:focus{outline:none}#nav-overlay[hidden]{display:none}#nav-toggle[aria-expanded="true"]{visibility:hidden}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 @media(max-width:680px){
+ .reveal .col{min-width:0;overflow-wrap:anywhere}.reveal .callout .mono{overflow-wrap:anywhere}
  body:not(.print-pdf){overflow:auto}.reveal{height:auto;min-height:100vh;overflow:visible}.reveal .slides{position:static!important;transform:none!important;zoom:1!important;width:100%!important;height:auto!important;perspective:none}
  .reveal .slides>section{position:relative!important;top:auto!important;left:auto!important;transform:none!important;width:100%;height:auto!important;min-height:100vh;padding:74px 22px 120px;box-sizing:border-box}
  .reveal .slides>section:not(.present){display:none!important}.reveal .two-col,.reveal .two-col.wide-left,.reveal .two-col.wide-right,.reveal .three-col,.reveal .four-col,.reveal .fair-grid{grid-template-columns:1fr!important;gap:18px}

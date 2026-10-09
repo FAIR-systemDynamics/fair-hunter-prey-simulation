@@ -71,3 +71,5 @@ The anonymous Betty / Research Software Finder search for `fair-hunter-prey-simu
 ## Presentation review
 
 The revised lecture retains all 52 reference slides in their original order, adds five case-study slides before the first FAIR block, and ends with six optional walkthroughs (63 total). The [content-level register](../slides/coverage.md) and [side-by-side comparison](../slides/comparison.html) record exact substitutions and reasons. The first v0.7.0 release will archive the reviewed branch commit without merging or deploying Pages.
+
+[Visual comparison of all 52 reference slides](../slides/comparison.html) · [Printable review handout](../slides/handout.pdf). The PDF is a visual copy with clickable links; use the HTML deck for text, speaker notes and browser printing.

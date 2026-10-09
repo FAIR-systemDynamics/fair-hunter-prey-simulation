@@ -34,3 +34,6 @@ _site/
 # The lecture vendors only the Reveal runtime files it uses.
 !docs/slides/vendor/reveal/dist/
 !docs/slides/vendor/reveal/dist/*
+
+# Generated local review deliverables (the distributable handout is in docs/slides).
+output/

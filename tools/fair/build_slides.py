@@ -90,6 +90,9 @@ for n,s in enumerate(slides,1):
     if s.select_one('.mapping-title'):
         inner(n,'.mapping-title',mapping()[len('<div class="mapping-title">'):-6])
 
+for n,section in enumerate(slides,1):
+    if section.select_one('a[href="https://www.rd-alliance.org/group/fair-principles-research-software-working-group"]'):
+        attribute(n,'a[href="https://www.rd-alliance.org/group/fair-principles-research-software-working-group"]','href','https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg/outputs/',F,'Replace the retired RDA URL with the official working-group output page, verified 2026-10-09.')
 # Opening: preserve title, motivation, and their visual hierarchy.
 inner(1,'.hero .subtitle','From shared science in Vensim and Stella to inspectable, citable research artifacts — in 90 minutes.')
 inner(1,'.meta',f'''<div><span class="label">Authors</span>Raphael Ginster · Matthias Papesch<br>Vasiliy Seibert<br><span class="presenter">Lecturer: Vasiliy Seibert · {a('https://orcid.org/0000-0002-7121-6816','ORCID')}</span></div><div><span class="label">Running example</span>{a(REPO,'FAIR-systemDynamics/<wbr>fair-hunter-prey-simulation')}<br>{a(CONCEPT_URL,CONCEPT,'doi-status')}</div><div><span class="label">Session</span>90 min · 57 core slides · EN<br>6 optional walkthroughs<br>Lecture: CC BY 4.0 · model evidence: CC BY-NC-SA 4.0</div>''')
@@ -174,6 +177,8 @@ col(28,1,'<h3>Every URL identifies its subject</h3>'+ul('Repository URL — curr
 # Keep the ambiguity/credit explanation and example/code split, replacing heat diffusion.
 col(29,0,'<h3>The ambiguity problem</h3>'+p('Two files name <strong>“Fraction Predators Killed per Year”</strong>. Does a value describe the scientific quantity, a model declaration, or a scenario assignment?')+ul('Scientific concept: annual predator-removal fraction, with its declared meaning and unit.','Case 1 assignment: <strong>0</strong>; Case 2 assignment: <strong>0.2</strong>.','Vensim and Stella encode those assignments in different files.',cls='')+'<h3>The credit problem</h3>'+p('A resolvable concept URI identifies the definition being reused. Cite the literature and vocabulary source rather than leaving the meaning implicit.')+'<div class="back-ref">← Lecture 3 · controlled vocabularies for data</div>',C,'Use the actual shared concept and distinguish scientific meaning from a file assignment; free text is not itself a claim of inventing a concept.')
 col(29,1,'<div class="service-chip ts">Semantic model · controlled vocabulary</div>'+shot('vocabulary.jpg','Controlled-vocabulary entry for the annual predator-removal fraction','Local vocabulary term, explicitly a review draft.')+p(a(SITE+'#workflows/term%2Ffraction-predators-killed-per-year','Open the concept')+' · '+a(SITE+'#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year','Follow its configuration binding'))+p('Case 2: '+file('models/config/scenarios/case2.cin','Vensim .cin')+' · '+file('examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv','Stella CSV'),'small'))
+append(29,'.two-col > .col:nth-child(1)', code('Vensim .cin: Fraction Predators Killed per Year = 0.2\nStella CSV:  Fraction Predators Killed per Year,0.2','Case 2 · two bindings of one concept','text')+p('The selected assignment is hashed into each run record; the inspected data keeps its implementation and case identity.','small'))
+replace_text(27,'Which version of NumPy, how constrained?','Which version of pandas, how constrained?')
 for n in (30,31,34):
     replace_text(n,'I2','R2',F,'FAIR4RS R2 covers qualified references to other software; retain the lesson at its original point in the sequence.')
     for badge in slides[n-1].select('.fair-pill.I'):badge['class']=['fair-pill','R']
@@ -247,7 +252,7 @@ replace_text(50,'Pinned dependencies with version constraints','Documented CSV m
 append(50,'.fair-grid > :nth-child(4) ul','<li>Qualified software references and tested dependency locks (R2)</li>',F,'Keep dependency evidence on the checklist under R2.')
 inner(50,'p.small','Use the '+file('docs/fair/evidence.md','FAIR4RS evidence table')+' to distinguish implemented, verified and pending items. This checklist supports assessment; it is not a certification.',F)
 attribute(51,'a[href="https://www.ing.grid"]','href','https://www.inggrid.org/',F,'Correct the journal’s destination URL.')
-inner(52,'.meta > div:nth-child(3)','<span class="label">This deck and example</span>'+a(SITE+'slides/','Hunter–prey slides (publication after merge)')+'<br>'+a(REPO,'GitHub repository')+'<br>'+a(CONCEPT_URL,CONCEPT)+'<br>'+a('https://vasiliyseibert.github.io/awesome-sim/','Original awesome-sim lecture')+'<br>CC BY 4.0 lecture; inherited model licensing')
+inner(52,'.meta > div:nth-child(3)','<span class="label">This deck and example</span>'+a('index.html','Hunter–prey slides (this preview)')+'<br>'+a(REPO,'GitHub repository')+'<br>'+a(CONCEPT_URL,CONCEPT)+'<br>'+a('https://vasiliyseibert.github.io/awesome-sim/','Original awesome-sim lecture')+'<br>CC BY 4.0 lecture; inherited model licensing')
 append(52,'.hero',p('Authors: Raphael Ginster · Matthias Papesch · Vasiliy Seibert','closing-authors'))
 
 # Five additive case-study slides and six existing, optional screenshot walkthroughs.
@@ -333,13 +338,19 @@ def localize(page,reference=False):
         elif 'cdn.jsdelivr.net/npm/reveal.js@5.1.0/' in href:link['href']=href.replace('https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/','vendor/reveal/')
     link=page.new_tag('link',rel='stylesheet',href='css/local-fonts.css');page.head.append(link)
     if not reference:
-        page.head.append(page.new_tag('link',rel='stylesheet',href='css/hunter-prey.css'))
+        page.head.append(page.new_tag('link',rel='stylesheet',href='css/hunter-prey.css?v='+hashlib.sha256((OUT/'css/hunter-prey.css').read_bytes()).hexdigest()[:12]))
         page.title.string='RDM Basics 4 · FAIR4RS · Hunter–prey'
         page.select_one('meta[name="author"]')['content']='Raphael Ginster; Matthias Papesch; Vasiliy Seibert'
     for script in list(page.select('script')):script.decompose()
     for src in ['vendor/reveal/dist/reveal.js','vendor/reveal/plugin/highlight/highlight.js','vendor/reveal/plugin/notes/notes.js','vendor/reveal/plugin/search/search.js','presentation.js']:
         page.body.append(page.new_tag('script',src=src))
     if reference:page.body['data-reference']='true'
+# Give refreshed evidence deterministic URLs so a browser cannot reuse an older capture.
+for node in soup.select('img[src],a[href]'):
+    attr='src' if node.name=='img' else 'href'
+    path=node.get(attr,'')
+    if path.startswith('assets/evidence/'):
+        node[attr]=path+'?v='+hashlib.sha256((OUT/path).read_bytes()).hexdigest()[:12]
 localize(soup)
 (OUT/'index.html').write_text(str(soup).rstrip()+'\n')
 reference_page=parsed(REFERENCE.read_text());localize(reference_page,True)
@@ -365,7 +376,7 @@ for c in coverage:md.append(f"| {c['original_slide']}: {c['original_title']} | [
 md+=['','## Additions','', 'Five labelled slides after reference slide 5: shared specification; shared use cases; artifacts/access; Case 1/2; inspection versus execution.','', 'Six optional screenshot walkthroughs follow the original closing slide.','', 'The register records wording changes, exact replaced fragments, added elements and reasons. It does not treat a topic-level match as proof of retained content.']
 (OUT/'coverage.md').write_text('\n'.join(md)+'\n')
 css='body{font:16px/1.5 Arial,sans-serif;margin:0;background:#f7f8fb;color:#0c113d}header,main{max-width:1500px;margin:auto;padding:24px}a{color:#2839cc}section{background:white;margin:22px 0;padding:24px;border:1px solid #d7dbe6}iframe{width:100%;aspect-ratio:1.6;border:1px solid #ddd}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f5f9;padding:12px;font-size:13px}summary{cursor:pointer;font-weight:bold}.change{border-left:3px solid #2839cc;padding-left:16px;margin:18px 0}.shots img{width:100%}@media(max-width:850px){.pair{grid-template-columns:1fr}}'
-html=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>52-slide fidelity comparison</title><style>'+css+'</style><header><h1>Reference lecture: 52-slide comparison</h1><p>Original order and layout families retained. Five case-study additions and six optional walkthroughs are identified separately.</p><p>'+a('index.html','Open revised presentation')+' · '+a('coverage.md','Coverage map')+' · '+a('coverage.json','Machine-readable exact changes')+'</p></header><main>']
+html=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>52-slide fidelity comparison</title><style>'+css+'</style><header><h1>Reference lecture: 52-slide comparison</h1><p>Original order and layout families retained. Five case-study additions and six optional walkthroughs are identified separately.</p><p>'+a('index.html','Open revised presentation')+' · '+a('coverage.md','Coverage map')+' · '+a('handout.pdf','Print review PDF')+' · '+a('coverage.json','Machine-readable exact changes')+'</p></header><main>']
 for c in coverage:
     n=c['original_slide'];html.append(f'<section id="reference-{n}"><h2>Reference {n} → revised {c["adapted_slide"]}: {escape(c["original_title"])}</h2><p>Layout: {escape(" ".join(c["reference_layout"]))}. General teaching content is retained except the explicitly recorded replacements below.</p><div class="pair shots"><a href="comparison/{n:02d}-reference.jpg"><img loading="lazy" src="comparison/{n:02d}-reference.jpg" alt="Reference slide {n}"></a><a href="comparison/{n:02d}-adapted.jpg"><img loading="lazy" src="comparison/{n:02d}-adapted.jpg" alt="Revised slide {c["adapted_slide"]}"></a></div><p>'+a('reference.html#/'+str(n-1),'Open original slide')+' · '+a('index.html#/'+c['adapted_id'],'Open adapted slide')+'</p>')
     html.append('<details><summary>Retained content ('+str(len(c['retained_blocks']))+' blocks)</summary>'+ul(*(escape(x) for x in c['retained_blocks']))+'</details>')

@@ -208,7 +208,7 @@ SPDX-FileCopyrightText = ["2026 Vasiliy Seibert (reference lecture)", "2022 FAIR
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = ["tools/fair/reference/case-study.json", "docs/slides/comparison.html", "docs/slides/comparison/**"]
+path = ["tools/fair/reference/case-study.json", "docs/slides/comparison.html", "docs/slides/comparison/**", "docs/slides/handout.pdf"]
 precedence = "override"
 SPDX-FileCopyrightText = ["2025 Mike Deaton and Rod MacDonald (original model)", "2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert (reimplementation and teaching)"]
 SPDX-License-Identifier = "CC-BY-NC-SA-4.0"

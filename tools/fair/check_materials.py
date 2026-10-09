@@ -41,6 +41,12 @@ def check():
     slides=ROOT/'docs/slides'
     for evidence in json.loads((slides/'sources.json').read_text())['screenshots']:
         assert hashlib.sha256((slides/evidence['file']).read_bytes()).hexdigest()==evidence['sha256'], evidence['file']
+    visual=json.loads((slides/'sources.json').read_text()).get('visual_review')
+    if visual:
+        assert hashlib.sha256((slides/'index.html').read_bytes()).hexdigest()==visual['slide_html_sha256'], 'Refresh the visual review after changing slide HTML'
+        assert hashlib.sha256((slides/'handout.pdf').read_bytes()).hexdigest()==visual['handout_sha256']
+        for name,digest in visual['comparison_sha256'].items():
+            assert hashlib.sha256((slides/'comparison'/name).read_bytes()).hexdigest()==digest, name
     soup=BeautifulSoup((slides/'index.html').read_text(),'html.parser')
     ids=[x['id'] for x in soup.select('[id]')]
     assert len(ids)==len(set(ids)), Counter(ids)

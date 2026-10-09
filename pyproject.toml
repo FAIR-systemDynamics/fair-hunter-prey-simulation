@@ -26,7 +26,7 @@ fair-hunter-prey = "fair_hunter_prey.cli:main"
 [project.urls]
 Repository = "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
 Documentation = "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/"
-Slides = "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/slides/"
+"Slides review" = "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/pull/1"
 
 [tool.setuptools.packages.find]
 where = ["src"]

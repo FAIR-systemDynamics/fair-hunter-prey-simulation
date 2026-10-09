@@ -21,3 +21,5 @@
 *.xlsx   binary
 *.png    binary
 *.jpg    binary
+# Rendered lecture review: preserve the PDF bytes.
+docs/slides/handout.pdf binary

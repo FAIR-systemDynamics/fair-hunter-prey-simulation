@@ -36,7 +36,7 @@ Source: [awesome-sim lecture](https://vasiliyseibert.github.io/awesome-sim/), re
 | 26: I2 · qualified references to other objects I2 | [31: I2 · qualified references to other objects I2](index.html#/i2) | 2 recorded substitutions | 3 |
 | 27: "Alice" vs "ORCID 0000-0001-…" I2 | [32: "Alice" vs "ORCID 0000-0001-…" I2](index.html#/qualified-references) | 1 recorded substitutions | 7 |
 | 28: awesome-sim/codemeta.json — line by line I2 | [33: codemeta.json — line by line I2](index.html#/codemeta-references) | 5 recorded substitutions | 1 |
-| 29: Controlled vocabularies eliminate ambiguity · and give credit I2 | [34: Controlled vocabularies eliminate ambiguity · and give credit I2](index.html#/controlled-vocabulary) | 2 recorded substitutions | 3 |
+| 29: Controlled vocabularies eliminate ambiguity · and give credit I2 | [34: Controlled vocabularies eliminate ambiguity · and give credit I2](index.html#/controlled-vocabulary) | 3 recorded substitutions | 3 |
 | 30: Dependencies are also qualified references I2 | [35: Dependencies are also qualified references R2](index.html#/dependencies) | 5 recorded substitutions | 5 |
 | 31: pyproject.toml · from source to installed package I2 | [36: pyproject.toml · from source to installed package R2](index.html#/packaging) | 10 recorded substitutions | 6 |
 | 32: Practical 2 · Test interoperability | [37: Practical 2 · Test interoperability](index.html#/practical2) | 0 recorded substitutions | 1 |
@@ -59,7 +59,7 @@ Source: [awesome-sim lecture](https://vasiliyseibert.github.io/awesome-sim/), re
 | 49: The R in FAIR4RS · Reusability across time | [54: The R in FAIR4RS · Reusability across time](index.html#/crate-reflection) | 3 recorded substitutions | 7 |
 | 50: The FAIR4RS checklist — one page | [55: The FAIR4RS checklist — one page](index.html#/checklist) | 6 recorded substitutions | 17 |
 | 51: The services you touched today | [56: The services you touched today](index.html#/services) | 1 recorded substitutions | 13 |
-| 52: Your repo, next week — FAIR4RS-shaped. | [57: Your repo, next week — FAIR4RS-shaped.](index.html#/discussion) | 4 recorded substitutions | 1 |
+| 52: Your repo, next week — FAIR4RS-shaped. | [57: Your repo, next week — FAIR4RS-shaped.](index.html#/discussion) | 5 recorded substitutions | 1 |
 
 ## Additions
 
