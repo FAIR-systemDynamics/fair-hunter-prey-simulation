@@ -2,7 +2,7 @@
 
 | Principle | Evidence | Status / limit |
 |---|---|---|
-| F1, F1.1, F1.2 | Repository revisions, preserved teaching tags, separate model implementations and cases | DOI setup prepared; no concept/version DOI published |
+| F1, F1.1, F1.2 | Repository revisions, preserved teaching tags, separate model implementations and cases | Published [concept DOI](https://doi.org/10.5281/zenodo.23267768) and [version DOI](https://doi.org/10.5281/zenodo.23267769); see publication.json for the archived commit |
 | F2, F3 | CITATION.cff, CodeMeta, source URLs, model metadata | Identifiers refer to actual repository objects |
 | F4 | Public GitHub metadata; discovery exercise in Betty | External indexing must be observed, not assumed |
 | A1, A1.1 | HTTPS sources, downloadable wheel/source, git installation | Native vendor workflows retain their access requirements |

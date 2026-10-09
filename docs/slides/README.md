@@ -1,6 +1,6 @@
 # FAIR4RS with Vensim and Stella
 
-This 90-minute English lecture adapts the [awesome-sim presentation](https://vasiliyseibert.github.io/awesome-sim/) to the shared Kaibab model. It contains 56 core slides and six optional screenshot walkthroughs. The first five case-study slides establish shared science, use cases, native artifacts, the two cases and open Python workflows. `coverage.json` maps every one of the 52 reference slides to its adaptation; `catalog.json` records titles, notes and sources.
+This 90-minute English lecture adapts the [awesome-sim presentation](https://vasiliyseibert.github.io/awesome-sim/) to the shared Kaibab model. It contains 57 core slides and six optional screenshot walkthroughs. The first five case-study slides establish shared science, use cases, native artifacts, the two cases and open Python workflows. `coverage.json` maps every one of the 52 reference slides to its adaptation; `catalog.json` records titles, notes and sources.
 
 Build from the repository root with `python tools/fair/build_site.py --output-dir /tmp/hunter-prey-site`, then serve that folder with `python -m http.server 8000 --directory /tmp/hunter-prey-site`. Open `/slides/`. The build replaces `__REVISION__` in teaching links with the current commit. Commit the complete change before producing a distributable preview. The existing semantic root is copied from its preservation manifest, excluding untracked local files.
 
@@ -9,3 +9,5 @@ Arrow keys / Space advance, **M** opens the agenda, **O** shows the overview, **
 The design reuses the reference's NFDI4Ing colour palette, 1280 × 800 Reveal.js canvas, IBM Plex typography, backgrounds and logo. `sources.json` records reference and screenshot provenance. The lecture and screenshots contain model-derived material under CC BY-NC-SA 4.0; code is MIT, IBM Plex fonts OFL-1.1, general guidance CC BY 4.0 and logos retain their service terms. See REUSE.toml and LICENSES.
 
 The semantic graph remains unchanged. It binds the Vensim parameter assignment; the lecture additionally traces the identical scientific concept to Stella's unchanged configuration CSV. A file-level correspondence is not falsely presented as a newly added RDF binding. New execution provenance names PySD and distinguishes native saved exports from newly computed results.
+
+The project DOI is [10.5281/zenodo.23267768](https://doi.org/10.5281/zenodo.23267768); the archived v0.7.0 DOI is [10.5281/zenodo.23267769](https://doi.org/10.5281/zenodo.23267769). The live lecture and handout contain the post-publication DOI update; the immutable software archive retains its original presentation snapshot.

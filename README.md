@@ -1,7 +1,7 @@
 # fair-hunter-prey-simulation
 
 [![FAIR teaching checks](https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/actions/workflows/fair.yml/badge.svg?branch=codex%2Ffair4rs-hunter-prey)](https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/actions/workflows/fair.yml)
-[![Zenodo: awaiting first release](docs/slides/assets/img/zenodo-status.svg)](docs/fair/release.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23267768.svg)](https://doi.org/10.5281/zenodo.23267768)
 [![Python 3.12 / 3.13](https://img.shields.io/badge/Python-3.12%20%7C%203.13-blue)](pyproject.toml)
 [![Licensing: REUSE](https://img.shields.io/badge/licensing-REUSE-green)](REUSE.toml)
 
@@ -11,7 +11,7 @@ A shared Kaibab scientific model, implemented in **Vensim** and **Stella Archite
 
 [Semantic model and vocabulary](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/) · [FAIR4RS teaching material](docs/fair/README.md) · [Review PR and Pages preview](https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/pull/1) · [52-slide adaptation register](docs/slides/coverage.md)
 
-The semantic site is live and unchanged. The revised slides are under review; `/slides/` will be published only after a future merge. The first Zenodo release requires review of its exact commit; no DOI is claimed before publication.
+The [semantic site](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/) and [slides](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/slides/) are live. Version **0.7.0** is archived on Zenodo: [version DOI 10.5281/zenodo.23267769](https://doi.org/10.5281/zenodo.23267769). The badge above identifies the project across versions; cite the version DOI for this source snapshot.
 
 ### Quick start
 
@@ -274,4 +274,4 @@ workflow are MIT and free of that restriction.**
 
 ## FAIR4RS lecture and open workflows
 
-The [teaching guide](docs/fair/README.md) adds installable examples for both preserved implementations, saved-result inspection, and RO-Crate packaging. [Presentation source](docs/slides/) is prepared for `/slides/`; the existing semantic site keeps its current address. See the [evidence and limitations](docs/fair/evidence.md) and [release checklist](docs/fair/release.md). No Zenodo release has been published by this addition.
+The [teaching guide](docs/fair/README.md) adds installable examples for both preserved implementations, saved-result inspection, and RO-Crate packaging. [Presentation source](docs/slides/) is published at `/slides/`; the semantic site retains its existing address. See the [evidence and limitations](docs/fair/evidence.md) and [release checklist](docs/fair/release.md). The source release is archived at [doi:10.5281/zenodo.23267769](https://doi.org/10.5281/zenodo.23267769).

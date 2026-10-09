@@ -1,4 +1,4 @@
-# Development snapshot: no release or DOI has been published.
+# Cite the immutable v0.7.0 archive; later documentation updates are separate.
 cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata from this file. Please also cite the original model source listed under `references`."
 title: "fair-hunter-prey-simulation: a reference repository structure, git workflow, and data-handling convention for FAIR system dynamics models"
@@ -46,7 +46,8 @@ keywords:
   - reproducibility
   - FAIR4RS
   - research software
-# Add release date and verified DOIs only after an actual deposit.
+doi: "10.5281/zenodo.23267769"
+date-released: "2026-10-09"
 references:
   - type: book
     title: "System Dynamics Learning Guide"

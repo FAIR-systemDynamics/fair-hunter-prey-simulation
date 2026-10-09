@@ -1,11 +1,11 @@
 {
   "version": "0.7.0",
-  "status": "awaiting-commit-review",
-  "webhook_status": "awaiting-organization-access",
-  "concept_doi": null,
-  "version_doi": null,
-  "release_revision": null,
-  "release_url": null,
+  "status": "published",
+  "webhook_status": "active",
+  "concept_doi": "10.5281/zenodo.23267768",
+  "version_doi": "10.5281/zenodo.23267769",
+  "release_revision": "e2e72ea61a251fead67a24fe624f47cc3e12d854",
+  "release_url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/releases/tag/v0.7.0",
   "organization_invitations": [
     {
       "login": "rginster",
@@ -16,8 +16,23 @@
     {
       "login": "mpapesch",
       "role": "owner",
-      "status": "pending",
+      "status": "accepted",
       "invitation_id": 80819431
     }
-  ]
+  ],
+  "release_tag": "v0.7.0",
+  "record_url": "https://zenodo.org/records/23267769",
+  "publication_date": "2026-10-09",
+  "verified_on": "2026-10-09",
+  "webhook_id": 694849920,
+  "webhook_event": "release",
+  "webhook_publication_response": 202,
+  "archive": {
+    "file": "FAIR-systemDynamics/fair-hunter-prey-simulation-v0.7.0.zip",
+    "bytes": 16887364,
+    "checksum": "md5:444b623d3d21d48bec1528e66db432b8",
+    "verified_files": 345,
+    "matches_release_commit": true
+  },
+  "doi_resolution_verified": true
 }

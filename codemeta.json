@@ -6,7 +6,7 @@
   "description": "Shared Kaibab scientific specification, Vensim and Stella implementations, open PySD execution and CSV inspection. Vendor applications remain proprietary. See REUSE.toml for per-file licensing.",
   "codeRepository": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
   "url": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/",
-  "identifier": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+  "identifier": "https://doi.org/10.5281/zenodo.23267769",
   "author": [
     {
       "@type": "Person",
@@ -50,5 +50,6 @@
     "Stella",
     "PySD"
   ],
-  "developmentStatus": "active"
+  "developmentStatus": "active",
+  "datePublished": "2026-10-09"
 }

@@ -18,7 +18,7 @@ fair-hunter-prey run --implementation stella --case case2 --output-dir out/stell
 fair-hunter-prey crate --run-dir out/stella-case2 --output-dir out/stella-case2-crate
 ```
 
-On Python 3.13 use `environments/teaching-py313.txt`. Constraints pin the teaching environment; `pyproject.toml` declares the public dependency contract. The build includes model resources, so an installed wheel works outside the source checkout. The slides' installation command pins the source revision embedded when the site is assembled. No PyPI publication is claimed.
+On Python 3.13 use `environments/teaching-py313.txt`. Constraints pin the teaching environment; `pyproject.toml` declares the public dependency contract. The build includes model resources, so an installed wheel works outside the source checkout. The slides' installation command pins the archived `v0.7.0` release tag. No PyPI publication is claimed.
 
 ```python
 from fair_hunter_prey import run_example, inspect_results, create_crate

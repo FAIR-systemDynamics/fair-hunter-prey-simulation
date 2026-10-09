@@ -1,0 +1,27 @@
+{
+  "checked_on": "2026-10-09",
+  "authors": [
+    {
+      "name": "Raphael Ginster",
+      "github": "https://github.com/rginster",
+      "orcid": "https://orcid.org/0000-0003-2394-7064",
+      "orcid_status": "verified",
+      "research": "Researcher at TU Braunschweig working with simulation and optimization for automotive-market transformation and circular battery production.",
+      "sources": [
+        "https://orcid.org/0000-0003-2394-7064",
+        "https://www.tu-braunschweig.de/aip/pl/team/ginster"
+      ]
+    },
+    {
+      "name": "Matthias Papesch",
+      "github": "https://github.com/mpapesch",
+      "orcid": null,
+      "orcid_status": "unconfirmed; omitted at the repository owner's request",
+      "research": "GitHub identifies the collaborator as Matthias Papesch and links to www.mpapesch.com. A same-name ORCID record has no public affiliation or linked profile to disambiguate it; it is not used as an author identifier.",
+      "sources": [
+        "https://github.com/mpapesch",
+        "https://pub.orcid.org/v3.0/search/?q=family-name:Papesch%20AND%20given-names:Matthias"
+      ]
+    }
+  ]
+}

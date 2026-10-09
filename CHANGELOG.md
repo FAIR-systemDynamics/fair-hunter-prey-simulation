@@ -4,9 +4,9 @@ This project uses [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Futu
 
 ## [Unreleased]
 
-Post-release DOI links and badges will be recorded after the first deposit is verified.
+Post-release documentation links the verified Zenodo concept and version DOIs in the slides, handout, README and citation metadata. This update does not alter the archived source.
 
-## [0.7.0] — prepared 2026-10-09 (awaiting release review)
+## [0.7.0] — 2026-10-09
 
 ### Added
 - Installable adapters for both preserved implementations and both cases, using PySD.
@@ -37,4 +37,4 @@ These tags describe repository development, not Zenodo publications:
 | v0.5-scenario | Scenario configuration |
 | v0.6-verification | Verification |
 
-Version `0.7.0` is prepared for the first archived release. Its exact branch commit must be reviewed before a tag, GitHub release or DOI is published; main and live Pages remain unchanged.
+Version `0.7.0` archives commit `e2e72ea61a251fead67a24fe624f47cc3e12d854`. [Version DOI](https://doi.org/10.5281/zenodo.23267769); [concept DOI](https://doi.org/10.5281/zenodo.23267768). DOI links were added to the live documentation after publication.
