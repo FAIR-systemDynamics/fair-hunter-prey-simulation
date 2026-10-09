@@ -4,4 +4,4 @@
 from .workflows import inspect_results, run_example, create_crate
 
 __all__ = ["run_example", "inspect_results", "create_crate"]
-__version__ = "0.7.0.dev0"
+__version__ = "0.7.0"

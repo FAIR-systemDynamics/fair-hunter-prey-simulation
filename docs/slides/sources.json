@@ -4,7 +4,9 @@
     "branch": "gh-pages",
     "revision": "e354ef2e567223ab8ba6eaac3d572d589efb5ab8",
     "theme_license": "MIT",
-    "author": "Vasiliy Seibert"
+    "author": "Vasiliy Seibert",
+    "html_sha256": "4a8f0c39ec75ebd419c8617bed14bccf612cbe3a0b879a729a7ebcb9f6323eeb",
+    "content_license": "CC-BY-4.0 (as stated by the source lecture)"
   },
   "screenshots": [
     {
@@ -79,5 +81,15 @@
       "license": "CC-BY-NC-SA-4.0",
       "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
     }
-  ]
+  ],
+  "publication": {
+    "software_version": "0.7.0",
+    "archived_software_revision": null,
+    "presentation_revision": "__REVISION__",
+    "status": "awaiting-commit-review"
+  },
+  "reference_theme_sha256": {
+    "css/nfdi4ing-theme.css": "13cf80a491c1d40a88c9d309caf7629510cb1f785116d74d8d8cdf399657f993",
+    "css/slides.css": "dbbcde2966b9cccbc377480221c49031a078ce9b776aa3f43deb8dbaa00bbc8d"
+  }
 }

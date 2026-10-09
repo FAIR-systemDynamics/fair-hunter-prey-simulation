@@ -199,3 +199,16 @@ path = ["docs/slides/vendor/fonts/**"]
 precedence = "override"
 SPDX-FileCopyrightText = "2017 IBM Corp."
 SPDX-License-Identifier = "OFL-1.1"
+
+# Reference lecture text keeps the source's explicit CC BY attribution.
+[[annotations]]
+path = ["tools/fair/reference/awesome-sim.html", "docs/slides/reference.html", "docs/slides/assets/img/fair4rs-rda-header.png"]
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Vasiliy Seibert (reference lecture)", "2022 FAIR4RS Working Group (RDA recommendation graphic)"]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["tools/fair/reference/case-study.json", "docs/slides/comparison.html", "docs/slides/comparison/**"]
+precedence = "override"
+SPDX-FileCopyrightText = ["2025 Mike Deaton and Rod MacDonald (original model)", "2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert (reimplementation and teaching)"]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"

@@ -58,12 +58,16 @@ See [FAIR evidence](evidence.md), [release preparation](release.md), [slide cove
 
 ## Three practicals
 
-1. **Discovery (10 minutes):** open [Betty Research Engine](https://software.nfdi4ing.de/), search the repository name, and inspect any returned metadata. Record an indexing gap if no exact result appears; then use the [repository](https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation), [citation record](../../CITATION.cff), [CodeMeta](../../codemeta.json), [scientific reference](https://pressbooks.lib.jmu.edu/sdlearningguide/) and [semantic model](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/). The exercise does not assume or claim an indexed result.
-2. **Interoperability (12 minutes):** run [02_interoperability.ipynb](../../examples/fair/02_interoperability.ipynb) in the installed teaching environment. Inspect all four saved exports first, then execute both implementations and both cases through PySD.
-3. **Reuse (12 minutes):** run [03_ro_crate.ipynb](../../examples/fair/03_ro_crate.ipynb). Inspect hashes and provenance, then use the crate's `reproduce.py` in a compatible environment. Select either implementation and case before executing the notebook.
+1. **Discovery (12 minutes):** open [Betty Research Engine](https://software.nfdi4ing.de/), search the repository name, and inspect any returned metadata. Record an indexing gap if no exact result appears; then use the [repository](https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation), [citation record](../../CITATION.cff), [CodeMeta](../../codemeta.json), [scientific reference](https://pressbooks.lib.jmu.edu/sdlearningguide/) and [semantic model](https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/). The exercise does not assume or claim an indexed result.
+2. **Interoperability (14 minutes):** run [02_interoperability.ipynb](../../examples/fair/02_interoperability.ipynb) in the installed teaching environment. Inspect all four saved exports first, then execute both implementations and both cases through PySD.
+3. **Reuse (14 minutes):** run [03_ro_crate.ipynb](../../examples/fair/03_ro_crate.ipynb). Inspect hashes and provenance, then use the crate's `reproduce.py` in a compatible environment. Select either implementation and case before executing the notebook.
 
 For automated notebook verification, run `python tools/fair/execute_notebooks.py --output-dir out/executed-notebooks`. It explicitly selects the current Python interpreter as the kernel and writes executed notebooks to the new output folder. The source notebooks and scientific artifacts stay unchanged.
 
 ### Observed discovery status (2026-10-09)
 
 The anonymous Betty / Research Software Finder search for `fair-hunter-prey-simulation` returned “No repositories found for your search” and offered GitHub sign-in for broader results. This is an observed gap in that anonymous search, not proof of absence from GitHub or every search source. Authenticated GitHub enrichment was not tested. The direct repository and metadata links above remain available. The [official service description](https://nfdi4ing.de/brse/) explains its federated sources and access requirements.
+
+## Presentation review
+
+The revised lecture retains all 52 reference slides in their original order, adds five case-study slides before the first FAIR block, and ends with six optional walkthroughs (63 total). The [content-level register](../slides/coverage.md) and [side-by-side comparison](../slides/comparison.html) record exact substitutions and reasons. The first v0.7.0 release will archive the reviewed branch commit without merging or deploying Pages.

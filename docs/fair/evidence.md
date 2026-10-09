@@ -13,7 +13,7 @@
 | R1 | README, workflows, sources, runnable notebooks | Inspection and execution are separate activities |
 | R1.1 | LICENSES and REUSE mappings | Vendor licenses are separate; model-derived content retains NC-SA |
 | R1.2 | Git history, changelog, source manifests, execution records | Reconstructed native provenance is not newly observed execution |
-| R2 | PySD and dependency versions, environment constraints | Ranges are not a complete locked environment |
+| R2 | PySD and dependency versions, environment constraints | Separate tested locks cover Python 3.12 and 3.13; ranges alone would not lock transitive dependencies |
 | R3 | Packaging, tests, reference comparisons, CFF/CodeMeta, RO-Crate | FAIR is an evidence-based assessment, not a certification badge |
 
 The native simulation applications remain proprietary. Open artifacts and metadata improve reuse without claiming to change vendor licensing. An RO-Crate records what it contains; it does not guarantee future executability or recreate a missing vendor runtime.

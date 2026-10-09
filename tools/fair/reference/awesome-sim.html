@@ -1,0 +1,1838 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RDM Basics 4 · Research Software (FAIR4RS) — NFDI4ING</title>
+  <meta name="description" content="Lecture 4 of the NFDI4ING RDM Basics series: Research Software &amp; FAIR4RS. Slides by Vasiliy Seibert, TU Clausthal.">
+  <meta name="author" content="Vasiliy Seibert">
+  <meta property="og:title" content="RDM Basics 4 · Research Software (FAIR4RS)">
+  <meta property="og:description" content="FAIR4RS in concrete artefacts: Zenodo DOIs, Software Heritage, CITATION.cff, codemeta.json, SPDX, ORCID.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;circle cx='16' cy='16' r='14' fill='%232839CC'/&gt;&lt;/svg&gt;">
+
+  <!-- Reveal.js 5.x from CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css" id="highlight-theme">
+
+  <!-- KaTeX for maths -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+  <!-- Theme (version-tagged to beat the GH Pages / browser cache) -->
+  <link rel="stylesheet" href="css/nfdi4ing-theme.css?v=4">
+  <link rel="stylesheet" href="css/slides.css?v=4">
+
+  <!-- Baseline styles for the nav overlay.
+       Placed inline so the panel is hidden off-screen even before the
+       main theme CSS has loaded (prevents an unstyled block flashing
+       at the top of the page on cold load or stale cache). -->
+  <style>
+    #nav-toggle { position: fixed; top: 18px; right: 18px; z-index: 200;
+      width: 42px; height: 42px; background: #0C113D; color: #fff;
+      border: none; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; }
+    #nav-toggle svg { width: 20px; height: 20px; }
+    #nav-overlay { position: fixed; inset: 0; z-index: 190;
+      background: rgba(12,17,61,.7); opacity: 0; pointer-events: none;
+      transition: opacity .2s ease; }
+    #nav-overlay.open { opacity: 1; pointer-events: auto; }
+    #nav-panel { position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(620px, 100vw); background: #fff; z-index: 195;
+      overflow-y: auto; transform: translateX(100%);
+      transition: transform .25s ease; }
+    #nav-panel.open { transform: translateX(0); }
+  </style>
+</head>
+<body>
+
+<!-- Navigation toggle + overlay. Baseline off-screen styling lives in
+     the <style> block in <head> so the panel stays hidden even before
+     the theme CSS has loaded. -->
+<button id="nav-toggle" aria-label="Open agenda menu (press M)" title="Agenda (M)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+    <line x1="4" y1="7"  x2="20" y2="7"/>
+    <line x1="4" y1="12" x2="20" y2="12"/>
+    <line x1="4" y1="17" x2="20" y2="17"/>
+  </svg>
+</button>
+<div id="nav-overlay" aria-hidden="true"></div>
+<aside id="nav-panel" role="dialog" aria-label="Agenda" aria-hidden="true">
+  <div class="nav-head">
+    <div class="logo" aria-hidden="true"></div>
+    <div class="title">RDM Basics 4 · Agenda</div>
+    <button class="nav-close" aria-label="Close menu">×</button>
+  </div>
+  <div class="nav-groups"></div>
+  <div class="nav-tip">
+    <kbd>M</kbd> toggle menu · <kbd>Esc</kbd> close · <kbd>O</kbd> Reveal overview · <kbd>?</kbd> help
+  </div>
+</aside>
+
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ===================================================================
+         BLOCK 0 · OPENING (title + recap + agenda + software-vs-data + FAIR4RS)
+         =================================================================== -->
+
+    <!-- 0.1 · TITLE -->
+    <section class="title-slide">
+      <div class="top-row">
+        <div class="n4i-wordmark">NFDI4ING</div>
+        <div>RDM Basics for Engineers · Lecture <strong>4 / 4</strong></div>
+      </div>
+      <div class="hero">
+        <span class="kicker">FAIR4RS</span>
+        <h1>Research Software<br>that others can find, trust and&nbsp;run.</h1>
+        <div class="subtitle">From a GitHub tag to a Zenodo DOI to a citable, reusable artefact — in 90&nbsp;minutes.</div>
+      </div>
+      <div class="meta">
+        <div>
+          <span class="label">Lecturer</span>
+          Vasiliy Seibert<br>
+          <a href="https://orcid.org/0000-0002-7121-6816">ORCID 0000-0002-7121-6816</a>
+        </div>
+        <div>
+          <span class="label">Running example</span>
+          <a href="https://github.com/VasiliySeibert/awesome-sim">github.com/VasiliySeibert/awesome-sim</a><br>
+          <a href="https://doi.org/10.5281/zenodo.19677548">doi.org/10.5281/zenodo.19677548</a>
+        </div>
+        <div>
+          <span class="label">Session</span>
+          90&nbsp;min · ~50 slides · EN<br>
+          CC&nbsp;BY&nbsp;4.0 · NFDI4ING 2026
+        </div>
+      </div>
+    </section>
+
+    <!-- 0.2 · Where we are in the series -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Opening</span><span class="chip">0 · Recap</span></div>
+      <h1>Four lectures, one story</h1>
+      <p class="lede">This fourth lecture pivots from <em>research data</em> to <em>research software</em>. Software runs, depends, versions, breaks — it needs its own playbook.</p>
+
+      <div class="three-col mt">
+        <div class="card">
+          <h4>Lecture 1 · Motivation</h4>
+          <p>FAIR principles, the data lifecycle, why we care about DOIs and ORCIDs.</p>
+        </div>
+        <div class="card accent-y">
+          <h4>Lecture 2 · Planning in RDMO</h4>
+          <p>Writing a Software/Data Management Plan in <code>rdmo.nfdi4ing.de</code>.</p>
+        </div>
+        <div class="card accent-o">
+          <h4>Lecture 3 · Metadata</h4>
+          <p>Describing data with Metadata4Ing, RO-Crate, controlled vocabularies.</p>
+        </div>
+      </div>
+
+      <div class="callout blue mt">
+        <strong>Today (Lecture 4):</strong> the same mindset, for the <em>code</em> that produced the data. The community answer is <strong>FAIR4RS</strong> — <em>FAIR Principles for Research Software</em>.
+      </div>
+      <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>Research Software · FAIR4RS</span></div>
+    </section>
+
+    <!-- 0.3 · Agenda at a glance -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Opening</span><span class="chip">0 · Agenda</span></div>
+      <h1>Agenda · 3 × theory ↔ 3 × practical</h1>
+      <p class="lede">Theory blocks introduce a FAIR4RS letter; each is immediately followed by a hands-on practical on an NFDI4ING service.</p>
+
+      <table class="agenda">
+        <thead><tr><th>Time</th><th>Block</th><th>Format</th><th>NFDI4ING service</th><th>FAIR4RS</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">0:00–0:03</td><td>Opening &amp; recap</td><td>Theory</td><td>—</td><td>—</td></tr>
+          <tr><td class="mono">0:03–0:16</td><td><strong>Findable &amp; Accessible</strong></td><td>Theory</td><td>—</td><td><span class="fair">F1</span><span class="fair">F2</span><span class="fair">F3</span><span class="fair">F4</span><span class="fair">A1</span><span class="fair">A2</span></td></tr>
+          <tr class="practical"><td class="mono">0:16–0:30</td><td>Practical 1 · Discover porous media</td><td>Hands-on</td><td>Betty Research Engine</td><td><span class="fair">F</span><span class="fair">A</span></td></tr>
+          <tr><td class="mono">0:30–0:43</td><td><strong>Interoperable</strong></td><td>Theory</td><td>—</td><td><span class="fair">I1</span><span class="fair">I2</span></td></tr>
+          <tr class="practical"><td class="mono">0:43–0:57</td><td>Practical 2 · Test interoperability</td><td>Hands-on</td><td>Jupyter Service</td><td><span class="fair">I</span></td></tr>
+          <tr><td class="mono">0:57–1:10</td><td><strong>Reusable</strong></td><td>Theory</td><td>(back-ref RDMO SMP)</td><td><span class="fair">R1</span><span class="fair">R2</span><span class="fair">R3</span></td></tr>
+          <tr class="practical"><td class="mono">1:10–1:24</td><td>Practical 3 · Capture reusability via RO-Crate</td><td>Hands-on</td><td>Jupyter Service</td><td><span class="fair">R</span></td></tr>
+          <tr><td class="mono">1:24–1:30</td><td>Wrap-up, FAIR4RS checklist</td><td>Theory</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+      <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>90 min · ~50 slides</span></div>
+    </section>
+
+    <!-- 0.4 · Why FAIR4RS — motivation -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Opening</span><span class="chip">0 · Why FAIR4RS?</span></div>
+      <h1>Why make research software FAIR?</h1>
+
+      <img src="assets/img/fair4rs-rda-header.png" alt="FAIR Principles for Research Software (FAIR4RS Principles) — RDA Recommendation" style="max-height: 90px; margin: 0 0 18px 0;">
+
+      <div class="two-col wide-right">
+        <div class="col">
+          <p class="lede">Software runs — and once it runs, <em>people depend on it</em>. Three concrete things you gain when your code is FAIR:</p>
+          <div class="card accent-y">
+            <h4>① Citations &amp; credit</h4>
+            <p>A DOI makes your software <em>citable like a paper</em>. Every downstream study that runs your code shows up in your ORCID profile, CrossRef, Google Scholar.</p>
+          </div>
+          <div class="card accent-o mt">
+            <h4>② Reproducibility on a timescale of <em>years</em></h4>
+            <p>Pinned deps + an archived snapshot means the paper figures you generated in 2026 can still be regenerated in 2034. Reviewers, funders, and future-you all benefit.</p>
+          </div>
+          <div class="card accent-p mt">
+            <h4>③ Collaboration without email</h4>
+            <p>A stranger can <code>pip install</code> your code, run an example, and open a pull request — without asking you for a zip file. Contribution ≈ free.</p>
+          </div>
+        </div>
+        <div class="col">
+          <h3>But software isn't "just another dataset"</h3>
+          <table class="compare">
+            <thead><tr><th>Data · static</th><th>Software · dynamic</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Bytes at rest</td>
+                <td><strong>Executes</strong> — needs an environment</td>
+              </tr>
+              <tr>
+                <td>Linear snapshots</td>
+                <td><strong>Depends</strong> on other moving software</td>
+              </tr>
+              <tr>
+                <td>Immutability is a feature</td>
+                <td><strong>Versions</strong> at many granularities</td>
+              </tr>
+              <tr>
+                <td>Described by metadata, done</td>
+                <td><strong>Rots</strong> — breaks without being touched</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout blue mt">
+            Hence <strong>FAIR4RS</strong> — the RDA-endorsed re-interpretation of FAIR where every letter is rewritten for things that <em>run</em>.
+          </div>
+          <p class="small muted">Chue Hong et al., <em>FAIR Principles for Research Software</em>, RDA, 2022. <a href="https://doi.org/10.15497/RDA00068">doi.org/10.15497/RDA00068</a></p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>Why FAIR4RS</span></div>
+    </section>
+
+    <!-- 0.5 · The running example -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Opening</span><span class="chip">0 · Running example</span></div>
+      <h1>One repo, running through every slide</h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3><code>awesome-sim</code> <span class="fair-pill F">tiny</span></h3>
+          <p>A deliberately small 2D heat-diffusion simulator prepared for this lecture. Read it end-to-end in ten minutes; see every FAIR4RS artefact in one place.</p>
+          <div class="callout blue">
+            Every theory slide that introduces a FAIR4RS concept shows where it lives in this one repo — from the CI badge to the Zenodo DOI to the <code>CITATION.cff</code>.
+          </div>
+          <img src="assets/img/heat-hero.png" class="hero-img" style="max-width:55%;display:block;margin-top:14px;" alt="Heat diffusion snapshots — the awesome-sim hero image.">
+          <div class="tags mt">
+            <a href="https://github.com/VasiliySeibert/awesome-sim" class="chip-link gh">github.com/VasiliySeibert/awesome-sim</a>
+            <a href="https://doi.org/10.5281/zenodo.19677548" class="chip-link doi">10.5281/zenodo.19677548</a>
+          </div>
+        </div>
+        <div class="col">
+          <img src="assets/img/awesome-sim-readme.png" alt="Screenshot of the awesome-sim README on GitHub — CI passing, License MIT, Python 3.11+, DOI badges, and install instructions." style="width:100%;border-radius:8px;box-shadow:0 14px 40px -10px rgba(12,17,61,.35);border:1px solid var(--n4i-grey-200);">
+          <p class="small muted center mt">The repo as of <code>v1.1.0</code> — four green badges (CI, licence, Python, DOI) visible on the README itself.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>Running example</span></div>
+    </section>
+
+
+    <!-- ===================================================================
+         BLOCK 1 · FINDABLE & ACCESSIBLE (divider + 7 slides)
+         =================================================================== -->
+
+    <!-- 1.0 · Divider -->
+    <section class="divider">
+      <div class="num">01</div>
+      <h1>Findable &amp; Accessible research software</h1>
+      <div class="rule"></div>
+      <div class="lede">Making software <em>publishable</em> and <em>retrievable</em> by both humans and machines.</div>
+      <div class="fair-badges">
+        <span class="b on">F</span><span class="b on">A</span><span class="b">I</span><span class="b">R</span>
+      </div>
+    </section>
+
+    <!-- 1.0b · F1 · F1.1 · F1.2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">F1 · Principle</span></div>
+      <h1>F1 · Globally unique and persistent identifier<span class="fair-pill F">F1</span><span class="fair-pill F">F1.1</span><span class="fair-pill F">F1.2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · F1</span>
+            <q>Software is assigned a globally unique and persistent identifier.</q>
+          </div>
+          <p class="gloss">Every piece of software needs an ID that (a) no other object in the world shares, and (b) keeps resolving forever — so humans and machines can point at it without ambiguity.</p>
+          <ul class="subs">
+            <li><strong>F1.1</strong> — components at different granularities (project, release, function) each get distinct IDs.</li>
+            <li><strong>F1.2</strong> — each <em>version</em> gets its own distinct ID.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><strong>Concept DOI</strong> <code>10.5281/zenodo.19677548</code> for the project itself → <span class="fair-pill F">F1</span><span class="fair-pill F">F1.1</span></li>
+            <li><strong>Version DOIs</strong> <code>…19677552</code> (v1.1.0), <code>…19677549</code> (v1.0.0) → <span class="fair-pill F">F1.2</span></li>
+            <li>Git tags <code>v0.1.0</code>, <code>v1.0.0</code>, <code>v1.1.0</code> feed the Zenodo deposits.</li>
+            <li>Concept DOI always redirects to the latest release — the project identity is stable, the target moves with each version.</li>
+          </ul>
+          <div class="callout blue">One project · many versions · <strong>all citable forever</strong>.</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>F1 · Principle</span></div>
+    </section>
+
+    <!-- 1.1 · F1 — what a DOI actually is -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">F1 · In practice</span></div>
+      <h1>F1 · A DOI is a <em>promise</em>, not a URL<span class="fair-pill F">F1</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3>Anatomy</h3>
+          <div class="callout">
+            <span class="mono" style="font-size:1.2em">
+              doi.org&thinsp;/<span class="yellow-hl">10.5281</span>&thinsp;/<span class="yellow-hl">zenodo.19677548</span>
+            </span>
+          </div>
+          <ul>
+            <li><span class="yellow-hl mono">10.5281</span> — <strong>registrant prefix</strong> (Zenodo / DataCite)</li>
+            <li><span class="yellow-hl mono">zenodo.19677548</span> — <strong>suffix</strong>, opaque to DOI resolver</li>
+            <li><code>doi.org/…</code> — HTTP resolver, not the identity</li>
+          </ul>
+          <p class="small muted">A DOI is guaranteed to <em>resolve somewhere forever</em> — even if GitHub, the authors, or the funding all disappear.</p>
+        </div>
+        <div class="col">
+          <h3>How you get one · live demo</h3>
+          <ol>
+            <li>On <a href="https://zenodo.org/account/settings/github/">zenodo.org/account/settings/github/</a>, flip the switch next to your repository — that enables the GitHub ↔ Zenodo webhook.</li>
+            <li>Push a git tag (e.g. <code>v1.1.0</code>) and create a GitHub <strong>release</strong>.</li>
+            <li>Zenodo receives the webhook, mints a DOI, archives a zip of the commit.</li>
+          </ol>
+          <div class="tags">
+            <a href="https://zenodo.org/account/settings/github/" class="chip-link zen">zenodo.org · GitHub settings</a>
+          </div>
+          <div class="artefact mt">
+            <div class="file-head"><span>git → GitHub → Zenodo</span><span class="dots">• • •</span></div>
+            <pre><code class="language-bash">git tag -a v1.1.0 -m "Release 1.1.0"
+git push origin v1.1.0
+# → GitHub release created
+# → Zenodo deposits a snapshot
+# → DOI 10.5281/zenodo.19677552 issued</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>F1 · Persistent identifier</span></div>
+    </section>
+
+    <!-- 1.2 · F1.1 / F1.2 · concept vs version DOI -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">F1.1 / F1.2 · Granularity</span></div>
+      <h1>One project, many versions — each citable<span class="fair-pill F">F1.1</span><span class="fair-pill F">F1.2</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <h3>Two levels of DOI</h3>
+          <ul>
+            <li><strong>Concept DOI</strong> — the project across all versions; always resolves to the latest release.</li>
+            <li><strong>Version DOI</strong> — a specific snapshot; never changes.</li>
+          </ul>
+          <div class="callout blue">
+            <strong>Cite this version, not the project</strong> when reporting a computation — so the exact inputs are reproducible in 10 years.
+          </div>
+          <p class="small muted">Git tags (<code>v0.1.0</code>, <code>v1.0.0</code>, <code>v1.1.0</code>) are the local truth; Zenodo mirrors them as immutable deposits.</p>
+        </div>
+        <div class="col">
+          <h3><code>awesome-sim</code> on Zenodo, today</h3>
+          <table class="compare">
+            <thead><tr><th>Level</th><th>DOI</th><th>Resolves to</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Concept</strong></td>
+                <td class="mono"><a href="https://doi.org/10.5281/zenodo.19677548">10.5281/zenodo.19677548</a></td>
+                <td>latest release</td>
+              </tr>
+              <tr>
+                <td>v1.1.0</td>
+                <td class="mono"><a href="https://doi.org/10.5281/zenodo.19677552">10.5281/zenodo.19677552</a></td>
+                <td>snapshot, immutable</td>
+              </tr>
+              <tr>
+                <td>v1.0.0</td>
+                <td class="mono"><a href="https://doi.org/10.5281/zenodo.19677549">10.5281/zenodo.19677549</a></td>
+                <td>snapshot, immutable</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="small muted mt">Open any of the three in a new tab — all resolvable, all describing the same repo at different granularities.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>F1.1 / F1.2 · Granularity</span></div>
+    </section>
+
+    <!-- 1.2b · F2 · F3 · F4 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">F2 · F3 · F4 · Principle</span></div>
+      <h1>F2 · F3 · F4 · rich, linked, harvestable metadata<span class="fair-pill F">F2</span><span class="fair-pill F">F3</span><span class="fair-pill F">F4</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · F2 · F3 · F4</span>
+            <q><strong>F2.</strong> Software is described with rich metadata.<br>
+               <strong>F3.</strong> Metadata clearly and explicitly include the identifier of the software they describe.<br>
+               <strong>F4.</strong> Metadata are FAIR, searchable and indexable.</q>
+          </div>
+          <p class="gloss">The metadata itself must be findable (not buried in a PDF), it must link back to the software's DOI, and it must be consumable by the registries and search engines that harvest it.</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><code>CITATION.cff</code> at the repo root — GitHub reads it for the <em>Cite this repository</em> sidebar.</li>
+            <li><code>codemeta.json</code> in JSON-LD — harvested by Zenodo, OpenAIRE, Google Scholar.</li>
+            <li>Both files <strong>carry the Zenodo DOI</strong> → <span class="fair-pill F">F3</span> link in both directions.</li>
+            <li>README badges surface F1 + F2 to humans at a glance.</li>
+            <li>Zenodo mints a DataCite record automatically — <strong>F4</strong> is "done" by using Zenodo at all.</li>
+          </ul>
+          <div class="callout blue">Next slide: both files line-by-line.</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>F2 · F3 · F4 · Principle</span></div>
+    </section>
+
+    <!-- 1.3 · F2 F3 F4 — rich machine-readable metadata -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">F2 · F3 · F4 · Metadata</span></div>
+      <h1>Machines can only find what they can <em>read</em><span class="fair-pill F">F2</span><span class="fair-pill F">F3</span><span class="fair-pill F">F4</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>CITATION.cff</span><span class="dots">YAML · CFF 1.2.0</span></div>
+            <pre><code class="language-yaml">cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: awesome-sim
+version: 1.1.0
+doi: 10.5281/zenodo.19677552
+license: MIT
+authors:
+  - family-names: Seibert
+    given-names: Vasiliy
+    orcid: https://orcid.org/0000-0002-7121-6816
+    affiliation: TU Clausthal
+repository-code: https://github.com/VasiliySeibert/awesome-sim
+keywords: [heat-equation, FAIR4RS, teaching]</code></pre>
+          </div>
+          <p class="small mt"><strong>F4</strong> — GitHub reads this file and renders the sidebar's <em>"Cite this repository"</em> button.</p>
+        </div>
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>codemeta.json</span><span class="dots">JSON-LD · CodeMeta 2.0</span></div>
+            <pre><code class="language-json">{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "awesome-sim",
+  "identifier": "10.5281/zenodo.19677548",
+  "license": "https://spdx.org/licenses/MIT",
+  "author": [{
+    "@type": "Person",
+    "givenName": "Vasiliy",
+    "familyName": "Seibert",
+    "@id": "https://orcid.org/0000-0002-7121-6816"
+  }],
+  "softwareRequirements": [
+    "numpy>=1.26,<2.0", "matplotlib>=3.8"
+  ]
+}</code></pre>
+          </div>
+          <p class="small mt"><strong>F2 + F3</strong> — JSON-LD means harvesters, OpenAIRE, Zenodo and search engines consume the same file.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>F2/F3/F4 · Metadata</span></div>
+    </section>
+
+    <!-- 1.3b · A1 · A1.1 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A1 · A1.1 · Principle</span></div>
+      <h1>A1 · A1.1 · retrievable via a standardized protocol<span class="fair-pill A">A1</span><span class="fair-pill A">A1.1</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · A1 · A1.1</span>
+            <q><strong>A1.</strong> Software is retrievable by its identifier using a standardized communications protocol.<br>
+               <strong>A1.1.</strong> The protocol is open, free, and universally implementable.</q>
+          </div>
+          <p class="gloss">Given the DOI or the git URL, any human or machine must be able to fetch the code over a protocol that is publicly documented, costs nothing to implement, and has at least one open-source client.</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><code>git clone https://…</code> over HTTPS — IETF standard.</li>
+            <li><code>pip install git+&lt;url&gt;@v1.1.0</code> — open protocol + open tool.</li>
+            <li>Zenodo zip over HTTPS — same stack, no login.</li>
+            <li>Every access path above is documented, free, has multiple implementations.</li>
+            <li>No FTP-with-PDF-application, no <em>"email the author"</em>, no proprietary portal.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A1 · A1.1 · Principle</span></div>
+    </section>
+
+    <!-- 1.4 · A1 — retrieval via open protocols -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A1 · A1.1 · In practice</span></div>
+      <h1>Open, free, universally implementable<span class="fair-pill A">A1</span><span class="fair-pill A">A1.1</span></h1>
+
+      <div class="two-col wide-left mt">
+        <div class="col">
+          <p>FAIR4RS <strong>A1.1</strong> asks: <em>"Is the protocol open, free, and universally implementable?"</em> For research software, the answer is almost always <strong>HTTPS + git</strong>.</p>
+          <div class="artefact">
+            <div class="file-head"><span>retrieve awesome-sim, three ways</span><span class="dots">• • •</span></div>
+            <pre><code class="language-bash"># (a) clone — full history
+git clone https://github.com/VasiliySeibert/awesome-sim
+
+# (b) install a pinned tag — our Practical 3 path
+pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"
+
+# (c) download the Zenodo archive — no GitHub needed
+curl -LO https://zenodo.org/records/19677552/files/awesome-sim-1.1.0.zip</code></pre>
+          </div>
+        </div>
+        <div class="col">
+          <h3>The protocol matters</h3>
+          <ul>
+            <li><strong>HTTPS</strong> — an IETF standard, any device, no account.</li>
+            <li><strong>git</strong> — an open protocol with multiple interop implementations.</li>
+            <li><strong>PyPI / conda</strong> — open registries using the same stack.</li>
+          </ul>
+          <div class="callout">
+            Private FTP? Proprietary portal requiring a PDF application? <strong>Not A1.1.</strong>
+          </div>
+          <div class="backref">← Lecture 1 · DOI + ORCID</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A1 · Retrieval</span></div>
+    </section>
+
+    <!-- 1.4b · A1.2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A1.2 · Principle</span></div>
+      <h1>A1.2 · auth is a <em>feature</em>, not a gate<span class="fair-pill A">A1.2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · A1.2</span>
+            <q>The protocol allows for an authentication and authorization procedure, where necessary.</q>
+          </div>
+          <p class="gloss">Authentication is a <em>capability</em> of the protocol, to be used only when the content genuinely requires it (private review, rate-limits, contribution provenance). A public repo that <em>optionally</em> supports OAuth is still fully A-compliant.</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li>Repo is <strong>public</strong> — anyone reads or <code>pip install</code>s it without a login.</li>
+            <li>GitHub personal access tokens are available <em>if</em> you fork a private draft.</li>
+            <li>Optional OAuth via GitHub unlocks higher rate limits for automation.</li>
+            <li>In Practical 1 you'll log into the Betty Research Engine via GitHub OAuth — that's A1.2 in action at a <em>search service</em>, not the repo.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A1.2 · Principle</span></div>
+    </section>
+
+    <!-- 1.5 · A1.2 — auth where necessary -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A1.2 · In practice</span></div>
+      <h1>Authentication, where genuinely necessary<span class="fair-pill A">A1.2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3>What A1.2 is <em>not</em></h3>
+          <ul>
+            <li>It is <strong>not</strong> an excuse to hide public research behind a login.</li>
+            <li>It is <strong>not</strong> about protecting code from reviewers.</li>
+          </ul>
+          <h3>What A1.2 <em>is</em></h3>
+          <ul>
+            <li>A <strong>Personal Access Token</strong> for a private fork during peer review.</li>
+            <li><strong>OAuth</strong> (GitHub login to Zenodo, to the Betty Engine, …) — authenticated <em>access</em>, not locked content.</li>
+            <li>Rate-limit mitigation &amp; contribution provenance (who pushed what).</li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>cloning with a PAT (private review)</span><span class="dots">• • •</span></div>
+            <pre><code class="language-bash">export GITHUB_TOKEN=ghp_XXXX...
+git clone https://${GITHUB_TOKEN}@github.com/you/secret-repo
+
+# for automated CI, prefer GitHub's short-lived OIDC tokens</code></pre>
+          </div>
+          <div class="callout blue mt">
+            Practical 1 uses <strong>OAuth</strong> to log into the Betty Research Engine via GitHub — you will see A1.2 in action.
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A1.2 · Auth</span></div>
+    </section>
+
+    <!-- 1.5b · A2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A2 · Principle</span></div>
+      <h1>A2 · metadata outlives the software<span class="fair-pill A">A2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · A2</span>
+            <q>Metadata are accessible, even when the software is no longer available.</q>
+          </div>
+          <p class="gloss">Software rots. Hosts go bankrupt. Dependencies disappear. But the <em>record that the software existed</em> — who wrote it, what it did, what it depended on — must stay resolvable, so citations and reproducibility claims don't silently break.</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li>Zenodo preserves the metadata <em>plus</em> a zipped snapshot, even if the GitHub repo disappears.</li>
+            <li>Software Heritage crawls GitHub and assigns each file a <code>SWHID</code> — content-addressed forever.</li>
+            <li><code>CITATION.cff</code> and <code>codemeta.json</code> are in both archives.</li>
+            <li>The DOI keeps resolving to the Zenodo record even for a deleted repo.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A2 · Principle</span></div>
+    </section>
+
+    <!-- 1.6 · A2 — Software Heritage -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">A2 · In practice</span></div>
+      <h1>Metadata outlives the software<span class="fair-pill A">A2</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <p><strong>A2</strong>: if the software disappears, the metadata must remain resolvable forever. Two instruments do the heavy lifting.</p>
+          <div class="card accent-p mt">
+            <h4>Zenodo</h4>
+            <p>Immutable deposit of the code snapshot + its metadata record. Backed by CERN; long-term preservation policy.</p>
+          </div>
+          <div class="card accent-o mt">
+            <h4>Software Heritage</h4>
+            <p>Inria-led universal source-code archive. Already crawls all of GitHub, GitLab, PyPI, Debian, … Gives every file a <code>SWHID</code> — content-addressed forever.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>awesome-sim on Software Heritage</span><span class="dots">SWHID</span></div>
+            <pre><code class="language-text">swh:1:dir:…    ← the directory tree
+swh:1:rev:…    ← the commit
+swh:1:snp:…    ← the full repo snapshot
+
+resolves even if GitHub is gone.</code></pre>
+          </div>
+          <div class="tags mt">
+            <a href="https://archive.softwareheritage.org/" class="chip-link swh">archive.softwareheritage.org</a>
+            <a href="https://zenodo.org/" class="chip-link zen">zenodo.org</a>
+          </div>
+          <div class="callout mt">
+            A citation that includes a <strong>DOI + SWHID</strong> is the gold standard: one for people, one for content-addressed preservation.
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>A2 · Archives</span></div>
+    </section>
+
+    <!-- 1.7 · Recap -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Findable &amp; Accessible</span><span class="chip">Recap</span></div>
+      <h1>F + A · the minimum viable artefacts</h1>
+
+      <div class="three-col mt">
+        <div class="card"><h4>F · Findable</h4><p>DOI (concept + version), rich machine-readable metadata, indexed by a registry.</p></div>
+        <div class="card accent-g"><h4>A · Accessible</h4><p>HTTPS + git or a registry, auth only where strictly necessary, archive for persistence.</p></div>
+        <div class="card accent-y"><h4>Your repo today has</h4><p><code>CITATION.cff</code>, <code>codemeta.json</code>, tagged releases, one DOI per release.</p></div>
+      </div>
+
+      <div class="recap mt">
+        <h3>Bring to Practical 1</h3>
+        <ul>
+          <li>FAIR metadata is what makes search engines surface your code at rank 1, not rank 100.</li>
+          <li>Next: step into the shoes of a <em>consumer</em>. What does the <strong>Betty Research Engine</strong> actually find?</li>
+        </ul>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 1 · Findable &amp; Accessible</span><span>Recap</span></div>
+    </section>
+
+
+    <!-- ===================================================================
+         BLOCK 2 · PRACTICAL 1 · DISCOVER
+         =================================================================== -->
+
+    <!-- 2.0 · Divider -->
+    <section class="divider">
+      <div class="num">02</div>
+      <h1>Practical 1 · Discover research software</h1>
+      <div class="rule"></div>
+      <div class="lede">Experience findability from the <em>consumer</em> side — search, sort, export, inspect.</div>
+      <div class="fair-badges">
+        <span class="b on">F</span><span class="b on">A</span>
+        <span class="b">I</span><span class="b">R</span>
+      </div>
+    </section>
+
+    <!-- 2.1 · Task list -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 1 · Discover</span><span class="chip">14 min · hands-on</span></div>
+      <div class="service-chip bre"><span class="dot"></span> NFDI4ING · Betty Research Engine</div>
+      <h1>Find DuMux in 14 minutes</h1>
+
+      <ol class="task-list">
+        <li>Open the Betty Research Engine in a new tab. (<a href="https://software.nfdi4ing.de/">software.nfdi4ing.de</a>)</li>
+        <li>Log in via <strong>GitHub OAuth</strong> — notice <code>A1.2</code> in action.</li>
+        <li>Run the query <code>porous media</code>. Make sure to activate the GitHub Search</li>
+        <li>Sort the result list by <strong>citations (descending)</strong>.</li>
+        <li>Export the full result set as a <code>.json</code> file.</li>
+        <li>Within the search results, find the repository <strong>dumux/dumux</strong>. How many Citations does it have?</li>
+        <li>Click on the DuMux GitHub Repository. How is it linked to zenodo?</li>
+        <li>What does the number of citations tell you about the software repository?</li>
+      </ol>
+      <div class="slide-footer"><span class="fair">Block 2 · Practical 1</span><span>Betty Research Engine</span></div>
+    </section>
+
+    <!-- 2.2 · Reflection -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 1 · Discover</span><span class="chip">Reflection · 2 min</span></div>
+      <h1>What made DuMux findable?</h1>
+
+      <div class="callout blue mt">
+        <strong>Prompt:</strong> Which fields were required for DuMux to surface at rank 1? Which of those fields does <em>your own code</em> currently expose?
+      </div>
+
+      <div class="three-col mt">
+        <div class="card"><h4>Title &amp; authors</h4><p>From <code>CITATION.cff</code> — ORCIDs make authorship machine-resolvable.</p></div>
+        <div class="card accent-o"><h4>License &amp; version</h4><p>SPDX id + semver tag — without these, aggregators de-rank the record.</p></div>
+        <div class="card accent-p"><h4>Citation count</h4><p>Populated by CrossRef/DataCite once the DOI is minted and cited back.</p></div>
+      </div>
+
+      <div class="recap mt">
+        <h3>Takeaway</h3>
+        <ul>
+          <li>If even one of these fields is missing in your repo, a researcher using a federated engine like Betty will <em>not</em> find you.</li>
+          <li>The minimum effort is the 60 lines of YAML/JSON we saw on slide 1.3.</li>
+        </ul>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 2 · Practical 1</span><span>Reflection</span></div>
+    </section>
+
+
+    <!-- ===================================================================
+         BLOCK 3 · INTEROPERABLE (theory, 7 slides)
+         =================================================================== -->
+
+    <!-- 3.0 · Divider -->
+    <section class="divider">
+      <div class="num">03</div>
+      <h1>Interoperable research software</h1>
+      <div class="rule"></div>
+      <div class="lede">Software that <em>talks</em> to other software — open formats, qualified references, shared vocabularies.</div>
+      <div class="fair-badges">
+        <span class="b">F</span><span class="b">A</span><span class="b on">I</span><span class="b">R</span>
+      </div>
+    </section>
+
+    <!-- 3.0b · I1 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I1 · Principle</span></div>
+      <h1>I1 · read, write, exchange via community standards<span class="fair-pill I">I1</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · I1</span>
+            <q>Software reads, writes and exchanges data in a way that meets domain-relevant community standards.</q>
+          </div>
+          <p class="gloss">If two independent pieces of software want to talk, they need shared formats (HDF5, NetCDF, CSV+schema) and shared vocabularies. Where APIs are involved, they should be documented with open specs (OpenAPI, AsyncAPI).</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li>Input config: <code>pyproject.toml</code> — standardized by PEP 518 &amp; PEP 621.</li>
+            <li>In-memory data: <code>numpy.ndarray</code> — the de-facto Python scientific standard.</li>
+            <li>Output figures: matplotlib PNGs &amp; GIFs — universally readable.</li>
+            <li>Could additionally expose a REST API described by OpenAPI — the next slide sketches what that would look like.</li>
+          </ul>
+          <div class="callout blue">I1 is really a question about <em>who reads what you write</em>.</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I1 · Principle</span></div>
+    </section>
+
+    <!-- 3.1 · I1 — formats and APIs -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I1 · In practice</span></div>
+      <h1>Open formats &gt; bespoke files<span class="fair-pill I">I1</span></h1>
+
+      <table class="compare mt">
+        <thead><tr><th>Scenario</th><th>Bespoke</th><th>Interop-friendly</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Simulation output</td>
+            <td><code>results.bin</code> (custom)</td>
+            <td><code>results.h5</code> (HDF5) or <code>.nc</code> (NetCDF)</td>
+            <td>Every language has a reader; chunked &amp; self-describing.</td>
+          </tr>
+          <tr>
+            <td>Tabular data</td>
+            <td>Excel with merged cells</td>
+            <td>CSV + a data dictionary</td>
+            <td>Parseable by any tool; diff-friendly under version control.</td>
+          </tr>
+          <tr>
+            <td>Service over HTTP</td>
+            <td>Undocumented JSON endpoint</td>
+            <td>OpenAPI spec + JSON-Schema'd responses</td>
+            <td>Auto-generate clients, stubs, tests; discoverable.</td>
+          </tr>
+          <tr>
+            <td>Configuration</td>
+            <td><code>my_input.txt</code> (position-sensitive)</td>
+            <td>TOML / YAML with a JSON Schema</td>
+            <td>Validated, editable, idempotent.</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout mt">
+        <strong>I1 heuristic:</strong> <em>"If my format has a specification I can link to, and multiple implementations read it, it's interop-grade."</em>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I1 · Formats</span></div>
+    </section>
+
+    <!-- 3.2 · OpenAPI sample -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I1 · OpenAPI</span></div>
+      <h1>Example · OpenAPI beats a README<span class="fair-pill I">I1</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>openapi.yaml · excerpt</span><span class="dots">3.1.0</span></div>
+            <pre><code class="language-yaml">openapi: 3.1.0
+info: { title: awesome-sim API, version: 1.1.0 }
+paths:
+  /simulate:
+    post:
+      summary: Run a heat-diffusion simulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/SimInput' }
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/SimResult' }
+components:
+  schemas:
+    SimInput:
+      type: object
+      required: [nx, ny, alpha, dt, n_steps]
+      properties:
+        nx:      { type: integer, minimum: 8 }
+        alpha:   { type: number,  exclusiveMinimum: 0 }</code></pre>
+          </div>
+        </div>
+        <div class="col">
+          <h3>What you get for free</h3>
+          <ul>
+            <li>Auto-generated <strong>Python, R, Julia, TypeScript</strong> clients.</li>
+            <li>Swagger UI &amp; Redoc <strong>documentation</strong> out of the box.</li>
+            <li>Fuzz testing from the schema (<code>schemathesis</code>).</li>
+            <li>Clients validate requests <em>before</em> they hit your service.</li>
+          </ul>
+          <div class="callout blue mt">
+            An OpenAPI spec is itself a machine-readable, qualified reference — it's <strong>I1 + I2</strong> in a single file.
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I1 · OpenAPI</span></div>
+    </section>
+
+    <!-- 3.2b · I2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Principle</span></div>
+      <h1>I2 · qualified references to other objects<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · I2</span>
+            <q>Software includes qualified references to other objects.</q>
+          </div>
+          <p class="gloss">Every <em>external thing</em> the software mentions — an author, a licence, a dataset, an instrument, a vocabulary term — should be referenced through a resolvable identifier from a maintained authority, not a free-text string.</p>
+          <div class="callout">
+            <strong>I2 vs R2.</strong> I2 covers references to <em>anything other than software</em>. <strong>R2</strong> (later) is the twin principle for references to <em>other software</em>.
+          </div>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li>Authors: <strong>ORCID</strong> <code>0000-0002-7121-6816</code>.</li>
+            <li>Affiliation: <strong>ROR</strong> <code>ror.org/03hdw8p89</code> (TU Clausthal).</li>
+            <li>Licence: <strong>SPDX URL</strong> <code>spdx.org/licenses/MIT</code>.</li>
+            <li>Self-identity: <strong>Zenodo DOI</strong>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · Principle</span></div>
+    </section>
+
+    <!-- 3.3 · I2 — qualified references -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · In practice</span></div>
+      <h1>"Alice" vs "ORCID 0000-0001-…"<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3>Unqualified</h3>
+          <div class="artefact">
+            <div class="file-head"><span>ambiguous</span><span class="dots">❌</span></div>
+            <pre><code class="language-yaml">authors: [Alice, Bob]
+license: "MIT"
+depends_on: [numpy]</code></pre>
+          </div>
+          <ul>
+            <li><strong>Which</strong> Alice?</li>
+            <li>MIT — the variant? MIT-0? MIT with advertising clause?</li>
+            <li>Which <em>version</em> of NumPy, how constrained?</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h3>Qualified</h3>
+          <div class="artefact">
+            <div class="file-head"><span>unambiguous</span><span class="dots">✓</span></div>
+            <pre><code class="language-yaml">authors:
+  - name: Alice Beech
+    orcid: https://orcid.org/0000-0001-2345-6789
+license:
+  spdx: MIT
+  url: https://spdx.org/licenses/MIT.html
+dependencies:
+  - name: numpy
+    pypi: https://pypi.org/project/numpy/
+    version: ">=1.26,&lt;2.0"</code></pre>
+          </div>
+          <p class="small muted">Every claim now points to an external authority — ORCID, SPDX, PyPI. Machines can cross-check.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · Qualified refs</span></div>
+    </section>
+
+    <!-- 3.4 · codemeta walkthrough -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · codemeta.json</span></div>
+      <h1><code>awesome-sim/codemeta.json</code> — line by line<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col wide-left mt">
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>codemeta.json</span><span class="dots">JSON-LD</span></div>
+            <pre><code class="language-json">{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "10.5281/zenodo.19677548",
+  "codeRepository": "https://github.com/VasiliySeibert/awesome-sim",
+  "license": "https://spdx.org/licenses/MIT",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.11",
+  "author": [{
+    "@type": "Person",
+    "givenName": "Vasiliy", "familyName": "Seibert",
+    "@id": "https://orcid.org/0000-0002-7121-6816",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "TU Clausthal",
+      "@id": "https://ror.org/03hdw8p89"
+    }
+  }],
+  "softwareRequirements": [
+    "https://pypi.org/project/numpy/",
+    "https://pypi.org/project/matplotlib/"
+  ]
+}</code></pre>
+          </div>
+        </div>
+        <div class="col">
+          <h3>Every URL is a promise</h3>
+          <ul>
+            <li><strong>Zenodo DOI</strong> — object identity.</li>
+            <li><strong>SPDX</strong> — license semantics.</li>
+            <li><strong>ORCID</strong> — unambiguous author.</li>
+            <li><strong>ROR</strong> — unambiguous affiliation.</li>
+            <li><strong>PyPI</strong> — unambiguous dependency.</li>
+          </ul>
+          <div class="tags mt">
+            <a href="https://orcid.org/" class="chip-link orc">orcid.org</a>
+            <a href="https://spdx.org/licenses/" class="chip-link spdx">spdx.org</a>
+            <a href="https://ror.org/" class="chip-link gh">ror.org</a>
+          </div>
+          <div class="backref">← Lecture 3 · CodeMeta &amp; Metadata4Ing</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · codemeta.json</span></div>
+    </section>
+
+    <!-- 3.5 · Terminology service -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Vocabularies</span></div>
+      <h1>Controlled vocabularies eliminate ambiguity · and give credit<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <h3>The ambiguity problem</h3>
+          <p>Two researchers tag their code with <code>"heat diffusion"</code>:</p>
+          <ul class="small">
+            <li><strong>Physicist:</strong> the heat equation (PDE) — a mathematical model</li>
+            <li><strong>Materials engineer:</strong> thermal diffusion — a physical process in solids</li>
+          </ul>
+          <p class="small muted mt">Same two words. Different concepts. A colleague searching "heat diffusion" gets both, can't tell them apart.</p>
+
+          <h3 class="mt">The credit problem</h3>
+          <p>Free-text keywords implicitly say: <em>"I invented this concept."</em> But you didn't. <strong>Wikidata, ISO, domain ontologies</strong> already defined it carefully.</p>
+          <p class="small muted mt">A URI says: <em>"Here is the official definition from the authority. This is exactly what I mean."</em> That's honest scholarship.</p>
+
+          <div class="backref mt">← Lecture 3 · controlled vocabularies for data</div>
+        </div>
+        <div class="col">
+          <div class="service-chip term"><span class="dot"></span> Wikidata · Global terminology service</div>
+          <div class="artefact mt">
+            <div class="file-head"><span>wikidata.org · Heat equation</span><span class="dots">Q6510488</span></div>
+            <pre><code class="language-json">{
+  "label": "heat equation",
+  "id": "Q6510488",
+  "url": "https://www.wikidata.org/wiki/Q6510488",
+  "description": "parabolic partial differential equation",
+  "aliases": ["diffusion equation", "heat PDE"]
+}</code></pre>
+          </div>
+          <p class="small muted mt" style="margin-top: 12px;"><strong>Each concept gets a unique, resolvable URI.</strong> A physicist links to Q6510488 (the PDE). A materials engineer links to a different concept for thermal transport. No collision. Precise.</p>
+          <a href="https://www.wikidata.org/" class="chip-link gh">wikidata.org</a>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>Terminology Service</span></div>
+    </section>
+
+    <!-- 3.6 · pinned deps -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Pinned deps</span></div>
+      <h1>Dependencies are <em>also</em> qualified references<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <h3>Unqualified dependency</h3>
+          <div class="artefact" style="margin-top: 8px;">
+            <div class="file-head"><span>❌ ambiguous</span><span class="dots">• • •</span></div>
+            <pre><code class="language-toml">dependencies = ["numpy"]</code></pre>
+          </div>
+          <p class="small muted">"I depend on numpy." But which version? Today's? Next year's? If numpy 3.0 breaks my code and someone installs it, whose fault is it?</p>
+
+          <h3 class="mt">Qualified dependency</h3>
+          <div class="artefact" style="margin-top: 8px;">
+            <div class="file-head"><span>✓ specific</span><span class="dots">• • •</span></div>
+            <pre><code class="language-toml">dependencies = ["numpy&gt;=1.26,&lt;2.0"]</code></pre>
+          </div>
+          <p class="small muted">"I depend on numpy, specifically in this API-stable range." That's a promise. A machine can check it. A future reuser knows the constraint.</p>
+        </div>
+        <div class="col">
+          <h3>This is I2 because</h3>
+          <ol class="small">
+            <li><strong>It's a reference</strong> → Points to something external (numpy package on PyPI)</li>
+            <li><strong>It's qualified</strong> → With precise version constraints</li>
+            <li><strong>It's from a maintained authority</strong> → PyPI hosts numpy; the version numbers are real and resolvable</li>
+            <li><strong>It's machine-readable</strong> → Any packaging tool (pip, uv, poetry, hatch) understands <code>&gt;=1.26,&lt;2.0</code></li>
+          </ol>
+          <p class="small muted mt">PEP 621 is a public standard, so every tool reads it the same way. No ambiguity.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · pyproject.toml</span></div>
+    </section>
+
+    <!-- 3.7 · pyproject.toml in practice: pip install -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Distribution</span></div>
+      <h1><code>pyproject.toml</code> · from source to installed package<span class="fair-pill I">I2</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>pyproject.toml · core sections</span><span class="dots">TOML</span></div>
+            <pre><code class="language-toml">[build-system]
+requires = ["setuptools>=45"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awesome-sim"
+version = "1.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy&gt;=1.26,&lt;2.0",
+  "matplotlib&gt;=3.8",
+]</code></pre>
+          </div>
+        </div>
+        <div class="col">
+          <h3>Five steps to pip install</h3>
+          <ol class="small">
+            <li><strong>Create pyproject.toml</strong> — Define build-system, name, version, dependencies, authors, license.</li>
+            <li><strong>Organize code</strong> — Use `src/awesome_sim/` layout; package name matches imports.</li>
+            <li><strong>Add `__init__.py`</strong> — Makes the directory a Python package; export main classes/functions.</li>
+            <li><strong>Install locally</strong> — `pip install -e .` tests installability before publishing; `-e` = editable mode.</li>
+            <li><strong>Publish to PyPI</strong> (optional) — `python -m build` then `twine upload dist/*`; now anyone runs `pip install awesome-sim`.</li>
+          </ol>
+
+          <h3 class="mt">Alternative: Direct from GitHub</h3>
+          <p class="small muted">No PyPI account needed. Pin to a git tag:</p>
+          <div class="artefact" style="margin-top: 6px; margin-bottom: 8px;">
+            <pre><code class="language-bash">pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code></pre>
+          </div>
+          <p class="small muted"><strong>Trade-offs:</strong> GitHub is immediate & automatic (push tag → installable); PyPI is discoverable & cached globally. Both are I2: qualified references to a maintained repository.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · Distribution</span></div>
+    </section>
+
+    <!-- ===================================================================
+         BLOCK 4 · PRACTICAL 2 · DESCRIBE
+         =================================================================== -->
+
+    <!-- 4.0 · Divider -->
+    <section class="divider">
+      <div class="num">04</div>
+      <h1>Practical 2 · Test interoperability</h1>
+      <div class="rule"></div>
+      <div class="lede">Can you actually <em>run</em> a stranger's software — and does it break when dependencies change?</div>
+      <div class="fair-badges">
+        <span class="b">F</span><span class="b">A</span>
+        <span class="b on">I</span>
+        <span class="b">R</span>
+      </div>
+    </section>
+
+    <!-- 4.1 · Task list -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 2 · Test interoperability</span><span class="chip">14 min · hands-on</span></div>
+      <div class="service-chip jup"><span class="dot"></span> NFDI4ING · Jupyter Service</div>
+      <h1>Install, run, break, understand</h1>
+
+      <ol class="task-list">
+        <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and launch a fresh Python notebook.</li>
+        <li>Install the pinned release:<br><code>pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code> — notice this pins a specific git tag with qualified, constrained versions.</li>
+        <li>In a new cell, run the python code you see below.</li>
+        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?
+          <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 0.9em; color: #666;">
+          </div>
+        </li>
+      </ol>
+
+      <div class="artefact mt">
+        <div class="file-head"><span>notebook cell · the minimal run</span><span class="dots">Python 3.11</span></div>
+        <pre><code class="language-python">from awesome_sim import HeatDiffusion2D
+from awesome_sim.viz import plot_snapshot
+
+sim = HeatDiffusion2D(nx=200, ny=200, alpha=1e-2, dt=5e-5)
+sim.run(500)
+plot_snapshot(sim.u, "out.png", title=f"t = {sim.t:.4f}")</code></pre>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 4 · Practical 2</span><span>Jupyter Service</span></div>
+    </section>
+
+    <!-- 4.2 · Reflection -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 2 · Test interoperability</span><span class="chip">Reflection · 2 min</span></div>
+      <h1>Why I2 (qualified dependencies) matters</h1>
+
+      <div class="callout blue mt">
+        <strong>Prompt:</strong> You ran code written by someone else, in an environment you don't control. What made that possible? What would have broken it?
+      </div>
+
+      <div class="three-col mt">
+        <div class="card accent-y"><h4>Pinned versions</h4><p>The repo specifies numpy>=1.26,<2.0. That's I2: a qualified, maintained reference to another software package.</p></div>
+        <div class="card accent-o"><h4>Standard package format</h4><p>pyproject.toml is PEP 621. Every tool reads it the same way. No ambiguity.</p></div>
+        <div class="card accent-p"><h4>Open protocol</h4><p><code>pip install</code> via GitHub works everywhere. No proprietary lock-in.</p></div>
+      </div>
+      <div class="recap mt">
+        <h3>Takeaway</h3>
+        <ul><li>Interoperability is not magic. It's: standards + constraints + open protocols.</li></ul>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 4 · Practical 2</span><span>Reflection</span></div>
+    </section>
+
+
+    <!-- ===================================================================
+         BLOCK 5 · REUSABLE (theory, 7 slides)
+         =================================================================== -->
+
+    <!-- 5.0 · Divider -->
+    <section class="divider">
+      <div class="num">05</div>
+      <h1>Reusable research software</h1>
+      <div class="rule"></div>
+      <div class="lede">Understandable, modifiable, <em>sustainable</em>. The biggest block in spirit — we triage to the highest-leverage artefacts.</div>
+      <div class="fair-badges">
+        <span class="b">F</span><span class="b">A</span><span class="b">I</span><span class="b on">R</span>
+      </div>
+    </section>
+
+    <!-- 5.0b · R1 · R1.1 · R1.2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R1 · R1.1 · R1.2 · Principle</span></div>
+      <h1>R1 · R1.1 · R1.2 · describe, license, trace<span class="fair-pill R">R1</span><span class="fair-pill R">R1.1</span><span class="fair-pill R">R1.2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · R1 · R1.1 · R1.2</span>
+            <q><strong>R1.</strong> Software is described with a plurality of accurate and relevant attributes.<br>
+               <strong>R1.1.</strong> Software is given a clear and accessible license.<br>
+               <strong>R1.2.</strong> Software is associated with detailed provenance.</q>
+          </div>
+          <p class="gloss">A reuser needs enough labels to evaluate the software <em>before</em> cloning it — what it does, how it's licensed (R1.1 · machine-readable SPDX), and the story of who built it and why (R1.2 · who, when, what changed).</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><code>README.md</code> (start here), <code>docs/</code> (how it works), <code>examples/</code> (how to run) — <span class="fair-pill R">R1</span></li>
+            <li><code>LICENSE</code> file + SPDX id <code>MIT</code> → machine-readable → <span class="fair-pill R">R1.1</span></li>
+            <li><code>CHANGELOG.md</code> (Keep-a-Changelog) + semver tags → <span class="fair-pill R">R1.2</span></li>
+            <li>Conventional-commit git log gives a free curated trail.</li>
+            <li>README has an explicit <em>FAIR4RS self-audit</em> table.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R1 · R1.1 · R1.2 · Principle</span></div>
+    </section>
+
+    <!-- 5.1 · R1 · plurality of attributes -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R1 · In practice</span></div>
+      <h1>Documentation is layered<span class="fair-pill R">R1</span></h1>
+
+      <div class="four-col three-col mt">
+        <div class="card"><h4>README.md</h4><p>Start here. Install, quick-start, what this project is <em>not</em>. &lt; 2 screens.</p></div>
+        <div class="card accent-y"><h4>docs/</h4><p>How it works. Mathematical model, architecture, data formats. Static site: MkDocs, Sphinx, Quarto.</p></div>
+        <div class="card accent-o"><h4>examples/</h4><p>How to use it. Runnable notebooks or scripts reproducing headline figures.</p></div>
+      </div>
+      <div class="three-col mt">
+        <div class="card accent-p"><h4>CHANGELOG.md</h4><p>How it changed. <em>Keep-a-Changelog</em> + semver give reusers an upgrade path.</p></div>
+        <div class="card accent-g"><h4>CONTRIBUTING.md</h4><p>How to help. Even "accept issues only" is a useful signal.</p></div>
+        <div class="card"><h4>FAIR4RS.md (optional)</h4><p>An explicit self-audit — the <code>awesome-sim</code> README has this as a table.</p></div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R1 · Doc layers</span></div>
+    </section>
+
+    <!-- 5.2 · R1.1 · SPDX license -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R1.1 · License</span></div>
+      <h1>No license ≠ public domain<span class="fair-pill R">R1.1</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3>The SPDX License List</h3>
+          <ul>
+            <li><code>MIT</code>, <code>Apache-2.0</code>, <code>BSD-3-Clause</code> — permissive.</li>
+            <li><code>GPL-3.0-or-later</code>, <code>AGPL-3.0-only</code> — copyleft.</li>
+            <li><code>CC-BY-4.0</code> — for docs, <em>not</em> for code.</li>
+          </ul>
+          <p class="small muted">SPDX <strong>identifiers are strings</strong> — <em>that</em> is what lets a tool reason about compatibility automatically.</p>
+          <a href="https://spdx.org/licenses/" class="chip-link spdx">spdx.org/licenses</a>
+        </div>
+        <div class="col">
+          <table class="compare">
+            <thead><tr><th>You want…</th><th>Good default</th></tr></thead>
+            <tbody>
+              <tr><td>Max adoption</td><td><strong>MIT</strong> or Apache-2.0</td></tr>
+              <tr><td>Improvements returned</td><td><strong>GPL-3.0-or-later</strong></td></tr>
+              <tr><td>Server-side reciprocity</td><td><strong>AGPL-3.0-only</strong></td></tr>
+              <tr><td>Scientific paper figures</td><td><strong>CC-BY-4.0</strong> (data/prose, not code)</td></tr>
+            </tbody>
+          </table>
+          <div class="callout danger mt">
+            <strong>No <code>LICENSE</code> file = all rights reserved.</strong> Others legally cannot reuse it, even if the repo is public.
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R1.1 · SPDX</span></div>
+    </section>
+
+    <!-- 5.3 · R1.2 · provenance -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R1.2 · Provenance</span></div>
+      <h1>Who · what · when · why — for free<span class="fair-pill R">R1.2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>git log · awesome-sim</span><span class="dots">provenance</span></div>
+            <pre><code class="language-text">39b1aa9 docs: record Zenodo DOIs for v1.0.0 and v1.1.0
+7b3f621 chore(release): v1.1.0
+f4b9b5d docs: describe the mathematical model + hero image
+8122c2e chore: initial scaffold</code></pre>
+          </div>
+          <p class="small muted mt">Conventional-commit style turns the log itself into a changelog draft.</p>
+        </div>
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>CHANGELOG.md</span><span class="dots">Keep-a-Changelog</span></div>
+            <pre><code class="language-markdown">## [1.1.0] — 2026-04-21
+### Added
+- Hero image + mathematical model in README.
+- Energy-decay regression test.
+### Changed
+- Raised upper bound on numpy to &lt; 2.0.
+
+## [1.0.0] — 2026-04-10
+### Added
+- First public release. Zenodo DOI minted.</code></pre>
+          </div>
+          <ul class="mt">
+            <li><code>git log</code> — the raw trail.</li>
+            <li><code>CHANGELOG.md</code> — the curated story.</li>
+            <li><code>AUTHORS</code> / <code>.zenodo.json</code> — attribution persistence.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R1.2 · Provenance</span></div>
+    </section>
+
+    <!-- 5.3b · R2 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R2 · Principle</span></div>
+      <h1>R2 · qualified references to other software<span class="fair-pill R">R2</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · R2</span>
+            <q>Software includes qualified references to other software.</q>
+          </div>
+          <p class="gloss">Every dependency your code needs to compile or run must be referenced through an authoritative source — name + version range + registry — not a loose "depends on NumPy". The reference itself should resolve to the qualifying authority.</p>
+          <div class="callout">
+            <strong>R2 vs I2.</strong> I2 is about refs to <em>anything other than software</em>; R2 is specifically the software case.
+          </div>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><code>pyproject.toml</code> lists each dep with a PEP 440 version range.</li>
+            <li><code>numpy&gt;=1.26,&lt;2.0</code>, <code>matplotlib&gt;=3.8</code>, <code>pillow&gt;=10.0</code>.</li>
+            <li><code>requires-python = "&gt;=3.11"</code> pins the interpreter contract.</li>
+            <li>Authority = <strong>PyPI</strong>; every name resolves to <code>pypi.org/project/&lt;name&gt;</code>.</li>
+            <li>Practical 3 exercise: <em>delete</em> the upper numpy bound and watch reusability crack silently.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R2 · Principle</span></div>
+    </section>
+
+    <!-- 5.4 · R2 · lockfiles + containers -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R2 · In practice</span></div>
+      <h1>Pin the whole world, not just the code<span class="fair-pill R">R2</span></h1>
+
+      <div class="three-col mt">
+        <div class="card"><h4>Weakest · declare</h4><p><code>pyproject.toml</code>, <code>requirements.txt</code> with version ranges. Good enough for a tolerant reuser.</p></div>
+        <div class="card accent-y"><h4>Stronger · pin</h4><p><code>poetry.lock</code>, <code>uv.lock</code>, <code>conda env export</code> — every transitive dep at a concrete version.</p></div>
+        <div class="card accent-p"><h4>Strongest · contain</h4><p><code>Dockerfile</code> / <code>apptainer.def</code> + image pushed to GHCR. The OS, libc, CUDA, everything.</p></div>
+      </div>
+
+      <div class="artefact mt">
+        <div class="file-head"><span>Dockerfile · reuse-grade</span><span class="dots">OCI</span></div>
+        <pre><code class="language-dockerfile">FROM python:3.11-slim@sha256:abc123...   # content-addressed base
+RUN pip install --no-cache-dir \
+    "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"
+ENTRYPOINT ["python", "-m", "awesome_sim.examples.minimal"]</code></pre>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R2 · Environment</span></div>
+    </section>
+
+    <!-- 5.4b · R3 — principle explainer -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R3 · Principle</span></div>
+      <h1>R3 · meet domain-relevant community standards<span class="fair-pill R">R3</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <div class="principle-quote">
+            <span class="label">FAIR4RS · R3</span>
+            <q>Software meets domain-relevant community standards.</q>
+          </div>
+          <p class="gloss">Use the packaging, testing, documentation, and distribution conventions of your language / community. Skipping them — even with otherwise beautiful code — makes reuse needlessly hard and signals "experimental" to reviewers.</p>
+        </div>
+        <div class="col">
+          <div class="mapping-title">In <code>awesome-sim</code></div>
+          <ul class="check">
+            <li><strong>Packaging</strong>: PEP 621 <code>pyproject.toml</code> (Python community standard).</li>
+            <li><strong>Citation metadata</strong>: CFF 1.2.0, CodeMeta 2.0 (cross-community standards).</li>
+            <li><strong>Tests</strong>: <code>pytest</code> — de-facto Python testing standard.</li>
+            <li><strong>CI</strong>: GitHub Actions matrix on Python 3.11 + 3.12.</li>
+            <li><strong>Licence</strong>: SPDX-identified — the metadata standard for licences.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R3 · Principle</span></div>
+    </section>
+
+    <!-- 5.5 · R3 · community standards + CI -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">R3 · In practice</span></div>
+      <h1>Let CI answer "does it still run?"<span class="fair-pill R">R3</span></h1>
+
+      <div class="two-col mt">
+        <div class="col">
+          <h3>Distribute where your community looks</h3>
+          <ul>
+            <li><strong>PyPI</strong> / <strong>conda-forge</strong> — Python.</li>
+            <li><strong>CRAN</strong> — R.</li>
+            <li><strong>CPAN</strong>, <strong>Julia General</strong>, <strong>Rust crates.io</strong>, …</li>
+            <li>Otherwise: a <strong>tagged GitHub release</strong> + a DOI remains installable for years.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <div class="artefact">
+            <div class="file-head"><span>.github/workflows/ci.yml</span><span class="dots">smoke test</span></div>
+            <pre><code class="language-yaml">name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: { python-version: ['3.11', '3.12'] }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: ${{ matrix.python-version }} }
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - run: python examples/minimal_example.py</code></pre>
+          </div>
+          <p class="small muted mt">A green badge on the README &gt; two paragraphs of installation docs.</p>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R3 · CI</span></div>
+    </section>
+
+    <!-- 5.6 · Sustainability · RDMO SMP back-ref -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">Sustainability</span></div>
+      <h1>Write the sustainability plan <em>before</em> the code rots</h1>
+
+      <div class="two-col wide-left mt">
+        <div class="col">
+          <p>Reusability two years in is not an artefact — it's a <em>policy</em>. Who keeps the tests green? Which Python version stays supported? What triggers a new Zenodo deposit?</p>
+          <p>The community answer is the <strong>Software Management Plan (SMP)</strong> — the software cousin of the DMP we wrote in Lecture 2.</p>
+          <div class="backref">← Lecture 2 · RDMO SMP catalogue</div>
+        </div>
+        <div class="col">
+          <div class="card accent-g">
+            <h4>RDMO SMP — what it captures</h4>
+            <p><strong>Roles</strong> · maintainer, reviewer, release manager.<br>
+               <strong>Versioning</strong> · semver + cadence.<br>
+               <strong>Archival</strong> · Zenodo + Software Heritage.<br>
+               <strong>Support</strong> · issue SLA, EoL policy.<br>
+               <strong>Deprecation</strong> · how &amp; when code is retired.</p>
+          </div>
+          <a href="https://rdmo.nfdi4ing.de" class="chip-link gh">rdmo.nfdi4ing.de</a>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>Sustainability</span></div>
+    </section>
+
+    <!-- 5.7 · recap -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">Recap</span></div>
+      <h1>R · the smallest thing that could break you</h1>
+
+      <div class="recap mt">
+        <h3>Bring to Practical 3</h3>
+        <ul>
+          <li>You will install <code>awesome-sim</code> on a fresh Jupyter server and run it.</li>
+          <li>Then you'll <em>deliberately break</em> reusability (remove the upper numpy bound, delete the LICENSE) and observe what complains.</li>
+          <li>That exercise shows you what the <em>smallest</em> missing artefact in your own repo is.</li>
+        </ul>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>Recap</span></div>
+    </section>
+
+    <!-- 5.8 · RO-Crate: the whole package -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">RO-Crate · Concept</span></div>
+      <h1>RO-Crate · research object in one container<span class="fair-pill R">R</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <h3>What is an RO-Crate?</h3>
+          <p>A <strong>standardized, portable directory structure</strong> that bundles:</p>
+          <ul class="small">
+            <li><strong>Code</strong> — your source files</li>
+            <li><strong>Data</strong> — inputs, examples, outputs</li>
+            <li><strong>Metadata</strong> — authors (ORCID), license (SPDX), description</li>
+            <li><strong>Environment</strong> — dependencies, Python version, system reqs</li>
+            <li><strong>Provenance</strong> — git history, changelog, execution trace</li>
+          </ul>
+          <p class="small muted mt">All wrapped in a machine-readable manifest: <code>ro-crate-metadata.json</code> (JSON-LD).</p>
+        </div>
+        <div class="col">
+          <h3>Why you need it</h3>
+          <div class="card accent-p mt">
+            <h4>Reproducibility</h4>
+            <p>Everything needed to regenerate a figure in 2034 is in one crate. Not scattered across GitHub, Zenodo, supplementary materials, and lost emails.</p>
+          </div>
+          <div class="card accent-o mt">
+            <h4>Portability</h4>
+            <p>Execute the same crate in Jupyter, Docker, your laptop, or an HPC cluster — the metadata tells each system what it needs.</p>
+          </div>
+          <div class="card accent-y mt">
+            <h4>Preservation</h4>
+            <p>Deposit the entire crate on Zenodo or Software Heritage once. Future tools understand RO-Crate structure — your work isn't locked into one archive format.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>RO-Crate · Concept</span></div>
+    </section>
+
+    <!-- ===================================================================
+         BLOCK 6 · PRACTICAL 3 · RUN & SUSTAIN
+         =================================================================== -->
+
+    <!-- 6.0 · Divider -->
+    <section class="divider">
+      <div class="num">06</div>
+      <h1>Practical 3 · Capture reusability via RO-Crate</h1>
+      <div class="rule"></div>
+      <div class="lede">Package your entire research object — code, data, metadata, environment, provenance — for reproducibility across time and tools.</div>
+      <div class="fair-badges">
+        <span class="b">F</span><span class="b">A</span><span class="b">I</span>
+        <span class="b on">R</span>
+      </div>
+    </section>
+
+    <!-- 6.1 · Task list -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 3 · RO-Crate</span><span class="chip">14 min · hands-on</span></div>
+      <div class="service-chip jup"><span class="dot"></span> NFDI4ING · Jupyter Service</div>
+      <h1>Package awesome-sim as a Research Object</h1>
+
+      <ol class="task-list">
+        <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and open a terminal in your notebook.</li>
+        <li>Clone awesome-sim. In a Python notebook cell, run <code>pip install rocrate</code>.</li>
+        <li>Use the <code>rocrate</code> library to create a minimal RO-Crate of awesome-sim: add code directory, README.md, LICENSE, pyproject.toml, and an example output file.</li>
+        <li>Add metadata: author ORCID, license (SPDX), description. See the code example on this slide for the pattern.</li>
+        <li>Call <code>crate.write("awesome-sim-crate/")</code> to generate the RO-Crate directory. Inspect the generated <code>ro-crate-metadata.json</code> — this is what rocrate created for you.</li>
+      </ol>
+
+      <div class="callout mt">
+        <strong>Reference:</strong> <a href="https://pypi.org/project/rocrate/">rocrate on PyPI</a> — install with `pip install rocrate` and use the API to add files, authors, and metadata to your crate.
+      </div>
+      <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>RO-Crate</span></div>
+    </section>
+
+    <!-- 6.2 · Reflection -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Practical 3 · RO-Crate</span><span class="chip">Reflection · 2 min</span></div>
+      <h1>The R in FAIR4RS · Reusability across time</h1>
+
+      <div class="callout blue mt">
+        <strong>Prompt:</strong> An RO-Crate captures your code, data, metadata, and environment together. Why does this matter for the future? What could break if you <em>didn't</em> package it this way?
+      </div>
+
+      <div class="three-col mt">
+        <div class="card accent-p"><h4>Reproducibility</h4><p>RO-Crate pins the entire execution context: code version, deps, data, env. Run it identically in 2034.</p></div>
+        <div class="card accent-o"><h4>Provenance</h4><p>Metadata (author ORCID, license, citations) travels with the code. Credit is preserved.</p></div>
+        <div class="card accent-y"><h4>Portability</h4><p>Standard format, many tools understand it. Not locked into one platform or archive.</p></div>
+      </div>
+      <div class="recap mt">
+        <h3>Takeaway</h3>
+        <ul><li>R (Reusable) means: future-proofing your research. RO-Crate is the container.</li></ul>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>Reflection</span></div>
+    </section>
+
+
+    <!-- ===================================================================
+         BLOCK 7 · WRAP-UP (3 slides)
+         =================================================================== -->
+
+    <!-- 7.1 · FAIR4RS checklist -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Wrap-up</span><span class="chip">FAIR4RS · printable</span></div>
+      <h1>The FAIR4RS checklist — one page</h1>
+
+      <div class="fair-grid">
+        <div class="col F">
+          <div class="letter">F</div>
+          <h4>Findable</h4>
+          <ul>
+            <li>Concept + version DOI on Zenodo</li>
+            <li><code>CITATION.cff</code> at root</li>
+            <li><code>codemeta.json</code> JSON-LD</li>
+            <li>Indexed by at least one registry (Betty Engine, PyPI, …)</li>
+          </ul>
+        </div>
+        <div class="col A">
+          <div class="letter">A</div>
+          <h4>Accessible</h4>
+          <ul>
+            <li>Installable: <code>pip install</code> via GitHub or PyPI</li>
+            <li><code>pyproject.toml</code> with PEP 621 metadata</li>
+            <li>HTTPS + git (open protocols, no login walls)</li>
+            <li>Software Heritage + Zenodo snapshot</li>
+          </ul>
+        </div>
+        <div class="col I">
+          <div class="letter">I</div>
+          <h4>Interoperable</h4>
+          <ul>
+            <li>Open formats (HDF5, CSV, OpenAPI)</li>
+            <li>Qualified references: ORCID, SPDX, ROR, PyPI, Wikidata URIs</li>
+            <li>Pinned dependencies with version constraints</li>
+            <li>Standard package structure + standard metadata</li>
+          </ul>
+        </div>
+        <div class="col R">
+          <div class="letter">R</div>
+          <h4>Reusable</h4>
+          <ul>
+            <li><code>LICENSE</code> (SPDX id) + README + examples</li>
+            <li><code>CHANGELOG.md</code> + conventional commits + semver tags</li>
+            <li>CI green badge + RDMO Software Management Plan</li>
+            <li>RO-Crate packaging for reproducibility across time</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small muted mt center">Tick every box on <em>your</em> repo — that is how you ship FAIR4RS-compliant software.</p>
+      <div class="slide-footer"><span class="fair">Wrap-up</span><span>FAIR4RS checklist</span></div>
+    </section>
+
+    <!-- 7.2 · NFDI4ING service map -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Wrap-up</span><span class="chip">NFDI4ING services</span></div>
+      <h1>The services you touched today</h1>
+
+      <div class="three-col mt">
+        <div class="card">
+          <h4>Betty Research Engine</h4>
+          <p><em>Find</em> research artefacts by federated search across NFDI.</p>
+          <a href="https://software.nfdi4ing.de/" class="chip-link gh">software.nfdi4ing.de</a>
+        </div>
+        <div class="card accent-o">
+          <h4>Terminology Service</h4>
+          <p><em>Describe</em> with resolvable URIs for engineering concepts.</p>
+          <a href="https://terminology.nfdi4ing.de/ts/" class="chip-link gh">terminology.nfdi4ing.de</a>
+        </div>
+        <div class="card accent-p">
+          <h4>Jupyter Service</h4>
+          <p><em>Run &amp; reuse</em> any pip-installable package in a sharable notebook.</p>
+          <a href="https://jupyter.nfdi4ing.de" class="chip-link gh">jupyter.nfdi4ing.de</a>
+        </div>
+      </div>
+      <div class="three-col mt">
+        <div class="card accent-y">
+          <h4>RDMO</h4>
+          <p>Write your (Software) Management Plan before the code rots.</p>
+          <a href="https://rdmo.nfdi4ing.de" class="chip-link gh">rdmo.nfdi4ing.de</a>
+        </div>
+        <div class="card accent-g">
+          <h4>Coscine</h4>
+          <p>Project data storage with PIDs and access control (Lectures 1–2).</p>
+          <a href="https://coscine.de" class="chip-link gh">coscine.de</a>
+        </div>
+        <div class="card">
+          <h4>ing.grid</h4>
+          <p>OA journal for engineering RDM — a landing spot for this kind of work.</p>
+          <a href="https://www.ing.grid" class="chip-link gh">ing.grid</a>
+        </div>
+      </div>
+      <div class="callout blue mt">
+        <strong>Across the series:</strong> data + software, together, is reproducible research.
+      </div>
+      <div class="slide-footer"><span class="fair">Wrap-up</span><span>Service map</span></div>
+    </section>
+
+    <!-- 7.3 · Thank you + pointers -->
+    <section class="title-slide">
+      <div class="top-row">
+        <div class="n4i-wordmark">NFDI4ING · Thank you</div>
+        <div>RDM Basics 4 · End of series</div>
+      </div>
+      <div class="hero">
+        <span class="kicker">Q &amp; A</span>
+        <h1>Your repo, next week — FAIR4RS-shaped.</h1>
+        <div class="subtitle">Start with the one thing you know is missing. Ship the rest incrementally.</div>
+      </div>
+      <div class="meta">
+        <div>
+          <span class="label">Pointers</span>
+          <a href="https://www.rd-alliance.org/group/fair-principles-research-software-working-group">FAIR4RS Principles</a><br>
+          <a href="https://archive.softwareheritage.org/">Software Heritage</a><br>
+          <a href="https://spdx.org/licenses/">SPDX License List</a>
+        </div>
+        <div>
+          <span class="label">Standards</span>
+          <a href="https://citation-file-format.github.io/">CITATION.cff</a><br>
+          <a href="https://codemeta.github.io/">CodeMeta crosswalk</a><br>
+          <a href="https://orcid.org/">ORCID</a> · <a href="https://ror.org/">ROR</a>
+        </div>
+        <div>
+          <span class="label">This deck</span>
+          <a href="https://vasiliyseibert.github.io/awesome-sim/">vasiliyseibert.github.io/awesome-sim</a><br>
+          Source: <a href="https://github.com/VasiliySeibert/awesome-sim/tree/gh-pages">gh-pages branch</a><br>
+          CC&nbsp;BY&nbsp;4.0
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- Reveal.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/search/search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/math/math.js"></script>
+
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    controls: true,
+    controlsLayout: 'edges',
+    controlsBackArrows: 'faded',
+    progress: true,
+    transition: 'fade',
+    transitionSpeed: 'default',
+    backgroundTransition: 'fade',
+    width: 1280,
+    height: 800,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0,
+    pdfSeparateFragments: false,
+    plugins: [RevealHighlight, RevealNotes, RevealSearch, RevealMath.KaTeX]
+  });
+
+  // ---------- Agenda navigation overlay ----------
+  Reveal.on('ready', buildAgendaMenu);
+  Reveal.on('slidechanged', highlightCurrentInMenu);
+
+  const panel   = document.getElementById('nav-panel');
+  const overlay = document.getElementById('nav-overlay');
+  const toggle  = document.getElementById('nav-toggle');
+  const closeBtn= panel.querySelector('.nav-close');
+
+  function openMenu()  { panel.classList.add('open'); overlay.classList.add('open'); panel.setAttribute('aria-hidden','false'); highlightCurrentInMenu(); }
+  function closeMenu() { panel.classList.remove('open'); overlay.classList.remove('open'); panel.setAttribute('aria-hidden','true'); }
+  function isOpen()    { return panel.classList.contains('open'); }
+
+  toggle.addEventListener('click', () => isOpen() ? closeMenu() : openMenu());
+  overlay.addEventListener('click', closeMenu);
+  closeBtn.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest('input, textarea, [contenteditable]')) return;
+    if (e.key === 'm' || e.key === 'M') { e.preventDefault(); isOpen() ? closeMenu() : openMenu(); }
+    if (e.key === 'Escape' && isOpen()) closeMenu();
+  });
+
+  function buildAgendaMenu() {
+    const groupsEl = panel.querySelector('.nav-groups');
+    const slides = Reveal.getSlides();
+    const groups = [];
+    let current = null;
+
+    slides.forEach((s, i) => {
+      const isDivider = s.classList.contains('divider');
+      const isTitle   = s.classList.contains('title-slide');
+      const brand     = s.querySelector('.slide-header .brand')?.textContent?.trim() || '';
+      const chipRaw   = s.querySelector('.slide-header .chip')?.textContent?.trim() || '';
+      const h1node    = s.querySelector('h1');
+      const h1Text    = h1node ? h1node.textContent.replace(/\s+/g,' ').trim() : '';
+      const divNum    = s.querySelector('.divider .num')?.textContent?.trim() || '';
+      const divHead   = s.querySelector('.divider h1')?.textContent?.trim() || '';
+
+      // Start a new group on every title slide or divider
+      if (isTitle || isDivider) {
+        current = {
+          num: isTitle ? '00' : divNum,
+          name: isTitle ? 'Opening' : (divHead || 'Block'),
+          isPractical: /Practical/i.test(divHead) || /Practical/i.test(brand),
+          items: []
+        };
+        groups.push(current);
+      } else if (!current) {
+        current = { num: '00', name: 'Opening', isPractical: false, items: [] };
+        groups.push(current);
+      }
+
+      // Kind tag
+      let kind = '';
+      if (isDivider || isTitle) kind = '';
+      else if (/Principle/i.test(chipRaw))  kind = 'principle';
+      else if (/In practice/i.test(chipRaw)) kind = 'practice';
+      else if (current.isPractical)          kind = 'practical';
+
+      current.items.push({
+        index: i,
+        label: (isTitle ? 'Title · ' + h1Text : isDivider ? 'Divider · ' + divHead : h1Text || chipRaw || ('Slide ' + (i+1))),
+        kind
+      });
+    });
+
+    groupsEl.innerHTML = groups.map(g => `
+      <div class="nav-group${g.isPractical ? ' practical' : ''}">
+        <div class="group-head">
+          <span class="num">${escapeHTML(g.num)}</span>
+          <span class="name">${escapeHTML(g.name)}</span>
+        </div>
+        ${g.items.map(it => `
+          <a class="nav-slide" data-idx="${it.index}" href="#/${it.index}">
+            <span class="idx">${String(it.index+1).padStart(2,'0')}</span>
+            <span class="lbl">${escapeHTML(it.label)}</span>
+            ${it.kind ? `<span class="kind ${it.kind}">${it.kind}</span>` : ''}
+          </a>`).join('')}
+      </div>
+    `).join('');
+
+    groupsEl.querySelectorAll('.nav-slide').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const idx = Number(a.getAttribute('data-idx'));
+        Reveal.slide(idx);
+        closeMenu();
+      });
+    });
+
+    highlightCurrentInMenu();
+  }
+
+  function highlightCurrentInMenu() {
+    const idx = Reveal.getState().indexh;
+    panel.querySelectorAll('.nav-slide').forEach(a => {
+      a.classList.toggle('current', Number(a.getAttribute('data-idx')) === idx);
+    });
+    const current = panel.querySelector('.nav-slide.current');
+    if (current && isOpen()) current.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+</script>
+
+</body>
+</html>

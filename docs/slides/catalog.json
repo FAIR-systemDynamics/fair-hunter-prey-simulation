@@ -1,816 +1,506 @@
 [
   {
-    "original": 1,
     "id": "title",
-    "title": "FAIR research with proprietary simulation tools",
-    "group": "Opening",
-    "fair": "",
+    "slide": 1,
+    "title": "Research Software that others can find, trust and run.",
+    "original": 1,
     "stage": "specification",
-    "notes": "90-minute lecture. Model source: Deaton and MacDonald, System Dynamics Learning Guide (2025). Model-derived material is CC BY-NC-SA 4.0. Vendor applications remain proprietary.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
-      "https://pressbooks.lib.jmu.edu/sdlearningguide/"
-    ],
-    "kind": "cover-page"
+    "kind": "title-slide"
   },
   {
-    "original": 2,
     "id": "recap",
-    "title": "Research data and research software",
-    "group": "Opening",
-    "fair": "",
+    "slide": 2,
+    "title": "Four lectures, one story",
+    "original": 2,
     "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
-    "original": 3,
     "id": "agenda",
-    "title": "Today\u2019s route through the example",
-    "group": "Opening",
-    "fair": "",
+    "slide": 3,
+    "title": "Agenda · 3 × theory ↔ 3 × practical",
+    "original": 3,
     "stage": "specification",
-    "notes": "Optional appendix provides file-level demonstrations. Shorten appendix discussion, not the hands-on instructions, to stay within 90 minutes.",
-    "sources": [],
     "kind": "content"
   },
   {
-    "original": 4,
     "id": "why-fair",
-    "title": "What a future collaborator needs",
-    "group": "Opening",
-    "fair": "",
+    "slide": 4,
+    "title": "Why make research software FAIR?",
+    "original": 4,
     "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
+    "id": "running-example",
+    "slide": 5,
+    "title": "One repo, running through every slide",
     "original": 5,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
     "id": "shared-specification",
-    "title": "The scientific specification comes first",
-    "group": "Opening",
-    "fair": "",
+    "slide": 6,
+    "title": "Shared scientific specification",
+    "original": null,
     "stage": "specification",
-    "notes": "Tool-agnostic means shared scientific meaning. It does not imply identical serialization, software behavior or numerical trajectories.",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#overview",
-      "https://pressbooks.lib.jmu.edu/sdlearningguide/"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "shared-use-cases",
-    "title": "The same use cases, different tools",
-    "group": "Opening",
-    "fair": "",
+    "slide": 7,
+    "title": "Shared use cases, tool-specific implementations",
+    "original": null,
     "stage": "implementation",
-    "notes": "Comments and model documentation belong to the define/document workflow. Viewing exported diagrams does not require a vendor editor. Native authoring and execution use the respective vendor tools.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/models/kaibab_ecosystem_model.mdl",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/examples/stella-source/models/kaibab_ecosystem_model.stmx"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "artifacts-access",
-    "title": "A source file, a result, or a bundle?",
-    "group": "Opening",
-    "fair": "",
+    "slide": 8,
+    "title": "Tool-specific artifacts and access",
+    "original": null,
     "stage": "implementation",
-    "notes": "Do not equate a ZIP archive with an interoperable model or reproducible run. Proprietary does not always mean paid access: vendor readers/players may offer free viewing or execution with restrictions.",
-    "sources": [
-      "https://vensim.com/vensim-applications/",
-      "https://ssl.iseesystems.com/resources/help/v4/Content/08-Reference/03-Menus/File_menu.htm"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "two-cases",
-    "title": "Case 2 changes four parameters",
-    "group": "Opening",
-    "fair": "",
+    "slide": 9,
+    "title": "Case 1 and Case 2",
+    "original": null,
     "stage": "configuration",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/models/config/scenarios/case2.cin",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "open-workflows",
-    "title": "Two open Python workflows",
-    "group": "Opening",
-    "fair": "",
+    "slide": 10,
+    "title": "Open inspection and independent execution",
+    "original": null,
     "stage": "results",
-    "notes": "CSV inspection is not performed by PySD. PySD is the independent simulation route. Both are useful interoperability examples, with different evidential claims.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/pysd_integration.md",
-      "https://pysd.readthedocs.io/en/latest/"
-    ],
     "kind": "content"
   },
   {
-    "original": 6,
     "id": "findable-accessible",
-    "title": "Findable & Accessible",
-    "group": "Findable & Accessible",
-    "fair": "F \u00b7 A",
+    "slide": 11,
+    "title": "Findable & Accessible research software",
+    "original": 6,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "kind": "divider"
   },
   {
-    "original": 7,
     "id": "f1",
-    "title": "F1: identify the research object",
-    "group": "Findable & Accessible",
-    "fair": "F1 \u00b7 F1.1 \u00b7 F1.2",
+    "slide": 12,
+    "title": "F1 · Globally unique and persistent identifier F1 F1.1 F1.2",
+    "original": 7,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
-    "original": 8,
     "id": "zenodo-webhook",
-    "title": "A release can trigger a Zenodo deposit",
-    "group": "Findable & Accessible",
-    "fair": "F1",
+    "slide": 13,
+    "title": "F1 · A DOI is a promise , not a URL F1",
+    "original": 8,
     "stage": "archive",
-    "notes": "The awesome-sim reference has an active release webhook. This repository has no published DOI in this teaching addition. Do not create a release during the exercise.",
-    "sources": [
-      "https://help.zenodo.org/docs/github/enable-repository/",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/fair/release.md"
-    ],
     "kind": "content"
   },
   {
-    "original": 9,
     "id": "version-identifiers",
-    "title": "Project identity and version identity",
-    "group": "Findable & Accessible",
-    "fair": "F1.1 \u00b7 F1.2",
+    "slide": 14,
+    "title": "One project, many versions — each citable F1.1 F1.2",
+    "original": 9,
     "stage": "archive",
-    "notes": "Existing v0.1-scaffold through v0.6-verification are teaching milestones, not evidence of Zenodo deposits. No DOI values are invented.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/CHANGELOG.md"
-    ],
     "kind": "content"
   },
   {
-    "original": 10,
     "id": "metadata-principles",
-    "title": "F2\u2013F4: metadata that points to evidence",
-    "group": "Findable & Accessible",
-    "fair": "F2 \u00b7 F3 \u00b7 F4",
-    "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/CITATION.cff",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/codemeta.json"
-    ],
+    "slide": 15,
+    "title": "F2 · F3 · F4 · rich, linked, harvestable metadata F2 F3 F4",
+    "original": 10,
+    "stage": "archive",
     "kind": "content"
   },
   {
-    "original": 11,
     "id": "citation-codemeta",
-    "title": "Citation metadata and software metadata",
-    "group": "Findable & Accessible",
-    "fair": "F2 \u00b7 F3",
-    "stage": "specification",
-    "notes": "Follow the file links for complete metadata, known ORCIDs and original-model references. Development version is not a published release. Do not guess missing personal identifiers.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/CITATION.cff",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/codemeta.json"
-    ],
+    "slide": 16,
+    "title": "Machines can only find what they can read F2 F3 F4",
+    "original": 11,
+    "stage": "archive",
     "kind": "content"
   },
   {
-    "original": 12,
     "id": "access-protocols",
-    "title": "A1: retrieve the described artifact",
-    "group": "Findable & Accessible",
-    "fair": "A1 \u00b7 A1.1",
+    "slide": 17,
+    "title": "A1 · A1.1 · retrievable via a standardized protocol A1 A1.1",
+    "original": 12,
     "stage": "implementation",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
-    "original": 13,
     "id": "retrieve-install",
-    "title": "Retrieve source or install a pinned snapshot",
-    "group": "Findable & Accessible",
-    "fair": "A1 \u00b7 A1.1",
+    "slide": 18,
+    "title": "Open, free, universally implementable A1 A1.1",
+    "original": 13,
     "stage": "implementation",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/pyproject.toml"
-    ],
     "kind": "content"
   },
   {
-    "original": 14,
     "id": "authentication",
-    "title": "A1.2: authentication where needed",
-    "group": "Findable & Accessible",
-    "fair": "A1.2",
-    "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
+    "slide": 19,
+    "title": "A1.2 · auth is a feature , not a gate A1.2",
+    "original": 14,
+    "stage": "implementation",
     "kind": "content"
   },
   {
-    "original": 15,
     "id": "access-boundaries",
-    "title": "Access is different for each use case",
-    "group": "Findable & Accessible",
-    "fair": "A1.2",
+    "slide": 20,
+    "title": "Authentication, where genuinely necessary A1.2",
+    "original": 15,
     "stage": "implementation",
-    "notes": "Proprietary does not always mean paid. Vensim Model Reader and isee Player are vendor-documented free runtime options with restricted authoring. Compatibility with this snapshot was not tested in either native application.",
-    "sources": [
-      "https://vensim.com/vensim-applications/",
-      "https://www.iseesystems.com/resources/help/v4/Content/Welcome.htm",
-      "https://pysd.readthedocs.io/en/latest/"
-    ],
     "kind": "content"
   },
   {
-    "original": 16,
     "id": "persistent-metadata",
-    "title": "A2: preserve the record of the research",
-    "group": "Findable & Accessible",
-    "fair": "A2",
+    "slide": 21,
+    "title": "A2 · metadata outlives the software A2",
+    "original": 16,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
-    "original": 17,
     "id": "archives",
-    "title": "Zenodo and Software Heritage",
-    "group": "Findable & Accessible",
-    "fair": "A2",
+    "slide": 22,
+    "title": "Metadata outlives the software A2",
+    "original": 17,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://archive.softwareheritage.org/",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/fair/release.md"
-    ],
     "kind": "content"
   },
   {
-    "original": 18,
     "id": "fa-recap",
-    "title": "Findable and accessible evidence",
-    "group": "Findable & Accessible",
-    "fair": "F \u00b7 A",
+    "slide": 23,
+    "title": "F + A · the minimum viable artefacts",
+    "original": 18,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
     "kind": "content"
   },
   {
-    "original": 19,
     "id": "practical1",
-    "title": "Practical 1: discover the model",
-    "group": "Practical 1",
-    "fair": "F \u00b7 A",
-    "stage": "specification",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "slide": 24,
+    "title": "Practical 1 · Discover research software",
+    "original": 19,
+    "stage": "archive",
+    "kind": "divider"
   },
   {
-    "original": 20,
     "id": "discover",
-    "title": "Search, inspect, and follow the evidence",
-    "group": "Practical 1",
-    "fair": "F2 \u00b7 F3 \u00b7 F4",
-    "stage": "specification",
-    "notes": "10 minutes. On 2026-10-09 the anonymous exact-name search returned no repositories and offered GitHub sign-in for broader results; authenticated enrichment was not tested. Service access or ranking can change. Do not promise a hit, citation count or ranking. Saved screenshots and direct artifact links support the exercise when the service is unavailable.",
-    "sources": [
-      "https://software.nfdi4ing.de/",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
-    ],
+    "slide": 25,
+    "title": "Find the hunter–prey model in 12 minutes",
+    "original": 20,
+    "stage": "archive",
     "kind": "content"
   },
   {
-    "original": 21,
     "id": "discovery-reflection",
-    "title": "What could you identify without asking the authors?",
-    "group": "Practical 1",
-    "fair": "F \u00b7 A",
-    "stage": "specification",
-    "notes": "",
-    "sources": [],
+    "slide": 26,
+    "title": "What made the hunter–prey model findable?",
+    "original": 21,
+    "stage": "archive",
     "kind": "content"
   },
   {
-    "original": 22,
     "id": "interoperable",
-    "title": "Interoperable",
-    "group": "Interoperable",
-    "fair": "I",
+    "slide": 27,
+    "title": "Interoperable research software",
+    "original": 22,
     "stage": "results",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "kind": "divider"
   },
   {
-    "original": 23,
     "id": "i1",
-    "title": "I1: exchange data with explicit meaning",
-    "group": "Interoperable",
-    "fair": "I1",
+    "slide": 28,
+    "title": "I1 · read, write, exchange via community standards I1",
+    "original": 23,
     "stage": "results",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/scripts/vensim_csv.py",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/scripts/stella_csv.py"
-    ],
     "kind": "content"
   },
   {
-    "original": 24,
     "id": "formats",
-    "title": "\u201cCSV\u201d is not a complete data specification",
-    "group": "Interoperable",
-    "fair": "I1",
+    "slide": 29,
+    "title": "Open formats > bespoke files I1",
+    "original": 24,
     "stage": "results",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/scripts/vensim_csv.py",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/scripts/stella_csv.py"
-    ],
     "kind": "content"
   },
   {
-    "original": 25,
     "id": "api-example",
-    "title": "An explicit interface contract",
-    "group": "Interoperable",
-    "fair": "I1",
+    "slide": 30,
+    "title": "Example · OpenAPI beats a README I1",
+    "original": 25,
     "stage": "results",
-    "notes": "Retains the original OpenAPI teaching topic. This is a design sketch, not an implemented web service.",
-    "sources": [
-      "https://spec.openapis.org/oas/v3.1.0"
-    ],
     "kind": "content"
   },
   {
-    "original": 26,
     "id": "i2",
-    "title": "I2: qualified references to other objects",
-    "group": "Interoperable",
-    "fair": "I2",
+    "slide": 31,
+    "title": "I2 · qualified references to other objects I2",
+    "original": 26,
     "stage": "configuration",
-    "notes": "References to software dependencies are addressed explicitly under R2. The local semantic vocabulary remains a review draft.",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068",
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#overview"
-    ],
     "kind": "content"
   },
   {
-    "original": 27,
     "id": "qualified-references",
-    "title": "Trace a concept through both implementations",
-    "group": "Interoperable",
-    "fair": "I2",
+    "slide": 32,
+    "title": "\"Alice\" vs \"ORCID 0000-0001-…\" I2",
+    "original": 27,
     "stage": "configuration",
-    "notes": "Follow the concept link to its semantic identifier and definition. The existing semantic assignment binds the Vensim changes file. The Stella binding shown here is a file-level trace to the unchanged CSV; this lecture does not add Stella assignment triples to the protected semantic graph. New PySD outputs carry provenance for either implementation. No claim is made that the parameter itself appears as a result column.",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/term%2Ffraction-predators-killed-per-year",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/models/config/scenarios/case2.cin",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv"
-    ],
     "kind": "content"
   },
   {
-    "original": 28,
     "id": "codemeta-references",
-    "title": "Software metadata connects the artifact",
-    "group": "Interoperable",
-    "fair": "I2 \u00b7 R2",
-    "stage": "implementation",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/codemeta.json"
-    ],
-    "kind": "content"
-  },
-  {
-    "original": 29,
-    "id": "controlled-vocabulary",
-    "title": "One concept, separate declarations and assignments",
-    "group": "Interoperable",
-    "fair": "I2",
+    "slide": 33,
+    "title": "codemeta.json — line by line I2",
+    "original": 28,
     "stage": "configuration",
-    "notes": "",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/term%2Ffraction-predators-killed-per-year",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/semantic/controlled-vocabulary.ttl"
-    ],
     "kind": "content"
   },
   {
-    "original": 30,
+    "id": "controlled-vocabulary",
+    "slide": 34,
+    "title": "Controlled vocabularies eliminate ambiguity · and give credit I2",
+    "original": 29,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
     "id": "dependencies",
-    "title": "Dependency constraints and tested environments",
-    "group": "Interoperable",
-    "fair": "R2",
+    "slide": 35,
+    "title": "Dependencies are also qualified references R2",
+    "original": 30,
     "stage": "execution",
-    "notes": "Corrects the original placement: qualified references to other software belong to R2. Dependency ranges alone do not freeze transitive dependencies.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/pyproject.toml"
-    ],
     "kind": "content"
   },
   {
-    "original": 31,
     "id": "packaging",
-    "title": "Installable without reorganizing the model",
-    "group": "Interoperable",
-    "fair": "I1 \u00b7 R2",
-    "stage": "implementation",
-    "notes": "Distribution name fair-hunter-prey, import name fair_hunter_prey. Wheel and Git installation are supported; no PyPI release is claimed.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/pyproject.toml",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/setup.py"
-    ],
+    "slide": 36,
+    "title": "pyproject.toml · from source to installed package R2",
+    "original": 31,
+    "stage": "execution",
     "kind": "content"
   },
   {
-    "original": 32,
     "id": "practical2",
-    "title": "Practical 2: inspect, then execute",
-    "group": "Practical 2",
-    "fair": "I \u00b7 R",
-    "stage": "results",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "slide": 37,
+    "title": "Practical 2 · Test interoperability",
+    "original": 32,
+    "stage": "execution",
+    "kind": "divider"
   },
   {
-    "original": 33,
     "id": "inspect-run",
-    "title": "Open inspection before independent execution",
-    "group": "Practical 2",
-    "fair": "I1 \u00b7 R2",
+    "slide": 38,
+    "title": "Install, run, break, understand",
+    "original": 33,
     "stage": "execution",
-    "notes": "12 minutes, including install. Use examples/fair/02_interoperability.ipynb. The kernel must use the installed teaching environment. Run folders are unique per notebook execution.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/examples/fair/02_interoperability.ipynb"
-    ],
     "kind": "content"
   },
   {
-    "original": 34,
     "id": "interoperability-reflection",
-    "title": "What made the exchange work?",
-    "group": "Practical 2",
-    "fair": "I \u00b7 R",
-    "stage": "results",
-    "notes": "Ask participants which artifacts they could inspect without Vensim or Stella, and which information a bare CSV would have omitted.",
-    "sources": [],
+    "slide": 39,
+    "title": "Why R2 (qualified dependencies) matters",
+    "original": 34,
+    "stage": "execution",
     "kind": "content"
   },
   {
-    "original": 35,
     "id": "reusable",
-    "title": "Reusable",
-    "group": "Reusable",
-    "fair": "R",
+    "slide": 40,
+    "title": "Reusable research software",
+    "original": 35,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "kind": "divider"
   },
   {
-    "original": 36,
     "id": "r1",
-    "title": "R1: describe, license, and trace",
-    "group": "Reusable",
-    "fair": "R1 \u00b7 R1.1 \u00b7 R1.2",
+    "slide": 41,
+    "title": "R1 · R1.1 · R1.2 · describe, license, trace R1 R1.1 R1.2",
+    "original": 36,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
     "kind": "content"
   },
   {
-    "original": 37,
     "id": "documentation",
-    "title": "Documentation at each level",
-    "group": "Reusable",
-    "fair": "R1",
-    "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/fair/README.md",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/CONTRIBUTING.md"
-    ],
+    "slide": 42,
+    "title": "Documentation is layered R1",
+    "original": 37,
+    "stage": "archive",
     "kind": "content"
   },
   {
-    "original": 38,
     "id": "licenses",
-    "title": "The licenses travel with the artifacts",
-    "group": "Reusable",
-    "fair": "R1.1",
+    "slide": 43,
+    "title": "No license ≠ public domain R1.1",
+    "original": 38,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/LICENSE",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/REUSE.toml",
-      "https://spdx.org/licenses/"
-    ],
     "kind": "content"
   },
   {
-    "original": 39,
     "id": "provenance",
-    "title": "A configuration is not an execution",
-    "group": "Reusable",
-    "fair": "R1.2",
+    "slide": 44,
+    "title": "Who · what · when · why — for free R1.2",
+    "original": 39,
     "stage": "execution",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/CHANGELOG.md",
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows"
-    ],
     "kind": "content"
   },
   {
-    "original": 40,
     "id": "r2",
-    "title": "R2: references to other software",
-    "group": "Reusable",
-    "fair": "R2",
+    "slide": 45,
+    "title": "R2 · qualified references to other software R2",
+    "original": 40,
     "stage": "execution",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/pysd_integration.md"
-    ],
     "kind": "content"
   },
   {
-    "original": 41,
     "id": "environments",
-    "title": "Three levels of environment description",
-    "group": "Reusable",
-    "fair": "R2",
+    "slide": 46,
+    "title": "Pin the whole world, not just the code R2",
+    "original": 41,
     "stage": "execution",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/environments/teaching-py312.txt",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/environments/teaching-py313.txt"
-    ],
     "kind": "content"
   },
   {
-    "original": 42,
     "id": "r3",
-    "title": "R3: community standards with evidence",
-    "group": "Reusable",
-    "fair": "R3",
-    "stage": "specification",
-    "notes": "",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068"
-    ],
-    "kind": "content"
-  },
-  {
-    "original": 43,
-    "id": "ci",
-    "title": "CI protects the scientific example",
-    "group": "Reusable",
-    "fair": "R3",
+    "slide": 47,
+    "title": "R3 · meet domain-relevant community standards R3",
+    "original": 42,
     "stage": "execution",
-    "notes": "Stella model tests run in a staged tree so its configuration CSVs cannot alter the existing Vensim directory inputs. Reference tolerances are preserved.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/.github/workflows/fair.yml"
-    ],
     "kind": "content"
   },
   {
-    "original": 44,
+    "id": "ci",
+    "slide": 48,
+    "title": "Let CI answer \"does it still run?\" R3",
+    "original": 43,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
     "id": "sustainability",
-    "title": "A maintenance plan for the whole workflow",
-    "group": "Reusable",
-    "fair": "",
+    "slide": 49,
+    "title": "Write the sustainability plan before the code rots",
+    "original": 44,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/docs/fair/release.md"
-    ],
     "kind": "content"
   },
   {
-    "original": 45,
     "id": "reuse-recap",
-    "title": "What would a missing artifact prevent?",
-    "group": "Reusable",
-    "fair": "R",
+    "slide": 50,
+    "title": "R · the smallest thing that could break you",
+    "original": 45,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
     "kind": "content"
   },
   {
-    "original": 46,
     "id": "ro-crate",
-    "title": "An RO-Crate packages a research object",
-    "group": "Reusable",
-    "fair": "R1.2 \u00b7 R2",
+    "slide": 51,
+    "title": "RO-Crate · research object in one container R",
+    "original": 46,
     "stage": "archive",
-    "notes": "",
-    "sources": [
-      "https://www.researchobject.org/ro-crate/"
-    ],
     "kind": "content"
   },
   {
-    "original": 47,
     "id": "practical3",
-    "title": "Practical 3: package an actual run",
-    "group": "Practical 3",
-    "fair": "R",
+    "slide": 52,
+    "title": "Practical 3 · Capture reusability via RO-Crate",
+    "original": 47,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
-    "kind": "chapter-page"
+    "kind": "divider"
   },
   {
-    "original": 48,
     "id": "crate-exercise",
-    "title": "Package the result you actually produced",
-    "group": "Practical 3",
-    "fair": "R1.2 \u00b7 R2",
+    "slide": 53,
+    "title": "Package hunter–prey as a Research Object",
+    "original": 48,
     "stage": "archive",
-    "notes": "12 minutes. The exporter refuses changed inputs or outputs. It packages the selected case, not a vague model name.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/__REVISION__/examples/fair/03_ro_crate.ipynb"
-    ],
     "kind": "content"
   },
   {
-    "original": 49,
     "id": "crate-reflection",
-    "title": "What travels with this result?",
-    "group": "Practical 3",
-    "fair": "R",
+    "slide": 54,
+    "title": "The R in FAIR4RS · Reusability across time",
+    "original": 49,
     "stage": "archive",
-    "notes": "",
-    "sources": [],
     "kind": "content"
   },
   {
-    "original": 50,
     "id": "checklist",
-    "title": "A FAIR4RS evidence checklist",
-    "group": "Wrap-up",
-    "fair": "F \u00b7 A \u00b7 I \u00b7 R",
+    "slide": 55,
+    "title": "The FAIR4RS checklist — one page",
+    "original": 50,
     "stage": "archive",
-    "notes": "A completed checklist is an assessment aid, not a certification that every future reuse will work.",
-    "sources": [],
     "kind": "content"
   },
   {
-    "original": 51,
     "id": "services",
-    "title": "Services supporting the workflow",
-    "group": "Wrap-up",
-    "fair": "",
+    "slide": 56,
+    "title": "The services you touched today",
+    "original": 51,
     "stage": "archive",
-    "notes": "Only claim interactions that participants actually performed. Terminology service concepts and local draft terms have different authority.",
-    "sources": [
-      "https://software.nfdi4ing.de/",
-      "https://terminology.nfdi4ing.de/",
-      "https://jupyter.nfdi4ing.de/",
-      "https://rdmo.nfdi4ing.de/",
-      "https://coscine.de/",
-      "https://www.inggrid.org/"
-    ],
     "kind": "content"
   },
   {
-    "original": 52,
     "id": "discussion",
-    "title": "Shared science. Traceable implementations.",
-    "group": "Wrap-up",
-    "fair": "",
+    "slide": 57,
+    "title": "Your repo, next week — FAIR4RS-shaped.",
+    "original": 52,
     "stage": "archive",
-    "notes": "Credits: original model by Mike Deaton and Rod MacDonald; repository implementations by Raphael Ginster, Matthias Papesch and Vasiliy Seibert; lecture adaptation by Vasiliy Seibert. See source manifest and REUSE mapping.",
-    "sources": [
-      "https://doi.org/10.15497/RDA00068",
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
-    ],
-    "kind": "chapter-page"
+    "kind": "title-slide"
   },
   {
-    "original": null,
     "id": "appendix-repository",
+    "slide": 58,
     "title": "Repository evidence",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "The repository before this additive FAIR change.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "appendix-binding",
+    "slide": 59,
     "title": "A value and its configuration binding",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "The assignment, parameter and source file are distinct entities.",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "appendix-file",
+    "slide": 60,
     "title": "The original Case 2 changes file",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "Four changes, preserved exactly as the collaborators recorded them.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "appendix-workflow",
+    "slide": 61,
     "title": "From configuration to an inspected figure",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "The existing semantic workflow labels native provenance as reconstructed.",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/diagram/case2-parameter-to-figure"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "appendix-stella",
+    "slide": 62,
     "title": "Stella Architect: existing native evidence",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "Existing screenshot from the stella branch. No new native run is claimed.",
-    "sources": [
-      "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/194a8b92e963920e95393accc7d5699348864d85/docs/kaibab_ecosystem_screenshot_stella_scenario2.jpg"
-    ],
     "kind": "content"
   },
   {
-    "original": null,
     "id": "appendix-notebook",
+    "slide": 63,
     "title": "The existing inspection notebook",
-    "group": "Optional appendix",
-    "fair": "",
+    "original": null,
     "stage": "results",
-    "notes": "Saved outputs document inspection of existing CSVs, not a new simulation.",
-    "sources": [
-      "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/notebooks/inspect_results.html"
-    ],
     "kind": "content"
   }
 ]

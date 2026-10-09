@@ -27,7 +27,7 @@ def build(destination):
         count += 1
     shutil.copytree(ROOT / 'docs/slides', destination / 'slides')
     revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-    for name in ('index.html', 'catalog.json'):
+    for name in ('index.html', 'catalog.json', 'sources.json', 'comparison.html'):
         file = destination / 'slides' / name
         file.write_text(file.read_text().replace('__REVISION__', revision))
     (destination / '.nojekyll').touch()

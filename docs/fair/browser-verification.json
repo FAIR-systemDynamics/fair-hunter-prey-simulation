@@ -9,817 +9,744 @@
   "checks": {
     "desktop": [
       {
-        "bodyBottom": 498.9493713378906,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "title",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 444.7584533691406,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "recap",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 613.7089233398438,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "agenda",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 494.9298400878906,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "why-fair",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 571.09423828125,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
+        "id": "running-example",
+        "overflow": []
+      },
+      {
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "shared-specification",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 509.9437561035156,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "shared-use-cases",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 575.30517578125,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "artifacts-access",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 590.9851684570312,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "two-cases",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 491.40032958984375,
-        "brokenImages": 0,
+        "bounds": {
+          "height": 768,
+          "width": 1228.7998046875
+        },
+        "brokenImages": [],
         "id": "open-workflows",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 397.0447082519531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "findable-accessible",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 456.5184326171875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "f1",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 458.1033020019531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "zenodo-webhook",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 505.1126708984375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "version-identifiers",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 432.9984436035156,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "metadata-principles",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 508.420166015625,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "citation-codemeta",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 533.3412475585938,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "access-protocols",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 474.8245544433594,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "retrieve-install",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 394.5870361328125,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "authentication",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 568.544677734375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "access-boundaries",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 571.752685546875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "persistent-metadata",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 503.4665832519531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "archives",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 394.5870361328125,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "fa-recap",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 397.0447082519531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "practical1",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 471.4098510742187,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "discover",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 423.1907958984375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "discovery-reflection",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 397.0447082519531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "interoperable",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 571.752685546875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "i1",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 555.3070678710938,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "formats",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 561.1564331054688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "api-example",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 394.5870361328125,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "i2",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 482.4808044433594,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "qualified-references",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 444.7584533691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "codemeta-references",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 571.752685546875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "controlled-vocabulary",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 521.37451171875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "dependencies",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 571.752685546875,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "packaging",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 481.1256408691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "practical2",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 587.9839477539062,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "inspect-run",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 394.5870361328125,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "interoperability-reflection",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 397.0447082519531,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "reusable",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 406.3470458984375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "r1",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 509.9437561035156,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "documentation",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 607.1475219726562,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "licenses",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 533.3412475585938,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "provenance",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 444.7584533691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "r2",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 591.3679809570312,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "environments",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 444.7584533691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "r3",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 545.1012573242188,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "ci",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 444.7584533691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "sustainability",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 509.9437561035156,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "reuse-recap",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 506.6898498535156,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "ro-crate",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 481.1256408691406,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "practical3",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 534.0150146484375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "crate-exercise",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 483.16986083984375,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "crate-reflection",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 555.3070678710938,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "checklist",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 509.9437561035156,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "services",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 637.7112426757812,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "discussion",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-repository",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-binding",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-file",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-workflow",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-stella",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       },
       {
-        "bodyBottom": 612.3078002929688,
-        "brokenImages": 0,
+        "brokenImages": [],
         "id": "appendix-notebook",
-        "workflowTop": 672.4400024414062
+        "overflow": []
       }
     ],
     "mobile": [
       {
-        "bodyBottom": 562.8046875,
         "id": "title",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 658.4453125,
         "id": "recap",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 1071.65625,
         "id": "agenda",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 1099.15625
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 699.84375,
         "id": "why-fair",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 770.8125,
+        "id": "running-example",
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
+      },
+      {
         "id": "shared-specification",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 780.3125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 693.984375,
         "id": "shared-use-cases",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 721.484375
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 700.578125,
         "id": "artifacts-access",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 728.078125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 810.890625,
         "id": "two-cases",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 839.390625
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 816.9453125,
         "id": "open-workflows",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 826.4453125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 324.1953125,
         "id": "findable-accessible",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 693.3984375,
         "id": "f1",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 575.796875,
         "id": "zenodo-webhook",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 710.671875,
         "id": "version-identifiers",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 720.171875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 570.8125,
         "id": "metadata-principles",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 751.6875,
         "id": "citation-codemeta",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 761.1875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 699.84375,
         "id": "access-protocols",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 617.5859375,
         "id": "retrieve-install",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 629.609375,
         "id": "authentication",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 641.1875,
         "id": "access-boundaries",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 668.3515625,
         "id": "persistent-metadata",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 717.375,
         "id": "archives",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 745.875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 600.2109375,
         "id": "fa-recap",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 362.609375,
         "id": "practical1",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 688.40625,
         "id": "discover",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 697.90625,
         "id": "discovery-reflection",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 324.1953125,
         "id": "interoperable",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 667.3046875,
         "id": "i1",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 686.75,
         "id": "formats",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 715.25
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 777.953125,
         "id": "api-example",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 787.453125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 609.2265625,
         "id": "i2",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 771.4453125,
         "id": "qualified-references",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 799.9453125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 641.609375,
         "id": "codemeta-references",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 847.8359375,
         "id": "controlled-vocabulary",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 857.3359375
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 734.28125,
         "id": "dependencies",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 743.78125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 778.3515625,
         "id": "packaging",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 787.8515625
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 362.609375,
         "id": "practical2",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 721.1875,
         "id": "inspect-run",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 749.6875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 541.4140625,
         "id": "interoperability-reflection",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 324.1953125,
         "id": "reusable",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 598.6015625,
         "id": "r1",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 599.59375,
         "id": "documentation",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 760.171875,
         "id": "licenses",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 788.671875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 850.375,
         "id": "provenance",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 859.875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 641.609375,
         "id": "r2",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 818.1796875,
         "id": "environments",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 846.6796875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 621.2265625,
         "id": "r3",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 764.015625,
         "id": "ci",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 773.515625
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 680.0234375,
         "id": "sustainability",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 620.390625,
         "id": "reuse-recap",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 859.546875,
         "id": "ro-crate",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 869.046875
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 362.609375,
         "id": "practical3",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 733.578125,
         "id": "crate-exercise",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 755.078125
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 688.890625,
         "id": "crate-reflection",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 678.78125,
         "id": "checklist",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 641.1875,
         "id": "services",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 621.6953125,
         "id": "discussion",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 447.4765625,
         "id": "appendix-repository",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 508.7265625,
         "id": "appendix-binding",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 508.8359375,
         "id": "appendix-file",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 508.7265625,
         "id": "appendix-workflow",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 547.140625,
         "id": "appendix-stella",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       },
       {
-        "bodyBottom": 508.7734375,
         "id": "appendix-notebook",
-        "pageWidth": 390,
-        "width": 390,
-        "workflowTop": 713.5
+        "overflow": [],
+        "scrollWidth": 1280,
+        "width": 1280
       }
     ],
     "print": {
-      "issues": [],
-      "pages": 62
+      "pages": 63,
+      "issues": []
     },
     "semantic": [
       {
@@ -875,6 +802,15 @@
         "title": "Inspect Kaibab results with Python \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
         "rendered": true
       }
-    ]
+    ],
+    "comparison": {
+      "original": 52,
+      "adapted": 52,
+      "viewport": [
+        1280,
+        800
+      ],
+      "reference_revision": "e354ef2e567223ab8ba6eaac3d572d589efb5ab8"
+    }
   }
 }

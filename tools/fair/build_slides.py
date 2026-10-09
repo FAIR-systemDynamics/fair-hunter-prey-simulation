@@ -1,116 +1,383 @@
 # SPDX-FileCopyrightText: 2026 Vasiliy Seibert
 # SPDX-License-Identifier: MIT
-"""Author the HTML lecture and a complete map to the 52 reference topics."""
+"""Adapt the pinned 52-slide lecture in place; record every content substitution."""
 from pathlib import Path
-from html import escape as E
+from copy import deepcopy
+from html import escape
+import difflib
+import hashlib
 import json
+import re
+import tomllib
+from bs4 import BeautifulSoup, Tag
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'docs/slides'
+REFERENCE = Path(__file__).with_name('reference') / 'awesome-sim.html'
+REFERENCE_SHA = 'e354ef2e567223ab8ba6eaac3d572d589efb5ab8'
 REPO = 'https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation'
 BLOB = REPO + '/blob/__REVISION__/'
 SITE = 'https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/'
-RDA = 'https://doi.org/10.15497/RDA00068'
-S = []
+STATE = json.loads((ROOT/'docs/fair/publication.json').read_text())
+VERSION = tomllib.loads((ROOT/'pyproject.toml').read_text())['project']['version']
+PUBLISHED = STATE['status'] == 'published'
+INSTALL_REF = 'v'+VERSION if PUBLISHED else '__REVISION__'
+INSTALL = f'python -m pip install "fair-hunter-prey[teaching] @ git+{REPO}@{INSTALL_REF}"'
+CONCEPT = STATE['concept_doi'] or 'Concept DOI: awaiting first release'
+DOI = STATE['version_doi'] or 'Version DOI: awaiting first release'
+CONCEPT_URL = 'https://doi.org/'+STATE['concept_doi'] if PUBLISHED else BLOB+'docs/fair/release.md'
+DOI_URL = 'https://doi.org/'+STATE['version_doi'] if PUBLISHED else BLOB+'docs/fair/release.md'
+C = 'case-study adaptation'
+F = 'verified factual correction'
+O = 'operational update'
+soup = BeautifulSoup(REFERENCE.read_text(), 'html.parser')
+slides = soup.select('.slides > section')
+original = [deepcopy(s) for s in slides]
+changes = {i:[] for i in range(1,53)}
+ids = ['title','recap','agenda','why-fair','running-example','findable-accessible','f1','zenodo-webhook','version-identifiers','metadata-principles','citation-codemeta','access-protocols','retrieve-install','authentication','access-boundaries','persistent-metadata','archives','fa-recap','practical1','discover','discovery-reflection','interoperable','i1','formats','api-example','i2','qualified-references','codemeta-references','controlled-vocabulary','dependencies','packaging','practical2','inspect-run','interoperability-reflection','reusable','r1','documentation','licenses','provenance','r2','environments','r3','ci','sustainability','reuse-recap','ro-crate','practical3','crate-exercise','crate-reflection','checklist','services','discussion']
 
-def p(text): return '<p>'+text+'</p>'
-def ul(*items): return '<ul>'+''.join('<li>'+x+'</li>' for x in items)+'</ul>'
-def code(text, label='Example'): return '<div class="artefact"><div class="file-head">'+E(label)+'</div><pre><code>'+E(text)+'</code></pre></div>'
-def table(headers, rows): return '<table class="compare"><thead><tr>'+''.join('<th>'+x+'</th>' for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+str(x)+'</td>' for x in row)+'</tr>' for row in rows)+'</tbody></table>'
-def cols(left,right): return '<div class="two-col"><div>'+left+'</div><div>'+right+'</div></div>'
-def image(name,alt,caption=''): return '<figure><a class="screenshot-link" href="assets/evidence/'+name+'" target="_blank" rel="noopener" aria-label="Open full-size screenshot: '+E(alt)+'"><img src="assets/evidence/'+name+'" alt="'+E(alt)+'"></a><figcaption>'+caption+' <a href="assets/evidence/'+name+'" target="_blank" rel="noopener">Open full-size image ↗</a></figcaption></figure>'
-def link(url,label): return '<a href="'+E(url)+'">'+label+'</a>'
-def file(path,label=None): return link(BLOB+path,label or path)
-def add(n,id,title,body,group='Opening',fair='',stage='specification',notes='',sources=(),kind='content'):
-    S.append(dict(original=n,id=id,title=title,body=body,group=group,fair=fair,stage=stage,notes=notes,sources=list(sources),kind=kind))
-def divider(n,id,title,group,fair,stage): add(n,id,title,p('Shared scientific specification. Different implementations. Evidence that travels with the research.'),group,fair,stage,kind='chapter-page')
-def fa(n,id,title,body,**kw): add(n,id,title,body,'Findable & Accessible',**kw)
-def inter(n,id,title,body,**kw): add(n,id,title,body,'Interoperable',**kw)
-def reuse(n,id,title,body,**kw): add(n,id,title,body,'Reusable',**kw)
+def parsed(html): return BeautifulSoup(html, 'html.parser')
+def text(node): return node.get_text(' ',strip=True)
+def record(n, selector, before, after, category, reason):
+    if before != after:
+        changes[n].append(dict(selector=selector,category=category,reason=reason,before=before,after=after))
+def inner(n, selector, html, category=C, reason='Replace heat-diffusion evidence with the verified hunter–prey counterpart.', index=0):
+    node=slides[n-1].select(selector)[index]
+    before=node.decode_contents()
+    node.clear()
+    for child in list(parsed(html).contents): node.append(child)
+    record(n,selector+f' [{index}]',before,node.decode_contents(),category,reason)
+def replace_text(n, before, after, category=C, reason='Adapt the repository-specific example.'):
+    count=0
+    for node in list(slides[n-1].find_all(string=True)):
+        if before in node:
+            node.replace_with(str(node).replace(before,after));count+=1
+    if count: record(n,'text',before,after,category,reason)
+def attribute(n,selector,name,value,category=C,reason='Link to the corresponding artifact in this repository.'):
+    node=slides[n-1].select_one(selector);before=node.get(name,'');node[name]=value
+    record(n,selector+' @'+name,before,value,category,reason)
+def append(n,selector,html,category=C,reason='Add the case-study evidence while retaining the original teaching content.'):
+    node=slides[n-1].select_one(selector)
+    for child in list(parsed(html).contents):node.append(child)
+    record(n,selector+' append','',html,category,reason)
+def col(n,index,html,category=C,reason='Preserve the theory column and adapt the worked example.'):
+    inner(n,'.two-col > .col',html,category,reason,index)
+def a(url,label,cls=''): return f'<a href="{escape(url)}"'+(f' class="{cls}"' if cls else '')+f'>{label}</a>'
+def file(path,label=None):return a(BLOB+path,label or path)
+def ul(*items,cls='check'):return '<ul class="'+cls+'">'+''.join('<li>'+i+'</li>' for i in items)+'</ul>'
+def p(value,cls=''):return '<p'+(f' class="{cls}"' if cls else '')+'>'+value+'</p>'
+def code(value,label,lang='python'):
+    return f'<div class="artefact"><div class="file-head"><span>{label}</span><span>{lang}</span></div><pre><code class="language-{lang}">{escape(value)}</code></pre></div>'
+def table(headers,rows):return '<table class="compare"><thead><tr>'+''.join('<th>'+x+'</th>' for x in headers)+'</tr></thead><tbody>'+''.join('<tr>'+''.join('<td>'+x+'</td>' for x in row)+'</tr>' for row in rows)+'</tbody></table>'
+def mapping():return '<div class="mapping-title">In <code>fair-hunter-prey</code></div>'
+def shot(name,alt,caption=''):
+    return '<figure class="evidence">'+a('assets/evidence/'+name,f'<img src="assets/evidence/{name}" alt="{escape(alt)}" loading="eager">')+'<figcaption>'+caption+' '+a('assets/evidence/'+name,'Inspect full-size screenshot ↗')+'</figcaption></figure>'
+def two(left,right):return '<div class="two-col mt"><div class="col">'+left+'</div><div class="col">'+right+'</div></div>'
 
-add(1,'title','FAIR research with proprietary simulation tools',p('One Kaibab model. Vensim and Stella Architect. Open artifacts for inspection and reuse.')+p('NFDI4Ing RDM Basics · Research Software · Vasiliy Seibert')+p('With implementations by Raphael Ginster, Matthias Papesch and Vasiliy Seibert'),kind='cover-page',notes='90-minute lecture. Model source: Deaton and MacDonald, System Dynamics Learning Guide (2025). Model-derived material is CC BY-NC-SA 4.0. Vendor applications remain proprietary.',sources=[REPO,'https://pressbooks.lib.jmu.edu/sdlearningguide/'])
-add(2,'recap','Research data and research software',cols(ul('<strong>Motivation:</strong> FAIR principles, identifiers and credit.','<strong>Planning:</strong> a management plan in RDMO.','<strong>Metadata:</strong> shared meanings and documented relationships.'),p('Today we follow the software and artifacts that produce the data, including the dependencies needed to interpret and rerun them.')),sources=[RDA])
-add(3,'agenda','Today’s route through the example',table(['Minutes','Activity'],[['0–10','Shared model, two tools, two cases'],['10–24','Findable and Accessible'],['24–34','Practical 1: discover and inspect metadata'],['34–47','Interoperable'],['47–59','Practical 2: inspect exports, then execute with PySD'],['59–73','Reusable'],['73–85','Practical 3: package an actual run'],['85–90','Checklist and discussion']]),notes='Optional appendix provides file-level demonstrations. Shorten appendix discussion, not the hands-on instructions, to stay within 90 minutes.')
-add(4,'why-fair','What a future collaborator needs',cols(ul('Find the exact model and case.','Understand access and licensing.','Inspect the evidence without your desktop application.','Know what was executed and what was only documented.'),p('FAIR practices apply to the research artifacts around Vensim and Stella. They do not change the proprietary licenses of the applications.')),sources=[RDA])
-add(5,'shared-specification','The scientific specification comes first',cols(p('The literature defines an ecosystem of <strong>deer, predators and forage</strong>. Equations, lookup functions, units and initial conditions describe the scientific problem.'),image('semantic-model.jpg','Existing semantic overview linking literature, equations and implementations','The existing semantic model connects the specification to both native implementations.')),notes='Tool-agnostic means shared scientific meaning. It does not imply identical serialization, software behavior or numerical trajectories.',sources=[SITE+'#overview','https://pressbooks.lib.jmu.edu/sdlearningguide/'])
-add(None,'shared-use-cases','The same use cases, different tools',table(['Use case','Vensim implementation','Stella Architect implementation'],[['Define and edit','Equations and sketch in .mdl','Equations and views in .stmx'],['View and document','Native views; exported HTML/SVG','Native views; exported equations, PDF/SVG'],['Configure','External .cin, CSV and workbook','Parameter, lookup and historical CSVs'],['Execute','Native Vensim engine','Native Stella engine'],['Export and share','Source, documentation, result CSV','Source, documentation, result CSV']]),stage='implementation',notes='Comments and model documentation belong to the define/document workflow. Viewing exported diagrams does not require a vendor editor. Native authoring and execution use the respective vendor tools.',sources=[BLOB+'models/kaibab_ecosystem_model.mdl',BLOB+'examples/stella-source/models/kaibab_ecosystem_model.stmx'])
-add(None,'artifacts-access','A source file, a result, or a bundle?',table(['Artifact','What it carries','Access boundary'],[['.mdl / .stmx','Editable model declarations; .stmx is XML/XMILE','Readable source, tool-specific semantics'],['CSV / HTML / SVG / PDF','Exported values or documentation','Open inspection in appropriate readers'],['.vpmx','Vensim packaged model','Vendor runtime; an export option, absent here'],['ZIP / .stmz','Stella bundled model and supporting files','Container only; an export option, absent here']]),stage='implementation',notes='Do not equate a ZIP archive with an interoperable model or reproducible run. Proprietary does not always mean paid access: vendor readers/players may offer free viewing or execution with restrictions.',sources=['https://vensim.com/vensim-applications/','https://ssl.iseesystems.com/resources/help/v4/Content/08-Reference/03-Menus/File_menu.htm'])
-add(None,'two-cases','Case 2 changes four parameters',table(['Parameter','Case 1','Case 2'],[['Annual kills per predator','40','20'],['Carrying-capacity horizon','2 years','4 years'],['Desired consumption per deer','0.75 t/(deer·year)','0.5 t/(deer·year)'],['Predator removal fraction','0/year','0.2/year']])+p('The outcome is not an isolated predator-removal effect.</p><p class="case-files">Vensim: <strong>basic_parameters.cin</strong> + initial-stock workbook; add <strong>case2.cin</strong>.<br>Stella: <strong>…parameters_stella_scenario1.csv</strong> / <strong>…scenario2.csv</strong>.'),stage='configuration',sources=[BLOB+'models/config/scenarios/case2.cin',BLOB+'examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv'])
-add(None,'open-workflows','Two open Python workflows',cols(p('<strong>Inspect saved exports</strong>')+ul('Read existing Vensim and Stella CSVs.','Use pandas and Matplotlib for tables and figures.','No simulation or proprietary application is executed.'),p('<strong>Run an implementation with PySD</strong>')+ul('Translate a copy of .mdl or .stmx.','Apply the existing numerical adapters.','Compare the new run with its own tool’s reference.')),stage='results',notes='CSV inspection is not performed by PySD. PySD is the independent simulation route. Both are useful interoperability examples, with different evidential claims.',sources=[BLOB+'docs/pysd_integration.md','https://pysd.readthedocs.io/en/latest/'])
-divider(6,'findable-accessible','Findable & Accessible','Findable & Accessible','F · A','archive')
-fa(7,'f1','F1: identify the research object',cols(p('Assign persistent identifiers to software. Distinguish components and versions when they represent different research objects.'),ul('Scientific specification and literature.','Vensim / Stella implementation files.','Case configuration and recorded execution.','A released software snapshot.')),fair='F1 · F1.1 · F1.2',stage='archive',sources=[RDA])
-fa(8,'zenodo-webhook','A release can trigger a Zenodo deposit',table(['Step','Action','This repository'],[['Prepare','Review authors, licenses and release metadata','Prepared in .zenodo.json'],['Connect','Enable the repository in Zenodo GitHub settings','Not activated'],['Release','Publish an approved GitHub release','Not performed'],['Verify','Check ingestion and record the issued DOIs','Pending']]),fair='F1',stage='archive',notes='The awesome-sim reference has an active release webhook. This repository has no published DOI in this teaching addition. Do not create a release during the exercise.',sources=['https://help.zenodo.org/docs/github/enable-repository/',BLOB+'docs/fair/release.md'])
-fa(9,'version-identifiers','Project identity and version identity',cols(p('<strong>Concept DOI</strong> identifies the project across deposited versions.')+p('<strong>Version DOI</strong> identifies a particular deposited snapshot.'),p('Before publication, record the full Git revision used for the run. A branch name moves; a commit identifies a specific source state.')+code('model implementation + case + source revision\n+ execution environment + generated output hashes','Execution identity')),fair='F1.1 · F1.2',stage='archive',notes='Existing v0.1-scaffold through v0.6-verification are teaching milestones, not evidence of Zenodo deposits. No DOI values are invented.',sources=[BLOB+'CHANGELOG.md'])
-fa(10,'metadata-principles','F2–F4: metadata that points to evidence',ul('<strong>F2:</strong> describe the software richly enough to evaluate it.','<strong>F3:</strong> include the identifiers of the described objects.','<strong>F4:</strong> make metadata FAIR, searchable and indexable.','CFF and CodeMeta describe the repository. The semantic graph connects models, files, parameters and activities.'),fair='F2 · F3 · F4',sources=[RDA,BLOB+'CITATION.cff',BLOB+'codemeta.json'])
-fa(11,'citation-codemeta','Citation metadata and software metadata',cols(code('cff-version: 1.2.0\ntype: software\nversion: 0.7.0.dev0\nauthors:\n  - family-names: Ginster\n    given-names: Raphael\n  - family-names: Papesch\n    given-names: Matthias\n  - family-names: Seibert\n    given-names: Vasiliy','CITATION.cff · excerpt'),code('"@type": "SoftwareSourceCode",\n"name": "fair-hunter-prey-simulation",\n"version": "0.7.0.dev0",\n"programmingLanguage": "Python",\n"runtimePlatform": [\n  "Python 3.12", "Python 3.13"\n]','codemeta.json · excerpt')),fair='F2 · F3',notes='Follow the file links for complete metadata, known ORCIDs and original-model references. Development version is not a published release. Do not guess missing personal identifiers.',sources=[BLOB+'CITATION.cff',BLOB+'codemeta.json'])
-fa(12,'access-protocols','A1: retrieve the described artifact',cols(p('Standard protocols make files retrievable. The next question is whether a reader has the software and permissions needed to use them.'),ul('HTTPS: repository sources and documentation.','Git: history and exact revisions.','pip: the packaged Python execution route.','CSV: inspection without the native simulator.')),fair='A1 · A1.1',stage='implementation',sources=[RDA])
-fa(13,'retrieve-install','Retrieve source or install a pinned snapshot',code('git clone '+REPO+'\n\npython -m pip install \\\n  "fair-hunter-prey[teaching] @ git+'+REPO+'@__REVISION__"','Terminal · Python 3.12 or 3.13')+p('The installed package contains both source implementations and their required inputs. It executes them through PySD.'),fair='A1 · A1.1',stage='implementation',sources=[BLOB+'pyproject.toml'])
-fa(14,'authentication','A1.2: authentication where needed',ul('Read public sources and saved results without a GitHub account.','Sign in to a hosted Jupyter service to use your own workspace.','Use authenticated access for contributions and release administration.','Document native application access separately from access to research artifacts.'),fair='A1.2',sources=[RDA])
-fa(15,'access-boundaries','Access is different for each use case',table(['Use case','Requirement'],[['Read equations / metadata','Text or web reader'],['Inspect exported tables / diagrams','CSV reader, browser or Python'],['Edit in a native graphical environment','Appropriate Vensim or Stella application'],['Run a native packaged model','Vensim Model Reader / isee Player; compatible models and terms'],['Run this supported model through Python','PySD plus this repository’s tested adapters']]),fair='A1.2',stage='implementation',notes='Proprietary does not always mean paid. Vensim Model Reader and isee Player are vendor-documented free runtime options with restricted authoring. Compatibility with this snapshot was not tested in either native application.',sources=['https://vensim.com/vensim-applications/','https://www.iseesystems.com/resources/help/v4/Content/Welcome.htm','https://pysd.readthedocs.io/en/latest/'])
-fa(16,'persistent-metadata','A2: preserve the record of the research',cols(p('Metadata should remain accessible even if the software becomes unavailable.'),ul('Archive source snapshots and their attribution.','Preserve the scientific inputs and software environment.','State which artifacts require vendor software.','Keep identifier and archival claims tied to observed records.')),fair='A2',stage='archive',sources=[RDA])
-fa(17,'archives','Zenodo and Software Heritage',table(['Service','Role','Evidence needed'],[['Zenodo','Deposit plus persistent metadata and DOI','Verified concept/version records'],['Software Heritage','Content-addressed source preservation','Verified archived object and SWHID'],['GitHub','Collaboration and current source history','Repository URL and full commit']])+p('For hunter–prey, external deposits and archive ingestion remain unverified. The release checklist records the next steps.'),fair='A2',stage='archive',sources=['https://archive.softwareheritage.org/',BLOB+'docs/fair/release.md'])
-fa(18,'fa-recap','Findable and accessible evidence',ul('Identify which model, implementation, case and version you mean.','Describe them using machine-readable metadata and qualified links.','Make artifacts retrievable and explain the tools needed to use them.','Separate prepared publication steps from completed deposits.'),fair='F · A',stage='archive')
-divider(19,'practical1','Practical 1: discover the model','Practical 1','F · A','specification')
-add(20,'discover','Search, inspect, and follow the evidence',ul('Open '+link('https://software.nfdi4ing.de/','Betty Research Engine')+' and search for <strong>fair-hunter-prey-simulation</strong> or <strong>system dynamics</strong>.','Inspect the result source and available metadata. Export results if the service offers it.','If this repository is absent, record that indexing gap and use the '+link(REPO,'direct repository link')+'.','Read CFF/CodeMeta. Follow a model source, a case configuration, and the original literature.'),'Practical 1','F2 · F3 · F4','specification',notes='10 minutes. On 2026-10-09 the anonymous exact-name search returned no repositories and offered GitHub sign-in for broader results; authenticated enrichment was not tested. Service access or ranking can change. Do not promise a hit, citation count or ranking. Saved screenshots and direct artifact links support the exercise when the service is unavailable.',sources=['https://software.nfdi4ing.de/',REPO])
-add(21,'discovery-reflection','What could you identify without asking the authors?',cols(ul('Which implementation and case?','Who receives credit?','What can you inspect immediately?'),p('A missing search result is evidence about discovery, not proof that a model is scientifically invalid. Metadata supports indexing; it does not guarantee a search position.')),'Practical 1','F · A','specification')
-divider(22,'interoperable','Interoperable','Interoperable','I','results')
-inter(23,'i1','I1: exchange data with explicit meaning',cols(p('Use domain-relevant formats and preserve what the values mean.'),ul('Shared quantities: deer, predators and forage.','Shared scenario meanings: Case 1 and Case 2.','Different CSV layouts require different readers.','Time axes, units and numerical methods remain part of the contract.')),fair='I1',stage='results',sources=[RDA,BLOB+'scripts/vensim_csv.py',BLOB+'scripts/stella_csv.py'])
-inter(24,'formats','“CSV” is not a complete data specification',table(['Export','What the reader must preserve'],[['Vensim','Variable units and potentially several time axes'],['Stella trajectory','Horizontal values, time row and time unit'],['Stella final values','No time row; no invented trajectory'],['Stella inputs','Headerless parameters; lookup x/y rows; locale conventions']])+p('The existing readers make these differences explicit before pandas or Matplotlib receives the data.'),fair='I1',stage='results',sources=[BLOB+'scripts/vensim_csv.py',BLOB+'scripts/stella_csv.py'])
-inter(25,'api-example','An explicit interface contract',cols(code('openapi: 3.1.0\ninfo:\n  title: Kaibab inspection API\n  version: 0.1.0\npaths:\n  /results/{implementation}/{case}:\n    get:\n      summary: Read saved results','Illustrative API sketch · no server deployed'),p('A future service would specify implementation, case, units, time-axis shape and errors. A final-values export cannot satisfy a promised trajectory response.')+p('The working interfaces here are the Python API, command line and documented CSV readers.')),fair='I1',stage='results',notes='Retains the original OpenAPI teaching topic. This is a design sketch, not an implemented web service.',sources=['https://spec.openapis.org/oas/v3.1.0'])
-inter(26,'i2','I2: qualified references to other objects',ul('Cite the original literature and its license.','Link a scientific concept to its vocabulary identifier.','Connect an implementation variable to the concept it denotes.','Connect a parameter assignment to the file and field that supplies it.'),fair='I2',stage='configuration',notes='References to software dependencies are addressed explicitly under R2. The local semantic vocabulary remains a review draft.',sources=[RDA,SITE+'#overview'])
-inter(27,'qualified-references','Trace a concept through both implementations',cols(code('Fraction Predators Killed per Year = 0.2','Vensim · case2.cin'),code('Fraction Predators Killed per Year,0.2','Stella · parameters_stella_scenario2.csv'))+p('One scientific concept: annual predator removal fraction (1/year). Case 1 uses 0; Case 2 uses 0.2.')+p('The execution record hashes the selected configuration and resulting stock data. Stella Case 2’s native evidence remains final values only.'),fair='I2',stage='configuration',notes='Follow the concept link to its semantic identifier and definition. The existing semantic assignment binds the Vensim changes file. The Stella binding shown here is a file-level trace to the unchanged CSV; this lecture does not add Stella assignment triples to the protected semantic graph. New PySD outputs carry provenance for either implementation. No claim is made that the parameter itself appears as a result column.',sources=[SITE+'#workflows/term%2Ffraction-predators-killed-per-year',BLOB+'models/config/scenarios/case2.cin',BLOB+'examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv'])
-inter(28,'codemeta-references','Software metadata connects the artifact',ul(file('codemeta.json','CodeMeta')+' identifies the repository and development package.','Known author ORCIDs preserve attribution.','License URLs resolve to the applicable license definitions.','Dependency references point to maintained package records.','The semantic graph describes the scientific and file relationships in greater detail.'),fair='I2 · R2',stage='implementation',sources=[BLOB+'codemeta.json'])
-inter(29,'controlled-vocabulary','One concept, separate declarations and assignments',cols(image('vocabulary.jpg','Vocabulary concept connected to a parameter and concept scheme'),ul('A SKOS concept carries a preferred label and definition.','The implementation variable denotes that concept.','Case 1 assigns 0; Case 2 assigns 0.2/year.','The graph describes the existing files. It does not control the simulator.')),fair='I2',stage='configuration',sources=[SITE+'#workflows/term%2Ffraction-predators-killed-per-year',BLOB+'docs/semantic/controlled-vocabulary.ttl'])
-inter(30,'dependencies','Dependency constraints and tested environments',cols(code('dependencies = [\n  "pysd==3.14.3",\n  "pandas>=2.2,<3",\n  "matplotlib>=3.8,<4",\n  "openpyxl>=3.1,<4",\n]','pyproject.toml'),p('The package contract constrains supported versions. The teaching lock records a complete tested set.')+p('Changing a dependency may break parsing, translation or numerics. A permissive installation is not evidence of equivalent results.')),fair='R2',stage='execution',notes='Corrects the original placement: qualified references to other software belong to R2. Dependency ranges alone do not freeze transitive dependencies.',sources=[BLOB+'pyproject.toml'])
-inter(31,'packaging','Installable without reorganizing the model',cols(ul('Package the unchanged runners and resource files.','Keep Vensim inputs in their original layout.','Keep the Stella snapshot in its own bundle.','Resolve resources from the installed package.'),code('from fair_hunter_prey import run_example\n\nrun = run_example(\n    "stella", "case2", "out/stella-case2"\n)\nprint(run["provenance"])','Python API')),fair='I1 · R2',stage='implementation',notes='Distribution name fair-hunter-prey, import name fair_hunter_prey. Wheel and Git installation are supported; no PyPI release is claimed.',sources=[BLOB+'pyproject.toml',BLOB+'setup.py'])
-divider(32,'practical2','Practical 2: inspect, then execute','Practical 2','I · R','results')
-add(33,'inspect-run','Open inspection before independent execution',code('from fair_hunter_prey import inspect_results, run_example\n\n# Saved native exports: no new simulation\nsaved = inspect_results("out/inspection")\n\n# Independent execution using the preserved adapters\nfor implementation in ("vensim", "stella"):\n    for case in ("case1", "case2"):\n        run_example(implementation, case,\n                    f"out/{implementation}-{case}")','Jupyter notebook · unique output folders')+p('Compare each PySD result with its own native reference. The Stella Case 2 reference supports a final-value comparison.'),'Practical 2','I1 · R2','execution',notes='12 minutes, including install. Use examples/fair/02_interoperability.ipynb. The kernel must use the installed teaching environment. Run folders are unique per notebook execution.',sources=[BLOB+'examples/fair/02_interoperability.ipynb'])
-add(34,'interoperability-reflection','What made the exchange work?',ul('Shared scientific meanings, with explicit tool-specific file bindings.','Readers that preserve actual CSV structure and time axes.','Numerical adapters tested against native references.','Output provenance that names PySD as the execution engine.'),'Practical 2','I · R','results',notes='Ask participants which artifacts they could inspect without Vensim or Stella, and which information a bare CSV would have omitted.')
-divider(35,'reusable','Reusable','Reusable','R','archive')
-reuse(36,'r1','R1: describe, license, and trace',cols(ul('<strong>R1:</strong> relevant attributes for evaluating reuse.','<strong>R1.1:</strong> clear and accessible licenses.','<strong>R1.2:</strong> detailed provenance.'),p('For this model, a reusable result needs its implementation, case, input files, numerical method, environment and execution record.')),fair='R1 · R1.1 · R1.2',stage='archive',sources=[RDA])
-reuse(37,'documentation','Documentation at each level',table(['Artifact','Question it answers'],[['README / teaching guide','How can I install and use it?'],['Model documentation','Which equations, units and assumptions?'],['Semantic site','How do concepts, files and activities connect?'],['Examples / notebooks','Which steps can I reproduce?'],['Changelog / contribution guide','What changed, and how can I contribute?']]),fair='R1',sources=[BLOB+'docs/fair/README.md',BLOB+'CONTRIBUTING.md'])
-reuse(38,'licenses','The licenses travel with the artifacts',table(['Material','Existing license'],[['Original repository code and new adapters','MIT'],['General documentation','CC BY 4.0'],['Kaibab model and derived material','CC BY-NC-SA 4.0'],['Vendor applications','Separate proprietary terms'],['Service logos','Retained attribution and service-logo terms']])+p('REUSE maps licenses to paths. An open repository does not make every file public domain or remove model restrictions.'),fair='R1.1',stage='archive',sources=[BLOB+'LICENSE',BLOB+'REUSE.toml','https://spdx.org/licenses/'])
-reuse(39,'provenance','A configuration is not an execution',cols(code('implementation: stella\ncase: case2\nengine: PySD\nmethod: rk2-heun\nsource_revision: <recorded commit>\ninputs: <file hashes>\noutputs: <file hashes>\nstarted: <observed UTC timestamp>','Recorded fields · values come from the run'),ul('The Git history records source changes.','The changelog explains notable changes.','A run record describes an observed execution.','The semantic site distinguishes reconstructed native provenance from observed inspection.')),fair='R1.2',stage='execution',sources=[BLOB+'CHANGELOG.md',SITE+'#workflows'])
-reuse(40,'r2','R2: references to other software',ul('Record the Python and PySD versions.','Reference the actual readers and integration adapters.','Retain environment constraints and installed versions.','Record vendor software details where the source provides them.','Do not infer an application version or an execution event from a screenshot alone.'),fair='R2',stage='execution',sources=[RDA,BLOB+'docs/pysd_integration.md'])
-reuse(41,'environments','Three levels of environment description',table(['Level','What it captures','Limit'],[['Dependency contract','Supported ranges in pyproject.toml','Not a frozen installation'],['Teaching lock + run record','Exact tested packages; observed Python/platform','Platform-specific packages still matter'],['Container recipe','OS and runtime layers, if actually built and recorded','Does not remove vendor licenses or guarantee future execution']])+p('This example supplies the first two. Containers remain a documented option; no container image is published.'),fair='R2',stage='execution',sources=[BLOB+'environments/teaching-py312.txt',BLOB+'environments/teaching-py313.txt'])
-reuse(42,'r3','R3: community standards with evidence',ul('Standard Python packaging and an explicit public interface.','CFF and CodeMeta for software description.','REUSE and SPDX for license identification.','Tests against the existing scientific references.','Documented model formats and scenario meanings.'),fair='R3',sources=[RDA])
-reuse(43,'ci','CI protects the scientific example',cols(ul('Run the original tests unchanged.','Check hashes of protected files.','Test both implementations and both cases.','Test installation outside the checkout.','Check the lecture and both Pages surfaces.'),code('python -m pytest tests -q\npython tools/fair/check_stella.py\ncffconvert --validate\nreuse lint\npython -m build','Review checks')),fair='R3',stage='execution',notes='Stella model tests run in a staged tree so its configuration CSVs cannot alter the existing Vensim directory inputs. Reference tolerances are preserved.',sources=[BLOB+'.github/workflows/fair.yml'])
-reuse(44,'sustainability','A maintenance plan for the whole workflow',ul('Agree who reviews scientific changes and releases.','Record supported environments and deprecations.','Plan archival, identifier updates and end-of-support.','Retain attribution, licenses and old evidence.','Use '+link('https://rdmo.nfdi4ing.de/','RDMO')+' to agree responsibilities; this lecture does not assign them to collaborators.'),stage='archive',sources=[BLOB+'docs/fair/release.md'])
-reuse(45,'reuse-recap','What would a missing artifact prevent?',table(['Missing artifact','Consequence'],[['Scenario configuration','The case is ambiguous'],['Lookup or initial-stock workbook','The model input is incomplete'],['Numerical method / adapters','A rerun may differ despite matching parameters'],['License and attribution','Reuse conditions and credit are unclear'],['Execution record','A figure cannot be traced to an observed run']]),fair='R',stage='archive')
-reuse(46,'ro-crate','An RO-Crate packages a research object',cols(ul('Selected model and scenario inputs.','Runner, readers and numerical adapters.','Citation and license metadata.','Observed environment and execution record.','Actual results and file hashes.'),p('A JSON-LD manifest connects the files and their meaning. Preservation becomes easier when the evidence travels together.')+p('A crate is not a guarantee that every future machine can execute the research.')),fair='R1.2 · R2',stage='archive',sources=['https://www.researchobject.org/ro-crate/'])
-divider(47,'practical3','Practical 3: package an actual run','Practical 3','R','archive')
-add(48,'crate-exercise','Package the result you actually produced',code('from fair_hunter_prey import run_example, create_crate\n\nrun = run_example("stella", "case2", "out/crate-run")\ncrate = create_crate("out/crate-run", "out/research-object")\nprint(crate / "ro-crate-metadata.json")','Jupyter · examples/fair/03_ro_crate.ipynb')+ul('Inspect the JSON-LD manifest and execution/provenance.json.','Locate the selected configuration, original attribution and licenses.','Compare the recorded output checksum with the file in the crate.'),'Practical 3','R1.2 · R2','archive',notes='12 minutes. The exporter refuses changed inputs or outputs. It packages the selected case, not a vague model name.',sources=[BLOB+'examples/fair/03_ro_crate.ipynb'])
-add(49,'crate-reflection','What travels with this result?',cols(ul('The source implementation and selected case.','The environment and observed execution.','The original authors and reuse conditions.'),p('What remains external? The literature, identifier infrastructure and any native vendor runtime. The crate should explain those dependencies rather than hide them.')),'Practical 3','R','archive')
-add(50,'checklist','A FAIR4RS evidence checklist',table(['Area','Evidence to inspect'],[['Findable','Identifiers, versions, metadata, observed indexing'],['Accessible','Retrievable files, documented access, archival status'],['Interoperable','Formats, meanings, bindings, readers and tested translation'],['Reusable','Licenses, provenance, dependencies, tests and documentation']])+p('Use the '+file('docs/fair/evidence.md','repository evidence table')+' to distinguish implemented features from publication steps still pending.'),'Wrap-up','F · A · I · R','archive',notes='A completed checklist is an assessment aid, not a certification that every future reuse will work.')
-add(51,'services','Services supporting the workflow',table(['Service','Role'],[['Betty Research Engine','Discovery and inspection of indexed metadata'],['Terminology Service / semantic model','Definitions, vocabulary references and file bindings'],['NFDI4Ing Jupyter','Open inspection and independent Python execution'],['RDMO','Software and data management planning'],['Coscine / ing.grid','Related storage and publication services from the lecture series']]),'Wrap-up',stage='archive',notes='Only claim interactions that participants actually performed. Terminology service concepts and local draft terms have different authority.',sources=['https://software.nfdi4ing.de/','https://terminology.nfdi4ing.de/','https://jupyter.nfdi4ing.de/','https://rdmo.nfdi4ing.de/','https://coscine.de/','https://www.inggrid.org/'])
-add(52,'discussion','Shared science. Traceable implementations.',p('Which artifact would a collaborator need first to reuse your model?')+p(link(SITE,'Explore the semantic model')+' · '+file('docs/fair/README.md','Run the examples')+' · '+file('docs/fair/evidence.md','Inspect the FAIR evidence'))+p('The native tools remain proprietary. The research becomes easier to find, inspect, and reproduce when its artifacts carry their context.'),'Wrap-up',stage='archive',kind='chapter-page',notes='Credits: original model by Mike Deaton and Rod MacDonald; repository implementations by Raphael Ginster, Matthias Papesch and Vasiliy Seibert; lecture adaptation by Vasiliy Seibert. See source manifest and REUSE mapping.',sources=[RDA,REPO])
-for id,title,name,caption,source in [
- ('appendix-repository','Repository evidence','repository.jpg','The repository before this additive FAIR change.',REPO),
- ('appendix-binding','A value and its configuration binding','configuration-binding.jpg','The assignment, parameter and source file are distinct entities.',SITE+'#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year'),
- ('appendix-file','The original Case 2 changes file','case2-file.jpg','Four changes, preserved exactly as the collaborators recorded them.',REPO+'/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin'),
- ('appendix-workflow','From configuration to an inspected figure','workflow.jpg','The existing semantic workflow labels native provenance as reconstructed.',SITE+'#workflows/diagram/case2-parameter-to-figure'),
- ('appendix-stella','Stella Architect: existing native evidence','stella-case2.jpg','Existing screenshot from the stella branch. No new native run is claimed.',REPO+'/blob/194a8b92e963920e95393accc7d5699348864d85/docs/kaibab_ecosystem_screenshot_stella_scenario2.jpg'),
- ('appendix-notebook','The existing inspection notebook','notebook.jpg','Saved outputs document inspection of existing CSVs, not a new simulation.',SITE+'notebooks/inspect_results.html')]:
-    add(None,id,title,image(name,title,caption),'Optional appendix',stage='results',notes=caption,sources=[source])
+# Shell substitutions retain the reference slide classes and all typography/layout assets.
+for n,s in enumerate(slides,1):
+    s['id']=ids[n-1];s['data-reference-slide']=str(n)
+    replace_text(n,'awesome-sim','fair-hunter-prey')
+    replace_text(n,'awesome_sim','fair_hunter_prey')
+    replace_text(n,'https://github.com/VasiliySeibert/fair-hunter-prey',REPO)
+    replace_text(n,'github.com/VasiliySeibert/fair-hunter-prey','github.com/FAIR-systemDynamics/fair-hunter-prey-simulation')
+    for node in s.select('a[href]'):
+        href=node['href']
+        if href.startswith('https://github.com/VasiliySeibert/awesome-sim'):
+            suffix=href.split('awesome-sim',1)[1]
+            node['href']=REPO+suffix.replace('/tree/gh-pages','/tree/codex/fair4rs-hunter-prey/docs/slides')
+            record(n,'a @href',href,node['href'],C,'Update the repository destination.')
+    if s.select_one('.mapping-title'):
+        inner(n,'.mapping-title',mapping()[len('<div class="mapping-title">'):-6])
 
-STAGES = ['specification','implementation','configuration','execution','results','archive']
-LABELS = ['Scientific specification','Vensim / Stella','Case configuration','Execution','Open inspection','FAIR record']
+# Opening: preserve title, motivation, and their visual hierarchy.
+inner(1,'.hero .subtitle','From shared science in Vensim and Stella to inspectable, citable research artifacts — in 90 minutes.')
+inner(1,'.meta',f'''<div><span class="label">Authors</span>Raphael Ginster · Matthias Papesch<br>Vasiliy Seibert<br><span class="presenter">Lecturer: Vasiliy Seibert · {a('https://orcid.org/0000-0002-7121-6816','ORCID')}</span></div><div><span class="label">Running example</span>{a(REPO,'FAIR-systemDynamics/<wbr>fair-hunter-prey-simulation')}<br>{a(CONCEPT_URL,CONCEPT,'doi-status')}</div><div><span class="label">Session</span>90 min · 57 core slides · EN<br>6 optional walkthroughs<br>Lecture: CC BY 4.0 · model evidence: CC BY-NC-SA 4.0</div>''')
+# Keep all eight agenda rows and their columns.
+for row,time in zip(slides[2].select('tbody tr'),['0:00–0:10','0:10–0:22','0:22–0:34','0:34–0:46','0:46–1:00','1:00–1:12','1:12–1:26','1:26–1:30']):
+    old=row.select_one('td').decode_contents();row.select_one('td').string=time
+    record(3,'agenda time',old,time,O,'Allow ten minutes for the five added case-study slides while keeping a 90-minute session.')
+replace_text(3,'Opening & recap','Opening, recap & shared model')
+replace_text(3,'Discover porous media','Discover the hunter–prey model')
+replace_text(3,'90 min · ~50 slides','90 min · 57 core + 6 optional slides',O)
+replace_text(4,'Every downstream study that runs your code shows up in your ORCID profile, CrossRef, Google Scholar.','Citing the archived version gives authors credit. Citation tracking depends on authors, records, and indexing services.',F,'A DOI enables citation; it does not automatically report every use or populate every index.')
+replace_text(4,'Pinned deps + an archived snapshot means the paper figures you generated in 2026 can still be regenerated in 2034.','Pinned dependencies + an archived snapshot preserve the context needed to attempt the same computation years later.',F,'Preservation improves future reproducibility without guaranteeing future execution.')
+inner(5,'.two-col > .col', '<h3><code>fair-hunter-prey</code> <span class="tag">shared model</span></h3>'+p('A Kaibab ecosystem model implemented in Vensim and Stella Architect. Both implementations share a scientific specification and two cases; their file formats and numerical execution differ.')+'<div class="callout blue">Every theory slide connects a FAIR4RS concept to evidence in this repository — from the CI badge to the Zenodo release workflow and <code>CITATION.cff</code>.</div>'+shot('stella-case2.jpg','Existing Stella Architect model screenshot','Existing native evidence; no new native execution.')+'<div class="links">'+a(REPO,'GitHub · fair-hunter-prey-simulation','chip-link gh')+' '+a(CONCEPT_URL,CONCEPT,'chip-link doi')+'</div>',index=0)
+inner(5,'.two-col > .col',shot('repository.jpg','Hunter–prey repository with metadata and teaching entry points','Review-branch repository evidence. DOI publication follows approval of the exact release commit.')+p(file('docs/fair/README.md','Runnable examples')+' · '+a(SITE,'Semantic model and vocabulary'),'small'),index=1)
 
-def render():
-    sections=[]
-    for i,s in enumerate(S,1):
-        workflow='<ol class="workflow" aria-label="Research workflow">'+''.join('<li'+(' class="active" aria-current="step"' if stage==s['stage'] else '')+'>'+label+'</li>' for stage,label in zip(STAGES,LABELS))+'</ol>'
-        sources=' · '.join(link(u,'Source '+str(j+1)) for j,u in enumerate(s['sources']))
-        sections.append('<section id="'+s['id']+'" class="'+s['kind']+'" data-group="'+s['group']+'"><header><img src="assets/logos/nfdi4ing-logo.svg" alt="NFDI4Ing"><span>'+s['group']+'</span><span class="principle">'+s['fair']+'</span></header><h1>'+s['title']+'</h1><div class="slide-body">'+s['body']+'</div>'+workflow+'<footer><span>FAIR4RS · Hunter–prey</span><span>'+sources+'</span></footer><aside class="notes">'+E(s['notes'] or s['title']+'. Relate this point to the highlighted stage of the shared workflow.')+'<br>'+sources+'</aside></section>')
-    html='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="FAIR4RS around a shared Kaibab model implemented in Vensim and Stella Architect"><title>FAIR4RS · Vensim, Stella and open research artifacts</title><link rel="stylesheet" href="vendor/reveal/dist/reset.css"><link rel="stylesheet" href="vendor/reveal/dist/reveal.css"><link rel="stylesheet" href="css/nfdi4ing-theme.css"><link rel="stylesheet" href="css/slides.css"><link rel="stylesheet" href="css/hunter-prey.css"></head><body><button id="agenda-toggle" aria-label="Open agenda (M)" aria-haspopup="dialog">☰</button><dialog id="lecture-agenda" aria-labelledby="agenda-title"><div class="agenda-head"><h2 id="agenda-title">Lecture agenda</h2><button id="agenda-close" aria-label="Close agenda">×</button></div><nav aria-label="Slides"></nav><p>M: agenda · Esc: close · O: overview · S: speaker notes</p></dialog><div class="reveal"><div class="slides">'''+''.join(sections)+'''</div></div><script src="vendor/reveal/dist/reveal.js"></script><script src="vendor/reveal/plugin/notes/notes.js"></script><script src="vendor/reveal/plugin/search/search.js"></script><script src="presentation.js"></script></body></html>'''
-    (OUT/'index.html').write_text(html)
-    outline=json.loads((OUT/'reference-outline.json').read_text())
-    coverage=[{'original_slide':s['original'],'original_title':outline[s['original']-1]['title'],'adapted_id':s['id'],'adapted_slide':i,'adapted_title':s['title']} for i,s in enumerate(S,1) if s['original']]
-    (OUT/'coverage.json').write_text(json.dumps(coverage,indent=2)+'\n')
-    rows=['# Reference lecture coverage','','All 52 reference topics map to 56 core slides plus six optional screenshot walkthroughs.','','| Original | Original topic | Adapted slide |','|---|---|---|']
-    rows.extend(f"| {c['original_slide']} | {c['original_title']} | {c['adapted_slide']}: [{c['adapted_title']}](index.html#/{c['adapted_id']}) |" for c in coverage)
-    (OUT/'coverage.md').write_text('\n'.join(rows)+'\n')
-    (OUT/'catalog.json').write_text(json.dumps([{k:v for k,v in s.items() if k!='body'} for s in S],indent=2)+'\n')
-    print(f'{len(S)} slides; {len(coverage)} reference topics mapped')
+# F and A: retain principle quotations and general explanations.
+replace_text(7,'keeps resolving forever','is maintained for persistent resolution',F,'Persistence is a stewardship commitment, not a guarantee of eternal availability.')
+col(7,1,mapping()+ul(f'<strong>Concept DOI</strong>: {a(CONCEPT_URL,CONCEPT)} → F1 / F1.1.',f'<strong>Version DOI</strong>: {a(DOI_URL,DOI)} → F1.2.',f'<strong>v{VERSION}</strong> identifies the first planned archived software release; prior teaching tags remain distinct.','Identify the scientific model, Vensim/Stella source, Case 1/2 configuration, and each recorded run separately.')+'<div class="callout blue">One project · distinct versions · traceable research objects.</div>')
+# DOI anatomy retains its concrete published reference as an explicitly labelled teaching example.
+append(8,'.two-col > .col',p('Anatomy example: the published awesome-sim DOI. The hunter–prey DOI is '+('linked below.' if PUBLISHED else 'issued after the reviewed release.'),'small muted'),O,'Retain the useful real DOI anatomy without falsely assigning the reference DOI to this repository.')
+inner(8,'.two-col > .col:first-child p.small','A DOI is designed for long-term resolution through maintained registration and repository services, independently of a GitHub URL.',F,'Remove an absolute persistence guarantee.')
+inner(8,'.two-col > .col:nth-child(2)', '<h3>How you get one · live demonstration</h3>'+ul('Connect the repository in '+a('https://zenodo.org/account/settings/github/','Zenodo’s GitHub settings')+'. The switch installs the release webhook.',f'Review authors, licenses and <code>.zenodo.json</code>; approve the exact source commit for <code>v{VERSION}</code>.','Create a GitHub release from that commit. Verify the delivery and Zenodo record before claiming a DOI.','Keep main and the live semantic site unchanged; the release uses the reviewed branch snapshot.')+'<div class="links">'+a('https://zenodo.org/account/settings/github/','Zenodo · GitHub settings','chip-link zen')+'</div>'+code('reviewed commit → GitHub release\n→ release webhook → Zenodo archive\n→ verify concept DOI + version DOI','git → GitHub → Zenodo','text')+p(file('docs/fair/release.md','Release checklist')+' · '+a(CONCEPT_URL,CONCEPT),'small'))
+replace_text(9,'never changes.','identifies one archived version.',F)
+replace_text(9,'so the exact inputs are reproducible in 10 years.','so readers can identify the exact archived version and its inputs.',F)
+inner(9,'.two-col > .col:nth-child(1) p:last-child','Git teaching milestones <code>v0.1-scaffold</code> through <code>v0.6-verification</code> document development. They are not Zenodo deposits.')
+col(9,1,'<h3>Hunter–prey release identities</h3>'+table(['Level','Identifier','Meaning'],[['Concept',a(CONCEPT_URL,CONCEPT),'Project across archived versions'],[f'v{VERSION}',a(DOI_URL,DOI),'Exact reviewed software snapshot'],['Execution','Implementation + case + source hash','A particular PySD run']])+p('A single release establishes both a project-level and a version-level identifier. Future releases receive distinct version DOIs.','small'))
+col(10,1,mapping()+ul(file('CITATION.cff')+' — GitHub’s citation entry point.',file('codemeta.json')+' — structured software metadata and qualified references.',file('.zenodo.json')+' — creators, version, licensing and related literature for Zenodo.',f'DOI and CI badges make publication and verification evidence visible. Publication status: <strong>{escape(STATE["status"])}</strong>.')+p('Metadata supports discovery; actual indexing and search results must be checked.','small'),F,'Preserve the metadata lesson while removing unsupported claims of automatic indexing and completion.')
+inner(11,'pre code','cff-version: 1.2.0\ntype: software\ntitle: fair-hunter-prey-simulation\nversion: '+VERSION+'\nauthors:\n  - family-names: Ginster\n    given-names: Raphael\n  - family-names: Papesch\n    given-names: Matthias\n  - family-names: Seibert\n    given-names: Vasiliy\n# Full file: identifiers, licenses, references',index=0)
+inner(11,'pre code',escape(json.dumps({'@context':'https://doi.org/10.5063/schema/codemeta-2.0','@type':'SoftwareSourceCode','name':'fair-hunter-prey-simulation','version':VERSION,'programmingLanguage':'Python','runtimePlatform':['Python 3.12','Python 3.13'],'softwareRequirements':['pysd==3.14.3','pandas>=2.2,<3']},indent=2)),index=1)
+for idx in range(2):
+    paras=slides[10].select('.two-col > .col')[idx].select('p')
+    if paras: inner(11,'.two-col > .col:nth-child('+str(idx+1)+') p',file('CITATION.cff' if idx==0 else 'codemeta.json','Read the complete metadata')+' · Zenodo uses .zenodo.json when both files are present.',O,'Link the real files and document the actual Zenodo metadata precedence.')
+col(12,1,mapping()+ul('<code>git clone</code> over HTTPS retrieves models, configurations, readers and history.','<code>pip install</code> installs the package and PySD execution route.',('The verified Zenodo archive is retrievable over HTTPS.' if PUBLISHED else 'Zenodo archive retrieval becomes available after the first approved release.'),'Text, CSV, HTML and SVG can be inspected openly. Native editing and execution depend on the relevant vendor tool.')+p('Standard retrieval protocols and native application access are separate questions.','small'))
+inner(13,'pre code',escape('# (a) clone — full history\ngit clone '+REPO+'\n\n# (b) install the exact reviewed snapshot\n'+INSTALL+'\n\n# (c) archived release\n# '+(DOI_URL if PUBLISHED else 'Zenodo archive: pending reviewed release')),O,'Use an actual commit before publication; switch to the verified tag and DOI only after release.')
+replace_text(13,'Private FTP? Proprietary portal requiring a PDF application? Not A1.1.','Check the retrieval protocol separately from authentication and vendor application requirements.',F)
+col(14,1,mapping()+ul('Public model sources and saved results can be retrieved without login.','GitHub authentication supports contributions and release administration.','Zenodo connects through GitHub OAuth; the hosted Jupyter service has its own sign-in.','Vendor applications have separate access terms. Proprietary software does not always mean paid access.'))
+inner(15,'pre code','gh auth login\ngh repo clone OWNER/PRIVATE-REPOSITORY\n\n# CI: use the workflow-scoped GITHUB_TOKEN\n# for GitHub operations; OIDC for supported\n# external cloud identity federation.',F,'Avoid embedding credentials in clone URLs and distinguish GitHub tokens from cloud OIDC.')
+replace_text(15,'Practical 1 uses OAuth to log into the Betty Research Engine via GitHub — you will see A1.2 in action.','Betty may offer GitHub sign-in for broader results. Native Vensim/Stella access is a separate software requirement.',O)
+col(16,1,mapping()+ul('Archive a reviewed source snapshot with authors, licenses and environment information.','Preserve citation metadata even if future native software access changes.','Check Zenodo deposit and Software Heritage ingestion separately; record only observed identifiers.','Keep the original saved results inspectable alongside the model sources.')+p(file('docs/fair/release.md','Publication and preservation checklist'),'small'))
+replace_text(17,'must remain resolvable forever','should remain accessible',F)
+replace_text(17,'Already crawls all of GitHub, GitLab, PyPI, Debian, …','Archives software from many supported origins; verify ingestion for the specific repository.',F)
+replace_text(17,'content-addressed forever.','content-addressed identifiers.',F)
+inner(17,'pre code','swh:1:dir:…   # directory identifier shape\nswh:1:rev:…   # revision identifier shape\nswh:1:snp:…   # snapshot identifier shape\n\n# Illustrative syntax, not issued identifiers.\n# Check this repository’s archival status.',F,'Do not present illustrative SWHID syntax as a verified archived object.')
+replace_text(17,'fair-hunter-prey on Software Heritage','Software Heritage identifier shapes')
+replace_text(17,'resolves even if GitHub is gone.','Verify the archived content independently of GitHub.',F)
+inner(18,'.three-col > :nth-child(3)', '<h3>Your repo today has</h3>'+p('<code>CITATION.cff</code>, <code>codemeta.json</code>, environment locks and preserved examples. The first DOI follows the reviewed release.'))
+inner(18,'.recap','<h3>Bring to Practical 1</h3><p>FAIR metadata helps search engines describe and index software. Next: step into the shoes of a <em>consumer</em>. What does Betty actually find, and what evidence can you inspect directly?</p>',F,'Metadata does not guarantee rank 1 or any particular search result.')
+# Practical 1: preserve search, sort, export, inspect, and reflection.
+replace_text(20,'14 min','12 min',O,'Rebalance the schedule around the added scientific introduction.')
+inner(20,'h1','Find the hunter–prey model in 12 minutes')
+inner(20,'.task-list',''.join('<li>'+x+'</li>' for x in [
+ 'Open the '+a('https://software.nfdi4ing.de/','Betty Research Engine')+'.',
+ 'Search for <code>fair-hunter-prey-simulation</code>, then <code>system dynamics</code>.',
+ 'Inspect the search sources. Use GitHub search or sign-in where the service offers them.',
+ 'Sort by citations if available. Record the result source and missing fields.',
+ 'Export the result set as JSON if available; record the query and date.',
+ 'Find this repository, or record the indexing gap and follow the '+a(REPO,'direct GitHub link')+'.',
+ 'Inspect authors, version, license and citation metadata. Follow the literature, both implementations, and Case 1/2 inputs.',
+ 'Follow the '+a(CONCEPT_URL,'Zenodo publication evidence')+'. Does a citation count measure scientific quality or only observed citations?'
+]))
+inner(21,'h1','What made the hunter–prey model findable?')
+inner(21,'.callout','<strong>Prompt:</strong> Which fields did Betty expose? Which came from GitHub or Zenodo? Which were absent? Compare what the repository declares with what the search service actually indexed.',F,'Replace unsupported rank-1 claims with observed discovery evidence.')
+replace_text(21,'SPDX id + semver tag — without these, aggregators de-rank the record.','SPDX identifiers and release versions describe reuse conditions and the source snapshot.',F)
+replace_text(21,'Populated by CrossRef/DataCite once the DOI is minted and cited back.','A citation count depends on the index and the citing records it has collected.',F)
+inner(21,'.recap','<h3>Takeaway</h3><p>Rich metadata improves discoverability and interpretation. Missing search results are indexing evidence, not a verdict on the model. Follow direct references when a new repository is not yet indexed.</p>',F,'Remove unverified guarantees about search ranking and discoverability.')
 
-if __name__=='__main__':render()
+# I: keep the general standards and qualified-reference teaching examples.
+col(23,1,mapping()+ul('<strong>Model sources:</strong> text-based Vensim <code>.mdl</code>; XML/XMILE in Stella <code>.stmx</code>.','<strong>Inputs:</strong> existing .cin, CSV and workbook files; shared scientific quantities, different representations.','<strong>Results:</strong> CSV readers preserve headers, units and independent time axes before pandas/Matplotlib analysis.','<strong>Execution:</strong> PySD translates copies of either implementation using the existing compatibility adapters.')+p('An OpenAPI service remains an illustrative option, shown next.','small'))
+# Keep the original four-row formats comparison; add the concrete lesson below it.
+append(24,'.callout','<br><strong>Here:</strong> Vensim trajectories and historical data can have different time axes. Stella Case 2 contains final values only. A CSV extension alone does not define these semantics.')
+inner(25,'pre code',escape('openapi: 3.1.0\ninfo: {title: Kaibab results API, version: 0.1.0}\npaths:\n  /results/{implementation}/{case}:\n    get:\n      summary: Inspect saved simulation evidence\n      parameters:\n        - {name: implementation, in: path, required: true,\n           schema: {type: string, enum: [vensim, stella]}}\n        - {name: case, in: path, required: true,\n           schema: {type: string, enum: [case1, case2]}}\n      responses:\n        "200":\n          description: Values, units, time axes and export kind'))
+append(25,'.two-col > .col:nth-child(2)',p('<strong>Illustrative design; no HTTP service is implemented.</strong> A response must distinguish <code>trajectory</code> and <code>final-values</code>. The working interfaces are the Python API, CLI and CSV readers.','small'),O,'Retain OpenAPI teaching without inventing a deployed API.')
+col(26,1,mapping()+ul('Authors: verified '+a('https://orcid.org/0000-0003-2394-7064','Raphael Ginster ORCID')+' and '+a('https://orcid.org/0000-0002-7121-6816','Vasiliy Seibert ORCID')+'; no invented identifier for Matthias Papesch.','Original model: '+a('https://pressbooks.lib.jmu.edu/sdlearningguide/','Deaton & MacDonald, System Dynamics Learning Guide')+'.','Licensing: SPDX identifiers and '+file('REUSE.toml','per-file mappings')+'.','Scientific meaning: '+a(SITE+'#workflows/term%2Ffraction-predators-killed-per-year','predator-removal concept')+' linked to declarations and assignments.'))
+# Preserve Alice/ORCID, SPDX and PyPI comparison; clarify the software-reference principle.
+append(27,'.two-col > .col:nth-child(2)',p('Author/license references illustrate I2. The dependency row illustrates R2, the specific principle for other software.','small'),F,'Separate I2 object references from R2 software references.')
+meta=json.loads((ROOT/'codemeta.json').read_text())
+meta_excerpt={k:meta[k] for k in ('@context','@type','name','version','codeRepository','programmingLanguage','runtimePlatform')}
+meta_excerpt['author']=[{'@type':'Person','name':x['givenName']+' '+x['familyName'],**({'@id':x['@id']} if '@id' in x else {})} for x in meta['author']]
+inner(28,'h1','<code>codemeta.json</code> — line by line<span class="fair-pill I">I2</span>')
+inner(28,'pre code',escape(json.dumps(meta_excerpt,indent=2)))
+col(28,1,'<h3>Every URL identifies its subject</h3>'+ul('Repository URL — current source and collaboration.','Version and DOI — the released research artifact.','SPDX — per-file license semantics.','ORCID — verified person identity.','Literature and concept URI — scientific context.','PyPI references — dependencies, under R2.')+p(file('codemeta.json','Complete CodeMeta file')+' · '+file('.zenodo.json','Zenodo creators and related identifiers'))+'<div class="back-ref">← Lecture 3 · CodeMeta &amp; Metadata4Ing</div>')
+# Keep the ambiguity/credit explanation and example/code split, replacing heat diffusion.
+col(29,0,'<h3>The ambiguity problem</h3>'+p('Two files name <strong>“Fraction Predators Killed per Year”</strong>. Does a value describe the scientific quantity, a model declaration, or a scenario assignment?')+ul('Scientific concept: annual predator-removal fraction, with its declared meaning and unit.','Case 1 assignment: <strong>0</strong>; Case 2 assignment: <strong>0.2</strong>.','Vensim and Stella encode those assignments in different files.',cls='')+'<h3>The credit problem</h3>'+p('A resolvable concept URI identifies the definition being reused. Cite the literature and vocabulary source rather than leaving the meaning implicit.')+'<div class="back-ref">← Lecture 3 · controlled vocabularies for data</div>',C,'Use the actual shared concept and distinguish scientific meaning from a file assignment; free text is not itself a claim of inventing a concept.')
+col(29,1,'<div class="service-chip ts">Semantic model · controlled vocabulary</div>'+shot('vocabulary.jpg','Controlled-vocabulary entry for the annual predator-removal fraction','Local vocabulary term, explicitly a review draft.')+p(a(SITE+'#workflows/term%2Ffraction-predators-killed-per-year','Open the concept')+' · '+a(SITE+'#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year','Follow its configuration binding'))+p('Case 2: '+file('models/config/scenarios/case2.cin','Vensim .cin')+' · '+file('examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv','Stella CSV'),'small'))
+for n in (30,31,34):
+    replace_text(n,'I2','R2',F,'FAIR4RS R2 covers qualified references to other software; retain the lesson at its original point in the sequence.')
+    for badge in slides[n-1].select('.fair-pill.I'):badge['class']=['fair-pill','R']
+replace_text(30,'numpy>=1.26,<2.0','pandas>=2.2,<3')
+replace_text(30,'numpy','pandas')
+replace_text(30,'>=1.26,<2.0','>=2.2,<3')
+replace_text(30,'numpy 3.0','a future incompatible version')
+replace_text(30,"That's a promise.","That declares the supported range.",F)
+inner(31,'pre code',escape('[build-system]\nrequires = ["setuptools>=77,<83", "wheel"]\nbuild-backend = "setuptools.build_meta"\n\n[project]\nname = "fair-hunter-prey"\nversion = "'+VERSION+'"\nrequires-python = ">=3.12,<3.14"\ndependencies = [\n  "pysd==3.14.3", "pandas>=2.2,<3",\n  "matplotlib>=3.8,<4", "openpyxl>=3.1,<4",\n]'),index=0)
+if len(slides[30].select('pre code'))>1:inner(31,'pre code',escape(INSTALL),index=1)
+replace_text(31,'push tag → installable','an installable commit can be pinned')
+replace_text(31,'Publish to PyPI (optional)','Publish to PyPI (optional; not done here)')
+replace_text(31,'package name matches imports.','distribution: fair-hunter-prey; import: fair_hunter_prey.')
+replace_text(31,'Pin to a git tag:','Pin to the reviewed commit; use v0.7.0 after publication:')
+append(31,'.two-col > .col:nth-child(2)',p(file('pyproject.toml','Complete pyproject.toml')+' · Both native implementations are bundled without reorganizing the scientific source tree.','small'))
+
+# Practical 2: actual inspection and all four independently executed cases.
+inner(33,'.task-list',''.join('<li>'+x+'</li>' for x in [
+ 'Open '+a('https://jupyter.nfdi4ing.de','NFDI4Ing Jupyter')+' with Python 3.12/3.13. Install the '+file('docs/fair/README.md','pinned teaching package')+'.',
+ 'Open '+file('examples/fair/02_interoperability.ipynb','02_interoperability.ipynb')+'. First inspect saved CSV exports with the unchanged readers, pandas and Matplotlib. This performs no simulation.',
+ 'Run both implementations and both cases through <strong>PySD</strong>. Compare each with its own reference, preserving numerical methods and tolerances.',
+ 'Inspect package versions. Explain what an absent dependency constraint or a misread final-values export could break. Do not modify the original research inputs.'
+]))
+inner(33,'pre code',escape('from fair_hunter_prey import inspect_results, run_example\n\ninspect_results("out/inspection")  # saved exports only\nfor implementation in ("vensim", "stella"):\n    for case in ("case1", "case2"):\n        run_example(implementation, case,\n                    f"out/{implementation}-{case}")'))
+inner(33,'.file-head','<span>Notebook · inspect exports, then execute with PySD</span><span>Python 3.12 / 3.13</span>')
+replace_text(34,'numpy>=1.26,<2.0','pandas>=2.2,<3')
+replace_text(34,'works everywhere','uses standard tools on supported platforms',F)
+replace_text(34,'No proprietary lock-in.','The Python route is independent; native authoring still uses vendor tools.',F)
+append(34,'.recap','<p class="small">Inspecting a CSV and executing a model are different activities. Stella Case 2’s native export contains final values only; a new PySD trajectory is new execution evidence.</p>')
+
+# R: preserve all documentation, licensing, changelog, standards and sustainability lessons.
+col(36,1,mapping()+ul(file('README.md')+', '+file('docs/fair/README.md','docs/')+' and '+file('examples/fair/02_interoperability.ipynb','examples/')+' — layered documentation, R1.',file('REUSE.toml')+' — MIT code, CC BY 4.0 documentation, CC BY-NC-SA 4.0 model-derived artifacts, R1.1.',file('CHANGELOG.md')+' and preserved teaching tags — the human-readable history, R1.2.','Execution provenance records the implementation, case, PySD engine, inputs, environment and output hashes.','The '+file('docs/fair/evidence.md','FAIR4RS evidence table')+' links each claim to its evidence.'))
+inner(37,'.three-col + .three-col > :nth-child(3) p','An explicit self-audit — the linked FAIR4RS evidence table records this repository’s status.')
+append(37,'.three-col + .three-col',p(file('docs/fair/evidence.md','Open the FAIR4RS evidence table'),'small'))
+append(38,'.two-col > .col:nth-child(1)',p('<strong>Here:</strong> '+file('REUSE.toml','REUSE maps each file')+' to MIT, CC BY 4.0, or the inherited CC BY-NC-SA 4.0 model license. Vensim and Stella retain their own proprietary terms.','small'))
+replace_text(38,'Others legally cannot reuse it, even if the repo is public.','Public visibility alone grants no general reuse license; applicable permissions and exceptions still matter.',F,'Avoid an absolute legal claim while preserving the license lesson.')
+inner(39,'pre code',escape('207ca01 fix: identify PySD explicitly in execution output and logs\n2648c8c docs: record FAIR verification and presentation review evidence\nfd82aa2 ci: install the teaching package before the full existing test suite\neaa529e feat: add FAIR4RS lecture and reproducible hunter-prey workflows\n\n# Earlier teaching milestones remain intact.'),index=0)
+inner(39,'pre code',escape('# Abridged; read the complete changelog below\n## [0.7.0] — release candidate\n### Added\n- Both implementations and both cases via PySD.\n- Saved-export inspection and RO-Crate examples.\n- FAIR4RS lecture and evidence map.\n### Changed\n- Restore all 52 reference lessons and styling.\n### Preserved\n- Models, configurations, readers and tolerances.'),index=1)
+append(39,'.two-col > .col:nth-child(2)',p(file('CHANGELOG.md','Read the full versioned changelog')+' · '+a(REPO+'/commits/codex/fair4rs-hunter-prey','Inspect actual commits'),'small'))
+replace_text(39,'Conventional-commit style turns the log itself into a changelog draft.','Descriptive commit messages support a changelog draft; the changelog records the curated story.',F,'Use the real history rather than inventing or rewriting conventional commit messages.')
+col(40,1,mapping()+ul('<code>pysd==3.14.3</code> — translation and simulation with documented feature limits.','<code>pandas&gt;=2.2,&lt;3</code>, <code>matplotlib&gt;=3.8,&lt;4</code>, <code>openpyxl&gt;=3.1,&lt;4</code>.','<code>requires-python = ">=3.12,<3.14"</code>; exact tested teaching locks for both interpreters.','Authority: '+a('https://pypi.org/project/pysd/','PyPI')+' and '+a('https://pysd.readthedocs.io/en/latest/','PySD documentation')+'.','Native Vensim and Stella are separate software dependencies for native authoring/execution.')+p('Package outputs identify PySD and the existing compatibility adapters.','small'))
+replace_text(41,'Good enough for a tolerant reuser.','Declares the supported dependency contract.',F)
+replace_text(41,'every transitive dep at a concrete version.','every transitive dep at a concrete version. Here: teaching-py312.txt and teaching-py313.txt.')
+replace_text(41,'The OS, libc, CUDA, everything.','Records additional OS/runtime layers when actually built and identified. No container image is published here.',F)
+inner(41,'pre code',escape('# Illustrative Dockerfile; not a published image\nFROM python:3.13-slim\n# For a frozen build, record a verified base-image digest.\nCOPY dist/fair_hunter_prey-0.7.0-py3-none-any.whl /tmp/\nRUN pip install /tmp/*.whl\nENTRYPOINT ["fair-hunter-prey"]'),O,'Keep container teaching but remove a fake digest and distinguish it from the tested lock files.')
+col(42,1,mapping()+ul('<strong>Packaging:</strong> PEP 621 pyproject.toml and an installed-package check.','<strong>Citation:</strong> CFF and CodeMeta with verified creators and references.','<strong>Tests:</strong> existing scientific tests plus four implementation/case combinations.','<strong>CI:</strong> Python 3.12 and 3.13; unchanged reference tolerances.','<strong>Licensing:</strong> REUSE and SPDX, preserving the inherited model terms.'))
+replace_text(43,'a tagged GitHub release + a DOI remains installable for years.','a tagged GitHub release + a DOI preserves an identifiable source snapshot; environment checks support reuse.',F)
+inner(43,'pre code',escape('name: FAIR teaching verification\non: [push, pull_request]\njobs:\n  verify:\n    strategy:\n      matrix: {python: ["3.12", "3.13"]}\n    runs-on: ubuntu-latest\n    steps:\n      # checkout and locked environment setup\n      - run: python -m pytest -q\n      - run: python tools/fair/check_stella.py\n      - run: python tools/fair/check_materials.py\n      - run: python tools/fair/execute_notebooks.py\n      # build and test wheel outside the checkout'))
+append(43,'.two-col > .col:nth-child(1)',p(file('.github/workflows/fair.yml','Read the complete workflow')+' · CI also checks protected-file hashes and both Pages surfaces.','small'))
+append(44,'.two-col > .col:nth-child(2)',p('This repository’s '+file('docs/fair/release.md','release checklist')+' records the process. Maintainer responsibilities and support promises must be agreed with the collaborators.','small'))
+inner(45,'.recap','<h3>Bring to Practical 3</h3><p>You have inspected saved exports and run an implementation in a fresh Python environment. Now package its source, selected case, actual outputs, licenses and environment together.</p><p>In a disposable copy of the crate, change an output or remove an input. Re-run the hash check and explain why it fails. Discuss how missing licenses and unconstrained dependencies would obstruct reuse.</p>',C,'Keep the failure/reflection exercise while protecting collaborator files and using the implemented crate checks.')
+replace_text(46,'Everything needed to regenerate a figure in 2034 is in one crate.','The crate collects the available context needed to attempt regeneration years later.',F)
+replace_text(46,'Execute the same crate in Jupyter, Docker, your laptop, or an HPC cluster — the metadata tells each system what it needs.','Inspect the same standard crate across tools. Execution still requires compatible software and dependencies. This practical uses Jupyter.',F,'An RO-Crate is portable metadata and content, not a universal execution runtime.')
+replace_text(46,'Deposit the entire crate on Zenodo or Software Heritage once.','Deposit a research-object archive in a suitable repository such as Zenodo; verify source-code archiving separately.',F,'Do not imply that Software Heritage universally archives arbitrary crates and research data.')
+inner(48,'h1','Package hunter–prey as a Research Object')
+inner(48,'.task-list',''.join('<li>'+x+'</li>' for x in [
+ 'In '+a('https://jupyter.nfdi4ing.de','Jupyter')+', open '+file('examples/fair/03_ro_crate.ipynb','03_ro_crate.ipynb')+' using the same locked teaching environment.',
+ 'Select one implementation and case. Generate a fresh PySD run into a separate output directory.',
+ 'Create the crate. It includes the model, inputs, references, licenses, recorded environment, actual outputs and execution provenance.',
+ 'Inspect <code>ro-crate-metadata.json</code>. Follow creator identifiers and find the selected scenario.',
+ 'Verify file hashes; alter only a disposable copy to demonstrate detection of changed evidence.'
+]))
+inner(48,'.callout',code('from fair_hunter_prey import run_example, create_crate\nrun_example("stella", "case2", "out/crate-run")\ncrate = create_crate("out/crate-run", "out/research-object")\nprint(crate / "ro-crate-metadata.json")','Jupyter · actual execution and packaging')+p('The adapter uses '+a('https://pypi.org/project/rocrate/','rocrate')+' to describe files, authors and provenance.','small'))
+replace_text(49,'Run it identically in 2034.','Identify what was actually run and assess future execution requirements.',F)
+replace_text(49,'RO-Crate pins the entire execution context:','This crate records the observed execution context:',F)
+replace_text(49,'future-proofing your research.','preserving the context needed for future reuse.',F)
+replace_text(50,'Indexed by at least one registry (Betty Engine, PyPI, …)','Check actual indexing in a registry or discovery service',F)
+replace_text(50,'Software Heritage + Zenodo snapshot','Verify Zenodo deposit and Software Heritage ingestion',F)
+replace_text(50,'Qualified references: ORCID, SPDX, ROR, PyPI, Wikidata URIs','Qualified references: ORCID, SPDX, ROR, vocabulary URIs',F)
+replace_text(50,'Pinned dependencies with version constraints','Documented CSV meanings, units and time axes',C)
+append(50,'.fair-grid > :nth-child(4) ul','<li>Qualified software references and tested dependency locks (R2)</li>',F,'Keep dependency evidence on the checklist under R2.')
+inner(50,'p.small','Use the '+file('docs/fair/evidence.md','FAIR4RS evidence table')+' to distinguish implemented, verified and pending items. This checklist supports assessment; it is not a certification.',F)
+attribute(51,'a[href="https://www.ing.grid"]','href','https://www.inggrid.org/',F,'Correct the journal’s destination URL.')
+inner(52,'.meta > div:nth-child(3)','<span class="label">This deck and example</span>'+a(SITE+'slides/','Hunter–prey slides (publication after merge)')+'<br>'+a(REPO,'GitHub repository')+'<br>'+a(CONCEPT_URL,CONCEPT)+'<br>'+a('https://vasiliyseibert.github.io/awesome-sim/','Original awesome-sim lecture')+'<br>CC BY 4.0 lecture; inherited model licensing')
+append(52,'.hero',p('Authors: Raphael Ginster · Matthias Papesch · Vasiliy Seibert','closing-authors'))
+
+# Five additive case-study slides and six existing, optional screenshot walkthroughs.
+case_source=json.loads((Path(__file__).with_name('reference')/'case-study.json').read_text())
+case_titles={'shared-specification':'Shared scientific specification','shared-use-cases':'Shared use cases, tool-specific implementations','artifacts-access':'Tool-specific artifacts and access','two-cases':'Case 1 and Case 2','open-workflows':'Open inspection and independent execution'}
+case_slides=[];appendix=[]
+for id,raw in case_source.items():
+    old=parsed(raw).select_one('section'); s=soup.new_tag('section',id=id)
+    s['class']=['content','case-study' if id in case_titles else 'appendix']
+    group='Case-study addition' if id in case_titles else 'Optional appendix'
+    header=parsed(f'<div class="slide-header"><span class="brand">{group}</span><span class="chip">Vensim · Stella · Case 1 / Case 2</span></div>').div
+    s.append(header)
+    title=soup.new_tag('h1');title.string=case_titles.get(id,text(old.h1));s.append(title)
+    body=old.select_one('.slide-body')
+    for child in list(body.contents):s.append(child)
+    for c in s.select('.two-col > div'):c['class']=list(c.get('class',[]))+['col']
+    for img in s.select('figure'):img['class']=['evidence']
+    footer=parsed('<div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>'+group+'</span></div>').div
+    s.append(footer)
+    s['data-stage']={'shared-specification':'specification','shared-use-cases':'implementation','artifacts-access':'implementation','two-cases':'configuration','open-workflows':'results'}.get(id,'results')
+    note=soup.new_tag('aside',attrs={'class':'notes'})
+    old_note=deepcopy(old.select_one('aside.notes'))
+    for link in old_note.select('a'):
+        href=link['href']
+        label=href.rsplit('/',1)[-1].replace('%2F',' / ') or 'Semantic model'
+        if 'pressbooks' in href:label='Original scientific specification'
+        elif 'pysd.readthedocs' in href:label='PySD documentation'
+        elif 'github.com' in href and '/blob/' not in href:label='GitHub repository'
+        link.string=label
+    for child in list(old_note.contents):note.append(child)
+    s.append(note)
+    (case_slides if id in case_titles else appendix).append(s)
+# Source case-study markup uses a different figure helper; retain clear captions and add primary links.
+case_slides[0].append(parsed('<p class="small">'+a(SITE+'#overview','Open the unchanged semantic model')+' · '+a('https://pressbooks.lib.jmu.edu/sdlearningguide/','Original scientific specification')+'</p>').p)
+case_slides[1].select_one('tbody').clear()
+for row in [
+ ['Define','Equations and sketch in .mdl','Equations and views in .stmx (XML/XMILE)'],
+ ['View','Native view or exported HTML/SVG','Native view or exported PDF/SVG'],
+ ['Document / comment','Model text, variable descriptions, report','Model documentation, equations, screenshots'],
+ ['Edit','Vensim authoring tools','Stella Architect authoring tools'],
+ ['Configure','Existing .cin, CSV and workbook inputs','Parameter, lookup and historical-data CSVs'],
+ ['Execute','Native Vensim engine; separate PySD route','Native Stella engine; separate PySD route'],
+ ['Export','Source, documentation and result data','Source, documentation and result data'],
+]:case_slides[1].select_one('tbody').append(parsed('<tr>'+''.join('<td>'+x+'</td>' for x in row)+'</tr>').tr)
+case_slides[2].append(parsed('<p class="small">Proprietary does not always mean paid: '+a('https://vensim.com/vensim-applications/','Vensim Model Reader')+' and '+a('https://www.iseesystems.com/resources/help/v4/Content/Welcome.htm','isee Player')+' offer restricted viewing/runtime workflows. Compatibility with this snapshot was not newly tested.</p>').p)
+case_slides[3].select_one('.case-files').clear()
+case_slides[3].select_one('.case-files').append(parsed('Vensim: '+file('models/config/parameters/basic_parameters.cin','Case 1 parameters')+' + initial-stock workbook; '+file('models/config/scenarios/case2.cin','Case 2 changes')+'.<br>Stella: '+file('examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario1.csv','Case 1 parameters')+' / '+file('examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv','Case 2 parameters')+'.'))
+case_slides[4].append(parsed('<p class="small">'+a('https://pysd.readthedocs.io/en/latest/','PySD supports translation and simulation, with feature limitations')+'. Stella Case 2’s native CSV has final values only; a new PySD trajectory is separate evidence.</p>').p)
+# Keep the full scientific-to-archive diagram in the introduction; compact form uses footer space.
+STAGES=['specification','implementation','configuration','execution','results','archive']
+LABELS=['Science','Vensim / Stella','Case 1 / Case 2','Execution','Inspection','FAIR record']
+def workflow(stage,full=False):
+    return '<ol class="workflow'+(' workflow-full' if full else '')+'" aria-label="Shared research workflow">'+''.join('<li'+(' class="active" aria-current="step"' if k==stage else '')+'>'+v+'</li>' for k,v in zip(STAGES,LABELS))+'</ol>'
+case_slides[0].append(parsed(workflow('specification',True)).ol)
+for s in case_slides:slides[4].insert_after(s) # Correct order is established by rebuilding the slide container below.
+all_slides=slides[:5]+case_slides+slides[5:]+appendix
+container=soup.select_one('.slides');container.clear()
+for s in all_slides:container.append(s)
+for i,s in enumerate(all_slides,1):
+    n=int(s['data-reference-slide']) if s.has_attr('data-reference-slide') else None
+    stage=s.get('data-stage') or ('specification' if n and n<=5 else 'archive' if n and n<=21 else 'results' if n and n<=25 else 'configuration' if n and n<=29 else 'execution' if n and n<=34 else 'archive')
+    stage={12:'implementation',13:'implementation',14:'implementation',15:'implementation',39:'execution',40:'execution',41:'execution',42:'execution',43:'execution'}.get(n,stage)
+    s['data-stage']=stage
+    if not s.select_one('.workflow:not(.workflow-full)'):s.append(parsed(workflow(stage)).ol)
+    note=s.select_one('aside.notes')
+    if note is None:
+        note=soup.new_tag('aside',attrs={'class':'notes'});s.append(note)
+        note.append('Reference slide '+str(n)+': '+text(original[n-1].h1)+'. Preserve its teaching purpose and visual layout. ')
+        if changes[n]:
+            note.append('Adaptations: '+' '.join(dict.fromkeys(x['reason'] for x in changes[n]))+' ')
+        else:note.append('General teaching content retained. ')
+    note.append('Shared workflow stage: '+LABELS[STAGES.index(stage)]+'. Distinguish native tool operations, saved-result inspection, and observed PySD execution. ')
+    if n in (20,21):note.append('Observed 2026-10-09: anonymous exact-name Betty search returned no repository; authenticated enrichment was not tested. Record current observations rather than promise ranking. ')
+    if n in (7,8,9,10,11,16,17,18):note.append('Publication status is '+STATE['status']+'. Do not imply that a configured webhook is already a completed deposit. ')
+    note.append(parsed('<p>'+a(REPO,'Repository')+' · '+a(SITE,'Semantic model')+' · '+file('docs/fair/evidence.md','FAIR4RS evidence')+'</p>'))
+    if n:note.append(parsed('<p>'+a('https://vasiliyseibert.github.io/awesome-sim/#/'+str(n-1),'Original slide '+str(n))+' · '+a('comparison.html#reference-'+str(n),'Exact adaptation register')+'</p>'))
+
+# Local dependencies preserve the reference theme and work offline after cloning.
+def localize(page,reference=False):
+    for link in list(page.select('head link')):
+        href=link.get('href','')
+        if 'katex' in href or 'fonts.googleapis.com' in href or 'fonts.gstatic.com' in href:link.decompose()
+        elif 'cdn.jsdelivr.net/npm/reveal.js@5.1.0/' in href:link['href']=href.replace('https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/','vendor/reveal/')
+    link=page.new_tag('link',rel='stylesheet',href='css/local-fonts.css');page.head.append(link)
+    if not reference:
+        page.head.append(page.new_tag('link',rel='stylesheet',href='css/hunter-prey.css'))
+        page.title.string='RDM Basics 4 · FAIR4RS · Hunter–prey'
+        page.select_one('meta[name="author"]')['content']='Raphael Ginster; Matthias Papesch; Vasiliy Seibert'
+    for script in list(page.select('script')):script.decompose()
+    for src in ['vendor/reveal/dist/reveal.js','vendor/reveal/plugin/highlight/highlight.js','vendor/reveal/plugin/notes/notes.js','vendor/reveal/plugin/search/search.js','presentation.js']:
+        page.body.append(page.new_tag('script',src=src))
+    if reference:page.body['data-reference']='true'
+localize(soup)
+(OUT/'index.html').write_text(str(soup).rstrip()+'\n')
+reference_page=parsed(REFERENCE.read_text());localize(reference_page,True)
+# Reference-only rendering retains the unadapted source; existing original image assets are local.
+(OUT/'reference.html').write_text(str(reference_page).rstrip()+'\n')
+
+# Content-level register: before/after replacements, retained blocks, layout identity, and full diff.
+coverage=[];catalog=[]
+for i,s in enumerate(all_slides,1):
+    title=text(s.h1);n=int(s['data-reference-slide']) if s.has_attr('data-reference-slide') else None
+    catalog.append(dict(id=s['id'],slide=i,title=title,original=n,stage=s['data-stage'],kind=s['class'][0]))
+    if not n:continue
+    orig=original[n-1]
+    retained=[]
+    for block in orig.select('h1,h3,h4,p,li,q,th,td'):
+        value=text(block)
+        if value and value in text(s):retained.append(value)
+    coverage.append(dict(original_slide=n,original_title=text(orig.h1),adapted_slide=i,adapted_id=s['id'],adapted_title=title,reference_revision=REFERENCE_SHA,reference_layout=orig.get('class',[]),adapted_layout=s.get('class',[]),retained_blocks=list(dict.fromkeys(retained)),changes=changes[n],added_elements=['Speaker notes with adaptation reasons and sources','Compact shared workflow in the footer area'],original_text=text(orig),adapted_text=text(deepcopy(s))))
+(OUT/'coverage.json').write_text(json.dumps(coverage,indent=2,ensure_ascii=False)+'\n')
+(OUT/'catalog.json').write_text(json.dumps(catalog,indent=2,ensure_ascii=False)+'\n')
+md=['# Reference lecture: content-level adaptation register','','Source: [awesome-sim lecture](https://vasiliyseibert.github.io/awesome-sim/), revision `'+REFERENCE_SHA+'`.','','52 original slides remain in order, with five added case-study slides and six optional walkthroughs: **57 core / 63 total**. The original HTML is preserved in `tools/fair/reference/awesome-sim.html`.','','[Side-by-side comparison and exact substitutions](comparison.html). Backgrounds, typography, original layout families and the six divider compositions are retained. All slides additionally receive notes and a compact workflow indicator.','','| Reference | Revised | Changes | Retained content blocks |','|---|---|---|---|']
+for c in coverage:md.append(f"| {c['original_slide']}: {c['original_title']} | [{c['adapted_slide']}: {c['adapted_title']}](index.html#/{c['adapted_id']}) | {len(c['changes'])} recorded substitutions | {len(c['retained_blocks'])} |")
+md+=['','## Additions','', 'Five labelled slides after reference slide 5: shared specification; shared use cases; artifacts/access; Case 1/2; inspection versus execution.','', 'Six optional screenshot walkthroughs follow the original closing slide.','', 'The register records wording changes, exact replaced fragments, added elements and reasons. It does not treat a topic-level match as proof of retained content.']
+(OUT/'coverage.md').write_text('\n'.join(md)+'\n')
+css='body{font:16px/1.5 Arial,sans-serif;margin:0;background:#f7f8fb;color:#0c113d}header,main{max-width:1500px;margin:auto;padding:24px}a{color:#2839cc}section{background:white;margin:22px 0;padding:24px;border:1px solid #d7dbe6}iframe{width:100%;aspect-ratio:1.6;border:1px solid #ddd}.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f5f9;padding:12px;font-size:13px}summary{cursor:pointer;font-weight:bold}.change{border-left:3px solid #2839cc;padding-left:16px;margin:18px 0}.shots img{width:100%}@media(max-width:850px){.pair{grid-template-columns:1fr}}'
+html=['<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>52-slide fidelity comparison</title><style>'+css+'</style><header><h1>Reference lecture: 52-slide comparison</h1><p>Original order and layout families retained. Five case-study additions and six optional walkthroughs are identified separately.</p><p>'+a('index.html','Open revised presentation')+' · '+a('coverage.md','Coverage map')+' · '+a('coverage.json','Machine-readable exact changes')+'</p></header><main>']
+for c in coverage:
+    n=c['original_slide'];html.append(f'<section id="reference-{n}"><h2>Reference {n} → revised {c["adapted_slide"]}: {escape(c["original_title"])}</h2><p>Layout: {escape(" ".join(c["reference_layout"]))}. General teaching content is retained except the explicitly recorded replacements below.</p><div class="pair shots"><a href="comparison/{n:02d}-reference.jpg"><img loading="lazy" src="comparison/{n:02d}-reference.jpg" alt="Reference slide {n}"></a><a href="comparison/{n:02d}-adapted.jpg"><img loading="lazy" src="comparison/{n:02d}-adapted.jpg" alt="Revised slide {c["adapted_slide"]}"></a></div><p>'+a('reference.html#/'+str(n-1),'Open original slide')+' · '+a('index.html#/'+c['adapted_id'],'Open adapted slide')+'</p>')
+    html.append('<details><summary>Retained content ('+str(len(c['retained_blocks']))+' blocks)</summary>'+ul(*(escape(x) for x in c['retained_blocks']))+'</details>')
+    html.append('<details><summary>Exact substitutions ('+str(len(c['changes']))+')</summary>')
+    for change in c['changes']:
+        html.append('<div class="change"><h3>'+escape(change['category'])+'</h3><p>'+escape(change['reason'])+'</p><p><code>'+escape(change['selector'])+'</code></p><div class="pair"><pre>'+escape(change['before'])+'</pre><pre>'+escape(change['after'])+'</pre></div></div>')
+    html.append('</details><p>Added on this slide: speaker notes, source/adaptation links in notes, compact workflow indicator.</p></section>')
+html.append('</main></html>');(OUT/'comparison.html').write_text('\n'.join(html)+'\n')
+(OUT/'comparison').mkdir(exist_ok=True)
+sources=json.loads((OUT/'sources.json').read_text())
+sources['reference_deck']['html_sha256']=hashlib.sha256(REFERENCE.read_bytes()).hexdigest()
+sources['reference_deck']['content_license']='CC-BY-4.0 (as stated by the source lecture)'
+sources['publication']={'software_version':VERSION,'archived_software_revision':STATE['release_revision'],'presentation_revision':'__REVISION__','status':STATE['status']}
+(OUT/'sources.json').write_text(json.dumps(sources,indent=2,ensure_ascii=False)+'\n')
+print('52 original slides retained; 5 case-study additions; 6 appendix slides; exact content register generated.')
