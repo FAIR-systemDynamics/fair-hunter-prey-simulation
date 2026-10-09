@@ -1,0 +1,403 @@
+/* Slide layout primitives used throughout the deck. */
+
+/* ---------- Two-column (concept / artefact) ---------- */
+.reveal .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 20px;
+}
+.reveal .two-col.wide-right  { grid-template-columns: 1fr 1.3fr; }
+.reveal .two-col.wide-left   { grid-template-columns: 1.3fr 1fr; }
+.reveal .two-col > .col h3 { margin-top: 0; }
+
+/* ---------- Three-col mini cards ---------- */
+.reveal .three-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 18px;
+}
+.reveal .card {
+  background: var(--n4i-grey-50);
+  border-top: 4px solid var(--n4i-blue);
+  padding: 18px 20px;
+  border-radius: 2px;
+  box-shadow: 0 1px 0 var(--n4i-grey-200);
+}
+.reveal .card.accent-y { border-top-color: var(--n4i-yellow); }
+.reveal .card.accent-o { border-top-color: var(--n4i-orange); }
+.reveal .card.accent-p { border-top-color: var(--n4i-pink); }
+.reveal .card.accent-g { border-top-color: var(--n4i-green); }
+.reveal .card h4 {
+  color: var(--n4i-navy);
+  font-size: .9em;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.reveal .card p { font-size: .85em; margin: 0; color: var(--n4i-ink); }
+.reveal .card code { font-size: .85em; }
+
+/* ---------- Callout / pull-quote ---------- */
+.reveal .callout {
+  background: var(--n4i-grey-50);
+  border-left: 6px solid var(--n4i-yellow);
+  padding: 14px 22px;
+  margin: 20px 0;
+  font-size: .95em;
+  color: var(--n4i-navy);
+  border-radius: 0 4px 4px 0;
+}
+.reveal .callout.blue  { border-left-color: var(--n4i-blue); }
+.reveal .callout.danger{ border-left-color: var(--n4i-pink); background: #FFF2F6; }
+.reveal .callout strong { color: var(--n4i-blue); }
+
+/* ---------- Task list (Practical slides) ---------- */
+.reveal .task-list {
+  counter-reset: task;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.reveal .task-list > li {
+  counter-increment: task;
+  position: relative;
+  padding: 12px 16px 12px 58px;
+  margin: 8px 0;
+  background: var(--n4i-grey-50);
+  border-radius: 4px;
+  border: 1px solid var(--n4i-grey-200);
+  font-size: .92em;
+  line-height: 1.45;
+}
+.reveal .task-list > li::before {
+  content: counter(task);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px; height: 34px;
+  background: var(--n4i-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.reveal .task-list > li code { font-size: .85em; }
+
+/* ---------- Service chip (Betty/Terminology/Jupyter) ---------- */
+.reveal .service-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--n4i-navy);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: .85em;
+  letter-spacing: .05em;
+  margin-bottom: 14px;
+}
+.reveal .service-chip .dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--n4i-yellow);
+}
+.reveal .service-chip.bre  .dot { background: #5AC8FA; }
+.reveal .service-chip.term .dot { background: var(--n4i-orange); }
+.reveal .service-chip.jup  .dot { background: var(--n4i-pink); }
+
+/* ---------- FAIR4RS checklist grid ---------- */
+.reveal .fair-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.reveal .fair-grid .col {
+  background: var(--n4i-grey-50);
+  border-top: 6px solid var(--n4i-blue);
+  padding: 14px 16px;
+  border-radius: 2px;
+  min-height: 220px;
+}
+.reveal .fair-grid .col.F { border-top-color: var(--n4i-blue); }
+.reveal .fair-grid .col.A { border-top-color: var(--n4i-green); }
+.reveal .fair-grid .col.I { border-top-color: var(--n4i-orange); }
+.reveal .fair-grid .col.R { border-top-color: var(--n4i-pink); }
+.reveal .fair-grid .col .letter {
+  font-family: var(--font-mono);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--n4i-navy);
+  line-height: 1;
+}
+.reveal .fair-grid .col h4 {
+  font-size: .85em;
+  text-transform: uppercase;
+  color: var(--n4i-ink);
+  letter-spacing: .06em;
+  margin: 4px 0 10px 0;
+}
+.reveal .fair-grid .col ul > li {
+  font-size: .72em;
+  margin: 4px 0;
+  padding-left: 1em;
+  line-height: 1.35;
+}
+.reveal .fair-grid .col ul > li::before {
+  top: .4em; width: .35em; height: .35em; border-left-width: 2px;
+}
+
+/* ---------- Artefact "card" for showing a file ---------- */
+.reveal .artefact {
+  background: #0C113D;
+  color: #E6E8F2;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px -20px rgba(12,17,61,.5);
+  font-family: var(--font-mono);
+  font-size: .55em;
+  line-height: 1.45;
+}
+.reveal .artefact .file-head {
+  background: #1A2163;
+  color: var(--n4i-yellow);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.reveal .artefact .file-head .dots {
+  color: rgba(255,255,255,.4);
+  letter-spacing: 4px;
+}
+.reveal .artefact pre {
+  background: transparent;
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+  font-size: 1em;
+}
+.reveal .artefact pre code {
+  padding: 12px 16px;
+  max-height: 420px;
+}
+
+/* ---------- Link chip (DOIs, GitHub) ---------- */
+.reveal .chip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--n4i-grey-100);
+  color: var(--n4i-navy);
+  border: 1px solid var(--n4i-grey-200);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin: 2px 4px 2px 0;
+  text-decoration: none;
+  border-bottom: 1px solid var(--n4i-grey-200);
+}
+.reveal .chip-link:hover {
+  background: var(--n4i-yellow);
+  color: var(--n4i-navy);
+  border-color: var(--n4i-blue);
+}
+.reveal .chip-link::before {
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--n4i-blue);
+}
+.reveal .chip-link.doi::before { background: var(--n4i-blue); }
+.reveal .chip-link.gh::before  { background: var(--n4i-navy); }
+.reveal .chip-link.zen::before { background: #005992; }
+.reveal .chip-link.swh::before { background: var(--n4i-pink); }
+.reveal .chip-link.orc::before { background: #A6CE39; }
+.reveal .chip-link.spdx::before{ background: var(--n4i-orange); }
+
+/* ---------- Recap block (end of each theory) ---------- */
+.reveal .recap {
+  background: linear-gradient(135deg, var(--n4i-navy), var(--n4i-blue-2));
+  color: #fff;
+  padding: 22px 26px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.reveal .recap h3 {
+  color: var(--n4i-yellow);
+  font-family: var(--font-mono);
+  font-size: .9em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.reveal .recap ul > li { color: #fff; font-size: .85em; }
+.reveal .recap ul > li::before { background: var(--n4i-yellow); border-left-color: #fff; }
+
+/* ---------- "Back-reference" (points to earlier lecture) ---------- */
+.reveal .backref {
+  display: inline-block;
+  background: var(--n4i-grey-100);
+  color: var(--n4i-navy);
+  font-family: var(--font-mono);
+  font-size: .7em;
+  letter-spacing: .08em;
+  padding: 4px 10px;
+  border-left: 3px solid var(--n4i-orange);
+  margin-top: 8px;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero image on content ---------- */
+.reveal .hero-img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px -8px rgba(12,17,61,.3);
+}
+.reveal .hero-img.tight { max-width: 480px; margin: 0 auto; display: block; }
+
+/* ---------- Agenda table ---------- */
+.reveal table.agenda {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .62em;
+  margin-top: 12px;
+}
+.reveal table.agenda th {
+  text-align: left;
+  background: var(--n4i-navy);
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.reveal table.agenda td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--n4i-grey-200);
+}
+.reveal table.agenda tr.practical td { background: #FFFBE0; }
+.reveal table.agenda td .fair {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 2px;
+  background: var(--n4i-blue);
+  color: #fff;
+  margin: 0 2px 2px 0;
+}
+
+/* ---------- Comparison table ---------- */
+.reveal table.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .7em;
+  margin-top: 10px;
+}
+.reveal table.compare th, .reveal table.compare td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--n4i-grey-200);
+  text-align: left;
+  vertical-align: top;
+}
+.reveal table.compare th {
+  background: var(--n4i-grey-100);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--n4i-navy);
+}
+
+/* ---------- Tags row ---------- */
+.reveal .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+
+/* ---------- Small utility ---------- */
+.reveal .mono { font-family: var(--font-mono); }
+.reveal .small { font-size: .75em; }
+.reveal .xs { font-size: .65em; }
+.reveal .mt { margin-top: 18px; }
+.reveal .center { text-align: center; }
+.reveal .muted { color: var(--n4i-grey-500); }
+.reveal .yellow-hl { background: var(--n4i-yellow); padding: 0 4px; color: var(--n4i-navy); }
+
+/* ---------- Principle-explainer slide ---------- */
+.reveal .principle-quote {
+  background: #FFFCE6;
+  border-left: 6px solid var(--n4i-yellow);
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+  font-size: 1.02em;
+  line-height: 1.4;
+  color: var(--n4i-navy);
+  margin: 0 0 12px 0;
+  border-radius: 0 4px 4px 0;
+}
+.reveal .principle-quote .label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--n4i-blue);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.reveal .principle-quote q::before,
+.reveal .principle-quote q::after { content: ""; }
+.reveal .principle-quote q {
+  display: block;
+  font-weight: 500;
+  color: var(--n4i-navy);
+}
+.reveal p.gloss {
+  font-size: .88em;
+  color: var(--n4i-ink);
+  margin: 6px 0 14px 0;
+  line-height: 1.45;
+}
+.reveal p.gloss::before {
+  content: "Plain English · ";
+  font-family: var(--font-mono);
+  font-size: .75em;
+  letter-spacing: .08em;
+  color: var(--n4i-grey-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.reveal ul.subs { margin-top: 8px; }
+.reveal ul.subs > li { font-size: .88em; margin: .2em 0; }
+.reveal ul.check > li { font-size: .88em; padding-left: 1.4em; }
+.reveal ul.check > li::before {
+  content: "✓";
+  background: transparent;
+  border-left: none;
+  color: var(--n4i-blue);
+  font-weight: 700;
+  font-size: 1em;
+  width: auto;
+  height: auto;
+  top: -.05em;
+}
+.reveal .mapping-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--n4i-pink);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* KaTeX tweaks */
+.reveal .katex { font-size: 1.05em; }
+.reveal .katex-display { margin: .6em 0; }

@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+# SPDX-License-Identifier: MIT
+"""Author the two Jupyter practicals; execution is a separate verification step."""
+from pathlib import Path
+import nbformat as n
+ROOT = Path(__file__).resolve().parents[2]
+OUT = ROOT / 'examples/fair'
+OUT.mkdir(parents=True, exist_ok=True)
+def write(name, cells):
+    book = n.v4.new_notebook(cells=[n.v4.new_markdown_cell(s) if t=='md' else n.v4.new_code_cell(s) for t,s in cells])
+    book.metadata.kernelspec = {'display_name':'Python 3 (teaching environment)','language':'python','name':'python3'}
+    book.metadata.license = 'CC-BY-NC-SA-4.0'
+    n.write(book, OUT / name)
+write('02_interoperability.ipynb', [
+('md', '# Inspect exports, then execute with PySD\n\nThe scientific specification is shared; file representations and numerical methods differ. This notebook uses both implementations and both cases without invoking Vensim or Stella Architect. Install `fair-hunter-prey[teaching]` in this kernel first (see the teaching guide). Original work: Raphael Ginster, Matthias Papesch and Vasiliy Seibert, based on Deaton and MacDonald’s *System Dynamics Learning Guide*. Model-derived material: CC BY-NC-SA 4.0.'),
+('code', 'from pathlib import Path\nfrom tempfile import mkdtemp\nimport json\nimport pandas as pd\nfrom IPython.display import display, Image\nfrom fair_hunter_prey import inspect_results, run_example\noutput = Path(mkdtemp(prefix="hunter-prey-teaching-"))\nprint("New output directory:", output)'),
+('md', '## 1. Read saved native exports\n\nThe original CSV readers handle separators, decimal conventions and tool-specific layouts. Historical observations have their own time axis. Unknown units remain empty. **Stella Case 2 contains final values only**, so it must not appear as a native trajectory.'),
+('code', 'saved = inspect_results(output / "inspection")\ntrajectories = pd.read_csv(saved["trajectories"])\nfinal_values = pd.read_csv(saved["final_values"])\ndisplay(trajectories.groupby(["implementation", "case", "variable"], sort=False).agg(samples=("time", "size"), start=("time", "min"), end=("time", "max")))\ndisplay(final_values)\ndisplay(Image(filename=str(saved["figure"])))\nassert trajectories.query("implementation == \'stella\' and case == \'case2\'").empty\nassert not json.loads(saved["provenance"].read_text())["simulation_executed"]'),
+('md', '## 2. Compare the cases\n\nCase 2 changes **four parameters together**. The outcome cannot be attributed to predator removal alone. Units below are model-declared; they are not newly inferred from the Stella result CSV.'),
+('code', 'display(pd.DataFrame({"Parameter": ["Annual kills per predator", "Deer carrying-capacity horizon", "Desired consumption per deer", "Fraction of predators removed annually"], "Case 1": [40, 2, 0.75, 0], "Case 2": [20, 4, 0.5, 0.2], "Model unit": ["deer/(predator*year)", "year", "ton/(deer*year)", "1/year"]}))'),
+('md', '## 3. Execute each implementation and case independently\n\nPySD translates model copies using the repository’s unchanged compatibility adapters. Vensim uses RK2 midpoint; Stella uses RK2 Heun with held STEP evaluation. Both integrate with the model’s 0.05-year time step. Vensim saves annual samples to match the established reference check. These are **new PySD runs**, not native application runs. PySD support has feature limits; see its [documentation](https://pysd.readthedocs.io/en/latest/).'),
+('code', 'runs = {}\nrecords = []\nfor implementation in ("vensim", "stella"):\n    for case in ("case1", "case2"):\n        result = run_example(implementation, case, output / f"{implementation}-{case}")\n        runs[implementation, case] = result\n        record = json.loads(result["provenance"].read_text())\n        records.append({key: record[key] for key in ("implementation", "case", "engine", "method", "save_interval_years", "revision")})\ndisplay(pd.DataFrame(records))'),
+('md', '## 4. Inspect execution evidence\n\nCompare each run with its own native reference, as done by the repository tests. The original tolerance is 0.1% for Vensim Case 1 and 5% for Case 2 on the established annual comparison grid. Stella’s reference comparison uses relative tolerance 1e-9; its Case 2 supports only a final-value comparison. Do not require identical trajectories between tools.'),
+('code', 'record = json.loads(runs["stella", "case2"]["provenance"].read_text())\ndisplay(pd.DataFrame(record["inputs"].items(), columns=["Input", "SHA-256"]))\nprint("Actual output:", runs["stella", "case2"]["csv"])\nprint("Execution engine:", record["engine"])\nprint("All artifacts:", output)'),
+])
+write('03_ro_crate.ipynb', [
+('md', '# Package an actual execution\n\nSelect the implementation and case explicitly. The crate contains the selected model, original inputs, preserved runner/readers, native reference, actual PySD output, exact environment, hashes, citation and per-file licensing. This example creates local files; it does not upload, mint a DOI, or activate a webhook. Model-derived material is CC BY-NC-SA 4.0; repository software is MIT.'),
+('code', 'from pathlib import Path\nfrom tempfile import mkdtemp\nimport json\nimport hashlib\nfrom fair_hunter_prey import run_example, create_crate\nimplementation = "stella"\ncase = "case2"\noutput = Path(mkdtemp(prefix="hunter-prey-crate-"))\nrun = run_example(implementation, case, output / "run")\ncrate = create_crate(output / "run", output / "crate")\nprint(crate)'),
+('md', '## Inspect the record\n\nThe execution engine is PySD. Stella Case 2’s native reference contains final values, while `execution/simulation.csv` contains the trajectory newly generated by PySD. A portable `reproduce.py` writes a separate `reproduced/` directory.'),
+('code', 'record = json.loads(run["provenance"].read_text())\nmetadata = json.loads((crate / "ro-crate-metadata.json").read_text())\nassert record["engine"] == "PySD"\nfor entity in metadata["@graph"]:\n    if "sha256" in entity:\n        assert hashlib.sha256((crate / entity["@id"]).read_bytes()).hexdigest() == entity["sha256"]\nprint("Verified payload hashes;", len(metadata["@graph"]), "metadata entities")\nprint((crate / "README-crate.txt").read_text())'),
+('md', '## Reuse responsibly\n\nRead `CITATION.cff`, `REUSE.toml` and the model’s scientific references. Install the recorded environment on a compatible Python/platform, run `python reproduce.py` inside a copy of the crate, and compare with the implementation’s own reference. The crate is a local research object, not evidence of archival publication.'),
+])

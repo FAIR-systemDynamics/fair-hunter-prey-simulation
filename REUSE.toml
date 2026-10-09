@@ -17,9 +17,8 @@
 # Full texts:  LICENSES/
 
 version = 1
-SPDX-PackageName = "nfdi4sd"
-# TODO: fill in once the repository is published.
-# SPDX-PackageDownloadLocation = "https://github.com/.../nfdi4sd"
+SPDX-PackageName = "fair-hunter-prey-simulation"
+SPDX-PackageDownloadLocation = "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
 
 # --------------------------------------------------------------------------
 # 1. Code — MIT
@@ -122,7 +121,7 @@ SPDX-License-Identifier = "MIT"
 path = [
     "docs/semantic/index.html", "docs/semantic/app.js", "docs/semantic/*.css",
     "docs/semantic/tools/**", "docs/semantic/tests/**",
-    "docs/semantic/requirements.txt", "docs/semantic/*validation.json",
+    "docs/semantic/requirements*.txt", "docs/semantic/jupyter.json", "docs/semantic/nfdi4ing-services.json", "docs/semantic/*validation.json",
     "premium-ui.json", "premium-audit.json",
 ]
 precedence = "aggregate"
@@ -130,18 +129,86 @@ SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
-path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
+path = ["DESIGN.md", "docs/semantic/README.md", "docs/semantic/JUPYTER.md", "docs/semantic/assets/README.md", "docs/semantic/shapes.ttl", "docs/semantic/vocabulary.ttl"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
 SPDX-License-Identifier = "CC-BY-4.0"
 
+[[annotations]]
+path = ["docs/semantic/assets/nfdi4ing-logo.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "NFDI4Ing"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
+
+[[annotations]]
+path = ["docs/semantic/assets/jupyter-logo.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Project Jupyter"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
+
 # Semantic datasets retain attribution for model-derived descriptions.
 [[annotations]]
-path = ["docs/semantic/model.ttl", "docs/semantic/model.jsonld", "docs/semantic/controlled-vocabulary.ttl", "docs/semantic/data/**"]
+path = ["docs/semantic/model.ttl", "docs/semantic/model.jsonld", "docs/semantic/controlled-vocabulary.ttl", "docs/semantic/data/**", "docs/semantic/notebooks/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = [
     "2025 Mike Deaton and Rod MacDonald, James Madison University Libraries (original model, System Dynamics Learning Guide)",
     "2026 Raphael Ginster, Matthias Papesch, and Vasiliy Seibert (repository reimplementation)",
     "2026 Vasiliy Seibert (semantic representation)",
 ]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# Additive FAIR teaching adapters and metadata.
+[[annotations]]
+path = ["src/**", "tools/fair/**", "setup.py", "pyproject.toml", "MANIFEST.in", ".zenodo.json", "environments/**", "docs/fair/*.json", "docs/slides/*.json", "docs/slides/*.js", "docs/slides/css/**", "examples/fair/*.py"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["CONTRIBUTING.md", "docs/fair/*.md", "docs/slides/*.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["examples/stella-source/**", "examples/fair/*.ipynb", "docs/slides/index.html", "docs/slides/assets/evidence/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = ["2025 Mike Deaton and Rod MacDonald (original model)", "2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert (reimplementation)", "2026 Vasiliy Seibert (teaching material)"]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+[[annotations]]
+path = ["docs/slides/assets/img/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert (awesome-sim presentation)"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["docs/slides/assets/logos/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "NFDI4Ing"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
+
+[[annotations]]
+path = ["docs/slides/vendor/reveal/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2011-2024 Hakim El Hattab and reveal.js contributors"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["docs/slides/vendor/fonts/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2017 IBM Corp."
+SPDX-License-Identifier = "OFL-1.1"
+
+# Reference lecture text keeps the source's explicit CC BY attribution.
+[[annotations]]
+path = ["tools/fair/reference/awesome-sim.html", "docs/slides/reference.html", "docs/slides/assets/img/fair4rs-rda-header.png"]
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Vasiliy Seibert (reference lecture)", "2022 FAIR4RS Working Group (RDA recommendation graphic)"]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["tools/fair/reference/case-study.json", "docs/slides/comparison.html", "docs/slides/comparison/**", "docs/slides/handout.pdf"]
+precedence = "override"
+SPDX-FileCopyrightText = ["2025 Mike Deaton and Rod MacDonald (original model)", "2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert (reimplementation and teaching)"]
 SPDX-License-Identifier = "CC-BY-NC-SA-4.0"

@@ -1,0 +1,23 @@
+{
+  "version": "0.7.0",
+  "status": "awaiting-commit-review",
+  "webhook_status": "awaiting-organization-access",
+  "concept_doi": null,
+  "version_doi": null,
+  "release_revision": null,
+  "release_url": null,
+  "organization_invitations": [
+    {
+      "login": "rginster",
+      "role": "owner",
+      "status": "pending",
+      "invitation_id": 80819428
+    },
+    {
+      "login": "mpapesch",
+      "role": "owner",
+      "status": "pending",
+      "invitation_id": 80819431
+    }
+  ]
+}

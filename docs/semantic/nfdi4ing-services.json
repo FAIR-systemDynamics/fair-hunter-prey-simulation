@@ -1,0 +1,13 @@
+[
+  {
+    "id": "jupyter",
+    "name": "NFDI4Ing Jupyter Hub",
+    "serviceName": "NFDI4Ing Jupyter Service",
+    "url": "https://jupyter.nfdi4ing.de/",
+    "logos": [
+      {"src": "assets/nfdi4ing-logo.png", "alt": "NFDI4Ing", "width": 610, "height": 610},
+      {"src": "assets/jupyter-logo.svg", "alt": "Jupyter", "width": 44, "height": 51}
+    ],
+    "workflowSlugs": ["python-inspection"]
+  }
+]

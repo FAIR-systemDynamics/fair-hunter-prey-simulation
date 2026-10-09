@@ -1,0 +1,4669 @@
+{
+  "date": "2026-10-09",
+  "desktop_canvas": [
+    1280,
+    800
+  ],
+  "narrow_width": 390,
+  "method": "Browser screenshots, read-only DOM geometry, keyboard navigation and Reveal print mode; semantic route checks in the assembled artifact.",
+  "checks": {
+    "desktop": [
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image3.jpg\")",
+        "brokenImages": [],
+        "id": "title",
+        "links": [
+          {
+            "height": 16.319976806640625,
+            "href": "https://orcid.org/0000-0002-7121-6816",
+            "width": 34.912506103515625,
+            "x": 243.3775329589844,
+            "y": 474.2799987792969
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+            "width": 307.0874938964844,
+            "x": 471.6775207519531,
+            "y": 445.47998046875
+          },
+          {
+            "height": 19.20001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 222.74252319335935,
+            "x": 471.6775207519531,
+            "y": 467.0799865722656
+          }
+        ],
+        "overflow": [],
+        "title": "Research Softwarethat others can find, trust and\u00a0run."
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "recap",
+        "links": [],
+        "overflow": [],
+        "title": "Four lectures, one story"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "agenda",
+        "links": [],
+        "overflow": [],
+        "title": "Agenda \u00b7 3 \u00d7 theory \u2194 3 \u00d7 practical"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "why-fair",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://doi.org/10.15497/RDA00068",
+            "width": 153.0150146484375,
+            "x": 942.677490234375,
+            "y": 558.2799682617188
+          }
+        ],
+        "overflow": [],
+        "title": "Why make research software FAIR?"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "running-example",
+        "links": [
+          {
+            "height": 237.1199951171875,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/stella-case2.jpg?v=3ac98bc7ba45",
+            "width": 528,
+            "x": 94.72003173828124,
+            "y": 392.04248046875
+          },
+          {
+            "height": 14.8800048828125,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/stella-case2.jpg?v=3ac98bc7ba45",
+            "width": 147.19500732421875,
+            "x": 337.9375305175781,
+            "y": 638.282470703125
+          },
+          {
+            "height": 21.12005615234375,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+            "width": 281.4750061035156,
+            "x": 94.72003173828124,
+            "y": 662.4549560546875
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 274.55999755859375,
+            "x": 94.72003173828124,
+            "y": 687.4149780273438
+          },
+          {
+            "height": 299.1000061035156,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/repository.jpg?v=771c3029e3ab",
+            "width": 528,
+            "x": 657.280029296875,
+            "y": 206.96499633789065
+          },
+          {
+            "height": 29.9324951171875,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/repository.jpg?v=771c3029e3ab",
+            "width": 510.9974365234375,
+            "x": 657.280029296875,
+            "y": 515.1849975585938
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/README.md",
+            "width": 102,
+            "x": 657.280029296875,
+            "y": 552.969970703125
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/",
+            "width": 165.24749755859375,
+            "x": 768.4750366210938,
+            "y": 552.969970703125
+          }
+        ],
+        "overflow": [],
+        "title": "One repo, running through every slide"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "shared-specification",
+        "links": [
+          {
+            "height": 298.91998291015625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/semantic-model.jpg?v=23f5e7c7174a",
+            "width": 528,
+            "x": 657.280029296875,
+            "y": 208.8849945068359
+          },
+          {
+            "height": 29.9324951171875,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/semantic-model.jpg?v=23f5e7c7174a",
+            "width": 523.7025146484375,
+            "x": 657.280029296875,
+            "y": 516.9249877929688
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#overview",
+            "width": 192.69000244140625,
+            "x": 94.72003173828124,
+            "y": 554.7099609375
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://pressbooks.lib.jmu.edu/sdlearningguide/",
+            "width": 157.58248901367188,
+            "x": 296.60504150390625,
+            "y": 554.7099609375
+          }
+        ],
+        "overflow": [],
+        "title": "Shared scientific specification"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "shared-use-cases",
+        "links": [],
+        "overflow": [],
+        "title": "Shared use cases, tool-specific implementations"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "artifacts-access",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://vensim.com/vensim-applications/",
+            "width": 112.3800048828125,
+            "x": 301.2400207519531,
+            "y": 339.92498779296875
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://www.iseesystems.com/resources/help/v4/Content/Welcome.htm",
+            "width": 56.30999755859375,
+            "x": 438.4375305175781,
+            "y": 339.92498779296875
+          }
+        ],
+        "overflow": [],
+        "title": "Tool-specific artifacts and access"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "two-cases",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/models/config/parameters/basic_parameters.cin",
+            "width": 113.51998901367188,
+            "x": 146.25253295898438,
+            "y": 371.4024963378906
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/models/config/scenarios/case2.cin",
+            "width": 93.9375,
+            "x": 415.1575317382813,
+            "y": 371.4024963378906
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario1.csv",
+            "width": 113.52000427246094,
+            "x": 136.09002685546875,
+            "y": 390.8874816894531
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv",
+            "width": 113.45248413085938,
+            "x": 261.1075439453125,
+            "y": 390.8874816894531
+          }
+        ],
+        "overflow": [],
+        "title": "Case 1 and Case 2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "open-workflows",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://pysd.readthedocs.io/en/latest/",
+            "width": 338.7974853515625,
+            "x": 94.72003173828124,
+            "y": 306.489990234375
+          }
+        ],
+        "overflow": [],
+        "title": "Open inspection and independent execution"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "findable-accessible",
+        "links": [],
+        "overflow": [],
+        "title": "Findable & Accessible research software"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "f1",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 210.50250244140625,
+            "x": 762.9175415039062,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 205.63494873046875,
+            "x": 758.2300415039062,
+            "y": 229.4499969482422
+          }
+        ],
+        "overflow": [],
+        "title": "F1 \u00b7 Globally unique and persistent identifierF1F1.1F1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "zenodo-webhook",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://zenodo.org/account/settings/github/",
+            "width": 152.1600341796875,
+            "x": 831.9324951171875,
+            "y": 216.65499877929688
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://zenodo.org/account/settings/github/",
+            "width": 198.532470703125,
+            "x": 657.280029296875,
+            "y": 390.7749938964844
+          },
+          {
+            "height": 16.319976806640625,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 89.9024658203125,
+            "x": 657.280029296875,
+            "y": 507.2049865722656
+          },
+          {
+            "height": 16.319976806640625,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 179.40753173828125,
+            "x": 756.3775024414062,
+            "y": 507.2049865722656
+          }
+        ],
+        "overflow": [],
+        "title": "F1 \u00b7 A DOI is a promise, not a URLF1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "version-identifiers",
+        "links": [
+          {
+            "height": 14.879989624023438,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 167.44500732421875,
+            "x": 690.9324951171875,
+            "y": 251.34999084472656
+          },
+          {
+            "height": 14.8800048828125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 163.57501220703125,
+            "x": 690.9324951171875,
+            "y": 278.42498779296875
+          }
+        ],
+        "overflow": [],
+        "title": "One project, many versions \u2014 each citableF1.1F1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "metadata-principles",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/CITATION.cff",
+            "width": 79.6199951171875,
+            "x": 676.2025146484375,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/codemeta.json",
+            "width": 89.75250244140625,
+            "x": 676.2025146484375,
+            "y": 229.4499969482422
+          },
+          {
+            "height": 18.719985961914062,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/.zenodo.json",
+            "width": 76.71002197265625,
+            "x": 676.2025146484375,
+            "y": 252.4149932861328
+          }
+        ],
+        "overflow": [],
+        "title": "F2 \u00b7 F3 \u00b7 F4 \u00b7 rich, linked, harvestable metadataF2F3F4"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "citation-codemeta",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/CITATION.cff",
+            "width": 149.72999572753906,
+            "x": 94.72003173828124,
+            "y": 406.7349853515625
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/codemeta.json",
+            "width": 149.72998046875,
+            "x": 657.280029296875,
+            "y": 442.1949768066406
+          }
+        ],
+        "overflow": [],
+        "title": "Machines can only find what they can readF2F3F4"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "access-protocols",
+        "links": [],
+        "overflow": [],
+        "title": "A1 \u00b7 A1.1 \u00b7 retrievable via a standardized protocolA1A1.1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "retrieve-install",
+        "links": [],
+        "overflow": [],
+        "title": "Open, free, universally implementableA1A1.1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "authentication",
+        "links": [],
+        "overflow": [],
+        "title": "A1.2 \u00b7 auth is a feature, not a gateA1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "access-boundaries",
+        "links": [],
+        "overflow": [],
+        "title": "Authentication, where genuinely necessaryA1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "persistent-metadata",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 196.822509765625,
+            "x": 657.280029296875,
+            "y": 341.3349914550781
+          }
+        ],
+        "overflow": [],
+        "title": "A2 \u00b7 metadata outlives the softwareA2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "archives",
+        "links": [
+          {
+            "height": 21.1199951171875,
+            "href": "https://archive.softwareheritage.org/",
+            "width": 226.177490234375,
+            "x": 588.4075317382812,
+            "y": 337.2550048828125
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://zenodo.org/",
+            "width": 101.760009765625,
+            "x": 824.1849975585938,
+            "y": 337.2550048828125
+          }
+        ],
+        "overflow": [],
+        "title": "Metadata outlives the softwareA2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "fa-recap",
+        "links": [],
+        "overflow": [],
+        "title": "F + A \u00b7 the minimum viable artefacts"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "practical1",
+        "links": [],
+        "overflow": [],
+        "title": "Practical 1 \u00b7 Discover research software"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "discover",
+        "links": [
+          {
+            "height": 19.20001220703125,
+            "href": "https://software.nfdi4ing.de/",
+            "width": 142.2899932861328,
+            "x": 212.7625274658203,
+            "y": 246.90249633789065
+          },
+          {
+            "height": 19.199951171875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+            "width": 110.72247314453124,
+            "x": 541.6675415039062,
+            "y": 512.5150146484375
+          },
+          {
+            "height": 19.199951171875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 182.09999084472656,
+            "x": 220.5475311279297,
+            "y": 618.760009765625
+          }
+        ],
+        "overflow": [],
+        "title": "Find the hunter\u2013prey model in 12 minutes"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "discovery-reflection",
+        "links": [],
+        "overflow": [],
+        "title": "What made the hunter\u2013prey model findable?"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "interoperable",
+        "links": [],
+        "overflow": [],
+        "title": "Interoperable research software"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "i1",
+        "links": [],
+        "overflow": [],
+        "title": "I1 \u00b7 read, write, exchange via community standardsI1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "formats",
+        "links": [],
+        "overflow": [],
+        "title": "Open formats > bespoke filesI1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "api-example",
+        "links": [],
+        "overflow": [],
+        "title": "Example \u00b7 OpenAPI beats a READMEI1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "i2",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://orcid.org/0000-0003-2394-7064",
+            "width": 140.91748046875,
+            "x": 779.635009765625,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://orcid.org/0000-0002-7121-6816",
+            "width": 129.81756591796875,
+            "x": 949.6749877929688,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://pressbooks.lib.jmu.edu/sdlearningguide/",
+            "width": 335.65496826171875,
+            "x": 771.8350219726562,
+            "y": 248.364990234375
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/REUSE.toml",
+            "width": 106.70245361328124,
+            "x": 866.6575317382812,
+            "y": 271.3299865722656
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/term%2Ffraction-predators-killed-per-year",
+            "width": 158.35504150390625,
+            "x": 794.5599975585938,
+            "y": 294.29498291015625
+          }
+        ],
+        "overflow": [],
+        "title": "I2 \u00b7 qualified references to other objectsI2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "qualified-references",
+        "links": [],
+        "overflow": [],
+        "title": "\"Alice\" vs \"ORCID 0000-0001-\u2026\"I2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "codemeta-references",
+        "links": [
+          {
+            "height": 21.1199951171875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/codemeta.json",
+            "width": 165.38250732421875,
+            "x": 726.14501953125,
+            "y": 360.0849914550781
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/.zenodo.json",
+            "width": 267.85498046875,
+            "x": 903.7900390625,
+            "y": 360.0849914550781
+          }
+        ],
+        "overflow": [],
+        "title": "codemeta.json \u2014 line by lineI2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "controlled-vocabulary",
+        "links": [
+          {
+            "height": 318.72003173828125,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/vocabulary.jpg?v=e84990eb5f55",
+            "width": 596.8649291992188,
+            "x": 588.4075317382812,
+            "y": 252.66249084472656
+          },
+          {
+            "height": 14.8800048828125,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/vocabulary.jpg?v=e84990eb5f55",
+            "width": 147.19500732421875,
+            "x": 816.9700317382812,
+            "y": 580.5025024414062
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/term%2Ffraction-predators-killed-per-year",
+            "width": 121.97998046875,
+            "x": 588.4075317382812,
+            "y": 603.7149658203125
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year",
+            "width": 214.83001708984375,
+            "x": 722.6500244140625,
+            "y": 603.7149658203125
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/models/config/scenarios/case2.cin",
+            "width": 59.03997802734375,
+            "x": 629.3650512695312,
+            "y": 634.7124633789062
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/stella-source/models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv",
+            "width": 52.95745849609375,
+            "x": 697.6000366210938,
+            "y": 634.7124633789062
+          }
+        ],
+        "overflow": [],
+        "title": "Controlled vocabularies eliminate ambiguity \u00b7 and give creditI2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "dependencies",
+        "links": [],
+        "overflow": [],
+        "title": "Dependencies are also qualified referencesR2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "packaging",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/pyproject.toml",
+            "width": 128.15997314453125,
+            "x": 588.4075317382812,
+            "y": 475.427490234375
+          }
+        ],
+        "overflow": [],
+        "title": "pyproject.toml \u00b7 from source to installed packageR2"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "practical2",
+        "links": [],
+        "overflow": [],
+        "title": "Practical 2 \u00b7 Test interoperability"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "inspect-run",
+        "links": [
+          {
+            "height": 19.20001220703125,
+            "href": "https://jupyter.nfdi4ing.de/",
+            "width": 114.239990234375,
+            "x": 188.68753051757812,
+            "y": 246.90249633789065
+          },
+          {
+            "height": 19.20001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/README.md",
+            "width": 157.39501953125,
+            "x": 523.9974975585938,
+            "y": 246.90249633789065
+          },
+          {
+            "height": 19.20001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/fair/02_interoperability.ipynb",
+            "width": 159.66000366210938,
+            "x": 188.68753051757812,
+            "y": 300.0249938964844
+          }
+        ],
+        "overflow": [],
+        "title": "Install, run, break, understand"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "interoperability-reflection",
+        "links": [],
+        "overflow": [],
+        "title": "Why R2 (qualified dependencies) matters"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "reusable",
+        "links": [],
+        "overflow": [],
+        "title": "Reusable research software"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "r1",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/README.md",
+            "width": 76.44000244140625,
+            "x": 676.2025146484375,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/README.md",
+            "width": 33.97503662109375,
+            "x": 759.5125122070312,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/fair/02_interoperability.ipynb",
+            "width": 63.83245849609375,
+            "x": 822.6100463867188,
+            "y": 206.48500061035156
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/REUSE.toml",
+            "width": 72.64501953125,
+            "x": 676.2025146484375,
+            "y": 229.4499969482422
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/CHANGELOG.md",
+            "width": 102.0975341796875,
+            "x": 676.2025146484375,
+            "y": 271.3299865722656
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/evidence.md",
+            "width": 145.9949951171875,
+            "x": 702.2275390625,
+            "y": 336.17498779296875
+          }
+        ],
+        "overflow": [],
+        "title": "R1 \u00b7 R1.1 \u00b7 R1.2 \u00b7 describe, license, traceR1R1.1R1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "documentation",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/evidence.md",
+            "width": 174.48748779296875,
+            "x": 94.72003173828124,
+            "y": 421.0899963378906
+          }
+        ],
+        "overflow": [],
+        "title": "Documentation is layeredR1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "licenses",
+        "links": [
+          {
+            "height": 21.1199951171875,
+            "href": "https://spdx.org/licenses/",
+            "width": 150.14999389648438,
+            "x": 94.72003173828124,
+            "y": 324.63250732421875
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/REUSE.toml",
+            "width": 112.7699966430664,
+            "x": 126.73003387451172,
+            "y": 348.1524963378906
+          }
+        ],
+        "overflow": [],
+        "title": "No license \u2260 public domainR1.1"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "provenance",
+        "links": [
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/CHANGELOG.md",
+            "width": 174.29248046875,
+            "x": 657.280029296875,
+            "y": 466.0224914550781
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/commits/codex/fair4rs-hunter-prey",
+            "width": 121.6875,
+            "x": 840.7675170898438,
+            "y": 466.0224914550781
+          }
+        ],
+        "overflow": [],
+        "title": "Who \u00b7 what \u00b7 when \u00b7 why \u2014 for freeR1.2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "r2",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://pypi.org/project/pysd/",
+            "width": 28.53753662109375,
+            "x": 739.5025024414062,
+            "y": 294.29498291015625
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://pysd.readthedocs.io/en/latest/",
+            "width": 127.16998291015624,
+            "x": 797.1625366210938,
+            "y": 294.29498291015625
+          }
+        ],
+        "overflow": [],
+        "title": "R2 \u00b7 qualified references to other softwareR2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "environments",
+        "links": [],
+        "overflow": [],
+        "title": "Pin the whole world, not just the codeR2"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "r3",
+        "links": [],
+        "overflow": [],
+        "title": "R3 \u00b7 meet domain-relevant community standardsR3"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "ci",
+        "links": [
+          {
+            "height": 16.319976806640625,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/.github/workflows/fair.yml",
+            "width": 147.7725067138672,
+            "x": 94.72003173828124,
+            "y": 325.69000244140625
+          }
+        ],
+        "overflow": [],
+        "title": "Let CI answer \"does it still run?\"R3"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "sustainability",
+        "links": [
+          {
+            "height": 21.1199951171875,
+            "href": "https://rdmo.nfdi4ing.de/",
+            "width": 143.2349853515625,
+            "x": 726.14501953125,
+            "y": 345.61749267578125
+          },
+          {
+            "height": 16.32000732421875,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 86.87249755859375,
+            "x": 814.510009765625,
+            "y": 369.1374816894531
+          }
+        ],
+        "overflow": [],
+        "title": "Write the sustainability plan before the code rots"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "reuse-recap",
+        "links": [],
+        "overflow": [],
+        "title": "R \u00b7 the smallest thing that could break you"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "ro-crate",
+        "links": [],
+        "overflow": [],
+        "title": "RO-Crate \u00b7 research object in one containerR"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image4.jpg\")",
+        "brokenImages": [],
+        "id": "practical3",
+        "links": [],
+        "overflow": [],
+        "title": "Practical 3 \u00b7 Capture reusability via RO-Crate"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "crate-exercise",
+        "links": [
+          {
+            "height": 19.20001220703125,
+            "href": "https://jupyter.nfdi4ing.de/",
+            "width": 47.1300048828125,
+            "x": 168.37753295898438,
+            "y": 246.90249633789065
+          },
+          {
+            "height": 19.20001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/examples/fair/03_ro_crate.ipynb",
+            "width": 115.34249877929688,
+            "x": 257.9200439453125,
+            "y": 246.90249633789065
+          },
+          {
+            "height": 14.8800048828125,
+            "href": "https://pypi.org/project/rocrate/",
+            "width": 35.220001220703125,
+            "x": 208.8625335693359,
+            "y": 625.4649658203125
+          }
+        ],
+        "overflow": [],
+        "title": "Package hunter\u2013prey as a Research Object"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "crate-reflection",
+        "links": [],
+        "overflow": [],
+        "title": "The R in FAIR4RS \u00b7 Reusability across time"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "checklist",
+        "links": [
+          {
+            "height": 16.319976806640625,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/evidence.md",
+            "width": 124.4324951171875,
+            "x": 300.83502197265625,
+            "y": 465.25
+          }
+        ],
+        "overflow": [],
+        "title": "The FAIR4RS checklist \u2014 one page"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "services",
+        "links": [
+          {
+            "height": 21.1199951171875,
+            "href": "https://software.nfdi4ing.de/",
+            "width": 170.87997436523438,
+            "x": 113.92003631591795,
+            "y": 271.5474853515625
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://terminology.nfdi4ing.de/ts/",
+            "width": 191.61749267578125,
+            "x": 483.83502197265625,
+            "y": 271.5474853515625
+          },
+          {
+            "height": 21.1199951171875,
+            "href": "https://jupyter.nfdi4ing.de/",
+            "width": 163.9725341796875,
+            "x": 853.7575073242188,
+            "y": 271.5474853515625
+          },
+          {
+            "height": 21.120025634765625,
+            "href": "https://rdmo.nfdi4ing.de/",
+            "width": 143.2349853515625,
+            "x": 113.92003631591795,
+            "y": 411.0099792480469
+          },
+          {
+            "height": 21.120025634765625,
+            "href": "https://coscine.de/",
+            "width": 101.760009765625,
+            "x": 483.83502197265625,
+            "y": 411.0099792480469
+          },
+          {
+            "height": 21.120025634765625,
+            "href": "https://www.inggrid.org/",
+            "width": 87.9375,
+            "x": 853.7575073242188,
+            "y": 411.0099792480469
+          }
+        ],
+        "overflow": [],
+        "title": "The services you touched today"
+      },
+      {
+        "bg": "url(\"http://127.0.0.1:8766/slides/assets/img/image3.jpg\")",
+        "brokenImages": [],
+        "id": "discussion",
+        "links": [
+          {
+            "height": 18.720001220703125,
+            "href": "https://www.rd-alliance.org/groups/fair-research-software-fair4rs-wg/outputs/",
+            "width": 116.5949935913086,
+            "x": 112.00003814697266,
+            "y": 476.62750244140625
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://archive.softwareheritage.org/",
+            "width": 108.58499908447266,
+            "x": 112.00003814697266,
+            "y": 490.0674743652344
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://spdx.org/licenses/",
+            "width": 106.3274917602539,
+            "x": 112.00003814697266,
+            "y": 503.5074768066406
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://citation-file-format.github.io/",
+            "width": 79.16250610351562,
+            "x": 471.6775207519531,
+            "y": 476.62750244140625
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://codemeta.github.io/",
+            "width": 124.56747436523438,
+            "x": 471.6775207519531,
+            "y": 490.0674743652344
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://orcid.org/",
+            "width": 40.725006103515625,
+            "x": 471.6775207519531,
+            "y": 503.5074768066406
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://ror.org/",
+            "width": 26.5875244140625,
+            "x": 523.135009765625,
+            "y": 503.5074768066406
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "http://127.0.0.1:8766/slides/index.html",
+            "width": 199.65753173828125,
+            "x": 831.3550415039062,
+            "y": 476.62750244140625
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+            "width": 106.95745849609376,
+            "x": 831.3550415039062,
+            "y": 490.0674743652344
+          },
+          {
+            "height": 18.720001220703125,
+            "href": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ca6c7c85df3335e7197b1ef1bfd75af2ea41a33a/docs/fair/release.md",
+            "width": 209.30242919921875,
+            "x": 831.3550415039062,
+            "y": 503.5074768066406
+          },
+          {
+            "height": 18.719970703125,
+            "href": "https://vasiliyseibert.github.io/awesome-sim/",
+            "width": 180.55499267578125,
+            "x": 831.3550415039062,
+            "y": 516.947509765625
+          }
+        ],
+        "overflow": [],
+        "title": "Your repo, next week \u2014 FAIR4RS-shaped."
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-repository",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/repository.jpg?v=771c3029e3ab",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/repository.jpg?v=771c3029e3ab",
+            "width": 111.83251953125,
+            "x": 505.70501708984375,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "Repository evidence"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-binding",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/configuration-binding.jpg?v=cd44840ed1ce",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/configuration-binding.jpg?v=cd44840ed1ce",
+            "width": 111.83248901367188,
+            "x": 400.7575378417969,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "A value and its configuration binding"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-file",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/case2-file.jpg?v=df07ad0b7dfd",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/case2-file.jpg?v=df07ad0b7dfd",
+            "width": 111.83251953125,
+            "x": 427.27001953125,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "The original Case 2 changes file"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-workflow",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/workflow.jpg?v=df8c700c5dc5",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/workflow.jpg?v=df8c700c5dc5",
+            "width": 111.83248901367188,
+            "x": 457.9450378417969,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "From configuration to an inspected figure"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-stella",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/stella-case2.jpg?v=3ac98bc7ba45",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/stella-case2.jpg?v=3ac98bc7ba45",
+            "width": 111.83251953125,
+            "x": 446.45501708984375,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "Stella Architect: existing native evidence"
+      },
+      {
+        "bg": "none",
+        "brokenImages": [],
+        "id": "appendix-notebook",
+        "links": [
+          {
+            "height": 491.51995849609375,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/notebook.jpg?v=a0f2a7fafbdf",
+            "width": 1090.56005859375,
+            "x": 94.72003173828124,
+            "y": 189.68499755859375
+          },
+          {
+            "height": 14.87994384765625,
+            "href": "http://127.0.0.1:8766/slides/assets/evidence/notebook.jpg?v=a0f2a7fafbdf",
+            "width": 111.83251953125,
+            "x": 562.7050170898438,
+            "y": 690.3250122070312
+          }
+        ],
+        "overflow": [],
+        "title": "Executed interoperability notebook"
+      }
+    ],
+    "mobile": [
+      {
+        "id": "title",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "recap",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "agenda",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "why-fair",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "running-example",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "shared-specification",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "shared-use-cases",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "artifacts-access",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "two-cases",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "open-workflows",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "findable-accessible",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "f1",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "zenodo-webhook",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "version-identifiers",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "metadata-principles",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "citation-codemeta",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "access-protocols",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "retrieve-install",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "authentication",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "access-boundaries",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "persistent-metadata",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "archives",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "fa-recap",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "practical1",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "discover",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "discovery-reflection",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "interoperable",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "i1",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "formats",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "api-example",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "i2",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "qualified-references",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "codemeta-references",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "controlled-vocabulary",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "dependencies",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "packaging",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "practical2",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "inspect-run",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "interoperability-reflection",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "reusable",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "r1",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "documentation",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "licenses",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "provenance",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "r2",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "environments",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "r3",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "ci",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "sustainability",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "reuse-recap",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "ro-crate",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "practical3",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "crate-exercise",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "crate-reflection",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "checklist",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "services",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "discussion",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-repository",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-binding",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-file",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-workflow",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-stella",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      },
+      {
+        "id": "appendix-notebook",
+        "overflow": [],
+        "scrollWidth": 390,
+        "width": 390
+      }
+    ],
+    "print": {
+      "pages": 63,
+      "issues": [],
+      "pdf_pages": 63,
+      "pdf_page_points": [
+        1280,
+        800
+      ]
+    },
+    "semantic": [
+      {
+        "route": "#overview",
+        "title": "Semantic Model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows",
+        "title": "Workflows \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#nfdi4ing",
+        "title": "NFDI4Ing Use Cases \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/model",
+        "title": "Kaibab ecosystem model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Fequations",
+        "title": "Governing equations \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Fparameters",
+        "title": "Scientific parameters \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/quantity%2Fdeer",
+        "title": "Deer population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/quantity%2Fpredators",
+        "title": "Predator population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/quantity%2Fforage",
+        "title": "Forage biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Flookups",
+        "title": "Nonlinear responses \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/task%2Fsimulate",
+        "title": "Simulate population dynamics \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Fsetup",
+        "title": "Simulation setup \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Foutputs",
+        "title": "Population & forage trajectories \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Fscenarios",
+        "title": "Scenario choice \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Finitial",
+        "title": "Initial conditions \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/overview%2Fnumerics",
+        "title": "Time & integration \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflow-case2-parameter-to-figure",
+        "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflow-python-inspection",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/diagram/case2-parameter-to-figure",
+        "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/processing%2Fplot-case2-review?from=case2-parameter-to-figure",
+        "title": "Plot the result \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/diagram/python-inspection",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/processing%2Finspect-results-python?from=python-inspection",
+        "title": "Inspect data with Python \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/formula%2Fdeer-balance",
+        "title": "Deer population balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/formula%2Fforage-balance",
+        "title": "Forage biomass balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/formula%2Fpredators-balance",
+        "title": "Predator population balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/workflow%2Fpython-inspection?from=python-inspection",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      }
+    ],
+    "comparison": {
+      "original": 52,
+      "adapted": 52,
+      "viewport": [
+        1280,
+        800
+      ],
+      "reference_revision": "e354ef2e567223ab8ba6eaac3d572d589efb5ab8"
+    },
+    "all_semantic_graphs": [
+      {
+        "route": "#overview",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Semantic Model, 20 entities",
+        "title": "Semantic Model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/diagram%2Fcase2-parameter-to-figure",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure., 12 entities",
+        "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/diagram%2Fpython-inspection",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories., 13 entities",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/vocabulary",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab controlled vocabulary, 29 entities",
+        "title": "Kaibab controlled vocabulary \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/repository",
+        "error": false,
+        "rendered": true,
+        "status": "Showing FAIR hunter\u2013prey repository, 29 entities",
+        "title": "FAIR hunter\u2013prey repository \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/literature",
+        "error": false,
+        "rendered": true,
+        "status": "Showing System Dynamics Learning Guide, 15 entities",
+        "title": "System Dynamics Learning Guide \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/model",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab ecosystem model, 29 entities",
+        "title": "Kaibab ecosystem model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fdeer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Mule deer population, 6 entities",
+        "title": "Mule deer population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fpredators",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator population, 6 entities",
+        "title": "Predator population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fforage",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Available forage, 5 entities",
+        "title": "Available forage \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fcapacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Resource-limited carrying capacity, 8 entities",
+        "title": "Resource-limited carrying capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fpredation",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predation, 8 entities",
+        "title": "Predation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fregrowth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage regeneration, 6 entities",
+        "title": "Forage regeneration \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fconsumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Herd forage consumption, 8 entities",
+        "title": "Herd forage consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fpolicy",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator-removal policy, 8 entities",
+        "title": "Predator-removal policy \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Fovershoot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Overshoot and collapse, 6 entities",
+        "title": "Overshoot and collapse \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Ffeedback",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Feedback and interdependence, 4 entities",
+        "title": "Feedback and interdependence \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Finitial-state",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial state, 7 entities",
+        "title": "Initial state \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/concept%2Freference-mode",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical reference mode, 5 entities",
+        "title": "Historical reference mode \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2F.github%2Fworkflows%2Freuse.yml",
+        "error": false,
+        "rendered": true,
+        "status": "Showing reuse.yml, 2 entities",
+        "title": "reuse.yml \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2F.github%2Fworkflows%2Fsimulate.yml",
+        "error": false,
+        "rendered": true,
+        "status": "Showing simulate.yml, 2 entities",
+        "title": "simulate.yml \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fgit_workflow.md",
+        "error": false,
+        "rendered": true,
+        "status": "Showing git_workflow.md, 2 entities",
+        "title": "git_workflow.md \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fkaibab_ecosystem_report%2Fkaibab_ecosystem_model.html",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_ecosystem_model.html, 2 entities",
+        "title": "kaibab_ecosystem_model.html \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fkaibab_ecosystem_report%2Fviews%2Fkaibab_ecosystem_model__View_1.svg",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_ecosystem_model__View_1.svg, 2 entities",
+        "title": "kaibab_ecosystem_model__View_1.svg \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fkaibab_example.md",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_example.md, 2 entities",
+        "title": "kaibab_example.md \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fkaibab_variable_description.xlsx",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_variable_description.xlsx, 2 entities",
+        "title": "kaibab_variable_description.xlsx \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fdocs%2Fpysd_integration.md",
+        "error": false,
+        "rendered": true,
+        "status": "Showing pysd_integration.md, 2 entities",
+        "title": "pysd_integration.md \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Flookups%2Feffect_deer_density_on_predator_births.cin",
+        "error": false,
+        "rendered": true,
+        "status": "Showing effect_deer_density_on_predator_births.cin, 5 entities",
+        "title": "effect_deer_density_on_predator_births.cin \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Flookups%2Feffect_deer_density_on_predator_hunting_efficiency.cin",
+        "error": false,
+        "rendered": true,
+        "status": "Showing effect_deer_density_on_predator_hunting_efficiency.cin, 5 entities",
+        "title": "effect_deer_density_on_predator_hunting_efficiency.cin \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Flookups%2Feffect_forage_availability_on_consumption.cin",
+        "error": false,
+        "rendered": true,
+        "status": "Showing effect_forage_availability_on_consumption.cin, 5 entities",
+        "title": "effect_forage_availability_on_consumption.cin \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Fparameters%2Fbasic_parameters.cin",
+        "error": false,
+        "rendered": true,
+        "status": "Showing basic_parameters.cin, 17 entities",
+        "title": "basic_parameters.cin \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Fparameters%2Fbasic_parameters.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing basic_parameters.csv, 14 entities",
+        "title": "basic_parameters.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Fparameters%2Finitial_stock_parameters.xlsx",
+        "error": false,
+        "rendered": true,
+        "status": "Showing initial_stock_parameters.xlsx, 8 entities",
+        "title": "initial_stock_parameters.xlsx \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Fscenarios%2Fcase2.cin",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case2.cin, 9 entities",
+        "title": "case2.cin \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fconfig%2Ftimeseries%2Fhistorical_deer_botg.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing historical_deer_botg.csv, 3 entities",
+        "title": "historical_deer_botg.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fkaibab_ecosystem_model.mdl",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_ecosystem_model.mdl, 29 entities",
+        "title": "kaibab_ecosystem_model.mdl \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Ffigures%2Fresults.pdf",
+        "error": false,
+        "rendered": true,
+        "status": "Showing results.pdf, 2 entities",
+        "title": "results.pdf \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Ffigures%2Fresults.png",
+        "error": false,
+        "rendered": true,
+        "status": "Showing results.png, 2 entities",
+        "title": "results.png \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Freference%2Fcase1.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case1.csv, 2 entities",
+        "title": "case1.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Freference%2Fcase2.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case2.csv, 2 entities",
+        "title": "case2.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Freference%2Ftolerances.json",
+        "error": false,
+        "rendered": true,
+        "status": "Showing tolerances.json, 2 entities",
+        "title": "tolerances.json \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Fruns%2Fcase1_external.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case1_external.csv, 13 entities",
+        "title": "case1_external.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Fruns%2Fcase1_parameter.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case1_parameter.csv, 2 entities",
+        "title": "case1_parameter.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Fruns%2Fcase2_external.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case2_external.csv, 15 entities",
+        "title": "case2_external.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fresults%2Fruns%2Fcase2_parameter.csv",
+        "error": false,
+        "rendered": true,
+        "status": "Showing case2_parameter.csv, 2 entities",
+        "title": "case2_parameter.csv \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fpysd%2Fcin_loader.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing cin_loader.py, 2 entities",
+        "title": "cin_loader.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fpysd%2Frk_integrator.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing rk_integrator.py, 2 entities",
+        "title": "rk_integrator.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fpysd%2Frun.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing run.py, 3 entities",
+        "title": "run.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fpysd%2Fxmile_support.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing xmile_support.py, 2 entities",
+        "title": "xmile_support.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fvensim%2Fvensim_convert_historical_deer_botg_csv_to_dataset.frm",
+        "error": false,
+        "rendered": true,
+        "status": "Showing vensim_convert_historical_deer_botg_csv_to_dataset.frm, 2 entities",
+        "title": "vensim_convert_historical_deer_botg_csv_to_dataset.frm \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fvensim%2Fvensim_run_configuration_external",
+        "error": false,
+        "rendered": true,
+        "status": "Showing vensim_run_configuration_external, 3 entities",
+        "title": "vensim_run_configuration_external \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fvensim%2Fvensim_run_configuration_parameter",
+        "error": false,
+        "rendered": true,
+        "status": "Showing vensim_run_configuration_parameter, 2 entities",
+        "title": "vensim_run_configuration_parameter \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Frunners%2Fvensim%2Fvensim_savelist_export_results.lst",
+        "error": false,
+        "rendered": true,
+        "status": "Showing vensim_savelist_export_results.lst, 2 entities",
+        "title": "vensim_savelist_export_results.lst \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fbuild_history.sh",
+        "error": false,
+        "rendered": true,
+        "status": "Showing build_history.sh, 2 entities",
+        "title": "build_history.sh \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fcheck_template.sh",
+        "error": false,
+        "rendered": true,
+        "status": "Showing check_template.sh, 2 entities",
+        "title": "check_template.sh \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fcompare_tools.sh",
+        "error": false,
+        "rendered": true,
+        "status": "Showing compare_tools.sh, 2 entities",
+        "title": "compare_tools.sh \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fcsv_to_cin.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing csv_to_cin.py, 2 entities",
+        "title": "csv_to_cin.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fplot_results.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing plot_results.py, 3 entities",
+        "title": "plot_results.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fstella_csv.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing stella_csv.py, 2 entities",
+        "title": "stella_csv.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fscripts%2Fvensim_csv.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing vensim_csv.py, 5 entities",
+        "title": "vensim_csv.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Ftests%2Ffixtures%2Fexpgrowth.mdl",
+        "error": false,
+        "rendered": true,
+        "status": "Showing expgrowth.mdl, 2 entities",
+        "title": "expgrowth.mdl \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Ftests%2Ffixtures%2Fstella_minimal.stmx",
+        "error": false,
+        "rendered": true,
+        "status": "Showing stella_minimal.stmx, 2 entities",
+        "title": "stella_minimal.stmx \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Ftests%2Ftest_reference.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing test_reference.py, 2 entities",
+        "title": "test_reference.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Ftests%2Ftest_rk_integrator.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing test_rk_integrator.py, 2 entities",
+        "title": "test_rk_integrator.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Ftests%2Ftest_stella.py",
+        "error": false,
+        "rendered": true,
+        "status": "Showing test_stella.py, 2 entities",
+        "title": "test_stella.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2FREADME.md",
+        "error": false,
+        "rendered": true,
+        "status": "Showing README.md, 2 entities",
+        "title": "README.md \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2FCITATION.cff",
+        "error": false,
+        "rendered": true,
+        "status": "Showing CITATION.cff, 2 entities",
+        "title": "CITATION.cff \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2FLICENSE",
+        "error": false,
+        "rendered": true,
+        "status": "Showing LICENSE, 2 entities",
+        "title": "LICENSE \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2FREUSE.toml",
+        "error": false,
+        "rendered": true,
+        "status": "Showing REUSE.toml, 2 entities",
+        "title": "REUSE.toml \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Factual-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Biomass Growth Fraction, 10 entities",
+        "title": "Actual Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Factual-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Biomass Growth Fraction, 3 entities",
+        "title": "Actual Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2F1-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1/Year, 7 entities",
+        "title": "1/Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Factual-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Consumption per Deer, 11 entities",
+        "title": "Actual Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Factual-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Consumption per Deer, 3 entities",
+        "title": "Actual Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fmetric-tons-deer-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Metric Tons / (Deer * Year), 3 entities",
+        "title": "Metric Tons / (Deer * Year) \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Factual-fractional-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Fractional Net Growth Rate, 9 entities",
+        "title": "Actual Fractional Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Factual-fractional-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Actual Fractional Net Growth Rate, 3 entities",
+        "title": "Actual Fractional Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fauxilliary-time-to-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Auxilliary Time to Deer, 6 entities",
+        "title": "Auxilliary Time to Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fauxilliary-time-to-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Auxilliary Time to Deer, 3 entities",
+        "title": "Auxilliary Time to Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fdeer-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer/Year, 4 entities",
+        "title": "Deer/Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Annual Kills per Predator, 15 entities",
+        "title": "Baseline Annual Kills per Predator \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Annual Kills per Predator, 3 entities",
+        "title": "Baseline Annual Kills per Predator \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fdeer-predators-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer / (Predators * Year), 2 entities",
+        "title": "Deer / (Predators * Year) \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Biomass Growth Fraction, 13 entities",
+        "title": "Baseline Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Biomass Growth Fraction, 3 entities",
+        "title": "Baseline Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Deer Growth Rate, 13 entities",
+        "title": "Baseline Fractional Deer Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Deer Growth Rate, 3 entities",
+        "title": "Baseline Fractional Deer Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Predator Growth, 13 entities",
+        "title": "Baseline Fractional Predator Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Predator Growth, 3 entities",
+        "title": "Baseline Fractional Predator Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Carrying Capacity in Years, 16 entities",
+        "title": "Deer Carrying Capacity in Years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Carrying Capacity in Years, 3 entities",
+        "title": "Deer Carrying Capacity in Years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fyear",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Year, 7 entities",
+        "title": "Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdeer-density",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Density, 14 entities",
+        "title": "Deer Density \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdeer-density",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Normalized deer density, 3 entities",
+        "title": "Normalized deer density \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fdmnl",
+        "error": false,
+        "rendered": true,
+        "status": "Showing dmnl, 10 entities",
+        "title": "dmnl \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdeer-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Net Growth Rate, 11 entities",
+        "title": "Deer Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdeer-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Net Growth Rate, 3 entities",
+        "title": "Deer Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdeer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Population, 22 entities",
+        "title": "Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdeer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Population, 3 entities",
+        "title": "Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fdeer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer, 5 entities",
+        "title": "Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdeer-predation",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Predation, 14 entities",
+        "title": "Deer Predation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdeer-predation",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Predation, 3 entities",
+        "title": "Deer Predation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Desired Consumption per Deer, 17 entities",
+        "title": "Desired Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Desired Consumption per Deer, 3 entities",
+        "title": "Desired Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Feffect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Deer Density on Predator Births, 11 entities",
+        "title": "Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Feffect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Deer Density on Predator Births, 3 entities",
+        "title": "Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Feffect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Deer Density on Predator Hunting Efficiency, 10 entities",
+        "title": "Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Feffect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Deer Density on Predator Hunting Efficiency, 3 entities",
+        "title": "Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Feffect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Forage Availability on Consumption, 10 entities",
+        "title": "Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Feffect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Effect of Forage Availability on Consumption, 3 entities",
+        "title": "Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fforage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage Biomass, 20 entities",
+        "title": "Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fforage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage Biomass, 3 entities",
+        "title": "Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fmetric-tons",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Metric Tons, 5 entities",
+        "title": "Metric Tons \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fforage-consumed-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage Consumed per Deer, 13 entities",
+        "title": "Forage Consumed per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fforage-consumed-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Total herd forage consumption rate, 3 entities",
+        "title": "Total herd forage consumption rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fmetric-tons-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Metric Tons/Year, 3 entities",
+        "title": "Metric Tons/Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Fraction Predators Killed per Year, 16 entities",
+        "title": "Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Fraction Predators Killed per Year, 3 entities",
+        "title": "Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fhistorical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical Deer BOT, 13 entities",
+        "title": "Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fhistorical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical Deer BOT, 3 entities",
+        "title": "Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Deer Population, 13 entities",
+        "title": "Initial Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Deer Population, 3 entities",
+        "title": "Initial Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Forage Biomass, 13 entities",
+        "title": "Initial Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Forage Biomass, 3 entities",
+        "title": "Initial Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Predator Population, 13 entities",
+        "title": "Initial Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Predator Population, 3 entities",
+        "title": "Initial Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fpredators",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predators, 3 entities",
+        "title": "Predators \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fkaibab-adequacy-for-forage",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Adequacy for Forage, 8 entities",
+        "title": "Kaibab Adequacy for Forage \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fkaibab-adequacy-for-forage",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Adequacy for Forage, 3 entities",
+        "title": "Kaibab Adequacy for Forage \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fkaibab-adequacy-to-support-the-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Adequacy to Support the Deer Population, 9 entities",
+        "title": "Kaibab Adequacy to Support the Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fkaibab-adequacy-to-support-the-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Adequacy to Support the Deer Population, 3 entities",
+        "title": "Kaibab Adequacy to Support the Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Area in Thousands of Acres, 13 entities",
+        "title": "Kaibab Area in Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Area in Thousands of Acres, 3 entities",
+        "title": "Kaibab Area in Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fthousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Thousands of Acres, 2 entities",
+        "title": "Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fkaibab-deer-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Deer Carrying Capacity, 13 entities",
+        "title": "Kaibab Deer Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fkaibab-deer-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Deer Carrying Capacity, 3 entities",
+        "title": "Kaibab Deer Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Forage Carrying Capacity, 14 entities",
+        "title": "Kaibab Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Forage Carrying Capacity, 3 entities",
+        "title": "Kaibab Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Flookup-effect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Deer Density on Predator Births, 9 entities",
+        "title": "Lookup Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Flookup-effect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Deer Density on Predator Births, 3 entities",
+        "title": "Lookup Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Flookup-effect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Deer Density on Predator Hunting Efficiency, 8 entities",
+        "title": "Lookup Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Flookup-effect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Deer Density on Predator Hunting Efficiency, 3 entities",
+        "title": "Lookup Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Flookup-effect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Forage Availability on Consumption, 8 entities",
+        "title": "Lookup Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Flookup-effect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Effect of Forage Availability on Consumption, 3 entities",
+        "title": "Lookup Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Flookup-historical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Historical Deer BOT, 5 entities",
+        "title": "Lookup Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Flookup-historical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup Historical Deer BOT, 3 entities",
+        "title": "Lookup Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fnet-annual-forage-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Net Annual Forage Growth, 10 entities",
+        "title": "Net Annual Forage Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fnet-annual-forage-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Net Annual Forage Growth, 3 entities",
+        "title": "Net Annual Forage Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fnet-predator-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Net Predator Growth Rate, 12 entities",
+        "title": "Net Predator Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fnet-predator-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Net Predator Growth Rate, 3 entities",
+        "title": "Net Predator Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fpredators-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predators / Year, 3 entities",
+        "title": "Predators / Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Normal Deer Density per Acre, 14 entities",
+        "title": "Normal Deer Density per Acre \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Reference deer density per thousand acres, 3 entities",
+        "title": "Reference deer density per thousand acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/unit%2Fdeer-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer/Thousands of Acres, 2 entities",
+        "title": "Deer/Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fpredator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator Population, 18 entities",
+        "title": "Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fpredator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator Population, 3 entities",
+        "title": "Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fpredators-hunted",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predators Hunted, 12 entities",
+        "title": "Predators Hunted \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fpredators-hunted",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predators Hunted, 3 entities",
+        "title": "Predators Hunted \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Program Start Year, 15 entities",
+        "title": "Program Start Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Program Start Year, 3 entities",
+        "title": "Program Start Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fratio-of-actual-to-required-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of Actual to Required Biomass, 9 entities",
+        "title": "Ratio of Actual to Required Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fratio-of-actual-to-required-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of Actual to Required Biomass, 3 entities",
+        "title": "Ratio of Actual to Required Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fratio-of-forage-to-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of Forage to Forage Carrying Capacity, 9 entities",
+        "title": "Ratio of Forage to Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fratio-of-forage-to-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of Forage to Forage Carrying Capacity, 3 entities",
+        "title": "Ratio of Forage to Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fratio-of-the-deer-population-to-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of the Deer Population to Carrying Capacity, 10 entities",
+        "title": "Ratio of the Deer Population to Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fratio-of-the-deer-population-to-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Ratio of the Deer Population to Carrying Capacity, 3 entities",
+        "title": "Ratio of the Deer Population to Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Frequired-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Required Forage Biomass, 10 entities",
+        "title": "Required Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Frequired-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Required Forage Biomass, 3 entities",
+        "title": "Required Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing FINAL TIME, 9 entities",
+        "title": "FINAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing FINAL TIME, 3 entities",
+        "title": "FINAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing INITIAL TIME, 9 entities",
+        "title": "INITIAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing INITIAL TIME, 3 entities",
+        "title": "INITIAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing SAVEPER, 10 entities",
+        "title": "SAVEPER \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing SAVEPER, 3 entities",
+        "title": "SAVEPER \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/variable%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing TIME STEP, 10 entities",
+        "title": "TIME STEP \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/term%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing TIME STEP, 3 entities",
+        "title": "TIME STEP \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/mechanism%2Fresource-pressure",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Resource pressure and deer growth, 8 entities",
+        "title": "Resource pressure and deer growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/mechanism%2Fconsumption-depletion",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Consumption and forage depletion, 9 entities",
+        "title": "Consumption and forage depletion \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/mechanism%2Fpredator-response",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predators respond to prey, 8 entities",
+        "title": "Predators respond to prey \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/mechanism%2Fpolicy-pathway",
+        "error": false,
+        "rendered": true,
+        "status": "Showing A policy acts through feedback, 9 entities",
+        "title": "A policy acts through feedback \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-actual-biomass-growth-fraction-models-kaibab-ecosystem-model-mdl-model-symbol-actual-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Actual Biomass Growth Fraction, 3 entities",
+        "title": "Model symbol: Actual Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-actual-consumption-per-deer-models-kaibab-ecosystem-model-mdl-model-symbol-actual-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Actual Consumption per Deer, 3 entities",
+        "title": "Model symbol: Actual Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-actual-fractional-net-growth-rate-models-kaibab-ecosystem-model-mdl-model-symbol-actual-fractional-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Actual Fractional Net Growth Rate, 3 entities",
+        "title": "Model symbol: Actual Fractional Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-auxilliary-time-to-deer-models-kaibab-ecosystem-model-mdl-model-symbol-auxilliary-time-to-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Auxilliary Time to Deer, 3 entities",
+        "title": "Model symbol: Auxilliary Time to Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-annual-kills-per-predator-models-kaibab-ecosystem-model-mdl-model-symbol-baseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Baseline Annual Kills per Predator, 3 entities",
+        "title": "Model symbol: Baseline Annual Kills per Predator \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-biomass-growth-fraction-models-kaibab-ecosystem-model-mdl-model-symbol-baseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Baseline Biomass Growth Fraction, 3 entities",
+        "title": "Model symbol: Baseline Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-deer-growth-rate-models-kaibab-ecosystem-model-mdl-model-symbol-baseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Baseline Fractional Deer Growth Rate, 3 entities",
+        "title": "Model symbol: Baseline Fractional Deer Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-predator-growth-models-kaibab-ecosystem-model-mdl-model-symbol-baseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Baseline Fractional Predator Growth, 3 entities",
+        "title": "Model symbol: Baseline Fractional Predator Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-carrying-capacity-in-years-models-kaibab-ecosystem-model-mdl-model-symbol-deer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Deer Carrying Capacity in Years, 3 entities",
+        "title": "Model symbol: Deer Carrying Capacity in Years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-density-models-kaibab-ecosystem-model-mdl-model-symbol-deer-density",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Deer Density, 3 entities",
+        "title": "Model symbol: Deer Density \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-net-growth-rate-models-kaibab-ecosystem-model-mdl-model-symbol-deer-net-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Deer Net Growth Rate, 3 entities",
+        "title": "Model symbol: Deer Net Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-population-models-kaibab-ecosystem-model-mdl-model-symbol-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Deer Population, 3 entities",
+        "title": "Model symbol: Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-predation-models-kaibab-ecosystem-model-mdl-model-symbol-deer-predation",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Deer Predation, 3 entities",
+        "title": "Model symbol: Deer Predation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-desired-consumption-per-deer-models-kaibab-ecosystem-model-mdl-model-symbol-desired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Desired Consumption per Deer, 3 entities",
+        "title": "Model symbol: Desired Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-effect-of-deer-density-on-predator-births-models-kaibab-ecosystem-model-mdl-model-symbol-effect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Effect of Deer Density on Predator Births, 3 entities",
+        "title": "Model symbol: Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-effect-of-deer-density-on-predator-hunting-efficiency-models-kaibab-ecosystem-model-mdl-model-symbol-effect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Effect of Deer Density on Predator Hunting Efficiency, 3 entities",
+        "title": "Model symbol: Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-effect-of-forage-availability-on-consumption-models-kaibab-ecosystem-model-mdl-model-symbol-effect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Effect of Forage Availability on Consumption, 3 entities",
+        "title": "Model symbol: Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-forage-biomass-models-kaibab-ecosystem-model-mdl-model-symbol-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Forage Biomass, 3 entities",
+        "title": "Model symbol: Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-forage-consumed-per-deer-models-kaibab-ecosystem-model-mdl-model-symbol-forage-consumed-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Forage Consumed per Deer, 3 entities",
+        "title": "Model symbol: Forage Consumed per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-fraction-predators-killed-per-year-models-kaibab-ecosystem-model-mdl-model-symbol-fraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Fraction Predators Killed per Year, 3 entities",
+        "title": "Model symbol: Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-historical-deer-bot-models-kaibab-ecosystem-model-mdl-model-symbol-historical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Historical Deer BOT, 3 entities",
+        "title": "Model symbol: Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-deer-population-models-kaibab-ecosystem-model-mdl-model-symbol-initial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Initial Deer Population, 3 entities",
+        "title": "Model symbol: Initial Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-forage-biomass-models-kaibab-ecosystem-model-mdl-model-symbol-initial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Initial Forage Biomass, 3 entities",
+        "title": "Model symbol: Initial Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-predator-population-models-kaibab-ecosystem-model-mdl-model-symbol-initial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Initial Predator Population, 3 entities",
+        "title": "Model symbol: Initial Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-adequacy-for-forage-models-kaibab-ecosystem-model-mdl-model-symbol-kaibab-adequacy-for-forage",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Kaibab Adequacy for Forage, 3 entities",
+        "title": "Model symbol: Kaibab Adequacy for Forage \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-adequacy-to-support-the-deer-population-models-kaibab-ecosystem-model-mdl-model-symbol-kaibab-adequacy-to-support-the-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Kaibab Adequacy to Support the Deer Population, 3 entities",
+        "title": "Model symbol: Kaibab Adequacy to Support the Deer Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-area-in-thousands-of-acres-models-kaibab-ecosystem-model-mdl-model-symbol-kaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Kaibab Area in Thousands of Acres, 3 entities",
+        "title": "Model symbol: Kaibab Area in Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-deer-carrying-capacity-models-kaibab-ecosystem-model-mdl-model-symbol-kaibab-deer-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Kaibab Deer Carrying Capacity, 3 entities",
+        "title": "Model symbol: Kaibab Deer Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-forage-carrying-capacity-models-kaibab-ecosystem-model-mdl-model-symbol-kaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Kaibab Forage Carrying Capacity, 3 entities",
+        "title": "Model symbol: Kaibab Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-deer-density-on-predator-births-models-kaibab-ecosystem-model-mdl-model-symbol-lookup-effect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Lookup Effect of Deer Density on Predator Births, 3 entities",
+        "title": "Model symbol: Lookup Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-deer-density-on-predator-hunting-efficiency-models-kaibab-ecosystem-model-mdl-model-symbol-lookup-effect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Lookup Effect of Deer Density on Predator Hunting Efficiency, 3 entities",
+        "title": "Model symbol: Lookup Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-forage-availability-on-consumption-models-kaibab-ecosystem-model-mdl-model-symbol-lookup-effect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Lookup Effect of Forage Availability on Consumption, 3 entities",
+        "title": "Model symbol: Lookup Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-historical-deer-bot-models-kaibab-ecosystem-model-mdl-model-symbol-lookup-historical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Lookup Historical Deer BOT, 3 entities",
+        "title": "Model symbol: Lookup Historical Deer BOT \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-net-annual-forage-growth-models-kaibab-ecosystem-model-mdl-model-symbol-net-annual-forage-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Net Annual Forage Growth, 3 entities",
+        "title": "Model symbol: Net Annual Forage Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-net-predator-growth-rate-models-kaibab-ecosystem-model-mdl-model-symbol-net-predator-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Net Predator Growth Rate, 3 entities",
+        "title": "Model symbol: Net Predator Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-normal-deer-density-per-acre-models-kaibab-ecosystem-model-mdl-model-symbol-normal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Normal Deer Density per Acre, 3 entities",
+        "title": "Model symbol: Normal Deer Density per Acre \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-predator-population-models-kaibab-ecosystem-model-mdl-model-symbol-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Predator Population, 3 entities",
+        "title": "Model symbol: Predator Population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-predators-hunted-models-kaibab-ecosystem-model-mdl-model-symbol-predators-hunted",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Predators Hunted, 3 entities",
+        "title": "Model symbol: Predators Hunted \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-program-start-year-models-kaibab-ecosystem-model-mdl-model-symbol-program-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Program Start Year, 3 entities",
+        "title": "Model symbol: Program Start Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-ratio-of-actual-to-required-biomass-models-kaibab-ecosystem-model-mdl-model-symbol-ratio-of-actual-to-required-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Ratio of Actual to Required Biomass, 3 entities",
+        "title": "Model symbol: Ratio of Actual to Required Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-ratio-of-forage-to-forage-carrying-capacity-models-kaibab-ecosystem-model-mdl-model-symbol-ratio-of-forage-to-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Ratio of Forage to Forage Carrying Capacity, 3 entities",
+        "title": "Model symbol: Ratio of Forage to Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-ratio-of-the-deer-population-to-carrying-capacity-models-kaibab-ecosystem-model-mdl-model-symbol-ratio-of-the-deer-population-to-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Ratio of the Deer Population to Carrying Capacity, 3 entities",
+        "title": "Model symbol: Ratio of the Deer Population to Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-required-forage-biomass-models-kaibab-ecosystem-model-mdl-model-symbol-required-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: Required Forage Biomass, 3 entities",
+        "title": "Model symbol: Required Forage Biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-final-time-models-kaibab-ecosystem-model-mdl-model-symbol-final-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: FINAL TIME, 3 entities",
+        "title": "Model symbol: FINAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-time-models-kaibab-ecosystem-model-mdl-model-symbol-initial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: INITIAL TIME, 3 entities",
+        "title": "Model symbol: INITIAL TIME \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-saveper-models-kaibab-ecosystem-model-mdl-model-symbol-saveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: SAVEPER, 3 entities",
+        "title": "Model symbol: SAVEPER \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-time-step-models-kaibab-ecosystem-model-mdl-model-symbol-time-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Model symbol: TIME STEP, 3 entities",
+        "title": "Model symbol: TIME STEP \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-deer-growth-rate-models-config-parameters-basic-parameters-csv-row-variable-name-baseline-fractional-deer-growth-rate-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Baseline Fractional Deer Growth Rate; column value, 3 entities",
+        "title": "row variable_name = Baseline Fractional Deer Growth Rate; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-deer-growth-rate-models-config-parameters-basic-parameters-cin-assignment-baseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Baseline Fractional Deer Growth Rate, 5 entities",
+        "title": "assignment: Baseline Fractional Deer Growth Rate \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-biomass-growth-fraction-models-config-parameters-basic-parameters-csv-row-variable-name-baseline-biomass-growth-fraction-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Baseline Biomass Growth Fraction; column value, 3 entities",
+        "title": "row variable_name = Baseline Biomass Growth Fraction; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-biomass-growth-fraction-models-config-parameters-basic-parameters-cin-assignment-baseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Baseline Biomass Growth Fraction, 5 entities",
+        "title": "assignment: Baseline Biomass Growth Fraction \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-forage-carrying-capacity-models-config-parameters-basic-parameters-csv-row-variable-name-kaibab-forage-carrying-capacity-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Kaibab Forage Carrying Capacity; column value, 3 entities",
+        "title": "row variable_name = Kaibab Forage Carrying Capacity; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-forage-carrying-capacity-models-config-parameters-basic-parameters-cin-assignment-kaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Kaibab Forage Carrying Capacity, 5 entities",
+        "title": "assignment: Kaibab Forage Carrying Capacity \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-desired-consumption-per-deer-models-config-parameters-basic-parameters-csv-row-variable-name-desired-consumption-per-deer-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Desired Consumption per Deer; column value, 3 entities",
+        "title": "row variable_name = Desired Consumption per Deer; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-desired-consumption-per-deer-models-config-parameters-basic-parameters-cin-assignment-desired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Desired Consumption per Deer, 4 entities",
+        "title": "assignment: Desired Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-carrying-capacity-in-years-models-config-parameters-basic-parameters-csv-row-variable-name-deer-carrying-capacity-in-years-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Deer Carrying Capacity in Years; column value, 3 entities",
+        "title": "row variable_name = Deer Carrying Capacity in Years; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-carrying-capacity-in-years-models-config-parameters-basic-parameters-cin-assignment-deer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Deer Carrying Capacity in Years, 4 entities",
+        "title": "assignment: Deer Carrying Capacity in Years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-predator-growth-models-config-parameters-basic-parameters-csv-row-variable-name-baseline-fractional-predator-growth-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Baseline Fractional Predator Growth; column value, 3 entities",
+        "title": "row variable_name = Baseline Fractional Predator Growth; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-fractional-predator-growth-models-config-parameters-basic-parameters-cin-assignment-baseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Baseline Fractional Predator Growth, 5 entities",
+        "title": "assignment: Baseline Fractional Predator Growth \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-area-in-thousands-of-acres-models-config-parameters-basic-parameters-csv-row-variable-name-kaibab-area-in-thousands-of-acres-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Kaibab Area in Thousands of Acres; column value, 3 entities",
+        "title": "row variable_name = Kaibab Area in Thousands of Acres; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-kaibab-area-in-thousands-of-acres-models-config-parameters-basic-parameters-cin-assignment-kaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Kaibab Area in Thousands of Acres, 5 entities",
+        "title": "assignment: Kaibab Area in Thousands of Acres \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-normal-deer-density-per-acre-models-config-parameters-basic-parameters-csv-row-variable-name-normal-deer-density-per-acre-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Normal Deer Density per Acre; column value, 3 entities",
+        "title": "row variable_name = Normal Deer Density per Acre; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-normal-deer-density-per-acre-models-config-parameters-basic-parameters-cin-assignment-normal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Normal Deer Density per Acre, 5 entities",
+        "title": "assignment: Normal Deer Density per Acre \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-annual-kills-per-predator-models-config-parameters-basic-parameters-csv-row-variable-name-baseline-annual-kills-per-predator-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Baseline Annual Kills per Predator; column value, 3 entities",
+        "title": "row variable_name = Baseline Annual Kills per Predator; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-annual-kills-per-predator-models-config-parameters-basic-parameters-cin-assignment-baseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Baseline Annual Kills per Predator, 4 entities",
+        "title": "assignment: Baseline Annual Kills per Predator \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-fraction-predators-killed-per-year-models-config-parameters-basic-parameters-csv-row-variable-name-fraction-predators-killed-per-year-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Fraction Predators Killed per Year; column value, 3 entities",
+        "title": "row variable_name = Fraction Predators Killed per Year; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-fraction-predators-killed-per-year-models-config-parameters-basic-parameters-cin-assignment-fraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Fraction Predators Killed per Year, 4 entities",
+        "title": "assignment: Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-program-start-year-models-config-parameters-basic-parameters-csv-row-variable-name-program-start-year-column-value",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row variable_name = Program Start Year; column value, 3 entities",
+        "title": "row variable_name = Program Start Year; column value \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-program-start-year-models-config-parameters-basic-parameters-cin-assignment-program-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Program Start Year, 5 entities",
+        "title": "assignment: Program Start Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-deer-population-models-config-parameters-initial-stock-parameters-xlsx-sheet-kaibab-variables-cell-c7",
+        "error": false,
+        "rendered": true,
+        "status": "Showing sheet 'Kaibab Variables', cell C7, 5 entities",
+        "title": "sheet 'Kaibab Variables', cell C7 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-forage-biomass-models-config-parameters-initial-stock-parameters-xlsx-sheet-kaibab-variables-cell-c9",
+        "error": false,
+        "rendered": true,
+        "status": "Showing sheet 'Kaibab Variables', cell C9, 5 entities",
+        "title": "sheet 'Kaibab Variables', cell C9 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-initial-predator-population-models-config-parameters-initial-stock-parameters-xlsx-sheet-kaibab-variables-cell-c11",
+        "error": false,
+        "rendered": true,
+        "status": "Showing sheet 'Kaibab Variables', cell C11, 5 entities",
+        "title": "sheet 'Kaibab Variables', cell C11 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-baseline-annual-kills-per-predator-models-config-scenarios-case2-cin-assignment-baseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Baseline Annual Kills per Predator, 4 entities",
+        "title": "assignment: Baseline Annual Kills per Predator \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-carrying-capacity-in-years-models-config-scenarios-case2-cin-assignment-deer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Deer Carrying Capacity in Years, 4 entities",
+        "title": "assignment: Deer Carrying Capacity in Years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-desired-consumption-per-deer-models-config-scenarios-case2-cin-assignment-desired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Desired Consumption per Deer, 4 entities",
+        "title": "assignment: Desired Consumption per Deer \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-fraction-predators-killed-per-year-models-config-scenarios-case2-cin-assignment-fraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing assignment: Fraction Predators Killed per Year, 4 entities",
+        "title": "assignment: Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-deer-density-on-predator-births-models-config-lookups-effect-deer-density-on-predator-births-cin-lookup-table-lookup-effect-of-deer-density-on-predator-births",
+        "error": false,
+        "rendered": true,
+        "status": "Showing lookup table: Lookup Effect of Deer Density on Predator Births, 3 entities",
+        "title": "lookup table: Lookup Effect of Deer Density on Predator Births \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-deer-density-on-predator-hunting-efficiency-models-config-lookups-effect-deer-density-on-predator-hunting-efficiency-cin-lookup-table-lookup-effect-of-deer-density-on-predator-hunting-efficiency",
+        "error": false,
+        "rendered": true,
+        "status": "Showing lookup table: Lookup Effect of Deer Density on Predator Hunting Efficiency, 3 entities",
+        "title": "lookup table: Lookup Effect of Deer Density on Predator Hunting Efficiency \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-lookup-effect-of-forage-availability-on-consumption-models-config-lookups-effect-forage-availability-on-consumption-cin-lookup-table-lookup-effect-of-forage-availability-on-consumption",
+        "error": false,
+        "rendered": true,
+        "status": "Showing lookup table: Lookup Effect of Forage Availability on Consumption, 3 entities",
+        "title": "lookup table: Lookup Effect of Forage Availability on Consumption \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-historical-deer-bot-models-config-timeseries-historical-deer-botg-csv-row-label-historical-deer-bot-first-row-contains-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Historical Deer BOT; first row contains years, 3 entities",
+        "title": "row label Historical Deer BOT; first row contains years \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/method%2Fsystem-dynamics",
+        "error": false,
+        "rendered": true,
+        "status": "Showing System dynamics simulation, 15 entities",
+        "title": "System dynamics simulation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/method%2Frk2",
+        "error": false,
+        "rendered": true,
+        "status": "Showing RK2 midpoint integration, 4 entities",
+        "title": "RK2 midpoint integration \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/tool%2Fvensim",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Vensim, 7 entities",
+        "title": "Vensim \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/tool%2Fpysd",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Python / PySD, 3 entities",
+        "title": "Python / PySD \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/configuration%2Fcase1",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case 1 \u00b7 baseline, 18 entities",
+        "title": "Case 1 \u00b7 baseline \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Deer Growth Rate = 1, 5 entities",
+        "title": "Baseline Fractional Deer Growth Rate = 1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1.0, 2 entities",
+        "title": "1.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Biomass Growth Fraction = 0.1, 5 entities",
+        "title": "Baseline Biomass Growth Fraction = 0.1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.1, 2 entities",
+        "title": "0.1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Forage Carrying Capacity = 350000, 5 entities",
+        "title": "Kaibab Forage Carrying Capacity = 350000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 350000.0, 2 entities",
+        "title": "350000.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Desired Consumption per Deer = 0.75, 6 entities",
+        "title": "Desired Consumption per Deer = 0.75 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.75, 2 entities",
+        "title": "0.75 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Carrying Capacity in Years = 2, 6 entities",
+        "title": "Deer Carrying Capacity in Years = 2 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 2.0, 2 entities",
+        "title": "2.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Predator Growth = 0.5, 5 entities",
+        "title": "Baseline Fractional Predator Growth = 0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.5, 2 entities",
+        "title": "0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Area in Thousands of Acres = 800, 5 entities",
+        "title": "Kaibab Area in Thousands of Acres = 800 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 800.0, 2 entities",
+        "title": "800.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Normal Deer Density per Acre = 5, 5 entities",
+        "title": "Normal Deer Density per Acre = 5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 5.0, 2 entities",
+        "title": "5.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Annual Kills per Predator = 40, 6 entities",
+        "title": "Baseline Annual Kills per Predator = 40 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 40.0, 2 entities",
+        "title": "40.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Fraction Predators Killed per Year = 0, 6 entities",
+        "title": "Fraction Predators Killed per Year = 0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.0, 2 entities",
+        "title": "0.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Program Start Year = 1907, 5 entities",
+        "title": "Program Start Year = 1907 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1907.0, 2 entities",
+        "title": "1907.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Deer Population = 4000, 5 entities",
+        "title": "Initial Deer Population = 4000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 4000, 2 entities",
+        "title": "4000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Forage Biomass = 317000, 5 entities",
+        "title": "Initial Forage Biomass = 317000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 317000, 2 entities",
+        "title": "317000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Predator Population = 100, 5 entities",
+        "title": "Initial Predator Population = 100 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 100, 2 entities",
+        "title": "100 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/run%2Fcase1",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case1 \u00b7 documented Vensim run, 17 entities",
+        "title": "Case1 \u00b7 documented Vensim run \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing INITIAL TIME = 1900, 4 entities",
+        "title": "INITIAL TIME = 1900 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1900, 2 entities",
+        "title": "1900 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing FINAL TIME = 1950, 4 entities",
+        "title": "FINAL TIME = 1950 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1950, 2 entities",
+        "title": "1950 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing TIME STEP = 0.05, 4 entities",
+        "title": "TIME STEP = 0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.05, 2 entities",
+        "title": "0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase1%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing SAVEPER = 0.05, 4 entities",
+        "title": "SAVEPER = 0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase1%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.05, 2 entities",
+        "title": "0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/configuration%2Fcase2",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case 2 \u00b7 four overrides, 19 entities",
+        "title": "Case 2 \u00b7 four overrides \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Deer Growth Rate = 1, 5 entities",
+        "title": "Baseline Fractional Deer Growth Rate = 1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fbaseline-fractional-deer-growth-rate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1.0, 2 entities",
+        "title": "1.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Biomass Growth Fraction = 0.1, 5 entities",
+        "title": "Baseline Biomass Growth Fraction = 0.1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fbaseline-biomass-growth-fraction",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.1, 2 entities",
+        "title": "0.1 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Forage Carrying Capacity = 350000, 5 entities",
+        "title": "Kaibab Forage Carrying Capacity = 350000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fkaibab-forage-carrying-capacity",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 350000.0, 2 entities",
+        "title": "350000.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Desired Consumption per Deer = 0.5, 6 entities",
+        "title": "Desired Consumption per Deer = 0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fdesired-consumption-per-deer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.5, 2 entities",
+        "title": "0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Carrying Capacity in Years = 4, 6 entities",
+        "title": "Deer Carrying Capacity in Years = 4 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fdeer-carrying-capacity-in-years",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 4.0, 2 entities",
+        "title": "4.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Fractional Predator Growth = 0.5, 5 entities",
+        "title": "Baseline Fractional Predator Growth = 0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fbaseline-fractional-predator-growth",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.5, 2 entities",
+        "title": "0.5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Kaibab Area in Thousands of Acres = 800, 5 entities",
+        "title": "Kaibab Area in Thousands of Acres = 800 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fkaibab-area-in-thousands-of-acres",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 800.0, 2 entities",
+        "title": "800.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Normal Deer Density per Acre = 5, 5 entities",
+        "title": "Normal Deer Density per Acre = 5 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fnormal-deer-density-per-acre",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 5.0, 2 entities",
+        "title": "5.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Baseline Annual Kills per Predator = 20, 6 entities",
+        "title": "Baseline Annual Kills per Predator = 20 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fbaseline-annual-kills-per-predator",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 20.0, 2 entities",
+        "title": "20.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Fraction Predators Killed per Year = 0.2, 7 entities",
+        "title": "Fraction Predators Killed per Year = 0.2 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Ffraction-predators-killed-per-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.2, 2 entities",
+        "title": "0.2 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Program Start Year = 1907, 5 entities",
+        "title": "Program Start Year = 1907 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fprogram-start-year",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1907.0, 2 entities",
+        "title": "1907.0 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Deer Population = 4000, 5 entities",
+        "title": "Initial Deer Population = 4000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Finitial-deer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 4000, 2 entities",
+        "title": "4000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Forage Biomass = 317000, 5 entities",
+        "title": "Initial Forage Biomass = 317000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Finitial-forage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 317000, 2 entities",
+        "title": "317000 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial Predator Population = 100, 5 entities",
+        "title": "Initial Predator Population = 100 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Finitial-predator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 100, 2 entities",
+        "title": "100 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/run%2Fcase2",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case2 \u00b7 documented Vensim run, 20 entities",
+        "title": "Case2 \u00b7 documented Vensim run \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing INITIAL TIME = 1900, 4 entities",
+        "title": "INITIAL TIME = 1900 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Finitial-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1900, 2 entities",
+        "title": "1900 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing FINAL TIME = 1950, 4 entities",
+        "title": "FINAL TIME = 1950 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Ffinal-time",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 1950, 2 entities",
+        "title": "1950 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing TIME STEP = 0.05, 4 entities",
+        "title": "TIME STEP = 0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Ftime-step",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.05, 2 entities",
+        "title": "0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing SAVEPER = 0.05, 4 entities",
+        "title": "SAVEPER = 0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/value%2Fcase2%2Fsaveper",
+        "error": false,
+        "rendered": true,
+        "status": "Showing 0.05, 2 entities",
+        "title": "0.05 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/recordset%2Fcase1",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case1 output records, 7 entities",
+        "title": "Case1 output records \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase1%2Fdeer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Population output series, 3 entities",
+        "title": "Deer Population output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-population-results-runs-case1-external-csv-row-label-deer-population-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Deer Population; preceding Time row defines axis, 3 entities",
+        "title": "row label Deer Population; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase1%2Fforage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage Biomass output series, 3 entities",
+        "title": "Forage Biomass output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-forage-biomass-results-runs-case1-external-csv-row-label-forage-biomass-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Forage Biomass; preceding Time row defines axis, 3 entities",
+        "title": "row label Forage Biomass; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase1%2Fpredator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator Population output series, 3 entities",
+        "title": "Predator Population output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-predator-population-results-runs-case1-external-csv-row-label-predator-population-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Predator Population; preceding Time row defines axis, 3 entities",
+        "title": "row label Predator Population; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase1%2Fhistorical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical Deer BOT output series, 3 entities",
+        "title": "Historical Deer BOT output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-historical-deer-bot-results-runs-case1-external-csv-row-label-historical-deer-bot-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Historical Deer BOT; preceding Time row defines axis, 3 entities",
+        "title": "row label Historical Deer BOT; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/recordset%2Fcase2",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case2 output records, 7 entities",
+        "title": "Case2 output records \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase2%2Fdeer-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer Population output series, 3 entities",
+        "title": "Deer Population output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-deer-population-results-runs-case2-external-csv-row-label-deer-population-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Deer Population; preceding Time row defines axis, 3 entities",
+        "title": "row label Deer Population; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase2%2Fforage-biomass",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage Biomass output series, 3 entities",
+        "title": "Forage Biomass output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-forage-biomass-results-runs-case2-external-csv-row-label-forage-biomass-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Forage Biomass; preceding Time row defines axis, 3 entities",
+        "title": "row label Forage Biomass; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase2%2Fpredator-population",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator Population output series, 3 entities",
+        "title": "Predator Population output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-predator-population-results-runs-case2-external-csv-row-label-predator-population-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Predator Population; preceding Time row defines axis, 3 entities",
+        "title": "row label Predator Population; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/field%2Fcase2%2Fhistorical-deer-bot",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical Deer BOT output series, 3 entities",
+        "title": "Historical Deer BOT output series \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/binding%2Fvariable-historical-deer-bot-results-runs-case2-external-csv-row-label-historical-deer-bot-preceding-time-row-defines-axis",
+        "error": false,
+        "rendered": true,
+        "status": "Showing row label Historical Deer BOT; preceding Time row defines axis, 3 entities",
+        "title": "row label Historical Deer BOT; preceding Time row defines axis \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fconsumption-name",
+        "error": false,
+        "rendered": true,
+        "status": "Showing A per-deer name for a herd total, 2 entities",
+        "title": "A per-deer name for a herd total \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fdensity-name",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Density is normalized, 3 entities",
+        "title": "Density is normalized \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Flookup-endpoint",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Lookup comment and table disagree, 3 entities",
+        "title": "Lookup comment and table disagree \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fsection-number",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Literature section numbering differs, 3 entities",
+        "title": "Literature section numbering differs \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fhistory",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Historical evidence needs a deeper citation, 2 entities",
+        "title": "Historical evidence needs a deeper citation \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fcase-two",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case 2 changes four parameters, 2 entities",
+        "title": "Case 2 changes four parameters \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/review%2Fexecution",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Run provenance is reconstructed, 3 entities",
+        "title": "Run provenance is reconstructed \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/class%2Fmathematical-model",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Mathematical model, 2 entities",
+        "title": "Mathematical model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/quantity%2Fdeer",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer population, 6 entities",
+        "title": "Deer population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/quantity%2Fpredators",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator population, 6 entities",
+        "title": "Predator population \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/quantity%2Fforage",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage biomass, 6 entities",
+        "title": "Forage biomass \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Fequations",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Governing equations, 6 entities",
+        "title": "Governing equations \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/formula%2Fdeer-balance",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Deer population balance, 7 entities",
+        "title": "Deer population balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/formula%2Fpredators-balance",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Predator population balance, 7 entities",
+        "title": "Predator population balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/formula%2Fforage-balance",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Forage biomass balance, 7 entities",
+        "title": "Forage biomass balance \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Fparameters",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Scientific parameters, 13 entities",
+        "title": "Scientific parameters \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Flookups",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Nonlinear responses, 5 entities",
+        "title": "Nonlinear responses \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/file%2Fmodels%2Fkaibab_ecosystem_model.stmx",
+        "error": false,
+        "rendered": true,
+        "status": "Showing kaibab_ecosystem_model.stmx, 9 entities",
+        "title": "kaibab_ecosystem_model.stmx \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/tool%2Fstella",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Stella Architect, 3 entities",
+        "title": "Stella Architect \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/task%2Fsimulate",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Simulate population dynamics, 7 entities",
+        "title": "Simulate population dynamics \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Fsetup",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Simulation setup, 5 entities",
+        "title": "Simulation setup \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Fscenarios",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Scenario choice, 4 entities",
+        "title": "Scenario choice \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Finitial",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Initial conditions, 5 entities",
+        "title": "Initial conditions \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Fnumerics",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Time & integration, 8 entities",
+        "title": "Time & integration \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/method%2Frk2-heun",
+        "error": false,
+        "rendered": true,
+        "status": "Showing RK2 Heun integration, 2 entities",
+        "title": "RK2 Heun integration \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#overview/overview%2Foutputs",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Population & forage trajectories, 7 entities",
+        "title": "Population & forage trajectories \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/processing%2Fplot-case2-review",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Plot the result, 5 entities",
+        "title": "Plot the result \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/visualization%2Fcase2-review",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Case 2 trajectories, 4 entities",
+        "title": "Case 2 trajectories \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/workflow%2Fcase2-parameter-to-figure",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure., 6 entities",
+        "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook%2Finspect-results",
+        "error": false,
+        "rendered": true,
+        "status": "Showing inspect_results.ipynb, 9 entities",
+        "title": "inspect_results.ipynb \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/script%2Finspect-results",
+        "error": false,
+        "rendered": true,
+        "status": "Showing inspect_results.py, 7 entities",
+        "title": "inspect_results.py \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/dataset%2Fpython-state-trajectories",
+        "error": false,
+        "rendered": true,
+        "status": "Showing State trajectories in pandas, 6 entities",
+        "title": "State trajectories in pandas \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/dataset%2Fpython-inspection-summary",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Peaks and final values, 5 entities",
+        "title": "Peaks and final values \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/visualization%2Fpython-inspection",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Compare cases in Python, 5 entities",
+        "title": "Compare cases in Python \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/processing%2Finspect-results-python",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Inspect data with Python, 14 entities",
+        "title": "Inspect data with Python \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook-section%2Finspect-results%2Fcell-1",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Verify source files, 5 entities",
+        "title": "Verify source files \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook-section%2Finspect-results%2Fcell-2",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Read units and time axes, 5 entities",
+        "title": "Read units and time axes \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook-section%2Finspect-results%2Fcell-3",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Build the pandas table, 5 entities",
+        "title": "Build the pandas table \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook-section%2Finspect-results%2Fcell-4",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Inspect peaks and final values, 5 entities",
+        "title": "Inspect peaks and final values \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/notebook-section%2Finspect-results%2Fcell-5",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Compare trajectories, 5 entities",
+        "title": "Compare trajectories \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      },
+      {
+        "route": "#workflows/workflow%2Fpython-inspection",
+        "error": false,
+        "rendered": true,
+        "status": "Showing Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories., 6 entities",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation"
+      }
+    ],
+    "keyboard": {
+      "arrows": true,
+      "M_agenda": true,
+      "Escape_close": true,
+      "O_overview": true,
+      "notes_embedded": 63,
+      "presenter_popup": "S invoked; separate popup rendering is not exposed by the in-app browser."
+    }
+  }
+}

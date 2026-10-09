@@ -1,0 +1,82 @@
+{
+  "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+  "sources": {
+    "scripts/vensim_csv.py": "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3",
+    "results/runs/case1_external.csv": "850db08ffe3cd3743155069f5e962e60482eba68ce2c7dd30acb645dfa830f2e",
+    "results/runs/case2_external.csv": "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63"
+  },
+  "outputs": {
+    "notebooks/inspect_results.ipynb": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+    "notebooks/inspect_results.py": "3cb7df13e9c23485195064de689722fd2e9dc72aa6f8af6b8c33fe4e811dfd83",
+    "data/python-state-trajectories.csv": "603db3cab20f12b563234e4f46c45a521e9a9bb62e50553dfc531db9d38fa9ca",
+    "data/python-inspection-summary.csv": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
+    "data/python-inspection.json": "585ae09974cc6ec93d9add7de4a6c5b5a72808ddf55d7e35d4ebae6c7172d777",
+    "data/python-inspection.svg": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
+    "notebooks/inspect_results.html": "8c75e51e7314685f4ecd8c82ce1aebe3198dfc2e1fc88c4939ae914be92db006"
+  },
+  "simulationExecuted": false,
+  "codeCellsExecuted": 5,
+  "historicalInterpolated": false,
+  "sections": [
+    {
+      "number": 1,
+      "heading": "1. Locate and check the source artifacts",
+      "cellId": "cell-03",
+      "markdownCellId": "cell-02",
+      "cellIndex": 2,
+      "anchor": "1.-Locate-and-check-the-source-artifacts",
+      "sourceLine": 36,
+      "pythonStartLine": 33,
+      "pythonEndLine": 59,
+      "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
+    },
+    {
+      "number": 2,
+      "heading": "2. Read the data without losing units or time axes",
+      "cellId": "cell-05",
+      "markdownCellId": "cell-04",
+      "cellIndex": 4,
+      "anchor": "2.-Read-the-data-without-losing-units-or-time-axes",
+      "sourceLine": 101,
+      "pythonStartLine": 64,
+      "pythonEndLine": 76,
+      "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
+    },
+    {
+      "number": 3,
+      "heading": "3. Build a table for the three simulated states",
+      "cellId": "cell-07",
+      "markdownCellId": "cell-06",
+      "cellIndex": 6,
+      "anchor": "3.-Build-a-table-for-the-three-simulated-states",
+      "sourceLine": 259,
+      "pythonStartLine": 84,
+      "pythonEndLine": 95,
+      "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
+    },
+    {
+      "number": 4,
+      "heading": "4. Inspect peaks and final values",
+      "cellId": "cell-09",
+      "markdownCellId": "cell-08",
+      "cellIndex": 8,
+      "anchor": "4.-Inspect-peaks-and-final-values",
+      "sourceLine": 381,
+      "pythonStartLine": 103,
+      "pythonEndLine": 117,
+      "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
+    },
+    {
+      "number": 5,
+      "heading": "5. Compare trajectories on their own axes",
+      "cellId": "cell-11",
+      "markdownCellId": "cell-10",
+      "cellIndex": 10,
+      "anchor": "5.-Compare-trajectories-on-their-own-axes",
+      "sourceLine": 546,
+      "pythonStartLine": 122,
+      "pythonEndLine": 143,
+      "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
+    }
+  ]
+}

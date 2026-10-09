@@ -1,0 +1,39 @@
+/* SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+   SPDX-License-Identifier: MIT
+   Additions only: the two original theme stylesheets own desktop lecture design. */
+.reveal .workflow{position:absolute;left:485px;right:72px;bottom:19px;display:flex;justify-content:space-between;gap:8px;padding:0;margin:0;list-style:none;font:10px/1.5 var(--font-mono);color:var(--n4i-grey-500)}
+.reveal .workflow li{padding:2px 0;margin:0;white-space:nowrap;list-style:none}
+.reveal .workflow li::after{content:' →';color:var(--n4i-blue);margin-left:7px}
+.reveal .workflow li:last-child::after{content:''}
+.reveal .workflow li.active{font-weight:700;color:var(--n4i-blue);border-bottom:2px solid var(--n4i-yellow)}
+.reveal .divider .workflow,.reveal .title-slide .workflow{position:absolute;left:90px;right:90px;bottom:28px;color:#d6def7;z-index:3;justify-content:flex-start;gap:22px}
+.reveal .divider .workflow li.active,.reveal .title-slide .workflow li.active,.reveal .divider .workflow li::after,.reveal .title-slide .workflow li::after{color:var(--n4i-yellow)}
+.reveal .workflow-full{position:static;display:flex;margin-top:28px;gap:10px;font-size:14px;justify-content:space-between;color:var(--n4i-navy)}
+.reveal figure.evidence{margin:18px 0 8px}.reveal figure.evidence img{display:block;max-width:100%;max-height:330px;width:auto;margin:auto;object-fit:contain;border:1px solid var(--n4i-grey-200);border-radius:8px;box-shadow:0 14px 40px -10px rgba(12,17,61,.20)}
+.reveal figure.evidence figcaption{font-size:.7em;line-height:1.4;color:var(--n4i-grey-500);margin-top:9px}
+.reveal #running-example .evidence img{max-height:245px}.reveal #running-example .col:nth-child(2) .evidence img{max-height:375px}
+.reveal .appendix figure.evidence img{max-height:510px}
+.reveal .case-study table{margin-top:18px}.reveal .case-study table td{font-size:15px}.reveal .case-study .case-files{font-size:14px}
+.reveal .title-slide .presenter{font-size:12px}.reveal .title-slide .meta a{overflow-wrap:anywhere}
+.reveal .title-slide .closing-authors{font-size:17px;margin-top:20px;color:white}
+.reveal .doi-status{display:inline-block;margin-top:6px;padding:2px 6px;border:1px solid #f3f051;border-radius:3px}
+.reveal pre code{max-height:none}.reveal .artefact pre{overflow-wrap:anywhere;white-space:pre-wrap}.reveal .artefact pre code{white-space:pre-wrap}
+.reveal a:focus-visible,#nav-panel a:focus-visible,button:focus-visible{outline:3px solid #d5763d;outline-offset:4px}
+#nav-panel{scrollbar-width:auto;scrollbar-color:#6a7088 #eceef4;scrollbar-gutter:stable}#nav-panel a:hover{background:#eceef4}
+#nav-panel:focus{outline:none}#nav-overlay[hidden]{display:none}#nav-toggle[aria-expanded="true"]{visibility:hidden}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:680px){
+ .reveal .col{min-width:0;overflow-wrap:anywhere}.reveal .callout .mono{overflow-wrap:anywhere}
+ body:not(.print-pdf){overflow:auto}.reveal{height:auto;min-height:100vh;overflow:visible}.reveal .slides{position:static!important;transform:none!important;zoom:1!important;width:100%!important;height:auto!important;perspective:none}
+ .reveal .slides>section{position:relative!important;top:auto!important;left:auto!important;transform:none!important;width:100%;height:auto!important;min-height:100vh;padding:74px 22px 120px;box-sizing:border-box}
+ .reveal .slides>section:not(.present){display:none!important}.reveal .two-col,.reveal .two-col.wide-left,.reveal .two-col.wide-right,.reveal .three-col,.reveal .four-col,.reveal .fair-grid{grid-template-columns:1fr!important;gap:18px}
+ .reveal .slide-header{left:22px;right:22px;top:20px;gap:8px;flex-wrap:wrap}.reveal .slide-header .chip{font-size:9px}.reveal section.content h1{font-size:26px;margin-top:25px}
+ .reveal section.title-slide,.reveal section.divider{padding:85px 25px 120px;background-position:center}.reveal section.title-slide .hero h1{font-size:42px}.reveal section.title-slide .hero .subtitle{font-size:21px}
+ .reveal section.title-slide .meta{grid-template-columns:1fr;gap:18px;margin-top:24px}.reveal section.title-slide .top-row{flex-wrap:wrap;gap:18px}.reveal .divider h1{font-size:38px}.reveal .divider::before{right:25px;top:22px;width:135px}
+ .reveal .slide-footer{left:22px;right:22px;bottom:70px;font-size:10px;flex-wrap:wrap;gap:5px}
+ .reveal .workflow,.reveal .divider .workflow,.reveal .title-slide .workflow{position:absolute;left:22px;right:22px;bottom:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;font-size:9px}
+ .reveal .workflow-full{position:static;font-size:12px;margin:24px 0}.reveal .workflow li::after{content:''}.reveal figure.evidence img{max-height:420px;height:auto}
+ .reveal table.compare{font-size:13px;table-layout:fixed}.reveal table.compare td,.reveal table.compare th{padding:7px;overflow-wrap:anywhere;font-size:12px}.reveal table.agenda{font-size:10px}.reveal table.agenda td,.reveal table.agenda th{padding:6px;overflow-wrap:anywhere}
+ .reveal .controls,.reveal .slide-number,.reveal .progress{position:fixed}.reveal pre code{font-size:12px}.reveal .small{font-size:13px}.reveal .task-list{font-size:16px}.reveal .chip-link{overflow-wrap:anywhere;white-space:normal}
+}
+@media print{#nav-toggle,#nav-panel,#nav-overlay{display:none!important}.reveal .workflow{font-size:10px}.reveal .evidence img{box-shadow:none}.reveal a{color:inherit}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}}

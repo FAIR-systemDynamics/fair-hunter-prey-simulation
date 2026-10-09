@@ -34,10 +34,22 @@ mardi:Q68663 a rdfs:Class ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#mechanism/consumption-depletion> ;
     sd:evidenceStatus "Interpreted" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/039a5c4a6f8ab6a9ae> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> ;
+    sd:evidenceStatus "Interpreted" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/05fc669738ac3b859a> a rdf:Statement ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/final-time> ;
     rdf:predicate dcterms:hasPart ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/numerics> ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/0673b061ab643250c5> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> ;
     sd:evidenceStatus "Interpreted" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/06d0c1a1e6d1a03a2b> a rdf:Statement ;
@@ -124,6 +136,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/initial> ;
     sd:evidenceStatus "Interpreted" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/19fe77e6dc00d9f8f7> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> ;
+    sd:evidenceStatus "Interpreted" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/1a4fbd62f420ed44e5> a rdf:Statement ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/deer-net-growth-rate> ;
     rdf:predicate sd:denotesConcept ;
@@ -158,6 +176,18 @@ mardi:Q68663 a rdfs:Class ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#recordset/case2> ;
     rdf:predicate dcterms:relation ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/outputs> ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/20b7d79a272e896759> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/kaibab_ecosystem_model.mdl> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/213ccfedc2a4879dda> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> ;
     sd:evidenceStatus "Interpreted" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/2187485396e2c603a5> a rdf:Statement ;
@@ -220,6 +250,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:subject kaibab:model ;
     sd:evidenceStatus "Interpreted" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/30ac784bda9cf5c509> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> ;
+    sd:evidenceStatus "Interpreted" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/312efc8eb13c7c60e4> a rdf:Statement ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/effect-of-forage-availability-on-consumption> ;
     rdf:predicate sd:involvesVariable ;
@@ -236,6 +272,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:object mardi:Q68663 ;
     rdf:predicate rdf:type ;
     rdf:subject kaibab:model ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/33dcf6d3475bfb15e1> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> ;
     sd:evidenceStatus "Interpreted" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/343239f2149b88e962> a rdf:Statement ;
@@ -670,6 +712,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#formula/deer-balance> ;
     sd:evidenceStatus "Interpreted" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/9911afd1d6e763f16a> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> ;
+    sd:evidenceStatus "Interpreted" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/9d04cc03cdefe2d3dd> a rdf:Statement ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/predation> ;
     rdf:predicate sd:illustrates ;
@@ -692,6 +740,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/initial-state> ;
     rdf:predicate sd:denotesConcept ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/initial-predator-population> ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/a20a51301f5e5ad3f8> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> ;
     sd:evidenceStatus "Interpreted" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/a2e8adc87f18f86022> a rdf:Statement ;
@@ -992,6 +1046,12 @@ mardi:Q68663 a rdfs:Class ;
     rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#concept/regrowth> ;
     rdf:predicate sd:denotesConcept ;
     rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/actual-biomass-growth-fraction> ;
+    sd:evidenceStatus "Interpreted" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/e35b5f0f227447fe28> a rdf:Statement ;
+    rdf:object <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1> ;
+    rdf:predicate dcterms:hasPart ;
+    rdf:subject <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> ;
     sd:evidenceStatus "Interpreted" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assertion/e49c1f89992727cad8> a rdf:Statement ;
@@ -1406,17 +1466,6 @@ kaibab:dataset a dcat:Dataset ;
     sd:sha256 "776626ae5f41fe012a0e5a11a8b66f518baed0b797ad90d951462446d099b92e" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_convert_historical_deer_botg_csv_to_dataset.frm> .
 
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/runners/vensim/vensim_run_configuration_external> a schema:MediaObject ;
-    rdfs:label "vensim_run_configuration_external" ;
-    dcterms:description "Versioned repository artifact: runners/vensim/vensim_run_configuration_external" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "runners/vensim/vensim_run_configuration_external" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "8d81e04907494b709bca94c9d6abf6e9bd27879e9edc8baa0844ebf6ce0c3190" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> .
-
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/runners/vensim/vensim_run_configuration_parameter> a schema:MediaObject ;
     rdfs:label "vensim_run_configuration_parameter" ;
     dcterms:description "Versioned repository artifact: runners/vensim/vensim_run_configuration_parameter" ;
@@ -1483,17 +1532,6 @@ kaibab:dataset a dcat:Dataset ;
     sd:sha256 "d7d8d5b26f99b4ae48a6a0702f4176765716620a5ba25b2b126cfe67ad684afc" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/csv_to_cin.py> .
 
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/plot_results.py> a schema:MediaObject ;
-    rdfs:label "plot_results.py" ;
-    dcterms:description "Versioned repository artifact: scripts/plot_results.py" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "scripts/plot_results.py" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "f11d3f8d57a3e98641124a82beaa211cc0fb55138958d143d58fc338a7ceb18f" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> .
-
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/stella_csv.py> a schema:MediaObject ;
     rdfs:label "stella_csv.py" ;
     dcterms:description "Versioned repository artifact: scripts/stella_csv.py" ;
@@ -1504,17 +1542,6 @@ kaibab:dataset a dcat:Dataset ;
     sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
     sd:sha256 "b5513bc301aba5f5bb67e0dee3e95eaea28fd2f79512ed414a6c3e3feb663d0e" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/stella_csv.py> .
-
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/vensim_csv.py> a schema:MediaObject ;
-    rdfs:label "vensim_csv.py" ;
-    dcterms:description "Versioned repository artifact: scripts/vensim_csv.py" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "scripts/vensim_csv.py" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/tests/fixtures/expgrowth.mdl> a schema:MediaObject ;
     rdfs:label "expgrowth.mdl" ;
@@ -1653,6 +1680,9 @@ kaibab:dataset a dcat:Dataset ;
     rdfs:comment "Draft application extension aligned to m4i 1.4.0. The proposed GitHub Pages namespace is not yet published." ;
     owl:versionInfo "0.2.0-review" .
 
+sd:artifactSequence a owl:ObjectProperty ;
+    rdfs:comment "Ordered presentation of entities in a workflow example. Sequence order alone does not assert derivation or execution provenance." .
+
 sd:concerns a owl:ObjectProperty ;
     rdfs:label "concerns" ;
     rdfs:comment "Entity discussed by a review issue." .
@@ -1709,6 +1739,10 @@ sd:inputFile a owl:ObjectProperty ;
     rdfs:label "inputFile" ;
     rdfs:comment "An external data file supplying values read or loaded for a model file." .
 
+sd:inputTo a owl:ObjectProperty ;
+    rdfs:comment "An artifact supplied as input to a processing step; inverse of obo:RO_0002233. This is a local workflow display predicate." ;
+    owl:inverseOf obo:RO_0002233 .
+
 sd:lookupPoints a owl:DatatypeProperty ;
     rdfs:label "lookupPoints" ;
     rdfs:comment "JSON array of pairs copied from an external lookup table." .
@@ -1748,6 +1782,10 @@ sd:sourceLine a owl:DatatypeProperty ;
 sd:sourceUnit a owl:DatatypeProperty ;
     rdfs:label "sourceUnit" ;
     rdfs:comment "Original model unit string; preserves domain-specific counting units." .
+
+sd:specifiesOutput a owl:ObjectProperty ;
+    rdfs:label "specifies output" ;
+    rdfs:comment "An executable source section specifies writing an artifact. This is a source-code relationship; observed generation is recorded separately with prov:generated on the executed activity." .
 
 sd:timeAxis a owl:DatatypeProperty ;
     rdfs:label "timeAxis" ;
@@ -1946,7 +1984,8 @@ sd:timeAxis a owl:DatatypeProperty ;
     dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin#L4> ;
     m4i:hasAssignedValue <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#value/case2/fraction-predators-killed-per-year> ;
     m4i:hasVariable <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/fraction-predators-killed-per-year> ;
-    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#binding/variable-fraction-predators-killed-per-year-models-config-scenarios-case2-cin-assignment-fraction-predators-killed-per-year> ;
+    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#binding/variable-fraction-predators-killed-per-year-models-config-scenarios-case2-cin-assignment-fraction-predators-killed-per-year>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin> ;
     sd:evidenceStatus "Extracted" ;
     sd:overrides <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case1/fraction-predators-killed-per-year> .
 
@@ -2745,6 +2784,54 @@ sd:timeAxis a owl:DatatypeProperty ;
     sd:sha256 "c2ae5032ca6ad5271c27971b0adf8d80866ddfec9f52776354c2391b05470f34" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/pysd/run.py> .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/runners/vensim/vensim_run_configuration_external> a schema:MediaObject ;
+    rdfs:label "vensim_run_configuration_external" ;
+    dcterms:description "Versioned repository artifact: runners/vensim/vensim_run_configuration_external" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:path "runners/vensim/vensim_run_configuration_external" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "8d81e04907494b709bca94c9d6abf6e9bd27879e9edc8baa0844ebf6ce0c3190" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/plot_results.py> a schema:MediaObject ;
+    rdfs:label "plot_results.py" ;
+    dcterms:description "Versioned repository artifact: scripts/plot_results.py" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:path "scripts/plot_results.py" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "f11d3f8d57a3e98641124a82beaa211cc0fb55138958d143d58fc338a7ceb18f" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/plot-case2-review> a m4i:ProcessingStep,
+        prov:Activity ;
+    rdfs:label "Plot the result" ;
+    obo:RO_0002233 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    dcterms:description "Locally executed plotting step using the pinned plot_results.py and vensim_csv.py with the committed Case 2 CSV. Selects the three state trajectories and writes the review SVG. This step does not execute or verify the original simulation." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> ;
+    prov:generated <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review> ;
+    prov:used <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/plot_results.py>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/vensim_csv.py> ;
+    sd:evidenceStatus "Executed locally" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#script/inspect-results> a prov:Plan,
+        schema:SoftwareSourceCode ;
+    rdfs:label "inspect_results.py" ;
+    dcterms:description "Readable Python source generated from the notebook, retaining its headings and five code cells. The only code difference is that the Jupyter inline-plot magic is a comment. Section links target exact source lines in this representation." ;
+    dcterms:hasPart <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-2>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-3>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-4>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-5> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:path "docs/semantic/notebooks/inspect_results.py" ;
+    sd:revision "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836" ;
+    sd:sha256 "3cb7df13e9c23485195064de689722fd2e9dc72aa6f8af6b8c33fe4e811dfd83" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/pysd> a m4i:Tool,
         schema:SoftwareSourceCode ;
     rdfs:label "PySD runner" ;
@@ -2986,6 +3073,20 @@ sd:timeAxis a owl:DatatypeProperty ;
     rdf:value 0.05 ;
     sd:evidenceStatus "Extracted" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure/sequence> a rdf:Seq ;
+    rdf:_1 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/kaibab_ecosystem_model.mdl> ;
+    rdf:_2 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin> ;
+    rdf:_3 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> ;
+    rdf:_4 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    rdf:_5 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection/sequence> a rdf:Seq ;
+    rdf:_1 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv> ;
+    rdf:_2 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python> ;
+    rdf:_3 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    rdf:_4 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1> ;
+    rdf:_5 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories> .
+
 sd:MathematicalModel a owl:Class ;
     rdfs:label "MathematicalModel" ;
     rdfs:comment "The mathematical specification, distinct from its file representation." ;
@@ -3143,6 +3244,17 @@ sd:solvesModel a owl:ObjectProperty ;
     sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
     sd:selector "assignment: Fraction Predators Killed per Year" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-inspection-summary> a prov:Entity ;
+    rdfs:label "Peaks and final values" ;
+    dcterms:description "Six rows exported by notebook cell 4: three state variables in each case, with units, sample count, minimum, maximum, sampled peak year and final value. These descriptive comparisons do not isolate a causal effect." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection-summary.csv> ;
+    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:path "docs/semantic/data/python-inspection-summary.csv" ;
+    sd:revision "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836" ;
+    sd:sha256 "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236" .
+
 kaibab:literature a schema:Book ;
     rdfs:label "System Dynamics Learning Guide" ;
     dcterms:description "Deaton & MacDonald (2025), James Madison University Libraries. Open textbook underlying the reimplementation." ;
@@ -3214,30 +3326,6 @@ kaibab:literature a schema:Book ;
     m4i:realizesMethod <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#method/rk2> ;
     m4i:usesConfiguration <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#configuration/case1> ;
     sd:documentedOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv> ;
-    sd:evidenceStatus "Documented" .
-
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> a m4i:ProcessingStep,
-        sd:DocumentedRun ;
-    rdfs:label "Case2 · documented Vensim run" ;
-    obo:RO_0002233 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_deer_density_on_predator_births.cin>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_deer_density_on_predator_hunting_efficiency.cin>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_forage_availability_on_consumption.cin>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/basic_parameters.cin>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/initial_stock_parameters.xlsx>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/kaibab_ecosystem_model.mdl> ;
-    dcterms:description "Reconstructed from the run configuration and committed result file. Execution time, software version, and original machine are unknown; this is not a verified execution log." ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv>,
-        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> ;
-    m4i:hasEmployedTool <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/vensim> ;
-    m4i:hasRuntimeAssignment <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/final-time>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/initial-time>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/saveper>,
-        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/time-step> ;
-    m4i:investigates kaibab:model ;
-    m4i:realizesMethod <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#method/rk2> ;
-    m4i:usesConfiguration <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#configuration/case2> ;
-    sd:documentedOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
     sd:evidenceStatus "Documented" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#term/actual-biomass-growth-fraction> a skos:Concept ;
@@ -3714,6 +3802,17 @@ kaibab:literature a schema:Book ;
     sd:sourceLine 244 ;
     sd:sourceUnit "Deer" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/python-inspection> a prov:Entity ;
+    rdfs:label "Compare cases in Python" ;
+    dcterms:description "Three-panel SVG generated by notebook cell 5, comparing both committed cases. The historical reference keeps its 21-point time axis; no resampling or interpolation is performed." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg> ;
+    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:path "docs/semantic/data/python-inspection.svg" ;
+    sd:revision "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836" ;
+    sd:sha256 "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d" .
+
 sd:DocumentedRun a owl:Class ;
     rdfs:label "DocumentedRun" ;
     rdfs:comment "A processing step reconstructed from repository documentation and committed artifacts; not a newly executed or independently verified run." ;
@@ -3881,6 +3980,65 @@ sd:offersMethod a owl:ObjectProperty ;
     sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
     sd:sha256 "4e0c6293c4977d1df155001cbb61a76310997f89db9e3ec24de9ec3017d26980" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/lookups/effect_forage_availability_on_consumption.cin> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/vensim_csv.py> a schema:MediaObject ;
+    rdfs:label "vensim_csv.py" ;
+    dcterms:description "Versioned repository artifact: scripts/vensim_csv.py" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:path "scripts/vensim_csv.py" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-2> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "Read units and time axes" ;
+    dcterms:description "Code cell 2 calls read_dataset, inventories variables and units, and checks the independent 1,001-point and 21-point time axes." ;
+    dcterms:isPartOf <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    dcterms:references <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/vensim_csv.py> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L64-L76> ;
+    sd:evidenceStatus "Executed locally" ;
+    sd:selector "Notebook code cell 2; id=cell-05; heading=2. Read the data without losing units or time axes" ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-3> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "Build the pandas table" ;
+    dcterms:description "Code cell 3 verifies matching state axes, builds a pandas DataFrame for both cases and exports python-state-trajectories.csv." ;
+    dcterms:isPartOf <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L84-L95> ;
+    sd:evidenceStatus "Executed locally" ;
+    sd:selector "Notebook code cell 3; id=cell-07; heading=3. Build a table for the three simulated states" ;
+    sd:specifiesOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories> ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-4> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "Inspect peaks and final values" ;
+    dcterms:description "Code cell 4 computes sampled peaks, final values and other descriptive statistics, and exports the summary CSV and inspection report." ;
+    dcterms:isPartOf <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L103-L117> ;
+    sd:evidenceStatus "Executed locally" ;
+    sd:selector "Notebook code cell 4; id=cell-09; heading=4. Inspect peaks and final values" ;
+    sd:specifiesOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-inspection-summary> ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-5> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "Compare trajectories" ;
+    dcterms:description "Code cell 5 creates three comparison panels, plots the historical reference on its original axis and saves python-inspection.svg." ;
+    dcterms:isPartOf <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L122-L143> ;
+    sd:evidenceStatus "Executed locally" ;
+    sd:selector "Notebook code cell 5; id=cell-11; heading=5. Compare trajectories on their own axes" ;
+    sd:specifiesOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/python-inspection> ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes> .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/stella> a m4i:Tool,
         schema:SoftwareApplication ;
@@ -4074,6 +4232,18 @@ sd:usesQuantity a owl:ObjectProperty ;
     sd:sourceLine 2 ;
     sd:sourceUnit "1/Year" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review> a prov:Entity,
+        schema:ImageObject ;
+    rdfs:label "Case 2 trajectories" ;
+    dcterms:description "Review figure generated locally from the committed Case 2 CSV: deer population, predator population and forage biomass over 1900–1950. This is a newly rendered figure of existing results, not a new simulation result." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py> ;
+    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:sha256 "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9" ;
+    schema:contentUrl "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg" .
+
 sd:Control a owl:Class ;
     rdfs:label "Control" ;
     rdfs:comment "A numerical control of simulation time or output sampling." ;
@@ -4107,16 +4277,16 @@ sd:Mechanism a owl:Class ;
     skos:prefLabel "Historical reference mode" ;
     sd:evidenceStatus "Literature" .
 
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin> a schema:MediaObject ;
-    rdfs:label "case2.cin" ;
-    dcterms:description "Versioned repository artifact: models/config/scenarios/case2.cin" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "models/config/scenarios/case2.cin" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "ebc4765942c29863cd876d2bfadfbbb9fab6bcb646edabfd5b7507c92e89b117" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin> .
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories> a prov:Entity ;
+    rdfs:label "State trajectories in pandas" ;
+    dcterms:description "Three simulated states from both cases, exported by notebook cell 3: 2,002 rows and three quantity columns, indexed by case and year. The historical reference stays on its separate 21-point time axis." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-state-trajectories.csv> ;
+    prov:wasDerivedFrom <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:path "docs/semantic/data/python-state-trajectories.csv" ;
+    sd:revision "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836" ;
+    sd:sha256 "603db3cab20f12b563234e4f46c45a521e9a9bb62e50553dfc531db9d38fa9ca" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/initial> a schema:Collection ;
     rdfs:label "Initial conditions" ;
@@ -4144,6 +4314,27 @@ sd:Mechanism a owl:Class ;
     sd:hasInitialConditions <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/initial> ;
     sd:hasNumericalSettings <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/numerics> ;
     sd:offersScenario <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/scenarios> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python> a m4i:ProcessingStep,
+        prov:Activity ;
+    rdfs:label "Inspect data with Python" ;
+    obo:RO_0002233 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    dcterms:description "Executed notebook activity using the repository CSV reader. It preserves time axes and units, assembles compatible series in pandas, computes statistics and plots comparisons. It uses an ordinary Python kernel; no PySD simulation is executed." ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> ;
+    prov:generated <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-inspection-summary>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/python-inspection> ;
+    prov:used <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/scripts/vensim_csv.py>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-2>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-3>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-4>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-5>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    sd:evidenceStatus "Executed locally" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/effect-of-deer-density-on-predator-hunting-efficiency> a m4i:NumericalVariable,
         sd:Auxiliary ;
@@ -4244,6 +4435,32 @@ sd:Mechanism a owl:Class ;
     sd:sourceLine 316 ;
     sd:sourceUnit "dmnl" .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure> a schema:CreativeWork ;
+    rdfs:label "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure." ;
+    dcterms:description "A worked sequence connecting a model declaration, external parameter assignment, documented simulation, committed result and locally generated visualization. Case 2 includes four overrides; it is not a single-parameter experiment." ;
+    dcterms:hasPart <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/kaibab_ecosystem_model.mdl>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> ;
+    sd:artifactSequence <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure/sequence> ;
+    sd:evidenceStatus "Review example" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection> a schema:CreativeWork ;
+    rdfs:label "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories." ;
+    dcterms:description "Executed Python inspection of committed results, showing repository code, each notebook cell and the outputs specified by those cells. PySD is an optional upstream simulation route." ;
+    dcterms:hasPart <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py> ;
+    sd:artifactSequence <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection/sequence> ;
+    sd:evidenceStatus "Review example" .
+
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/initial_stock_parameters.xlsx> a schema:MediaObject ;
     rdfs:label "initial_stock_parameters.xlsx" ;
     dcterms:description "Versioned repository artifact: models/config/parameters/initial_stock_parameters.xlsx" ;
@@ -4254,6 +4471,17 @@ sd:Mechanism a owl:Class ;
     sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
     sd:sha256 "0901701888534442e12f6e8ff5b960676e2f1835bbcd129861268c3031bdbb0f" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/parameters/initial_stock_parameters.xlsx> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "Verify source files" ;
+    dcterms:description "Code cell 1 locates the repository, verifies SHA-256 hashes of the reader and both CSVs, imports dependencies and prepares the output folder." ;
+    dcterms:isPartOf <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L33-L59> ;
+    sd:evidenceStatus "Executed locally" ;
+    sd:selector "Notebook code cell 1; id=cell-03; heading=1. Locate and check the source artifacts" ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts> .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#overview/equations> a schema:Collection ;
     rdfs:label "Governing equations" ;
@@ -4467,28 +4695,6 @@ sd:explainsConcept a owl:ObjectProperty ;
     skos:prefLabel "Forage regeneration" ;
     sd:evidenceStatus "Literature" .
 
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv> a schema:MediaObject ;
-    rdfs:label "case1_external.csv" ;
-    dcterms:description "Versioned repository artifact: results/runs/case1_external.csv" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "results/runs/case1_external.csv" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "850db08ffe3cd3743155069f5e962e60482eba68ce2c7dd30acb645dfa830f2e" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv> .
-
-<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> a schema:MediaObject ;
-    rdfs:label "case2_external.csv" ;
-    dcterms:description "Versioned repository artifact: results/runs/case2_external.csv" ;
-    dcterms:isPartOf kaibab:repository ;
-    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv> ;
-    sd:evidenceStatus "Extracted" ;
-    sd:path "results/runs/case2_external.csv" ;
-    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
-    sd:sha256 "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63" ;
-    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv> .
-
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#formula/deer-balance> a mardi:Q96183 ;
     rdfs:label "Deer population balance" ;
     dcterms:description "Governing equation transcribed from the stock declaration. D, P and F are display symbols. Vensim’s Forage Consumed per Deer is the whole-herd consumption rate." ;
@@ -4566,6 +4772,31 @@ sd:explainsConcept a owl:ObjectProperty ;
     sd:usesQuantity <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#quantity/deer>,
         <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#quantity/forage>,
         <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#quantity/predators> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> a m4i:ProcessingStep,
+        sd:DocumentedRun ;
+    rdfs:label "Case2 · documented Vensim run" ;
+    obo:RO_0002233 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_deer_density_on_predator_births.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_deer_density_on_predator_hunting_efficiency.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/lookups/effect_forage_availability_on_consumption.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/basic_parameters.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/initial_stock_parameters.xlsx>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/kaibab_ecosystem_model.mdl> ;
+    dcterms:description "Reconstructed from the run configuration and committed result file. Execution time, software version, and original machine are unknown; this is not a verified execution log." ;
+    dcterms:source <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/runners/vensim/vensim_run_configuration_external>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv>,
+        <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external> ;
+    m4i:hasEmployedTool <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/vensim> ;
+    m4i:hasRuntimeAssignment <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/final-time>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/initial-time>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/saveper>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#assignment/case2/time-step> ;
+    m4i:investigates kaibab:model ;
+    m4i:realizesMethod <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#method/rk2> ;
+    m4i:usesConfiguration <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#configuration/case2> ;
+    sd:documentedOutput <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Documented" .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/vensim> a m4i:Tool,
         schema:SoftwareApplication ;
@@ -4820,6 +5051,35 @@ sd:ReviewIssue a owl:Class ;
     skos:inScheme kaibab:vocabulary ;
     skos:prefLabel "Initial state" ;
     sd:evidenceStatus "Literature" .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/scenarios/case2.cin> a schema:MediaObject ;
+    rdfs:label "case2.cin" ;
+    dcterms:description "Versioned repository artifact: models/config/scenarios/case2.cin" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:inputTo <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> ;
+    sd:path "models/config/scenarios/case2.cin" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "ebc4765942c29863cd876d2bfadfbbb9fab6bcb646edabfd5b7507c92e89b117" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin> .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results> a prov:Plan,
+        schema:CreativeWork ;
+    rdfs:label "inspect_results.ipynb" ;
+    dcterms:description "Executed Jupyter notebook with five numbered sections: verify source files, read data, build a pandas table, inspect descriptive statistics, and compare trajectories. Its saved outputs are included in the repository. No simulation is run." ;
+    dcterms:hasFormat <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#script/inspect-results> ;
+    dcterms:hasPart <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-2>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-3>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-4>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-5> ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb> ;
+    sd:evidenceStatus "Generated locally" ;
+    sd:path "docs/semantic/notebooks/inspect_results.ipynb" ;
+    sd:revision "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836" ;
+    sd:sha256 "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a" ;
+    schema:url <https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb> .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#task/simulate> a mardi:Q6534247 ;
     rdfs:label "Simulate population dynamics" ;
@@ -5191,10 +5451,35 @@ sd:Parameter a owl:Class ;
     sd:sha256 "d9838ae0929b0237896ca6fe9d60d7af6b358bf9d530efbac2d293e6f65a8b05" ;
     schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/parameters/basic_parameters.cin> .
 
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case1_external.csv> a schema:MediaObject ;
+    rdfs:label "case1_external.csv" ;
+    dcterms:description "Versioned repository artifact: results/runs/case1_external.csv" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:inputTo <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python> ;
+    sd:path "results/runs/case1_external.csv" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "850db08ffe3cd3743155069f5e962e60482eba68ce2c7dd30acb645dfa830f2e" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv> .
+
 sd:Auxiliary a owl:Class ;
     rdfs:label "Auxiliary" ;
     rdfs:comment "A numerical variable calculated from other quantities." ;
     rdfs:subClassOf m4i:NumericalVariable .
+
+<https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/results/runs/case2_external.csv> a schema:MediaObject ;
+    rdfs:label "case2_external.csv" ;
+    dcterms:description "Versioned repository artifact: results/runs/case2_external.csv" ;
+    dcterms:isPartOf kaibab:repository ;
+    dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv> ;
+    sd:evidenceStatus "Extracted" ;
+    sd:inputTo <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python>,
+        <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/plot-case2-review> ;
+    sd:path "results/runs/case2_external.csv" ;
+    sd:revision "f156dcf37597c0587958f463985986f0ea91accf" ;
+    sd:sha256 "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63" ;
+    schema:contentUrl <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv> .
 
 <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#variable/predator-population> a m4i:NumericalVariable,
         sd:Stock ;
@@ -5347,7 +5632,7 @@ kaibab:repository a schema:SoftwareSourceCode ;
     dcterms:description "Versioned source of the concrete model, inputs, software, and committed results." ;
     dcterms:source <https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation> ;
     sd:evidenceStatus "Extracted" ;
-    sd:reviewNote "Repository is private at inspection. Source links may require GitHub access. Proposed entity namespace is not deployed." ;
+    sd:reviewNote "Repository made public on 2026-10-08. The inspection notebook is available through authenticated NFDI4Ing JupyterLab workspaces. Proposed entity namespace is not deployed." ;
     sd:revision "f156dcf37597c0587958f463985986f0ea91accf" .
 
 kaibab:vocabulary a skos:ConceptScheme ;
@@ -5372,6 +5657,7 @@ sd:FileBinding a owl:Class ;
     sd:evidenceStatus "Extracted" ;
     sd:inputFile <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/basic_parameters.cin>,
         <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#file/models/config/parameters/initial_stock_parameters.xlsx> ;
+    sd:inputTo <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#run/case2> ;
     sd:nativeFormatFor <https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#tool/vensim> ;
     sd:path "models/kaibab_ecosystem_model.mdl" ;
     sd:representsModel kaibab:model ;

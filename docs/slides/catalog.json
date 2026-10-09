@@ -1,0 +1,506 @@
+[
+  {
+    "id": "title",
+    "slide": 1,
+    "title": "Research Software that others can find, trust and run.",
+    "original": 1,
+    "stage": "specification",
+    "kind": "title-slide"
+  },
+  {
+    "id": "recap",
+    "slide": 2,
+    "title": "Four lectures, one story",
+    "original": 2,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
+    "id": "agenda",
+    "slide": 3,
+    "title": "Agenda · 3 × theory ↔ 3 × practical",
+    "original": 3,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
+    "id": "why-fair",
+    "slide": 4,
+    "title": "Why make research software FAIR?",
+    "original": 4,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
+    "id": "running-example",
+    "slide": 5,
+    "title": "One repo, running through every slide",
+    "original": 5,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
+    "id": "shared-specification",
+    "slide": 6,
+    "title": "Shared scientific specification",
+    "original": null,
+    "stage": "specification",
+    "kind": "content"
+  },
+  {
+    "id": "shared-use-cases",
+    "slide": 7,
+    "title": "Shared use cases, tool-specific implementations",
+    "original": null,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "artifacts-access",
+    "slide": 8,
+    "title": "Tool-specific artifacts and access",
+    "original": null,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "two-cases",
+    "slide": 9,
+    "title": "Case 1 and Case 2",
+    "original": null,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
+    "id": "open-workflows",
+    "slide": 10,
+    "title": "Open inspection and independent execution",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "findable-accessible",
+    "slide": 11,
+    "title": "Findable & Accessible research software",
+    "original": 6,
+    "stage": "archive",
+    "kind": "divider"
+  },
+  {
+    "id": "f1",
+    "slide": 12,
+    "title": "F1 · Globally unique and persistent identifier F1 F1.1 F1.2",
+    "original": 7,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "zenodo-webhook",
+    "slide": 13,
+    "title": "F1 · A DOI is a promise , not a URL F1",
+    "original": 8,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "version-identifiers",
+    "slide": 14,
+    "title": "One project, many versions — each citable F1.1 F1.2",
+    "original": 9,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "metadata-principles",
+    "slide": 15,
+    "title": "F2 · F3 · F4 · rich, linked, harvestable metadata F2 F3 F4",
+    "original": 10,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "citation-codemeta",
+    "slide": 16,
+    "title": "Machines can only find what they can read F2 F3 F4",
+    "original": 11,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "access-protocols",
+    "slide": 17,
+    "title": "A1 · A1.1 · retrievable via a standardized protocol A1 A1.1",
+    "original": 12,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "retrieve-install",
+    "slide": 18,
+    "title": "Open, free, universally implementable A1 A1.1",
+    "original": 13,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "authentication",
+    "slide": 19,
+    "title": "A1.2 · auth is a feature , not a gate A1.2",
+    "original": 14,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "access-boundaries",
+    "slide": 20,
+    "title": "Authentication, where genuinely necessary A1.2",
+    "original": 15,
+    "stage": "implementation",
+    "kind": "content"
+  },
+  {
+    "id": "persistent-metadata",
+    "slide": 21,
+    "title": "A2 · metadata outlives the software A2",
+    "original": 16,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "archives",
+    "slide": 22,
+    "title": "Metadata outlives the software A2",
+    "original": 17,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "fa-recap",
+    "slide": 23,
+    "title": "F + A · the minimum viable artefacts",
+    "original": 18,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "practical1",
+    "slide": 24,
+    "title": "Practical 1 · Discover research software",
+    "original": 19,
+    "stage": "archive",
+    "kind": "divider"
+  },
+  {
+    "id": "discover",
+    "slide": 25,
+    "title": "Find the hunter–prey model in 12 minutes",
+    "original": 20,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "discovery-reflection",
+    "slide": 26,
+    "title": "What made the hunter–prey model findable?",
+    "original": 21,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "interoperable",
+    "slide": 27,
+    "title": "Interoperable research software",
+    "original": 22,
+    "stage": "results",
+    "kind": "divider"
+  },
+  {
+    "id": "i1",
+    "slide": 28,
+    "title": "I1 · read, write, exchange via community standards I1",
+    "original": 23,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "formats",
+    "slide": 29,
+    "title": "Open formats > bespoke files I1",
+    "original": 24,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "api-example",
+    "slide": 30,
+    "title": "Example · OpenAPI beats a README I1",
+    "original": 25,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "i2",
+    "slide": 31,
+    "title": "I2 · qualified references to other objects I2",
+    "original": 26,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
+    "id": "qualified-references",
+    "slide": 32,
+    "title": "\"Alice\" vs \"ORCID 0000-0001-…\" I2",
+    "original": 27,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
+    "id": "codemeta-references",
+    "slide": 33,
+    "title": "codemeta.json — line by line I2",
+    "original": 28,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
+    "id": "controlled-vocabulary",
+    "slide": 34,
+    "title": "Controlled vocabularies eliminate ambiguity · and give credit I2",
+    "original": 29,
+    "stage": "configuration",
+    "kind": "content"
+  },
+  {
+    "id": "dependencies",
+    "slide": 35,
+    "title": "Dependencies are also qualified references R2",
+    "original": 30,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "packaging",
+    "slide": 36,
+    "title": "pyproject.toml · from source to installed package R2",
+    "original": 31,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "practical2",
+    "slide": 37,
+    "title": "Practical 2 · Test interoperability",
+    "original": 32,
+    "stage": "execution",
+    "kind": "divider"
+  },
+  {
+    "id": "inspect-run",
+    "slide": 38,
+    "title": "Install, run, break, understand",
+    "original": 33,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "interoperability-reflection",
+    "slide": 39,
+    "title": "Why R2 (qualified dependencies) matters",
+    "original": 34,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "reusable",
+    "slide": 40,
+    "title": "Reusable research software",
+    "original": 35,
+    "stage": "archive",
+    "kind": "divider"
+  },
+  {
+    "id": "r1",
+    "slide": 41,
+    "title": "R1 · R1.1 · R1.2 · describe, license, trace R1 R1.1 R1.2",
+    "original": 36,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "documentation",
+    "slide": 42,
+    "title": "Documentation is layered R1",
+    "original": 37,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "licenses",
+    "slide": 43,
+    "title": "No license ≠ public domain R1.1",
+    "original": 38,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "provenance",
+    "slide": 44,
+    "title": "Who · what · when · why — for free R1.2",
+    "original": 39,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "r2",
+    "slide": 45,
+    "title": "R2 · qualified references to other software R2",
+    "original": 40,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "environments",
+    "slide": 46,
+    "title": "Pin the whole world, not just the code R2",
+    "original": 41,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "r3",
+    "slide": 47,
+    "title": "R3 · meet domain-relevant community standards R3",
+    "original": 42,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "ci",
+    "slide": 48,
+    "title": "Let CI answer \"does it still run?\" R3",
+    "original": 43,
+    "stage": "execution",
+    "kind": "content"
+  },
+  {
+    "id": "sustainability",
+    "slide": 49,
+    "title": "Write the sustainability plan before the code rots",
+    "original": 44,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "reuse-recap",
+    "slide": 50,
+    "title": "R · the smallest thing that could break you",
+    "original": 45,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "ro-crate",
+    "slide": 51,
+    "title": "RO-Crate · research object in one container R",
+    "original": 46,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "practical3",
+    "slide": 52,
+    "title": "Practical 3 · Capture reusability via RO-Crate",
+    "original": 47,
+    "stage": "archive",
+    "kind": "divider"
+  },
+  {
+    "id": "crate-exercise",
+    "slide": 53,
+    "title": "Package hunter–prey as a Research Object",
+    "original": 48,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "crate-reflection",
+    "slide": 54,
+    "title": "The R in FAIR4RS · Reusability across time",
+    "original": 49,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "checklist",
+    "slide": 55,
+    "title": "The FAIR4RS checklist — one page",
+    "original": 50,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "services",
+    "slide": 56,
+    "title": "The services you touched today",
+    "original": 51,
+    "stage": "archive",
+    "kind": "content"
+  },
+  {
+    "id": "discussion",
+    "slide": 57,
+    "title": "Your repo, next week — FAIR4RS-shaped.",
+    "original": 52,
+    "stage": "archive",
+    "kind": "title-slide"
+  },
+  {
+    "id": "appendix-repository",
+    "slide": 58,
+    "title": "Repository evidence",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "appendix-binding",
+    "slide": 59,
+    "title": "A value and its configuration binding",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "appendix-file",
+    "slide": 60,
+    "title": "The original Case 2 changes file",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "appendix-workflow",
+    "slide": 61,
+    "title": "From configuration to an inspected figure",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "appendix-stella",
+    "slide": 62,
+    "title": "Stella Architect: existing native evidence",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  },
+  {
+    "id": "appendix-notebook",
+    "slide": 63,
+    "title": "Executed interoperability notebook",
+    "original": null,
+    "stage": "results",
+    "kind": "content"
+  }
+]

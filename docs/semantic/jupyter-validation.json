@@ -1,0 +1,29 @@
+{
+  "verifiedOn": "2026-10-08",
+  "repository": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+  "repositoryVisibility": "PUBLIC",
+  "branch": "codex/semantic-workflow-sources",
+  "notebookPath": "work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb",
+  "sourceNotebookSha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+  "runtime": {
+    "python": "3.13.11",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.8",
+    "additionalInstallRequired": false
+  },
+  "execution": {
+    "codeCellCounts": [1, 2, 3, 4, 5],
+    "errorOutputs": 0,
+    "stateTableShape": [2002, 3],
+    "historicalInterpolated": false,
+    "inlinePlotSaved": true,
+    "simulationExecuted": false
+  },
+  "navigation": {
+    "method": "Actual workflow node clicks in an authenticated browser; checked heading position in the viewport after JupyterLab finished loading.",
+    "workspace": "kaibab-inspection",
+    "target": "_self",
+    "sectionsVerified": [1, 2, 3, 4, 5],
+    "limitation": "Duplicate Jupyter tabs can trigger automatic workspace cloning and lose heading fragments. Normal workflow links open in the same tab. Each visitor must sign in and clone the repository into their own work folder first."
+  }
+}

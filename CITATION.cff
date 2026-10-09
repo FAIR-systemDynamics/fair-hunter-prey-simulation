@@ -1,17 +1,10 @@
-# ---------------------------------------------------------------------------
-# INCOMPLETE — this file is a scaffold. Before the first release, fill in:
-#   ORCIDs, affiliations and e-mail addresses for the authors
-#   version, date-released
-#   repository-code / url
-#   identifiers: the Zenodo concept DOI and the version DOI
-# Validate with:  cffconvert --validate
-# ---------------------------------------------------------------------------
+# Development snapshot: no release or DOI has been published.
 cff-version: 1.2.0
 message: "If you use this software, please cite it using the metadata from this file. Please also cite the original model source listed under `references`."
-title: "nfdi4sd: a reference repository structure, git workflow, and data-handling convention for FAIR system dynamics models"
+title: "fair-hunter-prey-simulation: a reference repository structure, git workflow, and data-handling convention for FAIR system dynamics models"
 abstract: >-
-  nfdi4sd is an example repository for publishing system dynamics models in a
-  reproducible, tool-independent form. It defines a directory layout that
+  This repository publishes a shared scientific specification with Vensim
+  and Stella Architect implementations and open Python inspection and PySD execution. It defines a directory layout that
   separates model structure from parameter values from simulation results, a
   git workflow in which the commit history documents the modelling process
   step by step, and conventions for handling parameters, lookup functions,
@@ -23,29 +16,22 @@ abstract: >-
   Learning Guide", serves as an example.
 type: software
 authors:
-  # TODO: ORCID still missing for Papesch; affiliations and e-mail
-  #       addresses missing for all three.
+  # Only verified identifiers are included; unavailable personal details are omitted.
   - family-names: Ginster
     given-names: Raphael
     orcid: "https://orcid.org/0000-0003-2394-7064"
-    # affiliation: ""
   - family-names: Papesch
     given-names: Matthias
-    # orcid: "https://orcid.org/0000-0000-0000-0000"
-    # affiliation: ""
   - family-names: Seibert
     given-names: Vasiliy
     orcid: "https://orcid.org/0000-0002-7121-6816"
-    # affiliation: ""
-# TODO: uncomment and fill in at release time.
-# version: "0.1.0"
-# date-released: "YYYY-MM-DD"
+version: "0.7.0"
 license:
   - MIT              # code
   - CC-BY-4.0        # documentation
   - CC-BY-NC-SA-4.0  # Kaibab example model and derivatives (inherited)
-# repository-code: ""
-# url: ""
+repository-code: "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
+url: "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/"
 keywords:
   - system dynamics
   - research data management
@@ -60,17 +46,7 @@ keywords:
   - reproducibility
   - FAIR4RS
   - research software
-# TODO: add the Zenodo DOIs.
-# identifiers:
-#   - type: url
-#     value: ""
-#     description: "The repository URL (stable landing page)."
-#   - type: doi
-#     value: ""
-#     description: "Concept DOI for all versions (Zenodo). Resolves to the latest version."
-#   - type: doi
-#     value: ""
-#     description: "Version DOI for this release (Zenodo)."
+# Add release date and verified DOIs only after an actual deposit.
 references:
   - type: book
     title: "System Dynamics Learning Guide"
@@ -103,4 +79,4 @@ references:
     authors:
       - name: "PySD contributors"
     url: "https://github.com/SDXorg/pysd"
-    notes: "Translates and runs the Vensim model in Python. Used for the open, scriptable runner."
+    notes: "Translates and runs the Vensim and Stella model implementations in Python using the preserved compatibility adapters."

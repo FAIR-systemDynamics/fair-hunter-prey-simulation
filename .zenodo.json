@@ -1,0 +1,38 @@
+{
+  "title": "FAIR hunter–prey simulation: shared scientific specification and reusable implementations",
+  "description": "Kaibab model implementations and FAIR4RS teaching workflows. Bundled model-derived material is CC BY-NC-SA 4.0; original software code remains MIT and documentation CC BY 4.0, as mapped in REUSE.toml. Cite the original System Dynamics Learning Guide by Mike Deaton and Rod MacDonald (2025).",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-nc-sa-4.0",
+  "creators": [
+    {
+      "name": "Ginster, Raphael",
+      "orcid": "0000-0003-2394-7064"
+    },
+    {
+      "name": "Papesch, Matthias"
+    },
+    {
+      "name": "Seibert, Vasiliy",
+      "orcid": "0000-0002-7121-6816"
+    }
+  ],
+  "keywords": [
+    "FAIR4RS",
+    "system dynamics",
+    "Kaibab"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://pressbooks.lib.jmu.edu/sdlearningguide/",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    }
+  ],
+  "version": "0.7.0"
+}

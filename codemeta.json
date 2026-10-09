@@ -1,0 +1,54 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "fair-hunter-prey-simulation",
+  "version": "0.7.0",
+  "description": "Shared Kaibab scientific specification, Vensim and Stella implementations, open PySD execution and CSV inspection. Vendor applications remain proprietary. See REUSE.toml for per-file licensing.",
+  "codeRepository": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+  "url": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/",
+  "identifier": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Raphael",
+      "familyName": "Ginster",
+      "@id": "https://orcid.org/0000-0003-2394-7064"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Matthias",
+      "familyName": "Papesch"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Vasiliy",
+      "familyName": "Seibert",
+      "@id": "https://orcid.org/0000-0002-7121-6816"
+    }
+  ],
+  "license": [
+    "https://spdx.org/licenses/MIT",
+    "https://spdx.org/licenses/CC-BY-4.0",
+    "https://spdx.org/licenses/CC-BY-NC-SA-4.0"
+  ],
+  "programmingLanguage": "Python",
+  "runtimePlatform": [
+    "Python 3.12",
+    "Python 3.13"
+  ],
+  "softwareRequirements": [
+    "https://pypi.org/project/pysd/3.14.3/",
+    "https://pypi.org/project/pandas/",
+    "https://pypi.org/project/matplotlib/",
+    "https://pypi.org/project/openpyxl/"
+  ],
+  "keywords": [
+    "system dynamics",
+    "FAIR4RS",
+    "Kaibab",
+    "Vensim",
+    "Stella",
+    "PySD"
+  ],
+  "developmentStatus": "active"
+}

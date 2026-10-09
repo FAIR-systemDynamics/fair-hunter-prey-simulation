@@ -7,7 +7,7 @@
     "ontology": "MathModDB + m4i 1.4.0",
     "version": "0.2.0-review",
     "scope": "Scientific overview proposal; selected Stella declaration and workflow evidence added. Full Vensim inventory retained; full Stella symbol mapping is future work.",
-    "triples": 4730,
+    "triples": 4986,
     "variableCount": 47,
     "fileCount": 51
   },
@@ -207,6 +207,826 @@
     "stellaRevision": "194a8b92e963920e95393accc7d5699348864d85",
     "scope": "Scientific overview proposal; selected Stella declaration and workflow evidence added. Full Vensim inventory retained; full Stella symbol mapping is future work."
   },
+  "workflow": {
+    "id": "workflow/case2-parameter-to-figure",
+    "slug": "case2-parameter-to-figure",
+    "graphKey": "diagram/case2-parameter-to-figure",
+    "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure.",
+    "stages": [
+      {
+        "label": "Model declaration",
+        "entity": "file/models/kaibab_ecosystem_model.mdl"
+      },
+      {
+        "label": "Set the parameter",
+        "entity": "file/models/config/scenarios/case2.cin"
+      },
+      {
+        "label": "Run the simulation",
+        "entity": "run/case2"
+      },
+      {
+        "label": "Obtain the result",
+        "entity": "file/results/runs/case2_external.csv"
+      },
+      {
+        "label": "Visualize the result",
+        "entity": "visualization/case2-review"
+      }
+    ],
+    "entities": [
+      "variable/fraction-predators-killed-per-year",
+      "file/models/kaibab_ecosystem_model.mdl",
+      "assignment/case2/fraction-predators-killed-per-year",
+      "file/models/config/scenarios/case2.cin",
+      "run/case2",
+      "configuration/case2",
+      "tool/vensim",
+      "file/runners/vensim/vensim_run_configuration_external",
+      "file/results/runs/case2_external.csv",
+      "processing/plot-case2-review",
+      "file/scripts/plot_results.py",
+      "visualization/case2-review"
+    ],
+    "edges": [
+      {
+        "source": "variable/fraction-predators-killed-per-year",
+        "target": "file/models/kaibab_ecosystem_model.mdl",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#declaredIn",
+        "label": "declared in",
+        "status": "Extracted",
+        "evidence": null
+      },
+      {
+        "source": "assignment/case2/fraction-predators-killed-per-year",
+        "target": "variable/fraction-predators-killed-per-year",
+        "predicate": "http://w3id.org/nfdi4ing/metadata4ing#hasVariable",
+        "label": "assigns variable",
+        "status": "Extracted",
+        "evidence": null
+      },
+      {
+        "source": "assignment/case2/fraction-predators-killed-per-year",
+        "target": "file/models/config/scenarios/case2.cin",
+        "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+        "label": "read from scenario",
+        "status": "Extracted",
+        "evidence": null
+      },
+      {
+        "source": "file/models/kaibab_ecosystem_model.mdl",
+        "target": "run/case2",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+        "label": "input to simulation",
+        "status": "Documented",
+        "evidence": null
+      },
+      {
+        "source": "file/models/config/scenarios/case2.cin",
+        "target": "run/case2",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+        "label": "input to simulation",
+        "status": "Documented",
+        "evidence": null
+      },
+      {
+        "source": "run/case2",
+        "target": "configuration/case2",
+        "predicate": "http://w3id.org/nfdi4ing/metadata4ing#usesConfiguration",
+        "label": "uses configuration",
+        "status": "Extracted",
+        "evidence": null
+      },
+      {
+        "source": "configuration/case2",
+        "target": "assignment/case2/fraction-predators-killed-per-year",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#hasAssignment",
+        "label": "includes assignment",
+        "status": "Extracted",
+        "evidence": null
+      },
+      {
+        "source": "run/case2",
+        "target": "tool/vensim",
+        "predicate": "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool",
+        "label": "used tool",
+        "status": "Documented",
+        "evidence": null
+      },
+      {
+        "source": "run/case2",
+        "target": "file/runners/vensim/vensim_run_configuration_external",
+        "predicate": "http://purl.org/dc/terms/source",
+        "label": "documented by",
+        "status": "Documented",
+        "evidence": null
+      },
+      {
+        "source": "run/case2",
+        "target": "file/results/runs/case2_external.csv",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#documentedOutput",
+        "label": "documented output",
+        "status": "Documented",
+        "evidence": null
+      },
+      {
+        "source": "file/results/runs/case2_external.csv",
+        "target": "processing/plot-case2-review",
+        "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+        "label": "input to plotting",
+        "status": "Executed locally",
+        "evidence": null
+      },
+      {
+        "source": "processing/plot-case2-review",
+        "target": "file/scripts/plot_results.py",
+        "predicate": "http://www.w3.org/ns/prov#used",
+        "label": "uses plotting script",
+        "status": "Executed locally",
+        "evidence": null
+      },
+      {
+        "source": "processing/plot-case2-review",
+        "target": "visualization/case2-review",
+        "predicate": "http://www.w3.org/ns/prov#generated",
+        "label": "generates figure",
+        "status": "Executed locally",
+        "evidence": null
+      }
+    ],
+    "figure": {
+      "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+      "sources": {
+        "results/runs/case2_external.csv": "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63",
+        "scripts/plot_results.py": "f11d3f8d57a3e98641124a82beaa211cc0fb55138958d143d58fc338a7ceb18f",
+        "scripts/vensim_csv.py": "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3"
+      },
+      "output": "case2-workflow.svg",
+      "sha256": "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9",
+      "columns": [
+        "Deer Population",
+        "Predator Population",
+        "Forage Biomass"
+      ],
+      "simulationExecuted": false,
+      "command": "python scripts/plot_results.py results/runs/case2_external.csv --columns \"Deer Population\" \"Predator Population\" \"Forage Biomass\" --format svg --name case2-workflow --outdir docs/semantic/data"
+    },
+    "summary": "Follow the Case 2 scenario from its model declaration and parameter file to the saved simulation result and plot.",
+    "caveat": "Case 2 also changes three other parameters. The simulation is documented; only the figure was generated locally.",
+    "actions": [
+      {
+        "label": "View figure in repository",
+        "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg"
+      }
+    ]
+  },
+  "workflows": [
+    {
+      "id": "workflow/case2-parameter-to-figure",
+      "slug": "case2-parameter-to-figure",
+      "graphKey": "diagram/case2-parameter-to-figure",
+      "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure.",
+      "stages": [
+        {
+          "label": "Model declaration",
+          "entity": "file/models/kaibab_ecosystem_model.mdl"
+        },
+        {
+          "label": "Set the parameter",
+          "entity": "file/models/config/scenarios/case2.cin"
+        },
+        {
+          "label": "Run the simulation",
+          "entity": "run/case2"
+        },
+        {
+          "label": "Obtain the result",
+          "entity": "file/results/runs/case2_external.csv"
+        },
+        {
+          "label": "Visualize the result",
+          "entity": "visualization/case2-review"
+        }
+      ],
+      "entities": [
+        "variable/fraction-predators-killed-per-year",
+        "file/models/kaibab_ecosystem_model.mdl",
+        "assignment/case2/fraction-predators-killed-per-year",
+        "file/models/config/scenarios/case2.cin",
+        "run/case2",
+        "configuration/case2",
+        "tool/vensim",
+        "file/runners/vensim/vensim_run_configuration_external",
+        "file/results/runs/case2_external.csv",
+        "processing/plot-case2-review",
+        "file/scripts/plot_results.py",
+        "visualization/case2-review"
+      ],
+      "edges": [
+        {
+          "source": "variable/fraction-predators-killed-per-year",
+          "target": "file/models/kaibab_ecosystem_model.mdl",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#declaredIn",
+          "label": "declared in",
+          "status": "Extracted",
+          "evidence": null
+        },
+        {
+          "source": "assignment/case2/fraction-predators-killed-per-year",
+          "target": "variable/fraction-predators-killed-per-year",
+          "predicate": "http://w3id.org/nfdi4ing/metadata4ing#hasVariable",
+          "label": "assigns variable",
+          "status": "Extracted",
+          "evidence": null
+        },
+        {
+          "source": "assignment/case2/fraction-predators-killed-per-year",
+          "target": "file/models/config/scenarios/case2.cin",
+          "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+          "label": "read from scenario",
+          "status": "Extracted",
+          "evidence": null
+        },
+        {
+          "source": "file/models/kaibab_ecosystem_model.mdl",
+          "target": "run/case2",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+          "label": "input to simulation",
+          "status": "Documented",
+          "evidence": null
+        },
+        {
+          "source": "file/models/config/scenarios/case2.cin",
+          "target": "run/case2",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+          "label": "input to simulation",
+          "status": "Documented",
+          "evidence": null
+        },
+        {
+          "source": "run/case2",
+          "target": "configuration/case2",
+          "predicate": "http://w3id.org/nfdi4ing/metadata4ing#usesConfiguration",
+          "label": "uses configuration",
+          "status": "Extracted",
+          "evidence": null
+        },
+        {
+          "source": "configuration/case2",
+          "target": "assignment/case2/fraction-predators-killed-per-year",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#hasAssignment",
+          "label": "includes assignment",
+          "status": "Extracted",
+          "evidence": null
+        },
+        {
+          "source": "run/case2",
+          "target": "tool/vensim",
+          "predicate": "http://w3id.org/nfdi4ing/metadata4ing#hasEmployedTool",
+          "label": "used tool",
+          "status": "Documented",
+          "evidence": null
+        },
+        {
+          "source": "run/case2",
+          "target": "file/runners/vensim/vensim_run_configuration_external",
+          "predicate": "http://purl.org/dc/terms/source",
+          "label": "documented by",
+          "status": "Documented",
+          "evidence": null
+        },
+        {
+          "source": "run/case2",
+          "target": "file/results/runs/case2_external.csv",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#documentedOutput",
+          "label": "documented output",
+          "status": "Documented",
+          "evidence": null
+        },
+        {
+          "source": "file/results/runs/case2_external.csv",
+          "target": "processing/plot-case2-review",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+          "label": "input to plotting",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "processing/plot-case2-review",
+          "target": "file/scripts/plot_results.py",
+          "predicate": "http://www.w3.org/ns/prov#used",
+          "label": "uses plotting script",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "processing/plot-case2-review",
+          "target": "visualization/case2-review",
+          "predicate": "http://www.w3.org/ns/prov#generated",
+          "label": "generates figure",
+          "status": "Executed locally",
+          "evidence": null
+        }
+      ],
+      "figure": {
+        "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+        "sources": {
+          "results/runs/case2_external.csv": "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63",
+          "scripts/plot_results.py": "f11d3f8d57a3e98641124a82beaa211cc0fb55138958d143d58fc338a7ceb18f",
+          "scripts/vensim_csv.py": "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3"
+        },
+        "output": "case2-workflow.svg",
+        "sha256": "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9",
+        "columns": [
+          "Deer Population",
+          "Predator Population",
+          "Forage Biomass"
+        ],
+        "simulationExecuted": false,
+        "command": "python scripts/plot_results.py results/runs/case2_external.csv --columns \"Deer Population\" \"Predator Population\" \"Forage Biomass\" --format svg --name case2-workflow --outdir docs/semantic/data"
+      },
+      "summary": "Follow the Case 2 scenario from its model declaration and parameter file to the saved simulation result and plot.",
+      "caveat": "Case 2 also changes three other parameters. The simulation is documented; only the figure was generated locally.",
+      "actions": [
+        {
+          "label": "View figure in repository",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg"
+        }
+      ]
+    },
+    {
+      "id": "workflow/python-inspection",
+      "slug": "python-inspection",
+      "graphKey": "diagram/python-inspection",
+      "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories.",
+      "stages": [
+        {
+          "label": "Choose saved results",
+          "entity": "file/results/runs/case1_external.csv"
+        },
+        {
+          "label": "Inspect with Python",
+          "entity": "processing/inspect-results-python"
+        },
+        {
+          "label": "Use repository code",
+          "entity": "notebook/inspect-results"
+        },
+        {
+          "label": "Follow notebook cells",
+          "entity": "notebook-section/inspect-results/cell-1"
+        },
+        {
+          "label": "Inspect the outputs",
+          "entity": "dataset/python-state-trajectories"
+        }
+      ],
+      "sections": [
+        {
+          "id": "notebook-section/inspect-results/cell-1",
+          "label": "Verify source files",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts",
+          "number": 1,
+          "heading": "1. Locate and check the source artifacts",
+          "cellId": "cell-03",
+          "markdownCellId": "cell-02",
+          "cellIndex": 2,
+          "anchor": "1.-Locate-and-check-the-source-artifacts",
+          "sourceLine": 36,
+          "pythonStartLine": 33,
+          "pythonEndLine": 59,
+          "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
+        },
+        {
+          "id": "notebook-section/inspect-results/cell-2",
+          "label": "Read units and time axes",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes",
+          "number": 2,
+          "heading": "2. Read the data without losing units or time axes",
+          "cellId": "cell-05",
+          "markdownCellId": "cell-04",
+          "cellIndex": 4,
+          "anchor": "2.-Read-the-data-without-losing-units-or-time-axes",
+          "sourceLine": 101,
+          "pythonStartLine": 64,
+          "pythonEndLine": 76,
+          "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
+        },
+        {
+          "id": "notebook-section/inspect-results/cell-3",
+          "label": "Build the pandas table",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states",
+          "number": 3,
+          "heading": "3. Build a table for the three simulated states",
+          "cellId": "cell-07",
+          "markdownCellId": "cell-06",
+          "cellIndex": 6,
+          "anchor": "3.-Build-a-table-for-the-three-simulated-states",
+          "sourceLine": 259,
+          "pythonStartLine": 84,
+          "pythonEndLine": 95,
+          "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
+        },
+        {
+          "id": "notebook-section/inspect-results/cell-4",
+          "label": "Inspect peaks and final values",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values",
+          "number": 4,
+          "heading": "4. Inspect peaks and final values",
+          "cellId": "cell-09",
+          "markdownCellId": "cell-08",
+          "cellIndex": 8,
+          "anchor": "4.-Inspect-peaks-and-final-values",
+          "sourceLine": 381,
+          "pythonStartLine": 103,
+          "pythonEndLine": 117,
+          "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
+        },
+        {
+          "id": "notebook-section/inspect-results/cell-5",
+          "label": "Compare trajectories",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes",
+          "number": 5,
+          "heading": "5. Compare trajectories on their own axes",
+          "cellId": "cell-11",
+          "markdownCellId": "cell-10",
+          "cellIndex": 10,
+          "anchor": "5.-Compare-trajectories-on-their-own-axes",
+          "sourceLine": 546,
+          "pythonStartLine": 122,
+          "pythonEndLine": 143,
+          "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
+        }
+      ],
+      "artifactRevision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "entities": [
+        "file/results/runs/case1_external.csv",
+        "processing/inspect-results-python",
+        "file/results/runs/case2_external.csv",
+        "file/scripts/vensim_csv.py",
+        "notebook/inspect-results",
+        "notebook-section/inspect-results/cell-1",
+        "notebook-section/inspect-results/cell-2",
+        "notebook-section/inspect-results/cell-3",
+        "notebook-section/inspect-results/cell-4",
+        "notebook-section/inspect-results/cell-5",
+        "dataset/python-state-trajectories",
+        "dataset/python-inspection-summary",
+        "visualization/python-inspection"
+      ],
+      "edges": [
+        {
+          "source": "file/results/runs/case1_external.csv",
+          "target": "processing/inspect-results-python",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+          "label": "read as input",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "file/results/runs/case2_external.csv",
+          "target": "processing/inspect-results-python",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+          "label": "read as input",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "processing/inspect-results-python",
+          "target": "file/scripts/vensim_csv.py",
+          "predicate": "http://www.w3.org/ns/prov#used",
+          "label": "uses reader",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "processing/inspect-results-python",
+          "target": "notebook/inspect-results",
+          "predicate": "http://www.w3.org/ns/prov#used",
+          "label": "executes notebook",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook/inspect-results",
+          "target": "notebook-section/inspect-results/cell-1",
+          "predicate": "http://purl.org/dc/terms/hasPart",
+          "label": "cell 1",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook/inspect-results",
+          "target": "notebook-section/inspect-results/cell-2",
+          "predicate": "http://purl.org/dc/terms/hasPart",
+          "label": "cell 2",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook/inspect-results",
+          "target": "notebook-section/inspect-results/cell-3",
+          "predicate": "http://purl.org/dc/terms/hasPart",
+          "label": "cell 3",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook/inspect-results",
+          "target": "notebook-section/inspect-results/cell-4",
+          "predicate": "http://purl.org/dc/terms/hasPart",
+          "label": "cell 4",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook/inspect-results",
+          "target": "notebook-section/inspect-results/cell-5",
+          "predicate": "http://purl.org/dc/terms/hasPart",
+          "label": "cell 5",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook-section/inspect-results/cell-3",
+          "target": "dataset/python-state-trajectories",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+          "label": "specifies table",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook-section/inspect-results/cell-4",
+          "target": "dataset/python-inspection-summary",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+          "label": "specifies summary",
+          "status": "Executed locally",
+          "evidence": null
+        },
+        {
+          "source": "notebook-section/inspect-results/cell-5",
+          "target": "visualization/python-inspection",
+          "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+          "label": "specifies figure",
+          "status": "Executed locally",
+          "evidence": null
+        }
+      ],
+      "manifest": {
+        "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+        "sources": {
+          "scripts/vensim_csv.py": "68fe6d24ebdb4291bd7c5a062669dc23bfacc90c67fa7327efb438ff036f77e3",
+          "results/runs/case1_external.csv": "850db08ffe3cd3743155069f5e962e60482eba68ce2c7dd30acb645dfa830f2e",
+          "results/runs/case2_external.csv": "15cfacf7146a2506b65b526af0572b21dcb1e153b59c2b54e69f876e1efcfb63"
+        },
+        "outputs": {
+          "notebooks/inspect_results.ipynb": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+          "notebooks/inspect_results.py": "3cb7df13e9c23485195064de689722fd2e9dc72aa6f8af6b8c33fe4e811dfd83",
+          "data/python-state-trajectories.csv": "603db3cab20f12b563234e4f46c45a521e9a9bb62e50553dfc531db9d38fa9ca",
+          "data/python-inspection-summary.csv": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
+          "data/python-inspection.json": "585ae09974cc6ec93d9add7de4a6c5b5a72808ddf55d7e35d4ebae6c7172d777",
+          "data/python-inspection.svg": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
+          "notebooks/inspect_results.html": "8c75e51e7314685f4ecd8c82ce1aebe3198dfc2e1fc88c4939ae914be92db006"
+        },
+        "simulationExecuted": false,
+        "codeCellsExecuted": 5,
+        "historicalInterpolated": false,
+        "sections": [
+          {
+            "number": 1,
+            "heading": "1. Locate and check the source artifacts",
+            "cellId": "cell-03",
+            "markdownCellId": "cell-02",
+            "cellIndex": 2,
+            "anchor": "1.-Locate-and-check-the-source-artifacts",
+            "sourceLine": 36,
+            "pythonStartLine": 33,
+            "pythonEndLine": 59,
+            "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
+          },
+          {
+            "number": 2,
+            "heading": "2. Read the data without losing units or time axes",
+            "cellId": "cell-05",
+            "markdownCellId": "cell-04",
+            "cellIndex": 4,
+            "anchor": "2.-Read-the-data-without-losing-units-or-time-axes",
+            "sourceLine": 101,
+            "pythonStartLine": 64,
+            "pythonEndLine": 76,
+            "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
+          },
+          {
+            "number": 3,
+            "heading": "3. Build a table for the three simulated states",
+            "cellId": "cell-07",
+            "markdownCellId": "cell-06",
+            "cellIndex": 6,
+            "anchor": "3.-Build-a-table-for-the-three-simulated-states",
+            "sourceLine": 259,
+            "pythonStartLine": 84,
+            "pythonEndLine": 95,
+            "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
+          },
+          {
+            "number": 4,
+            "heading": "4. Inspect peaks and final values",
+            "cellId": "cell-09",
+            "markdownCellId": "cell-08",
+            "cellIndex": 8,
+            "anchor": "4.-Inspect-peaks-and-final-values",
+            "sourceLine": 381,
+            "pythonStartLine": 103,
+            "pythonEndLine": 117,
+            "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
+          },
+          {
+            "number": 5,
+            "heading": "5. Compare trajectories on their own axes",
+            "cellId": "cell-11",
+            "markdownCellId": "cell-10",
+            "cellIndex": 10,
+            "anchor": "5.-Compare-trajectories-on-their-own-axes",
+            "sourceLine": 546,
+            "pythonStartLine": 122,
+            "pythonEndLine": 143,
+            "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
+          }
+        ]
+      },
+      "report": {
+        "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+        "simulationExecuted": false,
+        "inventory": [
+          {
+            "case": "case1",
+            "variable": "Deer Population",
+            "unit": "Deer",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case1",
+            "variable": "Forage Biomass",
+            "unit": "Metric Tons",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case1",
+            "variable": "Predator Population",
+            "unit": "Predators",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case1",
+            "variable": "Historical Deer BOT",
+            "unit": "Deer",
+            "points": 21,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case2",
+            "variable": "Deer Population",
+            "unit": "Deer",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case2",
+            "variable": "Forage Biomass",
+            "unit": "Metric Tons",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case2",
+            "variable": "Predator Population",
+            "unit": "Predators",
+            "points": 1001,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          },
+          {
+            "case": "case2",
+            "variable": "Historical Deer BOT",
+            "unit": "Deer",
+            "points": 21,
+            "first_year": 1900.0,
+            "last_year": 1950.0
+          }
+        ],
+        "summary": [
+          {
+            "case": "case1",
+            "variable": "Deer Population",
+            "unit": "Deer",
+            "points": 1001,
+            "minimum": 3950.9,
+            "maximum": 4031.75,
+            "peak_year": 1904.35,
+            "final_value": 4000.06
+          },
+          {
+            "case": "case1",
+            "variable": "Predator Population",
+            "unit": "Predators",
+            "points": 1001,
+            "minimum": 97.2217,
+            "maximum": 100.0,
+            "peak_year": 1900.0,
+            "final_value": 98.1057
+          },
+          {
+            "case": "case1",
+            "variable": "Forage Biomass",
+            "unit": "Metric Tons",
+            "points": 1001,
+            "minimum": 316866.0,
+            "maximum": 317034.0,
+            "peak_year": 1902.25,
+            "final_value": 316866.0
+          },
+          {
+            "case": "case2",
+            "variable": "Deer Population",
+            "unit": "Deer",
+            "points": 1001,
+            "minimum": 762.344,
+            "maximum": 81841.3,
+            "peak_year": 1937.7,
+            "final_value": 22754.1
+          },
+          {
+            "case": "case2",
+            "variable": "Predator Population",
+            "unit": "Predators",
+            "points": 1001,
+            "minimum": 84.9631,
+            "maximum": 1829.14,
+            "peak_year": 1941.7,
+            "final_value": 191.416
+          },
+          {
+            "case": "case2",
+            "variable": "Forage Biomass",
+            "unit": "Metric Tons",
+            "points": 1001,
+            "minimum": 128309.0,
+            "maximum": 321197.0,
+            "peak_year": 1908.5,
+            "final_value": 178466.0
+          }
+        ],
+        "tableShape": [
+          2002,
+          3
+        ],
+        "historicalInterpolated": false
+      },
+      "summary": "Follow Case 1 and Case 2 CSVs through the repository reader, five notebook cells, and their tables and comparison figure.",
+      "caveat": "The notebook has been executed against saved results. This workflow does not run a new simulation.",
+      "actions": [
+        {
+          "label": "Open in NFDI4Ing JupyterLab",
+          "url": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb",
+          "sameTab": true
+        },
+        {
+          "label": "Read saved notebook",
+          "url": "notebooks/inspect_results.html"
+        },
+        {
+          "label": "Jupyter setup",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/codex/semantic-workflow-sources/docs/semantic/JUPYTER.md"
+        },
+        {
+          "label": "View notebook in repository",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb"
+        },
+        {
+          "label": "View Python source",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py"
+        },
+        {
+          "label": "View comparison figure",
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg"
+        }
+      ],
+      "note": "Each cell opens its section in NFDI4Ing JupyterLab. Sign in and clone the notebook branch into your work folder first. The 21 historical observations stay separate from the 1,001 simulated samples.",
+      "pythonSupport": {
+        "text": "The repository also has a PySD runner that prepares the model and external inputs and writes tidy CSV, providing an upstream route for inspecting new Python runs.",
+        "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/pysd/run.py#L598"
+      }
+    }
+  ],
   "entities": [
     {
       "id": "vocabulary",
@@ -8137,6 +8957,455 @@
       "navigation": "explore",
       "status": "Interpreted",
       "displayType": "Requested outputs"
+    },
+    {
+      "id": "processing/plot-case2-review",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/plot-case2-review",
+      "label": "Plot the result",
+      "kind": "Run",
+      "definition": "Locally executed plotting step using the pinned plot_results.py and vensim_csv.py with the committed Case 2 CSV. Selects the three state trajectories and writes the review SVG. This step does not execute or verify the original simulation.",
+      "types": [
+        "m4i:ProcessingStep",
+        "prov:Activity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py",
+          "label": "scripts/plot_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "navigation": "explore",
+      "displayType": "Plotting \u00b7 executed locally",
+      "details": [
+        "python scripts/plot_results.py results/runs/case2_external.csv --columns \"Deer Population\" \"Predator Population\" \"Forage Biomass\" --format svg --name case2-workflow --outdir docs/semantic/data"
+      ]
+    },
+    {
+      "id": "visualization/case2-review",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/case2-review",
+      "label": "Case 2 trajectories",
+      "kind": "Visualization",
+      "definition": "Review figure generated locally from the committed Case 2 CSV: deer population, predator population and forage biomass over 1900\u20131950. This is a newly rendered figure of existing results, not a new simulation result.",
+      "types": [
+        "schema:ImageObject",
+        "prov:Entity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/case2-workflow.svg",
+          "label": "docs/semantic/data/case2-workflow.svg"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv",
+          "label": "results/runs/case2_external.csv"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/plot_results.py",
+          "label": "scripts/plot_results.py"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "sha256": "3a21afd6fbd005e4a8859c8f40b886c587073026fa83bf821f4b9b18e80269e9",
+      "displayType": "SVG figure \u00b7 repository source"
+    },
+    {
+      "id": "workflow/case2-parameter-to-figure",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/case2-parameter-to-figure",
+      "label": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure.",
+      "kind": "Workflow",
+      "definition": "A worked sequence connecting a model declaration, external parameter assignment, documented simulation, committed result and locally generated visualization. Case 2 includes four overrides; it is not a single-parameter experiment.",
+      "types": [
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/runners/vensim/vensim_run_configuration_external",
+          "label": "runners/vensim/vensim_run_configuration_external"
+        }
+      ],
+      "navigation": "explore",
+      "status": "Review example"
+    },
+    {
+      "id": "notebook/inspect-results",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook/inspect-results",
+      "label": "inspect_results.ipynb",
+      "kind": "Notebook",
+      "definition": "Executed Jupyter notebook with five numbered sections: verify source files, read data, build a pandas table, inspect descriptive statistics, and compare trajectories. Its saved outputs are included in the repository. No simulation is run.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "docs/semantic/notebooks/inspect_results.ipynb"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "repositoryPath": "docs/semantic/notebooks/inspect_results.ipynb",
+      "sha256": "200bacdf1894e5ac9f8d3c05ac2b6f379b0736bed8ccd64191ae158f19d1ff4a",
+      "previewUrl": "notebooks/inspect_results.html",
+      "sourceAction": "open notebook in NFDI4Ing JupyterLab",
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb",
+      "displayType": "Jupyter notebook \u00b7 executed"
+    },
+    {
+      "id": "script/inspect-results",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#script/inspect-results",
+      "label": "inspect_results.py",
+      "kind": "Script",
+      "definition": "Readable Python source generated from the notebook, retaining its headings and five code cells. The only code difference is that the Jupyter inline-plot magic is a comment. Section links target exact source lines in this representation.",
+      "types": [
+        "prov:Plan",
+        "schema:SoftwareSourceCode"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "repositoryPath": "docs/semantic/notebooks/inspect_results.py",
+      "sha256": "3cb7df13e9c23485195064de689722fd2e9dc72aa6f8af6b8c33fe4e811dfd83",
+      "displayType": "Python source \u00b7 notebook cells"
+    },
+    {
+      "id": "dataset/python-state-trajectories",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-state-trajectories",
+      "label": "State trajectories in pandas",
+      "kind": "Dataset",
+      "definition": "Three simulated states from both cases, exported by notebook cell 3: 2,002 rows and three quantity columns, indexed by case and year. The historical reference stays on its separate 21-point time axis.",
+      "types": [
+        "prov:Entity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-state-trajectories.csv",
+          "label": "docs/semantic/data/python-state-trajectories.csv"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "repositoryPath": "docs/semantic/data/python-state-trajectories.csv",
+      "sha256": "603db3cab20f12b563234e4f46c45a521e9a9bb62e50553dfc531db9d38fa9ca",
+      "displayType": "pandas table \u00b7 CSV"
+    },
+    {
+      "id": "dataset/python-inspection-summary",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#dataset/python-inspection-summary",
+      "label": "Peaks and final values",
+      "kind": "Dataset",
+      "definition": "Six rows exported by notebook cell 4: three state variables in each case, with units, sample count, minimum, maximum, sampled peak year and final value. These descriptive comparisons do not isolate a causal effect.",
+      "types": [
+        "prov:Entity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection-summary.csv",
+          "label": "docs/semantic/data/python-inspection-summary.csv"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "repositoryPath": "docs/semantic/data/python-inspection-summary.csv",
+      "sha256": "53071046b066878e39dd7b49c7934df765f7cf96b53edbca4d71ec9f925ec236",
+      "displayType": "Descriptive statistics \u00b7 CSV"
+    },
+    {
+      "id": "visualization/python-inspection",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#visualization/python-inspection",
+      "label": "Compare cases in Python",
+      "kind": "Visualization",
+      "definition": "Three-panel SVG generated by notebook cell 5, comparing both committed cases. The historical reference keeps its 21-point time axis; no resampling or interpolation is performed.",
+      "types": [
+        "prov:Entity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/data/python-inspection.svg",
+          "label": "docs/semantic/data/python-inspection.svg"
+        }
+      ],
+      "status": "Generated locally",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "repositoryPath": "docs/semantic/data/python-inspection.svg",
+      "sha256": "03e5e0b097dca129edc4a6f5ce2c43a14e9224e93cc64212adc51eb6fe06365d",
+      "displayType": "Comparison figure \u00b7 SVG"
+    },
+    {
+      "id": "processing/inspect-results-python",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#processing/inspect-results-python",
+      "label": "Inspect data with Python",
+      "kind": "Run",
+      "definition": "Executed notebook activity using the repository CSV reader. It preserves time axes and units, assembles compatible series in pandas, computes statistics and plots comparisons. It uses an ordinary Python kernel; no PySD simulation is executed.",
+      "types": [
+        "m4i:ProcessingStep",
+        "prov:Activity"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py",
+          "label": "scripts/vensim_csv.py"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv",
+          "label": "results/runs/case1_external.csv"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv",
+          "label": "results/runs/case2_external.csv"
+        }
+      ],
+      "navigation": "explore",
+      "status": "Executed locally",
+      "displayType": "Python inspection \u00b7 executed"
+    },
+    {
+      "id": "notebook-section/inspect-results/cell-1",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-1",
+      "label": "Verify source files",
+      "kind": "Notebook section",
+      "definition": "Code cell 1 locates the repository, verifies SHA-256 hashes of the reader and both CSVs, imports dependencies and prepares the output folder.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L33-L59",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "displayType": "Notebook cell 1 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "notebookCell": {
+        "number": 1,
+        "heading": "1. Locate and check the source artifacts",
+        "cellId": "cell-03",
+        "markdownCellId": "cell-02",
+        "cellIndex": 2,
+        "anchor": "1.-Locate-and-check-the-source-artifacts",
+        "sourceLine": 36,
+        "pythonStartLine": 33,
+        "pythonEndLine": 59,
+        "previewUrl": "notebooks/inspect_results.html#1.-Locate-and-check-the-source-artifacts"
+      },
+      "details": [
+        "1. Locate and check the source artifacts",
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#1.-Locate-and-check-the-source-artifacts"
+    },
+    {
+      "id": "notebook-section/inspect-results/cell-2",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-2",
+      "label": "Read units and time axes",
+      "kind": "Notebook section",
+      "definition": "Code cell 2 calls read_dataset, inventories variables and units, and checks the independent 1,001-point and 21-point time axes.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L64-L76",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "displayType": "Notebook cell 2 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "notebookCell": {
+        "number": 2,
+        "heading": "2. Read the data without losing units or time axes",
+        "cellId": "cell-05",
+        "markdownCellId": "cell-04",
+        "cellIndex": 4,
+        "anchor": "2.-Read-the-data-without-losing-units-or-time-axes",
+        "sourceLine": 101,
+        "pythonStartLine": 64,
+        "pythonEndLine": 76,
+        "previewUrl": "notebooks/inspect_results.html#2.-Read-the-data-without-losing-units-or-time-axes"
+      },
+      "details": [
+        "2. Read the data without losing units or time axes",
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#2.-Read-the-data-without-losing-units-or-time-axes"
+    },
+    {
+      "id": "notebook-section/inspect-results/cell-3",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-3",
+      "label": "Build the pandas table",
+      "kind": "Notebook section",
+      "definition": "Code cell 3 verifies matching state axes, builds a pandas DataFrame for both cases and exports python-state-trajectories.csv.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L84-L95",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "displayType": "Notebook cell 3 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "notebookCell": {
+        "number": 3,
+        "heading": "3. Build a table for the three simulated states",
+        "cellId": "cell-07",
+        "markdownCellId": "cell-06",
+        "cellIndex": 6,
+        "anchor": "3.-Build-a-table-for-the-three-simulated-states",
+        "sourceLine": 259,
+        "pythonStartLine": 84,
+        "pythonEndLine": 95,
+        "previewUrl": "notebooks/inspect_results.html#3.-Build-a-table-for-the-three-simulated-states"
+      },
+      "details": [
+        "3. Build a table for the three simulated states",
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#3.-Build-a-table-for-the-three-simulated-states"
+    },
+    {
+      "id": "notebook-section/inspect-results/cell-4",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-4",
+      "label": "Inspect peaks and final values",
+      "kind": "Notebook section",
+      "definition": "Code cell 4 computes sampled peaks, final values and other descriptive statistics, and exports the summary CSV and inspection report.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L103-L117",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "displayType": "Notebook cell 4 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "notebookCell": {
+        "number": 4,
+        "heading": "4. Inspect peaks and final values",
+        "cellId": "cell-09",
+        "markdownCellId": "cell-08",
+        "cellIndex": 8,
+        "anchor": "4.-Inspect-peaks-and-final-values",
+        "sourceLine": 381,
+        "pythonStartLine": 103,
+        "pythonEndLine": 117,
+        "previewUrl": "notebooks/inspect_results.html#4.-Inspect-peaks-and-final-values"
+      },
+      "details": [
+        "4. Inspect peaks and final values",
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#4.-Inspect-peaks-and-final-values"
+    },
+    {
+      "id": "notebook-section/inspect-results/cell-5",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#notebook-section/inspect-results/cell-5",
+      "label": "Compare trajectories",
+      "kind": "Notebook section",
+      "definition": "Code cell 5 creates three comparison panels, plots the historical reference on its original axis and saves python-inspection.svg.",
+      "types": [
+        "prov:Plan",
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.ipynb",
+          "label": "Complete notebook source"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/ae21a0ed6960d72d0d24c298fabcf13b1dd1c836/docs/semantic/notebooks/inspect_results.py#L122-L143",
+          "label": "docs/semantic/notebooks/inspect_results.py"
+        }
+      ],
+      "status": "Executed locally",
+      "displayType": "Notebook cell 5 \u00b7 section of notebook",
+      "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes",
+      "sourceAction": "open this section in NFDI4Ing JupyterLab",
+      "revision": "ae21a0ed6960d72d0d24c298fabcf13b1dd1c836",
+      "notebookCell": {
+        "number": 5,
+        "heading": "5. Compare trajectories on their own axes",
+        "cellId": "cell-11",
+        "markdownCellId": "cell-10",
+        "cellIndex": 10,
+        "anchor": "5.-Compare-trajectories-on-their-own-axes",
+        "sourceLine": 546,
+        "pythonStartLine": 122,
+        "pythonEndLine": 143,
+        "previewUrl": "notebooks/inspect_results.html#5.-Compare-trajectories-on-their-own-axes"
+      },
+      "details": [
+        "5. Compare trajectories on their own axes",
+        "Sign in to NFDI4Ing and clone the notebook branch into your work folder once."
+      ],
+      "launchUrl": "https://jupyter-nfdi.tik.uni-stuttgart.de/hub/user-redirect/lab/workspaces/kaibab-inspection/tree/work/fair-hunter-prey-simulation/docs/semantic/notebooks/inspect_results.ipynb?#5.-Compare-trajectories-on-their-own-axes"
+    },
+    {
+      "id": "workflow/python-inspection",
+      "uri": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/#workflow/python-inspection",
+      "label": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories.",
+      "kind": "Workflow",
+      "definition": "Executed Python inspection of committed results, showing repository code, each notebook cell and the outputs specified by those cells. PySD is an optional upstream simulation route.",
+      "types": [
+        "schema:CreativeWork"
+      ],
+      "sources": [
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/scripts/vensim_csv.py",
+          "label": "scripts/vensim_csv.py"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case1_external.csv",
+          "label": "results/runs/case1_external.csv"
+        },
+        {
+          "url": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/results/runs/case2_external.csv",
+          "label": "results/runs/case2_external.csv"
+        }
+      ],
+      "navigation": "explore",
+      "status": "Review example"
     }
   ],
   "edges": [
@@ -15307,6 +16576,486 @@
       "label": "documented example",
       "status": "Interpreted",
       "evidence": null
+    },
+    {
+      "source": "processing/plot-case2-review",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://purl.obolibrary.org/obo/RO_0002233",
+      "label": "has input",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "file/results/runs/case2_external.csv",
+      "target": "processing/plot-case2-review",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+      "label": "input to plotting",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/plot-case2-review",
+      "target": "file/scripts/plot_results.py",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "uses plotting script",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/plot-case2-review",
+      "target": "file/scripts/vensim_csv.py",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "uses CSV reader",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/plot-case2-review",
+      "target": "visualization/case2-review",
+      "predicate": "http://www.w3.org/ns/prov#generated",
+      "label": "generates figure",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "visualization/case2-review",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "visualizes committed data",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "assignment/case2/fraction-predators-killed-per-year",
+      "target": "file/models/config/scenarios/case2.cin",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "read from scenario",
+      "status": "Extracted",
+      "evidence": null
+    },
+    {
+      "source": "run/case2",
+      "target": "file/runners/vensim/vensim_run_configuration_external",
+      "predicate": "http://purl.org/dc/terms/source",
+      "label": "documented by",
+      "status": "Documented",
+      "evidence": null
+    },
+    {
+      "source": "file/models/kaibab_ecosystem_model.mdl",
+      "target": "run/case2",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+      "label": "input to simulation",
+      "status": "Documented",
+      "evidence": null
+    },
+    {
+      "source": "file/models/config/scenarios/case2.cin",
+      "target": "run/case2",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+      "label": "input to simulation",
+      "status": "Documented",
+      "evidence": null
+    },
+    {
+      "source": "workflow/case2-parameter-to-figure",
+      "target": "file/models/kaibab_ecosystem_model.mdl",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/case2-parameter-to-figure",
+      "target": "file/models/config/scenarios/case2.cin",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/case2-parameter-to-figure",
+      "target": "run/case2",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/case2-parameter-to-figure",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/case2-parameter-to-figure",
+      "target": "visualization/case2-review",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "file/results/runs/case1_external.csv",
+      "predicate": "http://purl.obolibrary.org/obo/RO_0002233",
+      "label": "has input",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "file/results/runs/case1_external.csv",
+      "target": "processing/inspect-results-python",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+      "label": "read as input",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://purl.obolibrary.org/obo/RO_0002233",
+      "label": "has input",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "file/results/runs/case2_external.csv",
+      "target": "processing/inspect-results-python",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#inputTo",
+      "label": "read as input",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "file/scripts/vensim_csv.py",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "uses reader",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook/inspect-results",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "script/inspect-results",
+      "predicate": "http://purl.org/dc/terms/hasFormat",
+      "label": "has Python source view",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "notebook-section/inspect-results/cell-1",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "cell 1",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-1",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/isPartOf",
+      "label": "section of notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "script/inspect-results",
+      "target": "notebook-section/inspect-results/cell-1",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "source for notebook cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook-section/inspect-results/cell-1",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "notebook-section/inspect-results/cell-2",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "cell 2",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-2",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/isPartOf",
+      "label": "section of notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "script/inspect-results",
+      "target": "notebook-section/inspect-results/cell-2",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "source for notebook cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook-section/inspect-results/cell-2",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "notebook-section/inspect-results/cell-3",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "cell 3",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-3",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/isPartOf",
+      "label": "section of notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "script/inspect-results",
+      "target": "notebook-section/inspect-results/cell-3",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "source for notebook cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook-section/inspect-results/cell-3",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "notebook-section/inspect-results/cell-4",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "cell 4",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-4",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/isPartOf",
+      "label": "section of notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "script/inspect-results",
+      "target": "notebook-section/inspect-results/cell-4",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "source for notebook cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook-section/inspect-results/cell-4",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook/inspect-results",
+      "target": "notebook-section/inspect-results/cell-5",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "cell 5",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-5",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/isPartOf",
+      "label": "section of notebook",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "script/inspect-results",
+      "target": "notebook-section/inspect-results/cell-5",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "source for notebook cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "notebook-section/inspect-results/cell-5",
+      "predicate": "http://www.w3.org/ns/prov#used",
+      "label": "executes cell",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-2",
+      "target": "file/scripts/vensim_csv.py",
+      "predicate": "http://purl.org/dc/terms/references",
+      "label": "calls CSV reader",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-3",
+      "target": "dataset/python-state-trajectories",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+      "label": "specifies table",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "dataset/python-state-trajectories",
+      "predicate": "http://www.w3.org/ns/prov#generated",
+      "label": "generates artifact",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "dataset/python-state-trajectories",
+      "target": "file/results/runs/case1_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "dataset/python-state-trajectories",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-4",
+      "target": "dataset/python-inspection-summary",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+      "label": "specifies summary",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "dataset/python-inspection-summary",
+      "predicate": "http://www.w3.org/ns/prov#generated",
+      "label": "generates artifact",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "dataset/python-inspection-summary",
+      "target": "file/results/runs/case1_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "dataset/python-inspection-summary",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "notebook-section/inspect-results/cell-5",
+      "target": "visualization/python-inspection",
+      "predicate": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/semantic/vocabulary#specifiesOutput",
+      "label": "specifies figure",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "processing/inspect-results-python",
+      "target": "visualization/python-inspection",
+      "predicate": "http://www.w3.org/ns/prov#generated",
+      "label": "generates artifact",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "visualization/python-inspection",
+      "target": "file/results/runs/case1_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "visualization/python-inspection",
+      "target": "file/results/runs/case2_external.csv",
+      "predicate": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "label": "derived from",
+      "status": "Executed locally",
+      "evidence": null
+    },
+    {
+      "source": "workflow/python-inspection",
+      "target": "file/results/runs/case1_external.csv",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/python-inspection",
+      "target": "processing/inspect-results-python",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/python-inspection",
+      "target": "notebook/inspect-results",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/python-inspection",
+      "target": "notebook-section/inspect-results/cell-1",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
+    },
+    {
+      "source": "workflow/python-inspection",
+      "target": "dataset/python-state-trajectories",
+      "predicate": "http://purl.org/dc/terms/hasPart",
+      "label": "includes workflow entity",
+      "status": "Interpreted",
+      "evidence": null
     }
   ],
   "series": {
@@ -17768,5 +19517,30 @@
         "unit": "Predators"
       }
     }
-  }
+  },
+  "services": [
+    {
+      "id": "jupyter",
+      "name": "NFDI4Ing Jupyter Hub",
+      "serviceName": "NFDI4Ing Jupyter Service",
+      "url": "https://jupyter.nfdi4ing.de/",
+      "logos": [
+        {
+          "src": "assets/nfdi4ing-logo.png",
+          "alt": "NFDI4Ing",
+          "width": 610,
+          "height": 610
+        },
+        {
+          "src": "assets/jupyter-logo.svg",
+          "alt": "Jupyter",
+          "width": 44,
+          "height": 51
+        }
+      ],
+      "workflowSlugs": [
+        "python-inspection"
+      ]
+    }
+  ]
 }

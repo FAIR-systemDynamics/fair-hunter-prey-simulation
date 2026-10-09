@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: pip install pysd pandas matplotlib openpyxl pytest
+        run: python -m pip install -c environments/teaching-py312.txt '.[teaching]' pytest
 
       - name: Run the model under PySD and compare against the Vensim runs
         run: ./scripts/compare_tools.sh
