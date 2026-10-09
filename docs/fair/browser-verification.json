@@ -1,0 +1,880 @@
+{
+  "date": "2026-10-09",
+  "desktop_canvas": [
+    1280,
+    800
+  ],
+  "narrow_width": 390,
+  "method": "Browser screenshots, read-only DOM geometry, keyboard navigation and Reveal print mode; semantic route checks in the assembled artifact.",
+  "checks": {
+    "desktop": [
+      {
+        "bodyBottom": 498.9493713378906,
+        "brokenImages": 0,
+        "id": "title",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 444.7584533691406,
+        "brokenImages": 0,
+        "id": "recap",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 613.7089233398438,
+        "brokenImages": 0,
+        "id": "agenda",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 494.9298400878906,
+        "brokenImages": 0,
+        "id": "why-fair",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 571.09423828125,
+        "brokenImages": 0,
+        "id": "shared-specification",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 509.9437561035156,
+        "brokenImages": 0,
+        "id": "shared-use-cases",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 575.30517578125,
+        "brokenImages": 0,
+        "id": "artifacts-access",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 590.9851684570312,
+        "brokenImages": 0,
+        "id": "two-cases",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 491.40032958984375,
+        "brokenImages": 0,
+        "id": "open-workflows",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 397.0447082519531,
+        "brokenImages": 0,
+        "id": "findable-accessible",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 456.5184326171875,
+        "brokenImages": 0,
+        "id": "f1",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 458.1033020019531,
+        "brokenImages": 0,
+        "id": "zenodo-webhook",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 505.1126708984375,
+        "brokenImages": 0,
+        "id": "version-identifiers",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 432.9984436035156,
+        "brokenImages": 0,
+        "id": "metadata-principles",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 508.420166015625,
+        "brokenImages": 0,
+        "id": "citation-codemeta",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 533.3412475585938,
+        "brokenImages": 0,
+        "id": "access-protocols",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 474.8245544433594,
+        "brokenImages": 0,
+        "id": "retrieve-install",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 394.5870361328125,
+        "brokenImages": 0,
+        "id": "authentication",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 568.544677734375,
+        "brokenImages": 0,
+        "id": "access-boundaries",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 571.752685546875,
+        "brokenImages": 0,
+        "id": "persistent-metadata",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 503.4665832519531,
+        "brokenImages": 0,
+        "id": "archives",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 394.5870361328125,
+        "brokenImages": 0,
+        "id": "fa-recap",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 397.0447082519531,
+        "brokenImages": 0,
+        "id": "practical1",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 471.4098510742187,
+        "brokenImages": 0,
+        "id": "discover",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 423.1907958984375,
+        "brokenImages": 0,
+        "id": "discovery-reflection",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 397.0447082519531,
+        "brokenImages": 0,
+        "id": "interoperable",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 571.752685546875,
+        "brokenImages": 0,
+        "id": "i1",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 555.3070678710938,
+        "brokenImages": 0,
+        "id": "formats",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 561.1564331054688,
+        "brokenImages": 0,
+        "id": "api-example",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 394.5870361328125,
+        "brokenImages": 0,
+        "id": "i2",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 482.4808044433594,
+        "brokenImages": 0,
+        "id": "qualified-references",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 444.7584533691406,
+        "brokenImages": 0,
+        "id": "codemeta-references",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 571.752685546875,
+        "brokenImages": 0,
+        "id": "controlled-vocabulary",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 521.37451171875,
+        "brokenImages": 0,
+        "id": "dependencies",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 571.752685546875,
+        "brokenImages": 0,
+        "id": "packaging",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 481.1256408691406,
+        "brokenImages": 0,
+        "id": "practical2",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 587.9839477539062,
+        "brokenImages": 0,
+        "id": "inspect-run",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 394.5870361328125,
+        "brokenImages": 0,
+        "id": "interoperability-reflection",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 397.0447082519531,
+        "brokenImages": 0,
+        "id": "reusable",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 406.3470458984375,
+        "brokenImages": 0,
+        "id": "r1",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 509.9437561035156,
+        "brokenImages": 0,
+        "id": "documentation",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 607.1475219726562,
+        "brokenImages": 0,
+        "id": "licenses",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 533.3412475585938,
+        "brokenImages": 0,
+        "id": "provenance",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 444.7584533691406,
+        "brokenImages": 0,
+        "id": "r2",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 591.3679809570312,
+        "brokenImages": 0,
+        "id": "environments",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 444.7584533691406,
+        "brokenImages": 0,
+        "id": "r3",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 545.1012573242188,
+        "brokenImages": 0,
+        "id": "ci",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 444.7584533691406,
+        "brokenImages": 0,
+        "id": "sustainability",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 509.9437561035156,
+        "brokenImages": 0,
+        "id": "reuse-recap",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 506.6898498535156,
+        "brokenImages": 0,
+        "id": "ro-crate",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 481.1256408691406,
+        "brokenImages": 0,
+        "id": "practical3",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 534.0150146484375,
+        "brokenImages": 0,
+        "id": "crate-exercise",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 483.16986083984375,
+        "brokenImages": 0,
+        "id": "crate-reflection",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 555.3070678710938,
+        "brokenImages": 0,
+        "id": "checklist",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 509.9437561035156,
+        "brokenImages": 0,
+        "id": "services",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 637.7112426757812,
+        "brokenImages": 0,
+        "id": "discussion",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-repository",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-binding",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-file",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-workflow",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-stella",
+        "workflowTop": 672.4400024414062
+      },
+      {
+        "bodyBottom": 612.3078002929688,
+        "brokenImages": 0,
+        "id": "appendix-notebook",
+        "workflowTop": 672.4400024414062
+      }
+    ],
+    "mobile": [
+      {
+        "bodyBottom": 562.8046875,
+        "id": "title",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 658.4453125,
+        "id": "recap",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 1071.65625,
+        "id": "agenda",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 1099.15625
+      },
+      {
+        "bodyBottom": 699.84375,
+        "id": "why-fair",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 770.8125,
+        "id": "shared-specification",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 780.3125
+      },
+      {
+        "bodyBottom": 693.984375,
+        "id": "shared-use-cases",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 721.484375
+      },
+      {
+        "bodyBottom": 700.578125,
+        "id": "artifacts-access",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 728.078125
+      },
+      {
+        "bodyBottom": 810.890625,
+        "id": "two-cases",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 839.390625
+      },
+      {
+        "bodyBottom": 816.9453125,
+        "id": "open-workflows",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 826.4453125
+      },
+      {
+        "bodyBottom": 324.1953125,
+        "id": "findable-accessible",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 693.3984375,
+        "id": "f1",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 575.796875,
+        "id": "zenodo-webhook",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 710.671875,
+        "id": "version-identifiers",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 720.171875
+      },
+      {
+        "bodyBottom": 570.8125,
+        "id": "metadata-principles",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 751.6875,
+        "id": "citation-codemeta",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 761.1875
+      },
+      {
+        "bodyBottom": 699.84375,
+        "id": "access-protocols",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 617.5859375,
+        "id": "retrieve-install",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 629.609375,
+        "id": "authentication",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 641.1875,
+        "id": "access-boundaries",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 668.3515625,
+        "id": "persistent-metadata",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 717.375,
+        "id": "archives",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 745.875
+      },
+      {
+        "bodyBottom": 600.2109375,
+        "id": "fa-recap",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 362.609375,
+        "id": "practical1",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 688.40625,
+        "id": "discover",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 697.90625,
+        "id": "discovery-reflection",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 324.1953125,
+        "id": "interoperable",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 667.3046875,
+        "id": "i1",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 686.75,
+        "id": "formats",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 715.25
+      },
+      {
+        "bodyBottom": 777.953125,
+        "id": "api-example",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 787.453125
+      },
+      {
+        "bodyBottom": 609.2265625,
+        "id": "i2",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 771.4453125,
+        "id": "qualified-references",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 799.9453125
+      },
+      {
+        "bodyBottom": 641.609375,
+        "id": "codemeta-references",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 847.8359375,
+        "id": "controlled-vocabulary",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 857.3359375
+      },
+      {
+        "bodyBottom": 734.28125,
+        "id": "dependencies",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 743.78125
+      },
+      {
+        "bodyBottom": 778.3515625,
+        "id": "packaging",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 787.8515625
+      },
+      {
+        "bodyBottom": 362.609375,
+        "id": "practical2",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 721.1875,
+        "id": "inspect-run",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 749.6875
+      },
+      {
+        "bodyBottom": 541.4140625,
+        "id": "interoperability-reflection",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 324.1953125,
+        "id": "reusable",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 598.6015625,
+        "id": "r1",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 599.59375,
+        "id": "documentation",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 760.171875,
+        "id": "licenses",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 788.671875
+      },
+      {
+        "bodyBottom": 850.375,
+        "id": "provenance",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 859.875
+      },
+      {
+        "bodyBottom": 641.609375,
+        "id": "r2",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 818.1796875,
+        "id": "environments",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 846.6796875
+      },
+      {
+        "bodyBottom": 621.2265625,
+        "id": "r3",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 764.015625,
+        "id": "ci",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 773.515625
+      },
+      {
+        "bodyBottom": 680.0234375,
+        "id": "sustainability",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 620.390625,
+        "id": "reuse-recap",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 859.546875,
+        "id": "ro-crate",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 869.046875
+      },
+      {
+        "bodyBottom": 362.609375,
+        "id": "practical3",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 733.578125,
+        "id": "crate-exercise",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 755.078125
+      },
+      {
+        "bodyBottom": 688.890625,
+        "id": "crate-reflection",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 678.78125,
+        "id": "checklist",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 641.1875,
+        "id": "services",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 621.6953125,
+        "id": "discussion",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 447.4765625,
+        "id": "appendix-repository",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 508.7265625,
+        "id": "appendix-binding",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 508.8359375,
+        "id": "appendix-file",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 508.7265625,
+        "id": "appendix-workflow",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 547.140625,
+        "id": "appendix-stella",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      },
+      {
+        "bodyBottom": 508.7734375,
+        "id": "appendix-notebook",
+        "pageWidth": 390,
+        "width": 390,
+        "workflowTop": 713.5
+      }
+    ],
+    "print": {
+      "issues": [],
+      "pages": 62
+    },
+    "semantic": [
+      {
+        "route": "#overview",
+        "title": "Semantic Model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows",
+        "title": "Workflows \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#nfdi4ing",
+        "title": "NFDI4Ing Use Cases \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/term%2Ffraction-predators-killed-per-year",
+        "title": "Fraction Predators Killed per Year \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year",
+        "title": "Fraction Predators Killed per Year = 0.2 \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/diagram/case2-parameter-to-figure",
+        "title": "Set predator removal to 0.2/year, simulate the ecosystem, and follow the result into a figure. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#workflows/diagram/python-inspection",
+        "title": "Read saved results with Python, inspect the data in a notebook, and compare the ecosystem trajectories. \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "#overview/model",
+        "title": "Kaibab ecosystem model \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true,
+        "hasError": false
+      },
+      {
+        "route": "notebooks/inspect_results.html",
+        "title": "Inspect Kaibab results with Python \u2014 FAIR-systemDynamics/fair-hunter-prey-simulation",
+        "rendered": true
+      }
+    ]
+  }
+}

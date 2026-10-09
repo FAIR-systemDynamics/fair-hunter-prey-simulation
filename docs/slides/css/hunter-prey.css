@@ -39,3 +39,4 @@
 @media(max-width:680px){html:not(.print-pdf){overflow-y:auto;height:auto}body:not(.print-pdf){height:auto}.reveal .controls{bottom:4px;background:#ffffffeb;border-radius:3px}.reveal .case-files{overflow-wrap:anywhere}}
 .reveal-print .reveal .slides .pdf-page>section{height:800px!important;padding:40px 66px 50px!important;box-sizing:border-box!important}
 .reveal-print #agenda-toggle,.reveal-print #lecture-agenda{display:none!important}
+.reveal .chapter-page a{color:white}.reveal .cover-page .workflow li::after{color:white}

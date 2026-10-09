@@ -28,6 +28,8 @@ def check():
     assert len(zenodo['creators'])==3 and 'doi' not in zenodo
     assert '0.7.0.dev0' in (ROOT/'CITATION.cff').read_text()
     slides=ROOT/'docs/slides'
+    for evidence in json.loads((slides/'sources.json').read_text())['screenshots']:
+        assert hashlib.sha256((slides/evidence['file']).read_bytes()).hexdigest()==evidence['sha256'], evidence['file']
     soup=BeautifulSoup((slides/'index.html').read_text(),'html.parser')
     ids=[x['id'] for x in soup.select('[id]')]
     assert len(ids)==len(set(ids)), Counter(ids)
