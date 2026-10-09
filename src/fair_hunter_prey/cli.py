@@ -19,7 +19,9 @@ def main(argv=None):
     crate.add_argument("--output-dir", required=True)
     args = parser.parse_args(argv)
     try:
-        if args.command == "run": result = run_example(args.implementation, args.case, args.output_dir)
+        if args.command == "run":
+            result = run_example(args.implementation, args.case, args.output_dir)
+            print(f"Execution engine: PySD | {args.implementation} | {args.case}")
         elif args.command == "inspect": result = inspect_results(args.output_dir)
         else: result = create_crate(args.run_dir, args.output_dir)
         print(result)

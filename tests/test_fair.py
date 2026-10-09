@@ -59,6 +59,7 @@ def test_packaged_execution_matches_reference(implementation, case, tmp_path):
     result = run_example(implementation, case, tmp_path / "run")
     manifest = json.loads(result["provenance"].read_text())
     assert manifest["engine"] == "PySD"
+    assert result["log"].read_text().startswith("Execution engine: PySD\n")
     assert manifest["outputs"]["simulation.csv"] == hashlib.sha256(result["csv"].read_bytes()).hexdigest()
     if implementation == "vensim":
         reader = _reader("vensim_csv")

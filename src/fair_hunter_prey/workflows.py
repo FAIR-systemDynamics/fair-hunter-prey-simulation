@@ -104,7 +104,9 @@ def run_example(implementation: str, case: str, output_dir: str | Path) -> dict[
         args.extend(["--saveper", "1"])
     start = datetime.now(timezone.utc).isoformat()
     completed = subprocess.run(args, capture_output=True, text=True)
-    (out / "runner.log").write_text(completed.stdout + completed.stderr)
+    (out / "runner.log").write_text(
+        f"Execution engine: PySD\nSource implementation: {implementation}\nCase: {case}\n"
+        + completed.stdout + completed.stderr)
     if completed.returncode:
         raise RuntimeError(f"PySD failed; see {out / 'runner.log'}\n{completed.stderr[-1800:]}")
     code = sorted((_root() / "runners/pysd").glob("*.py")) + sorted((_root() / "scripts").glob("*.py"))
