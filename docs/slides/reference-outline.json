@@ -1,0 +1,210 @@
+[
+  {
+    "slide": 1,
+    "title": "Research Software that others can find, trust and\u00a0run."
+  },
+  {
+    "slide": 2,
+    "title": "Four lectures, one story"
+  },
+  {
+    "slide": 3,
+    "title": "Agenda \u00b7 3 \u00d7 theory \u2194 3 \u00d7 practical"
+  },
+  {
+    "slide": 4,
+    "title": "Why make research software FAIR?"
+  },
+  {
+    "slide": 5,
+    "title": "One repo, running through every slide"
+  },
+  {
+    "slide": 6,
+    "title": "Findable & Accessible research software"
+  },
+  {
+    "slide": 7,
+    "title": "F1 \u00b7 Globally unique and persistent identifier F1 F1.1 F1.2"
+  },
+  {
+    "slide": 8,
+    "title": "F1 \u00b7 A DOI is a promise , not a URL F1"
+  },
+  {
+    "slide": 9,
+    "title": "One project, many versions \u2014 each citable F1.1 F1.2"
+  },
+  {
+    "slide": 10,
+    "title": "F2 \u00b7 F3 \u00b7 F4 \u00b7 rich, linked, harvestable metadata F2 F3 F4"
+  },
+  {
+    "slide": 11,
+    "title": "Machines can only find what they can read F2 F3 F4"
+  },
+  {
+    "slide": 12,
+    "title": "A1 \u00b7 A1.1 \u00b7 retrievable via a standardized protocol A1 A1.1"
+  },
+  {
+    "slide": 13,
+    "title": "Open, free, universally implementable A1 A1.1"
+  },
+  {
+    "slide": 14,
+    "title": "A1.2 \u00b7 auth is a feature , not a gate A1.2"
+  },
+  {
+    "slide": 15,
+    "title": "Authentication, where genuinely necessary A1.2"
+  },
+  {
+    "slide": 16,
+    "title": "A2 \u00b7 metadata outlives the software A2"
+  },
+  {
+    "slide": 17,
+    "title": "Metadata outlives the software A2"
+  },
+  {
+    "slide": 18,
+    "title": "F + A \u00b7 the minimum viable artefacts"
+  },
+  {
+    "slide": 19,
+    "title": "Practical 1 \u00b7 Discover research software"
+  },
+  {
+    "slide": 20,
+    "title": "Find DuMux in 14 minutes"
+  },
+  {
+    "slide": 21,
+    "title": "What made DuMux findable?"
+  },
+  {
+    "slide": 22,
+    "title": "Interoperable research software"
+  },
+  {
+    "slide": 23,
+    "title": "I1 \u00b7 read, write, exchange via community standards I1"
+  },
+  {
+    "slide": 24,
+    "title": "Open formats > bespoke files I1"
+  },
+  {
+    "slide": 25,
+    "title": "Example \u00b7 OpenAPI beats a README I1"
+  },
+  {
+    "slide": 26,
+    "title": "I2 \u00b7 qualified references to other objects I2"
+  },
+  {
+    "slide": 27,
+    "title": "\"Alice\" vs \"ORCID 0000-0001-\u2026\" I2"
+  },
+  {
+    "slide": 28,
+    "title": "awesome-sim/codemeta.json \u2014 line by line I2"
+  },
+  {
+    "slide": 29,
+    "title": "Controlled vocabularies eliminate ambiguity \u00b7 and give credit I2"
+  },
+  {
+    "slide": 30,
+    "title": "Dependencies are also qualified references I2"
+  },
+  {
+    "slide": 31,
+    "title": "pyproject.toml \u00b7 from source to installed package I2"
+  },
+  {
+    "slide": 32,
+    "title": "Practical 2 \u00b7 Test interoperability"
+  },
+  {
+    "slide": 33,
+    "title": "Install, run, break, understand"
+  },
+  {
+    "slide": 34,
+    "title": "Why I2 (qualified dependencies) matters"
+  },
+  {
+    "slide": 35,
+    "title": "Reusable research software"
+  },
+  {
+    "slide": 36,
+    "title": "R1 \u00b7 R1.1 \u00b7 R1.2 \u00b7 describe, license, trace R1 R1.1 R1.2"
+  },
+  {
+    "slide": 37,
+    "title": "Documentation is layered R1"
+  },
+  {
+    "slide": 38,
+    "title": "No license \u2260 public domain R1.1"
+  },
+  {
+    "slide": 39,
+    "title": "Who \u00b7 what \u00b7 when \u00b7 why \u2014 for free R1.2"
+  },
+  {
+    "slide": 40,
+    "title": "R2 \u00b7 qualified references to other software R2"
+  },
+  {
+    "slide": 41,
+    "title": "Pin the whole world, not just the code R2"
+  },
+  {
+    "slide": 42,
+    "title": "R3 \u00b7 meet domain-relevant community standards R3"
+  },
+  {
+    "slide": 43,
+    "title": "Let CI answer \"does it still run?\" R3"
+  },
+  {
+    "slide": 44,
+    "title": "Write the sustainability plan before the code rots"
+  },
+  {
+    "slide": 45,
+    "title": "R \u00b7 the smallest thing that could break you"
+  },
+  {
+    "slide": 46,
+    "title": "RO-Crate \u00b7 research object in one container R"
+  },
+  {
+    "slide": 47,
+    "title": "Practical 3 \u00b7 Capture reusability via RO-Crate"
+  },
+  {
+    "slide": 48,
+    "title": "Package awesome-sim as a Research Object"
+  },
+  {
+    "slide": 49,
+    "title": "The R in FAIR4RS \u00b7 Reusability across time"
+  },
+  {
+    "slide": 50,
+    "title": "The FAIR4RS checklist \u2014 one page"
+  },
+  {
+    "slide": 51,
+    "title": "The services you touched today"
+  },
+  {
+    "slide": 52,
+    "title": "Your repo, next week \u2014 FAIR4RS-shaped."
+  }
+]

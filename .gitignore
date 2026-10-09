@@ -23,3 +23,14 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Additive teaching build outputs
+build/
+dist/
+*.egg-info/
+out/
+_site/
+
+# The lecture vendors only the Reveal runtime files it uses.
+!docs/slides/vendor/reveal/dist/
+!docs/slides/vendor/reveal/dist/*

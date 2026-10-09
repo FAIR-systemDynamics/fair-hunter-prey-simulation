@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2026 Vasiliy Seibert
+# SPDX-License-Identifier: MIT
+name: FAIR teaching verification
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install locked teaching and verification environment
+        shell: bash
+        run: |
+          python_version="${{ matrix.python }}"
+          lock="environments/teaching-py${python_version//./}.txt"
+          python -m pip install -c "$lock" '.[teaching,dev]'
+      - name: Preserve artifacts and verify both reference implementations
+        run: |
+          python -m pytest -q
+          python tools/fair/check_stella.py
+          python tools/fair/check_materials.py
+          cffconvert --validate
+      - name: Build distribution and test outside checkout
+        shell: bash
+        run: |
+          python -m build
+          python -m venv /tmp/clean-wheel
+          /tmp/clean-wheel/bin/python -m pip install dist/*.whl pytest rocrate
+          cp tests/test_fair.py /tmp/test_installed_fair.py
+          cd /tmp
+          /tmp/clean-wheel/bin/python -m pytest test_installed_fair.py -k 'packaged_execution or inspection_preserves or crate'
+      - name: Execute Jupyter practicals
+        run: python tools/fair/execute_notebooks.py --output-dir out/executed-notebooks
+      - uses: actions/upload-artifact@v4
+        with:
+          name: executed-notebooks-py${{ matrix.python }}
+          path: out/executed-notebooks

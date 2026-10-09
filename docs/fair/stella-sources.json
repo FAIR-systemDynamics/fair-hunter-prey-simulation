@@ -1,0 +1,26 @@
+{
+  "repository": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+  "revision": "194a8b92e963920e95393accc7d5699348864d85",
+  "sha256": {
+    "docs/kaibab_ecosystem_doc_stella_equations.html": "d602145c6696829e4915ccc0623781614c792d9d806750c4238d052c6bd1d7a3",
+    "docs/kaibab_ecosystem_doc_stella_equations.txt": "d3b12cd6db3cd8312287c4433fb16539d09950aa458f016570f8480b53b68d12",
+    "docs/kaibab_ecosystem_model_stella.pdf": "065edeb0b4042a5ae5c60c84431673936920083f0389808583ae40069d1edf9a",
+    "docs/kaibab_ecosystem_model_stella.svg": "e05b9c5dc1d01710ecd3e97bdb9ba1cfd746bbf6dcdb997c85fed71ee2c41ba7",
+    "docs/kaibab_ecosystem_screenshot_stella_scenario1.jpg": "c1958a6e77cce418c0afd68d58b0438995ac56b837b9dff2dd6482c4234d48a6",
+    "docs/kaibab_ecosystem_screenshot_stella_scenario2.jpg": "3ac98bc7ba454d23d7ebad1c091b2c0cc1141de12f6312018063a0785f3dde4c",
+    "docs/screenshot_stella_documentation.jpg": "9833bea5aa1047b8a09962dbf165d8e2a83502a52c18f3d8e0010663478cc13f",
+    "docs/screenshot_stella_export.jpg": "f42a3db7b0fba06b7b719b642e7ab85ef1ac9b5b0507b17919ef65ef099a3d5d",
+    "docs/screenshot_stella_import.jpg": "a5af1abaac55d73c4426e4bbe80e1de6dd9cf183fae090351d0feb11fbf7b4b8",
+    "models/config/lookups/kaibab_ecosystem_lookups_stella.csv": "704d59e88b66309a729a5ac915d9acccc56ceec27bbd1e4a5d397c3819468678",
+    "models/config/parameters/kaibab_ecosystem_parameters_stella_scenario1.csv": "e656566a763194e8dda76b724412a96cd3022d2770fc996dc345d4c438317b8a",
+    "models/config/parameters/kaibab_ecosystem_parameters_stella_scenario2.csv": "49223aaa2becadf81a88a80802a957e67954078fdecc5b26646a529c0b32324b",
+    "models/config/parameters/kaibab_ecosystem_parameters_stella_template.csv": "7a0d5a5ca999ec69e9d5cb55b6b4432830e7b6aa5ab59346df39fc468a91f042",
+    "models/config/timeseries/kaibab_ecosystem_historic_BOT_stella.csv": "eaee6983e1e6e63d80ef0fbe5e01dacdc100196d8fd36a92c5699e9d417dac46",
+    "models/kaibab_ecosystem_model.stmx": "576bcb342cb6e0e46fd93f4c30b0c38bacc3f850d1d94cff72c53d098e0c9343",
+    "results/figures/kaibab_ecosystem_figs_stella_scenario1.pdf": "2a8e12053e0b9335c4987a7fa01a9e391d010e3ac9f86919c79f031f9650b18c",
+    "results/figures/kaibab_ecosystem_figs_stella_scenario2.pdf": "fc9d7efb596c25ba2eb83c7623c4a225f22904f122db76516e1fcbacb9cac8b8",
+    "results/kaibab_ecosystem_results_stella_scenario1.csv": "212ac2cd4b17ec989de799ac5bb4e078097be9eb7e6ba6f8da99bafb971bdf42",
+    "results/kaibab_ecosystem_results_stella_scenario2.csv": "c9071ec9616108841a517b6639c678f62bad50bac8910870c19037af12373f77"
+  },
+  "bundle": "examples/stella-source"
+}

@@ -242,3 +242,7 @@ workflow are MIT and free of that restriction.**
 - Example model: Mike Deaton and Rod MacDonald, *System Dynamics Learning Guide*,
   James Madison University Libraries, 2025. <https://pressbooks.lib.jmu.edu/sdlearningguide/>
   Licensed CC BY-NC-SA 4.0.
+
+## FAIR4RS lecture and open workflows
+
+The [teaching guide](docs/fair/README.md) adds installable examples for both preserved implementations, saved-result inspection, and RO-Crate packaging. [Presentation source](docs/slides/) is prepared for `/slides/`; the existing semantic site keeps its current address. See the [evidence and limitations](docs/fair/evidence.md) and [release checklist](docs/fair/release.md). No Zenodo release has been published by this addition.

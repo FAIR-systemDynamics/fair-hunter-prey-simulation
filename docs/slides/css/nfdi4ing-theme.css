@@ -1,0 +1,582 @@
+/* NFDI4ING-inspired Reveal.js theme for RDM Basics Lecture 4
+   Palette and typography mirror RDM-Basics-4/DesignTemplate.pptx
+   Colors: primary blue #2839CC, navy #0C113D, yellow #F3F051, orange #D5763D */
+
+:root {
+  --n4i-blue:    #2839CC;
+  --n4i-blue-2:  #202EA3;
+  --n4i-navy:    #0C113D;
+  --n4i-yellow:  #F3F051;
+  --n4i-orange:  #D5763D;
+  --n4i-pink:    #E60C61;
+  --n4i-green:   #1B8044;
+  --n4i-ink:     #1D1D1B;
+  --n4i-paper:   #FFFFFF;
+  --n4i-grey-50: #F7F8FB;
+  --n4i-grey-100:#ECEEF4;
+  --n4i-grey-200:#D7DBE6;
+  --n4i-grey-500:#6A7088;
+  --n4i-code-bg: #0C113D;
+  --font-sans: 'IBM Plex Sans', -apple-system, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+/* ---------- Reveal base overrides ---------- */
+
+.reveal-viewport { background: var(--n4i-paper); }
+
+.reveal {
+  font-family: var(--font-sans);
+  color: var(--n4i-ink);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'ss01', 'cv01';
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding: 64px 72px 78px 72px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--font-sans);
+  color: var(--n4i-navy);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  margin: 0 0 .4em 0;
+  line-height: 1.1;
+}
+
+.reveal h1 { font-size: 2.4em; }
+.reveal h2 { font-size: 1.5em; }
+.reveal h3 { font-size: 1.15em; color: var(--n4i-blue); }
+.reveal h4 { font-size: 1em; color: var(--n4i-blue); font-weight: 500; }
+
+.reveal p  { line-height: 1.45; margin: 0 0 .6em 0; }
+.reveal ul { list-style: none; padding: 0; margin: 0 0 .6em 0; }
+.reveal ul > li {
+  position: relative;
+  padding-left: 1.2em;
+  margin: .3em 0;
+  line-height: 1.4;
+}
+.reveal ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .55em;
+  width: .55em;
+  height: .55em;
+  background: var(--n4i-yellow);
+  border-left: 3px solid var(--n4i-blue);
+}
+.reveal ol { padding-left: 1.3em; }
+.reveal ol > li { margin: .3em 0; line-height: 1.4; }
+
+.reveal a { color: var(--n4i-blue); text-decoration: none; border-bottom: 1px solid var(--n4i-yellow); }
+.reveal a:hover { color: var(--n4i-navy); border-bottom-color: var(--n4i-blue); }
+
+.reveal strong { color: var(--n4i-navy); font-weight: 600; }
+.reveal em { font-style: italic; color: var(--n4i-blue-2); }
+
+.reveal code {
+  font-family: var(--font-mono);
+  font-size: .85em;
+  background: var(--n4i-grey-100);
+  color: var(--n4i-navy);
+  padding: .08em .35em;
+  border-radius: 3px;
+}
+
+.reveal pre {
+  font-family: var(--font-mono);
+  background: var(--n4i-code-bg);
+  color: #E6E8F2;
+  border-radius: 10px;
+  box-shadow: 0 14px 40px -12px rgba(12,17,61,.4);
+  width: 100%;
+  font-size: .48em;
+  line-height: 1.4;
+  margin: .6em 0;
+  overflow: hidden;
+}
+.reveal pre code {
+  background: transparent;
+  color: inherit;
+  padding: 18px 22px;
+  display: block;
+  font-size: 1em;
+  max-height: 500px;
+}
+
+/* Page header/footer on every content slide */
+.reveal .slide-header,
+.reveal .slide-footer {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: .04em;
+  color: var(--n4i-grey-500);
+}
+.reveal .slide-header {
+  top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--n4i-grey-200);
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.reveal .slide-header .brand {
+  color: var(--n4i-navy);
+  font-weight: 600;
+  letter-spacing: .05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.reveal .slide-header .brand::before {
+  content: "";
+  display: inline-block;
+  width: 72px;
+  height: 18px;
+  background: url('../assets/logos/nfdi4ing-logo.svg') left center / contain no-repeat;
+}
+.reveal .slide-header .chip {
+  background: var(--n4i-navy);
+  color: var(--n4i-paper);
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 10.5px;
+  letter-spacing: .06em;
+}
+.reveal .slide-footer {
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--n4i-grey-200);
+  color: var(--n4i-grey-500);
+}
+.reveal .slide-footer > span { display: inline-flex; align-items: center; }
+.reveal .slide-footer > span + span::before {
+  content: "";
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: var(--n4i-grey-200);
+  border-radius: 50%;
+  margin-right: 14px;
+}
+.reveal .slide-footer .fair {
+  color: var(--n4i-blue);
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+/* Slide number — bottom-right. Arrows live on viewport edges (controlsLayout: 'edges'). */
+.reveal .slide-number {
+  background: transparent;
+  color: var(--n4i-grey-500);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  right: 20px;
+  bottom: 18px;
+}
+
+/* Reveal navigation arrows — tint to brand blue */
+.reveal .controls { color: var(--n4i-blue); }
+.reveal .controls button.enabled { opacity: .5; }
+.reveal .controls button.enabled:hover { opacity: 1; }
+
+/* ===================================================================
+   Navigation overlay (agenda / slide jumper)
+   =================================================================== */
+
+#nav-toggle {
+  position: fixed;
+  top: 18px; right: 18px;
+  z-index: 200;
+  width: 42px; height: 42px;
+  background: var(--n4i-navy);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 10px rgba(12,17,61,.3);
+  transition: background .15s, transform .15s;
+  font-family: var(--font-mono);
+}
+#nav-toggle:hover { background: var(--n4i-blue); transform: translateY(-1px); }
+#nav-toggle svg { width: 20px; height: 20px; }
+
+#nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 190;
+  background: rgba(12,17,61,.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+#nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+#nav-panel {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(620px, 100vw);
+  background: #fff;
+  z-index: 195;
+  overflow-y: auto;
+  box-shadow: -12px 0 40px rgba(12,17,61,.2);
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  font-family: var(--font-sans);
+}
+#nav-overlay.open ~ #nav-panel,
+#nav-panel.open { transform: translateX(0); }
+
+#nav-panel .nav-head {
+  padding: 22px 30px 14px 30px;
+  border-bottom: 1px solid var(--n4i-grey-200);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 18px;
+  position: sticky; top: 0;
+  background: #fff;
+  z-index: 1;
+}
+#nav-panel .nav-head .logo {
+  width: 140px; height: 34px;
+  background: url('../assets/logos/nfdi4ing-logo.svg') left center / contain no-repeat;
+}
+#nav-panel .nav-head .title {
+  flex: 1;
+  font-size: 14px;
+  color: var(--n4i-grey-500);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+#nav-panel .nav-close {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: var(--n4i-grey-500);
+  cursor: pointer;
+  width: 32px; height: 32px;
+  border-radius: 4px;
+}
+#nav-panel .nav-close:hover { background: var(--n4i-grey-100); color: var(--n4i-navy); }
+
+#nav-panel .nav-groups {
+  padding: 18px 30px 60px 30px;
+}
+#nav-panel .nav-group {
+  margin-bottom: 22px;
+}
+#nav-panel .nav-group .group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--n4i-blue);
+}
+#nav-panel .nav-group .group-head .num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--n4i-blue);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+#nav-panel .nav-group.practical .group-head .num { background: var(--n4i-pink); }
+#nav-panel .nav-group.practical .group-head { border-bottom-color: var(--n4i-pink); }
+#nav-panel .nav-group .group-head .name {
+  font-weight: 600;
+  color: var(--n4i-navy);
+  font-size: 15px;
+}
+
+#nav-panel .nav-slide {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--n4i-ink);
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  margin-bottom: 2px;
+  font-size: 14px;
+  line-height: 1.4;
+  transition: background .1s;
+}
+#nav-panel .nav-slide:hover {
+  background: var(--n4i-grey-50);
+  border-left-color: var(--n4i-yellow);
+}
+#nav-panel .nav-slide.current {
+  background: #FFFCE6;
+  border-left-color: var(--n4i-blue);
+  font-weight: 600;
+  color: var(--n4i-navy);
+}
+#nav-panel .nav-slide .idx {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--n4i-grey-500);
+  min-width: 28px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+#nav-panel .nav-slide .lbl {
+  flex: 1;
+}
+#nav-panel .nav-slide .kind {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--n4i-grey-500);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  background: var(--n4i-grey-100);
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+#nav-panel .nav-slide .kind.principle { background: #FFFCE6; color: #8B7500; }
+#nav-panel .nav-slide .kind.practice  { background: #E8F0FE; color: var(--n4i-blue); }
+#nav-panel .nav-slide .kind.practical { background: #FFE8EF; color: var(--n4i-pink); }
+
+#nav-panel .nav-tip {
+  position: sticky; bottom: 0;
+  background: var(--n4i-grey-50);
+  border-top: 1px solid var(--n4i-grey-200);
+  padding: 10px 30px;
+  font-size: 11px;
+  color: var(--n4i-grey-500);
+  font-family: var(--font-mono);
+  letter-spacing: .04em;
+}
+#nav-panel .nav-tip kbd {
+  background: #fff;
+  border: 1px solid var(--n4i-grey-200);
+  border-bottom-width: 2px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--n4i-navy);
+  margin: 0 2px;
+}
+
+/* ---------- Title slide ---------- */
+
+.reveal section.title-slide {
+  background: var(--n4i-navy) url('../assets/img/image3.jpg') center/cover no-repeat;
+  color: var(--n4i-paper);
+  padding: 90px 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.reveal section.title-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(12,17,61,.55) 0%, rgba(40,57,204,.20) 60%, rgba(12,17,61,.70) 100%);
+  pointer-events: none;
+}
+.reveal section.title-slide > * { position: relative; z-index: 1; }
+
+.reveal section.title-slide .top-row {
+  display: flex; justify-content: space-between; align-items: center;
+  color: rgba(255,255,255,.85);
+  font-size: 14px; letter-spacing: .08em; text-transform: uppercase;
+}
+.reveal section.title-slide .top-row .n4i-wordmark {
+  display: inline-block;
+  width: 170px;
+  height: 40px;
+  background: #fff url('../assets/logos/nfdi4ing-logo.svg') center / 80% no-repeat;
+  border-radius: 4px;
+  padding: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.reveal section.title-slide .hero h1 {
+  color: #fff;
+  font-size: 3.2em;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  max-width: 15ch;
+}
+.reveal section.title-slide .hero .kicker {
+  display: inline-block;
+  background: var(--n4i-yellow);
+  color: var(--n4i-navy);
+  padding: 6px 14px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+.reveal section.title-slide .hero .subtitle {
+  color: rgba(255,255,255,.9);
+  font-size: 1.4em;
+  margin-top: 18px;
+  max-width: 30ch;
+  font-weight: 300;
+}
+
+.reveal section.title-slide .meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  color: rgba(255,255,255,.8);
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,.3);
+  padding-top: 18px;
+}
+.reveal section.title-slide .meta .label {
+  display: block; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--n4i-yellow); font-size: 11px; margin-bottom: 4px; font-weight: 600;
+}
+.reveal section.title-slide .meta a { color: #fff; border-bottom-color: rgba(243,240,81,.5); }
+
+/* ---------- Section divider slide ---------- */
+
+.reveal section.divider {
+  background: var(--n4i-navy) url('../assets/img/image4.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 90px;
+}
+.reveal section.divider::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(100deg, rgba(12,17,61,.82) 0%, rgba(40,57,204,.45) 100%);
+}
+.reveal section.divider > * { position: relative; z-index: 1; }
+.reveal section.divider::before {
+  content: "";
+  position: absolute;
+  top: 40px; right: 60px;
+  width: 170px; height: 40px;
+  background: #fff url('../assets/logos/nfdi4ing-logo.svg') center / 80% no-repeat;
+  border-radius: 4px;
+  z-index: 2;
+}
+.reveal section.divider .num {
+  font-family: var(--font-mono);
+  color: var(--n4i-yellow);
+  font-size: 96px;
+  line-height: 1;
+  font-weight: 400;
+  margin-bottom: 18px;
+  letter-spacing: -0.04em;
+}
+.reveal section.divider h1 {
+  color: #fff; font-size: 2.8em; max-width: 18ch;
+  margin: 0;
+}
+.reveal section.divider .rule {
+  width: 120px; height: 6px; background: var(--n4i-yellow);
+  margin: 24px 0;
+}
+.reveal section.divider .lede {
+  color: rgba(255,255,255,.85);
+  font-size: 1.15em; max-width: 40ch; font-weight: 300;
+  margin-top: 8px;
+}
+.reveal section.divider .lede em {
+  color: var(--n4i-yellow);
+  font-style: normal;
+  font-weight: 500;
+}
+.reveal section.divider .fair-badges {
+  display: flex; gap: 10px; margin-top: 34px;
+}
+.reveal section.divider .fair-badges .b {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .1em;
+  color: #fff;
+}
+.reveal section.divider .fair-badges .b.on {
+  background: var(--n4i-yellow);
+  color: var(--n4i-navy);
+  font-weight: 700;
+  border-color: var(--n4i-yellow);
+}
+
+/* ---------- Content slide title banner ---------- */
+
+.reveal section.content h1,
+.reveal section.content > h1:first-child {
+  color: var(--n4i-navy);
+  font-size: 1.7em;
+  margin-top: 40px;
+  margin-bottom: 4px;
+  padding-bottom: 10px;
+  position: relative;
+}
+.reveal section.content h1::before,
+.reveal section.content > h1:first-child::before {
+  content: "";
+  display: block;
+  width: 48px; height: 5px;
+  background: var(--n4i-yellow);
+  margin-bottom: 14px;
+}
+.reveal section.content .lede {
+  color: var(--n4i-grey-500);
+  font-size: .95em;
+  max-width: 60ch;
+  margin-bottom: 18px;
+}
+
+/* FAIR4RS pill under titles */
+.reveal .fair-pill {
+  display: inline-block;
+  background: var(--n4i-blue);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: 4px;
+}
+.reveal .fair-pill.F { background: var(--n4i-blue); }
+.reveal .fair-pill.A { background: var(--n4i-green); }
+.reveal .fair-pill.I { background: var(--n4i-orange); }
+.reveal .fair-pill.R { background: var(--n4i-pink); }

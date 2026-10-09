@@ -1,0 +1,83 @@
+{
+  "reference_deck": {
+    "repository": "https://github.com/VasiliySeibert/awesome-sim",
+    "branch": "gh-pages",
+    "revision": "e354ef2e567223ab8ba6eaac3d572d589efb5ab8",
+    "theme_license": "MIT",
+    "author": "Vasiliy Seibert"
+  },
+  "screenshots": [
+    {
+      "file": "assets/evidence/semantic-model.jpg",
+      "source": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#overview",
+      "captured": "2026-10-09",
+      "revision": "9bb1658a44223358ad2d4403bb307ba50292c002",
+      "sha256": "23f5e7c7174acebd5c7b9896ad7d5491dae269ceb78b2f1254bc1a794d8671dc",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/configuration-binding.jpg",
+      "source": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/assignment%2Fcase2%2Ffraction-predators-killed-per-year",
+      "captured": "2026-10-09",
+      "revision": "9bb1658a44223358ad2d4403bb307ba50292c002",
+      "sha256": "cd44840ed1ced8c86df655a1341a4ef84d0fba4e9017630bd52d5a47c5126b16",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/case2-file.jpg",
+      "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/f156dcf37597c0587958f463985986f0ea91accf/models/config/scenarios/case2.cin",
+      "captured": "2026-10-09",
+      "revision": "f156dcf37597c0587958f463985986f0ea91accf",
+      "sha256": "4d966eeedd64bc4232c6185449deb7132ccf82120a86a4044c3efa04d563fc0e",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/notebook.jpg",
+      "source": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/notebooks/inspect_results.html",
+      "captured": "2026-10-09",
+      "revision": "9bb1658a44223358ad2d4403bb307ba50292c002",
+      "sha256": "f9ea4a76b4f17c4e358a18182f791193ef65950362189f5f50b7d67b5d1d6219",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/stella-case2.jpg",
+      "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation/blob/194a8b92e963920e95393accc7d5699348864d85/docs/kaibab_ecosystem_screenshot_stella_scenario2.jpg",
+      "captured": "existing repository screenshot",
+      "revision": "194a8b92e963920e95393accc7d5699348864d85",
+      "sha256": "3ac98bc7ba454d23d7ebad1c091b2c0cc1141de12f6312018063a0785f3dde4c",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/vocabulary.jpg",
+      "source": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/term%2Ffraction-predators-killed-per-year",
+      "captured": "2026-10-09",
+      "revision": "9bb1658a44223358ad2d4403bb307ba50292c002",
+      "sha256": "e84990eb5f55e226e856654f7b0ae46aef16af44e41f540f476762d46800a26c",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/workflow.jpg",
+      "source": "https://fair-systemdynamics.github.io/fair-hunter-prey-simulation/#workflows/diagram/case2-parameter-to-figure",
+      "captured": "2026-10-09",
+      "revision": "9bb1658a44223358ad2d4403bb307ba50292c002",
+      "sha256": "c02f5b81356fdf8f8f07d3e2ef431f13f9e4ac3530a9fb956fe4947294be3011",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    },
+    {
+      "file": "assets/evidence/repository.jpg",
+      "source": "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation",
+      "captured": "2026-10-09",
+      "revision": "cb2e72ddd085b3e0a9119d0e1a9445d75ead8259",
+      "sha256": "27a45ac4a33981eeb10bbbff9ac661f15f341ba9b487285748869a41726f3343",
+      "license": "CC-BY-NC-SA-4.0",
+      "attribution": "Original model: Deaton and MacDonald. Repository: Ginster, Papesch and Seibert. Browser capture: Seibert / Codex."
+    }
+  ]
+}

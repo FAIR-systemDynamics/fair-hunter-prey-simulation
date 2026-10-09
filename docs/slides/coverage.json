@@ -1,0 +1,366 @@
+[
+  {
+    "original_slide": 1,
+    "original_title": "Research Software that others can find, trust and\u00a0run.",
+    "adapted_id": "title",
+    "adapted_slide": 1,
+    "adapted_title": "FAIR research with proprietary simulation tools"
+  },
+  {
+    "original_slide": 2,
+    "original_title": "Four lectures, one story",
+    "adapted_id": "recap",
+    "adapted_slide": 2,
+    "adapted_title": "Research data and research software"
+  },
+  {
+    "original_slide": 3,
+    "original_title": "Agenda \u00b7 3 \u00d7 theory \u2194 3 \u00d7 practical",
+    "adapted_id": "agenda",
+    "adapted_slide": 3,
+    "adapted_title": "Today\u2019s route through the example"
+  },
+  {
+    "original_slide": 4,
+    "original_title": "Why make research software FAIR?",
+    "adapted_id": "why-fair",
+    "adapted_slide": 4,
+    "adapted_title": "What a future collaborator needs"
+  },
+  {
+    "original_slide": 5,
+    "original_title": "One repo, running through every slide",
+    "adapted_id": "shared-specification",
+    "adapted_slide": 5,
+    "adapted_title": "The scientific specification comes first"
+  },
+  {
+    "original_slide": 6,
+    "original_title": "Findable & Accessible research software",
+    "adapted_id": "findable-accessible",
+    "adapted_slide": 10,
+    "adapted_title": "Findable & Accessible"
+  },
+  {
+    "original_slide": 7,
+    "original_title": "F1 \u00b7 Globally unique and persistent identifier F1 F1.1 F1.2",
+    "adapted_id": "f1",
+    "adapted_slide": 11,
+    "adapted_title": "F1: identify the research object"
+  },
+  {
+    "original_slide": 8,
+    "original_title": "F1 \u00b7 A DOI is a promise , not a URL F1",
+    "adapted_id": "zenodo-webhook",
+    "adapted_slide": 12,
+    "adapted_title": "A release can trigger a Zenodo deposit"
+  },
+  {
+    "original_slide": 9,
+    "original_title": "One project, many versions \u2014 each citable F1.1 F1.2",
+    "adapted_id": "version-identifiers",
+    "adapted_slide": 13,
+    "adapted_title": "Project identity and version identity"
+  },
+  {
+    "original_slide": 10,
+    "original_title": "F2 \u00b7 F3 \u00b7 F4 \u00b7 rich, linked, harvestable metadata F2 F3 F4",
+    "adapted_id": "metadata-principles",
+    "adapted_slide": 14,
+    "adapted_title": "F2\u2013F4: metadata that points to evidence"
+  },
+  {
+    "original_slide": 11,
+    "original_title": "Machines can only find what they can read F2 F3 F4",
+    "adapted_id": "citation-codemeta",
+    "adapted_slide": 15,
+    "adapted_title": "Citation metadata and software metadata"
+  },
+  {
+    "original_slide": 12,
+    "original_title": "A1 \u00b7 A1.1 \u00b7 retrievable via a standardized protocol A1 A1.1",
+    "adapted_id": "access-protocols",
+    "adapted_slide": 16,
+    "adapted_title": "A1: retrieve the described artifact"
+  },
+  {
+    "original_slide": 13,
+    "original_title": "Open, free, universally implementable A1 A1.1",
+    "adapted_id": "retrieve-install",
+    "adapted_slide": 17,
+    "adapted_title": "Retrieve source or install a pinned snapshot"
+  },
+  {
+    "original_slide": 14,
+    "original_title": "A1.2 \u00b7 auth is a feature , not a gate A1.2",
+    "adapted_id": "authentication",
+    "adapted_slide": 18,
+    "adapted_title": "A1.2: authentication where needed"
+  },
+  {
+    "original_slide": 15,
+    "original_title": "Authentication, where genuinely necessary A1.2",
+    "adapted_id": "access-boundaries",
+    "adapted_slide": 19,
+    "adapted_title": "Access is different for each use case"
+  },
+  {
+    "original_slide": 16,
+    "original_title": "A2 \u00b7 metadata outlives the software A2",
+    "adapted_id": "persistent-metadata",
+    "adapted_slide": 20,
+    "adapted_title": "A2: preserve the record of the research"
+  },
+  {
+    "original_slide": 17,
+    "original_title": "Metadata outlives the software A2",
+    "adapted_id": "archives",
+    "adapted_slide": 21,
+    "adapted_title": "Zenodo and Software Heritage"
+  },
+  {
+    "original_slide": 18,
+    "original_title": "F + A \u00b7 the minimum viable artefacts",
+    "adapted_id": "fa-recap",
+    "adapted_slide": 22,
+    "adapted_title": "Findable and accessible evidence"
+  },
+  {
+    "original_slide": 19,
+    "original_title": "Practical 1 \u00b7 Discover research software",
+    "adapted_id": "practical1",
+    "adapted_slide": 23,
+    "adapted_title": "Practical 1: discover the model"
+  },
+  {
+    "original_slide": 20,
+    "original_title": "Find DuMux in 14 minutes",
+    "adapted_id": "discover",
+    "adapted_slide": 24,
+    "adapted_title": "Search, inspect, and follow the evidence"
+  },
+  {
+    "original_slide": 21,
+    "original_title": "What made DuMux findable?",
+    "adapted_id": "discovery-reflection",
+    "adapted_slide": 25,
+    "adapted_title": "What could you identify without asking the authors?"
+  },
+  {
+    "original_slide": 22,
+    "original_title": "Interoperable research software",
+    "adapted_id": "interoperable",
+    "adapted_slide": 26,
+    "adapted_title": "Interoperable"
+  },
+  {
+    "original_slide": 23,
+    "original_title": "I1 \u00b7 read, write, exchange via community standards I1",
+    "adapted_id": "i1",
+    "adapted_slide": 27,
+    "adapted_title": "I1: exchange data with explicit meaning"
+  },
+  {
+    "original_slide": 24,
+    "original_title": "Open formats > bespoke files I1",
+    "adapted_id": "formats",
+    "adapted_slide": 28,
+    "adapted_title": "\u201cCSV\u201d is not a complete data specification"
+  },
+  {
+    "original_slide": 25,
+    "original_title": "Example \u00b7 OpenAPI beats a README I1",
+    "adapted_id": "api-example",
+    "adapted_slide": 29,
+    "adapted_title": "An explicit interface contract"
+  },
+  {
+    "original_slide": 26,
+    "original_title": "I2 \u00b7 qualified references to other objects I2",
+    "adapted_id": "i2",
+    "adapted_slide": 30,
+    "adapted_title": "I2: qualified references to other objects"
+  },
+  {
+    "original_slide": 27,
+    "original_title": "\"Alice\" vs \"ORCID 0000-0001-\u2026\" I2",
+    "adapted_id": "qualified-references",
+    "adapted_slide": 31,
+    "adapted_title": "Trace a concept through both implementations"
+  },
+  {
+    "original_slide": 28,
+    "original_title": "awesome-sim/codemeta.json \u2014 line by line I2",
+    "adapted_id": "codemeta-references",
+    "adapted_slide": 32,
+    "adapted_title": "Software metadata connects the artifact"
+  },
+  {
+    "original_slide": 29,
+    "original_title": "Controlled vocabularies eliminate ambiguity \u00b7 and give credit I2",
+    "adapted_id": "controlled-vocabulary",
+    "adapted_slide": 33,
+    "adapted_title": "One concept, separate declarations and assignments"
+  },
+  {
+    "original_slide": 30,
+    "original_title": "Dependencies are also qualified references I2",
+    "adapted_id": "dependencies",
+    "adapted_slide": 34,
+    "adapted_title": "Dependency constraints and tested environments"
+  },
+  {
+    "original_slide": 31,
+    "original_title": "pyproject.toml \u00b7 from source to installed package I2",
+    "adapted_id": "packaging",
+    "adapted_slide": 35,
+    "adapted_title": "Installable without reorganizing the model"
+  },
+  {
+    "original_slide": 32,
+    "original_title": "Practical 2 \u00b7 Test interoperability",
+    "adapted_id": "practical2",
+    "adapted_slide": 36,
+    "adapted_title": "Practical 2: inspect, then execute"
+  },
+  {
+    "original_slide": 33,
+    "original_title": "Install, run, break, understand",
+    "adapted_id": "inspect-run",
+    "adapted_slide": 37,
+    "adapted_title": "Open inspection before independent execution"
+  },
+  {
+    "original_slide": 34,
+    "original_title": "Why I2 (qualified dependencies) matters",
+    "adapted_id": "interoperability-reflection",
+    "adapted_slide": 38,
+    "adapted_title": "What made the exchange work?"
+  },
+  {
+    "original_slide": 35,
+    "original_title": "Reusable research software",
+    "adapted_id": "reusable",
+    "adapted_slide": 39,
+    "adapted_title": "Reusable"
+  },
+  {
+    "original_slide": 36,
+    "original_title": "R1 \u00b7 R1.1 \u00b7 R1.2 \u00b7 describe, license, trace R1 R1.1 R1.2",
+    "adapted_id": "r1",
+    "adapted_slide": 40,
+    "adapted_title": "R1: describe, license, and trace"
+  },
+  {
+    "original_slide": 37,
+    "original_title": "Documentation is layered R1",
+    "adapted_id": "documentation",
+    "adapted_slide": 41,
+    "adapted_title": "Documentation at each level"
+  },
+  {
+    "original_slide": 38,
+    "original_title": "No license \u2260 public domain R1.1",
+    "adapted_id": "licenses",
+    "adapted_slide": 42,
+    "adapted_title": "The licenses travel with the artifacts"
+  },
+  {
+    "original_slide": 39,
+    "original_title": "Who \u00b7 what \u00b7 when \u00b7 why \u2014 for free R1.2",
+    "adapted_id": "provenance",
+    "adapted_slide": 43,
+    "adapted_title": "A configuration is not an execution"
+  },
+  {
+    "original_slide": 40,
+    "original_title": "R2 \u00b7 qualified references to other software R2",
+    "adapted_id": "r2",
+    "adapted_slide": 44,
+    "adapted_title": "R2: references to other software"
+  },
+  {
+    "original_slide": 41,
+    "original_title": "Pin the whole world, not just the code R2",
+    "adapted_id": "environments",
+    "adapted_slide": 45,
+    "adapted_title": "Three levels of environment description"
+  },
+  {
+    "original_slide": 42,
+    "original_title": "R3 \u00b7 meet domain-relevant community standards R3",
+    "adapted_id": "r3",
+    "adapted_slide": 46,
+    "adapted_title": "R3: community standards with evidence"
+  },
+  {
+    "original_slide": 43,
+    "original_title": "Let CI answer \"does it still run?\" R3",
+    "adapted_id": "ci",
+    "adapted_slide": 47,
+    "adapted_title": "CI protects the scientific example"
+  },
+  {
+    "original_slide": 44,
+    "original_title": "Write the sustainability plan before the code rots",
+    "adapted_id": "sustainability",
+    "adapted_slide": 48,
+    "adapted_title": "A maintenance plan for the whole workflow"
+  },
+  {
+    "original_slide": 45,
+    "original_title": "R \u00b7 the smallest thing that could break you",
+    "adapted_id": "reuse-recap",
+    "adapted_slide": 49,
+    "adapted_title": "What would a missing artifact prevent?"
+  },
+  {
+    "original_slide": 46,
+    "original_title": "RO-Crate \u00b7 research object in one container R",
+    "adapted_id": "ro-crate",
+    "adapted_slide": 50,
+    "adapted_title": "An RO-Crate packages a research object"
+  },
+  {
+    "original_slide": 47,
+    "original_title": "Practical 3 \u00b7 Capture reusability via RO-Crate",
+    "adapted_id": "practical3",
+    "adapted_slide": 51,
+    "adapted_title": "Practical 3: package an actual run"
+  },
+  {
+    "original_slide": 48,
+    "original_title": "Package awesome-sim as a Research Object",
+    "adapted_id": "crate-exercise",
+    "adapted_slide": 52,
+    "adapted_title": "Package the result you actually produced"
+  },
+  {
+    "original_slide": 49,
+    "original_title": "The R in FAIR4RS \u00b7 Reusability across time",
+    "adapted_id": "crate-reflection",
+    "adapted_slide": 53,
+    "adapted_title": "What travels with this result?"
+  },
+  {
+    "original_slide": 50,
+    "original_title": "The FAIR4RS checklist \u2014 one page",
+    "adapted_id": "checklist",
+    "adapted_slide": 54,
+    "adapted_title": "A FAIR4RS evidence checklist"
+  },
+  {
+    "original_slide": 51,
+    "original_title": "The services you touched today",
+    "adapted_id": "services",
+    "adapted_slide": 55,
+    "adapted_title": "Services supporting the workflow"
+  },
+  {
+    "original_slide": 52,
+    "original_title": "Your repo, next week \u2014 FAIR4RS-shaped.",
+    "adapted_id": "discussion",
+    "adapted_slide": 56,
+    "adapted_title": "Shared science. Traceable implementations."
+  }
+]

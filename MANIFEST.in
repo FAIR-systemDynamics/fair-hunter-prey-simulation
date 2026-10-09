@@ -1,0 +1,10 @@
+include CITATION.cff codemeta.json REUSE.toml LICENSE CHANGELOG.md
+recursive-include LICENSES *.txt
+recursive-include models *.mdl *.stmx *.cin *.csv *.xlsx
+recursive-include runners/pysd *.py
+recursive-include scripts *.py *.sh
+recursive-include results *.csv *.json
+recursive-include examples/stella-source/models *.stmx *.csv
+recursive-include examples/stella-source/results *.csv
+include docs/fair/stella-sources.json
+recursive-include environments *.txt

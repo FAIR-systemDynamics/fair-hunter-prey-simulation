@@ -17,9 +17,8 @@
 # Full texts:  LICENSES/
 
 version = 1
-SPDX-PackageName = "nfdi4sd"
-# TODO: fill in once the repository is published.
-# SPDX-PackageDownloadLocation = "https://github.com/.../nfdi4sd"
+SPDX-PackageName = "fair-hunter-prey-simulation"
+SPDX-PackageDownloadLocation = "https://github.com/FAIR-systemDynamics/fair-hunter-prey-simulation"
 
 # --------------------------------------------------------------------------
 # 1. Code — MIT
@@ -157,3 +156,46 @@ SPDX-FileCopyrightText = [
     "2026 Vasiliy Seibert (semantic representation)",
 ]
 SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+# Additive FAIR teaching adapters and metadata.
+[[annotations]]
+path = ["src/**", "tools/fair/**", "setup.py", "pyproject.toml", "MANIFEST.in", ".zenodo.json", "environments/**", "docs/fair/*.json", "docs/slides/*.json", "docs/slides/*.js", "docs/slides/css/**", "examples/fair/*.py"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["CONTRIBUTING.md", "docs/fair/*.md", "docs/slides/*.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["examples/stella-source/**", "examples/fair/*.ipynb", "docs/slides/index.html", "docs/slides/assets/evidence/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = ["2025 Mike Deaton and Rod MacDonald (original model)", "2026 Raphael Ginster, Matthias Papesch, Vasiliy Seibert (reimplementation)", "2026 Vasiliy Seibert (teaching material)"]
+SPDX-License-Identifier = "CC-BY-NC-SA-4.0"
+
+[[annotations]]
+path = ["docs/slides/assets/img/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Vasiliy Seibert (awesome-sim presentation)"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["docs/slides/assets/logos/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "NFDI4Ing"
+SPDX-License-Identifier = "LicenseRef-Service-Logos"
+
+[[annotations]]
+path = ["docs/slides/vendor/reveal/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2011-2024 Hakim El Hattab and reveal.js contributors"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["docs/slides/vendor/fonts/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2017 IBM Corp."
+SPDX-License-Identifier = "OFL-1.1"
